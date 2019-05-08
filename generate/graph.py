@@ -1,5 +1,5 @@
 import os
-
+import io
 META_DELIM = "-----"
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 
@@ -29,7 +29,7 @@ def build_content_graph():
                 elif fname.endswith(".md"):
                     graph.append(node)
     print("------------------------------------")
-    print([n['slug'] for n in graph])
+    print("Loaded", [n['slug'] for n in graph])
     print("------------------------------------")
     return graph
 
@@ -75,7 +75,7 @@ def make_page_node(dirName, fname):
 
 
 def read_metadata(file):
-    with open(file, "r") as content_file:
+    with io.open(file, 'r', encoding='utf8') as content_file:
         data = content_file.read().splitlines()
 
     try:
@@ -114,6 +114,6 @@ def read_metadata(file):
 
 
 def read_page_content(meta, file):
-    with open(file, "r") as content_file:
+    with io.open(file, 'r', encoding='utf8') as content_file:
         data = content_file.readlines()
     return "".join(data[meta['meta_end']+1:])

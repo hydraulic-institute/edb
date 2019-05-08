@@ -3,7 +3,9 @@
 <head>
     {% block head %}
     <link rel="stylesheet" type="text/css" href="/statics/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <title>HI EDB</title>
+    <meta charset="UTF-8">
     {% endblock %}
 </head>
 <body>
@@ -23,7 +25,7 @@
             {% endfor %}
         <ul>
     </div>
-    <div id='content'>
+    <div id='content' class='content'>
         {% block content %}{% endblock %}
     </div>
 </body>
