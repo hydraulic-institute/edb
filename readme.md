@@ -124,6 +124,15 @@ The block will compile and be typset as the following:
 
 <img src='docs/equation.png'/>
 
+### About LaTex 
+LaTex is a typesetting language used in many fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
+
+You may find the following links instructive - however remember that there is a lot more to LaTex than what you need for EDB development.
+
+- [http://www.personal.ceu.hu/tex/cookbook.html](http://www.personal.ceu.hu/tex/cookbook.html)
+- [https://en.wikibooks.org/wiki/LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+- [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
+
 ## Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  Each CSV table can be provided with a `US__` or `METRIC__` prefix, and the system will select the correct data based on user settings.  Tables without the units prefix will not respond to units of measure. 
 
