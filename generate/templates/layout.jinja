@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="/statics/style.css">
+    <title>HI EDB</title>
+    {% endblock %}
+</head>
+<body>
+    <div id='navigation'>
+        <ul data-section="{{section}}" data-topic="{{topic}}">
+            {% for section in sections|sort(attribute='sort') %} 
+                <li>
+                    <label>{{section['metadata']['title']}}</label>
+                    <ul>
+                        {% for topic in section['children']|sort(attribute='sort') %}
+                            <li>
+                                <a href='/{{section["slug"]}}/{{topic["slug"]}}.html'>{{topic['metadata']['title']}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        <ul>
+    </div>
+    <div id='content'>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
