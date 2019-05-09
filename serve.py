@@ -13,6 +13,7 @@ from watchdog.events import FileSystemEventHandler
 PORT = 8081
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 WEB_DIR = os.path.join(os.path.dirname(__file__), 'build')
+SOURCE_DIR = os.path.join(BASE_DIR, 'source')
 
 
 class StoppableHTTPServer(http.server.HTTPServer):
@@ -30,22 +31,18 @@ class BuilderEventHandler(FileSystemEventHandler):
     def on_moved(self, event):
         super(BuilderEventHandler, self).on_moved(event)
         build.generate()
-        # os.chdir(WEB_DIR)
 
     def on_created(self, event):
         super(BuilderEventHandler, self).on_created(event)
         build.generate()
-        # os.chdir(WEB_DIR)
 
     def on_deleted(self, event):
         super(BuilderEventHandler, self).on_deleted(event)
         build.generate()
-        # os.chdir(WEB_DIR)
 
     def on_modified(self, event):
         super(BuilderEventHandler, self).on_deleted(event)
         build.generate()
-        # os.chdir(WEB_DIR)
 
 
 def launch_web_server():
@@ -71,14 +68,9 @@ if __name__ == "__main__":
     launch_web_server()
 
     # Now watch the source directory for changes, building each time.
-    # Notice that the path needs to go back up one level, since the
-    # current working directory was changed above to support the HTTP
-    # server.
-    path = os.path.join(BASE_DIR, 'source')
-    print("Monitoring", path)
     event_handler = BuilderEventHandler()
     observer = Observer()
-    observer.schedule(event_handler, path, recursive=True)
+    observer.schedule(event_handler, SOURCE_DIR, recursive=True)
     observer.start()
     try:
         while True:

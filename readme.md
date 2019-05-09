@@ -124,10 +124,10 @@ The block will compile and be typset as the following:
 
 <img src='docs/equation.png'/>
 
-### About LaTex 
-LaTex is a typesetting language used in many fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
+### About LaTeX 
+LaTeX is a typesetting language used in many fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
 
-You may find the following links instructive - however remember that there is a lot more to LaTex than what you need for EDB development.
+You may find the following links instructive - however remember that there is a lot more to LaTeX than what you need for EDB development.
 
 - [http://www.personal.ceu.hu/tex/cookbook.html](http://www.personal.ceu.hu/tex/cookbook.html)
 - [https://en.wikibooks.org/wiki/LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
