@@ -204,6 +204,15 @@ Each subsequent row is either a heading or data.
 
 ## Charts
 
+```
+=/=
+title: Data Points
+data-us: datapoints_us.csv
+data-metric: datapoints_metric.csv
+x: 2
+series: 4, 3
+=/=
+```
 
 ## Images
 Images are supported naturally by Markdown.  Images can be placed in the same directory as the page, or in a central `/image` directory.  The links you enter will be resolved as a relative URL.   External images can also be used using an absolute URL (not recommended).

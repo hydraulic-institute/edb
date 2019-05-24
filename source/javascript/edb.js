@@ -1,3 +1,36 @@
+Vue.component('chart', {
+    props: ['chart_key', 'title', 'chart'],
+    data: function () {
+        return {
+            chart_data: null
+        };
+    },
+    template: '<div><h1>CHART {{title}}</h1><pre>{{JSON.stringify(chart_data, null, 2)}}</pre></div>',
+    mounted: function () {
+        console.log("Mounted a Chart");
+        this.chart_data = JSON.parse(this.chart);
+        console.log(this.chart_data);
+        const x_axis = this.chart_data.x.data;
+        x_axis.unshift('x')
+        columns = [x_axis];
+        for (const series of this.chart_data.series) {
+            const series_data = series.data;
+            series_data.unshift(series.title);
+            columns.push(series_data);
+        }
+        console.log(x_axis)
+        let config = {
+            bindto: this.$el,
+
+            data: {
+                x: 'x',
+                columns: columns
+            }
+        }
+        c3.generate(config);
+    },
+});
+
 new Vue({
     el: '#vue',
     delimiters: ['${', '}'],

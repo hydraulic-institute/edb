@@ -57,6 +57,15 @@ $$v = 0.002228*Q*({4 \over \pi D^2})$$
 
 This, then, give the following system curve data. This is a system that is dominated by the static head.
 
+=/=
+title: Data Points
+data-us: datapoints_us.csv
+data-metric: datapoints_metric.csv
+x: 2
+series: 4, 3
+series_title_index: 0
+=/=
+
 
 =|=
 title: Data Points
@@ -64,6 +73,3 @@ data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
 
-
-
-## Section 2
