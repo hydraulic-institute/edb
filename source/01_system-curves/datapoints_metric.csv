@@ -1,4 +1,4 @@
-,text,number-0,number-2,number-0
+,text,numeric,numeric,numeric
 heading,Example,Flow Rate m3/sec,Velocity m/sec,Head Loss meters
 data,ABC,0,0,80.772
 data,DEF,0.001261804,0.1536192,80.772

@@ -1,4 +1,4 @@
-,text,number-0,number-2,number-0
+,text,numeric,numeric,numeric
 heading,Example,"Flow Rate gpm","Velocity ft/sec","Head Loss feet"
 data,ABC,0,0,265
 data,DEF,20,0.504,265

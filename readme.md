@@ -113,7 +113,7 @@ syntax for HTML.
 ## Formulas / Equations
 All pages can contain blocks for equations, which are entered in LaTeX and automatically typset when the EDB is built.  All equations are block elements - meaning the occupy their own vertical real estate on the screen.
 
-LaTex formulas are supported via a *custom extension* to markdown syntax.  The include LaTex equation, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well.
+LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well.
 
 For example:
 ```
@@ -136,7 +136,21 @@ You may find the following links instructive - however remember that there is a 
 - [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
 
 ## Tables
-All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  Each CSV table can be provided with a `US__` or `METRIC__` prefix, and the system will select the correct data based on user settings.  Tables without the units prefix will not respond to units of measure. 
+All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
+
+Tables are supported via a *custom extenstion* to markdown sysntax. To include a table, you must define a `=|=` line, followed by 
+meta data describing the table, and finally end the block with an other line containing only `=|=`.
+
+For example:
+```
+=|=
+title: Data Points
+data-us: datapoints_us.csv
+data-metric: datapoints_metric.csv
+=|=
+```
+
+The block above would create a table in the page titled "Data Points".  The `data-us` and `data-metric` lines in the meta data block point to a CSV file containing the data.  Alternatively, if the table does not need to support units, then you may specify a `data` value instead of the `us` and `metric` variants.
 
 **Remember, CSV files are not Excel files - which end in a .xlsx extension**.  While it is convenient to edit CSV files in Excel, you must always remember to save as CSV (which have a .csv extension).  When opening a CSV in VSCode or whatever Markdown editor you are using, you will clearly see that CSV means "comman separated values".  CSV files are just straight text files, with rows on each line, columns separated by commas.
 
@@ -147,7 +161,7 @@ The CSV files do contain additional meta data to provide the platform informatio
 ### Column Meta Data - First row
 The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following:
 - **text** - the column data will be formatted as standard text
-- **number-[d]** - the column data will be formatted as a number, where `[d]` is the number of decimal places to output the data in.  For example, `number-3` will always output the values in the column using 3 decimal places.  `number-0` will output whole numbers only.  `d` values from 0-9 are supported.  *Note, it's best to enter data into the CSV file with the correct number of decimal places, as it will avoid having the app displaying unformated numbers on initial load - as the formatting is performed client side, a moment after page load.*
+- **numeric** - the column data will be formatted as a number.  *Note, the application does not handle specifying decimal places - whatever is written in the CSV file is displayed to the user.*
 
 ### Row Meta Data - First column of every (other) row
 The first column of every row in the CSV file should always contain the following:
@@ -156,6 +170,11 @@ The first column of every row in the CSV file should always contain the followin
 - **data** - The row is interpreted as standard data - not a heading.  
 
 ### Example
+Consider the following CSV file, created in Excel.
+![CSV](csv.png "CSV")
+
+When properly saved, it would appear as a plain text file in a coding editor:
+
 ```
 ,text,Number-0,Number-3,Number-0
 heading,Example,"Flow Rate
@@ -179,6 +198,9 @@ data,,260,6.553,317
 data,,280,7.057,326
 data,,300,7.561,335
 ```
+Notice the leading comma - this is because the first column on the first row is blank.  In this case, the first row defines the first column as text data, and the other three as numeric data - which is displayed differently in the HTML.
+
+Each subsequent row is either a heading or data.
 
 ## Charts
 
