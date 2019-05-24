@@ -1,0 +1,18 @@
+,text,number-0,number-2,number-0
+heading,Example,"Flow Rate gpm","Velocity ft/sec","Head Loss feet"
+data,ABC,0,0,265
+data,DEF,20,0.504,265
+data,GHI,40,1.008,266
+data,JKL,60,1.512,268
+data,MNO,80,2.016,270
+data,PQR,100,2.52,273
+data,STU,120,3.024,276
+data,VWX,140,3.528,280
+data,YZZ,160,4.032,285
+data,,180,4.536,290
+data,,200,5.04,296
+data,,220,5.545,303
+data,,240,6.049,310
+data,,260,6.553,317
+data,,280,7.057,326
+data,,300,7.561,335

@@ -1,5 +1,7 @@
 import os
 import io
+from .common import parse_dict
+
 META_DELIM = "-----"
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 
@@ -123,21 +125,7 @@ def read_metadata(file):
         return None
 
     metadata_lines = data[meta_start+1: meta_end]
-    metadata = dict()
-
-    def insert_metadata_entry(line):
-        try:
-            name = line.split(":")[0].strip()
-            value = line.split(":")[1].strip()
-        except:
-            print("Error processing", file, "metadata block has malformed entry")
-            print("\t", line)
-            return None
-        metadata[name] = value
-        return (name, value)
-
-    tuples = [insert_metadata_entry(l)
-              for l in metadata_lines]
+    metadata = parse_dict(metadata_lines)
     metadata['meta_start'] = meta_start
     metadata['meta_end'] = meta_end
 

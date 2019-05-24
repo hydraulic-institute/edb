@@ -20,10 +20,29 @@ body {
     transition: margin-left 0.25s;
 }
 
+
+/**************************************
+ * LaTex / Formula Styles
+***************************************/
 .formula {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+
+/**************************************
+ * Data Table Styles
+***************************************/
+td[class^="number-"],
+td[class*=" number-"] {
+    font-family: monospace;
+    text-align: right !important;
+}
+
+th[class^="number-"],
+th[class*=" number-"] {
+    text-align: right !important;
 }

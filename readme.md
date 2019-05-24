@@ -108,6 +108,8 @@ syntax for HTML.
 
 ### Units of Measure
 
+### Supscripts and Superscript
+
 ## Formulas / Equations
 All pages can contain blocks for equations, which are entered in LaTeX and automatically typset when the EDB is built.  All equations are block elements - meaning the occupy their own vertical real estate on the screen.
 
@@ -135,6 +137,51 @@ You may find the following links instructive - however remember that there is a 
 
 ## Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  Each CSV table can be provided with a `US__` or `METRIC__` prefix, and the system will select the correct data based on user settings.  Tables without the units prefix will not respond to units of measure. 
+
+**Remember, CSV files are not Excel files - which end in a .xlsx extension**.  While it is convenient to edit CSV files in Excel, you must always remember to save as CSV (which have a .csv extension).  When opening a CSV in VSCode or whatever Markdown editor you are using, you will clearly see that CSV means "comman separated values".  CSV files are just straight text files, with rows on each line, columns separated by commas.
+
+The CSV files do contain additional meta data to provide the platform information about how to format the table (or chart, see below).  This metadata appears in the first row and first column.
+
+**Always leave the first column of the first row empty.**
+
+### Column Meta Data - First row
+The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following:
+- **text** - the column data will be formatted as standard text
+- **number-[d]** - the column data will be formatted as a number, where `[d]` is the number of decimal places to output the data in.  For example, `number-3` will always output the values in the column using 3 decimal places.  `number-0` will output whole numbers only.  `d` values from 0-9 are supported.  *Note, it's best to enter data into the CSV file with the correct number of decimal places, as it will avoid having the app displaying unformated numbers on initial load - as the formatting is performed client side, a moment after page load.*
+
+### Row Meta Data - First column of every (other) row
+The first column of every row in the CSV file should always contain the following:
+
+- **heading** - The row contains headings.  Multiple heading rows are permitted, and will appear in the order they are specified.
+- **data** - The row is interpreted as standard data - not a heading.  
+
+### Example
+```
+,text,Number-0,Number-3,Number-0
+heading,Example,"Flow Rate
+gpm","Velocity
+ft/sec","Head Loss
+feet"
+data,ABC,0,0,265
+data,DEF,20,0.504,265
+data,GHI,40,1.008,266
+data,JKL,60,1.512,268
+data,MNO,80,2.016,270
+data,PQR,100,2.52,273
+data,STU,120,3.024,276
+data,VWX,140,3.528,280
+data,YZZ,160,4.032,285
+data,,180,4.536,290
+data,,200,5.04,296
+data,,220,5.545,303
+data,,240,6.049,310
+data,,260,6.553,317
+data,,280,7.057,326
+data,,300,7.561,335
+```
+
+## Charts
+
 
 ## Images
 Images are supported naturally by Markdown.  Images can be placed in the same directory as the page, or in a central `/image` directory.  The links you enter will be resolved as a relative URL.   External images can also be used using an absolute URL (not recommended).

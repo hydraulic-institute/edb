@@ -1,0 +1,21 @@
+ <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth" v-if="{{table.units}}_visible">
+    <caption>{{meta.title}}</caption>
+    <thead>
+        {% for heading in table.headings %} 
+            <tr>
+                {%for header in heading.data %}
+                    <th class="{{header.type}}"> {{header.data}}</th>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </thead>
+    <tbody>
+        {% for row in table.rows %} 
+            <tr>
+                {%for column in row.data %}
+                    <td class="{{column.type}}"> {{column.data}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

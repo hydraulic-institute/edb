@@ -2,7 +2,7 @@ from generate import graph
 from generate import output
 import os
 
-SPECIAL_DIRS = ['images']
+SPECIAL_DIRS = ['javascript', 'images']
 
 
 def generate():
