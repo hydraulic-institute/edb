@@ -10,12 +10,13 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markdown.preprocessors import Preprocessor
 from markdown import Extension
 from shutil import copyfile
-
+from shutil import copytree
 
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
 STATICS_DIR = os.path.join(BASE_DIR, "./static")
+SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
 
 
 env = Environment(
@@ -59,13 +60,29 @@ def statics():
         f.write(css)
 
 
-def write_html(graph, node, slug_override=None, path="."):
+def make_specials(specials):
+    for special in specials:
+        src = os.path.join(SOURCE_DIR, special)
+        dst = os.path.join(OUTPUT_DIR, special)
+        print(f'Copying {src} to {dst}.')
+        copytree(src,
+                 dst)
+
+
+def write_content(graph, node, slug_override=None, path="."):
+    print(f'Processing {node["name"]} at path {path}')
+    if node['copy_only'] == True:
+        out = os.path.join(OUTPUT_DIR, path, node['name'])
+        src = os.path.join(node['path'], node['name'])
+        print(f' - Copied {node["name"]} as static resource.')
+        copyfile(src, out)
+        return
+
     if slug_override:
         slug = slug_override
     else:
         slug = node['slug']
 
-    print("Creating extension")
     content = node['content']
     content = process_latex_blocks(content)
     content = markdown.markdown(content)
@@ -74,6 +91,8 @@ def write_html(graph, node, slug_override=None, path="."):
     sections = [dir for dir in graph if dir['directory'] == True]
     html = template.render(section="", topic=slug,
                            content=content, sections=sections)
+
+    # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
         f.write(htmlmin.minify(
             html, remove_comments=True, remove_empty_space=True))
@@ -89,7 +108,7 @@ def make_root(graph):
         so = None
         if node['slug'] == 'home':
             so = 'index'
-        write_html(graph, node, so)
+        write_content(graph, node, so)
 
 
 def make_section(graph, section, parent=None):
@@ -100,15 +119,17 @@ def make_section(graph, section, parent=None):
         if topic['directory']:
             print("Sub directories are currently unsupported.")
         else:
-            write_html(graph, topic, None, section['slug'])
+            write_content(graph, topic, None, section['slug'])
 
 
-def html(graph):
-    print(BASE_DIR)
-    print(OUTPUT_DIR)
-    print(TEMPLATE_DIR)
-    print(STATICS_DIR)
+def html(graph, specials):
+    print('Base directory:      ', BASE_DIR)
+    print('Output directory:    ', OUTPUT_DIR)
+    print('Template directory:  ', TEMPLATE_DIR)
+    print('Statics directory:   ', STATICS_DIR)
+    print('Source directory:    ', SOURCE_DIR)
     clean()
+    make_specials(specials)
     make_root(graph)
     for section in [dir for dir in graph if dir['directory'] == True]:
         make_section(graph, section)

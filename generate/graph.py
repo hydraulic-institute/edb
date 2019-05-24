@@ -4,7 +4,7 @@ META_DELIM = "-----"
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 
 
-def build_content_graph():
+def build_content_graph(specials):
     # Walks the source directory and creates
     # a graph, where each node is the content
     # of the page / directory
@@ -14,6 +14,10 @@ def build_content_graph():
     graph = []
     meta = None
     for dirName, subdirList, fileList in os.walk(rootDir):
+        # Special folders are dealt with separately, they are not
+        # part of the content graph.
+        if len([special for special in specials if dirName.endswith(special)]) > 0:
+            continue
         # don't process root,
         if not dirName.endswith('./source'):
             meta = make_directory_node(dirName)
@@ -22,12 +26,17 @@ def build_content_graph():
         for fname in fileList:
             if fname.endswith(".md") and fname != 'index.md':
                 node = make_page_node(dirName, fname)
-                # If meta is not None, then this content is under a sub-directory
-                # Otherwise, it's top level content (i.e. content.md)
-                if meta != None:
-                    meta['children'].append(node)
-                elif fname.endswith(".md"):
-                    graph.append(node)
+            elif not fname.endswith(".md"):
+                # This isn't markdown, check if it is in the static extension list.
+                node = make_resource_node(dirName, fname)
+
+            # If meta is not None, then this content is under a sub-directory
+            # Otherwise, it's top level content (i.e. content.md)
+            if meta != None:
+                meta['children'].append(node)
+            elif fname.endswith(".md"):
+                graph.append(node)
+
     print("------------------------------------")
     print("Loaded", [n['slug'] for n in graph])
     print("------------------------------------")
@@ -49,7 +58,28 @@ def make_directory_node(dirName):
         "path": dirName,
         "metadata": read_metadata(dirName+"/index.md"),
         "directory": True,
-        "children": []
+        "children": [],
+        "copy_only": False
+    }
+
+
+def make_resource_node(dirName, fname):
+    try:
+        sort = fname.split("_")[0]
+        slug = fname.split("_")[1].split(".")[0]
+    except:
+        sort = ""
+        slug = fname.split(".")[0]
+
+    filename = dirName+"/"+fname
+    return {
+        "sort": sort,
+        "slug": slug,
+        "path": dirName,
+        "name": fname,
+        "metadata": dict(),
+        "directory": False,
+        "copy_only": True
     }
 
 
@@ -70,7 +100,8 @@ def make_page_node(dirName, fname):
         "name": fname,
         "metadata": metadata,
         "directory": False,
-        "content": read_page_content(metadata, filename)
+        "content": read_page_content(metadata, filename),
+        "copy_only": False
     }
 
 

@@ -139,6 +139,33 @@ All pages can contain blocks for tabular data.  Tabular data is entered into the
 ## Images
 Images are supported naturally by Markdown.  Images can be placed in the same directory as the page, or in a central `/image` directory.  The links you enter will be resolved as a relative URL.   External images can also be used using an absolute URL (not recommended).
 
+For an image that is saved in the same directory as the text content you are developing, you can use the following syntax:
+
+```
+![System Curve](./system-curves-001.png "System Curve")
+```
+
+By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
+
+```
+<img src='system-curves-001.png' width='50' height='200'/>
+```
+
+For images that are going to appear on many pages, in different sections, a good option is to store the image in the `/images` directory, rather than in a section directory (or multiple section directories).  You can place any image in the `/image` directory, and reference it from any page like this:
+
+```
+![Hydraulic Institute](/images/hi.jpg "Hydraulic Insititute")
+```
+
+Note that the image path begins with `/image`, which creates an absolute URL to the image in the output.
+
+Finally, if you need to link to an external image, not within the EDB, you can use a full URL like so:
+```
+![Hydraulic Institute](http://www.pumps.org/images/HI/HI_logo_web_250px_wide.jpg "Hydraulic Insititute")
+```
+
+*Linking to external images is not recommended - we have no control over whether or not that image stays the same over time, or is always available.*
+
 ## Internal Links
 When linking to other pages within the document, you must provide the non-prefixed file name, with a `.html` extension, using standard Markdown link syntax.
 
