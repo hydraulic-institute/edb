@@ -9,6 +9,8 @@ pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
+pip3 install awscli --upgrade --user
+pip3 install s3-deploy-website
 ```
 
 
@@ -279,4 +281,57 @@ The EDB is always built to the `build` directory.  The files contained there are
 To view the EDB while you are developing, got to [http://localhost:8081](http://localhost:8081).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
 
 ## Version control with `git`
-## Deploying
+
+## Hosting
+The HI EDB is deployed to an Amazon S3 bucket, and served to the public internet from there.
+
+### S3 Configuration
+*The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose*
+- Create bucket - named `hi-edb-beta`
+- Region:  US East (N. Virginia)
+- Next
+- Next (default configuration options)
+- Set Permissions:  Uncheck Block all public access
+
+After creating the bucket, click on it from the list.  Click on the Bucket Policy and add the following:
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::hi-edb-beta/*"
+            ]
+        }
+    ]
+}
+```
+
+Go to properties, and then Static website hosting.  Enable web hosting on the bucket.
+
+### Setting Credentials
+Before being able to deploy, you must setup HI's amazon credentials on your machine.  **You will be given credentials separately, please do not check the credentials into any files within this project for security purposes**.
+
+```
+aws configure
+AWS Access Key ID [********************]:  <enter access key>
+AWS Secret Access Key [********************]:  <enter secret key>
+
+```
+### Deploying to Beta
+Execute the following from the command line
+```
+python3 beta.py
+```
+The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/](http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/).
+
+
+### Deploying to Production
+Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
+

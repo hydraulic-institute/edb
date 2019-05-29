@@ -3,25 +3,24 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
-    {{content}}
+    <div class='topic-content'>
+        {{content}}
+    </div>
 
-    <nav class="navbar is-spaced" role="navigation">
-        <div id="topics" class="navbar-menu">
-            <div class="navbar-start">
-                {% for section in related|sort(attribute='sort') %} 
-                    {% for topic in section.children|sort(attribute='sort') %} 
-                        {% if topic['is_topic'] %}
-                        <a class="navbar-item" href="{{topic['slug']}}">{{topic['metadata']['title']}}</a>
-                        {% endif %}
-                    {% endfor %}
+    <div id="topics">
+        <hr/>
+        <h3>Related topics</h3>
+        <div class='field is-grouped is-grouped-multiline'>
+            {% for section in related|sort(attribute='sort') %} 
+                {% for topic in section.children|sort(attribute='sort') %} 
+                    {% if topic['is_topic'] %}
+                    <div class='control has-text-centered'>
+                        <a class="button is-warning are-large is-fullwidth" href="{{topic['slug']}}">{{topic['metadata']['title']}}</a>
+                    </div>
+                    {% endif %}
                 {% endfor %}
-            
-            </div>
-            <div class="navbar-end">
-                
-            </div>
-           
+            {% endfor %}          
         </div>
-    </nav>
+    </div>
     
 {% endblock %}

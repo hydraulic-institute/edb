@@ -35,6 +35,15 @@ env = Environment(
 )
 
 
+class RenderOptions:
+    def __init__(self):
+        self.minified = ""
+
+
+global options
+options = RenderOptions()
+
+
 def replace_latex_block(latex):
     return "<p class='formula'>" + latex + "</p>"
 
@@ -243,6 +252,8 @@ def make_specials(specials):
 
 
 def write_content(graph, node, slug_override=None, path="."):
+    # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
+    global options
     print(f'Processing {node["name"]} at path {path}')
     if node['copy_only'] == True:
         out = os.path.join(OUTPUT_DIR, path, node['name'])
@@ -268,9 +279,9 @@ def write_content(graph, node, slug_override=None, path="."):
     template = env.get_template('topic.jinja')
     sections = [dir for dir in graph if dir['directory'] == True]
 
-    html = template.render(section="", topic=slug,
+    html = template.render(section="", topic=slug, node=node,
                            content=content, sections=sections,
-                           related=[section for section in sections if section['path'] == node['path']])
+                           related=[section for section in sections if section['path'] == node['path']], options=options)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
@@ -307,12 +318,15 @@ def make_section(graph, section, parent=None):
             write_content(graph, topic, None, section['slug'])
 
 
-def html(graph, specials):
+def html(graph, specials, production=False):
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)
     print('Statics directory:   ', STATICS_DIR)
     print('Source directory:    ', SOURCE_DIR)
+
+    if production:
+        options.minified = ".min"
     clean()
     make_specials(specials)
     os.makedirs(os.path.join(OUTPUT_DIR, "charts"))
