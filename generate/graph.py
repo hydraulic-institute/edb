@@ -20,23 +20,35 @@ def build_content_graph(specials):
         # part of the content graph.
         if len([special for special in specials if dirName.endswith(special)]) > 0:
             continue
+
         # don't process root,
         if not dirName.endswith('./source'):
             meta = make_directory_node(dirName)
             graph.append(meta)
 
         for fname in fileList:
+            print("Gathering " + fname)
             if fname.endswith(".md") and fname != 'index.md':
+                print(" - Markdown (non-index)")
                 node = make_page_node(dirName, fname)
             elif not fname.endswith(".md"):
                 # This isn't markdown, check if it is in the static extension list.
+                print(" - Resource Node")
                 node = make_resource_node(dirName, fname)
+            elif fname.endswith(".md") and meta == None:
+                print(" - Processing root home page")
+                node = make_page_node(dirName, fname)
+            else:
+                # Index.md in a sub-directory - does not get processed further.
+                continue
 
             # If meta is not None, then this content is under a sub-directory
             # Otherwise, it's top level content (i.e. content.md)
             if meta != None:
                 meta['children'].append(node)
+                print(" - Adding ", node['slug'], "as child node of ", dirName)
             elif fname.endswith(".md"):
+                print(" - Adding directly to graph root.")
                 graph.append(node)
 
     print("------------------------------------")
@@ -61,7 +73,8 @@ def make_directory_node(dirName):
         "metadata": read_metadata(dirName+"/index.md"),
         "directory": True,
         "children": [],
-        "copy_only": False
+        "copy_only": False,
+        "is_topic": False
     }
 
 
@@ -81,7 +94,8 @@ def make_resource_node(dirName, fname):
         "name": fname,
         "metadata": dict(),
         "directory": False,
-        "copy_only": True
+        "copy_only": True,
+        "is_topic": False
     }
 
 
@@ -103,7 +117,8 @@ def make_page_node(dirName, fname):
         "metadata": metadata,
         "directory": False,
         "content": read_page_content(metadata, filename),
-        "copy_only": False
+        "copy_only": False,
+        "is_topic": True
     }
 
 

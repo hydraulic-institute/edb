@@ -1,3 +1,31 @@
+/* Handles hamburger button toggles */
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
+        });
+    }
+
+});
+
+
 Vue.component('chart', {
     props: ['chart_key', 'title', 'chart'],
     data: function () {
@@ -7,9 +35,7 @@ Vue.component('chart', {
     },
     template: '<div><h1>CHART {{title}}</h1><pre>{{JSON.stringify(chart_data, null, 2)}}</pre></div>',
     mounted: function () {
-        console.log("Mounted a Chart");
         this.chart_data = JSON.parse(this.chart);
-        console.log(this.chart_data);
         const x_axis = this.chart_data.x.data;
         x_axis.unshift('x')
         columns = [x_axis];
@@ -18,7 +44,6 @@ Vue.component('chart', {
             series_data.unshift(series.title);
             columns.push(series_data);
         }
-        console.log(x_axis)
         let config = {
             bindto: this.$el,
 

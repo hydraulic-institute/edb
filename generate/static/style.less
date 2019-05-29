@@ -1,6 +1,6 @@
 @primary-color: red;
 @hi_blue: #465b79;
-@hi_dark: #2c3e50;
+@hi_dark: rgb(52, 58, 64);
 @hi_light: #028da8;
 @er_accent: #e6af2e;
 @er_super_light: #eceef1;
@@ -12,12 +12,98 @@ body {
     color: @hi_dark;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+aside {
+    padding: 10px;
+}
+
+.formula {
+    visibility: hidden;
+}
+
 .content {
     padding: 30px;
     padding-left: 50px;
     padding-right: 50px;
     margin-top: 60px;
     transition: margin-left 0.25s;
+}
+
+#units-toggle {
+    padding-right: 10px;
+}
+
+#sidebar {
+    min-height: 100vh;
+    overflow: auto;
+    box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
+
+    background-color: @hi_blue;
+
+    .menu-label {
+        color: @er_accent;
+    }
+
+    .menu-list a {
+        color: @er_super_light;
+    }
+
+    .menu-list a:hover {
+        color: @hi_blue;
+    }
+
+
+}
+
+h1 {
+    font-size: 3rem !important;
+}
+
+h2 {
+    font-size: 2.5rem !important;
+}
+
+h3 {
+    font-size: 2rem !important;
+}
+
+.small {
+    font-size: 0.75rem !important;
+}
+
+.is-viewport-height {
+    height: 100vh;
+}
+
+.columns {
+    &.is-fullheight {
+        flex: 1;
+
+        .column {
+            overflow-y: auto;
+        }
+    }
+}
+
+
+
+#main-nav {
+    background-color: @hi_dark  !important;
+    box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
+
+    h2 {
+        color: @er_super_light  !important;
+        font-size: larger !important;
+        margin-left: 10px;
+    }
+
+    .navbar-burger {
+        color: @er_super_light  !important;
+    }
 }
 
 

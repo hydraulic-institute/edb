@@ -17,36 +17,98 @@
     
     {% endblock %}
 </head>
-<body>
+<body class="has-navbar-fixed-top">
     <div id='vue'>
-        <div id="units-toggle">
-            <span>${unit_set}</span>
-            <button @click='to_us'>US</button>
-            <button @click='to_metric'>Metric</button>
-        </div>
-        <div id="navigation">
-            <ul data-section="{{section}}" data-topic="{{topic}}">
-                {% for section in sections|sort(attribute='sort') %} 
-                    <li>
-                        <label>{{section['metadata']['title']}}</label>
-                        <ul>
-                            {% for topic in section['children']|sort(attribute='sort') %}
-                                {% if topic['metadata']['title']%}
-                                <li>
-                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
-                                </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div id="content" class="content">
-            {% block content %}{% endblock %}
+        <nav id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/images/logo-big.png" width="30" height="30">
+                    <h2> Engineering Data Book</h2>
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                
+                </div>
+
+                <div class="navbar-end">
+                    <div class="columns">
+                        <div class="navbar-item">
+                            <input class="input" type="text" placeholder="Search">
+                        </div>
+                        <div class="navbar-item">
+                            <div id="units-toggle" class="buttons">
+                                <button v-if='unit_set=="us"' class='button is-info' title='Click to change to metric units' @click='to_metric'>US</button>
+                                <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
+                            </div>
+                        </div>
+                        <aside class='navbar-item column is-narrow is-hidden-desktop'>
+                            <ul data-section="{{section}}" data-topic="{{topic}}">
+                                {% for section in sections|sort(attribute='sort') %} 
+                                    <li>
+                                        <label class="menu-label">{{section['metadata']['title']}}</label>
+                                        <ul>
+                                            {% for topic in section['children']|sort(attribute='sort') %}
+                                                {% if topic['metadata']['title']%}
+                                                <li class="menu-list">
+                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                                </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </aside>
+                </div>
+            </div>
+        </nav>
+        <div class="page columns is-fullheight">
+           <div id='sidebar' class="column is-narrow is-hidden-touch">
+                <aside id="navigation" class="menu">
+                    <ul data-section="{{section}}" data-topic="{{topic}}">
+                        {% for section in sections|sort(attribute='sort') %} 
+                            <li>
+                                <label class="menu-label">{{section['metadata']['title']}}</label>
+                                <ul>
+                                    {% for topic in section['children']|sort(attribute='sort') %}
+                                        {% if topic['metadata']['title']%}
+                                        <li class="menu-list">
+                                            <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+            
+            <div id="content" class="column content">
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
     <script src='/javascript/edb.js'></script>
-    
+    <script>
+        MathJax.Hub.Queue(
+            function () {
+                var formulas = document.getElementsByClassName('formula');
+                for (var i = 0; i < formulas.length; ++i) {
+                    var item = formulas[i];  
+                    item.style.visibility = 'visible';
+                }
+            }
+        );
+    </script>
+
 </body>
 </html>

@@ -267,8 +267,10 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_chart_blocks(path, node['path'], content)
     template = env.get_template('topic.jinja')
     sections = [dir for dir in graph if dir['directory'] == True]
+
     html = template.render(section="", topic=slug,
-                           content=content, sections=sections)
+                           content=content, sections=sections,
+                           related=[section for section in sections if section['path'] == node['path']])
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
@@ -286,17 +288,22 @@ def make_root(graph):
         so = None
         if node['slug'] == 'home':
             so = 'index'
+        print("Writing", node['name'], 'from ', node['path'])
         write_content(graph, node, so)
 
 
 def make_section(graph, section, parent=None):
+    print("Outputting into ", section['slug'])
     directory = os.path.join(OUTPUT_DIR, section['slug'])
     os.makedirs(directory)
+    print("Contents of Section", section['slug'])
+    print([t['slug'] for t in section['children']])
     for topic in section['children']:
-        # If this is a subsection... recursive time...
         if topic['directory']:
             print("Sub directories are currently unsupported.")
         else:
+            print("Writing sub-contents",
+                  topic['name'], "of", section['slug'])
             write_content(graph, topic, None, section['slug'])
 
 
@@ -309,6 +316,7 @@ def html(graph, specials):
     clean()
     make_specials(specials)
     os.makedirs(os.path.join(OUTPUT_DIR, "charts"))
+
     make_root(graph)
     for section in [dir for dir in graph if dir['directory'] == True]:
         make_section(graph, section)

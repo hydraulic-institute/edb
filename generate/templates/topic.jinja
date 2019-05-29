@@ -4,4 +4,24 @@
 {% endblock %}
 {% block content %}
     {{content}}
+
+    <nav class="navbar is-spaced" role="navigation">
+        <div id="topics" class="navbar-menu">
+            <div class="navbar-start">
+                {% for section in related|sort(attribute='sort') %} 
+                    {% for topic in section.children|sort(attribute='sort') %} 
+                        {% if topic['is_topic'] %}
+                        <a class="navbar-item" href="{{topic['slug']}}">{{topic['metadata']['title']}}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            
+            </div>
+            <div class="navbar-end">
+                
+            </div>
+           
+        </div>
+    </nav>
+    
 {% endblock %}
