@@ -15,7 +15,9 @@
                 {% for topic in section.children|sort(attribute='sort') %} 
                     {% if topic['is_topic'] %}
                     <div class='control has-text-centered'>
-                        <a class="button is-warning are-large is-fullwidth" href="{{topic['slug']}}">{{topic['metadata']['title']}}</a>
+
+                        
+                        <a class="button is-warning are-large is-fullwidth" href="{{topic['slug']}}.html">{{topic['metadata']['title']}}</a>
                     </div>
                     {% endif %}
                 {% endfor %}
