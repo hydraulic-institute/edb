@@ -109,6 +109,18 @@ syntax for HTML.
 ### Markdown Basics
 
 ### Units of Measure
+The application allows a user to switch between US customary units and metric units.  Tables and Charts (see below) can be created with both data sets, and the application will display the data according to the current unit set.
+
+There are situations where you will be placing quantity data within text itself, and you might want that text to reflect the current unit set as well.  This is supported through an extension HTML element - `units`.  As markdown supports HTML elements embedded in text, you may place these elements directly within any flowing text.  You will supply `us` and `metric` text - which typically would be the quantity and the unit label - and the app will automatically display the correct text based on the current unit set.
+
+**Example**
+The Fluid Property section has an Auxiliary Data page, which displays Enthalpy reference state.  You can see this implemented using the `units` element, embedded right into the markdown text.
+
+```
+H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."/>
+```
+
+Note that no actual unit conversion are ever being done by the app - you are responsible for adding the text for both unit sets.
 
 ### Supscripts and Superscript
 

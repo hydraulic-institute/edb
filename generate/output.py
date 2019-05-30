@@ -9,6 +9,7 @@ import csv
 import json
 import uuid
 
+
 from .common import parse_dict
 from six import StringIO
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -224,6 +225,10 @@ def process_chart_blocks(output_path, dir, markdown):
     return markdown
 
 
+def process_vue_components(content):
+    return content.replace('<units', "<units :units='unit_set'")
+
+
 def clean():
     if os.path.exists(OUTPUT_DIR):
         for root, dirs, files in os.walk(OUTPUT_DIR):
@@ -276,6 +281,10 @@ def write_content(graph, node, slug_override=None, path="."):
     # in the module perhaps...)
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
+
+    # Last step injects the Vue markup necessary for some components - such as <units> elements.
+    content = process_vue_components(content)
+
     template = env.get_template('topic.jinja')
     sections = [dir for dir in graph if dir['directory'] == True]
 

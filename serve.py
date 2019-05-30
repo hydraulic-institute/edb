@@ -30,19 +30,19 @@ class StoppableHTTPServer(http.server.HTTPServer):
 class BuilderEventHandler(FileSystemEventHandler):
     def on_moved(self, event):
         super(BuilderEventHandler, self).on_moved(event)
-        build.generate()
+        build.generate(False)
 
     def on_created(self, event):
         super(BuilderEventHandler, self).on_created(event)
-        build.generate()
+        build.generate(False)
 
     def on_deleted(self, event):
         super(BuilderEventHandler, self).on_deleted(event)
-        build.generate()
+        build.generate(False)
 
     def on_modified(self, event):
         super(BuilderEventHandler, self).on_deleted(event)
-        build.generate()
+        build.generate(False)
 
 
 def launch_web_server():

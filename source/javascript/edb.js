@@ -56,6 +56,20 @@ Vue.component('chart', {
     },
 });
 
+
+Vue.component('units', {
+    props: ['units', 'us', 'metric'],
+    data: function () {
+        return {
+            chart_data: null
+        };
+    },
+    template: '<span><span v-if="units==\'us\'"> {{us}} </span><span v-else> {{metric}} </span></span>',
+    mounted: function () {
+        console.log(this.units)
+    },
+});
+
 new Vue({
     el: '#vue',
     delimiters: ['${', '}'],
