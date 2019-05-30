@@ -40,16 +40,17 @@
 
                 <div class="navbar-end">
                     <div class="columns">
-                        <div class="navbar-item">
+                    
+                        <div class="navbar-item pad-horizontal">
                             <input class="input" type="text" placeholder="Search">
                         </div>
-                        <div class="navbar-item">
+                        <div class="navbar-item pad-horizontal">
                             <div id="units-toggle" class="buttons">
                                 <button v-if='unit_set=="us"' class='button is-info' title='Click to change to metric units' @click='to_metric'>US</button>
                                 <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
                             </div>
                         </div>
-                        <aside class='navbar-item column is-narrow is-hidden-desktop'>
+                        <aside class='sidebar navbar-item column is-hidden-desktop'>
                             <ul data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
@@ -71,7 +72,7 @@
             </div>
         </nav>
         <div class="page columns is-fullheight">
-           <div id='sidebar' class="column is-narrow is-hidden-touch">
+           <div class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <ul data-section="{{section}}" data-topic="{{topic}}">
                         {% for section in sections|sort(attribute='sort') %} 
@@ -87,7 +88,6 @@
                                                     <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
                                                 {% endif %}
                                             </li>
-                                        
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
