@@ -8,7 +8,7 @@ import htmlmin
 import csv
 import json
 import uuid
-
+import pprint
 
 from .common import parse_dict
 from six import StringIO
@@ -18,6 +18,9 @@ from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
+
+global pprinter
+pprinter = pprint.PrettyPrinter(indent=2)
 
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
@@ -287,10 +290,20 @@ def write_content(graph, node, slug_override=None, path="."):
 
     template = env.get_template('topic.jinja')
     sections = [dir for dir in graph if dir['directory'] == True]
+    related = [section['children'] for section in sections if section['path']
+               == node['path'] and section['slug'] != node['slug']]
+    # Related is a list of lists with the same section (it's always size 1)
+    related = [item for sublist in related for item in sublist]
+    # Related is not all topics under the same section, we need to filter out this node
+    related = [topic for topic in related if topic['name'] != node['name']]
 
+    # print("======================================")
+    # pprinter.pprint(related)
+
+    pprinter.pprint(node)
     html = template.render(section="", topic=slug, node=node,
                            content=content, sections=sections,
-                           related=[section for section in sections if section['path'] == node['path']], options=options)
+                           related=related, options=options)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
@@ -343,3 +356,24 @@ def html(graph, specials, production=False):
     make_root(graph)
     for section in [dir for dir in graph if dir['directory'] == True]:
         make_section(graph, section)
+
+    # Generate search json (haystack).
+    # There will be one entry per topic (content)
+    # ID:  full slug (url)
+    # title:  Page title (as appears in search listings)
+    # text: Page content
+    # Fuse.js will search title and text, and use the ID to identify topics.
+    # After search, the search results will be populated with the title/slug combo
+    # to render.
+
+    Topic = namedtuple('Topic', 'path slug title text')
+    haystack = list()
+
+    for section in [dir for dir in graph if dir['directory'] == True]:
+        for topic in [child for child in section['children'] if child['is_topic']]:
+            haystack.append(Topic(
+                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content']))
+
+    with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
+        json.dump([t._asdict() for t in haystack], outfile)
+        print(outfile)

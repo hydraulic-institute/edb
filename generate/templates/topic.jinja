@@ -6,23 +6,30 @@
     <div class='topic-content'>
         {{content}}
     </div>
-
+    {% if node['metadata']['author'] or node['metadata']['date'] %}
+        <section class='topic-source'>
+            {% if node['metadata']['author'] %}
+                <p class='author'> Contributed by {{node['metadata']['author']}}</p>
+            {% endif %}
+            {% if node['metadata']['date'] %}
+                <p class='date'> Last updated on {{node['metadata']['date']}}</p>
+            {% endif %}
+        </section>
+    {% endif %}
+    {% if related|length > 0 %}
     <div id="topics">
         <hr/>
         <h3>Related topics</h3>
         <div class='field is-grouped is-grouped-multiline'>
-            {% for section in related|sort(attribute='sort') %} 
-                {% for topic in section.children|sort(attribute='sort') %} 
+            {% for topic in related|sort(attribute='sort') %} 
                     {% if topic['is_topic'] %}
                     <div class='control has-text-centered'>
-
-                        
                         <a class="button is-warning are-large is-fullwidth" href="{{topic['slug']}}.html">{{topic['metadata']['title']}}</a>
                     </div>
                     {% endif %}
-                {% endfor %}
             {% endfor %}          
         </div>
     </div>
+    {% endif %}
     
 {% endblock %}

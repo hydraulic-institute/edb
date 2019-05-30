@@ -74,9 +74,50 @@ new Vue({
     el: '#vue',
     delimiters: ['${', '}'],
     data: {
-        unit_set: 'us'
+        unit_set: 'us',
+        // This will be loaded async
+        needle: null,
+        haystack: null,
+        search_options: {
+            threshold: 0.4,
+            shouldSort: true,
+            tokenize: true,
+            keys: [{
+                name: 'title',
+                weight: 0.5
+            }, {
+                name: 'slug',
+                weight: 0.3
+            }, {
+                name: 'text',
+                weight: 0.2
+            }],
+            id: 'path'
+        },
+        fuse: null,
+        search_results: undefined
     },
+    watch: {
+        needle: function () {
+            if (!this.needle || !this.needle.trim()) {
+                // Nothing in search box - kill the search results.
+                this.search_results = undefined;
+                if (typeof (Storage) !== "undefined") {
+                    localStorage.setItem("needle", "");
+                }
+                return;
+            }
+            if (this.haystack) {
+                // Scroll to top of screen to ensure the search results appear where they should.
 
+                this.search_results = this.fuse.search(this.needle);
+                console.log(this.search_results)
+                if (typeof (Storage) !== "undefined") {
+                    localStorage.setItem("needle", this.needle);
+                }
+            }
+        }
+    },
     mounted: function () {
         console.log("EDB mounted, loading unit set from local storage");
 
@@ -91,9 +132,46 @@ new Vue({
         } else {
             console.log("Local storage not available on this browser - unit sets will need to switch manually");
         }
+
+        // Download the search topic JSON file...
+        axios.get("/statics/haystack.json")
+            .then((response) => {
+                this.haystack = response.data;
+                this.fuse = new Fuse(this.haystack, this.search_options);
+                if (typeof (Storage) !== "undefined") {
+                    this.needle = localStorage.getItem("needle")
+                }
+                console.log(this.haystack);
+            }).catch((err) => {
+                console.error('Search is disabled, could not load topic list');
+            })
+
+
+
     },
 
     computed: {
+        search_display() {
+            return this.search_results !== undefined;
+        },
+        results_for_display() {
+            if (this.search_display) {
+
+                return this.search_results.map((r) => {
+                    const paths = this.haystack.map(g => g.path);
+                    console.log("Paths");
+                    console.log(paths);
+                    console.log("Result")
+                    console.log(r)
+                    const h = paths.indexOf(r);
+                    console.log(h)
+                    return this.haystack[h];
+                });
+
+            } else {
+                return []
+            }
+        },
         us_visible() {
             return this.unit_set === 'us';
         },

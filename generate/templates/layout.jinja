@@ -5,10 +5,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/statics/style.css">
     <link rel=icon href=/images/favicon.ico>
-     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=viewport content="width=device-width,initial-scale=1">
@@ -41,17 +43,38 @@
                 <div class="navbar-end">
                     <div class="columns">
                     
-                        <div class="navbar-item pad-horizontal">
-                            <input class="input" type="text" placeholder="Search">
-                        </div>
+                        
                         <div class="navbar-item pad-horizontal">
                             <div id="units-toggle" class="buttons">
-                                <button v-if='unit_set=="us"' class='button is-info' title='Click to change to metric units' @click='to_metric'>US</button>
+                                <button v-if='unit_set=="us"' class='button is-warning is-outlined' title='Click to change to metric units' @click='to_metric'>US</button>
                                 <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
                             </div>
                         </div>
+                        <div class="navbar-item pad-horizontal is-hidden-desktop">
+                            <div>
+                                <div class='field has-addons'>
+                                    <div class='control'>
+                                        <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                                    </div>
+                                    <div v-if='needle' class='control'>
+                                        <a class='button is-info' @click='needle=""'> &times; </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <aside class='sidebar navbar-item column is-hidden-desktop'>
-                            <ul data-section="{{section}}" data-topic="{{topic}}">
+                            <ul class='search-results' v-if='search_display'>
+                                <li class="menu-list" v-if='!search_results.length'>
+                                    <span class="menu-label">Nothing match was found</span>
+                                </li>
+                                <li class="menu-list" v-if='search_results.length'>
+                                    <span class="menu-label">${search_results.length} matches</span>
+                                </li>
+                                <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
+                                    <a :href="topic.path+'.html'">${topic.title}</a>
+                                </li>
+                            </ul>
+                            <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
                                         <label class="menu-label">{{section['metadata']['title']}}</label>
@@ -74,7 +97,28 @@
         <div class="page columns is-fullheight">
            <div class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
-                    <ul data-section="{{section}}" data-topic="{{topic}}">
+                    <div>
+                        <div class='field has-addons'>
+                            <div class='control'>
+                                <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                            </div>
+                            <div v-if='needle' class='control'>
+                                <a class='button is-info' @click='needle=""'> &times; </a>
+                            </div>
+                        
+                    </div>
+                    <ul class='search-results' v-if='search_display'>
+                        <li class="menu-list" v-if='!search_results.length'>
+                            <span class="menu-label">Nothing match was found</span>
+                        </li>
+                        <li class="menu-list" v-if='search_results.length'>
+                            <span class="menu-label">${search_results.length} matches</span>
+                        </li>
+                        <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
+                            <a :href="topic.path+'.html'">${topic.title}</a>
+                        </li>
+                    </ul>
+                    <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         {% for section in sections|sort(attribute='sort') %} 
                             <li>
                                 <label class="menu-label">{{section['metadata']['title']}}</label>

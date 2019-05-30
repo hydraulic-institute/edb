@@ -2,8 +2,10 @@
 @hi_blue: #465b79;
 @hi_dark: rgb(52, 58, 64);
 @hi_light: #028da8;
-@er_accent: #e6af2e;
+@er_accent: #ffdd57; //#e6af2e
 @er_super_light: #eceef1;
+@std_pad: 1rem;
+@lg_pad: 3rem;
 
 body {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -18,7 +20,7 @@ body {
 }
 
 aside {
-    padding: 10px;
+    padding: @std_pad;
 }
 
 .formula {
@@ -34,18 +36,21 @@ aside {
 }
 
 .topic-content {
-    padding: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: @std_pad;
+    padding-left: @lg_pad;
+    padding-right: @lg_pad;
+}
+
+.search-results,
+.topic-list {
+    margin-top: @std_pad;
 }
 
 #topics {
-    padding: 2rem;
+    padding: @std_pad;
+    padding-left: @lg_pad;
+    padding-right: @lg_pad;
     margin: 0px;
-
-    /*a {
-        font-size: 2rem;
-    }*/
 
     a {
         word-wrap: break-word !important;
@@ -53,7 +58,7 @@ aside {
 }
 
 #units-toggle {
-    padding-right: 10px;
+    padding-right: @std_pad;
 }
 
 .sidebar {
@@ -92,6 +97,17 @@ h3 {
     font-size: 0.75rem !important;
 }
 
+a.is-active {
+    background-color: @er_accent  !important;
+    color: @hi_dark  !important;
+}
+
+caption {
+    font-size: 2rem !important;
+    color: @hi_dark;
+    text-align: left;
+}
+
 .is-viewport-height {
     height: 100vh;
 }
@@ -107,8 +123,8 @@ h3 {
 }
 
 .pad-horizontal {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: @std_pad;
+    padding-right: @std_pad;
 }
 
 
@@ -128,6 +144,17 @@ h3 {
     }
 }
 
+
+.topic-source {
+    text-align: right;
+    font-size: smaller;
+    padding: @lg_pad;
+
+    .date {
+        font-style: italic
+    }
+
+}
 
 /**************************************
  * LaTex / Formula Styles

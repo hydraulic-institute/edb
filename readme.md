@@ -73,8 +73,12 @@ The prefixes 01, 02, 03 ensure the topics held under System Curves appear in the
 -----
 title: Worked Example
 date: April 16th, 2019
+author: Scott Frees
 -----
 ```
+
+Note that `date` and `author` are optional.  If you add them, they will appear at the bottom of the page.
+
 ## Directory and File Naming
 As described below, the title of directories and pages that *users* see in their browser is **not** determined by the file / directory names you create in the `source` directory - the public facing names are defined in the metadata blocks within the directories and files.
 

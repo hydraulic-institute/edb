@@ -61,8 +61,8 @@ This, then, give the following system curve data. This is a system that is domin
 title: Data Points
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
-x: 2
-series: 4, 3
+x: 1
+series: 3, 2
 series_title_index: 0
 =/=
 
