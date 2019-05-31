@@ -96,8 +96,8 @@ The following metadata attributes are supported:
 - **author** - optional text to indicate who wrote the page.  Will be injected at the end of the page.
 - **date** - optional date of last update.
 
-## Directory (Topic Headings)
-Each directory **must include a `index.md` file.  This file must include a meta data entry, but no additional content.  The meta data should at least include the title.
+## Directory (Section Headings)
+Each directory **must include a `index.md` file**.  This file must include a meta data entry, but no additional content.  The meta data should at least include the title.
 
 Note that each directory is prefixed with a number (i.e. 03_specific_speed).  The naming convention is used to define the order of the sections in the table of contents.  You can change the ordering simply by changing the directory names and rebuilding.
 
@@ -142,7 +142,7 @@ Note that `date` and `author` are optional.  If you add them, they will appear a
 ## Directory and File Naming
 As described below, the title of directories and pages that *users* see in their browser is **not** determined by the file / directory names you create in the `source` directory - the public facing names are defined in the metadata blocks within the directories and files.
 
-**It is absolutely critical that DO NOT INCLUDE spaces in the names of your files or folders.**
+**It is absolutely critical that you DO NOT INCLUDE spaces in the names of your files or folders.**
 
 Likewise, **DO NOT use underscore characters `_` anywhere in the file or directory** name OTHER than to separate the numeric prefix used to order the pages.
 
@@ -338,6 +338,15 @@ Notice the leading comma - this is because the first column on the first row is 
 Each subsequent row is either a heading or data.
 
 ### Charts
+Charts - currently only simply line/curve charts - are supported using the same type of CSV files you create tables with.  In many cases, the same CSV file you build a table out of may also be used for curves - and can be referenced that way.
+
+Chart blocs are delimited with `=/=` lines, similar to the table blocks.  The title of the chart is specified, along with `data-us` and `data-metric` CSV files - which must point to `csv` files within the same directory of the page.
+
+The X axis of the chart is defined by specifying the *column* within the CSV that contains the X axis data.  In the example below, assuming the CSV files are the same as the ones used in the table example above, the X axis is setup to correspond to "Flow Rate" - since that was the second data column.
+
+A chart can contain any number of series - specified by a list of columns.  In this case, we are creating a series for Velocity and Head Loss - based on the previous example.
+
+Finally, the series title index is the row number where the labels for each series should be derived.  Note that this is a 0-based index scheme - and does not include the first row in the CSV file which was used to define data types.  
 
 ```
 =/=
@@ -346,6 +355,7 @@ data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 2
 series: 4, 3
+series_title_index: 0
 =/=
 ```
 
@@ -432,6 +442,7 @@ The EDB is always built to the `build` directory.  The files contained there are
 To view the EDB while you are developing, got to [http://localhost:8081](http://localhost:8081).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
 
 ## Version control with `git`
+It is critical that we all remain in sync with eachother while working on the EDB.  Even if only one person is creating content, developers will be creating code enhancements to the application.  Therefore, you must take care to always ensure you keep up to date with changes, and also always upload your changes regularly.  When used properly, `git` will allow us to roll back any mistakes that may be made.  It's important to understand that pushing your changes to `git` does **not** cause the content on the EDB website to change - so don't hesitate to push changes frequently!
 
 ### Keeping up to date
 Before you begin working on the EDB each day (or more frequently), it is a good idea to ensure you have the latest content and application code.  This may include bug fixes to the application, feature enhancments, or additional content created by others.  To get up to date, issue the following command:
@@ -489,7 +500,7 @@ Once that completes successfully, you can go back to working on other things.
 The HI EDB is deployed to an Amazon S3 bucket, and served to the public internet from there.
 
 ### S3 Configuration
-*The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose*
+*The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose - it is not something you need to do yourself*
 - Create bucket - named `hi-edb-beta`
 - Region:  US East (N. Virginia)
 - Next
@@ -537,4 +548,6 @@ The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amaz
 
 ### Deploying to Production
 Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
+
+*More details to come on production deployment - we have not setup the URL or hosting site yet*.
 
