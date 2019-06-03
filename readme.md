@@ -20,7 +20,7 @@ Once you have access, open the Command Prompt and use the `cd` command to naviga
 Next, clone the repository with the following command:
 
 ```
-git clone https://github.com/freezer333/hi-edb.git
+git clone https://github.com/hydraulic-institute/edb
 ```
 
 This will create a directory called `hi-edb` under your `C:\projects` directory.
