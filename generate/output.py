@@ -300,7 +300,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # print("======================================")
     # pprinter.pprint(related)
 
-    pprinter.pprint(node)
+    #pprinter.pprint(node)
     html = template.render(section="", topic=slug, node=node,
                            content=content, sections=sections,
                            related=related, options=options)
@@ -376,4 +376,3 @@ def html(graph, specials, production=False):
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
         json.dump([t._asdict() for t in haystack], outfile)
-        print(outfile)
