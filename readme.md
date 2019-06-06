@@ -47,10 +47,14 @@ After you install Python, close the Command Prompt (if you already have it open)
 
 Next, execute the following commands one by one. There are dependencies for the EDB application itself. The `pip3 install` commands will contain a good deal of output - please make sure each completes successfully.
 
+*Note, depending on how Python was installed, particularly on Windows, you may need to type `python`, and not `python3` on the command line.  Same with `pip` / `pip3`.*
+
 ```
 pip3 install virtualenv
 python3 -m venv env
-source env/bin/activate
+
+env\Scripts\activate.bat <- # IF USING WINDOWS
+source env/bin/activate  <- # IF USING LINUX or MAC
 
 pip3 install Jinja2   
 pip3 install lesscpy
@@ -60,6 +64,16 @@ pip3 install htmlmin
 pip3 install awscli --upgrade --user
 pip3 install s3-deploy-website
 ```
+**Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
+
+To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.
+
+```
+set PATH=%PATH%;C:\your\path\here\
+```
+*Do not deal with the PATH issue unless your install is not working.  Make sure you use the correct `pip`/`pip3` combination (`pip` with `python`, `pip3` with `python3`)
+
+### Verify Setup
 There is already content in the EDB, so as a quick check that you have everythign setup correctly on your machine, issue the following command:
 
 ```
