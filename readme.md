@@ -276,6 +276,10 @@ The block will compile and be typset as the following:
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
 
+The 00_latex.md page under "System Curves" was developed to help you learn the basics of using LaTeX.  Obviously we will delete this page from the EDB, but keep it around until you are comfortable with LaTex.
+
+[http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/system-curves/latex.html](http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/system-curves/latex.html)
+
 You may find the following links instructive - however remember that there is a lot more to LaTeX than what you need for EDB development.
 
 - [http://www.personal.ceu.hu/tex/cookbook.html](http://www.personal.ceu.hu/tex/cookbook.html)
