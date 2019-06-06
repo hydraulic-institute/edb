@@ -27,7 +27,7 @@ def build_content_graph(specials):
             graph.append(meta)
 
         for fname in fileList:
-            print("Gathering " + fname)
+            print("Compiling " + fname)
             if fname.endswith(".md") and fname != 'index.md':
                 print(" - Markdown (non-index)")
                 node = make_page_node(dirName, fname)
