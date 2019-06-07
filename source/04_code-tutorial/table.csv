@@ -1,8 +1,15 @@
 ,numeric,numeric
-heading,A,B
-data,1,23
-data,2,25
-data,3,11
-data,4,67
-data,5,34
-data,6,99
+heading,Temperature (F),Pressure (psi)
+data,0,50
+data,5,70
+data,10,90
+data,15,130
+data,20,170
+data,25,190
+data,30,200
+data,35,220
+data,40,250
+data,45,280
+data,50,310
+data,55,330
+data,60,350
