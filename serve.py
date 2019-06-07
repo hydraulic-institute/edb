@@ -10,7 +10,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 
-PORT = 8081
+PORT = 8080
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 WEB_DIR = os.path.join(os.path.dirname(__file__), 'build')
 SOURCE_DIR = os.path.join(BASE_DIR, 'source')
