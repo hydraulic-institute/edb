@@ -29,3 +29,28 @@ Using head, the performance of the pump can be shown independent of the density 
 ![Head and Flow Curve](./flow-vs-head.png "Head and Flow Curve")
 
 ## Efficiency Curve
+
+Pump efficiency is shown as a percentage on most pump curves. Pump efficiency is defined by the equation below:
+
+=+=
+$$ η = {HP_{fluid} \over HP_{shaft}}  $$
+=+=
+
+The efficiency curve shows how efficient a pump is at various flow rates. The flow rate where efficiency is at a maximum
+is called the pump’s best efficiency point (BEP). BEP is an important operating point that is further described later in this section.
+
+![Efficiency Curve](./flow-vs-head-efficiency.png "Efficiency Curve")
+
+## Horsepower Curve
+
+The horsepower curve shows the amount of brake, or shaft, horsepower required for different flow rates. BHP can be determined by the following equation where Q is flow in GPM:
+
+=+=
+$$ BHP = {{Q * h * SG} \over {3960 * η}} $$
+=+=
+
+BHP can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
+
+=+=
+$$ BHP = {HP_{fluid} \over η}  $$
+=+=
