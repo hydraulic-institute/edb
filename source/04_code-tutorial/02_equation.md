@@ -1,8 +1,8 @@
 -----
-title:   Equation Practice
+title:   Equation (Practice)
 date:  June 7, 2019
 -----
-## Equations
+## Equation
 
 Kinetic Energy Equation:
 =+=

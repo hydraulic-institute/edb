@@ -1,5 +1,5 @@
 -----
-title:   Table 
+title:   Table (Practice)
 date:  June 7, 2019
 -----
 
