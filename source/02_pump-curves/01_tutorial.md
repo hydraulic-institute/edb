@@ -54,3 +54,123 @@ BHP can also be determined if the amount of power absorbed by the fluid and effi
 =+=
 $$ BHP = {HP_{fluid} \over η}  $$
 =+=
+
+The horsepower curve is important, as it allows proper selection of a driver for the pump. 
+
+![Horsepower Curve](./hp-curve.png "Horsepower Curve")
+
+## Net Positive Suction Head Required (NPSHr) Curve
+
+The final curve typically shown on a pump performance chart is the NPSHr for different flow rates. NPSHr is the minimum NPSH needed to achieve the specified performance 
+at the specified flow rate. NPSH is further defined in the pump principles section.
+
+![NPSHr Curve](./npshr-curve.png "NPSHr Curve")
+
+
+## Operating Regions and Points
+
+![Operating Ranges](./op-ranges.png "Operating Ranges")
+
+**Best efficiency point (BEP):**
+
+A pump’s best efficiency point is defined as the flow rate at which the hydraulic efficiency of a pump is at its maximum. Typically, a pump is specified to have
+its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
+is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
+of the impeller vanes at entry.
+
+**Preferred Operating Region (POR):**
+
+The POR is where the pump is designed to run with high efficiency and reliability. Flow induced vibrations and internal hydraulic loading is low in this region. 
+Depending on the specific speed of the pump, which is further defined in the pump principles section,the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
+
+**Allowable Operating Region (AOR):**
+
+The AOR is the flow range at which the pump can be run with acceptable service life. The pump manufacturer should be consulted to define this region. Typically, operating 
+intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions, and the graph below shows the types of 
+issues that can occur when operating outside of the POR and AOR.
+
+**Shut Off and Runout:**
+
+These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve.
+Shut off is the point at which flow is zero. Operating at this point for more than a few seconds can cause serious mechanical issues. Runout is the point at which
+flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
+operating pumps.
+
+![Flows](./flows.png "Flows")
+
+## Affinity Laws
+
+Under the assumption that both pumps maintain the same efficiencies, the Affinity Laws show the relationships between pump parameters (flow, pressure/head, power) and pump 
+characteristics (speed and impeller size). There are two parts to the Affinity Laws which vary by application; a change in speed while maintaining
+a constant impeller size or a change in impeller size while maintaining a constant speed.
+
+**1. Changing Speed / Constant Impeller Size**
+
+As seen below Flow (Q), Pressure (h), and Power (P) are all proportional to the Speed (n):
+
+=+=
+$$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
+=+=
+=+=
+$$ {h_2 \over h_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2  $$
+=+=
+=+=
+$$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
+=+=
+
+**2. Changing Impeller Size / Constant Speed**
+
+As seen below Flow (Q), Pressure (h), and Power (P) are all proportional to the Impeller Size (D):
+
+=+=
+$$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
+=+=
+=+=
+$$ {h_2 \over h_1} = ({D_2 \over D_1})^2 = ({Q_2 \over Q_1})^2  $$
+=+=
+=+=
+$$ {P_2 \over P_1} = ({D_2 \over D_1})^3 = ({Q_2 \over Q_1})^3  $$
+=+=
+
+**Speed Reduction and Impeller Trimming**
+
+Part 1 of the affinity laws is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
+therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
+which is the reduction of the impeller diameter.
+
+## Pump Fundamentals: Parallel and Series Pump Implications
+
+Two or more pumps in a system can be placed either in parallel or series.  In parallel, a system consists of two or more pumps that are configured such that each 
+draw from the same suction reservoir, wet well, or header, and each discharge to the same discharge reservoir or header.  In series, a system consists of two or more 
+pumps that are configured such that the discharge of one pump feeds the suction of a subsequent pump.
+
+**Pumps in Parallel**
+
+Pumps operating in parallel allow the pumping system to deliver greater flows than is possible with just one such pump.  To determine the composite pump curve
+of two or more pumps operating in parallel, at each head value, the flowrate of each pump must be added together to obtain the composite flowrate.
+
+![Composite Pump Curve](./comp-pump-curve.png "Composite Pump Curve")
+
+The amount of increased flow that occurs within the system depends on both the shape of the system curve and shape of the pump curves.  The composite pump curve intersects the 
+system curve at different operating points yielding different flowrates. As more pumps are called to operate, the flow will increase accordingly:
+
+![Three Pump Curves](./three-pump-curves.png "Three Pump Curves")
+
+It should be noted, however, that unless the system curve is completely flat (which means friction and other dynamic losses are negligible), bringing a second 
+pump on-line does not double the flow rate. The increased flow will be something less than double. How much less depends on the steepness of the system curve.
+
+**Pumps in Series**
+
+While pumps placed in parallel provide greater flow capabilities at the same head as one pump operating individually, pumps placed in series provide greater head capabilities at the same flowrate.
+
+A composite pump curve representing pumps in series can be generated by adding the individual head values of the pumps for a given flow.  Plotting this sum at various flow values will yield a 
+composite pump curve for the group of pumps.  Figure 3 shows a composite pump curve for two and three identically sized pumps operating in series:
+
+![Three Pump Composite Curve](./three-pump-composite.png "Three Pump Composite Curve")
+
+Pumps operating in series allow the pumping system to deliver greater heads than is possible with just one such pump.  This allows a pump station to be designed to satisfy systems that
+require large discharge pressures that may not be practical with one pump.  Where certain applications require, it may also allow a pump station to address a wide variation in system pressures
+by staging the number of operating pumps.  Figure 4 shows how applying a configuration with pumps in series to a system with a steep system curve may allow the pumps to address different head
+requirements so long as inter-stage discharge piping is configured to permit so.
+
+![Steep System Curve](./steep-system-curve.png "Steep System Curve")
