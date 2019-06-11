@@ -5,7 +5,7 @@ date:  June 10th, 2019
 
 # Worked Examples
 
-## Worked Example 1)
+## Worked Example 1
 
 A booster pump is designed to operate at 1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
@@ -57,7 +57,7 @@ $$ h_2 = 173 ft. $$
 
 ![Pump Curve](./pump-curve-plot.png "Pump Curve")
 
-## Worked Example 2)
+## Worked Example 2
 
 A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM @ 80 ft. During installation it was found the TDH was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow.

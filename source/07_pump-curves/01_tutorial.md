@@ -71,25 +71,25 @@ at the specified flow rate. NPSH is further defined in the pump principles secti
 
 ![Operating Ranges](./op-ranges.png "Operating Ranges")
 
-**Best efficiency point (BEP):**
+- **Best efficiency point (BEP):**
 
 A pump’s best efficiency point is defined as the flow rate at which the hydraulic efficiency of a pump is at its maximum. Typically, a pump is specified to have
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
 of the impeller vanes at entry.
 
-**Preferred Operating Region (POR):**
+- **Preferred Operating Region (POR):**
 
 The POR is where the pump is designed to run with high efficiency and reliability. Flow induced vibrations and internal hydraulic loading is low in this region. 
 Depending on the specific speed of the pump, which is further defined in the pump principles section,the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
-**Allowable Operating Region (AOR):**
+- **Allowable Operating Region (AOR):**
 
 The AOR is the flow range at which the pump can be run with acceptable service life. The pump manufacturer should be consulted to define this region. Typically, operating 
 intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions, and the graph below shows the types of 
 issues that can occur when operating outside of the POR and AOR.
 
-**Shut Off and Runout:**
+- **Shut Off and Runout:**
 
 These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve.
 Shut off is the point at which flow is zero. Operating at this point for more than a few seconds can cause serious mechanical issues. Runout is the point at which
