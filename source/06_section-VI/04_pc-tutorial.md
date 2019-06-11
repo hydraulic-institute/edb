@@ -1,5 +1,5 @@
 -----
-title:   Tutorial
+title:   Pump Curve Tutorial
 date:  June 10th, 2019
 -----
 
@@ -109,12 +109,15 @@ a constant impeller size or a change in impeller size while maintaining a consta
 As seen below Flow (Q), Pressure (h), and Power (P) are all proportional to the Speed (n):
 
 =+=
+<span class= equation-label >(1.1)</span>
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 =+=
 =+=
+<span class= equation-label >(1.2)</span>
 $$ {h_2 \over h_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2 $$
 =+=
 =+=
+<span class= equation-label >(1.3)</span>
 $$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
 =+=
 
@@ -123,12 +126,15 @@ $$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
 As seen below Flow (Q), Pressure (h), and Power (P) are all proportional to the Impeller Size (D):
 
 =+=
+<span class= equation-label >(2.1)</span>
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 =+=
 =+=
+<span class= equation-label >(2.2)</span>
 $$ {h_2 \over h_1} = ({D_2 \over D_1})^2 = ({Q_2 \over Q_1})^2  $$
 =+=
 =+=
+<span class= equation-label >(2.3)</span>
 $$ {P_2 \over P_1} = ({D_2 \over D_1})^3 = ({Q_2 \over Q_1})^3  $$
 =+=
 

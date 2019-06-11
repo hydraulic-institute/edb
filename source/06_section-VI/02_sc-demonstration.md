@@ -1,5 +1,5 @@
 -----
-title:   Demonstration
+title:   System Curve Demonstration
 date:  April 16th, 2019
 -----
 

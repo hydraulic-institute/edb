@@ -1,5 +1,5 @@
 -----
-title:   Worked Examples
+title:   Pump Curve Worked Examples
 date:  June 10th, 2019
 -----
 
@@ -25,7 +25,7 @@ $$ n_2= 1566 RPM $$
 
 **Calculate New Flow Values**
 
-Using affinity law equations, calculate the new values (repeat until you convert all points under the flow column):
+Using equation 1.1, calculate the new values (repeat until you convert all points under the flow column):
 
 =+= 
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
@@ -45,7 +45,7 @@ $$ Q_2 = 360 GPM $$
 
 **Calculate New TDH Values**
 
-Using affinity law equations, calculate the new values (repeat until you convert all points under the TDH column):
+Using equation 1.2, calculate the new values (repeat until you convert all points under the TDH column):
 
 =+=
 $$ {h_2 \over h_1} = ({n_2 \over n_1})^2 $$
@@ -55,14 +55,17 @@ $$ h_2 = 173 ft. $$
 
 **Plot Pump Curve**
 
+
 ![Pump Curve](./pump-curve-plot.png "Pump Curve")
+![Table 2](./table-2.png "Table 2")
+
 
 ## Worked Example 2
 
 A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM @ 80 ft. During installation it was found the TDH was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow.
 
-**Calculate the new impeller diameter**
+**Calculate the New Impeller Diameter**
 
 During low flow conditions the speed of the pump is reduced by 10%.
 

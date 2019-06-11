@@ -1,5 +1,5 @@
 -----
-title:   Worked Example
+title:   System Curve Worked Example
 date:  April 16th, 2019
 -----
 

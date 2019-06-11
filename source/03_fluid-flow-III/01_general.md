@@ -10,7 +10,8 @@ date: June 10th, 2019
 The resistance to the incompressible flow of any fluid in any pipe may be computed from the equation:
 
 =+=
-(1) $$ h(f) = f * {L \over D} * {v^2 \over 2g} $$ 
+<span class= equation-label >(1)</span>
+$$ h(f) = f * {L \over D} * {v^2 \over 2g} $$ 
 =+=
 
 wherein
@@ -27,7 +28,8 @@ wherein
 The Colebrook Equation
 
 =+=
-(2) $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over R * \sqrt f}]) $$
+<span class= equation-label >(2)</span>
+$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over R * \sqrt f}]) $$
 =+=
 
 offers a reliable means for computing the friction factor (*f*) to be used in Equation (1).
@@ -35,7 +37,8 @@ offers a reliable means for computing the friction factor (*f*) to be used in Eq
 The Reynolds Number (R) is given by the equation:
 
 =+=
-(3) $$ R = {V * D \over v}  $$
+<span class= equation-label >(3)</span>
+$$ R = {V * D \over v}  $$
 =+=
 
 wherein

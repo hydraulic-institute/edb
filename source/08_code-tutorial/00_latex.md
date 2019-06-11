@@ -175,14 +175,5 @@ $$ {1 \over \sqrt f} = -2 \log({\epsilon \over 2.7D_h} + {2.51 \over Re \sqrt f}
 ```
 
 =+=
-<span class='equation-label'>Eq. 1</span>
 $$ {1 \over \sqrt f} = -2 \log({\epsilon \over 2.7D_h} + {2.51 \over Re \sqrt f}) $$
 =+=
-
-## Numbered Equations
-Often within text content you will want to embed references to equations.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `#` in the first line within the equation block:
-
-=+= 
-
-$$ \sqrt {x + 9} $$
-=+= 
