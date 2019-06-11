@@ -112,7 +112,7 @@ As seen below Flow (Q), Pressure (h), and Power (P) are all proportional to the 
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 =+=
 =+=
-$$ {h_2 \over h_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2  $$
+$$ {h_2 \over h_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2 $$
 =+=
 =+=
 $$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
