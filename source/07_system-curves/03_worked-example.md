@@ -8,7 +8,8 @@ Consider the system below and develop a system curve for the flows from 0 to 300
 
 ![System Curve](system-curves-001.png "System Curve")
 
-## Determine the static head
+**Determine the Static Head**
+
 Since both tanks have the same surface pressure, the static head is only dependent on the difference in surface elevation.
 
 =+=
@@ -19,12 +20,14 @@ $$\Delta h_{static} = (z_{destination}-z_{supply}) $$
 $$\Delta h_{static} = (289_{ft}-24_{ft}) = 265_{ft} $$
 =+=
 
-## Determine the pipe friction and properties
+**Determine the Pipe Friction and Properties**
+
 To simplify this example, we will consider the friction factor to be constant at 0.02. In general, the friction factor would vary as the flow rate (velocity) varies. Additionally, the flow would be laminar for low velocities. These considerations should be taken into account when calculating the pipe losses.
 
 A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet.
 
-## Determine the minor or component loss
+**Determine the Minor or Component Loss**
+
 The losses for the components can be found in tables. In this example we have the following:
 
 - Regular flanged elbow (2), k = 0.31 each
@@ -48,7 +51,8 @@ $$\Delta h_f = {({0.02 * 155_{ft} \over 03355_{ft}} + 3.59) * v^2 \over 2 * 32.1
 $$\Delta h_f = 1.22v^2$$
 =+=
 
-## Determine the system curve
+**Determine the System Curve**
+
 The system curve can be calculated by varying the flow rate (velocity) using the above values. The following can be used to convert a flow rate in gpm to a velocity in ft/sec<sup>2</sup>.
 
 =+=
