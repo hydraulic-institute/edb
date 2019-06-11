@@ -286,6 +286,16 @@ You may find the following links instructive - however remember that there is a 
 - [https://en.wikibooks.org/wiki/LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
 - [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
 
+#### Numbered Equations
+Often within text content you will want to embed references to equations.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<span>` element with class `equation-label` in the first line within the equation block:
+
+```
+=+= 
+<span class='equation-label'>Eq. 1</span>
+$$ \sqrt {x + 9} $$
+=+= 
+```
+
 ### Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
 

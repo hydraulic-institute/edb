@@ -182,10 +182,11 @@ def replace_chart_block(output_path, dir, chart_text):
         key=key, meta=chart, units='us', chart=json.dumps(us))
     metric_html = template.render(
         key=key, meta=chart, units='metric', chart=json.dumps(metric))
-    return us_html+metric_html
+    return f"<div class='chart-title'>{chart['title']}</div>{us_html}{metric_html}"
 
 
 def process_latex_blocks(markdown):
+
     delim = "=+="
     start = markdown.find(delim)
     while (start >= 0):
@@ -300,7 +301,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # print("======================================")
     # pprinter.pprint(related)
 
-    #pprinter.pprint(node)
+    # pprinter.pprint(node)
     html = template.render(section="", topic=slug, node=node,
                            content=content, sections=sections,
                            related=related, options=options)
