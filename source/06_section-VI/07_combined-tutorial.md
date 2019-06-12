@@ -60,3 +60,29 @@ It also shows that the flow in the system is less than the flow in the system wi
 
 The plot also is useful in determining the margin available on the control valve. Having sufficient, but not excessive, pressure drop across most control valves is required so the valve can properly control 
 to the setpoint.
+
+![](./reading-4.png "")
+
+## Changing the Setpoint on an Active Control Valve
+
+Changing the setpoint (or control point) on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
+control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
+required for the pump will increase.
+
+![](./reading-5.png "")
+
+## Changing the Pump Speed with an Active Control Valve
+
+When the pump speed is changed and there is an active control valve in the system, the difference in head produced by the pump will be reflected in the difference in 
+loss across the control valve, since the system flow rate has not changed.
+
+![](./reading-6.png "")
+
+## Pump Sizing in the Real World
+
+Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the FAQ section here. (**add link?**)
+
+
+
+
