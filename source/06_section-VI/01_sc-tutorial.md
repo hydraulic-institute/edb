@@ -74,9 +74,32 @@ Component (minor) losses can be summed together with the pipe losses to determin
 $$\Delta h_f = {({fL \over D} + K) * v^2 \over 2g}$$
 =+=
 
+## Shape of the System Curve
+
+In some systems the frictional losses will be dominate part of the overall head loss. These systems will have a steeper system curve.
+
+![Elevation Changes](elev-changes.png "Elevation Changes")
+
+![](friction-dom.png "")
+
+In other systems the elevation change, or static head, will be dominate part of the overall head loss. The system curve in this case will start at a higher
+value at zero flow and will tend to be flatter.
+
+![](large-elev.png "")
+![](static-dom.png "")
+
+It is important to accurately characterize the system curve to select the correct pump for various operating conditions as the operating point of your system will be dependent
+on the intersection between the system curve and the pump curve.
+
 ## System Curve
+
 The system curve represents the sum of the static, piping and minor head losses over a range of flow rates and can be represented using the following equation:
 
 =+=
-$$\Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{supply}) \over \rho g} + {({fL \over D} + K) * v^2 \over 2g}$$
+$$\Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{supply}) \over \rho g} + {({fL \over D} + K) * {v^2 \over 2g}}$$
 =+=
+
+## System Curve Application
+
+Real-world applications tend to consider a range or family of system curves. This would bracket the range of liquid levels,
+operating pressures, valve arrangements, etc. 

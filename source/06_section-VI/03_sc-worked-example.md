@@ -4,7 +4,7 @@ date:  April 16th, 2019
 -----
 
 # Worked Example
-Consider the system below and develop a system curve for the flows from 0 to 300gpm.
+Consider the system below and develop a system curve for the flows from 0 to 300 GPM.
 
 ![System Curve](system-curves-001.png "System Curve")
 
@@ -17,7 +17,7 @@ $$\Delta h_{static} = (z_{destination}-z_{supply}) $$
 =+=
 
 =+=
-$$\Delta h_{static} = (289_{ft}-24_{ft}) = 265_{ft} $$
+$$\Delta h_{static} = (289{feet}-24{feet}) = 265{feet} $$
 =+=
 
 **Determine the Pipe Friction and Properties**
@@ -53,13 +53,29 @@ $$\Delta h_f = 1.22v^2$$
 
 **Determine the System Curve**
 
-The system curve can be calculated by varying the flow rate (velocity) using the above values. The following can be used to convert a flow rate in gpm to a velocity in ft/sec<sup>2</sup>.
+The system curve can be calculated by varying the flow rate (velocity) using the above values. Combining the static and dynamic (pipe friction and minor losses)
+we have the following as a function of velocity.
+
+=+=
+$$\Delta h_{system} = \Delta h_{static} + \Delta h_{f}$$
+=+=
+=+=
+$$\Delta h_{system} = 265{feet} + 1.22v^2$$
+=+=
+
+The following can be used to convert a flow rate in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches).
 
 =+=
 $$v = 0.002228*Q*({4 \over \pi D^2})$$
 =+=
 
-This, then, give the following system curve data. This is a system that is dominated by the static head.
+Substituting this in for velocity and using the 4-inch pipe (ID = 4.026 inches) we can get the following as the system curve equation as a function
+of flow rate in gpm.
+=+=
+$$\Delta h_{system} = 265{feet} + {{7.75e^{-4}}{Q^2}}$$
+=+=
+
+This, then, give the following system curve data. This is a system that is dominated by the static head (there is a lift of 265 feet compared to little loss in piping and components). 
 
 =/=
 title: Data Points
