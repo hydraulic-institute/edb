@@ -1,5 +1,5 @@
 -----
-title:   System Curve Tutorial
+title:   System Curves Tutorial
 date:  June 4, 2019
 -----
 

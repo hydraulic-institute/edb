@@ -1,5 +1,5 @@
 -----
-title:   Water Saturation Curves
+title: Water Saturation Curves
 date:  May 30th, 2019
 -----
 

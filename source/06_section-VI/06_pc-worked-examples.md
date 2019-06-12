@@ -1,6 +1,6 @@
 -----
-title:   Pump Curve Worked Examples
-date:  June 10th, 2019
+title: Pump Curves Worked Examples
+date: June 10th, 2019
 -----
 
 # Worked Examples

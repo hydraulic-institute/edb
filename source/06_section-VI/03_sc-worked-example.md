@@ -1,5 +1,5 @@
 -----
-title:   System Curve Worked Example
+title:   System Curves Worked Example
 date:  April 16th, 2019
 -----
 
@@ -44,7 +44,7 @@ $$\Delta h_f = {({fL \over D} + K) * v^2 \over 2g}$$
 =+=
 
 =+=
-$$\Delta h_f = {({0.02 * 155_{ft} \over 03355_{ft}} + 3.59) * v^2 \over 2 * 32.174_{ft/sec^2}}$$
+$$\Delta h_f = {({0.02 * 155_{ft} \over 03355_{ft}} + 3.59) * v^2 \over 2 * 32.174 {ft/sec^2}}$$
 =+=
 
 =+=

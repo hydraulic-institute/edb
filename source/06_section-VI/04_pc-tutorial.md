@@ -1,5 +1,5 @@
 -----
-title:   Pump Curve Tutorial
+title:   Pump Curves Tutorial
 date:  June 10th, 2019
 -----
 

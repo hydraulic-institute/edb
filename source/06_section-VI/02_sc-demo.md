@@ -1,9 +1,11 @@
 -----
-title:   System Curve Demonstration
+title:   System Curves Demonstration
 date:  April 16th, 2019
 -----
 
 # Educational Demonstration
+
+*(Demonstrator will be placed here)*
 
 This education demonstrator will show how changing the static and frictional losses changes the system curve.
 

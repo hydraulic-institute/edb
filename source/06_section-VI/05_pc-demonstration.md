@@ -1,7 +1,9 @@
 -----
-title:   Pump Curve Demonstration
+title:   Pump Curves Demonstration
 date:  June 10th, 2019
 -----
+
+*(Demonstrator will be placed here)*
 
 # Educational Demonstration
 
