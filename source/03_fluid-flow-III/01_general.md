@@ -87,3 +87,11 @@ No allowance has been made for age, differences in diameter resulting from manuf
 tolerances, or any abnormal conditions of interior surface. Any factor of safety must be estimated
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
+
+## Section 5 – Valves and Fittings
+
+The resistance to flow caused by a valve or fitting may be computed from the equation :
+
+=+=
+$$h = k{{V^2}/{2g}}$$
+=+=
