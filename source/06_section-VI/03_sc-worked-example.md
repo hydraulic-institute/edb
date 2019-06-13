@@ -4,7 +4,7 @@ date:  April 16th, 2019
 -----
 
 # Worked Example
-Consider the system below and develop a system curve for the flows from 0 to 300 GPM.
+<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m3/h."/>
 
 ![System Curve](system-curves-001.png "System Curve")
 
@@ -24,7 +24,8 @@ $$\Delta h_{static} = (289{feet}-24{feet}) = 265{feet} $$
 
 To simplify this example, we will consider the friction factor to be constant at 0.02. In general, the friction factor would vary as the flow rate (velocity) varies. Additionally, the flow would be laminar for low velocities. These considerations should be taken into account when calculating the pipe losses.
 
-A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet.
+<units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." 
+metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.2604 mm. The overall pipe length in this example is 77.724 meters."/>
 
 **Determine the Minor or Component Loss**
 
@@ -69,13 +70,16 @@ The following can be used to convert a flow rate in gpm (gallons per minute) to 
 $$v = 0.002228*Q*({4 \over \pi D^2})$$
 =+=
 
-Substituting this in for velocity and using the 4-inch pipe (ID = 4.026 inches) we can get the following as the system curve equation as a function
+Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 102.2604 mm)"/> we can get the following as the system curve equation as a function
 of flow rate in gpm.
 =+=
 $$\Delta h_{system} = 265{feet} + {{7.75e^{-4}}{Q^2}}$$
 =+=
 
-This, then, give the following system curve data. This is a system that is dominated by the static head (there is a lift of 265 feet compared to little loss in piping and components). 
+This, then, give the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to 
+little loss in piping and components)." metric = "there is a lift of 77.724 meters compared to little loss in piping and components)."/> 
+
+ 
 
 =/=
 title: Data Points

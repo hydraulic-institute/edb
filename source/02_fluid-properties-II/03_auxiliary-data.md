@@ -6,7 +6,7 @@ date:  May 30th, 2019
 
 # Saturation Properties for Water Auxiliary Data
 
-## Reference States, default for fluid
+## Reference States, Default for Fluid
 
 **Enthalpy**
 H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."/>
@@ -23,7 +23,8 @@ data-metric: auxiliary-metric.csv
 
 
 ## Equation of States
-The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, and 0.001% at other liquid states at pressures up to 10 MPa and temperatures to 423 K. In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but are generally less than 0.1% in density except at extreme conditions. 
+The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, and 0.001% at other liquid states at pressures up to 10 MPa (1450 psi) and temperatures to 423 K (761.4 R). 
+In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but are generally less than 0.1% in density except at extreme conditions. 
 
 The uncertainty in pressure in the critical region is 0.1%. 
 

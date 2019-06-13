@@ -1,6 +1,6 @@
 -----
 title: Water Saturation Curves
-date:  May 30th, 2019
+date: May 30th, 2019
 -----
 
 # Water Vapor Saturation Curve

@@ -5,7 +5,7 @@ date:  June 12th, 2019
 
 # Educational Demonstration
 
-This education demonstrator will show how changing the pump speed and the system curve will change the operating point. This is a representative demonstration and does not have actual values.
+This educational demonstrator will show how changing the pump speed and the system curve will change the operating point. This is a representative demonstration and does not have actual values.
 
 Change the pump speed slider to change the shape of the pump curve. The static head can be varied by changing the supply and destination levels. The overall frictional loss 
 (piping and minor) can be varied by moving the slider. 
