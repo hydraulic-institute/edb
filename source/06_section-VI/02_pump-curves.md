@@ -219,11 +219,11 @@ Use the toggle buttons in the orange area to increase or decrease diameter for a
 
 # Worked Examples
 
-## Worked Example 1
+## 1)
 
 A booster pump is designed to operate at <units us = "1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
-flow conditions and the new pumping conditions." metric = "408.82 m3/h and 41.148 m, with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
+flow conditions and the new pumping conditions." metric = "408.82 m<sup>3</sup>/h and 41.148 m, with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
 flow conditions and the new pumping conditions."/> 
 
@@ -276,7 +276,7 @@ $$ h_2 = 173 ft. $$
 ![Table 2](./table-2.png "Table 2")
 
 
-## Worked Example 2
+## 2)
 
 A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the TDH was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow." 

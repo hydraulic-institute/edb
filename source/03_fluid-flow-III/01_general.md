@@ -1,6 +1,6 @@
 -----
 title:  IIIA. General
-date: June 10th, 2019
+date: June 13th, 2019
 -----
 
 # Fluid Flow – General
@@ -16,7 +16,7 @@ $$ h(f) = f * {L \over D} * {v^2 \over 2g} $$
 
 wherein
 
-- h(f) = Frictional resistance in feet of fluid
+- h<sub>f</sub> = Frictional resistance in feet of fluid
 - L = Length of pipe in feet
 - D = Average internal diameter of pipe in feet
 - V = Average velocity in pipe in feet/second
@@ -45,7 +45,7 @@ wherein
 
 - V = Average velocity in feet/second
 - D = Average internal diameter in feet
-- v = Kinematic viscosity of the fluid in square feel/second
+- v = Kinematic viscosity of the fluid in square feet/second
 
 References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (£) and the probable variations in the friction factors for new pipes. The probable variations
 in (f) for some classes of new clean pipe are given in Table A.
@@ -80,7 +80,7 @@ The values of the friction head (hf) in feet of fluid per 100 feet of pipe apply
 where (£) is a li near measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
 is given in Section IV.
 
-The tabulated values of (h1) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
+The tabulated values of (h(f)) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
 pipe (Schedule 40)* or of new clean asphalt-dipped cast iron pipe as specified.
 
 No allowance has been made for age, differences in diameter resulting from manufacturing
@@ -93,5 +93,59 @@ the use of the tables will be found in Section IIIB.
 The resistance to flow caused by a valve or fitting may be computed from the equation :
 
 =+=
-$$h = k{{V^2}/{2g}}$$
+<span class= equation-label >(4)</span>
+$$h = k{{V^2}\over{2g}}$$
 =+=
+
+wherein
+
+- h = Frictional resistance in feet of fluid 
+- V = Average velocity in feet/second in a pipe of corresponding diameter 
+- g = 32.17 ft/s<sup>2</sup> (9.81 m/s<sup>2</sup>)
+- k = Resistance coefficient for valve or fitting 
+
+Values of (k) for valves and fittings may be found
+in Section IIIB. Reference to the literature will reveal wide differences in the published values of
+(k) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
+IIIB,flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
+fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
+
+Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
+Values of the resistance coefficient (k) may be taken fromSection IIIB. The solid line curves in Fig. IIIB-SA 
+are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
+The broken line curves may be used as a guide to probable resistance coefficients for intermediate
+values of the relative roughness factor £/D. A value of £ = 0.00085 feet will be satisfactory for uncoated
+cast iron and cast steel elbows. Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski(g) 13 are
+shown in Fig. IIIB-5B. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
+coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. IIIB-5A and IIIB-5B in Section
+IIIB are not reliable below R/D = 1, where R is the radius of the elbow in feet. The approximate radius
+of a flanged elbow may be obtained by subtracting the flange thickness from the center-to-face dimension. The center-to-face dimension for a reducing
+elbow is usually identical with that of an elbow of the same straight size as the larger end. 
+
+The resistance coefficients for miter bends as reported by Shubert(g) 12b are shown in Section IIIB,
+Table 33. The rough pipe used in the Shubert investigation had a relative roughness factor, £/D of about 0.0022. Reference 12b of Section VI.
+should be consulted for information on the variation of the resistance coefficients with variation in the Reynolds Number.
+
+The resistance to flow caused by a sudden enlargement may be computed from the equation:
+
+=+=
+<span class= equation-label >(5)</span>
+$$h = k{{(V_1 - V_2)^2} \over {2g}}$$
+=+=
+=+=
+$$ = k(1 - {A_1 \over A_2})^2 {V_1^2 \over 2g}$$
+=+=
+=+=
+$$ = k[1 - ({D_1 \over D_2})^2]^2{V_1^2 \over 2g}$$
+=+=
+=+=
+$$ = k[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
+=+=
+
+wherein
+
+- h = Frictional resistance in feet of fluid 
+- V<sub>1</sub> = Average velocity in feet/second in the smaller (upstream) pipe 
+- A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in square feet
+- 
+- 

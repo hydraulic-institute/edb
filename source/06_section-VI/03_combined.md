@@ -152,7 +152,7 @@ reservoir elevation levels.
 # Worked Example
 
 Previously we developed a system curve for the system shown below for flows from <units us = "0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following." 
-metric = "0 to 68.14 m3/h. Using 4-inch pipe, the function in terms of gpm is the following."/>
+metric = "0 to 68.14 m<sup>3</sup>/h. Using 4-inch pipe, the function in terms of gpm is the following."/>
 
 =+=
 $$\Delta h_{system} = 265{feet} + 7.75{e^{-4}}{Q^2}$$
@@ -164,7 +164,7 @@ $$\Delta h_{system} = 265{feet} + 7.75{e^{-4}}{Q^2}$$
 
 We need this system to operate at <units us = "200 GPM. Based on the system curve previously determined, this would require 296 feet of head. Finding the perfect pump from a vendor,
 we select some data points from the pump curve which are shown in the following table." 
-metric = "45.43 m3/h. Based on the system curve previously determined, this would require 90.22 meters of head. 
+metric = "45.43 m<sup>3</sup>/h. Based on the system curve previously determined, this would require 90.22 meters of head. 
 Finding the perfect pump from a vendor,we select some data points from the pump curve which are shown in the following table."/>
 
 
@@ -185,7 +185,7 @@ We can combine the system curve with the pump curve to get an overall understand
 ![](pump-vs-system.png "")
 
 Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at <units us = "200 gpm and 296 feet." 
-metric = "45.43 m3/h and 90.22 m."/>
+metric = "45.43 m<sup>3</sup>/h and 90.22 m."/>
 
 **System Deviations**
 
@@ -214,14 +214,14 @@ $$Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}}$$
 
 Where:
 
-- a = 7.75e^{-4} + 0.0018
+- a = 7.75e<sup>-4</sup> + 0.0018
 - b = 0.06
-- c = Δh(static) - 380
+- c = Δh<sub>static</sub> - 380
 
 If, for example, the tank level rises <units us = "10 additional feet, the static head would increase
 to 275 feet. Solving the above equation, we determine that the new flow rate into the tank would be 190.6 GPM."
 metric = "3.048 additional meters, the static head would increase
-to 83.82 m. Solving the above equation, we determine that the new flow rate into the tank would be 43.29 m3/h."/>
+to 83.82 m. Solving the above equation, we determine that the new flow rate into the tank would be 43.29 m<sup>3</sup>/h."/>
 
 Other cases (e.g. pipe or fitting resistances, pump speed, etc.) would require some corresponding factors to be 
 left as variables in the equations so they can be changed. But the methodology would remain the same.

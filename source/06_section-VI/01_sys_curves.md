@@ -118,7 +118,7 @@ This is a representative demonstration and does not have actual values.
 ![](./sc-demo-2.png "")
 
 # Worked Example
-<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m3/h."/>
+<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m<sup>3</sup>/h."/>
 
 ![System Curve](system-curves-001.png "System Curve")
 
@@ -139,7 +139,7 @@ $$\Delta h_{static} = (289{feet}-24{feet}) = 265{feet} $$
 To simplify this example, we will consider the friction factor to be constant at 0.02. In general, the friction factor would vary as the flow rate (velocity) varies. Additionally, the flow would be laminar for low velocities. These considerations should be taken into account when calculating the pipe losses.
 
 <units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." 
-metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.2604 mm. The overall pipe length in this example is 77.724 meters."/>
+metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.26 mm. The overall pipe length in this example is 77.72 meters."/>
 
 **Determine the Minor or Component Loss**
 
