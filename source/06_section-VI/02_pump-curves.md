@@ -223,7 +223,7 @@ Use the toggle buttons in the orange area to increase or decrease diameter for a
 
 A booster pump is designed to operate at <units us = "1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
-flow conditions and the new pumping conditions." metric = "408.82 m<sup>3</sup>/h and 41.148 m, with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
+flow conditions and the new pumping conditions." metric = "408.82 m3/h and 41.148 m, with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
 flow conditions and the new pumping conditions."/> 
 

@@ -1,3 +1,3 @@
 -----
-title: Section VI 
+title: Section VI | Pump Fundamentals
 -----
