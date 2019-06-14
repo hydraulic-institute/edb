@@ -49,7 +49,23 @@ options = RenderOptions()
 
 
 def replace_latex_block(latex):
-    return "<p class='formula'>" + latex + "</p>"
+    # [units
+    unit = None
+    u_index = latex.find('[units')
+    if u_index >= 0:
+
+        end = latex.find(']', u_index)
+        unit_specifier = latex[u_index:end+1]
+        if unit_specifier.find('us') >= 0:
+            unit = 'us'
+        elif unit_specifier.find('metric') >= 0:
+            unit = 'metric'
+        latex = latex.replace(unit_specifier, "")
+
+    if unit:
+        return f'<p class="formula" v-show="{unit}_visible">{latex}</p>'
+    else:
+        return "<p class='formula'>" + latex + "</p>"
 
 
 def table_data(units, table, path, filename):
@@ -196,6 +212,7 @@ def process_latex_blocks(markdown):
         after = markdown[end+3:]
         markdown = before + replace_latex_block(within) + after
         start = markdown.find(delim)
+
     return markdown
 
 
@@ -230,7 +247,8 @@ def process_chart_blocks(output_path, dir, markdown):
 
 
 def process_vue_components(content):
-    return content.replace('<units', "<units :units='unit_set'")
+    c = content.replace('<units', "<units :units='unit_set'")
+    return c
 
 
 def clean():

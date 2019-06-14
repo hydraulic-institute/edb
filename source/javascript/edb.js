@@ -70,6 +70,8 @@ Vue.component('units', {
     },
 });
 
+
+
 new Vue({
     el: '#vue',
     delimiters: ['${', '}'],
@@ -111,7 +113,6 @@ new Vue({
                 // Scroll to top of screen to ensure the search results appear where they should.
 
                 this.search_results = this.fuse.search(this.needle);
-                console.log(this.search_results)
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
                 }
