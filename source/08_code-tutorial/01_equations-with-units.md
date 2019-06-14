@@ -31,3 +31,7 @@ Units are optional, leave out the `[units=something]` entirely to allow the equa
 =+= 
 $$ velo = { y_{distance} \over z_{time} }$$
 =+= 
+
+# Unit Element with Subscripts and Superscripts
+When using the `<units>` element, you **cannot** embed `<sup>` and `<sub>`.  Surround the text with `^` or `_` symbols instead, and the app will render using the appropriate element.
+<units us="ft^3^/min" metric="m_3_/min"/>

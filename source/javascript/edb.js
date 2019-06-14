@@ -63,11 +63,51 @@ Vue.component('units', {
         return {
             chart_data: null
         };
-    },
-    template: '<span><span v-if="units==\'us\'"> {{us}} </span><span v-else> {{metric}} </span></span>',
+    }, //   
+    template: '<span><span v-if="units==\'us\'" v-html="us_content"></span><span v-else v-html="metric_content"></span></span>',
     mounted: function () {
         console.log(this.units)
     },
+    methods: {
+        process_content: function (_content) {
+            let content = _content.slice(0);
+            const replacements = [{
+                token: '^',
+                tag: 'sup'
+            }, {
+                token: '_',
+                tag: 'sub'
+            }];
+
+            for (const r of replacements) {
+                let i = 0;
+                let started = false;
+
+                while (i < content.length) {
+                    if (content[i] == r.token) {
+                        if (started) {
+                            content = content.slice(0, i) + `</${r.tag}>` + content.slice(i + 1);
+                            started = false;
+                        } else {
+                            content = content.slice(0, i) + `<${r.tag}>` + content.slice(i + 1);
+                            started = true;
+                        }
+                    }
+                    i++;
+                }
+            }
+
+            return content;
+        }
+    },
+    computed: {
+        us_content: function () {
+            return this.process_content(this.us);
+        },
+        metric_content: function () {
+            return this.process_content(this.metric);
+        }
+    }
 });
 
 
