@@ -1,5 +1,5 @@
 -----
-title:   Unit Switching Equations
+title:   Unit switching equations
 date:  June 14th, 2019
 author:  Scott Frees
 -----
@@ -34,4 +34,16 @@ $$ velo = { y_{distance} \over z_{time} }$$
 
 # Unit Element with Subscripts and Superscripts
 When using the `<units>` element, you **cannot** embed `<sup>` and `<sub>`.  Surround the text with `^` or `_` symbols instead, and the app will render using the appropriate element.
+
 <units us="ft^3^/min" metric="m_3_/min"/>
+
+# Units in lists
+Bullet and numbered lists support units of measure as well.
+
+- The unit for distance is <units us="ft" metric="meters"/>.
+- The unit for weight is <units us='lbs' metric="kg"/>
+
+Numbered lists work well too:
+
+1. Small distances are in <units us="inches" metric="cm"/>
+2. Long distances are in <units us="miles" metric="km"/>
