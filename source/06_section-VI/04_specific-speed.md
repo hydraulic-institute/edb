@@ -19,15 +19,14 @@ $$ n_s = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$
 
 wherein: 
 
-- Ns = Specific Speed 
+- <units us = "Ns = Specific Speed " metric = "n_s_ = Specific Speed "/> 
 - n = Rotational speed, in revolutions per minute 
-- Q = Total pump flow rate, in gallons per minute 
-- H = Head per stage, in feet
+- Q = Total pump flow rate, <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
+- H = Head per stage, <units us = "in feet" metric = "in meters"/> 
 
-- n<sub>s</sub> = Specific Speed 
-- n = Rotational speed, in revolutions per minute 
-- Q = Total pump flow rate, in cubic meters per second
-- H = Head per stage, in meters
+
+
+
 
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature.
 
@@ -58,19 +57,12 @@ $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} = {{ωQ'^{0.5}} \over {(y')^{0.75}}
 
 where:
 
-- Q’ = volume rate of flow per eye, in feet cubed per second
-- H’ = head of first stage in feet
+- Q’ = volume rate of flow per eye, <units us = "in feet cubed per second" metric = "in meters cubed per second"/>
+- H’ = head of first stage in <units us = "feet" metric = "meters"/>
 - n = rotative speed, in revolutions per minute
-- g = gravitational acceleration, in feet per second squared
+- g = gravitational acceleration, <units us = "in feet per second squared" metric = "in meters per second squared "/>
 - ω = angular velocity, in radians per second
-- y’ = specific energy, in British thermal unit per pound mass
-
-- Q’ = volume rate of flow per eye, in meters cubed per second 
-- H’ = head of first stage, in meters 
-- n = rotative speed, in revolutions per minute
-- g = gravitational acceleration, in meters per second squared 
-- ω = angular velocity, in radians per second
-- y’ = specific energy, in joule per kilogram 
+- y’ = specific energy, <units us = "in British thermal unit per pound mass" metric = "in joule per kilogram"/>
 
 # Suction Specific Speed
 
@@ -89,14 +81,9 @@ $$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 
 where:
 
-- Nss = Suction Specific Speed
+- <units us = "Nss = Suction Specific Speed" metric = "S = Suction Specific Speed"/>
 - n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye *OR* total flow rate for single suction impellers *OR* one half total flow rate for double suction impellers, in US gallons per minute
-- NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
-
-- S = Suction Specific Speed
-- n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye *OR* total flow rate for single suction impellers *OR* one half total flow rate for double suction impellers, in cubic meters per second
+- Q' = flow rate per impeller eye *OR* total flow rate for single suction impellers *OR* one half total flow rate for double suction impellers, <units us = "in US gallons per minute" metric = "in cubic meters per second"/>
 - NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
 Suction specific speed derived using cubic meters per second and meters, multiplied by a factor of 51.6, is equal to suction specific speed derived using US gallons per minute and feet. The US customary symbol N<sub>SS</sub> is sometimes used to designate suction specific speed.

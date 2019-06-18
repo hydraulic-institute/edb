@@ -16,11 +16,11 @@ $$ h_f = f * {L \over D} * {V^2 \over 2g} $$
 
 wherein
 
-- h<sub>f</sub> = Frictional resistance in feet of fluid
-- L = Length of pipe in feet
-- D = Average internal diameter of pipe in feet
-- V = Average velocity in pipe in feet/second
-- g = Acceleration due to gravity in feet/ second/second. Hereafter, the value 32.17 feet/second/second for sea level and 45 degrees latitude will be used.
+- h<sub>f</sub> = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/>
+- L = Length of pipe in <units us = "feet" metric = "meters"/>
+- D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
+- V = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
+- g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - f = Friction factor
 
 ## Section 2 – Construction of Charts and Tables
@@ -43,9 +43,9 @@ $$ R = {V * D \over v}  $$
 
 wherein
 
-- V = Average velocity in feet/second
-- D = Average internal diameter in feet
-- *v* = Kinematic viscosity of the fluid in square feet/second
+- V = Average velocity in <units us = "feet/second" metric = "meters/second"/>
+- D = Average internal diameter in <units us = "feet" metric = "meters"/>
+- *v* = Kinematic viscosity of the fluid in <units us = "square feet/second" metric = "square meters/second"/>
 
 References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (£) and the probable variations in the friction factors for new pipes. The probable variations
 in (*f*) for some classes of new clean pipe are given in Table A.
@@ -99,16 +99,11 @@ $$h = k{{V^2}\over{2g}}$$
 
 wherein
 
-- h = Frictional resistance in feet of fluid 
-- V = Average velocity in feet/second in a pipe of corresponding diameter 
-- g = 32.17 ft/s<sup>2</sup> 
+- h = Frictional resistance in <units us = "feet" metric = "meters"/> of fluid 
+- V = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
+- g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - k = Resistance coefficient for valve or fitting
  
-- h = Frictional resistance in meters of fluid 
-- V = Average velocity in meters/second in a pipe of corresponding diameter 
-- g = 9.81 m/s<sup>2</sup>
-- k = Resistance coefficient for valve or fitting
-
 
 Values of (k) for valves and fittings may be found
 in Section IIIB. Reference to the literature will reveal wide differences in the published values of
@@ -151,21 +146,12 @@ $$ = k[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
 wherein
 
 
-- h = Frictional resistance in feet of fluid 
-- V<sub>1</sub> = Average velocity in feet/second in the smaller (upstream) pipe 
-- A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in square feet
-- D<sub>1</sub> = Internal diameter of the smaller pipe in feet
+- h = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/> 
+- V<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
+- A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
+- D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
 - V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
-- g = 32.17 ft/s<sup>2</sup>
-- k = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
-
-
-- h = Frictional resistance in meters of fluid 
-- V<sub>1</sub> = Average velocity in meters/second in the smaller (upstream) pipe 
-- A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in square meters
-- D<sub>1</sub> = Internal diameter of the smaller pipe in meters
-- V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
-- g = 9.81 m/s<sup>2</sup>
+- g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - k = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
 Equation (5) is useful for computing the resistance to flow caused by conical increasers and diffusers.
@@ -202,12 +188,18 @@ classes of new clean pipe are given in Table A. It will be necessary to know the
 the relative roughness factor,  £/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
 pipes, from Fig. llIA-4.  
 
-If the fluid is fresh water at 60° F or atmospheric
+<units us = "If the fluid is fresh water at = 60° F or atmospheric
 air at 60° F the scales at the top of Figs. IIIA-1-3
 incl., may be used. For convenience in air and
 water computations only, the scale reading is the
 product of the average velocity in feet/second and
-the internal diameter in inches, (VD").
+the internal diameter in inches, (VD)". 
+metric = "If the fluid is fresh water at = 15.6° C or atmospheric
+air at 15.6° C the scales at the top of Figs. IIIA-1-3
+incl., may be used. For convenience in air and
+water computations only, the scale reading is the
+product of the average velocity in feet/second and
+the internal diameter in inches, (VD)."
 
 For other fluids or temperatures the scales at the
 bottom of Figs. IIIA-1-3 incl., must be used. The
@@ -223,17 +215,27 @@ Values of the kinematic viscosity (*v*) at various
 temperatures are given in Fig. IIIA-5 for a number
 of different fluids. The Reynolds Number also may
 be obtained directly from Fig. IIIA-5 with the aid of
-the quantity (VD") mentioned above. The tracer
-line shows that for kerosene at 175° F flowing with
+the quantity (VD) mentioned above. The tracer
+line shows that for kerosene at <units us = "175° F flowing with
 an average velocity of 12.5 ft/sec in a pipe of 4
 inches internal diameter, the Reynolds Number
-would be 3.5 x 10<sup>5</sup>. In cases where viscosities are
+would be 3.5 x 10^5^. In cases where viscosities are
 obtained from sources other than Fig. IIIA-5, it is
 *absolutely essential* that they be expressed in sq
 ft/sec in order that they may be used with Fig.
 IIIA-5 or Equation (3). Kinematic viscosities measured
 in stokes or centistokes may be converted
-to (*v*) in sq ft/sec by the formula:
+to (v) in sq ft/sec by the formula:"
+metric = "79.4° C flowing with
+an average velocity of 3.81 m/sec in a pipe of 4
+inches internal diameter, the Reynolds Number
+would be 3.5 x 10^5^. In cases where viscosities are
+obtained from sources other than Fig. IIIA-5, it is
+*absolutely essential* that they be expressed in sq
+ft/sec in order that they may be used with Fig.
+IIIA-5 or Equation (3). Kinematic viscosities measured
+in stokes or centistokes may be converted
+to (v) in sq ft/sec by the formula:"/>
 
 =+=
 <span class= equation-label >(7)</span>
