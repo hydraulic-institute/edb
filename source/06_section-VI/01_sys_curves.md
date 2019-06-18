@@ -20,6 +20,7 @@ where:
 - ρ is fluid density
 - g is gravitational acceleration
 
+
 Note that if the supply and destination are at the same pressure, as is often the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
 
 ## Frictional Head
@@ -119,7 +120,7 @@ This is a representative demonstration and does not have actual values.
 ![](./sc-demo-2.png "")
 
 # Worked Example
-<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m3/h"/>
+<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 0.0189 m3/s"/>
 
 ![System Curve](system-curves-001.png "System Curve")
 
@@ -133,7 +134,7 @@ $$\Delta h_{static} = (z_{destination}-z_{supply})$$
 
 =+=
 [units = us]
-$$ \Delta h_{static} = (289{feet}-24{feet}) = 265{feet} $$
+$$ \Delta h_{static} = (289{ft}-24{ft}) = 265{ft} $$
 =+=
 
 =+=
@@ -145,7 +146,7 @@ $$ \Delta h_{static} = (88.09{m}-7.315{m}) = 80.77{m} $$
 
 To simplify this example, we will consider the friction factor to be constant at 0.02. In general, the friction factor would vary as the flow rate (velocity) varies. Additionally, the flow would be laminar for low velocities. These considerations should be taken into account when calculating the pipe losses.
 
-<units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.26 mm. The overall pipe length in this example is 77.72 meters."/>
+<units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.26 mm (0.10226 m). The overall pipe length in this example is 77.72 meters."/>
 
 **Determine the Minor or Component Loss**
 
@@ -158,18 +159,30 @@ The losses for the components can be found in tables. In this example we have th
 
 This gives a total K factor equal to 3.79
 
-Using the combined frictional loss equation above, we can determine the head loss (in feet) as a function of velocity (in ft/sec<sup>2</sup>)
+Using the combined frictional loss equation above, we can determine the head loss (in feet) as a function of velocity <units us = "(in ft/s2)" metric = "(in m/s2)"/>
 
 =+=
-$$ \Delta h_f = {({fL \over D} + K) * v^2 \over 2g}$$
-=+=
-
-=+=
-$$ \Delta h_f = {({0.02 * 1255_{ft} \over 0.3355_{ft}} + 3.59) * v^2 \over 2 * 32.174 {ft/sec^2}} $$
+$$ \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}}$$
 =+=
 
 =+=
+[units = us]
+$$ \Delta h_f = {({0.02 * 1255ft \over 0.3355ft} + 3.79) * {v^2 \over 2 * 32.174 {ft/sec^2}}} $$
+=+=
+
+=+=
+[units = metric]
+$$ \Delta h_f = {({0.02 * 382.52m \over 0.10226m} + 3.79) * {v^2 \over 2 * 9.81 {ft/sec^2}}} $$
+=+=
+
+=+=
+[units = us]
 $$ \Delta h_f = 1.22v^2 $$
+=+=
+
+=+=
+[units = metric]
+$$ \Delta h_f = 4.01v^2 $$
 =+=
 
 **Determine the System Curve**
@@ -180,24 +193,45 @@ we have the following as a function of velocity.
 =+=
 $$ \Delta h_{system} = \Delta h_{static} + \Delta h_{f} $$
 =+=
-=+=
-$$\Delta h_{system} = 265{feet} + 1.22v^2$$
-=+=
-
-The following can be used to convert a flow rate in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches).
 
 =+=
+[units = us]
+$$\Delta h_{system} = 265{ft} + 1.22v^2$$
+=+=
+
+=+=
+[units = metric]
+$$\Delta h_{system} = 80.77{m} + 4.01v^2$$
+=+=
+
+
+<units us = "The following can be used to convert a flow rate in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches)."
+metric = "The following can be used to convert a flow rate in m3/s (cubic meters per second) to a velocity in m/sec (with the pipe diameter D in meters)."/>
+
+=+=
+[units us]
 $$ v = 0.002228*Q*({4 \over \pi D^2}) $$
 =+=
 
-Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 102.2604 mm)"/> we can get the following as the system curve equation as a function
+=+=
+[units metric]
+$$ v = Q*({4 \over \pi D^2}) $$
+=+=
+
+Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 0.10226 m)"/> we can get the following as the system curve equation as a function
 of flow rate in gpm.
+
 =+=
-$$ \Delta h_{system} = 265{feet} + {{7.75e^{-4}}{Q^2}} $$
+[units us]
+$$ \Delta h_{system} = 265{ft} + {{(7.75E{-04})}{Q^2}} $$
 =+=
 
-This, then, give the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to little loss in piping and components)." metric = "there is a lift of 77.724 meters compared to little loss in piping and components)."/> 
+=+=
+[units metric]
+$$ \Delta h_{system} = 80.77{m} + {{(5.95E{+04})}{Q^2}} $$
+=+=
 
+This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to little loss in piping and components)." metric = "there is a lift of 77.724 meters compared to little loss in piping and components)."/> 
 
 =/=
 title: Data Points

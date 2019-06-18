@@ -155,7 +155,7 @@ Previously we developed a system curve for the system shown below for flows from
 metric = "0 to 68.14 m3/h. Using 4-inch pipe, the function in terms of gpm is the following."/>
 
 =+=
-$$\Delta h_{system} = 265{feet} + 7.75{e^{-4}}{Q^2}$$
+$$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2}$$
 =+=
 
 ![](system-curves-001.png "")

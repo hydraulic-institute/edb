@@ -233,8 +233,21 @@ flow conditions and the new pumping conditions." metric = "408.82 m3/h and 41.14
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
 flow conditions and the new pumping conditions."/> 
 
-![Chart](./ex-1-chart.png "Chart")
-![Table](./ex-1-table.png "Table")
+=/=
+title: 
+data-us:  total-head-feet.csv
+data-metric: total-head-meters.csv
+x: 1
+series: 2
+series_title_index: 0
+=/=
+
+=|=
+title: Data
+data-us: total-head-feet.csv
+data-metric: total-head-meters.csv
+=|=
+
 
 **Determine the Reduced Speed**
 
@@ -259,19 +272,41 @@ $$ n_2= 1566 RPM $$
 Using equation 1.1, calculate the new values (repeat until you convert all points under the flow column):
 
 =+= 
+[units = us]
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 $$ {Q_2 \over 0} = {1566 \over 1740} $$
 $$ Q_2 = 0 GPM $$
 =+=
 
 =+= 
+[units = us]
 $$ {Q_2 \over 200} = {1566 \over 1740} $$
 $$ Q_2 = 180 GPM $$
 =+=
 
 =+= 
+[units = us]
 $$ {Q_2 \over 400} = {1566 \over 1740} $$
 $$ Q_2 = 360 GPM $$
+=+=
+
+=+= 
+[units = metric]
+$$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
+$$ {Q_2 \over 0} = {1566 \over 1740} $$
+$$ Q_2 = 0 GPM $$
+=+=
+
+=+= 
+[units = metric]
+$$ {Q_2 \over 0.0126} = {1566 \over 1740} $$
+$$ Q_2 = 0.0114 {m^3}/s $$
+=+=
+
+=+= 
+[units = metric]
+$$ {Q_2 \over 0.0252 } = {1566 \over 1740} $$
+$$ Q_2 = 0.0227 {m^3}/s $$
 =+=
 
 **Calculate New TDH Values**
@@ -279,25 +314,30 @@ $$ Q_2 = 360 GPM $$
 Using equation 1.2, calculate the new values (repeat until you convert all points under the TDH column):
 
 =+=
+[units = us]
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
 $$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
 $$ H_2 = 173 ft. $$
 =+=
 
+=+=
+[units = metric]
+$$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
+$$ {H_2 \over 22.25} = ({1566 \over 1740})^2 $$
+$$ H_2 = 22.25 m $$
+=+=
+
+
 **Plot Pump Curve**
 
-
-![Pump Curve](./pump-curve-plot.png "Pump Curve")
-![Table 2](./table-2.png "Table 2")
-
-**(this is the same chart)**
+**(need new plots and charts)**
 
 
 ## 2)
 
-A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the TDH was 67 ft. 
+A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow." 
-metric = "@ 24.384 m. During installation it was found the TDH was 20.4216 m. 
+metric = "@ 24.38 m. During installation it was found the total head was 20.42 m. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow."/>
 
 **Calculate the New Impeller Diameter**
@@ -305,6 +345,7 @@ Instead of designing a new pump the manufacturer recommends trimming the impelle
 During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
+[units = us]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
 $$ {67 \over 80} = ({D_2 \over 10.625})^2 $$
 $$ {\sqrt {67 \over 80}} = \sqrt(({D_2 \over 10.625})^2) $$
@@ -312,12 +353,29 @@ $$ 0.915 = {D_2 \over 10.625} $$
 $$ D_2 = 9.72 in. \approx 9.75 in. $$
 =+=
 
+=+=
+[units = metric]
+$$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
+$$ {20.42 \over 24.38} = ({D_2 \over 26.99})^2 $$
+$$ {\sqrt {20.42 \over 24.38}} = \sqrt(({D_2 \over 26.99})^2) $$
+$$ 0.915 = {D_2 \over 26.99} $$
+$$ D_2 = 24.70 cm $$
+=+=
+
 **Calculate the New Flow**
 
 During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
+[units = us]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 $$ {Q_2 \over 2000} = {9.75 \over 10.625} $$
 $$ Q_2 = 1835 GPM $$
+=+=
+
+=+=
+[units = metric]
+$$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
+$$ {Q_2 \over 0.126} = {24.70 \over 26.99} $$
+$$ Q_2 = 0.116 {m^3}/s $$
 =+=
