@@ -152,7 +152,7 @@ reservoir elevation levels.
 # Worked Example
 
 Previously we developed a system curve for the system shown below for flows from <units us = "0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following." 
-metric = "0 to 68.14 m3</h. Using 4-inch pipe, the function in terms of gpm is the following."/>
+metric = "0 to 68.14 m3/h. Using 4-inch pipe, the function in terms of gpm is the following."/>
 
 =+=
 $$\Delta h_{system} = 265{feet} + 7.75{e^{-4}}{Q^2}$$
