@@ -45,7 +45,7 @@ wherein
 
 - V = Average velocity in feet/second
 - D = Average internal diameter in feet
-- v = Kinematic viscosity of the fluid in square feet/second
+- *v* = Kinematic viscosity of the fluid in square feet/second
 
 References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (£) and the probable variations in the friction factors for new pipes. The probable variations
 in (*f*) for some classes of new clean pipe are given in Table A.
@@ -77,7 +77,7 @@ The tables show the discharge in cubic feet per second, the average velocity in 
 and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
 The values of the friction head (h<sub>f</sub>) in feet of fluid per 100 feet of pipe apply to any fluid having a kinematic viscosity, v  = 0.00001216 square feet per second
 (1.130 centistokes) which is the value for pure fresh water at 60° F.*** The friction heads are average values for pipes having the £/D values given in the tables, 
-where (£) is a li near measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
+where (£) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
 is given in Section IV.
 
 The tabulated values of (h<sub>f</sub>) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
@@ -101,7 +101,12 @@ wherein
 
 - h = Frictional resistance in feet of fluid 
 - V = Average velocity in feet/second in a pipe of corresponding diameter 
-- g = 32.17 ft/s<sup>2</sup> (9.81 m/s<sup>2</sup>)
+- g = 32.17 ft/s<sup>2</sup> 
+- k = Resistance coefficient for valve or fitting
+ 
+- h = Frictional resistance in meters of fluid 
+- V = Average velocity in meters/second in a pipe of corresponding diameter 
+- g = 9.81 m/s<sup>2</sup>
 - k = Resistance coefficient for valve or fitting
 
 
@@ -112,7 +117,7 @@ IIIB,flanged valves and fittings usually exhibit lower resistance coefficients t
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
 Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (k) may be taken fromSection IIIB. The solid line curves in Fig. IIIB-SA 
+Values of the resistance coefficient (k) may be taken from Section IIIB. The solid line curves in Fig. IIIB-SA 
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor £/D. A value of £ = 0.00085 feet will be satisfactory for uncoated
@@ -145,12 +150,22 @@ $$ = k[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
 
 wherein
 
+
 - h = Frictional resistance in feet of fluid 
 - V<sub>1</sub> = Average velocity in feet/second in the smaller (upstream) pipe 
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in square feet
 - D<sub>1</sub> = Internal diameter of the smaller pipe in feet
 - V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
 - g = 32.17 ft/s<sup>2</sup>
+- k = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
+
+
+- h = Frictional resistance in meters of fluid 
+- V<sub>1</sub> = Average velocity in meters/second in the smaller (upstream) pipe 
+- A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in square meters
+- D<sub>1</sub> = Internal diameter of the smaller pipe in meters
+- V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
+- g = 9.81 m/s<sup>2</sup>
 - k = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
 Equation (5) is useful for computing the resistance to flow caused by conical increasers and diffusers.
@@ -243,4 +258,5 @@ usually be turbulent and the curves in Figs. IIIA 1-
 3 incl., apply. The range R = 2000–4000 is called
 the critical zone in which the flow may be highly
 unstable and the friction factor indeterminate.
+
 
