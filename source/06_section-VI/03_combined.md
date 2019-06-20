@@ -152,10 +152,16 @@ reservoir elevation levels.
 # Worked Example
 
 Previously we developed a system curve for the system shown below for flows from <units us = "0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following." 
-metric = "0 to 68.14 m3/h. Using 4-inch pipe, the function in terms of gpm is the following."/>
+metric = "0 to 0.0189 m3/s. Using 4-inch pipe, the function in terms of m3/s is the following."/>
 
 =+=
-$$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2}$$
+[units = us]
+$$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2} $$
+=+=
+
+=+=
+[units metric]
+$$ \Delta h_{system} = 80.77{m} + {{(5.95E{+04})}{Q^2}} $$
 =+=
 
 ![](system-curves-001.png "")
@@ -164,7 +170,7 @@ $$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2}$$
 
 We need this system to operate at <units us = "200 GPM. Based on the system curve previously determined, this would require 296 feet of head. Finding the perfect pump from a vendor,
 we select some data points from the pump curve which are shown in the following table." 
-metric = "45.43 m3/h. Based on the system curve previously determined, this would require 90.22 meters of head. 
+metric = "0.0126 m3/s. Based on the system curve previously determined, this would require 90.22 meters of head. 
 Finding the perfect pump from a vendor,we select some data points from the pump curve which are shown in the following table."/>
 
 
@@ -177,15 +183,20 @@ data-metric: qdH-metric.csv
 Using a second-order polynomial curve fit, we get the following pump curve equation:
 
 =+=
-$$\Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2}$$
+[units us]
+$$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
+=+=
+
+=+=
+[units metric]
+$$ need \,conversion $$
 =+=
 
 We can combine the system curve with the pump curve to get an overall understanding of how the system will operate.
 
 ![](pump-vs-system.png "")
 
-Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at <units us = "200 gpm and 296 feet." 
-metric = "45.43 m3/h and 90.22 m."/>
+Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at <units us = "200 gpm and 296 feet." metric = "0.01262 m3/s and 90.22 m."/>
 
 **System Deviations**
 
@@ -197,31 +208,45 @@ The pump would also change its operating point in response. Since the operating 
 equal and solve for flow rate.
 
 =+=
-$$\Delta h_{system} = \Delta h_{pump}$$
+$$ \Delta h_{system} = \Delta h_{pump} $$
 =+=
+
 =+=
-$$\Delta h_{static} + {7.75e^{-4}}{Q^2} = 380 - {0.06Q} - {0.0018Q^2}$$
+[units = us]
+$$ \Delta h_{static} + {7.75e^{-4}}{Q^2} = 380 - {0.06Q} - {0.0018Q^2} $$
 =+=
+
 =+=
-$$(\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0$$
+[units = metric]
+$$ need \,conversion $$
+=+=
+
+=+=
+[units = us]
+$$ (\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0 $$
+=+=
+
+=+=
+[units = metric]
+$$ need \,conversion $$
 =+=
 
 We can solve this equation using the quadratic formula: 
 
 =+=
-$$Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}}$$
+$$ Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}} $$
 =+=
 
 Where:
 
-- a = 7.75e<sup>-4</sup> + 0.0018
-- b = 0.06
-- c = Δh<sub>static</sub> - 380
+- <units us = "a = 7.75e^-4^ + 0.0018" metric = "(need conversion)"/>
+- <units us = "b = 0.06" metric = "(need conversion)"/>
+- <units us = "c = Δh_static_ - 380" metric = "(need conversion)"/>
 
 If, for example, the tank level rises <units us = "10 additional feet, the static head would increase
 to 275 feet. Solving the above equation, we determine that the new flow rate into the tank would be 190.6 GPM."
 metric = "3.048 additional meters, the static head would increase
-to 83.82 m. Solving the above equation, we determine that the new flow rate into the tank would be 43.29 m3/h."/>
+to 83.82 m. Solving the above equation, we determine that the new flow rate into the tank would be 0.0120 m3/s."/>
 
 Other cases (e.g. pipe or fitting resistances, pump speed, etc.) would require some corresponding factors to be 
 left as variables in the equations so they can be changed. But the methodology would remain the same.

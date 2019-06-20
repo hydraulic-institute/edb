@@ -1,7 +1,7 @@
 -----
-title:   Unit switching equations
-date:  June 14th, 2019
-author:  Scott Frees
+title: Unit Switching Equations
+date: June 14th, 2019
+author: Scott Frees
 -----
 
 

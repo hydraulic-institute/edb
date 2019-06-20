@@ -76,7 +76,7 @@ cast iron pipe are given in Section lIIB, Tables 1-31 incl., herein.**
 The tables show the discharge in cubic feet per second, the average velocity in feet per second,
 and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
 The values of the friction head (h<sub>f</sub>) in feet of fluid per 100 feet of pipe apply to any fluid having a kinematic viscosity, v  = 0.00001216 square feet per second
-(1.130 centistokes) which is the value for pure fresh water at 60° F.*** The friction heads are average values for pipes having the £/D values given in the tables, 
+(1.130 centistokes) which is the value for pure fresh water at 60° F. The friction heads are average values for pipes having the £/D values given in the tables, 
 where (£) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
 is given in Section IV.
 
@@ -185,21 +185,12 @@ Values of (*f*) may be obtained directly from Fig. IIIA-1 where the pipe is new 
 cast iron, from Fig. IIIA-2 where the pipe is new clean steel of Schedule 40 wall thickness, or from
 Fig. IIIA-3 which applies to any size and type of surface. The probable variations in (*f*) for some
 classes of new clean pipe are given in Table A. It will be necessary to know the approximate value of
-the relative roughness factor,  £/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
-pipes, from Fig. llIA-4.  
+the relative roughness factor, £/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
+pipes, from Fig. llIA-4. If the fluid is fresh water at = 60° F or atmospheric
+air at 60° F the scales at the top of Figs. IIIA-1-3 incl., may be used. For convenience in air and
+water computations only, the scale reading is the product of the average velocity in feet/second and
+the internal diameter in inches, (VD"). 
 
-<units us = "If the fluid is fresh water at = 60° F or atmospheric
-air at 60° F the scales at the top of Figs. IIIA-1-3
-incl., may be used. For convenience in air and
-water computations only, the scale reading is the
-product of the average velocity in feet/second and
-the internal diameter in inches, (VD)". 
-metric = "If the fluid is fresh water at = 15.6° C or atmospheric
-air at 15.6° C the scales at the top of Figs. IIIA-1-3
-incl., may be used. For convenience in air and
-water computations only, the scale reading is the
-product of the average velocity in feet/second and
-the internal diameter in inches, (VD)."
 
 For other fluids or temperatures the scales at the
 bottom of Figs. IIIA-1-3 incl., must be used. The
@@ -216,7 +207,7 @@ temperatures are given in Fig. IIIA-5 for a number
 of different fluids. The Reynolds Number also may
 be obtained directly from Fig. IIIA-5 with the aid of
 the quantity (VD) mentioned above. The tracer
-line shows that for kerosene at <units us = "175° F flowing with
+line shows that for kerosene at 175° F flowing with
 an average velocity of 12.5 ft/sec in a pipe of 4
 inches internal diameter, the Reynolds Number
 would be 3.5 x 10^5^. In cases where viscosities are
@@ -225,17 +216,7 @@ obtained from sources other than Fig. IIIA-5, it is
 ft/sec in order that they may be used with Fig.
 IIIA-5 or Equation (3). Kinematic viscosities measured
 in stokes or centistokes may be converted
-to (v) in sq ft/sec by the formula:"
-metric = "79.4° C flowing with
-an average velocity of 3.81 m/sec in a pipe of 4
-inches internal diameter, the Reynolds Number
-would be 3.5 x 10^5^. In cases where viscosities are
-obtained from sources other than Fig. IIIA-5, it is
-*absolutely essential* that they be expressed in sq
-ft/sec in order that they may be used with Fig.
-IIIA-5 or Equation (3). Kinematic viscosities measured
-in stokes or centistokes may be converted
-to (v) in sq ft/sec by the formula:"/>
+to *v* in sq ft/sec by the formula:
 
 =+=
 <span class= equation-label >(7)</span>
