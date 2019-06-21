@@ -171,7 +171,7 @@ where
 Data for use with Equation (1) to determine velocity limit, V<sub>max</sub>·
 
 =|=
-title: Table 1
+title: Table I
 data: Table1CSV.csv
 =|=
 
@@ -251,3 +251,137 @@ Factor vs. Reynolds Number plot (Reference
 3, for example), or approximated
 from the following equation (based on
 the Blasius equation).
+
+=+=
+<span class= equation-label >(4)</span>
+[units = us]
+$$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
+=+=
+
+=+=
+<span class= equation-label >(4)</span>
+[units = metric]
+$$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
+=+=
+
+where
+
+- V = bulk velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
+- D = pipe diameter <units us = "(in.)" metric = "(cm)"/>
+
+Previously published methods for calculating pipe
+friction loss of pulp suspensions gave a very conservative
+estimate of head loss. The method just described
+gives a more accurate estimate of head loss
+due to friction, and has been used successfully in
+systems in North America and world-wide.
+
+Pertinent equations, in addition to those herein
+presented, are located in Appendix A. Example
+problems are located in Appendix B.
+
+**V. Head Losses in Bends and Fittings**
+
+The friction head loss of pulp suspensions in bends
+and fittings may be determined from the basic equation
+for head loss, Equation (5).
+
+=+=
+<span class= equation-label >(5)</span>
+[units = us]
+$$ H = K{V_{1}^{2}}/2g\,(ft) $$
+=+=
+
+=+=
+<span class= equation-label >(5)</span>
+[units = metric]
+$$ H = K{V_{1}^{2}}/2g\,(m) $$
+=+=
+
+where
+
+- K = loss coefficient for a given fitting
+- V<sub>1</sub> = inlet velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
+- g = acceleration due to gravity <units us = "(32.2 ft/s^2^)" metric = "(9.81 m/s^2^)"/>
+
+Values of K for the flow of water through various
+types of bends and fittings are tabulated in numerous
+reference sources (Reference 3, for example).
+The loss coefficient for valves may be obtained from
+the valve manufacturer.
+
+The loss coefficient for pulp suspensions in a given
+bend or fitting generally exceeds the loss coefficient
+for water in the same bend or fitting. As an approximate
+rule, the loss coefficient (K) increases 20 percent
+for each 1 percent increase in oven-dried stock
+consistency. Please note that this is an approximation
+; actual values of K may differ, depending on the
+type of bend or fitting under consideration (4).
+
+Data for use with Equation (2) to determine head loss. ΔH/L.
+
+=|=
+title: Table II
+data: Table2CSV.csv
+=|=
+
+NOTES:
+
+1. Estimates for pulps based on published literature.
+2. Original data obtained in stainless steel and PVC pipe (7, 8, 9).
+3. No safety factors are included in the above correlations.
+4. The friction loss depends considerably on the condition of the inside of the pipe surface (10).
+5. Wood is New Zealand Kraft pulp.
+
+**Appendix A**
+
+The following gives supplemental information to that provided in the main text.
+
+1. Capacity (flow), Q —
+
+=+=
+[units = us]
+<span class= equation-label >(i)</span>
+$$ Q = {{16.65(T.P.D.)}\over C} \, (U.S. GPM) $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(i)</span>
+$$ (conversion) $$
+=+=
+
+where
+
+- <units us = "T.P.D. = mill capacity (short tons per day)," metric = "(conversion)"/>
+
+and
+
+- C = consistency (oven-dried, expressed as a percentage, *not* decimally).
+
+2. Bulk velocity, V —
+
+=+=
+[units = us]
+<span class= equation-label >(ii)</span>
+$$ V = {{0.321Q}\over A}\, (ft/s),\, or $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(ii)</span>
+$$ (conversion) $$
+=+=
+
+=+=
+[units = us]
+<span class= equation-label >(iii)</span>
+$$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(iii)</span>
+$$ (conversion) $$
+=+=

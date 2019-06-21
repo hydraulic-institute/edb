@@ -1,0 +1,23 @@
+,text,numeric,numeric,numeric,numeric
+heading,Pulp Type ,K,α,β,"γ (3), (4)"
+data,Unbeaten aspen sulfite never dried (2),5.30,0.36,2.14,-1.04
+data,Long fibered kraft never dried CSF = 725 (5) (2),11.80,0.31,1.81,-1.34
+data,Long fibered kraft never dried CSF = 650 (5) (2),11.30,0.31,1.81,-1.34
+data,Long fibered kraft never dried CSF = 550 (5) (2),12.10,0.31,1.81,-1.34
+data,Long fibered kraft never dried CSF = 260 (5) (2),17.00,0.31,1.81,-1.34
+data,Bleached kraft pine dried and reslurried (5) (2),8.80,0.31,1.81,-1.34
+data,Long fibered kraft dried and reslurried (5) (2),9.40,0.31,1.81,-1.34
+data,Kraft birch dried and reslurried (5) (2),5.20,0.27,1.78,-1.08
+data,Stone groundwood CSF = 114 (2),3.81,0.27,2.37,-0.85
+data,Refiner groundwood CSF = 150 (2),3.40,0.18,2.34,-1.09
+data,Newsprint broke CSF = 75 (2),5.19,0.36,1.91,-0.82
+data,Refiner grouridwood (hardboard) (2),2.30,0.23,2.21,-1.29
+data,Refiner groundwood (insulating board) (2),1.40,0.32,2.19,-1.16
+data,Hardwood NSSC CSF = 620 (2),4.56,0.43,2.31,-1.20
+data,Unbleached sulfite (1),12.69,0.36,1.89,-1.33
+data,Bleached sulfite (1),11.40,0.36,1.89,-1.33
+data,Kraft(1),11.40,0.36,1.89,-1.33
+data,Bleached straw (1),11.40,0.36,1.89,-1.33
+data,Unbleached straw (1),5.70,0.36,1.89,-1.33
+data,Cooked groundwood (1),6.20,0.43,2.31,-1.20
+data,Soda (1),6.50,0.36,1.85,-1.04
