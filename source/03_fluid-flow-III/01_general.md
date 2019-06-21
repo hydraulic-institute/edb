@@ -54,7 +54,7 @@ in (*f*) for some classes of new clean pipe are given in Table A.
 ![Table A](./table-a.png "Table A")
 
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
-the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1-31 incl., were obtained.
+the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
 
 ## Section 3 – Old Pipes
 
@@ -65,13 +65,13 @@ metal with which it is in contact. It is recommended that prior experience be co
 supply officials be consulted where it is necessary to estimate the friction losses in old pipes or to
 allow for the aging of new pipes. References 8, 9. 10, 11 of Section VI may be consulted for general
 information on the subject. For commercial installations, it is recommended that 15 percent be
-added to the values shown in Tables 1- 31.
+added to the values shown in Tables 1–31.
 
 ## Section 4 – Tables of Friction Loss for Water, Explanation
 
 
 Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
-cast iron pipe are given in Section lIIB, Tables 1-31 incl., herein.** 
+cast iron pipe are given in Section IIIB, Tables 1–31 incl., herein.*
 
 The tables show the discharge in cubic feet per second, the average velocity in feet per second,
 and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
@@ -90,7 +90,7 @@ the use of the tables will be found in Section IIIB.
 
 ## Section 5 – Valves and Fittings
 
-The resistance to flow caused by a valve or fitting may be computed from the equation :
+The resistance to flow caused by a valve or fitting may be computed from the equation:
 
 =+=
 <span class= equation-label >(4)</span>
@@ -108,7 +108,7 @@ wherein
 Values of (k) for valves and fittings may be found
 in Section IIIB. Reference to the literature will reveal wide differences in the published values of
 (k) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
-IIIB,flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
+IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
 Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
@@ -237,9 +237,8 @@ $$ f = {64 \over R}$$
 =+=
 
 If the Reynolds Number is above 4000. the flow will
-usually be turbulent and the curves in Figs. IIIA 1-
-3 incl., apply. The range R = 2000–4000 is called
-the critical zone in which the flow may be highly
-unstable and the friction factor indeterminate.
+usually be turbulent and the curves in Figs. IIIA 1-3 incl., 
+apply. The range R = 2000–4000 is calledthe critical zone in 
+which the flow may be highly unstable and the friction factor indeterminate.
 
 

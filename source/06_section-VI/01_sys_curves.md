@@ -53,8 +53,8 @@ Another common form, which can be solved without iteration, is shown below.
 $$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
-These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number, Re, the 
-pipe diameter, Dh, and the pipe roughness, ε. The pipe roughness is dependent on the type of pipe being used. Other aspects,
+These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
+pipe diameter (D<sub>h</sub>), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
 such as age, fouling, and coatings will also affect the pipe roughness.
 
 The Hazen-Williams equation is another method to 
