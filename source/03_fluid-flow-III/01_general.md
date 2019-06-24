@@ -7,7 +7,7 @@ date: June 13th, 2019
 
 ## IIIA-1 – Fluid Flow – General
 
-## Section 1 – Pipe Friction
+### Section 1 – Pipe Friction
 
 The resistance to the incompressible flow of any fluid in any pipe may be computed from the equation:
 
@@ -25,7 +25,7 @@ wherein
 - g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - f = Friction factor
 
-## Section 2 – Construction of Charts and Tables
+### Section 2 – Construction of Charts and Tables
 
 The Colebrook Equation
 
@@ -58,7 +58,7 @@ in (*f*) for some classes of new clean pipe are given in Table A.
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
 the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
 
-## Section 3 – Old Pipes
+### Section 3 – Old Pipes
 
 A study of References 8, 9, 10, 11 in Section VI showed that the problem of estimating the friction
 factors for old pipes or allowing for the deterioration of new pipes is beyond the scope of this Handbook.
@@ -69,7 +69,7 @@ allow for the aging of new pipes. References 8, 9. 10, 11 of Section VI may be c
 information on the subject. For commercial installations, it is recommended that 15 percent be
 added to the values shown in Tables 1–31.
 
-## Section 4 – Tables of Friction Loss for Water, Explanation
+### Section 4 – Tables of Friction Loss for Water, Explanation
 
 
 Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
@@ -90,7 +90,7 @@ tolerances, or any abnormal conditions of interior surface. Any factor of safety
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
 
-## Section 5 – Valves and Fittings
+### Section 5 – Valves and Fittings
 
 The resistance to flow caused by a valve or fitting may be computed from the equation:
 
@@ -175,7 +175,7 @@ The values shown include the entrance mouthpiece which accounts in part for the 
 values for conical increasers. Resistance coefficients for reducers, as reported by Russell are
 given in Section IIIB, Fig. IIIB-7.
 
-## Section 6 – Friction Factor Diagrams
+### Section 6 – Friction Factor Diagrams
 
 As previously stated, the resistance to the incompressible flow of any fluid in any pipe may be computed from the equation (1)
 
