@@ -60,7 +60,7 @@ such as age, fouling, and coatings will also affect the pipe roughness.
 The Hazen-Williams equation is another method to 
 determine pipe losses. These values are only valid for water and do not account for temperature or viscosity. 
 These values are a function of pipe material only and are not dependent on Reynolds Number. A table of typical values 
-for various pipe materials can be found here.
+for various pipe materials can be found here (**add link**).
 
 
 ## Minor Losses
