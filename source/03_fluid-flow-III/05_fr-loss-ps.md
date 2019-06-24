@@ -5,7 +5,7 @@ date: June 21st, 2019
 
 # Friction Loss of Paper Stock
 
-**I. Introduction**
+## I. Introduction
 
 In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
@@ -23,7 +23,7 @@ pipe friction loss is based on the recently published
 TAPP! Technical Information Sheet (TIS) 408-4 (Reference I), 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
-stock consistencies of less than 2% (ovendried)
+stock consistencies of less than 2% (oven-dried)
 are considered to have the same friction loss
 characteristic as water. This paper only applies to
 systems using centrifugal pumps which is normal
@@ -32,7 +32,7 @@ the friction loss of pulp suspensions in pipe, as presented
 here, is intended to supersede the various
 methods previously issued.
 
-**II. Background**
+## II. Background
 
 Figure 1 and Figure 2 show typical friction loss curves for two different 
 consistencies (C<sub>2</sub> < C<sub>1</sub>) of chemical pulp and mechanical
@@ -83,7 +83,7 @@ Regions 1 and 3. For this pulp type, the friction loss
 curve crosses the water curve V<sub>w</sub> and there is no true
 V<sub>max</sub>·
 
-**III. Design Parameters**
+## III. Design Parameters
 
 To determine the pipe friction loss component for a specified design basis (usually daily mass flow rate),
 the following parameters must be defined:
@@ -128,7 +128,7 @@ g) Pipe material — Important to specify
 design correlations and compare design
 values.
 
-**IV. Pipe Friction Estimation Procedure**
+## IV. Pipe Friction Estimation Procedure
 
 The bulk velocity (V) will depend on the daily mass
 flow rate and the pipe diameter (D) selected. The
@@ -280,7 +280,7 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
-**V. Head Losses in Bends and Fittings**
+## V. Head Losses in Bends and Fittings
 
 The friction head loss of pulp suspensions in bends
 and fittings may be determined from the basic equation
@@ -334,11 +334,11 @@ NOTES:
 4. The friction loss depends considerably on the condition of the inside of the pipe surface (10).
 5. Wood is New Zealand Kraft pulp.
 
-**Appendix A**
+## Appendix A
 
 The following gives supplemental information to that provided in the main text.
 
-1. Capacity (flow), Q —
+**1) Capacity (flow), Q —**
 
 =+=
 [units = us]
@@ -360,7 +360,8 @@ and
 
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally).
 
-2. Bulk velocity, V —
+
+**2) Bulk velocity, V —**
 
 =+=
 [units = us]
@@ -385,3 +386,102 @@ $$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
 <span class= equation-label >(iii)</span>
 $$ (conversion) $$
 =+=
+
+where
+
+- Q = capacity <units us = "(U.S. GPM)," metric = "(conversion)"/>
+- A = inside area of pipe <units us = "(in^2^), and" metric = "(conversion)"/>
+- D = inside diameter of pipe <units us = "(in)." metric = "(conversion)"/>
+
+**3) Multiplication Factor, F (included in Equation (2)) —**
+
+=+=
+<span class= equation-label >(iv)</span>
+$$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
+=+=
+
+where
+
+- F<sub>1</sub> = correction factor for temperature. Friction loss calculations are normally based on a reference pulp temperature of 95°F. The flow resistance may be increased or
+decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This may be expressed as follows (where T = pulp temperature <units us = "(°F)):" metric = "(°C)):"/>:
+
+=+=
+[units = us]
+<span class= equation-label >(v)</span>
+$$ F_1 = 1.526 - 0.00556T $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(v)</span>
+$$ (conversion) $$
+=+=
+
+- F<sub>2</sub> = correction factor for pipe roughness. This
+factor may vary due to manufacturing processes
+of the piping, surface roughness, age, etc. Typical values for PVC and stainless
+steel piping are listed below (please note that these are typical values; experience and/or additional data may modify the above factors):
+
+=+=
+$$ F_2 = 1.0\,for\,PVC\,piping $$
+$$ F_2 = 1.25\,for\,stainless\,steel\,piping $$
+=+=
+
+- F<sub>3</sub> = correction factor for pulp type. Typical values are listed below (Note: This factor has been incorporated in
+the numerical coefficient, K, for the pulps listed in Table II. When using Table II, F3 should not be used.):
+
+=+=
+$$ F_3 = 1.0\,for\,pulps\,that\,have\,never\,been\,dried\,and\,resulurried $$
+$$ F_3 = 0.8\,for\,pulps\,that\,have\,been\,dried\,and\,resulurried $$
+=+=
+
+- F<sub>4</sub> = correction factor for beating. Data have shown
+that progressive beating causes, initially, a
+small decrease in friction loss, followed by a
+substantial increase. For a kraft pine pulp
+initially at 725 CSF and F<sub>4</sub> = 1.0, beating
+caused the freeness to decrease to 636 CSF
+and F<sub>4</sub> to decrease to 0.96. Progressive beating
+decreased the freeness to 300 CSF and
+increased F<sub>4</sub> to 1.37 (see K values in Table
+II). Some engineering judgement may be
+required.
+- F<sub>5</sub> = design safety factor. This is usually specified
+by company policy with consideration
+given to future requirements.
+
+## References
+
+(1) TAPPI Technical Information Sheet (TIS) 408-4. Technical
+Association of the Pulp and Paper Industry, Atlanta. Georgia
+(1981).
+
+(2) K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
+
+(3) Hydraulic Insti tute Engineering Data Book, First Edition.
+Hydraulic Insti tute. Cleveland. Ohio (1979).
+
+(4) K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).
+
+(5) W. Brecht and H. Heller. TAPPI 33, 9, 14A (1950).
+
+(6) R. E. Durst and L. C. Jenness. TAPPI 39, 5, 277 (1956).
+
+(7) K. Molier. G. G. Duffy and A. L. Titchener. APPITA 26, 4, 278
+(1973).
+
+(8) G. G. Duffy and A. L. Tichener. TAPPI 57, 5, 162 (1974).
+
+(9) G. G. Duffy, K. Molier, P. F. W. Lee and S. W. A. Mine,
+APPITA 27, 5, 327 (1974).
+
+(10) G. G. Duffy, TAPPI 59, 8, 124 (1976).
+
+(11) G. G. Duffy. Company Communications Goulds Pumps.
+Inc. (1980-1981).
+    
+
+
+
+
+
