@@ -9,6 +9,7 @@ import csv
 import json
 import uuid
 import pprint
+from datetime import date
 
 from .common import parse_dict
 from six import StringIO
@@ -395,3 +396,27 @@ def html(graph, specials, production=False):
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
         json.dump([t._asdict() for t in haystack], outfile)
+
+    sitemap = list()
+    for section in [dir for dir in graph if dir['directory'] == True]:
+        for topic in [child for child in section['children'] if child['is_topic']]:
+            url = dict()
+            url['loc'] = f"/{ section['slug'] }/{ topic['slug'] }"
+            url['lastmod'] = date.today()
+            url['changefreq'] = 'monthly'
+            url['priority'] = '0.8'
+            sitemap.append(url)
+
+    base_url = 'https://edb.pumps.org'
+    xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    for s in sitemap:
+        xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"
+    xml += "</urlset>"
+
+    robots = 'Sitemap: https://edb.pumps.org/sitemap.xml '
+
+    with io.open(os.path.join(OUTPUT_DIR, 'sitemap.xml'), 'w', encoding='utf8') as f:
+        f.write(xml)
+    with io.open(os.path.join(OUTPUT_DIR, 'robots.txt'), 'w', encoding='utf8') as f:
+        f.write(robots)
+        # f.write(html.encode('utf-8'))
