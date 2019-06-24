@@ -10,7 +10,7 @@ The Hydraulic Institute came into being on April 18-19, 1917, when sixteen manuf
 # Purpose and Aims
 The purpose and aims of the Institute are best expressed in the following quotation taken from Article II of the By-Laws of the Institute:
 
-"The Objects of the Institute are: To promote and further the interests of manufacturers of pumps, as well as the interests of the public in such mat-ters as are involved in manufacturing, engineering, safety, transportation, and other problems of the industry, and to this end, among other things: 
+"The Objects of the Institute are: To promote and further the interests of manufacturers of pumps, as well as the interests of the public in such matters as are involved in manufacturing, engineering, safety, transportation, and other problems of the industry, and to this end, among other things: 
 
 (a) To develop and publish standards for pumps.
 

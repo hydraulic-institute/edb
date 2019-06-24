@@ -1,6 +1,6 @@
 -----
 title:  IIIE. Friction Loss of Paper Stock
-date: June 21st, 2019
+date: June 24th, 2019
 -----
 
 # Friction Loss of Paper Stock

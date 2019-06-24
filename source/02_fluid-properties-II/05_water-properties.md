@@ -11,7 +11,7 @@ data: water-properties.csv
 =|=
 
 =/=
-title: Water – Specific Gravity vs. Temperature 
+title: IIA-2 Specific Gravity vs. Temperature for Water
 data-us: water-properties-other.csv
 data-metric: water-properties.csv
 x: 2
