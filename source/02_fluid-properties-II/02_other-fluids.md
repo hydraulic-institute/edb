@@ -1,6 +1,7 @@
 -----
 title: IIB. Other Fluids
 date:  June 20th, 2019
+description:  Other Fluids
 -----
 
 # Properties of Other Fluids
