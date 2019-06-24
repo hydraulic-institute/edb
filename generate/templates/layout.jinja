@@ -12,9 +12,12 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
-    <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=viewport content="width=device-width,initial-scale=1">
-    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge"/>
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    {% if node.metadata and node.metadata['description'] %}
+        <meta name="Description" content="{{node.metadata['description']}}"/>
+    {% endif %}
     <title>HI EDB</title>
     
     {% endblock %}
@@ -24,7 +27,7 @@
         <nav id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
-                    <img src="/images/logo-big.png" width="30" height="30">
+                    <img alt='Hydraulic Instituted' src="/images/logo-big.png" width="30" height="30">
                     <h2> Engineering Data Book</h2>
                 </a>
 
