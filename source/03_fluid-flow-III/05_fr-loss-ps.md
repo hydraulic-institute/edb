@@ -1,6 +1,7 @@
 -----
 title:  IIIE. Friction Loss of Paper Stock
 date: June 24th, 2019
+description: Friction loss of paper stock, pulp suspensions. Different consistencies.
 -----
 
 # Friction Loss of Paper Stock

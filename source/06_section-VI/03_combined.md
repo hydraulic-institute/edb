@@ -1,6 +1,7 @@
 -----
 title: Combined Pump & System Curves 
 date:  June 12th, 2019
+description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
 
 # Tutorial

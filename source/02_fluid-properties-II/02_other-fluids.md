@@ -1,14 +1,14 @@
 -----
 title: IIB. Other Fluids
 date:  June 20th, 2019
-description:  Other Fluids
+description: Properties of other fluids, such as mixtures or slurries. Determining specific gravity of mixture or slurry.
 -----
 
 # Properties of Other Fluids
 
 ## IIB-3 – Solids and Slurries 
 
-**Useful Formulas**
+###Useful Formulas
 
 a. The formula for specific gravity of a solids-liquids
 mixture or slurry, S<sub>m</sub> is:
@@ -37,7 +37,7 @@ b. Basic relationships among concentration and
 specific gravities of solid liquid mixtures are shown
 below.
 
-![](C_SG.png "")
+![](CSG.png "")
 
 Where pumps are to be applied to mixtues which are
 both corrosive and abrasive, the predominant factor
@@ -120,7 +120,7 @@ large dense solids where the impact is high.
 Hard irons are used to resist erosion and to a lesser
 extent impact wear.
 
-Elastromeric materials are used when pumping concentrations
+Elastomeric materials are used when pumping concentrations
 of fine material but total head is usually
 restricted to about <units us = "100 ft. per stage." metric = "30 m per stage."/>
 

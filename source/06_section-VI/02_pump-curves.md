@@ -45,13 +45,19 @@ is called the pump’s best efficiency point (BEP). BEP is an important operatin
 ## Horsepower Curve
 
 The horsepower curve shows the amount of brake, or shaft, horsepower (input power) required for different flow rates. P<sub>p</sub> can be determined by the following equation 
-where Q is flow in GPM:
+where Q is flow in <units us = "GPM:" metric = "m^3^/s"/>
 
 =+=
+[units = us]
 $$ P_p = {{Q * H * s} \over {3960 * η_{pump}}} $$
 =+=
 
-BHP can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
+=+=
+[units = metric]
+$$ (conversion) $$
+=+=
+
+Pump input power can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
 
 =+=
 $$ P_p = {P_{w} \over η_{pump}}  $$
@@ -73,20 +79,20 @@ at the specified flow rate, speed, and pumped liquid. NPSHr is further defined i
 
 ![](./bep-flowrate.png "")
 
-- **Best efficiency point (BEP):**
+**Best efficiency point (BEP):**
 
 A pump’s best efficiency point is defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
 of the impeller vanes at entry.
 
-- **Preferred Operating Region (POR):**
+**Preferred Operating Region (POR):**
 
 The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic
 efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. 
-Depending on the specific speed of the pump, which is further defined in the pump principles section,the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
+Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
-- **Allowable Operating Region (AOR):**
+**Allowable Operating Region (AOR):**
 
 The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate,
 as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life.
@@ -94,7 +100,7 @@ The pump manufacturer should be consulted to define this region. Typically, oper
 intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions, and the graph below shows the types of 
 issues that can occur when operating outside of the POR and AOR.
 
-- **Shut-off Head and Pump Runout:**
+**Shut-off Head and Pump Runout:**
 
 These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve.
 Shut-off is the condition of zero flow rate where no liquid is flowing through the pump, but the pump is primed and running. 

@@ -1,7 +1,7 @@
 -----
 title: IIA. Water
-date:  June 10th, 2019
-description:  IAA.Water
+date:  June 24th, 2019
+description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
 -----
 
 # Water Properties 
@@ -11,10 +11,8 @@ title: IIA-1 Water Properties at Various Temperatures
 data: water-properties.csv
 =|=
 
-### IIA-2 Specific Gravity vs. Temperature for Water
-
 =/=
-title: 
+title: IIA-2 Specific Gravity vs. Temperature for Water
 data-us: water-properties-other.csv
 data-metric: water-properties.csv
 x: 2
@@ -34,7 +32,16 @@ data-us: vapor-water-us.csv
 data-metric: vapor-water-metric.csv
 =|=
 
-## Saturation Properties for Water – Auxiliary Data
+=/=
+title: Water Vapor Saturation Curve  
+data-us: vapor-water-us.csv
+data-metric: vapor-water-metric.csv
+x: 1
+series: 2
+series_title_index: 0
+=/=
+
+## Auxiliary Data
 
 ### Reference States, Default for Fluid
 
@@ -67,17 +74,6 @@ The uncertainty of the speed of sound is 0.15% in the vapor and 0.1% or less in 
 The uncertainty in isobaric heat capacity is 0.2% in the vapor and 0.1% in the liquid, with increasing values in the critical region and at high pressures. 
 
 The uncertainties of saturation conditions are 0.025% in vapor pressure, 0.0025% in saturated liquid density, and 0.1% in saturated vapor density. The uncertainties in the saturated densities increase substantially as the critical region is approached. 
-
-## Water Vapor Saturation Curve
-
-=/=
-title:    
-data-us: vapor-water-us.csv
-data-metric: vapor-water-metric.csv
-x: 1
-series: 2
-series_title_index: 0
-=/=
 
 ## Source
 [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved February 19, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7732185&Type=SatP&Digits=5&THigh=705.1&TLow=32&TInc=20&RefState=DEF&TUnit=F&PUnit=psia&DUnit=lbm%2Fft3&HUnit=Btu%2Flb-mole&WUnit=ft%2Fs&VisUnit=cP&STUnit=lb%2Fin)
