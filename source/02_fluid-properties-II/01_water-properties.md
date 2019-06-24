@@ -1,7 +1,7 @@
 -----
 title: IIA. Water
-description:  IAA.Water
 date:  June 24th, 2019
+description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
 -----
 
 # Water Properties 

@@ -1,7 +1,7 @@
 -----
 title: IIC. Viscosity
 date:  June 24th, 2019
-description:  Viscosity
+description: Provides an overview of the fluid property known as viscosity, and how it relates to shear force and velocity. It covers dynamic viscosity and kinematic viscosity.
 -----
 
 # Viscosity

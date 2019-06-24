@@ -1,6 +1,7 @@
 -----
 title: Specific Speed
 date:  June 18th, 2019
+description: Overview of specific speed, suction specific speed, and affinity rules.
 -----
 
 # Specific Speed
@@ -23,10 +24,6 @@ wherein:
 - n = Rotational speed, in revolutions per minute 
 - Q = Total pump flow rate, <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
 - H = Head per stage, <units us = "in feet" metric = "in meters"/> 
-
-
-
-
 
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature.
 

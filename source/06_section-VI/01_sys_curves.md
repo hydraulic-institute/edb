@@ -1,6 +1,7 @@
 -----
 title:   System Curves 
 date:  June 13, 2019
+description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
 
 # Tutorial
