@@ -6,7 +6,7 @@ description: Friction loss information for water. Resistance coefficients.
 
 # Friction Loss – Water
 
-## IIB-5A – Resistance Coefficients for 90 Degree Bends of Uniform Diameter
+## IIIB-5A – Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 
 ![](IIIB-5A.png "")
 

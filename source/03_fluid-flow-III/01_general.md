@@ -1,6 +1,7 @@
 -----
 title:  IIIA. General
 date: June 13th, 2019
+description: General overview of fluid flow. Friction factors, Reynolds number, resistance.
 -----
 
 # General

@@ -4,7 +4,7 @@ date:  June 12th, 2019
 description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
 
-# Tutorial
+# Combined Pump & System Curves Tutorial
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve.
@@ -19,7 +19,7 @@ This will also help ensure the pump operation will be as close to the Best Effic
 ## Reading a Pump and System Curve Plot
 
 As the name implies, a pump and system curve plot consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
-and the dynamic head, which is the frictional losses at varying flow rates). The operating point is where the two curves intersect.
+and the dynamic head, which is the frictional losses at varying flow rates. The operating point is where the two curves intersect.
 
 ![](./reading-1.png "")
 
@@ -45,8 +45,7 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 ## Changes in Impeller Size
 
 In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use different sized impellers to shift the pump curve.
-Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a large
-r impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
+Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
 ## Active Control Valves
@@ -86,8 +85,8 @@ piping conditions over time, or the use of pressurized tanks. Further discussion
 
 # Parallel and Series System Implications
 
-The overall effect on the system behavior when adding pumps in parallel depends on the type of system, i.e. the shape of the system curve. For friction dominated system (steep system curve) 
-the bring additional parallel pumps online may not change the operating point (more flow or head) much. Conversely, adding more parallel pumps to a system that is dominated 
+The overall effect on the system behavior when adding pumps in parallel depends on the type of system, i.e. the shape of the system curve. For friction dominated systems, (steep system curve) 
+bringing additional parallel pumps online may not change the operating point (more flow or head) much. Conversely, adding more parallel pumps to a system that is dominated 
 by static head (flatter system curve) will have a greater effect on the operating point.
 
 ![](./pumps-parallel.png "")

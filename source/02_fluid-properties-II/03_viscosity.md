@@ -1,7 +1,7 @@
 -----
 title: IIC. Viscosity
 date:  June 24th, 2019
-description: Provides an overview of the fluid property known as viscosity, and how it relates to shear force and velocity. It covers dynamic viscosity and kinematic viscosity.
+description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
 # Viscosity
@@ -30,7 +30,7 @@ of the upper surface, causing it to move with a
 velocity (V) parallel to the lower fixed surface. The
 velocity distribution will be linear over the distance
 (d) and experiments show that the slope of the velocity line (V/d)
-will be directly proportional to the unit shearing force, *τ* = F/A, 
+will be directly proportional to the unit shearing force (*τ* = F/A) 
 for all "true" or "Newtonian" fluids. The proportionality factor (μ)
 is the dynamic viscosity. The foregoing may be expressed
 by the equations
@@ -100,14 +100,8 @@ follows:
     1 lb-sec/sq ft = 478.801 poises = 47,880.1 centipoises
     μ lb-sec/sq ft = (μ/47,880.1)centipoises = 0.0000208855 centipoises
     v sq ft/sec =  v sq cm/sec / 929.034 = 0.00107639 stokes
-    
-=+=
-$$ v = {μ \over ρ} = {μ \over {w/g}} $$
-=+=
-
-=+=
-$$ v\,sq ft/sec = 0.000671970{μ \over w} $$
-=+=
+    v = μ/ρ = μ/(w/g)
+    v sq ft/sec = 0.000671970(μ/w)
 
 where
 
