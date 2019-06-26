@@ -232,18 +232,15 @@ Use the toggle buttons in the orange area to increase or decrease diameter for a
 
 # Worked Examples
 
-### Example 1)
+### Example 1 (U.S. Units):
 
-A booster pump is designed to operate at <units us = "1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
-Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
-flow conditions and the new pumping conditions." metric = "0.114 m3/s and 41.148 m, with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
-Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the Pump Curve below and the Affinity Laws, generate the pump curve for low 
-flow conditions and the new pumping conditions."/> 
+A booster pump is designed to operate at 1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
+Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the pump curve below and the affinity rules, generate the pump curve for low 
+flow conditions and the new pumping conditions. 
 
 =/=
 title: 
-data-us:  total-head-feet.csv
-data-metric: total-head-meters.csv
+data: total-head-feet.csv
 x: 1
 series: 2
 series_title_index: 0
@@ -251,24 +248,14 @@ series_title_index: 0
 
 =|=
 title: Data
-data-us: total-head-feet.csv
-data-metric: total-head-meters.csv
+data: total-head-feet.csv
 =|=
-
 
 **Determine the Reduced Speed**
 
 During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
-[units = us]
-$$ n_2= n_1 (1-.10) $$
-$$ n_2= 1740(1-.10) $$
-$$ n_2= 1566 RPM $$
-=+=
-
-=+=
-[units = metric]
 $$ n_2= n_1 (1-.10) $$
 $$ n_2= 1740(1-.10) $$
 $$ n_2= 1566 RPM $$
@@ -279,46 +266,24 @@ $$ n_2= 1566 RPM $$
 Using equation 1.1, calculate the new values (repeat until you convert all points under the flow column):
 
 =+= 
-[units = us]
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 $$ {Q_2 \over 0} = {1566 \over 1740} $$
 $$ Q_2 = 0 GPM $$
 =+=
 
 =+= 
-[units = us]
 $$ {Q_2 \over 200} = {1566 \over 1740} $$
 $$ Q_2 = 180 GPM $$
 =+=
 
 =+= 
-[units = us]
 $$ {Q_2 \over 400} = {1566 \over 1740} $$
 $$ Q_2 = 360 GPM $$
 =+=
 
-=+= 
-[units = metric]
-$$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
-$$ {Q_2 \over 0} = {1566 \over 1740} $$
-$$ Q_2 = 0 GPM $$
-=+=
+**Calculate New Total Head Values**
 
-=+= 
-[units = metric]
-$$ {Q_2 \over 0.0126} = {1566 \over 1740} $$
-$$ Q_2 = 0.0114 {m^3}/s $$
-=+=
-
-=+= 
-[units = metric]
-$$ {Q_2 \over 0.0252 } = {1566 \over 1740} $$
-$$ Q_2 = 0.0227 {m^3}/s $$
-=+=
-
-**Calculate New TDH Values**
-
-Using equation 1.2, calculate the new values (repeat until you convert all points under the TDH column):
+Using equation 1.2, calculate the new values (repeat until you convert all points under the Total Head column):
 
 =+=
 [units = us]
@@ -327,20 +292,12 @@ $$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
 $$ H_2 = 173 ft. $$
 =+=
 
-=+=
-[units = metric]
-$$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
-$$ {H_2 \over 22.25} = ({1566 \over 1740})^2 $$
-$$ H_2 = 22.25 m $$
-=+=
-
-
 **Plot Pump Curve**
 
 **(need new plots and charts)**
 
 
-### Example 2)
+### Example 2:
 
 A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow." 
