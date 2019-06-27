@@ -27,7 +27,7 @@ where:
 
 Note that if the supply and destination are at the same pressure, as is often the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
 
-### Frictional Head
+### Frictional Head (Major Losses)
 
 The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
 
@@ -48,7 +48,7 @@ Where:
 The **Darcy-Weisbach friction factor**, *f*, can be determined using the Colebrook-White equation as shown.
 
 =+=
-$$ {1 \over \sqrt f} = -2\log({\epsilon \over 2.7D_h} + {2.51 \over Re \sqrt f}) $$
+$$ {1 \over \sqrt f} = -2\log({\epsilon \over 3.7D_h} + {2.51 \over Re \sqrt f}) $$
 =+=
 
 Another common form, which can be solved without iteration, is shown below.
@@ -285,4 +285,20 @@ Where, for cylindrical pipes:
 At Reynolds numbers less than about 2300, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
 At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.
 
-### Interactive Calculator
+## Pipe Roughness
+
+### Tutorial
+
+Pipe roughness varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
+
+=|=
+title: Roughness Values
+data-us: pipe-roughness-ft.csv
+data-metric: pipe-roughness-mm.csv
+=|=
+
+Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid
+and the metal with which it is in contact. It is recommended that prior experienceor testing be used to determine an accurate value. For commercial installations, 
+it is recommended that 15 percent be added to the values shown above.
+
+**(interactive calculators will be added)**

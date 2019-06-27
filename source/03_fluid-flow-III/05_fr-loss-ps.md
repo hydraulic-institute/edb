@@ -160,7 +160,7 @@ $$ V_{max} = {K'C^{σ}} (ft/s) $$
 =+=
 <span class= equation-label >(1)</span>
 [units = metric]
-$$ (conversion) $$
+$$ V_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
 
 where
@@ -199,16 +199,16 @@ $$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 <span class= equation-label >(2)</span>
 [units = metric]
-$$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
+$$ ΔH/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
 
 where
 
 - F = factor to correct for temperature, pipe roughness, pulp type, freeness, or safety factor (refer to Appendix A)
 - K = numerical coefficient (constant for a given pulp), obtained from Table II
-- V = <units us = "bulk velocity (ft/s)" metric = "bulk velocity (m/s)"/>
+- V = bulk velocity (ft/s)
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit
-- D = pipe inside diameter <units us = "(in), and" metric = "(cm), and"/>
+- D = pipe inside diameter (in), and
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
 For mechancial pulps, there is no true V<sub>max</sub>· The
@@ -231,7 +231,7 @@ $$ V_{w} = 4.00C^{1.40} (ft/s) $$
 =+=
 <span class= equation-label >(3)</span>
 [units = metric]
-$$ V_{w} = 4.00C^{1.40} (m/s) $$
+$$ V_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
 
 where
@@ -267,8 +267,8 @@ $$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
 
 where
 
-- V = bulk velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
-- D = pipe diameter <units us = "(in.)" metric = "(cm)"/>
+- V = bulk velocity (ft/s), and
+- D = pipe diameter (in.)
 
 Previously published methods for calculating pipe
 friction loss of pulp suspensions gave a very conservative

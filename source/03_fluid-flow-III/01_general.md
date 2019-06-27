@@ -32,16 +32,16 @@ The Colebrook Equation
 
 =+=
 <span class= equation-label >(2)</span>
-$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over R * \sqrt f}]) $$
+$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \sqrt f}]) $$
 =+=
 
 offers a reliable means for computing the friction factor (*f*) to be used in Equation (1).
 
-The Reynolds Number (R) is given by the equation:
+The Reynolds Number (Re) is given by the equation:
 
 =+=
 <span class= equation-label >(3)</span>
-$$ R = {V * D \over v}  $$
+$$ Re = {VD \over v}  $$
 =+=
 
 wherein
@@ -239,7 +239,7 @@ in any pipe is given by the equation:
 $$ f = {64 \over R}$$
 =+=
 
-If the Reynolds Number is above 4000. the flow will
+If the Reynolds Number is above 4000, the flow will
 usually be turbulent and the curves in Figs. IIIA 1-3 incl., 
 apply. The range R = 2000–4000 is calledthe critical zone in 
 which the flow may be highly unstable and the friction factor indeterminate.
