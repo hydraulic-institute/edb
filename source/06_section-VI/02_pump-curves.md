@@ -111,10 +111,10 @@ operating pumps.
 
 ![Flows](./flows.png "Flows")
 
-## Affinity Laws
+## Affinity Rules
 
-Under the assumption that both pumps maintain the same efficiencies, the Affinity Laws show the relationships between pump parameters (flow, pressure/head, power) and pump 
-characteristics (speed and impeller size). There are two parts to the Affinity Laws which vary by application; a change in speed while maintaining
+Under the assumption that both pumps maintain the same efficiencies, the Affinity Rules show the relationships between pump parameters (flow, pressure/head, power) and pump 
+characteristics (speed and impeller size). There are two parts to the Affinity Rules which vary by application; a change in speed while maintaining
 a constant impeller size or a change in impeller size while maintaining a constant speed.
 
 **1. Changing Speed / Constant Impeller Size**
@@ -153,7 +153,7 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3 = ({Q_2 \over Q_1})^3  $$
 
 **Speed Reduction and Impeller Trimming**
 
-Part 1 of the affinity laws is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
+Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
 therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
@@ -300,9 +300,9 @@ $$ H_2 = 173 ft. $$
 ### Example 2:
 
 A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the total head was 67 ft. 
-Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow." 
+Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow." 
 metric = "@ 24.38 m. During installation it was found the total head was 20.42 m. 
-Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity laws, determine the new impeller diameter and operating flow."/>
+Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow."/>
 
 **Calculate the New Impeller Diameter**
 

@@ -33,7 +33,7 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ## Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity law. As the pump is slowed the pump curve
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule. As the pump is slowed the pump curve
 will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
