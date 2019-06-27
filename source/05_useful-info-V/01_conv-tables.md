@@ -7,8 +7,9 @@ description: Contains a calculator for one-to-one unit conversions for various m
 # Conversion Tables
 
 
-# Source
-[NIST Special Publication 811, 2008 Edition,"Guide for the Use of the International System of Units (SI)]
+## Source
+[Ambler Thompson and Barry N. Taylor. “Guide for the Use of the International System of Units (SI)," Special Publication (NIST SP), National Institute of Standards and Technology, Gaithersburg MD, 20899.](https://doi.org/10.6028/NIST.SP.811e2008)
+
 
 
 

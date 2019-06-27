@@ -50,7 +50,7 @@ wherein
 - D = Average internal diameter in <units us = "feet" metric = "meters"/>
 - *v* = Kinematic viscosity of the fluid in <units us = "square feet/second" metric = "square meters/second"/>
 
-References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (£) and the probable variations in the friction factors for new pipes. The probable variations
+References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (ε) and the probable variations in the friction factors for new pipes. The probable variations
 in (*f*) for some classes of new clean pipe are given in Table A.
 
 
@@ -79,8 +79,8 @@ cast iron pipe are given in Section IIIB, Tables 1–31 incl., herein.*
 The tables show the discharge in cubic feet per second, the average velocity in feet per second,
 and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
 The values of the friction head (h<sub>f</sub>) in feet of fluid per 100 feet of pipe apply to any fluid having a kinematic viscosity, v  = 0.00001216 square feet per second
-(1.130 centistokes) which is the value for pure fresh water at 60° F. The friction heads are average values for pipes having the £/D values given in the tables, 
-where (£) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
+(1.130 centistokes) which is the value for pure fresh water at 60° F. The friction heads are average values for pipes having the ε/D values given in the tables, 
+where (ε) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
 is given in Section IV.
 
 The tabulated values of (h<sub>f</sub>) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
@@ -118,7 +118,7 @@ Cast iron flanged elbows and drainage-type elbows may be expected to approximate
 Values of the resistance coefficient (k) may be taken from Section IIIB. The solid line curves in Fig. IIIB-SA 
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
-values of the relative roughness factor £/D. A value of £ = 0.00085 feet will be satisfactory for uncoated
+values of the relative roughness factor ε/D. A value of ε = 0.00085 feet will be satisfactory for uncoated
 cast iron and cast steel elbows. Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski<sup>(g)</sup> 13 are
 shown in Fig. IIIB-5B. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
 coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. IIIB-5A and IIIB-5B in Section
@@ -127,7 +127,7 @@ of a flanged elbow may be obtained by subtracting the flange thickness from the 
 elbow is usually identical with that of an elbow of the same straight size as the larger end. 
 
 The resistance coefficients for miter bends as reported by Shubert<sup>(g)</sup> 12b are shown in Section IIIB,
-Table 33. The rough pipe used in the Shubert investigation had a relative roughness factor, £/D of about 0.0022. Reference 12b of Section VI.
+Table 33. The rough pipe used in the Shubert investigation had a relative roughness factor, ε/D of about 0.0022. Reference 12b of Section VI.
 should be consulted for information on the variation of the resistance coefficients with variation in the Reynolds Number.
 
 The resistance to flow caused by a sudden enlargement may be computed from the equation:
@@ -188,7 +188,7 @@ Values of (*f*) may be obtained directly from Fig. IIIA-1 where the pipe is new 
 cast iron, from Fig. IIIA-2 where the pipe is new clean steel of Schedule 40 wall thickness, or from
 Fig. IIIA-3 which applies to any size and type of surface. The probable variations in (*f*) for some
 classes of new clean pipe are given in Table A. It will be necessary to know the approximate value of
-the relative roughness factor, £/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
+the relative roughness factor, ε/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
 pipes, from Fig. llIA-4. If the fluid is fresh water at = 60° F or atmospheric
 air at 60° F the scales at the top of Figs. IIIA-1-3 incl., may be used. For convenience in air and
 water computations only, the scale reading is the product of the average velocity in feet/second and

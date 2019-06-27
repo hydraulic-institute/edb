@@ -21,7 +21,7 @@ This curve can be affected by many factors.
 
 The following analytical method for determining
 pipe friction loss is based on the recently published
-TAPP! Technical Information Sheet (TIS) 408-4 (Reference I), 
+TAPPI Technical Information Sheet (TIS) 408-4 (Reference I), 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)

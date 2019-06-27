@@ -4,7 +4,9 @@ date:  June 12th, 2019
 description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
 
-# Combined Pump & System Curves Tutorial
+# Combined Pump & System Curves 
+
+## Tutorial
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve.
@@ -16,14 +18,14 @@ on and off line, and in upset conditions. Additionally, by overlaying the pump c
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
 This will also help ensure the pump operation will be as close to the Best Efficiency Point (BEP) as possible to reduce energy consumption and increase pump reliability.
 
-## Reading a Pump and System Curve Plot
+### Reading a Pump and System Curve Plot
 
 As the name implies, a pump and system curve plot consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
 and the dynamic head, which is the frictional losses at varying flow rates. The operating point is where the two curves intersect.
 
 ![](./reading-1.png "")
 
-## Flow Rate Change Using Manual Throttling Valve
+### Flow Rate Change Using Manual Throttling Valve
 
 As a manual (or passive) valve is changed (opening or closing) it will change the system curve by affecting the K value. Closing a valve will add resistance to
 the system over the entire range of flows (an opening will reduce resistance). This can be shown on the pump system plot with the system curve bending upward. 
@@ -31,7 +33,7 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ![](./reading-2.png "")
 
-## Changes in Pump Speed
+### Changes in Pump Speed
 
 Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule. As the pump is slowed the pump curve
 will be shifted down and to the left, getting closer to the plot origin.
@@ -42,13 +44,13 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ![](./reading-3.png "")
 
-## Changes in Impeller Size
+### Changes in Impeller Size
 
 In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use different sized impellers to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
-## Active Control Valves
+### Active Control Valves
 
 An active control valve is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
 Since they continuously vary their loss to maintain a flow or pressure, there is no unique valve over a range of system flows. Because of this, they are not normally included in the 
@@ -63,7 +65,7 @@ to the setpoint.
 
 ![](./reading-4.png "")
 
-## Changing the Setpoint on an Active Control Valve
+### Changing the Setpoint on an Active Control Valve
 
 Changing the setpoint (or control point) on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
 control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
@@ -71,19 +73,19 @@ required for the pump will increase.
 
 ![](./reading-5.png "")
 
-## Changing the Pump Speed with an Active Control Valve
+### Changing the Pump Speed with an Active Control Valve
 
 When the pump speed is changed and there is an active control valve in the system, the difference in head produced by the pump will be reflected in the difference in 
 loss across the control valve, since the system flow rate has not changed.
 
 ![](./reading-6.png "")
 
-## Pump Sizing in the Real World
+### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
 piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the FAQ section here. (**add link?**)
 
-# Parallel and Series System Implications
+### Parallel and Series System Implications
 
 The overall effect on the system behavior when adding pumps in parallel depends on the type of system, i.e. the shape of the system curve. For friction dominated systems, (steep system curve) 
 bringing additional parallel pumps online may not change the operating point (more flow or head) much. Conversely, adding more parallel pumps to a system that is dominated 
@@ -96,7 +98,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ![](./pumps-series.png "")
 
-# Educational Demonstration
+## Educational Demonstration
 
 This educational demonstrator will show how changing the pump speed and the system curve will change the operating point. This is a representative demonstration and does not have actual values.
 
@@ -105,7 +107,7 @@ Change the pump speed slider to change the shape of the pump curve. The static h
 
 ![](./p-s-demo-1.png "")
 
-## Parallel Pumps
+### Parallel Pumps
 
 This demo explores how three different pumps (A, B, and C) operate in parallel, how impeller diameter and speed affect each of the pumps, and how the system curve interacts with the pump curves.
 
@@ -126,7 +128,7 @@ toggle buttons in the orange area to increase or decrease diameter for a pump.  
 
 ![Parallel 2](parallel-2.png "Parallel")
 
-## Series Pumps
+### Series Pumps
 
 This demo explores how three different pumps (A, B, and C) operate in series, how impeller diameter and speed affect each of the pumps, and how the system curve
 interacts with the pump curves.
@@ -149,7 +151,7 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-# Worked Example (U.S. Units)
+## Worked Example (U.S. Units)
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
