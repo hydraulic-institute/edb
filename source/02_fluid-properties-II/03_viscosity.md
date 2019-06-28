@@ -20,10 +20,9 @@ from 128,000 to 303,000 Seconds Saybolt Universal
 (SSU).
 
 There are two basic viscosity parameters:
-DYNAMIC (or ABSOLUTE) VISCOSITY and KINEMATIC
-VISCOSITY. The dynamic viscosity may be
-defined with the aid of Fig. 1 which shows two
-parallel plane surfaces of area (A) separated a distance
+**dynamic (*or absolute*) viscosity** and **kinematic viscosity**.
+The dynamic viscosity may be defined with the aid of Fig. 1 which 
+shows two parallel plane surfaces of area (A) separated a distance
 (d) and the space between completely filled
 with fluid. A force (F) is applied to and in the plane
 of the upper surface, causing it to move with a
@@ -154,7 +153,7 @@ but increases with time, a fluid is said to be
 **rheopectic.**
 
 Viscosity is measured by an instrument called a
-viscosimeter. A definite volume of fluid is allowed
+**viscosimeter**. A definite volume of fluid is allowed
 to flow through a capillary tube or orifice of specified
 proportions and the time of efflux noted. Instruments
 of the capillary type, such as the Ostwald,
@@ -171,9 +170,9 @@ of high viscosity. The viscosity is expressed in
 Seconds Saybolt Universal (SSU) or Seconds Saybolt
 Furol (SSF). The relationship between Saybolt
 Universal viscosities and kinematic viscosities in
-centistokes is given in "ASTM Conversion Tables
-for Kinematic and Saybolt Universal Viscosities"*
-or by the ASTM Standard, Designation: D446-85a*
+centistokes is given in <a href="https://www.astm.org/Standards/D2161.htm" target="_blank">"ASTM Conversion Tables
+for Kinematic and Saybolt Universal Viscosities"</a>
+or by the ASTM Standard, Designation: D446-85a*.
 Similar information for Saybolt Furol viscosities
 may be obtained from the ASTM Standard, Designation:
 D2161-87. The respective British counterparts

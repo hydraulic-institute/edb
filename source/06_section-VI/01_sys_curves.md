@@ -1,6 +1,6 @@
 -----
 title:   System Curves 
-date:  June 13, 2019
+date:  June 28th, 2019
 description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
 
@@ -29,21 +29,13 @@ Note that if the supply and destination are at the same pressure, as is often th
 
 ### Frictional Head (Major Losses)
 
-The **head loss due to friction** (defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>) will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
+The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
 
-Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation shown below.
+Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation shown below. (For definitions of parameters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
 
 =+=
 $$ \Delta h_{LOSS} = \Delta h_f = { {fL \over D} * {v^2  \over 2g}} $$
 =+=
-
-Where:
-
-- *f* is the friction factor
-- L is pipe length
-- D is pipe diameter
-- *v* is fluid velocity
-- g is gravitational acceleration
 
 The **Darcy-Weisbach friction factor**, *f*, can be determined using the Colebrook-White equation as shown.
 
@@ -64,27 +56,23 @@ such as age, fouling, and coatings will also affect the pipe roughness.
 The Hazen-Williams equation is another method to 
 determine pipe losses. These values are only valid for water and do not account for temperature or viscosity. 
 These values are a function of pipe material only and are not dependent on Reynolds Number. A table of typical values 
-for various pipe materials can be found here (**add link**).
+for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe.html" target="_blank">here</a>.
 
 
 ### Minor Losses
-**Minor losses** (defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>) in a piping system can consist of valves, bends, elbows, area changes, entrances from and exits to equipment, tees and branches, etc. Anything that will
+**Minor losses** in a piping system can consist of valves, bends, elbows, area changes, entrances from and exits to equipment, tees and branches, etc. Anything that will
 obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
 
 
 The loss created by the component is often characterized by a constant, K. The K values for some types of components are tabulated below. The head loss is usually
-proportional to the square of the fluid velocity and can be determined by the equation below.
+proportional to the square of the fluid velocity and can be determined by the equation below. (For definitions of parameters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
 
 
 =+=
 $$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
 =+=
 
-Where:
 
-- K is the component loss
-- *v* is fluid velocity
-- g is gravitational acceleration
 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system.
 
@@ -299,8 +287,6 @@ At Reynolds numbers less than about 2300, the flow tends to be laminar where it 
 At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.
 
 ## Pipe Roughness
-
-### Tutorial
 
 Pipe roughness varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
 

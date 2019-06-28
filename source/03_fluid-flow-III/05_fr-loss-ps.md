@@ -1,12 +1,12 @@
 -----
 title:  IIIE. Friction Loss of Paper Stock
-date: June 24th, 2019
+date: June 28th, 2019
 description: Friction loss of paper stock, pulp suspensions. Different consistencies.
 -----
 
 # Friction Loss of Paper Stock
 
-## I. Introduction
+### I. Introduction
 
 In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
@@ -33,7 +33,7 @@ the friction loss of pulp suspensions in pipe, as presented
 here, is intended to supersede the various
 methods previously issued.
 
-## II. Background
+### II. Background
 
 Figure 1 and Figure 2 show typical friction loss curves for two different 
 consistencies (C<sub>2</sub> < C<sub>1</sub>) of chemical pulp and mechanical
@@ -84,25 +84,25 @@ Regions 1 and 3. For this pulp type, the friction loss
 curve crosses the water curve V<sub>w</sub> and there is no true
 V<sub>max</sub>·
 
-## III. Design Parameters
+### III. Design Parameters
 
 To determine the pipe friction loss component for a specified design basis (usually daily mass flow rate),
 the following parameters must be defined:
 
-a) Pulp Type — Chemical or mechanical
+a) **Pulp Type** — Chemical or mechanical
 pulp, long or short fibered, never
 dried or dried and reslurred, etc.
 This is required to choose the proper
 coefficients which define the pulp
 friction curve.
 
-b) Consistency, C (oven-dried) — Often
+b) **Consistency, C (oven-dried)** — Often
 a design constraint in an existing
 system. NOTE: If air-dried consistency
 is known, multiply by 0.9 to
 convert to oven-dried consistency.
 
-c) Internal pipe diameter, D — Lowering
+c) **Internal pipe diameter, D** — Lowering
 D reduces initial capital investment,
 reduces initial capital investment,
 but increases pump operating costs.
@@ -110,26 +110,26 @@ Once the pipe diameter is selected, it
 fixes the velocity for a prespecified
 mass flow rate.
 
-d) Bulk velocity, V — Usually based on
+d) **Bulk velocity, V** — Usually based on
 a prespecified daily mass flow rate.
 Note that both V and Dare interdependent
 for a constant mass flow
 rate.
 
-e) Stock temperature, T — Required to
+e) **Stock temperature, T** — Required to
 adjust for the effect of changes in
 viscosity of water (the suspending
 medium) on pipe friction loss.
 
-f) Freeness — Used to indicate the
+f) **Freeness** — Used to indicate the
 degree of refining or to define the
 pulp for comparison purposes.
 
-g) Pipe material — Important to specify
+g) **Pipe material** — Important to specify
 design correlations and compare design
 values.
 
-## IV. Pipe Friction Estimation Procedure
+### IV. Pipe Friction Estimation Procedure
 
 The bulk velocity (V) will depend on the daily mass
 flow rate and the pipe diameter (D) selected. The
@@ -185,8 +185,8 @@ NOTES:
 5. If pulps are not identical to those shown, some engineering judgement is required.
 6. Wood is New Zealand Kraft pulp.
 
-If the proposed design velocity (V) is less than V max•
-the value of flow resistance (6H/l) may be calculated
+If the proposed design velocity (V) is less than V<sub>max</sub>,
+the value of flow resistance (ΔH/L) may be calculated
 using Equation (2) and data given in Table II
 and the appendices.
 
@@ -281,7 +281,7 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
-## V. Head Losses in Bends and Fittings
+### V. Head Losses in Bends and Fittings
 
 The friction head loss of pulp suspensions in bends
 and fittings may be determined from the basic equation
@@ -290,20 +290,16 @@ for head loss, Equation (5).
 =+=
 <span class= equation-label >(5)</span>
 [units = us]
-$$ H = K{V_{1}^{2}}/2g\,(ft) $$
+$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(ft) $$
 =+=
 
 =+=
 <span class= equation-label >(5)</span>
 [units = metric]
-$$ H = K{V_{1}^{2}}/2g\,(m) $$
+$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(m) $$
 =+=
 
-where
-
-- K = loss coefficient for a given fitting
-- V<sub>1</sub> = inlet velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
-- g = acceleration due to gravity <units us = "(32.2 ft/s^2^)" metric = "(9.81 m/s^2^)"/>
+(For definitions of paramters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
 
 Values of K for the flow of water through various
 types of bends and fittings are tabulated in numerous

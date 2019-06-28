@@ -1,14 +1,14 @@
 -----
 title: Pump Principles
-date:  June 18th, 2019
-description: Overview of specific speed, suction specific speed, and affinity rules.
+date:  June 28th, 2019
+description: Overview of specific speed, suction specific speed, other pump principles.
 -----
 
 # Pump Principles
 
 ## Impeller Specific Speed 
 
-**Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotative speed. Specific  speed is expressed by the following equation:
+**Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. Specific speed is expressed by the following equation:
 
 =+=
 [units = us]
@@ -115,9 +115,9 @@ rear shroud. Closed impellers have a front and rear shroud.
 
 ![](impeller-config.png "")
 
-Open impellers are typically used on smaller pumps and are weaker than closed impellers because of the lack of reinforcement of shrouds. They are typically cheaper to 
-manufacture and easier to clean, but become inefficient as the pump wears. Closed impellers are more expensive to manufacture, more difficult to clean, and cannot pump
-as many types of fluids as open impellers, but they are stronger and experience a much lower decrease in efficiency over the life of the pump. Semi-open impellers 
+**Open impellers** are typically used on smaller pumps and are weaker than closed impellers because of the lack of reinforcement of shrouds. They are typically cheaper to 
+manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
+as many types of fluids as open impellers, but they are stronger and experience a much lower decrease in efficiency over the life of the pump. **Semi-open impellers** 
 share some of the advantages and disadvantages of each. The reason for loss of efficiency in an open or semi-open impeller is that the distance between the vanes and 
 the pump case surface increases over time due to wear. This allows for leakage back to suction, reducing efficiency. Another benefit of closed impellers is that 
 setting axial distance doesn’t need to be as precise for this same reason.

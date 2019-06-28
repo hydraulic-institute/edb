@@ -1,6 +1,6 @@
 -----
 title: Combined Pump & System Curves 
-date:  June 12th, 2019
+date:  June 28th, 2019
 description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
 
@@ -12,7 +12,7 @@ It is important to understand how the pump will interact with the system it is u
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve.
 
 Knowing the shape of the system curve will help to understand how the pump operating conditions will change if the system changes due to things like valve position, parts of the system coming
-on and off line, and in upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
+on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
 
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
@@ -67,7 +67,7 @@ to the setpoint.
 
 ### Changing the Setpoint on an Active Control Valve
 
-Changing the setpoint (or control point) on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
+Changing the **setpoint (*or control point*)** on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
 control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
 required for the pump will increase.
 
@@ -83,7 +83,7 @@ loss across the control valve, since the system flow rate has not changed.
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the FAQ section here. (**add link?**)
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the <a href="/section-VI/faq.html" target="_blank">FAQ section here</a>.
 
 ### Parallel and Series System Implications
 

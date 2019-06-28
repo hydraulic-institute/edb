@@ -1,6 +1,6 @@
 -----
 title:  IIIA. General
-date: June 13th, 2019
+date: June 28th, 2019
 description: General overview of fluid flow. Friction factors, Reynolds number, resistance.
 -----
 
@@ -14,7 +14,7 @@ The resistance to the incompressible flow of any fluid in any pipe may be comput
 
 =+=
 <span class= equation-label >(1)</span>
-$$ h_f = f * {L \over D} * {V^2 \over 2g} $$ 
+$$ \Delta h_{LOSS} = h_f = f * {L \over D} * {V^2 \over 2g} $$ 
 =+=
 
 wherein
@@ -97,7 +97,7 @@ The resistance to flow caused by a valve or fitting may be computed from the equ
 
 =+=
 <span class= equation-label >(4)</span>
-$$h = k{{V^2}\over{2g}}$$
+$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
 =+=
 
 wherein
@@ -105,12 +105,12 @@ wherein
 - h = Frictional resistance in <units us = "feet" metric = "meters"/> of fluid 
 - V = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
-- k = Resistance coefficient for valve or fitting
+- K = Resistance coefficient for valve or fitting
  
 
-Values of (k) for valves and fittings may be found
-in Section IIIB. Reference to the literature will reveal wide differences in the published values of
-(k) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
+Values of (K) for valves and fittings may be found
+in <a href="/fluid-properties-II/other-fluids.html" target="_blank">Section IIIB</a>.  Reference to the literature will reveal wide differences in the published values of
+(K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
@@ -134,16 +134,16 @@ The resistance to flow caused by a sudden enlargement may be computed from the e
 
 =+=
 <span class= equation-label >(5)</span>
-$$h = k{{(V_1 - V_2)^2} \over {2g}}$$
+$$h = K{{(V_1 - V_2)^2} \over {2g}}$$
 =+=
 =+=
-$$ = k(1 - {A_1 \over A_2})^2 {V_1^2 \over 2g}$$
+$$ = K(1 - {A_1 \over A_2})^2 {V_1^2 \over 2g}$$
 =+=
 =+=
-$$ = k[1 - ({D_1 \over D_2})^2]^2{V_1^2 \over 2g}$$
+$$ = K[1 - ({D_1 \over D_2})^2]^2{V_1^2 \over 2g}$$
 =+=
 =+=
-$$ = k[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
+$$ = K[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
 =+=
 
 wherein
@@ -155,7 +155,7 @@ wherein
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
 - V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
-- k = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
+- K = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
 Equation (5) is useful for computing the resistance to flow caused by conical increasers and diffusers.
 Values of (k) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
@@ -227,8 +227,7 @@ $$v = 0.00107639 * stokes$$
 $$= 0.0000107639 * centistokes$$
 =+=
 
-For further information on viscosity, see Section
-IIC.
+For further information on viscosity, see <a href="/fluid-properties-II/viscosity.html" target="_blank">section IIC</a>.
 
 If the Reynolds Number is less than 2000, the
 flow is laminar and the friction factor for any fluid
