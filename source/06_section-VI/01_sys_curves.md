@@ -68,18 +68,31 @@ for various pipe materials can be found here (**add link**).
 
 
 ### Minor Losses
-The frictional head losses for the various components (valves, elbows, orifices, etc.) in the piping system are called "minor losses" the even though these can be the dominate system loss.
-The loss for the component is often characterized by a constant K and tabulated for several types of components. The head loss is determined by the equation below.
+Minor losses in a piping system can consist of valves, bend, elbows, area changes, entrances from and exits to equipment, tees and branches, etc. Anything that will
+obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
+
+
+The loss created by the component is often characterized by a constant, K. The K values for some types of components are tabulated below. The head loss is usually
+proportional to the square of the fluid velocity and can be determined by the equation below.
+
 
 =+=
 $$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
 =+=
+
+Where:
+
+- K is the component loss
+- *v* is fluid velocity
+- g is gravitational acceleration
 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system.
 
 =+=
 $$ \Delta h_{LOSS} = \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
+
+![](friction-factors.png "")
 
 ### Shape of the System Curve
 
@@ -298,7 +311,7 @@ data-metric: pipe-roughness-mm.csv
 =|=
 
 Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid
-and the metal with which it is in contact. It is recommended that prior experienceor testing be used to determine an accurate value. For commercial installations, 
+and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
 it is recommended that 15 percent be added to the values shown above.
 
 **(interactive calculators will be added)**
