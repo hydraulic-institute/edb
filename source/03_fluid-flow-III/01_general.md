@@ -8,7 +8,7 @@ description: General overview of fluid flow. Friction factors, Reynolds number, 
 
 ## IIIA-1 – Fluid Flow – General
 
-### Section 1 – Pipe Friction
+### Section 1 – Pipe Friction (Major Losses)
 
 The resistance to the incompressible flow of any fluid in any pipe may be computed from the equation:
 
@@ -91,7 +91,7 @@ tolerances, or any abnormal conditions of interior surface. Any factor of safety
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
 
-### Section 5 – Valves and Fittings
+### Section 5 – Valves and Fittings (Minor Losses)
 
 The resistance to flow caused by a valve or fitting may be computed from the equation:
 

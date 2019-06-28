@@ -20,7 +20,7 @@ This will also help ensure the pump operation will be as close to the Best Effic
 
 ### Reading a Pump and System Curve Plot
 
-As the name implies, a pump and system curve plot consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
+As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
 and the dynamic head, which is the frictional losses at varying flow rates. The operating point is where the two curves intersect.
 
 ![](./reading-1.png "")
@@ -52,7 +52,7 @@ to size the impeller to your desired duty conditions.
 
 ### Active Control Valves
 
-An active control valve is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
+An **active control valve** is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
 Since they continuously vary their loss to maintain a flow or pressure, there is no unique valve over a range of system flows. Because of this, they are not normally included in the 
 system curve. But they are shown on the pump system plot as the difference between the two curves at the operating point. In other words, a system with an active control valve will not 
 operate at the intersection of the pump and system curves since the control valve will fix the system at a certain point. 
