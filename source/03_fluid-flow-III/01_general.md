@@ -17,7 +17,7 @@ The resistance to the incompressible flow of any fluid in any pipe may be comput
 $$ \Delta h_{LOSS} = h_f = f * {L \over D} * {V^2 \over 2g} $$ 
 =+=
 
-wherein
+where:
 
 - h<sub>f</sub> = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/>
 - L = Length of pipe in <units us = "feet" metric = "meters"/>
@@ -44,7 +44,7 @@ The Reynolds Number (Re) is given by the equation:
 $$ Re = {VD \over v}  $$
 =+=
 
-wherein
+where:
 
 - V = Average velocity in <units us = "feet/second" metric = "meters/second"/>
 - D = Average internal diameter in <units us = "feet" metric = "meters"/>
@@ -100,9 +100,9 @@ The resistance to flow caused by a valve or fitting may be computed from the equ
 $$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
 =+=
 
-wherein
+where:
 
-- h = Frictional resistance in <units us = "feet" metric = "meters"/> of fluid 
+- h<sub>f</sub> = Frictional resistance in <units us = "feet" metric = "meters"/> of fluid 
 - V = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient for valve or fitting
@@ -146,8 +146,7 @@ $$ = K[1 - ({D_1 \over D_2})^2]^2{V_1^2 \over 2g}$$
 $$ = K[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
 =+=
 
-wherein
-
+where:
 
 - h = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/> 
 - V<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
@@ -165,7 +164,7 @@ Fig. IIB-6 or may be computed by the equation:
 $$k = 3.50{(\tan(\theta/2)})^{1.22}$$
 =+=
 
-wherein
+where:
 
 -  θ = total conical angle of the increaser in degrees
 

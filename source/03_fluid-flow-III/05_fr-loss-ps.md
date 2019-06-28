@@ -163,7 +163,7 @@ $$ V_{max} = {K'C^{σ}} (ft/s) $$
 $$ V_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
 
-where
+where:
 
 - K' = numerical coefficient (constant for a given pulp), obtained from Table I
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit.
@@ -202,7 +202,7 @@ $$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 $$ ΔH/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
 
-where
+where:
 
 - F = factor to correct for temperature, pipe roughness, pulp type, freeness, or safety factor (refer to Appendix A)
 - K = numerical coefficient (constant for a given pulp), obtained from Table II
@@ -234,7 +234,7 @@ $$ V_{w} = 4.00C^{1.40} (ft/s) $$
 $$ V_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
 
-where
+where:
 
 - C = consistency (oven-dried,expressed as a percentage, not decimally).
 
@@ -265,7 +265,7 @@ $$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
 $$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
 =+=
 
-where
+where:
 
 - V = bulk velocity (ft/s), and
 - D = pipe diameter (in.)
@@ -349,7 +349,7 @@ $$ Q = {{16.65(T.P.D.)}\over C} \, (U.S. GPM) $$
 $$ (conversion) $$
 =+=
 
-where
+where:
 
 - <units us = "T.P.D. = mill capacity (short tons per day)," metric = "(conversion)"/>
 
@@ -384,7 +384,7 @@ $$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
 $$ (conversion) $$
 =+=
 
-where
+where:
 
 - Q = capacity <units us = "(U.S. GPM)," metric = "(conversion)"/>
 - A = inside area of pipe <units us = "(in^2^), and" metric = "(conversion)"/>
@@ -397,7 +397,7 @@ where
 $$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
 =+=
 
-where
+where:
 
 - F<sub>1</sub> = correction factor for temperature. Friction loss calculations are normally based on a reference pulp temperature of 95°F. The flow resistance may be increased or
 decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This may be expressed as follows (where T = pulp temperature <units us = "(°F)):" metric = "(°C)):"/>:

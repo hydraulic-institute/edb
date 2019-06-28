@@ -213,7 +213,7 @@ We can solve this equation using the quadratic formula:
 $$ Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}} $$
 =+=
 
-Where:
+where:
 
 - a = 7.75e<sup>-4</sup> + 0.0018
 - b = 0.06  

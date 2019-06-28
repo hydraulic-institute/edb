@@ -20,7 +20,7 @@ $$ Ns = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 $$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
 
-Where:
+where:
 
 - <units us = "Ns = Specific Speed " metric = "n_s_ = Specific Speed "/> 
 - n = Rotational speed, in revolutions per minute 
@@ -139,7 +139,7 @@ The **net positive suction head available (NPSHa)**, which is the NPSH available
 $$ NPSH_{a} = {h_{sa}} - {h_{vp}} $$
 =+=
 
-Where:
+where:
 
 - h<sub>sa</sub> = Total suction head absolute in <units us = "feet = h_atm_ + h_s_" metric = "meters =  h_atm_ + h_s_"/>
 - h<sub>atm</sub> = Atmospheric pressure in head in <units us = "feet" metric = "meters"/>

@@ -273,7 +273,7 @@ The Reynolds number is defined as:
 $$ Re = {ρVD \over μ} = {VD \over ν} = {QD \over {νA}} $$
 =+=
 
-Where, for cylindrical pipes:
+where, for cylindrical pipes:
 
 - ρ is fluid density
 - V is fluid velocity

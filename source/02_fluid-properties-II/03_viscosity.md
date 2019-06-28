@@ -101,8 +101,8 @@ follows:
     v sq ft/sec =  v sq cm/sec / 929.034 = 0.00107639 stokes
     v = μ/ρ = μ/(w/g)
     v sq ft/sec = 0.000671970(μ/w)
-
-where
+    
+where:
 
 - *ν* = centipoises, and
 - w = lb/cu ft
