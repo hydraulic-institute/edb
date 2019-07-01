@@ -135,6 +135,10 @@ shown in Figure IIB-6.
 
 ![](IIB-4.png "")
 
+## IIB-5 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
+
+![](IIB-5.png "")
+
 ## IIB-6 – Classification of Pumps According to Solid Size
 
 ![](IIB-6.png "")
