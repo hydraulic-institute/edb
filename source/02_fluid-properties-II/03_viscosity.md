@@ -215,3 +215,45 @@ Saybolt Universal column.
 title: Data
 data: visc-conv-1.csv
 =|=
+
+
+=|=
+title: Data (continued)
+data: visc-conv-2.csv
+=|=
+
+
+=+=
+<span class= equation-label >*</span>
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoises)} \over Density\,(in\,g/cm^3)} $$
+=+=
+
+When the Metric System terms centistokes and
+centipoises are used, the density is numerically
+equal to the specific gravity. Therefore, the following
+expression can be used which will be sufficiently
+accurate for most calculations:
+
+=+=
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoises)} \over Specific\,Gravity} $$
+=+=
+
+When the English System units are used, the density
+must be used rather than the specific gravity.
+
+For values of 70 centistokes and above, use the
+following conversion:
+
+=+=
+$$ SSU = centistokes * 4.635 $$
+=+=
+
+Above the range of this table and within the range
+of the viscosimeter, multiply the particular value
+by the following approximate factors to convert to
+SSU:
+
+=|=
+title: Conversion Factors
+data:SSU-conv.csv
+=|=
