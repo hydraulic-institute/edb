@@ -126,7 +126,7 @@ This is a representative demonstration and does not have actual values.
 ## Worked Example
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 0.0189 m3/s"/>
 
-![System Curve](system-curves-001.png "System Curve")
+![](we-system.png "")
 
 **Determine the Static Head**
 

@@ -242,4 +242,3 @@ usually be turbulent and the curves in Figs. IIIA 1-3 incl.,
 apply. The range R = 2000–4000 is calledthe critical zone in 
 which the flow may be highly unstable and the friction factor indeterminate.
 
-

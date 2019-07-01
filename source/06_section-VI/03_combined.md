@@ -159,7 +159,7 @@ Previously we developed a system curve for the system shown below for flows from
 $$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2} $$
 =+=
 
-![](system-curves-001.png "")
+![](we-system.png "")
 
 **Verifying the Pump Curve with the System**
 

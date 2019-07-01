@@ -12,7 +12,7 @@ In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
 the differential in head between two points. This
 total head differential consists of pressure head,
-static head. velocity head and total friction head
+static head, velocity head and total friction head
 produced by friction between the pulp suspension
 and the pipe, bends, and fittings. The total friction
 head is the most difficult to determine because of the
@@ -112,7 +112,7 @@ mass flow rate.
 
 d) **Bulk velocity, V** — Usually based on
 a prespecified daily mass flow rate.
-Note that both V and Dare interdependent
+Note that both V and D are interdependent
 for a constant mass flow
 rate.
 

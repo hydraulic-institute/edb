@@ -1,6 +1,6 @@
 -----
 title: IIC. Viscosity
-date:  June 24th, 2019
+date:  July 1st, 2019
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -52,7 +52,7 @@ $$ force{time \over {length^2}} $$
 <units us = "The unit of dynamic viscosity in English measure
 is the pound-second per square foot which is numerically
 identical with the slug per foot-second." metric = "The unit of dynamic 
-viscosity in Metric measure isthe dyne-second per square centimeter, 
+viscosity in Metric measure is the dyne-second per square centimeter, 
 called the POISE, which is numerically identical with the
 gram per centimeter-second. It usually is more
 convenient to express numerical values in CENTIPOISES
@@ -105,7 +105,7 @@ follows:
 where:
 
 - *ν* = centipoises, and
-- w = lb/cu ft
+- w = <units us = "lbf/cu ft" metric = "N/m^3^"/>
 - g = <units us = "32.1740 ft/sec/sec at sea
 level and approximately 45 degrees latitude" 
 metric = "980.665 cm/sec/sec"/>
@@ -205,3 +205,13 @@ Pa. 19103.
 ![](IIC-2.png "")
 
 
+## IIC-3 – Viscosity Conversion Tables
+
+The following tables will give an approximate comparison of various viscosity ratings so that if the viscosity
+is given in terms other than Saybolt Universal, it can be translated quickly by following horizontally to the
+Saybolt Universal column.
+
+=|=
+title: Data
+data: visc-conv-1.csv
+=|=

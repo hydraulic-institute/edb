@@ -138,3 +138,12 @@ shown in Figure IIB-6.
 ## IIB-6 – Classification of Pumps According to Solid Size
 
 ![](IIB-6.png "")
+
+## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
+
+![](IIB-7.png "")
+
+## IIB-8 – Vapor Pressure of Helium
+
+![](IIB-8.png "")
+
