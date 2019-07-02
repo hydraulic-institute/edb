@@ -1,5 +1,5 @@
 -----
-title: VD. Other Useful Info.
+title: D) Other Useful Info.
 date:  June 11th, 2019
 -----
 

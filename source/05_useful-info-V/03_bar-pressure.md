@@ -1,5 +1,5 @@
 -----
-title: VC. Effects of Altitude
+title: C) Effects of Altitude
 date:  June 11th, 2019
 -----
 

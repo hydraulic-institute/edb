@@ -1,12 +1,12 @@
 -----
-title:  IIIA. General
+title:  A) General
 date: June 28th, 2019
 description: General overview of fluid flow. Friction factors, Reynolds number, resistance.
 -----
 
 # General
 
-## IIIA-1 – Fluid Flow – General
+## Fluid Flow – General
 
 ### Pipe Friction (Major Losses)
 
@@ -24,9 +24,7 @@ where:
 - D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
 - V = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
 - g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
-- f = Friction factor
-
-### Construction of Charts and Tables
+- *f* = Friction factor
 
 The Colebrook Equation (portrayed below) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation (1).
 
@@ -41,7 +39,7 @@ Another common form, which can be solved without iteration, is shown below.
 $$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
-The Reynolds Number (Re) is given by the equation:
+The Reynolds Number (Re) (covered in detail in <a href="/section-VI/other-content.html" target="_blank">Other Content</a> and at the end of this section) is given by the equation:
 
 =+=
 <span class= equation-label >(3)</span>
@@ -58,7 +56,7 @@ References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best 
 in (*f*) for some classes of new clean pipe are given in Table A.
 
 
-![Table A](./table-a.png "Table A")
+![](./table-a.png "")
 
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
 the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
@@ -118,14 +116,21 @@ in <a href="/fluid-properties-II/other-fluids.html" target="_blank">Section IIIB
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
-Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system.
+Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 
 =+=
 $$ \Delta h_{LOSS} = \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
+where:
+
+- *f* = pipe friction factor
+- L = pipe length in <units us = "feet" metric = "meters"/>
+- D = pipe inside diameter in <units us = "feet" metric = "meters"/>
+- ΣK = sum of the minor losses, which includes losses across valves
+
 Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (k) may be taken from Section IIIB. The solid line curves in Fig. IIIB-SA 
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.00085 feet will be satisfactory for uncoated
@@ -140,7 +145,7 @@ The resistance coefficients for miter bends as reported by Shubert<sup>(g)</sup>
 Table 33. The rough pipe used in the Shubert investigation had a relative roughness factor, ε/D of about 0.0022. Reference 12b of Section VI.
 should be consulted for information on the variation of the resistance coefficients with variation in the Reynolds Number.
 
-The resistance to flow caused by a sudden enlargement may be computed from the equation:
+The resistance to flow (head loss) caused by a sudden enlargement may be computed from the equation:
 
 =+=
 <span class= equation-label >(5)</span>
@@ -167,11 +172,12 @@ where:
 - K = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
 Equation (5) is useful for computing the resistance to flow caused by conical increasers and diffusers.
-Values of (k) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
+Values of (K) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
 Fig. IIB-6 or may be computed by the equation:
 
 =+=
-$$k = 3.50{(\tan(\theta/2)})^{1.22}$$
+<span class= equation-label >(6)</span>
+$$K = 3.50{(\tan(\theta/2)})^{1.22}$$
 =+=
 
 where:
@@ -187,7 +193,7 @@ given in Section IIIB, Fig. IIIB-7.
 
 ### Friction Factor Diagrams
 
-As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from the equation (1)
+As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from equation (1)
 
 =+=
 $$h_f = f * {L \over D} * {V^2 \over 2g}$$ 
@@ -206,7 +212,7 @@ the internal diameter in inches, (VD").
 
 For other fluids or temperatures the scales at the
 bottom of Figs. IIIA-1-3 incl., must be used. The
-scale reading is the Reynolds Number, R, given
+scale reading is the Reynolds Number, Re, given
 by equation (3).
 
 The data for Figs. IIIA-1-3 incl., were obtained directly
@@ -249,6 +255,6 @@ $$ f = {64 \over R}$$
 
 If the Reynolds Number is above 4000, the flow will
 usually be turbulent and the curves in Figs. IIIA 1-3 incl., 
-apply. The range R = 2000–4000 is calledthe critical zone in 
+apply. The range Re = 2000–4000 is called the critical zone in 
 which the flow may be highly unstable and the friction factor indeterminate.
 

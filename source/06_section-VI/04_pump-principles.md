@@ -1,5 +1,5 @@
 -----
-title: Pump Principles
+title: D) Pump Principles
 date:  June 28th, 2019
 description: Overview of specific speed, suction specific speed, other pump principles.
 -----
@@ -126,13 +126,17 @@ setting axial distance doesn’t need to be as precise for this same reason.
 
 ## Net Positive Suction Head (NPSH)
 
-**NPSH is the net positive suction head** in feet (US) or meters (metric). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
+**NPSH is the net positive suction head** in <units us = "feet (US). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
 fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
 below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
 the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
-showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation.
-
+showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation." metric = "meters (metric). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
+fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
+below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
+the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
+to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
+showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation."/>
 ![](bubble-formation.png "")
 
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:

@@ -1,5 +1,5 @@
 -----
-title:  IIIE. Friction Loss of Paper Stock
+title:  E) Friction Loss of Paper Stock
 date: June 28th, 2019
 description: Friction loss of paper stock, pulp suspensions. Different consistencies.
 -----
@@ -11,7 +11,7 @@ description: Friction loss of paper stock, pulp suspensions. Different consisten
 In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
 the differential in head between two points. This
-total head differential consists of pressure head,
+total head consists of pressure head,
 static head, velocity head and total friction head
 produced by friction between the pulp suspension
 and the pipe, bends, and fittings. The total friction
@@ -91,7 +91,7 @@ the following parameters must be defined:
 
 a) **Pulp Type** — Chemical or mechanical
 pulp, long or short fibered, never
-dried or dried and reslurred, etc.
+dried or dried and reslurried, etc.
 This is required to choose the proper
 coefficients which define the pulp
 friction curve.
@@ -104,7 +104,6 @@ convert to oven-dried consistency.
 
 c) **Internal pipe diameter, D** — Lowering
 D reduces initial capital investment,
-reduces initial capital investment,
 but increases pump operating costs.
 Once the pipe diameter is selected, it
 fixes the velocity for a prespecified
@@ -169,7 +168,7 @@ where:
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit.
 - σ = exponent (constant for a given pulp), obtained from Table I
 
-Data for use with Equation (1) to determine velocity limit, V<sub>max</sub>·
+The following is data for use with Equation (1) to determine velocity limit, V<sub>max</sub>·
 
 =|=
 title: Table I
@@ -281,25 +280,11 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
-### V. Head Losses in Bends and Fittings
+### V. Head Losses in Valves, Bends and Fittings
 
-The friction head loss of pulp suspensions in bends
+The friction head loss of pulp suspensions in valves, bends
 and fittings may be determined from the basic equation
-for head loss, Equation (5).
-
-=+=
-<span class= equation-label >(5)</span>
-[units = us]
-$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(ft) $$
-=+=
-
-=+=
-<span class= equation-label >(5)</span>
-[units = metric]
-$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(m) $$
-=+=
-
-(For definitions of paramters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
+for head loss, provided in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.
 
 Values of K for the flow of water through various
 types of bends and fittings are tabulated in numerous
@@ -312,11 +297,11 @@ bend or fitting generally exceeds the loss coefficient
 for water in the same bend or fitting. As an approximate
 rule, the loss coefficient (K) increases 20 percent
 for each 1 percent increase in oven-dried stock
-consistency. Please note that this is an approximation
-; actual values of K may differ, depending on the
+consistency. Please note that this is an approximation;
+actual values of K may differ, depending on the
 type of bend or fitting under consideration (4).
 
-Data for use with Equation (2) to determine head loss. ΔH/L.
+The following is data for use with Equation (2) to determine head loss, ΔH/L.
 
 =|=
 title: Table II

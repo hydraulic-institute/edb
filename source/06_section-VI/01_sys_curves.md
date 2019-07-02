@@ -1,6 +1,6 @@
 -----
-title:   System Curves 
-date:  June 28th, 2019
+title: A) System Curves 
+date: June 28th, 2019
 description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
 
@@ -32,7 +32,7 @@ Note that if the supply and destination are at the same pressure, as is often th
 The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
 
 Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation.
-(defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>)
+(defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>)
 
 These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
 pipe diameter (D<sub>h</sub>), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
@@ -43,13 +43,12 @@ determine pipe losses. These values are only valid for water and do not account 
 These values are a function of pipe material only and are not dependent on Reynolds Number. A table of typical values 
 for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe.html" target="_blank">here</a>.
 
-
 ### Minor Losses
 **Minor losses** in a piping system can consist of valves, bends, elbows, area changes, entrances from and exits to equipment, tees and branches, etc. Anything that will
 obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
 
 The loss created by the component is often characterized by a constant, K. The K values for some types of components are tabulated below. The head loss is usually
-proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
+proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.)
 
 ![](friction-factors.png "")
 
@@ -66,7 +65,7 @@ $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{suppl
 In some systems the frictional losses will be dominate part of the overall head loss. These systems will have a steeper system curve.
 
 ![](friction-dom.png "")
-![Elevation Changes](elev-changes.png "Elevation Changes")
+![](elev-changes.png "")
 
 In other systems the elevation change, or static head, will be dominate part of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
@@ -142,7 +141,7 @@ $$ \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}}$$
 
 =+=
 [units = us]
-$$ \Delta h_f = {({0.02 * 1255ft \over 0.3355ft} + 3.79) * {v^2 \over 2 * 32.174 {ft/sec^2}}} $$
+$$ \Delta h_f = {({0.02 * 1255ft \over 0.3355ft} + 3.79) * {v^2 \over 2 * 32.17 {ft/sec^2}}} $$
 =+=
 
 =+=
