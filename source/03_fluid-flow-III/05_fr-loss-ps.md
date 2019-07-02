@@ -1,18 +1,18 @@
 -----
 title:  IIIE. Friction Loss of Paper Stock
-date: June 24th, 2019
+date: June 28th, 2019
 description: Friction loss of paper stock, pulp suspensions. Different consistencies.
 -----
 
 # Friction Loss of Paper Stock
 
-## I. Introduction
+### I. Introduction
 
 In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
 the differential in head between two points. This
 total head differential consists of pressure head,
-static head. velocity head and total friction head
+static head, velocity head and total friction head
 produced by friction between the pulp suspension
 and the pipe, bends, and fittings. The total friction
 head is the most difficult to determine because of the
@@ -21,7 +21,7 @@ This curve can be affected by many factors.
 
 The following analytical method for determining
 pipe friction loss is based on the recently published
-TAPP! Technical Information Sheet (TIS) 408-4 (Reference I), 
+TAPPI Technical Information Sheet (TIS) 408-4 (Reference I), 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)
@@ -33,7 +33,7 @@ the friction loss of pulp suspensions in pipe, as presented
 here, is intended to supersede the various
 methods previously issued.
 
-## II. Background
+### II. Background
 
 Figure 1 and Figure 2 show typical friction loss curves for two different 
 consistencies (C<sub>2</sub> < C<sub>1</sub>) of chemical pulp and mechanical
@@ -84,25 +84,25 @@ Regions 1 and 3. For this pulp type, the friction loss
 curve crosses the water curve V<sub>w</sub> and there is no true
 V<sub>max</sub>·
 
-## III. Design Parameters
+### III. Design Parameters
 
 To determine the pipe friction loss component for a specified design basis (usually daily mass flow rate),
 the following parameters must be defined:
 
-a) Pulp Type — Chemical or mechanical
+a) **Pulp Type** — Chemical or mechanical
 pulp, long or short fibered, never
 dried or dried and reslurred, etc.
 This is required to choose the proper
 coefficients which define the pulp
 friction curve.
 
-b) Consistency, C (oven-dried) — Often
+b) **Consistency, C (oven-dried)** — Often
 a design constraint in an existing
 system. NOTE: If air-dried consistency
 is known, multiply by 0.9 to
 convert to oven-dried consistency.
 
-c) Internal pipe diameter, D — Lowering
+c) **Internal pipe diameter, D** — Lowering
 D reduces initial capital investment,
 reduces initial capital investment,
 but increases pump operating costs.
@@ -110,26 +110,26 @@ Once the pipe diameter is selected, it
 fixes the velocity for a prespecified
 mass flow rate.
 
-d) Bulk velocity, V — Usually based on
+d) **Bulk velocity, V** — Usually based on
 a prespecified daily mass flow rate.
-Note that both V and Dare interdependent
+Note that both V and D are interdependent
 for a constant mass flow
 rate.
 
-e) Stock temperature, T — Required to
+e) **Stock temperature, T** — Required to
 adjust for the effect of changes in
 viscosity of water (the suspending
 medium) on pipe friction loss.
 
-f) Freeness — Used to indicate the
+f) **Freeness** — Used to indicate the
 degree of refining or to define the
 pulp for comparison purposes.
 
-g) Pipe material — Important to specify
+g) **Pipe material** — Important to specify
 design correlations and compare design
 values.
 
-## IV. Pipe Friction Estimation Procedure
+### IV. Pipe Friction Estimation Procedure
 
 The bulk velocity (V) will depend on the daily mass
 flow rate and the pipe diameter (D) selected. The
@@ -160,10 +160,10 @@ $$ V_{max} = {K'C^{σ}} (ft/s) $$
 =+=
 <span class= equation-label >(1)</span>
 [units = metric]
-$$ (conversion) $$
+$$ V_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
 
-where
+where:
 
 - K' = numerical coefficient (constant for a given pulp), obtained from Table I
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit.
@@ -185,8 +185,8 @@ NOTES:
 5. If pulps are not identical to those shown, some engineering judgement is required.
 6. Wood is New Zealand Kraft pulp.
 
-If the proposed design velocity (V) is less than V max•
-the value of flow resistance (6H/l) may be calculated
+If the proposed design velocity (V) is less than V<sub>max</sub>,
+the value of flow resistance (ΔH/L) may be calculated
 using Equation (2) and data given in Table II
 and the appendices.
 
@@ -199,16 +199,16 @@ $$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 <span class= equation-label >(2)</span>
 [units = metric]
-$$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
+$$ ΔH/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
 
-where
+where:
 
 - F = factor to correct for temperature, pipe roughness, pulp type, freeness, or safety factor (refer to Appendix A)
 - K = numerical coefficient (constant for a given pulp), obtained from Table II
-- V = <units us = "bulk velocity (ft/s)" metric = "bulk velocity (m/s)"/>
+- V = bulk velocity (ft/s)
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit
-- D = pipe inside diameter <units us = "(in), and" metric = "(cm), and"/>
+- D = pipe inside diameter (in), and
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
 For mechancial pulps, there is no true V<sub>max</sub>· The
@@ -231,10 +231,10 @@ $$ V_{w} = 4.00C^{1.40} (ft/s) $$
 =+=
 <span class= equation-label >(3)</span>
 [units = metric]
-$$ V_{w} = 4.00C^{1.40} (m/s) $$
+$$ V_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
 
-where
+where:
 
 - C = consistency (oven-dried,expressed as a percentage, not decimally).
 
@@ -265,10 +265,10 @@ $$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
 $$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
 =+=
 
-where
+where:
 
-- V = bulk velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
-- D = pipe diameter <units us = "(in.)" metric = "(cm)"/>
+- V = bulk velocity (ft/s), and
+- D = pipe diameter (in.)
 
 Previously published methods for calculating pipe
 friction loss of pulp suspensions gave a very conservative
@@ -281,7 +281,7 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
-## V. Head Losses in Bends and Fittings
+### V. Head Losses in Bends and Fittings
 
 The friction head loss of pulp suspensions in bends
 and fittings may be determined from the basic equation
@@ -290,20 +290,16 @@ for head loss, Equation (5).
 =+=
 <span class= equation-label >(5)</span>
 [units = us]
-$$ H = K{V_{1}^{2}}/2g\,(ft) $$
+$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(ft) $$
 =+=
 
 =+=
 <span class= equation-label >(5)</span>
 [units = metric]
-$$ H = K{V_{1}^{2}}/2g\,(m) $$
+$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g}\,(m) $$
 =+=
 
-where
-
-- K = loss coefficient for a given fitting
-- V<sub>1</sub> = inlet velocity <units us = "(ft/s), and" metric = "(m/s), and"/>
-- g = acceleration due to gravity <units us = "(32.2 ft/s^2^)" metric = "(9.81 m/s^2^)"/>
+(For definitions of paramters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
 
 Values of K for the flow of water through various
 types of bends and fittings are tabulated in numerous
@@ -353,7 +349,7 @@ $$ Q = {{16.65(T.P.D.)}\over C} \, (U.S. GPM) $$
 $$ (conversion) $$
 =+=
 
-where
+where:
 
 - <units us = "T.P.D. = mill capacity (short tons per day)," metric = "(conversion)"/>
 
@@ -388,7 +384,7 @@ $$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
 $$ (conversion) $$
 =+=
 
-where
+where:
 
 - Q = capacity <units us = "(U.S. GPM)," metric = "(conversion)"/>
 - A = inside area of pipe <units us = "(in^2^), and" metric = "(conversion)"/>
@@ -401,7 +397,7 @@ where
 $$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
 =+=
 
-where
+where:
 
 - F<sub>1</sub> = correction factor for temperature. Friction loss calculations are normally based on a reference pulp temperature of 95°F. The flow resistance may be increased or
 decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This may be expressed as follows (where T = pulp temperature <units us = "(°F)):" metric = "(°C)):"/>:
@@ -460,7 +456,7 @@ Association of the Pulp and Paper Industry, Atlanta. Georgia
 (2) K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
 
 (3) Hydraulic Insti tute Engineering Data Book, First Edition.
-Hydraulic Insti tute. Cleveland. Ohio (1979).
+Hydraulic Institute. Cleveland. Ohio (1979).
 
 (4) K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).
 

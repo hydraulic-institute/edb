@@ -1,29 +1,31 @@
 -----
 title: Combined Pump & System Curves 
-date:  June 12th, 2019
+date:  June 28th, 2019
 description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
 
-# Tutorial
+# Combined Pump & System Curves 
+
+## Tutorial
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve.
 
 Knowing the shape of the system curve will help to understand how the pump operating conditions will change if the system changes due to things like valve position, parts of the system coming
-on and off line, and in upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
+on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
 
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
 This will also help ensure the pump operation will be as close to the Best Efficiency Point (BEP) as possible to reduce energy consumption and increase pump reliability.
 
-## Reading a Pump and System Curve Plot
+### Reading a Pump and System Curve Plot
 
-As the name implies, a pump and system curve plot consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
-and the dynamic head, which is the frictional losses at varying flow rates). The operating point is where the two curves intersect.
+As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
+and the dynamic head, which is the frictional losses at varying flow rates. The operating point is where the two curves intersect.
 
 ![](./reading-1.png "")
 
-## Flow Rate Change Using Manual Throttling Valve
+### Flow Rate Change Using Manual Throttling Valve
 
 As a manual (or passive) valve is changed (opening or closing) it will change the system curve by affecting the K value. Closing a valve will add resistance to
 the system over the entire range of flows (an opening will reduce resistance). This can be shown on the pump system plot with the system curve bending upward. 
@@ -31,9 +33,9 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ![](./reading-2.png "")
 
-## Changes in Pump Speed
+### Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity law. As the pump is slowed the pump curve
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule. As the pump is slowed the pump curve
 will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
@@ -42,16 +44,15 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ![](./reading-3.png "")
 
-## Changes in Impeller Size
+### Changes in Impeller Size
 
 In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use different sized impellers to shift the pump curve.
-Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a large
-r impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
+Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
-## Active Control Valves
+### Active Control Valves
 
-An active control valve is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
+An **active control valve** is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
 Since they continuously vary their loss to maintain a flow or pressure, there is no unique valve over a range of system flows. Because of this, they are not normally included in the 
 system curve. But they are shown on the pump system plot as the difference between the two curves at the operating point. In other words, a system with an active control valve will not 
 operate at the intersection of the pump and system curves since the control valve will fix the system at a certain point. 
@@ -64,30 +65,30 @@ to the setpoint.
 
 ![](./reading-4.png "")
 
-## Changing the Setpoint on an Active Control Valve
+### Changing the Setpoint on an Active Control Valve
 
-Changing the setpoint (or control point) on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
+Changing the **setpoint (*or control point*)** on an active control valve will change the operating point in the system. This will result in changing the frictional loss, the loss across the
 control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
 required for the pump will increase.
 
 ![](./reading-5.png "")
 
-## Changing the Pump Speed with an Active Control Valve
+### Changing the Pump Speed with an Active Control Valve
 
 When the pump speed is changed and there is an active control valve in the system, the difference in head produced by the pump will be reflected in the difference in 
 loss across the control valve, since the system flow rate has not changed.
 
 ![](./reading-6.png "")
 
-## Pump Sizing in the Real World
+### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the FAQ section here. (**add link?**)
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the <a href="/section-VI/faq.html" target="_blank">FAQ section here</a>.
 
-# Parallel and Series System Implications
+### Parallel and Series System Implications
 
-The overall effect on the system behavior when adding pumps in parallel depends on the type of system, i.e. the shape of the system curve. For friction dominated system (steep system curve) 
-the bring additional parallel pumps online may not change the operating point (more flow or head) much. Conversely, adding more parallel pumps to a system that is dominated 
+The overall effect on the system behavior when adding pumps in parallel depends on the type of system, i.e. the shape of the system curve. For friction dominated systems, (steep system curve) 
+bringing additional parallel pumps online may not change the operating point (more flow or head) much. Conversely, adding more parallel pumps to a system that is dominated 
 by static head (flatter system curve) will have a greater effect on the operating point.
 
 ![](./pumps-parallel.png "")
@@ -97,7 +98,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ![](./pumps-series.png "")
 
-# Educational Demonstration
+## Educational Demonstration
 
 This educational demonstrator will show how changing the pump speed and the system curve will change the operating point. This is a representative demonstration and does not have actual values.
 
@@ -106,7 +107,7 @@ Change the pump speed slider to change the shape of the pump curve. The static h
 
 ![](./p-s-demo-1.png "")
 
-## Parallel Pumps
+### Parallel Pumps
 
 This demo explores how three different pumps (A, B, and C) operate in parallel, how impeller diameter and speed affect each of the pumps, and how the system curve interacts with the pump curves.
 
@@ -127,7 +128,7 @@ toggle buttons in the orange area to increase or decrease diameter for a pump.  
 
 ![Parallel 2](parallel-2.png "Parallel")
 
-## Series Pumps
+### Series Pumps
 
 This demo explores how three different pumps (A, B, and C) operate in series, how impeller diameter and speed affect each of the pumps, and how the system curve
 interacts with the pump curves.
@@ -150,30 +151,20 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-# Worked Example
+## Worked Example (U.S. Units)
 
-Previously we developed a system curve for the system shown below for flows from <units us = "0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following." 
-metric = "0 to 0.0189 m3/s. Using 4-inch pipe, the function in terms of m3/s is the following."/>
+Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
 =+=
-[units = us]
 $$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2} $$
 =+=
 
-=+=
-[units metric]
-$$ \Delta h_{system} = 80.77{m} + {{(5.95E{+04})}{Q^2}} $$
-=+=
-
-![](system-curves-001.png "")
+![](we-system.png "")
 
 **Verifying the Pump Curve with the System**
 
-We need this system to operate at <units us = "200 GPM. Based on the system curve previously determined, this would require 296 feet of head. Finding the perfect pump from a vendor,
-we select some data points from the pump curve which are shown in the following table." 
-metric = "0.0126 m3/s. Based on the system curve previously determined, this would require 90.22 meters of head. 
-Finding the perfect pump from a vendor,we select some data points from the pump curve which are shown in the following table."/>
-
+We need this system to operate at 200 GPM. Based on the system curve previously determined, this would require 296 feet of head. Finding the perfect pump from a vendor,
+we select some data points from the pump curve which are shown in the following table.
 
 =|=
 title: Data
@@ -186,11 +177,6 @@ Using a second-order polynomial curve fit, we get the following pump curve equat
 =+=
 [units us]
 $$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
-=+=
-
-=+=
-[units metric]
-$$ need \,conversion $$
 =+=
 
 We can combine the system curve with the pump curve to get an overall understanding of how the system will operate.
@@ -213,24 +199,13 @@ $$ \Delta h_{system} = \Delta h_{pump} $$
 =+=
 
 =+=
-[units = us]
 $$ \Delta h_{static} + {7.75e^{-4}}{Q^2} = 380 - {0.06Q} - {0.0018Q^2} $$
 =+=
 
 =+=
-[units = metric]
-$$ need \,conversion $$
-=+=
-
-=+=
-[units = us]
 $$ (\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0 $$
 =+=
 
-=+=
-[units = metric]
-$$ need \,conversion $$
-=+=
 
 We can solve this equation using the quadratic formula: 
 
@@ -238,16 +213,14 @@ We can solve this equation using the quadratic formula:
 $$ Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}} $$
 =+=
 
-Where:
+where:
 
-- <units us = "a = 7.75e^-4^ + 0.0018" metric = "(need conversion)"/>
-- <units us = "b = 0.06" metric = "(need conversion)"/>
-- <units us = "c = Δh_static_ - 380" metric = "(need conversion)"/>
+- a = 7.75e<sup>-4</sup> + 0.0018
+- b = 0.06  
+- c = Δh<sub>static</sub> - 380
 
-If, for example, the tank level rises <units us = "10 additional feet, the static head would increase
-to 275 feet. Solving the above equation, we determine that the new flow rate into the tank would be 190.6 GPM."
-metric = "3.048 additional meters, the static head would increase
-to 83.82 m. Solving the above equation, we determine that the new flow rate into the tank would be 0.0120 m3/s."/>
+If, for example, the tank level rises 10 additional feet, the static head would increase
+to 275 feet. Solving the above equation, we determine that the new flow rate into the tank would be 190.6 GPM.
 
 Other cases (e.g. pipe or fitting resistances, pump speed, etc.) would require some corresponding factors to be 
 left as variables in the equations so they can be changed. But the methodology would remain the same.

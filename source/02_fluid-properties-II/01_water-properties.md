@@ -4,21 +4,24 @@ date:  June 24th, 2019
 description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
 -----
 
-# Water Properties 
+## Water Properties 
 
 =|=
 title: IIA-1 Water Properties at Various Temperatures
-data: water-properties.csv
+data-us: water-properties-us.csv
+data-metric: water-properties-metric.csv
 =|=
 
 =/=
 title: IIA-2 Specific Gravity vs. Temperature for Water
 data-us: water-properties-other.csv
-data-metric: water-properties.csv
+data-metric: water-properties-orig.csv
 x: 2
 series: 5
 series_title_index: 0
 =/=
+
+## Water Saturation Properties 
 
 =|=
 title: Sat. Properties for Water (Liquid)
@@ -46,10 +49,10 @@ series_title_index: 0
 ### Reference States, Default for Fluid
 
 **Enthalpy**
-H = <units us = "19771.296093 Btu/lb-mole at 80.3 °F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 °C and 0.010 bar."/>
+H = <units us = "19771.296093 Btu/lb-mole at 80.3 °F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 °C and 0.010 bar"/>
 
 **Entropy**
-S = <units us = "39.198189 Btu/lb-mole*R at 80.3 °F and 0.15 psia." metric = "9.103679 J/g*K at 26.9 °C and 0.010 bar.">
+S = <units us = "39.198189 Btu/lb-mole*R at 80.3 °F and 0.15 psia" metric = "9.103679 J/g*K at 26.9 °C and 0.010 bar">
 
 
 =|=
@@ -59,7 +62,7 @@ data-metric: auxiliary-metric.csv
 =|=
 
 
-## Equation of States
+### Equation of States
 The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, 
 and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R. 
 In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but 

@@ -25,7 +25,7 @@ points below the pump curves. Below is an example of 3 identical pumps in parall
 
 
 When selecting the appropriate pump in a situation like this, the use of a Variable Speed Controller is expected which means it is possible to reach duty conditions
-that exist within the curve envelope.  Using affinity laws will allow the engineer to calibrate the Variable Speed Controller to cause the pumps to hit any desired
+that exist within the curve envelope.  Using affinity rules will allow the engineer to calibrate the Variable Speed Controller to cause the pumps to hit any desired
 duty condition within the curve envelope.  It is important to remember that at any given time, the only point to dictate pump performance is where the present system
 curve will intersect the pump curve.
 

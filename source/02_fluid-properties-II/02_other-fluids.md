@@ -17,7 +17,7 @@ mixture or slurry, S<sub>m</sub> is:
 $$ S_{m} = {{S_{s} * S_{1}} \over {S_{s} + C_{w}(S_{1} - S{s})}} $$
 =+=
 
-where,
+Where:
 
 - S<sub>m</sub> = specific gravity of mixture or slurry
 - S<sub>1</sub> = specific gravity of liquid phase
@@ -70,7 +70,7 @@ the expression:
 $$ Q_{m} = {{4 * dry\, solids\, (tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
 
-where,
+Where:
 
 - Q<sub>m</sub> = slurry flow <units us = "(U.S. gallons per minute)" metric = "(conversion)"/>
 - <units us = "1 ton = 2000 lbs." metric = "(conversion)"/>
@@ -135,6 +135,19 @@ shown in Figure IIB-6.
 
 ![](IIB-4.png "")
 
+## IIB-5 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
+
+![](IIB-5.png "")
+
 ## IIB-6 – Classification of Pumps According to Solid Size
 
 ![](IIB-6.png "")
+
+## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
+
+![](IIB-7.png "")
+
+## IIB-8 – Vapor Pressure of Helium
+
+![](IIB-8.png "")
+

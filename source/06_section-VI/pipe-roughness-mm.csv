@@ -1,0 +1,12 @@
+,string,numeric
+heading,Material,"Roughness, ε (mm)"
+data,"Glass, plastic",0
+data,Concrete,0.9-9
+data,Wood stave,0.5
+data,"Rubber, smoothed",0.01
+data,Copper or brass tubing,0.0015
+data,Cast iron,0.26
+data,Galvanized iron,0.15
+data,Wrought iron,0.046
+data,Stainless steel,0.002
+data,Commercial steel,0.045
