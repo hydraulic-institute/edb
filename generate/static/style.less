@@ -63,6 +63,7 @@ aside {
 
 .sidebar {
     min-height: 100vh;
+    padding-top: 50px;
     overflow: auto;
     box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
 
@@ -78,6 +79,21 @@ aside {
 
     .menu-list a:hover {
         color: @hi_blue;
+    }
+}
+
+// sidebar is hidden below touch size (1023
+@media (min-width: 1024px) {
+    #content {
+        padding-left: 450px;
+    }
+
+    .sidebar {
+        position: fixed;
+        overflow-y: scroll;
+        top: 0;
+        bottom: 0;
+
     }
 }
 
