@@ -8,9 +8,9 @@ description: General overview of fluid flow. Friction factors, Reynolds number, 
 
 ## IIIA-1 – Fluid Flow – General
 
-### Section 1 – Pipe Friction (Major Losses)
+### Pipe Friction (Major Losses)
 
-The resistance to the incompressible flow of any fluid in any pipe may be computed from the equation:
+The resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from the equation:
 
 =+=
 <span class= equation-label >(1)</span>
@@ -19,23 +19,27 @@ $$ \Delta h_{LOSS} = h_f = f * {L \over D} * {V^2 \over 2g} $$
 
 where:
 
-- h<sub>f</sub> = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/>
+- h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/>
 - L = Length of pipe in <units us = "feet" metric = "meters"/>
 - D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
 - V = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
 - g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - f = Friction factor
 
-### Section 2 – Construction of Charts and Tables
+### Construction of Charts and Tables
 
-The Colebrook Equation
+The Colebrook Equation (portrayed below) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation (1).
 
 =+=
 <span class= equation-label >(2)</span>
 $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \sqrt f}]) $$
 =+=
 
-offers a reliable means for computing the friction factor (*f*) to be used in Equation (1).
+Another common form, which can be solved without iteration, is shown below.
+
+=+=
+$$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
+=+=
 
 The Reynolds Number (Re) is given by the equation:
 
@@ -59,7 +63,7 @@ in (*f*) for some classes of new clean pipe are given in Table A.
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
 the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
 
-### Section 3 – Old Pipes
+### Old Pipes
 
 A study of References 8, 9, 10, 11 in Section VI showed that the problem of estimating the friction
 factors for old pipes or allowing for the deterioration of new pipes is beyond the scope of this Handbook.
@@ -70,7 +74,7 @@ allow for the aging of new pipes. References 8, 9. 10, 11 of Section VI may be c
 information on the subject. For commercial installations, it is recommended that 15 percent be
 added to the values shown in Tables 1–31.
 
-### Section 4 – Tables of Friction Loss for Water, Explanation
+### Tables of Friction Loss for Water, Explanation
 
 
 Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
@@ -91,9 +95,9 @@ tolerances, or any abnormal conditions of interior surface. Any factor of safety
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
 
-### Section 5 – Valves and Fittings (Minor Losses)
+### Valves and Fittings (Minor Losses)
 
-The resistance to flow caused by a valve or fitting may be computed from the equation:
+The resistance to flow (head loss) caused by a valve or fitting may be computed from the equation:
 
 =+=
 <span class= equation-label >(4)</span>
@@ -102,7 +106,7 @@ $$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
 
 where:
 
-- h<sub>f</sub> = Frictional resistance in <units us = "feet" metric = "meters"/> of fluid 
+- h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet" metric = "meters"/> of fluid 
 - V = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient for valve or fitting
@@ -113,6 +117,12 @@ in <a href="/fluid-properties-II/other-fluids.html" target="_blank">Section IIIB
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
+
+Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system.
+
+=+=
+$$ \Delta h_{LOSS} = \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
+=+=
 
 Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
 Values of the resistance coefficient (k) may be taken from Section IIIB. The solid line curves in Fig. IIIB-SA 
@@ -148,7 +158,7 @@ $$ = K[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
 
 where:
 
-- h = Frictional resistance in <units us = "feet of fluid" metric = "meters of fluid"/> 
+- h = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/> 
 - V<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
@@ -175,9 +185,9 @@ The values shown include the entrance mouthpiece which accounts in part for the 
 values for conical increasers. Resistance coefficients for reducers, as reported by Russell are
 given in Section IIIB, Fig. IIIB-7.
 
-### Section 6 – Friction Factor Diagrams
+### Friction Factor Diagrams
 
-As previously stated, the resistance to the incompressible flow of any fluid in any pipe may be computed from the equation (1)
+As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from the equation (1)
 
 =+=
 $$h_f = f * {L \over D} * {V^2 \over 2g}$$ 

@@ -31,23 +31,8 @@ Note that if the supply and destination are at the same pressure, as is often th
 
 The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
 
-Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation shown below. (For definitions of parameters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
-
-=+=
-$$ \Delta h_{LOSS} = \Delta h_f = { {fL \over D} * {v^2  \over 2g}} $$
-=+=
-
-The **Darcy-Weisbach friction factor**, *f*, can be determined using the Colebrook-White equation as shown.
-
-=+=
-$$ {1 \over \sqrt f} = -2\log({\epsilon \over 3.7D_h} + {2.51 \over Re \sqrt f}) $$
-=+=
-
-Another common form, which can be solved without iteration, is shown below.
-
-=+=
-$$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
-=+=
+Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation.
+(defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>)
 
 These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
 pipe diameter (D<sub>h</sub>), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
@@ -63,22 +48,8 @@ for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe
 **Minor losses** in a piping system can consist of valves, bends, elbows, area changes, entrances from and exits to equipment, tees and branches, etc. Anything that will
 obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
 
-
 The loss created by the component is often characterized by a constant, K. The K values for some types of components are tabulated below. The head loss is usually
-proportional to the square of the fluid velocity and can be determined by the equation below. (For definitions of parameters, see the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
-
-
-=+=
-$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
-=+=
-
-
-
-Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system.
-
-=+=
-$$ \Delta h_{LOSS} = \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
-=+=
+proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">fluid flow section</a>.)
 
 ![](friction-factors.png "")
 
@@ -254,50 +225,3 @@ data-metric: datapoints_metric.csv
 =|=
 
 
-## Moody Diagram
-
-![](moody-original.png "")
-
-(From L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
-
-## Reynolds Number
-
-### Tutorial
-
-The Reynolds number is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
-fluid properties, and flow conditions. It is used as the basis for the Moody Diagram to determine friction factors and pressure/head losses.
-
-The Reynolds number is defined as: 
-
-=+=
-$$ Re = {ρVD \over μ} = {VD \over ν} = {QD \over {νA}} $$
-=+=
-
-where, for cylindrical pipes:
-
-- ρ is fluid density
-- V is fluid velocity
-- D is pipe inner diameter
-- μ is dynamic viscosity
-- ν is kinematic viscosity
-- Q is volumetric flow rate
-- A is pipe cross-sectional area
-
-At Reynolds numbers less than about 2300, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
-At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.
-
-## Pipe Roughness
-
-Pipe roughness varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
-
-=|=
-title: Roughness Values
-data-us: pipe-roughness-ft.csv
-data-metric: pipe-roughness-mm.csv
-=|=
-
-Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid
-and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
-it is recommended that 15 percent be added to the values shown above.
-
-**(interactive calculators will be added)**
