@@ -65,12 +65,14 @@ $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} = {{ωQ'^{0.5}} \over {(y')^{0.75}}
 
 where:
 
-- Q’ = discharge per eye, <units us = "in feet cubed per second" metric = "in meters cubed per second"/>
+- Q’ = discharge per eye, <units us = "in cubic feet per second" metric = "in cubic meters per second"/>
 - H’ = head of first stage in <units us = "feet" metric = "meters"/>
 - n = rotational speed, in revolutions per minute
 - g = gravitational acceleration, <units us = "in feet per second squared" metric = "in meters per second squared "/>
 - ω = angular velocity, in radians per second
-- y’ = specific energy, <units us = "in British thermal unit per pound mass" metric = "in joule per kilogram"/>
+- y’ = specific energy, <units us = "in British thermal unit per pound mass" metric = "in kilojoules per kilogram"/>
+
+Type number derived using the stated metric units, multiplied by a factor of 11.19, is equal to the type number derived using the stated (US) units.
 
 ## Suction Specific Speed
 

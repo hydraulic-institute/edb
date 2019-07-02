@@ -14,7 +14,7 @@ A **system curve** represents the relationship between flow through a system and
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
 =+=
-$$ x = \Delta (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
+$$ \Delta h_{static} = \Delta (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
 where:
@@ -124,7 +124,7 @@ This is a representative demonstration and does not have actual values.
 ![](./sc-demo-1.png "")
 
 ## Worked Example
-<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 0.0189 m3/s"/>
+<units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
 ![](we-system.png "")
 
@@ -163,7 +163,7 @@ The losses for the components can be found in tables. In this example we have th
 
 This gives a total K factor equal to 3.79
 
-Using the combined frictional loss equation above, we can determine the head loss (in feet) as a function of velocity <units us = "(in ft/s2)" metric = "(in m/s2)"/>
+Using the combined frictional loss equation above, we can determine the head loss (in feet) as a function of velocity <units us = "(in ft/s^2^)" metric = "(in m/s^2^)"/>
 
 =+=
 $$ \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}}$$
@@ -210,7 +210,7 @@ $$\Delta h_{system} = 80.77{m} + 4.01v^2$$
 
 
 <units us = "The following can be used to convert a flow rate in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches)."
-metric = "The following can be used to convert a flow rate in m3/s (cubic meters per second) to a velocity in m/sec (with the pipe diameter D in meters)."/>
+metric = "The following can be used to convert a flow rate in m3/h (cubic meters per hour) to a velocity in m/sec (with the pipe diameter D in meters)."/>
 
 =+=
 [units us]
@@ -219,7 +219,7 @@ $$ v = 0.002228*Q*({4 \over \pi D^2}) $$
 
 =+=
 [units metric]
-$$ v = Q*({4 \over \pi D^2}) $$
+$$ v = 0.000278*Q*({4 \over \pi D^2}) $$
 =+=
 
 Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 0.10226 m)"/> we can get the following as the system curve equation as a function
@@ -232,10 +232,10 @@ $$ \Delta h_{system} = 265{ft} + {{(7.75E{-04})}{Q^2}} $$
 
 =+=
 [units metric]
-$$ \Delta h_{system} = 80.77{m} + {{(5.95E{+04})}{Q^2}} $$
+$$ \Delta h_{system} = 80.77{m} + {({4.59E{-03})}{Q^2}} $$
 =+=
 
-This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to little loss in piping and components)." metric = "there is a lift of 77.724 meters compared to little loss in piping and components)."/> 
+This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to little loss in piping and components)." metric = "there is a lift of 77.72 meters compared to little loss in piping and components)."/> 
 
 =/=
 title: Data Points

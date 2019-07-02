@@ -456,7 +456,7 @@ Association of the Pulp and Paper Industry, Atlanta. Georgia
 (2) K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
 
 (3) Hydraulic Insti tute Engineering Data Book, First Edition.
-Hydraulic Insti tute. Cleveland. Ohio (1979).
+Hydraulic Institute. Cleveland. Ohio (1979).
 
 (4) K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).
 

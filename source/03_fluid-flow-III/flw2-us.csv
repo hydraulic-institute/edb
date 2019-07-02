@@ -1,4 +1,4 @@
-,numeric,numeric,numeric,numeric,
+,numeric,numeric,numeric,numeric,numeric
 heading,Discharge (CFS),Discharge (GPM),V (ft/sec),V2/2g (feet),hf (feet / 100 feet of pipe)
 data,0.000111401,0.05,0.154,0.000369,0.203
 data,0.000222802,0.1,0.308,0.001477,0.405

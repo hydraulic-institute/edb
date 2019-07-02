@@ -12,12 +12,12 @@ A **pump performance curve** is a graphical representation of the head generated
 
 ### Head and Flow Curve
 
-<units us = "The **head and flow curve** is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
+The **head and flow curve** <units us = "is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
 across a range of flow rates. On the y-axis is the pressure developed, typically converted to head in units of feet (ft). On the
 x-axis is the flow rate, typically in units of gallons per minute (GPM). Head can be determined from the following equation, where 
-H is head in ft, P is pressure in psi and s is specific gravity (unitless):" metric = "The **head and flow curve** is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
+H is head in ft, P is pressure in psi and s is specific gravity (unitless):" metric = "is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
 across a range of flow rates. On the y-axis is the pressure developed, typically converted to head in units of meters (m). On the
-x-axis is the flow rate, typically in units of cubic meters per second (m^3^/s). Head can be determined from the following equation, where 
+x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). Head can be determined from the following equation, where 
 H is head in m, P is pressure in kPa and s is specific gravity (unitless):"/>
 
 =+=
