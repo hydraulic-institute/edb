@@ -1,5 +1,5 @@
 -----
-title: Combined Pump & System Curves 
+title: C) Combined Pump & System Curves 
 date:  June 28th, 2019
 description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
 -----
@@ -47,7 +47,7 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 ### Changes in Impeller Size
 
 In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use different sized impellers to shift the pump curve.
-Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller, the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
+Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
 ### Active Control Valves
@@ -120,13 +120,13 @@ toggle buttons in the orange area to increase or decrease diameter for a pump.  
 
 2)	Select the "Chart Filters" Icon 
 
-![Chart Filters](chart-filters.png "Chart Filters")
+![](chart-filters.png "")
 
 3) Select/deselect desired curves, then click "Apply".
 
-![Select/Deselect 2](select-deselect-2.png "Select/Deselect 2")
+![](select-deselect-2.png "")
 
-![Parallel 2](parallel-2.png "Parallel")
+![](parallel-2.png "")
 
 ### Series Pumps
 
@@ -143,7 +143,7 @@ reservoir elevation levels.
 
 2)	Select the "Chart Filters" Icon 
 
-![Chart Filters](chart-filters.png "Chart Filters")
+![](chart-filters.png "")
 
 3) Select/deselect desired curves, then click "Apply".
 

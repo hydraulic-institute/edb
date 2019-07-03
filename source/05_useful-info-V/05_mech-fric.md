@@ -1,5 +1,5 @@
 -----
-title: VE. Mech. Friction in Line Shafts
+title: E) Mech. Friction in Line Shafts
 date:  June 11th, 2019
 -----
 

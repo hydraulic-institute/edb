@@ -1,5 +1,5 @@
 -----
-title:  IIIC. Friction Loss – Other Fluids
+title:  C) Friction Loss – Other Fluids
 date: June 28th, 2019
 -----
 
@@ -17,10 +17,10 @@ is frequently given in Seconds Saybolt Universal,
 shown except in the case of low viscositites where
 no accurate SSU equivalents exist. Further information
 on viscosity and commonly accepted viscosity
-values for liquids will be found in <a href="/fluid-properties-II/viscosity.html" target="_blank">section IIC</a>.
+values for liquids will be found in the <a href="/fluid-properties-II/viscosity.html" target="_blank">viscosity section</a>.
 No allowance has been made for abnormal
 conditions of interior surface or installation nor for
-the deterioration with age. (See <a href="/fluid-flow-III/general.html" target="_blank">section IIIA</a>.)
+the deterioration with age. (See the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.)
 
 Friction loss moduli for laminar flow are shown by
 the 45-degree lines in the upper left hand portion
@@ -71,7 +71,7 @@ $$ h_{f} = 2.31M $$
 
 where:
 
-- h<sub>f</sub> = Friction head loss in feet of fluid per 100 <units us = "feet of pipe" metric = "meters of pipe"/>
+- h<sub>f</sub> = Friction head loss in <units us = "feet of fluid per 100 feet of pipe" metric = "meters of fluid per 100 meters of pipe"/>
 
 The other quantities are listed under Equation (10).
 

@@ -1,5 +1,5 @@
 -----
-title: IIB. Other Fluids
+title: B) Other Fluids
 date:  June 20th, 2019
 description: Properties of other fluids, such as mixtures or slurries. Determining specific gravity of mixture or slurry.
 -----

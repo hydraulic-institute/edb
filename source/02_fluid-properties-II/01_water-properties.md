@@ -1,5 +1,5 @@
 -----
-title: IIA. Water
+title: A) Water
 date:  June 24th, 2019
 description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
 -----
@@ -7,13 +7,13 @@ description: Properties of water (liquid and vapor); saturation properties, dens
 ## Water Properties 
 
 =|=
-title: IIA-1 Water Properties at Various Temperatures
+title: Water Properties at Various Temperatures
 data-us: water-properties-us.csv
 data-metric: water-properties-metric.csv
 =|=
 
 =/=
-title: IIA-2 Specific Gravity vs. Temperature for Water
+title: Specific Gravity vs. Temperature for Water
 data-us: water-properties-other.csv
 data-metric: water-properties-orig.csv
 x: 2

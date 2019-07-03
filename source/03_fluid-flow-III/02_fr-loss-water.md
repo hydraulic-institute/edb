@@ -1,5 +1,5 @@
 -----
-title:  IIIB. Friction Loss – Water
+title:  B) Friction Loss – Water
 date: June 11th, 2019
 description: Friction loss information for water. Resistance coefficients.
 -----
