@@ -160,11 +160,8 @@ new Vue({
         }
     },
     mounted: function () {
-        console.log("EDB mounted, loading unit set from local storage");
-
         if (typeof (Storage) !== "undefined") {
             const stored = localStorage.getItem("unit-set");
-            console.log("Unit set currently set to " + stored);
             if (stored === 'us') {
                 this.unit_set = 'us';
             } else if (stored === 'metric') {
@@ -182,7 +179,6 @@ new Vue({
                 if (typeof (Storage) !== "undefined") {
                     this.needle = localStorage.getItem("needle")
                 }
-                console.log(this.haystack);
             }).catch((err) => {
                 console.error('Search is disabled, could not load topic list');
             })
@@ -200,12 +196,7 @@ new Vue({
 
                 return this.search_results.map((r) => {
                     const paths = this.haystack.map(g => g.path);
-                    console.log("Paths");
-                    console.log(paths);
-                    console.log("Result")
-                    console.log(r)
                     const h = paths.indexOf(r);
-                    console.log(h)
                     return this.haystack[h];
                 });
 
