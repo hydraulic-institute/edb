@@ -566,6 +566,15 @@ AWS Access Key ID [********************]:  <enter access key>
 AWS Secret Access Key [********************]:  <enter secret key>
 
 ```
+
+**Note:** when developing on AWS C9, `aws configure` often fails.  You can instead set your environment variables manually to enable deploy:
+
+```
+export AWS_ACCESS_KEY_ID=******
+$ export AWS_SECRET_ACCESS_KEY=*******
+$ export AWS_DEFAULT_REGION=us-east-2
+```
+
 ### Deploying to Beta
 Execute the following from the command line
 ```
