@@ -83,7 +83,7 @@ loss across the control valve, since the system flow rate has not changed.
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the <a href="/section-VI/faq.html" target="_blank">FAQ section here</a>.
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the <a href="/section-VI/faq.html" target="_blank">FAQ section</a>.
 
 ### Parallel and Series System Implications
 
@@ -168,14 +168,12 @@ we select some data points from the pump curve which are shown in the following 
 
 =|=
 title: Data
-data-us: qdH-us.csv
-data-metric: qdH-metric.csv
+data: qdH-us.csv
 =|=
 
 Using a second-order polynomial curve fit, we get the following pump curve equation:
 
 =+=
-[units us]
 $$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
 =+=
 

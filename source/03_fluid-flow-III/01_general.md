@@ -39,7 +39,7 @@ Another common form, which can be solved without iteration, is shown below.
 $$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
-The Reynolds Number (Re) (covered in detail in <a href="/section-VI/other-content.html" target="_blank">Other Content</a> and at the end of this section) is given by the equation:
+The Reynolds Number (Re) (covered in detail <a href="/section-VI/other-content.html" target="_blank">here</a> and at the end of this section) is given by the equation:
 
 =+=
 <span class= equation-label >(3)</span>
@@ -111,7 +111,7 @@ where:
  
 
 Values of (K) for valves and fittings may be found
-in <a href="/fluid-properties-II/other-fluids.html" target="_blank">Section IIIB</a>.  Reference to the literature will reveal wide differences in the published values of
+in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Friction Loss – Water</a>.  Reference to the literature will reveal wide differences in the published values of
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
@@ -242,7 +242,7 @@ $$v = 0.00107639 * stokes$$
 $$= 0.0000107639 * centistokes$$
 =+=
 
-For further information on viscosity, see <a href="/fluid-properties-II/viscosity.html" target="_blank">section IIC</a>.
+Further information on viscosity can be found <a href="/fluid-properties-II/viscosity.html" target="_blank">here</a>.
 
 If the Reynolds Number is less than 2000, the
 flow is laminar and the friction factor for any fluid
