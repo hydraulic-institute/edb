@@ -8,7 +8,7 @@ description: Other content such as Reynolds number, pipe roughness, moody diagra
 
 ### Tutorial
 
-The Reynolds number is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
+The **Reynolds number** is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
 fluid properties, and flow conditions. It is used as the basis for the Moody Diagram to determine friction factors and pressure/head losses.
 
 The Reynolds number is defined as: 
@@ -32,7 +32,7 @@ At Reynolds numbers higher than about 4000, the flow is considered turbulent, wi
 
 ## Pipe Roughness
 
-Pipe roughness varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
+**Pipe roughness** varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
 
 =|=
 title: Roughness Values

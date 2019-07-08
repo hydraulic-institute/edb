@@ -8,7 +8,7 @@ description: Overview of viscosity, and how it relates to shear force and veloci
 
 ## Definitions and Methods of Measurement
 
-The viscosity of a fluid (liquid or gas) is that property
+The **viscosity** of a fluid (liquid or gas) is that property
 which tends to resist a shearing force. Since
 motion or flow of a fluid is produced by shearing
 forces, viscosity is associated with fluid motion.
@@ -212,13 +212,13 @@ is given in terms other than Saybolt Universal, it can be translated quickly by 
 Saybolt Universal column.
 
 =|=
-title: Data
+title: Conversions
 data: visc-conv-1.csv
 =|=
 
 
 =|=
-title: Data (continued)
+title: Conversions (continued)
 data: visc-conv-2.csv
 =|=
 
