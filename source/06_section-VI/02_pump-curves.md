@@ -40,10 +40,10 @@ Using head, the performance of the pump can be shown independent of the density 
 
 =/=
 title: Head vs. Flow
-data-us: flow-vs-head.csv
-data-metric: flow-vs-head-metric.csv
-x: 0
-series: 1
+data-us: pc-data.csv
+data-metric: pc-data-metric.csv
+x: 1
+series: 2
 series_title_index: 0
 =/=
 
@@ -63,7 +63,8 @@ is called the pump’s best efficiency point (BEP). BEP is an important operatin
 
 =/=
 title: Head & Efficiency vs. Flow
-data: pc-data.csv
+data-us: pc-data.csv
+data-metric: pc-data-metric.csv
 x: 1
 series: 2, 3
 series_title_index: 0
@@ -94,7 +95,8 @@ The horsepower curve is important, as it allows proper selection of a driver for
 
 =/=
 title: Head, Efficiency & Input Power vs. Flow 
-data: pc-data.csv
+data-us: pc-data.csv
+data-metric: pc-data-metric.csv
 x: 1
 series: 2, 3, 4
 series_title_index: 0
@@ -107,7 +109,8 @@ at the specified flow rate, speed, and pumped liquid. NPSHr is further defined i
 
 =/=
 title: Head, Efficiency, Input Power & NPSHr vs. Flow
-data: pc-data.csv
+data-us: pc-data.csv
+data-metric: pc-data-metric.csv
 x: 1
 series: 2, 3, 4, 5
 series_title_index: 0
