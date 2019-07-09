@@ -37,19 +37,36 @@ Vue.component('chart', {
     mounted: function () {
         this.chart_data = JSON.parse(this.chart);
         const x_axis = this.chart_data.x.data;
-        x_axis.unshift('x')
+        x_axis.unshift('x');
         columns = [x_axis];
         for (const series of this.chart_data.series) {
             const series_data = series.data;
             series_data.unshift(series.title);
             columns.push(series_data);
         }
+        const x_title = this.chart_data.x.title;
         let config = {
             bindto: this.$el,
 
             data: {
                 x: 'x',
-                columns: columns
+                columns: columns,
+            },
+            axis: {
+                x: {
+                    label: {
+                        text: x_title,
+                        position: 'outer-center'
+                    }
+                }
+            },
+            tooltip: {
+                format: {
+                    title: function (d) {
+                        return x_title + ": " + d
+                    },
+
+                }
             }
         }
         c3.generate(config);
