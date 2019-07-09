@@ -48,7 +48,7 @@ for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe
 obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
 
 The loss created by the component is often characterized by a constant, K. The K values for some types of components are tabulated below. The head loss is usually
-proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.)
+proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.
 
 ![](friction-factors.png "")
 
