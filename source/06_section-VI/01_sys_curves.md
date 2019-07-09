@@ -208,7 +208,7 @@ $$ \Delta h_{system} = 80.77{m} + {({4.59E{-03})}{Q^2}} $$
 This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "(there is a lift of 265 feet compared to little loss in piping and components)." metric = "there is a lift of 77.72 meters compared to little loss in piping and components)."/> 
 
 =/=
-title: Data Points
+title: Data 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
@@ -218,7 +218,7 @@ series_title_index: 0
 
 
 =|=
-title: Data Points
+title: Data 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=

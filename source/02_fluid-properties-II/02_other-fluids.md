@@ -25,7 +25,7 @@ Where:
 - C<sub>w</sub> = concentration of solids by weight
 - C<sub>v</sub> = concentration of solids by volume
 
-Example: If the liquid has a specific gravity of 1.2
+**Example:** If the liquid has a specific gravity of 1.2
 and the concentration of solids by weight is 35% with
 the solids having a specific gravity of 2.2 then:
 

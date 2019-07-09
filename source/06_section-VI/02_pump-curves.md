@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves 
-date:  June 28th, 2019
+date:  July 9th, 2019
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 
@@ -131,7 +131,7 @@ of the impeller vanes at entry.
 
 The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic
 efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. 
-Depending on the specific speed of the pump, which is further defined in the pump principles section,the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
+Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
 **Allowable Operating Region (AOR):**
 

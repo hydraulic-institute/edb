@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temperature (C),Pressure (bar),Density (kg/m3),Volume (m3/kg),Internal Energy (kJ/kg),Enthalpy (kJ/kg),Entropy (J/g*K),Cv (J/g*K),Cp (J/g*K),Sound Spd. (m/s),Joule-Thomson (K/bar),Viscosity (cP),Term. Cond. (W/m*K),Surf. Tension (N/m)
+heading,Temperature (°C),Pressure (bar),Density (kg/m3),Volume (m3/kg),Internal Energy (kJ/kg),Enthalpy (kJ/kg),Entropy (J/g*K),Cv (J/g*K),Cp (J/g*K),Sound Spd. (m/s),Joule-Thomson (K/bar),Viscosity (cP),Term. Cond. (W/m*K),Surf. Tension (N/m)
 data,0,0.0061165,999.79,0.0010002,6.14E-11,0.00061178,1.91E-13,4.2174,4.2199,1402.3,-0.024142,1.7912,0.56104,0.075646
 data,10,0.01229,999.65,0.0010003,42.062,42.063,0.15123,4.191,4.1955,1447.1,-0.02325,1.3056,0.58002,0.07422
 data,20,0.023408,998.16,0.0010018,83.954,83.956,0.29663,4.157,4.1844,1482.2,-0.022491,1.0014,0.59843,0.072735

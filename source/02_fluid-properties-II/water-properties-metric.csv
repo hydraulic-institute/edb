@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temp. (C),Specific Volume (Cu m/kg),,Specific Gravity,,Specific Weight (kN/Cu m),Vapor Pressure (kPa)
+heading,Temp. (°C),Specific Volume (Cu m/kg),,Specific Gravity,,Specific Weight (kN/Cu m),Vapor Pressure (kPa)
 heading,,,4 °C Ref,15.56 °C Ref,20 °C Ref,,
 data,0,0.00100,1,1.001,1.002,9.81,0.607
 data,1.7,0.00100,1,1.001,1.002,9.81,0.689

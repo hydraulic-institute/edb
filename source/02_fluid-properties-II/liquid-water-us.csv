@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temperature (F),Pressure (psia),Density (lbm/ft3),Volume (ft3/lbm),Internal Energy (Btu/lb-mole),Enthalpy (Btu/lb-mole),Entropy (Btu/lb-mole*R),Cv (Btu/lb-mole*R),Cp (Btu/lb-mole*R),Sound Spd. (ft./s),Joule-Thomson (F/psia),Viscosity (cP),Term. Cond. (W/m*K),Surf. Tension (lb/in)
+heading,Temperature (°F),Pressure (psia),Density (lbm/ft3),Volume (ft3/lbm),Internal Energy (Btu/lb-mole),Enthalpy (Btu/lb-mole),Entropy (Btu/lb-mole*R),Cv (Btu/lb-mole*R),Cp (Btu/lb-mole*R),Sound Spd. (ft./s),Joule-Thomson (F/psia),Viscosity (cP),Term. Cond. (W/m*K),Surf. Tension (lb/in)
 data,32,0.088713,62.415,0.016022,4.76E-10,0.0047415,8.22E-13,18.159,18.17,4600.6,-0.0029962,1.7912,0.56104,0.00043195
 data,52,0.19197,62.4,0.016026,362.12,362.13,0.72191,18.03,18.057,4762.1,-0.0028743,1.2649,0.58211,0.00042288
 data,72,0.38914,62.283,0.016056,722.73,722.75,1.4132,17.863,18.011,4884.6,-0.002772,0.94921,0.60236,0.0004134
