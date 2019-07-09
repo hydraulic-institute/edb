@@ -60,6 +60,18 @@ data-us: flw8-us.csv
 data-metric: flw8-metric.csv
 =|=
 
+=|=
+title: Table 9 - 2 Inch Nominal, Steel Schedule 40 (ID = 2.067 in, ε/D = 0.00087)
+data-us: flw9-us.csv
+data-metric: flw9-metric.csv
+=|=
+
+=|=
+title: Table 10 - 2 1/2 Inch Nominal, Steel Schedule 40 (ID = 2.469 in, ε/D = 0.000729)
+data-us: flw10-us.csv
+data-metric: flw10-metric.csv
+=|=
+
 ## IIIB-5A – Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 
 ![](IIIB-5A.png "")

@@ -108,12 +108,12 @@ $$\Delta h_{static} = (z_{destination}-z_{supply})$$
 
 =+=
 [units = us]
-$$ \Delta h_{static} = (289{ft}-24{ft}) = 265{ft} $$
+$$ \Delta h_{static} = (289\,{ft}-24\,{ft}) = 265\,{ft} $$
 =+=
 
 =+=
 [units = metric]
-$$ \Delta h_{static} = (88.09{m}-7.315{m}) = 80.77{m} $$
+$$ \Delta h_{static} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
 =+=
 
 **Determine the Pipe Friction and Properties**

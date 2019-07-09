@@ -151,7 +151,7 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-## Worked Example (U.S. Units)
+## Worked Example (U.S. Customary Units)
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 

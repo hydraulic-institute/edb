@@ -62,7 +62,7 @@ The **efficiency curve** shows pump efficiency at various flow rates. The flow r
 is called the pump’s best efficiency point (BEP). BEP is an important operating point that is further described later in this section.
 
 =/=
-title: Head & Efficiency vs. Flow
+title: Efficiency Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
@@ -94,7 +94,7 @@ $$ P_p = {P_{w} \over η_{pump}}  $$
 The horsepower curve is important, as it allows proper selection of a driver for the pump. 
 
 =/=
-title: Head, Efficiency & Input Power vs. Flow 
+title: Horsepower / Input Power Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
@@ -108,7 +108,7 @@ The final curve typically shown on a pump performance chart is the NPSHr for dif
 at the specified flow rate, speed, and pumped liquid. NPSHr is further defined in the <a href="/section-VI/pump-principles.html" target="_blank">pump principles section.</a> 
 
 =/=
-title: Head, Efficiency, Input Power & NPSHr vs. Flow
+title: NPSHr Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
@@ -276,7 +276,7 @@ Use the toggle buttons in the orange area to increase or decrease diameter for a
 
 ## Worked Examples
 
-### Example 1 (U.S. Units):
+### Example 1 (U.S. Customary Units):
 
 A booster pump is designed to operate at 1800 GPM and 135 ft., with a speed of 1740 RPM. Due to fluctuating flows the booster pump is equipped with a Variable 
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the pump curve below and the affinity rules, generate the pump curve for low 
@@ -302,7 +302,7 @@ During low flow conditions the speed of the pump is reduced by 10%.
 =+=
 $$ n_2= n_1 (1-.10) $$
 $$ n_2= 1740(1-.10) $$
-$$ n_2= 1566 RPM $$
+$$ n_2= 1566\,RPM $$
 =+=
 
 **Calculate New Flow Values**
@@ -312,17 +312,17 @@ Using equation 1.1, calculate the new values (repeat until you convert all point
 =+= 
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 $$ {Q_2 \over 0} = {1566 \over 1740} $$
-$$ Q_2 = 0 GPM $$
+$$ Q_2 = 0\,GPM $$
 =+=
 
 =+= 
 $$ {Q_2 \over 200} = {1566 \over 1740} $$
-$$ Q_2 = 180 GPM $$
+$$ Q_2 = 180\,GPM $$
 =+=
 
 =+= 
 $$ {Q_2 \over 400} = {1566 \over 1740} $$
-$$ Q_2 = 360 GPM $$
+$$ Q_2 = 360\,GPM $$
 =+=
 
 **Calculate New Total Head Values**
@@ -333,7 +333,7 @@ Using equation 1.2, calculate the new values (repeat until you convert all point
 [units = us]
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
 $$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ H_2 = 173 ft. $$
+$$ H_2 = 173\,ft. $$
 =+=
 
 **Plot Pump Curve**
@@ -358,7 +358,7 @@ $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
 $$ {67 \over 80} = ({D_2 \over 10.625})^2 $$
 $$ {\sqrt {67 \over 80}} = \sqrt(({D_2 \over 10.625})^2) $$
 $$ 0.915 = {D_2 \over 10.625} $$
-$$ D_2 = 9.72 in. \approx 9.75 in. $$
+$$ D_2 = 9.72\,in. \approx 9.75\,in. $$
 =+=
 
 =+=
@@ -367,7 +367,7 @@ $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
 $$ {20.42 \over 24.38} = ({D_2 \over 26.99})^2 $$
 $$ {\sqrt {20.42 \over 24.38}} = \sqrt(({D_2 \over 26.99})^2) $$
 $$ 0.915 = {D_2 \over 26.99} $$
-$$ D_2 = 24.70 cm $$
+$$ D_2 = 24.70\,cm $$
 =+=
 
 **Calculate the New Flow**
@@ -378,12 +378,12 @@ During low flow conditions the speed of the pump is reduced by 10%.
 [units = us]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 $$ {Q_2 \over 2000} = {9.75 \over 10.625} $$
-$$ Q_2 = 1835 GPM $$
+$$ Q_2 = 1835\,GPM $$
 =+=
 
 =+=
 [units = metric]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 $$ {Q_2 \over 0.126} = {24.70 \over 26.99} $$
-$$ Q_2 = 0.116 {m^3}/s $$
+$$ Q_2 = 416.8\,{m^3}/h $$
 =+=
