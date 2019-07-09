@@ -47,6 +47,8 @@ series: 1
 series_title_index: 0
 =/=
 
+(Note: Flow rates are in units of <units us = "GPM.)" metric = "m^3^/h.)"/>)
+
 ### Efficiency Curve
 
 **Pump efficiency** is shown as a percentage on most pump curves. Pump efficiency is defined by the equation below, where
