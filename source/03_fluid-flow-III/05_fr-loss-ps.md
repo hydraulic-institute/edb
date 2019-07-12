@@ -185,20 +185,20 @@ NOTES:
 6. Wood is New Zealand Kraft pulp.
 
 If the proposed design velocity (V) is less than V<sub>max</sub>,
-the value of flow resistance (ΔH/L) may be calculated
+the value of flow resistance (Δh/L) may be calculated
 using Equation (2) and data given in Table II
 and the appendices.
 
 =+=
 <span class= equation-label >(2)</span>
 [units = us]
-$$ ΔH/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
+$$ Δh/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(2)</span>
 [units = metric]
-$$ ΔH/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
+$$ Δh/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
 
 where:
@@ -246,7 +246,7 @@ V<sub>max</sub> and V<sub>w</sub>·
 
 **Region 3**: A conservative estimate of friction loss is
 obtained by using the water curve.
-(ΔH/ L)<sub>w</sub> can be obtained from a Friction
+(Δh/ L)<sub>w</sub> can be obtained from a Friction
 Factor vs. Reynolds Number plot (Reference
 3, for example), or approximated
 from the following equation (based on
@@ -255,13 +255,13 @@ the Blasius equation).
 =+=
 <span class= equation-label >(4)</span>
 [units = us]
-$$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
+$$ (Δh/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(4)</span>
 [units = metric]
-$$ (ΔH/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
+$$ (Δh/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
 =+=
 
 where:
@@ -320,7 +320,7 @@ NOTES:
 
 The following gives supplemental information to that provided in the main text.
 
-**1) Capacity (flow), Q —**
+**1) Rate of flow, Q —**
 
 =+=
 [units = us]

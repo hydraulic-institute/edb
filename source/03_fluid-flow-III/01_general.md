@@ -14,7 +14,7 @@ The resistance to the incompressible flow of any fluid (head loss) in any pipe m
 
 =+=
 <span class= equation-label >(1)</span>
-$$ \Delta h_{LOSS} = h_f = f * {L \over D} * {V^2 \over 2g} $$ 
+$$ h_f = f * {L \over D} * {v^2 \over 2g} $$ 
 =+=
 
 where:
@@ -22,7 +22,7 @@ where:
 - h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/>
 - L = Length of pipe in <units us = "feet" metric = "meters"/>
 - D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
-- V = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
+- v = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
 - g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - *f* = Friction factor
 
@@ -48,7 +48,7 @@ $$ Re = {VD \over v}  $$
 
 where:
 
-- V = Average velocity in <units us = "feet/second" metric = "meters/second"/>
+- v = Average velocity in <units us = "feet/second" metric = "meters/second"/>
 - D = Average internal diameter in <units us = "feet" metric = "meters"/>
 - *v* = Kinematic viscosity of the fluid in <units us = "square feet/second" metric = "square meters/second"/>
 
@@ -99,13 +99,13 @@ The resistance to flow (head loss) caused by a valve or fitting may be computed 
 
 =+=
 <span class= equation-label >(4)</span>
-$$ \Delta h_{LOSS} = \Delta h_f = K*{v^2 \over 2g} $$
+$$ h_f = K*{v^2 \over 2g} $$
 =+=
 
 where:
 
 - h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet" metric = "meters"/> of fluid 
-- V = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
+- v = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient for valve or fitting
  
@@ -119,7 +119,7 @@ fittings. The resistance coefficients decrease with the increasing size of most 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 
 =+=
-$$ \Delta h_{LOSS} = \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
+$$ h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
 where:
@@ -149,25 +149,25 @@ The resistance to flow (head loss) caused by a sudden enlargement may be compute
 
 =+=
 <span class= equation-label >(5)</span>
-$$h = K{{(V_1 - V_2)^2} \over {2g}}$$
+$$h_{f} = K{{(v_1 - v_2)^2} \over {2g}}$$
 =+=
 =+=
-$$ = K(1 - {A_1 \over A_2})^2 {V_1^2 \over 2g}$$
+$$ = K(1 - {A_1 \over A_2})^2 {v_1^2 \over 2g}$$
 =+=
 =+=
-$$ = K[1 - ({D_1 \over D_2})^2]^2{V_1^2 \over 2g}$$
+$$ = K[1 - ({D_1 \over D_2})^2]^2{v_1^2 \over 2g}$$
 =+=
 =+=
-$$ = K[{({D_2 \over D_1})^2 - 1 }]^2{V_2^2 \over 2g}$$
+$$ = K[{({D_2 \over D_1})^2 - 1 }]^2{v_2^2 \over 2g}$$
 =+=
 
 where:
 
 - h = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/> 
-- V<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
+- v<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
-- V<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
+- v<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
 - g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
@@ -196,7 +196,7 @@ given in Section IIIB, Fig. IIIB-7.
 As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from equation (1)
 
 =+=
-$$h_f = f * {L \over D} * {V^2 \over 2g}$$ 
+$$h_f = f * {L \over D} * {v^2 \over 2g}$$ 
 =+=
 
 Values of (*f*) may be obtained directly from Fig. IIIA-1 where the pipe is new clean asphalt-dipped

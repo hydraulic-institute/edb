@@ -47,15 +47,13 @@ series: 2
 series_title_index: 0
 =/=
 
-(Note: Flow rates are in units of <units us = "GPM.)" metric = "m^3^/h.)"/>)
-
 ### Efficiency Curve
 
 **Pump efficiency** is shown as a percentage on most pump curves. Pump efficiency is defined by the equation below, where
 P<sub>w</sub> is pump output power (power imparted to the liquid) and P<sub>p</sub> is pump input power:
 
 =+=
-$$ η_{pump} = {P_{w} \over P_{p}}  $$
+$$ η_{p} = {P_{w} \over P_{p}}  $$
 =+=
 
 The **efficiency curve** shows pump efficiency at various flow rates. The flow rate where efficiency is at a maximum
@@ -70,31 +68,39 @@ series: 2, 3
 series_title_index: 0
 =/=
 
-### Horsepower Curve
+### Pump Input Power Curve
 
-The **horsepower** curve shows the amount of input power required for different flow rates. P<sub>p</sub> can be determined by the following equation 
+The **pump input power curve** shows the amount of input power required for different flow rates. P<sub>p</sub> can be determined by the following equation 
 where Q is flow in <units us = "GPM:" metric = "m^3^/h"/>
 
 =+=
 [units = us]
-$$ P_p = {{Q * H * s} \over {3960 * η_{pump}}} $$
+$$ P_p = {{Q * H * s} \over {3960 * η_{p}}} $$
 =+=
 
 =+=
 [units = metric]
-$$ (conversion) $$
+$$ P_p = {{Q * H * s} \over {366.6 * η_{p}}} $$
 =+=
+
+where:
+
+- P<sub>p</sub> = pump input power, in <units us = "hp" metric = "kW"/>
+- Q = rate of flow, in <units us = "gallons per minute" metric = "m^3^/h"/>
+- H = total head, in <units us = "feet" metric = "meters"/>
+- s = specific gravity
+- n<sub>p</sub> = pump efficiency
 
 Pump input power can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
 
 =+=
-$$ P_p = {P_{w} \over η_{pump}}  $$
+$$ P_p = {P_{w} \over η_{p}}  $$
 =+=
 
-The horsepower curve is important, as it allows proper selection of a driver for the pump. 
+The pump input power curve is important, as it allows proper selection of a driver for the pump. 
 
 =/=
-title: Horsepower / Input Power Curve
+title: Pump Input Power Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
@@ -343,9 +349,9 @@ $$ H_2 = 173\,ft. $$
 
 ### Example 2:
 
-A pump designed with a 10-5/8” diameter impeller will be operating at 2000 RPM <units us = "@ 80 ft. During installation it was found the total head was 67 ft. 
+A pump designed with a <units us = "10-5/8” diameter impeller will be operating at 2000 GPM @ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow." 
-metric = "@ 24.38 m. During installation it was found the total head was 20.42 m. 
+metric = "270  mm diameter impeller will be operating at 2000 RPM @ 24.38 m. During installation it was found the total head was 20.42 m. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow."/>
 
 **Calculate the New Impeller Diameter**
@@ -364,10 +370,10 @@ $$ D_2 = 9.72\,in. \approx 9.75\,in. $$
 =+=
 [units = metric]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
-$$ {20.42 \over 24.38} = ({D_2 \over 26.99})^2 $$
-$$ {\sqrt {20.42 \over 24.38}} = \sqrt(({D_2 \over 26.99})^2) $$
-$$ 0.915 = {D_2 \over 26.99} $$
-$$ D_2 = 24.70\,cm $$
+$$ {20.42 \over 24.38} = ({D_2 \over 270})^2 $$
+$$ {\sqrt {20.42 \over 24.38}} = \sqrt(({D_2 \over 270})^2) $$
+$$ 0.915 = {D_2 \over 270} $$
+$$ D_2 = 247\,mm $$
 =+=
 
 **Calculate the New Flow**
@@ -384,6 +390,6 @@ $$ Q_2 = 1835\,GPM $$
 =+=
 [units = metric]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
-$$ {Q_2 \over 0.126} = {24.70 \over 26.99} $$
+$$ {Q_2 \over 454.2} = {247 \over 270} $$
 $$ Q_2 = 416.8\,{m^3}/h $$
 =+=
