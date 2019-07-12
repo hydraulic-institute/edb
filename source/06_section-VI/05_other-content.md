@@ -20,7 +20,7 @@ $$ Re = {ρVD \over μ} = {VD \over ν} = {QD \over {νA}} $$
 where, for cylindrical pipes:
 
 - ρ is fluid density
-- V is fluid velocity
+- v is fluid velocity
 - D is pipe inner diameter
 - μ is dynamic viscosity
 - ν is kinematic viscosity

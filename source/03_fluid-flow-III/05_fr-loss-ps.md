@@ -325,13 +325,13 @@ The following gives supplemental information to that provided in the main text.
 =+=
 [units = us]
 <span class= equation-label >(i)</span>
-$$ Q = {{16.65(T.P.D.)}\over C} \, (U.S. GPM) $$
+$$ Q = {{16.65(T.P.D.)}\over C} \, (gpm) $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(i)</span>
-$$ (conversion) $$
+$$ Q = {{3.782(T.P.D.)}\over C} \, (m^{3}/h) $$
 =+=
 
 where:
@@ -354,7 +354,7 @@ $$ V = {{0.321Q}\over A}\, (ft/s),\, or $$
 =+=
 [units = metric]
 <span class= equation-label >(ii)</span>
-$$ (conversion) $$
+$$ V = {{278Q}\over A}\, (m/s),\, or $$
 =+=
 
 =+=
@@ -366,14 +366,14 @@ $$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
 =+=
 [units = metric]
 <span class= equation-label >(iii)</span>
-$$ (conversion) $$
+$$ V = {{354Q}\over D^2}\, (m/s) $$
 =+=
 
 where:
 
-- Q = capacity <units us = "(U.S. GPM)," metric = "(conversion)"/>
-- A = inside area of pipe <units us = "(in^2^), and" metric = "(conversion)"/>
-- D = inside diameter of pipe <units us = "(in)." metric = "(conversion)"/>
+- Q = rate of flow <units us = "(gpm)," metric = "(m^3^/h)"/>
+- A = inside area of pipe <units us = "(in.^2^), and" metric = "(mm^2^)"/>
+- D = inside diameter of pipe <units us = "(in.)" metric = "(mm)"/>
 
 **3) Multiplication Factor, F (included in Equation (2)) —**
 
@@ -396,7 +396,7 @@ $$ F_1 = 1.526 - 0.00556T $$
 =+=
 [units = metric]
 <span class= equation-label >(v)</span>
-$$ (conversion) $$
+$$ F_1 = 1.34808 - 0.010008T $$
 =+=
 
 - F<sub>2</sub> = correction factor for pipe roughness. This

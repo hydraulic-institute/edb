@@ -67,13 +67,19 @@ c. Slurry flow requirements can be determined from
 the expression:
 
 =+=
-$$ Q_{m} = {{4 * dry\, solids\, (tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
+[units = us]
+$$ Q_{m} = {{4 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
+=+=
+
+=+=
+[units = metric]
+$$ Q_{m} = {{0.9085 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
 
 Where:
 
-- Q<sub>m</sub> = slurry flow <units us = "(U.S. gallons per minute)" metric = "(conversion)"/>
-- <units us = "1 ton = 2000 lbs." metric = "(conversion)"/>
+- Q<sub>m</sub> = slurry flow <units us = "(gallons per minute)" metric = "(m^3^/h)"/>
+- 1 ton = 2000 lbs
 
 Example: If 2,400 tons of dry solids is processed in 24
 hours in water with a specific gravity of 1.0 and the
@@ -86,12 +92,12 @@ $$ S_{m} = {{2.7 * 1.0} \over {2.7 + .3(1 - 2.7)}} = 1.23 $$
 
 =+=
 [units = us]
-$$ Q_{m} = {{4 * 100} \over {.3 * 1.23}} = 1,084\, U.S.\, GPM $$
+$$ Q_{m} = {{4 * 100} \over {.3 * 1.23}} = 1,084\,GPM $$
 =+=
 
 =+=
 [units = metric]
-$$ (conversion) $$
+$$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
 =+=
 
 d. Abrasive wear:

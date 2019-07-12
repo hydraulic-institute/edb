@@ -15,19 +15,19 @@ A **pump performance curve** is a graphical representation of the head generated
 The **head and flow curve** <units us = "is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
 across a range of flow rates. On the y-axis is the pressure developed, typically converted to head in units of feet (ft). On the
 x-axis is the flow rate, typically in units of gallons per minute (GPM). Head can be determined from the following equation, where 
-H is head in ft, P is pressure in psi and s is specific gravity (unitless):" metric = "is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
+H is head in ft, p is pressure in psi and s is specific gravity (unitless):" metric = "is the most commonly used curve to describe pump performance. It shows the amount of pressure developed 
 across a range of flow rates. On the y-axis is the pressure developed, typically converted to head in units of meters (m). On the
 x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). Head can be determined from the following equation, where 
-H is head in m, P is pressure in kPa and s is specific gravity (unitless):"/>
+H is head in m, p is pressure in kPa and s is specific gravity (unitless):"/>
 
 =+=
 [units = us]
-$$ H =  {{2.31 * P} \over s} $$
+$$ H =  {{2.31 * p} \over s} $$
 =+=
 
 =+=
 [units = metric]
-$$ (conversion) $$
+$$ H =  {{0.102 * p} \over s} $$
 =+=
 
 Specific gravity can be found by using the following equation, where ρ is density:
@@ -71,7 +71,7 @@ series_title_index: 0
 ### Pump Input Power Curve
 
 The **pump input power curve** shows the amount of input power required for different flow rates. P<sub>p</sub> can be determined by the following equation 
-where Q is flow in <units us = "GPM:" metric = "m^3^/h"/>
+where Q is flow in <units us = "GPM:" metric = "m^3^/h:"/>
 
 =+=
 [units = us]
