@@ -1,6 +1,6 @@
 -----
 title: B) Other Fluids
-date:  June 20th, 2019
+date: July 16th, 2019
 description: Properties of other fluids, such as mixtures or slurries. Determining specific gravity of mixture or slurry.
 -----
 
@@ -147,7 +147,7 @@ shown in Figure IIB-6.
 
 ## IIB-6 – Classification of Pumps According to Solid Size
 
-![](IIB-6.png "")
+![](IIB-6-new.jpg "")
 
 ## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
 
