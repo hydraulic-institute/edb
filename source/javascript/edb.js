@@ -161,7 +161,6 @@ new Vue({
             setTimeout(() => {
                 if (typeof (Event) === 'function') {
                     // modern browsers
-                    console.log("Dispatching resize event");
                     window.dispatchEvent(new Event('resize'));
                 } else {
                     // for IE and other old browsers
