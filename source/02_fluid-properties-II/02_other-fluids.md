@@ -39,16 +39,13 @@ below.
 
 ![](CSG.png "")
 
-Where pumps are to be applied to mixtues which are
-both corrosive and abrasive, the predominant factor
-causing wear should be identified and the materials
-of construction selected accordingly. This often
-results in a compromise and in many cases can only
-be decided as a result of test or operational
-experience.
+Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
+This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
+<a href="https://estore.pumps.org/Standards/Rotodynamic/Slurry.aspx" target="_blank">ANSI/HI 12.1-12.6 – Rotodynamic Centrifugal Slurry Pumps</a> contains more information regarding the operation 
+and applications of slurry pumps.
 
 For any slurry pump application a complete description
-of the mixture components is requi red in order to select 
+of the mixture components is required in order to select 
 the correct type of pump and materials of construction.
 
 =+=
@@ -153,7 +150,17 @@ shown in Figure IIB-6.
 
 ![](VPH2.png "")
 
+*C-H₂   0.21%  0, 99.79%  p*
+
+*Triple Point:  13.8 K, 1.02 PSIA*
+
+*Critical Point: 32.2 K, 191 PSIA*
+
+*NBS RP 1932 (T-S Diagram)*         
+                         
 
 ## IIB-8 – Vapor Pressure of Helium
 
 ![](VPHelium.png "")
+
+*(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*

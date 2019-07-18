@@ -155,6 +155,8 @@ Operating at this point for more than a few seconds can cause serious mechanical
 flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
 operating pumps.
 
+To learn more about pump operating regions, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+
 ### Affinity Rules
 
 Under the assumption that both pumps maintain the same efficiencies, the **Affinity Rules** show the relationships between pump parameters (flow, pressure/head, power) and pump 

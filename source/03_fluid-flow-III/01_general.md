@@ -63,7 +63,7 @@ At Reynolds numbers higher than about 4000, the flow is considered turbulent, wi
 
 ### Pipe Roughness
 
-**Pipe roughness** varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
+**Pipe roughness** varies with pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
 
 =|=
 title: Roughness Values
@@ -100,6 +100,8 @@ No allowance has been made for age, differences in diameter resulting from manuf
 tolerances, or any abnormal conditions of interior surface. Any factor of safety must be estimated
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
+
+To learn more about the effects of pipe friction on rotodynamic pumps, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 ### Valves and Fittings (Minor Losses)
 
