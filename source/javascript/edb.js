@@ -157,6 +157,21 @@ new Vue({
         search_results: undefined
     },
     watch: {
+        unit_set: function () {
+            setTimeout(() => {
+                if (typeof (Event) === 'function') {
+                    // modern browsers
+                    console.log("Dispatching resize event");
+                    window.dispatchEvent(new Event('resize'));
+                } else {
+                    // for IE and other old browsers
+                    // causes deprecation warning on modern browsers
+                    var evt = window.document.createEvent('UIEvents');
+                    evt.initUIEvent('resize', true, false, window, 0);
+                    window.dispatchEvent(evt);
+                }
+            }, 5)
+        },
         needle: function () {
             if (!this.needle || !this.needle.trim()) {
                 // Nothing in search box - kill the search results.
