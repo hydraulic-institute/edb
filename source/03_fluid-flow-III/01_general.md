@@ -39,38 +39,46 @@ Another common form, which can be solved without iteration, is shown below.
 $$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
-The Reynolds Number (Re) (covered in detail <a href="/section-VI/other-content.html" target="_blank">here</a> and at the end of this section) is given by the equation:
+The **Reynolds number** (Re) is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
+fluid properties, and flow conditions. It is used as the basis for the Moody Diagram to determine friction factors and pressure/head losses.
+
+The Reynolds number is defined as: 
 
 =+=
-<span class= equation-label >(3)</span>
-$$ Re = {VD \over v}  $$
+$$ Re = {ρvD \over μ} = {vD \over 𝜈} = {QD \over {𝜈A}} $$
 =+=
 
-where:
+where, for cylindrical pipes:
 
-- v = Average velocity in <units us = "feet/second" metric = "meters/second"/>
-- D = Average internal diameter in <units us = "feet" metric = "meters"/>
-- *v* = Kinematic viscosity of the fluid in <units us = "square feet/second" metric = "square meters/second"/>
+- ρ is fluid density
+- v is fluid velocity
+- D is pipe inner diameter
+- μ is dynamic viscosity
+- 𝜈 is kinematic viscosity
+- Q is volumetric flow rate
+- A is pipe cross-sectional area
 
-References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (ε) and the probable variations in the friction factors for new pipes. The probable variations
-in (*f*) for some classes of new clean pipe are given in Table A.
+At Reynolds numbers less than about 2300, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
+At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.
 
+### Pipe Roughness
 
-![](./table-a.png "")
+**Pipe roughness** varies on pipe material, age, usage, fluid transport and lining. This table gives example values for some clean materials.
+
+=|=
+title: Roughness Values
+data-us: pipe-roughness-ft.csv
+data-metric: pipe-roughness-mm.csv
+=|=
+
+Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid
+and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
+it is recommended that 15 percent be added to the values shown above.
+
+References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (ε) and the probable variations in the friction factors for new pipes.
 
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
 the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
-
-### Old Pipes
-
-A study of References 8, 9, 10, 11 in Section VI showed that the problem of estimating the friction
-factors for old pipes or allowing for the deterioration of new pipes is beyond the scope of this Handbook.
-The deterioration of pipes with age depends on the particular chemical properties of the fluid and the
-metal with which it is in contact. It is recommended that prior experience be considered and local water
-supply officials be consulted where it is necessary to estimate the friction losses in old pipes or to
-allow for the aging of new pipes. References 8, 9. 10, 11 of Section VI may be consulted for general
-information on the subject. For commercial installations, it is recommended that 15 percent be
-added to the values shown in Tables 1–31.
 
 ### Tables of Friction Loss for Water, Explanation
 
@@ -254,7 +262,12 @@ $$ f = {64 \over R}$$
 =+=
 
 If the Reynolds Number is above 4000, the flow will
-usually be turbulent and the curves in Figs. IIIA 1-3 incl., 
-apply. The range Re = 2000–4000 is called the critical zone in 
-which the flow may be highly unstable and the friction factor indeterminate.
+usually be turbulent and the **Moody Diagram** pictured below can be used to determine the friction factor.
+The range Re = 2000–4000 is called the critical zone in which the flow may be highly unstable and the friction factor indeterminate.
+
+### Moody Diagram
+
+![](moody-original.png "")
+
+(From L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
 

@@ -12,7 +12,7 @@ industry. The Institute offers a wide variety of programs and services, each tai
 specific statistical data and economic reports, promotional opportunities, educational materials, breaking industry news, participation in industry initiatives, and more.  
 
 # HI's Mission:
-Our mission is to advance the pump manufacturing industry by become the world's resource for pumping solutions by:
+Our mission is to advance the pump manufacturing industry by becoming the world's resource for pumping solutions by:
 
 (a) Addressing Pump Systems
 

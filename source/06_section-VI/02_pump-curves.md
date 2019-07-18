@@ -155,8 +155,6 @@ Operating at this point for more than a few seconds can cause serious mechanical
 flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
 operating pumps.
 
-![](./flows.png "")
-
 ### Affinity Rules
 
 Under the assumption that both pumps maintain the same efficiencies, the **Affinity Rules** show the relationships between pump parameters (flow, pressure/head, power) and pump 

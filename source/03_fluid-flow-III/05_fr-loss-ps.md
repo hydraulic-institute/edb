@@ -54,7 +54,7 @@ loss for a given pulp is a function of
 consistency, velocity, and pipe diameter.
 The velocity at the upper limit of this
 linear region (Point B) is designated
-V<sub>max</sub>.
+v<sub>max</sub>.
 
 **Region 2**:
 (Curve BCD) shows an initial decrease
@@ -64,7 +64,7 @@ intersection of the pulp friction loss
 curve and the water friction loss curve
 (Point D) is termed the onset of drag
 reduction. The velocity at this point is
-designated V<sub>w</sub>.
+designated v<sub>w</sub>.
 
 **Region 3**:
 (Curve DE) shows the friction loss curve
@@ -81,8 +81,8 @@ approximately equal to 2.
 The friction loss curve for mechanical pulp, as illustrated
 in Figure 4, is divided into only two regions:
 Regions 1 and 3. For this pulp type, the friction loss
-curve crosses the water curve V<sub>w</sub> and there is no true
-V<sub>max</sub>·
+curve crosses the water curve v<sub>w</sub> and there is no true
+v<sub>max</sub>·
 
 ### III. Design Parameters
 
@@ -109,9 +109,9 @@ Once the pipe diameter is selected, it
 fixes the velocity for a prespecified
 mass flow rate.
 
-d) **Bulk velocity, V** — Usually based on
+d) **Bulk velocity, v** — Usually based on
 a prespecified daily mass flow rate.
-Note that both V and D are interdependent
+Note that both v and D are interdependent
 for a constant mass flow
 rate.
 
@@ -130,9 +130,9 @@ values.
 
 ### IV. Pipe Friction Estimation Procedure
 
-The bulk velocity (V) will depend on the daily mass
+The bulk velocity (v) will depend on the daily mass
 flow rate and the pipe diameter (D) selected. The
-final value of V can be optimized to give the lowest
+final value of v can be optimized to give the lowest
 capital investment and operating cost with due consideration
 of future demands or possible system
 expansion.
@@ -146,20 +146,20 @@ describes the procedure to be used for estimating
 pipe friction loss in each of the regions.
 
 **Region 1**: The upper limit of Region 1 in Figure 3
-(Point B) is designated V<sub>max.</sub> The value
-of V<sub>max</sub> is determined using Equation
+(Point B) is designated v<sub>max.</sub> The value
+of v<sub>max</sub> is determined using Equation
 (1) and data given in Table I.
 
 =+=
 <span class= equation-label >(1)</span>
 [units = us]
-$$ V_{max} = {K'C^{σ}} (ft/s) $$
+$$ v_{max} = {K'C^{σ}} (ft/s) $$
 =+=
 
 =+=
 <span class= equation-label >(1)</span>
 [units = metric]
-$$ V_{max} = 0.3048{K'C^{σ}} (m/s) $$
+$$ v_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
 
 where:
@@ -168,7 +168,7 @@ where:
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit.
 - σ = exponent (constant for a given pulp), obtained from Table I
 
-The following is data for use with Equation (1) to determine velocity limit, V<sub>max</sub>·
+The following is data for use with Equation (1) to determine velocity limit, v<sub>max</sub>·
 
 =|=
 title: Table I
@@ -184,7 +184,7 @@ NOTES:
 5. If pulps are not identical to those shown, some engineering judgement is required.
 6. Wood is New Zealand Kraft pulp.
 
-If the proposed design velocity (V) is less than V<sub>max</sub>,
+If the proposed design velocity (v) is less than v<sub>max</sub>,
 the value of flow resistance (Δh/L) may be calculated
 using Equation (2) and data given in Table II
 and the appendices.
@@ -192,57 +192,57 @@ and the appendices.
 =+=
 <span class= equation-label >(2)</span>
 [units = us]
-$$ Δh/L = FKV^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
+$$ Δh/L = FKv^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(2)</span>
 [units = metric]
-$$ Δh/L = 0.3048FKV^{α}C^{β}D^{γ}\, (m/100\, m) $$
+$$ Δh/L = 0.3048FKv^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
 
 where:
 
 - F = factor to correct for temperature, pipe roughness, pulp type, freeness, or safety factor (refer to Appendix A)
 - K = numerical coefficient (constant for a given pulp), obtained from Table II
-- V = bulk velocity (ft/s)
+- v = bulk velocity (ft/s)
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit
 - D = pipe inside diameter (in), and
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
-For mechancial pulps, there is no true V<sub>max</sub>· The
+For mechancial pulps, there is no true v<sub>max</sub>· The
 upper limit of the correlation equation (Equation (2))
 is also given by Equation (1) in this case, the upper
-velocity is actually V<sub>w</sub>·
+velocity is actually v<sub>w</sub>·
 
 **Region 2**: The lower limit of Region 2 in Figure 3
-(Point B) is V<sub>max</sub> and the upper limit
-(Point 0) is V<sub>w</sub>. The velocity of the stock
+(Point B) is v<sub>max</sub> and the upper limit
+(Point 0) is v<sub>w</sub>. The velocity of the stock
 at the onset of drag reduction is determined
 using Equation (3).
 
 =+=
 <span class= equation-label >(3)</span>
 [units = us]
-$$ V_{w} = 4.00C^{1.40} (ft/s) $$
+$$ v_{w} = 4.00C^{1.40} (ft/s) $$
 =+=
 
 =+=
 <span class= equation-label >(3)</span>
 [units = metric]
-$$ V_{w} = 1.2192C^{1.40} (m/s) $$
+$$ v_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
 
 where:
 
 - C = consistency (oven-dried,expressed as a percentage, not decimally).
 
-If V is between V<sub>max</sub> and V<sub>w</sub>, Equation (2) may be
+If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (2) may be
 used to determine ΔH/L at the maximum point
-(V<sub>max</sub>)· Because the system must cope with the
+(v<sub>max</sub>)· Because the system must cope with the
 worst flow condition, ΔH/L at the maximum point
-(V max) can be used for all design velocities between
-V<sub>max</sub> and V<sub>w</sub>·
+(v max) can be used for all design velocities between
+v<sub>max</sub> and v<sub>w</sub>·
 
 **Region 3**: A conservative estimate of friction loss is
 obtained by using the water curve.
@@ -255,18 +255,18 @@ the Blasius equation).
 =+=
 <span class= equation-label >(4)</span>
 [units = us]
-$$ (Δh/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(ft/100\, ft) $$
+$$ (Δh/ L)_{w} = 0.58v^{1.75}D^{-1.2}\,(ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(4)</span>
 [units = metric]
-$$ (Δh/ L)_{w} = 0.58V^{1.75}D^{-1.2}\,(m/100\, m) $$
+$$ (Δh/ L)_{w} = 0.58v^{1.75}D^{-1.2}\,(m/100\, m) $$
 =+=
 
 where:
 
-- V = bulk velocity (ft/s), and
+- v = bulk velocity (ft/s), and
 - D = pipe diameter (in.)
 
 Previously published methods for calculating pipe
@@ -336,37 +336,37 @@ $$ Q = {{3.782(T.P.D.)}\over C} \, (m^{3}/h) $$
 
 where:
 
-- <units us = "T.P.D. = mill capacity (short tons per day)," metric = "(conversion)"/>
+- T.P.D. = mill capacity (short tons per day)
 
 and
 
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally).
 
 
-**2) Bulk velocity, V —**
+**2) Bulk velocity, v —**
 
 =+=
 [units = us]
 <span class= equation-label >(ii)</span>
-$$ V = {{0.321Q}\over A}\, (ft/s),\, or $$
+$$ v = {{0.321Q}\over A}\, (ft/s),\, or $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(ii)</span>
-$$ V = {{278Q}\over A}\, (m/s),\, or $$
+$$ v = {{278Q}\over A}\, (m/s),\, or $$
 =+=
 
 =+=
 [units = us]
 <span class= equation-label >(iii)</span>
-$$ V = {{0.4085Q}\over D^2}\, (ft/s) $$
+$$ v = {{0.4085Q}\over D^2}\, (ft/s) $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(iii)</span>
-$$ V = {{354Q}\over D^2}\, (m/s) $$
+$$ v = {{354Q}\over D^2}\, (m/s) $$
 =+=
 
 where:
@@ -440,7 +440,7 @@ Association of the Pulp and Paper Industry, Atlanta. Georgia
 
 (2) K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
 
-(3) Hydraulic Insti tute Engineering Data Book, First Edition.
+(3) Hydraulic Institute Engineering Data Book, First Edition.
 Hydraulic Institute. Cleveland. Ohio (1979).
 
 (4) K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).

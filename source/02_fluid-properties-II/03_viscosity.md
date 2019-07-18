@@ -26,20 +26,20 @@ shows two parallel plane surfaces of area (A) separated a distance
 (d) and the space between completely filled
 with fluid. A force (F) is applied to and in the plane
 of the upper surface, causing it to move with a
-velocity (V) parallel to the lower fixed surface. The
+velocity (v) parallel to the lower fixed surface. The
 velocity distribution will be linear over the distance
-(d) and experiments show that the slope of the velocity line (V/d)
+(d) and experiments show that the slope of the velocity line (v/d)
 will be directly proportional to the unit shearing force (*τ* = F/A) 
 for all "true" or "Newtonian" fluids. The proportionality factor (μ)
 is the dynamic viscosity. The foregoing may be expressed
 by the equations
 
 =+=
-$$ τ = {F \over A} = μ{V \over d} $$
+$$ τ = {F \over A} = μ{v \over d} $$
 =+=
 
 =+=
-$$ μ = {τ \over {V/d}} $$
+$$ μ = {τ \over {v/d}} $$
 =+=
 
 Therefore, the dimensions of the dynamic viscosity
@@ -60,14 +60,14 @@ such that 100 centipoises equal one POISE."/>
 
 ![](IIC-1_Fig-1.png "")
 
-The kinematic viscosity (*v*) may be obtained by dividing
+The kinematic viscosity (𝜈) may be obtained by dividing
 the dynamic viscosity (μ) by the mass density
 (ρ). The mass density is the specific weight (w)
 divided by the acceleration of gravity (g). These
 relationships may be expressed by the equation
 
 =+=
-$$ v = {μ \over {w/g}} = {μ \over ρ} $$
+$$ ν = {μ \over {w/g}} = {μ \over ρ} $$
 =+=
 
 Therefore, the dimensions of kinematic viscosity
@@ -91,20 +91,29 @@ the correct parameter will be used as required in
 computations. Some useful relationships are as
 follows:
 
-    1 pound = 444,823 dynes
-    1 foot = 30.4800 centimeters
-    1 square foot = 929.034 square centimeters
-    1 dyne-second per sq cm = 1 poise = 100 centipoises
-    1 sq cm/sec = 1 stoke = 100 centistokes
-    1 lb-sec/sq ft = 478.801 poises = 47,880.1 centipoises
-    μ lb-sec/sq ft = (μ/47,880.1)centipoises = 0.0000208855 centipoises
-    v sq ft/sec =  v sq cm/sec / 929.034 = 0.00107639 stokes
-    v = μ/ρ = μ/(w/g)
-    v sq ft/sec = 0.000671970(μ/w)
+**1 pound = 444,823 dynes**
+
+**1 foot = 30.4800 centimeters**
+
+**1 square foot = 929.034 square centimeters**
+
+**1 dyne-second per sq cm = 1 poise = 100 centipoises**
+
+**1 sq cm/sec = 1 stoke = 100 centistokes**
+
+**1 lb-sec/sq ft = 478.801 poises = 47,880.1 centipoises**
+
+**μ lb-sec/sq ft = (μ/47,880.1)centipoises = 0.0000208855 centipoises**
+
+**𝜈 sq ft/sec =  𝜈 sq cm/sec / 929.034 = 0.00107639 stokes**
+
+**𝜈 = μ/ρ = μ/(w/g)**
+
+**𝜈 sq ft/sec = 0.000671970(μ/w)**  
     
 where:
 
-- *ν* = centipoises, and
+- 𝜈 = centipoises, and
 - w = <units us = "lbf/cu ft" metric = "N/m^3^"/>
 - g = <units us = "32.17 ft/s^2^ at sea
 level and approximately 45 degrees latitude" 
