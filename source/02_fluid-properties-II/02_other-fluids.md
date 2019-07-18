@@ -151,9 +151,9 @@ shown in Figure IIB-6.
 
 ## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
 
-![](IIB-7.png "")
+![](VPH2.png "")
+
 
 ## IIB-8 – Vapor Pressure of Helium
 
-![](IIB-8.png "")
-
+![](VPHelium.png "")

@@ -1,0 +1,13 @@
+,numeric,numeric,numeric,numeric
+heading,T (°K),T (R),Absolute Pressure (atm),Absolute Pressure (psia)
+data,0,0,0,0
+data,17,30.6,0.3,5
+data,19.5,35.1,0.7,10
+data,20.5,36.9,1.0,15
+data,23,41.4,2.0,30
+data,24.8,44.64,3.1,45
+data,25.8,46.44,3.7,55
+data,27,48.6,4.8,70
+data,28,50.4,5.8,85
+data,29,52.2,6.8,100
+data,30,54,8.2,120
