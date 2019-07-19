@@ -78,7 +78,7 @@ Type number derived using the stated metric units, multiplied by a factor of 11.
 
 **Suction Specific Speed** is an index of pump suction operating characteristics.
 It is determined at the BEP flow rate with the maximum diameter impeller.
-Suction specific speed is an indicator of the NPSHR for a 3% drop in head (MPSH3) at a given
+Suction specific speed is an indicator of the NPSHR for a 3% drop in head (NPSH3) at a given
 rate of flow and rotational speed. Suction specific speed is expressed by the following equation:
 
 =+=

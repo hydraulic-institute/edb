@@ -269,7 +269,6 @@ The range Re = 2000–4000 is called the critical zone in which the flow may be 
 
 ### Moody Diagram
 
-![](moody-original.png "")
+![](moody-diagram-2.png "")
 
-(From L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
-
+(Original data from L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
