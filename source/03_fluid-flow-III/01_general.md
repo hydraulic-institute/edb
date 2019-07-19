@@ -120,11 +120,13 @@ where:
 - K = Resistance coefficient for valve or fitting
  
 
-Values of (K) for valves and fittings may be found
-in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Friction Loss – Water</a>.  Reference to the literature will reveal wide differences in the published values of
+Values of (K) for valves and fittings may be referenced
+below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Friction Loss – Water</a>.  Reference to the literature will reveal wide differences in the published values of
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
-fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
+fittings. The resistance coefficients decrease with the increasing size of most valves and fittings. 
+
+![](friction-factors.png "")
 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 

@@ -205,7 +205,7 @@ which is the reduction of the impeller diameter.
 
 ![](./vsp-cover.png "")
 
-(Purchase HI's Application Guideline for Variable Speed Pumping at the <a href="https://estore.pumps.org/Guidebooks/VSP_Guide.aspx" target="_blank">Hydraulic Institute eStore.)</a> 
+(Purchase HI's <a href="https://estore.pumps.org/Guidebooks/VSP_Guide.aspx" target="_blank"> Application Guideline for Variable Speed Pumping</a> at the Hydraulic Institute eStore.)
 
 ### Pump Fundamentals: Parallel and Series Pump Implications
 

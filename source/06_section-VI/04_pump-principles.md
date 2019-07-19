@@ -115,7 +115,7 @@ As the flow increases with respect to the developed head, the larger the waterwa
 The three configurations (pictured below) for an impeller are open, semi-open, and closed. Open impellers do not have a front or rear shroud. Semi-open impellers only have a
 rear shroud. Closed impellers have a front and rear shroud.
 
-![](impeller-config.png "")
+![](impeller-configs.png "")
 
 **Open impellers** are typically used on smaller pumps and are weaker than closed impellers because of the lack of reinforcement of shrouds. They are typically cheaper to 
 manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
@@ -137,7 +137,10 @@ below the vapor pressure of the fluid being pumped, bubbles can form – a pheno
 the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
 showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation."/>
+
 ![](bubble-formation.png "")
+
+![](npsh-pic.png "")
 
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
 
@@ -161,7 +164,7 @@ recommended net positive suction head available (NPSHA) above the published NPSH
 Below is a common graph seen when testing a pump for NPSHr. This shows that as NPSHa is reduced, there is a point at which the head starts to drop off. On this test,
 the NPSH3 is approximately 11 feet, as this is when the head drops 3% - in this case from 200 feet to 194 feet.
 
-![](NPSHR-test.png "")
+![](NPSHr-test.png "")
 
 ## Affinity Rules
 

@@ -17,9 +17,9 @@ specific gravity of most liquids. For instance, molasses
 having the same specific gravity (1.48) and
 the same Brix rating (90) may vary in viscosity
 from 128,000 to 303,000 Seconds Saybolt Universal
-(SSU). In rotodynamic pumps, viscosity can have a significant impact on performance. 
+(SSU). In rotodynamic pumps, fluid viscosity can have a significant impact on performance. 
 <a href="https://estore.pumps.org/Rotodynamic-Pumps-Guideline-for-Effects-of-LiquidViscosity-on-Performance-ANSIHI-967-2015-P1108.aspx" 
-target="_blank">ANSI/HI 9.6.7</a> contains information regarding this phenomenon.
+target="_blank">ANSI/HI 9.6.7</a> acts as a guideline that explains these effects.
 
 There are two basic viscosity parameters:
 **dynamic (*or absolute*) viscosity** and **kinematic viscosity**.

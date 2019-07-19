@@ -9,7 +9,8 @@ description: Contains a combined pump and systems curves tutorial, demonstration
 ## Tutorial
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
-show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve.
+show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
+in <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 Knowing the shape of the system curve will help to understand how the pump operating conditions will change if the system changes due to things like valve position, parts of the system coming
 on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
