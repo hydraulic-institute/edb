@@ -14,7 +14,7 @@ A **system curve** represents the relationship between flow through a system and
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
 =+=
-$$ \Delta h_{static} = \Delta (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
+$$ \Delta h_{stat} = \Delta (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
 where:
@@ -102,17 +102,17 @@ This is a representative demonstration and does not have actual values.
 Since both tanks have the same surface pressure, the static head is only dependent on the difference in surface elevation.
 
 =+=
-$$\Delta h_{static} = (z_{destination}-z_{supply})$$
+$$\Delta h_{stat} = (z_{destination}-z_{supply})$$
 =+=
 
 =+=
 [units = us]
-$$ \Delta h_{static} = (289\,{ft}-24\,{ft}) = 265\,{ft} $$
+$$ \Delta h_{stat} = (289\,{ft}-24\,{ft}) = 265\,{ft} $$
 =+=
 
 =+=
 [units = metric]
-$$ \Delta h_{static} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
+$$ \Delta h_{stat} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
 =+=
 
 **Determine the Pipe Friction and Properties**
@@ -164,7 +164,7 @@ The system curve can be calculated by varying the flow rate (velocity) using the
 we have the following as a function of velocity.
 
 =+=
-$$ \Delta h_{system} = \Delta h_{static} + \Delta h_{f} $$
+$$ \Delta h_{system} = \Delta h_{stat} + \Delta h_{f} $$
 =+=
 
 =+=
