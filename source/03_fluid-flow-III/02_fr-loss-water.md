@@ -6,6 +6,8 @@ description: Friction loss information for water. Resistance coefficients.
 
 # Friction Loss – Water
 
+**(Tables 1-31 will be replaced by calculator)**
+
 ## IIIB-4 – Friction Loss for Water in <units us = "Feet / 100 Feet of Pipe" metric = "Meters / 100 Meters of Pipe"/>
 
 =|=
@@ -71,6 +73,24 @@ title: Table 10 - 2 1/2 Inch Nominal, Steel Schedule 40 (ID = 2.469 in, ε/D = 0
 data-us: flw10-us.csv
 data-metric: flw10-metric.csv
 =|=
+
+## IIIB-5 – Typical Resistance Coefficients for Valves and Fittings
+
+### Table 32(a)
+
+![](table-32a.png "")
+
+### Table 32(b)
+
+![](table-32b.png "")
+
+### Table 32(c)
+
+![](table-32c.png "")
+
+### Table 33 – Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
+
+![](table-33.png "")
 
 ## IIIB-5A – Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 

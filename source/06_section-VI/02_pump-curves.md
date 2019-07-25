@@ -347,7 +347,7 @@ $$ H_2 = 173\,ft. $$
 **(need new plots and charts)**
 
 
-### Example 2:
+### Example 2 (U.S. & Metric Units):
 
 A pump designed with a <units us = "10-5/8” diameter impeller will be operating at 2000 GPM @ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow." 

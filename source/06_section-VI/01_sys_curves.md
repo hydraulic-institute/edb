@@ -92,7 +92,7 @@ This is a representative demonstration and does not have actual values.
 ![](./sc-demo-2.png "")
 ![](./sc-demo-1.png "")
 
-## Worked Example
+## Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
 ![](we-system.png "")
