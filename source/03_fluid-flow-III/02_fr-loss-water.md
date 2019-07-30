@@ -26,54 +26,6 @@ data-metric: flw2-metric.csv
 
 (Transition to turbulent flow occurs between the <units us = "0.25 GPM and 0.4 GPM flowrate in the above chart)" metric = "0.0568 m^3^/h and 0.0908 m^3^/h flowrate in the above chart)"/>
 
-=|=
-title: Table 3 – 3/8 Inch Nominal, Steel Schedule 40 (ID = 0.493 in, ε/D = 0.00365)
-data-us: flw3-us.csv
-data-metric: flw3-metric.csv
-=|=
-
-=|=
-title: Table 4 – 1/2 Inch Nominal, Steel Schedule 40 (ID = 0.622 in, ε/D = 0.00289)
-data-us: flw4-us.csv
-data-metric: flw4-metric.csv
-=|=
-
-=|=
-title: Table 5 – 3/4 Inch Nominal, Steel Schedule 40 (ID = 0.824 in, ε/D = 0.00218)
-data-us: flw5-us.csv
-data-metric: flw5-metric.csv
-=|=
-
-=|=
-title: Table 6 - 1 Inch Nominal, Steel Schedule 40 (ID = 1.049 in, ε/D = 0.00172)
-data-us: flw6-us.csv
-data-metric: flw6-metric.csv
-=|=
-
-=|=
-title: Table 7 - 1 1/4 Inch Nominal, Steel Schedule 40 (ID = 1.380 in, ε/D = 0.00130)
-data-us: flw7-us.csv
-data-metric: flw7-metric.csv
-=|=
-
-=|=
-title: Table 8 - 1 1/2 Inch Nominal, Steel Schedule 40 (ID = 1.610 in, ε/D = 0.00112)
-data-us: flw8-us.csv
-data-metric: flw8-metric.csv
-=|=
-
-=|=
-title: Table 9 - 2 Inch Nominal, Steel Schedule 40 (ID = 2.067 in, ε/D = 0.00087)
-data-us: flw9-us.csv
-data-metric: flw9-metric.csv
-=|=
-
-=|=
-title: Table 10 - 2 1/2 Inch Nominal, Steel Schedule 40 (ID = 2.469 in, ε/D = 0.000729)
-data-us: flw10-us.csv
-data-metric: flw10-metric.csv
-=|=
-
 ## IIIB-5 – Typical Resistance Coefficients for Valves and Fittings
 
 ### Table 32(a)

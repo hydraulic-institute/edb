@@ -255,13 +255,13 @@ the Blasius equation).
 =+=
 <span class= equation-label >(4)</span>
 [units = us]
-$$ (Δh/ L)_{w} = 0.58v^{1.75}D^{-1.2}\,(ft/100\, ft) $$
+$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(4)</span>
 [units = metric]
-$$ (Δh/ L)_{w} = 0.58v^{1.75}D^{-1.2}\,(m/100\, m) $$
+$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(m/100\, m) $$
 =+=
 
 where:
@@ -431,6 +431,128 @@ required.
 - F<sub>5</sub> = design safety factor. This is usually specified
 by company policy with consideration
 given to future requirements.
+
+## Appendix B
+
+The following is an example that illustrates the method for determining pipe friction loss in each of the three regions shown in Figure 3.
+
+### Example
+
+<units us = "Determine the friction loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
+6 inch schedule 40 stainless steel pipe (inside diameter = 6.065 in). The pulp temperature is 90°F, the flow rate 1100 U.S. GPM."
+metric = "Determine the friction loss (per 100 m of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
+6 inch schedule 40 stainless steel pipe (inside diameter = 154.051 mm). The pulp temperature is 32.22°C, the flow rate 249.84 m^3^/h."/>
+
+**Solution:**
+
+a) The bulk velocity is:
+
+=+=
+[units = us]
+$$ v = {{0.4085Q}\over{D^2}} $$
+=+=
+
+=+=
+[units = metric]
+$$ v = {{354Q}\over{D^2}} $$
+=+=
+
+=+=
+[units = us]
+<span class= equation-label >(iii)</span>
+$$ = {{0.4085(1100)}\over{6.065^2}} = 12.22 ft/s  $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(iii)</span>
+$$ = {{354(249.84)}\over{154.051^2}} = 3.72 m/s  $$
+=+=
+
+b) It must be determined in which region (1, 2 or 3)
+this velocity falls. To obtain an initial indication,
+determine V<sub>max</sub>.
+
+=+=
+[units = us]
+<span class= equation-label >(1)</span>
+$$ v_{max} = K'C^{σ}, $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(1)</span>
+$$ v_{max} = 0.3048*K'C^{σ}, $$
+=+=
+
+and
+
+- K' = 0.59 (from Table I),
+- σ = 1.45 (from Table I),
+
+=+=
+[units = us]
+$$ v_{max} = 0.59(2.0^{1.45}) = 1.61 ft/s. $$
+=+=
+
+=+=
+[units = metric]
+$$ v_{max} = 0.3048*0.59(2.0^{1.45}) = 0.49 m/s. $$
+=+=
+
+c) Since v exceeds v<sub>max</sub>, Region 1 (the linear region) is eliminated. To determine whether v lies in Region 2 or 3, the velocity at the onset
+of drag reduction, v<sub>W</sub>, must be calculated.
+
+=+=
+[units = us]
+<span class= equation-label >(3)</span>
+$$ v_{w} = 4.00C^{1.40}, $$
+=+=
+
+=+=
+[units = metric]
+<span class= equation-label >(3)</span>
+$$ v_{w} = 1.2192C^{1.40}, $$
+=+=
+
+=+=
+[units = us]
+$$ v_{w} = 4.00(2.0^{1.40}) = 10.56 ft/s. $$
+=+=
+
+=+=
+[units = metric]
+$$ v_{w} = 1.2192(2.0^{1.40}) = 3.22 m/s. $$
+=+=
+
+d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The friction loss is calculated as that of water flowing at
+the same velocity.
+
+=+=
+<span class= equation-label >(4)</span>
+[units = us]
+$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
+=+=
+
+=+=
+<span class= equation-label >(4)</span>
+[units = metric]
+$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
+=+=
+
+=+=
+[units = us]
+$$ = 0.58(12.22^{1.75})(6.065^{-1.25}) = 4.85\,ft\,head\,loss/100\,ft\,of\,pipe $$
+=+=
+
+=+=
+[units = metric]
+$$ = 0.58(12.22^{1.75})(6.065^{-1.25}) = 4.85\,m\,head\,loss/100\,m\,of\,pipe $$
+=+=
+
+This will be a conservative estimate, as the actual
+friction loss curve for pulp suspensions under these
+conditions will be below the water curve.
 
 ## References
 

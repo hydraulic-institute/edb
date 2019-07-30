@@ -148,7 +148,7 @@ shown in Figure IIB-6.
 
 ## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
 
-![](VPH2.png "")
+**(Plot is being replaced by tabular data)**
 
 *C-H₂   0.21%  0, 99.79%  p*
 
@@ -161,6 +161,6 @@ shown in Figure IIB-6.
 
 ## IIB-8 – Vapor Pressure of Helium
 
-![](VPHelium.png "")
+**(Plot is being replaced by tabular data)**
 
 *(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
