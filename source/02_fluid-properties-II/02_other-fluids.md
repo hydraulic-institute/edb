@@ -193,21 +193,34 @@ are usually restricted to <units us = "100 ft/s." metric = "30 m/s."/>
 Classification of pumps according to particle size is
 shown in Figure IIB-6.
 
-## IIB-4 – Approximate Comparison of Hardness Values of Common Ores and Minerals
+## Approximate Comparison of Hardness Values of Common Ores and Minerals
 
 ![](IIB-4.png "")
 
-## IIB-5 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
+## Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
 
 ![](IIB-5.png "")
 
-## IIB-6 – Classification of Pumps According to Solid Size
+## Classification of Pumps According to Solid Size
 
 ![](IIB-6-new.jpg "")
 
-## IIB-7 – Vapor Pressure of Liquid H<sub>2</sub>
+## Vapor Pressure of Liquid H<sub>2</sub>
 
-**(Plot is being replaced by tabular data)**
+=|=
+title: Data Points
+data-us: VP-H2.csv
+data-metric: VP-H2-met.csv
+=|=
+
+=/=
+title: Liquid Hydrogen Vapor Pressure Plot 
+data-us: VP-H2.csv
+data-metric: VP-H2-met.csv
+x: 1
+series: 2
+series_title_index: 0
+=/=
 
 *C-H₂   0.21%  0, 99.79%  p*
 
@@ -218,8 +231,21 @@ shown in Figure IIB-6.
 *NBS RP 1932 (T-S Diagram)*         
                          
 
-## IIB-8 – Vapor Pressure of Helium
+## Vapor Pressure of Helium
 
-**(Plot is being replaced by tabular data)**
+=|=
+title: Data Points
+data-us: VP-helium.csv
+data-metric: VP-helium-met.csv
+=|=
+
+=/=
+title: Helium Vapor Pressure Plot 
+data-us: VP-helium.csv
+data-metric: VP-helium-met.csv
+x: 1
+series: 2
+series_title_index: 0
+=/=
 
 *(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
