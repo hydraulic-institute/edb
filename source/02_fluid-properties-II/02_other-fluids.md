@@ -6,7 +6,46 @@ description: Properties of other fluids, such as mixtures or slurries. Determini
 
 # Properties of Other Fluids
 
-## IIB-3 – Solids and Slurries 
+## Degrees A.P.I. vs. Specific Gravity for Oil
+
+The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
+
+=+=
+$$ {Degrees\,A.P.I. = {141.5 \over g} - 131.5} $$
+=+=
+
+=+=
+$$ {g = {141.5 \over {131.5 + Degrees\,A.P.I.}}} $$
+=+=
+
+The following tables are based on the weight of 1 gallon (U.S.) of oil with a volume of 231 cubic inches at 60°F in air at 760 mm pressure 
+and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828 pounds.
+
+To determine the resulting specific gravity by mixing oils of different specific gravities:
+
+=+=
+$$ {D = {{md_{1} + nd_{2}} \over {m+n}}} $$
+=+=
+
+where:
+
+- D = density or specific gravity of mixture
+- m = proportion of oil of d<sub>1</sub> density
+- n = proportion of oil of d<sub>2</sub> density
+- d<sub>1</sub> = specific gravity of m oil
+- d<sub>2</sub> = specific gravity of n oil
+
+
+=|=
+title: Degrees A.P.I. vs. Specific Gravity
+data: IIB1-1.csv
+=|=
+
+=|=
+data: IIB1-2.csv
+=|=
+
+## Solids and Slurries 
 
 ###Useful Formulas
 
