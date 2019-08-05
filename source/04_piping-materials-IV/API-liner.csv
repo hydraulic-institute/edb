@@ -1,0 +1,8 @@
+,numeric,numeric,string,numeric
+header,Outside Diameter (in),Plain-End Weight (lb/ft),Grade,Wall Thickness (in)
+data,3.5,9.91,J,0.289
+data,4.0,11.34,J,0.286
+data,4.5,13.04,J,0.290
+data,5.0,17.93,J,0.362
+data,5.5,19.81,J,0.361
+data,6.625,27.65,J,0.417

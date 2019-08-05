@@ -1,9 +1,7 @@
 ,data,data,data,data,data,data,data,data,data,data,data
-heading,Nominal Size,Nominal Outside dia [in],API Standard,"Standard
-X-Strong
-XX-Strong",Pipe Schedule,"Wall Thickness
-in. Nom",Internal Diameter in. Nom,Internal Area Square Inches,Internal Diameter Feet,Internal Area Square Feet,"e/D
-e=0.00015 Ft."
+heading,Nominal Size (in),Nominal Outside Diamter (in),API Standard,"Standard, X-Strong, or XX-Strong",Pipe Schedule,"Nominal Wall Thickness
+(in)",Nominal Internal Diameter (in),Internal Area (in²),Internal Diameter (ft),Internal Area (ft²),"e/D
+(e=0.00015 ft)"
 data,26,26,5L 5LX,,,0.25,25.5,510.705,2.125,3.547,0.000071
 data,26,26,5L 5LX,,,0.281,25.438,508.225,2.120,3.529,0.000071
 data,26,26,5L 5LX,,10,0.312,25.376,505.750,2.115,3.512,0.000071
