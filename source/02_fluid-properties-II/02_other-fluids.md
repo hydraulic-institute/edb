@@ -222,15 +222,6 @@ series: 2
 series_title_index: 0
 =/=
 
-*C-H₂   0.21%  0, 99.79%  p*
-
-*Triple Point:  13.8 K, 1.02 PSIA*
-
-*Critical Point: 32.2 K, 191 PSIA*
-
-*NBS RP 1932 (T-S Diagram)*         
-                         
-
 ## Vapor Pressure of Helium
 
 =|=
@@ -249,3 +240,13 @@ series_title_index: 0
 =/=
 
 *(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
+
+## Sources
+
+**H<sub>2</sub>**
+
+[Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C1333740&Type=SatP&Digits=5&THigh=59&TLow=26&TInc=1&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
+
+**Helium**
+
+[Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7440597&Type=SatP&Digits=5&THigh=9.2&TLow=4&TInc=.2&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
