@@ -3,7 +3,7 @@ title: A) Steel Pipe
 date: August 1st, 2019
 -----
 
-# Pipe Dimensions: Wrought Steel & Stainless Steel
+# Pipe Dimensions: Wrought Steel & Stainless Steel (According to ASME B36.10M-2015)
 
 =|=
 data: steel1.csv
