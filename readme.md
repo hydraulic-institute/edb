@@ -588,3 +588,16 @@ Production deployment requires a few more steps than beta, because we use Amazon
 
 *More details to come on production deployment - we have not setup the URL or hosting site yet*.
 
+# PDF Generation
+Relies on `pandoc`
+
+```
+sudo apt-get install pandoc
+sudo apt-get install texlive-fonts-recommended texlive-latex-recommended
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texlive-xetex
+```
+
+```
+python3 build-pdf
+```

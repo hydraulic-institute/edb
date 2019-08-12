@@ -9,6 +9,7 @@ import csv
 import json
 import uuid
 import pprint
+import pypandoc
 from datetime import date
 
 from .common import parse_dict
@@ -358,6 +359,114 @@ def make_section(graph, section, parent=None):
             print("Writing sub-contents",
                   topic['name'], "of", section['slug'])
             write_content(graph, topic, None, section['slug'])
+
+
+def rewrite_image_urls(content, path="."):
+    print("IMG SRC")
+    print(path)
+    delim = "<img"
+    start = content.find(delim)
+    while (start >= 0):
+        end = content.find("/>", start+1)
+        img = content[start:end+2]
+        print(img)
+        start = content.find(delim, end)
+
+    delim = "![]"
+    start = content.find(delim)
+    while (start >= 0):
+        end = content.find(" ", start+1)
+        before = content[:start]
+        after = content[end:]
+        src = "![](./build/"+path+'/'+content[start+4:end]
+        content = before + src + after
+        print(src)
+        start = content.find(delim, start+1)
+
+    return content
+
+
+def write_markdown_content(graph, node, md_file, slug_override=None, path="."):
+    # global options
+    print(f'Processing {node["name"]} at path {path}')
+
+    # The static resources still need to get copied... but where?  Carefuly
+    # using a single directory, because naming conflicts could present an issue...
+
+    if node['copy_only'] == True:
+        out = os.path.join(OUTPUT_DIR, path, node['name'])
+        src = os.path.join(node['path'], node['name'])
+        print(f' - Copied {node["name"]} as static resource.')
+        copyfile(src, out)
+        return
+
+    # if slug_override:
+    #    slug = slug_override
+    # else:
+    #    slug = node['slug']
+
+    content = node['content']
+    content = rewrite_image_urls(content, path)
+    # content = process_latex_blocks(content)
+    # content = markdown.markdown(content)
+
+    # tables and charts get exploded after markdown conversion - placing actual HTML in
+    # the markdown causes some problems (not entirely sure why - looks like a bug
+    # in the module perhaps...)
+    # content = process_table_blocks(node['path'], content)
+    # content = process_chart_blocks(path, node['path'], content)
+
+    # Last step injects the Vue markup necessary for some components - such as <units> elements.
+    # content = process_vue_components(content)
+
+    # template = env.get_template('topic.jinja')
+    # sections = [dir for dir in graph if dir['directory'] == True]
+    # related = [section['children'] for section in sections if section['path']
+    #           == node['path'] and section['slug'] != node['slug']]
+    # Related is a list of lists with the same section (it's always size 1)
+    # related = [item for sublist in related for item in sublist]
+    # Related is not all topics under the same section, we need to filter out this node
+    # related = [topic for topic in related if topic['name'] != node['name']]
+
+    # print("======================================")
+    # pprinter.pprint(related)
+
+    # pprinter.pprint(node)
+    # html = template.render(section="", topic=slug, node=node,
+    #                       content=content, sections=sections,
+    #                       related=related, options=options)
+
+    # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
+    # with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
+
+    # f.write(html.encode('utf-8'))
+    md_file.write(content)
+
+
+def make_markdown_section(graph, section, md_file, parent=None):
+    print("Outputting Markdown into ", section['slug'])
+    # directory = os.path.join(OUTPUT_DIR, section['slug'])
+    # os.makedirs(directory)
+    print("Contents of Section", section['slug'])
+    print([t['slug'] for t in section['children']])
+    for topic in section['children']:
+        if topic['directory']:
+            print("Sub directories are currently unsupported.")
+        else:
+            print("Writing markdown sub-contents",
+                  topic['name'], "of", section['slug'])
+            write_markdown_content(graph, topic, md_file,
+                                   None, section['slug'])
+
+
+def pdf(graph):
+    md_file = os.path.join(OUTPUT_DIR, 'edb.md')
+    with io.open(md_file, 'w', encoding='utf8') as f:
+        for section in [dir for dir in graph if dir['directory'] == True]:
+            make_markdown_section(graph, section, f)
+    pdoc_args = ['--latex-engine=xelatex']
+    output = pypandoc.convert_file(
+        md_file, to='pdf', extra_args=pdoc_args, outputfile='edb.pdf')
 
 
 def html(graph, specials, production=False):
