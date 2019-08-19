@@ -10,6 +10,7 @@ import json
 import uuid
 import pprint
 import pypandoc
+from selenium import webdriver
 from datetime import date
 
 from .common import parse_dict
@@ -20,6 +21,9 @@ from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
+
+global chart_count
+chart_count = 0
 
 global pprinter
 pprinter = pprint.PrettyPrinter(indent=2)
@@ -121,6 +125,33 @@ def replace_table_block(dir, table_text):
     return us_html+metric_html
 
 
+def replace_table_block_pdf(dir, table_text):
+    table = parse_dict(table_text.strip().split("\n"))
+
+    data_us = ""
+    data_metric = ""
+
+    if 'data' in table:
+        data_us = table['data']
+        data_metric = table['data']
+    elif 'data-us' in table and 'data-metric' in table:
+        data_us = table['data-us']
+        data_metric = table['data-metric']
+    else:
+        print(
+            f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
+        return ""
+
+    template = env.get_template('table-pdf.jinja')
+
+    us = table_data('us', table, dir, data_us)
+    metric = table_data('metric', table, dir, data_metric)
+
+    us_html = template.render(meta=table, table=us)
+    metric_html = template.render(meta=table, table=metric)
+    return us_html  # +metric_html
+
+
 def chart_data(units, chart, path, filename):
     file = os.path.join(SOURCE_DIR, path, filename)
     if not os.path.isfile(file):
@@ -202,9 +233,56 @@ def replace_chart_block(output_path, dir, chart_text):
         key=key, meta=chart, units='metric', chart=json.dumps(metric))
     return f"<div class='chart-title'>{chart['title']}</div>{us_html}{metric_html}"
 
+# Needs refactor... the only difference from above is that we don't return both charts!
+
+
+def replace_chart_block_pdf(output_path, dir, chart_text):
+    chart = parse_dict(chart_text.strip().split("\n"))
+
+    data_us = ""
+    data_metric = ""
+
+    if 'data' in chart:
+        data_us = chart['data']
+        data_metric = chart['data']
+    elif 'data-us' in chart and 'data-metric' in chart:
+        data_us = chart['data-us']
+        data_metric = chart['data-metric']
+    else:
+        print(
+            f"Error - the chart {chart.title} does not specify unit-agnostic source or us/metric sources.")
+        return ""
+
+    template = env.get_template('chart.jinja')
+
+    us = chart_data('us', chart, dir, data_us)
+    metric = chart_data('metric', chart, dir, data_metric)
+
+    # Used by front end for unique identifier.
+    key = str(uuid.uuid4())
+    us_html = template.render(
+        key=key, meta=chart, units='us', chart=json.dumps(us))
+    # metric_html = template.render(
+    #    key=key, meta=chart, units='metric', chart=json.dumps(metric))
+    return f"<div class='chart-title'>{chart['title']}</div>{us_html}"
+
 
 def process_latex_blocks(markdown):
 
+    delim = "=+="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + replace_latex_block(within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
+
+def process_latex_blocks_pdf(markdown):
     delim = "=+="
     start = markdown.find(delim)
     while (start >= 0):
@@ -233,6 +311,21 @@ def process_table_blocks(dir, markdown):
     return markdown
 
 
+def process_table_blocks_pdf(dir, markdown):
+    delim = "=|="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + \
+            replace_table_block_pdf(dir, within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
+
 def process_chart_blocks(output_path, dir, markdown):
     delim = "=/="
     start = markdown.find(delim)
@@ -243,6 +336,47 @@ def process_chart_blocks(output_path, dir, markdown):
         after = markdown[end+3:]
         markdown = before + \
             replace_chart_block(output_path, dir, within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
+
+def process_chart_blocks_pdf(output_path, dir, markdown):
+    global chart_count
+    delim = "=/="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        chart_html = replace_chart_block_pdf(output_path, dir, within)
+        chart_template = env.get_template('chart-wrapper.jinja')
+        html = chart_template.render(content=chart_html, units='us', key='n')
+
+        chart_count += 1
+        chart_file = os.path.join(
+            OUTPUT_DIR, 'charts', f"chart{chart_count}.html")
+        with io.open(chart_file, 'w', encoding='utf8') as f:
+            f.write(html)
+
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        browser = webdriver.Chrome(chrome_options=options)
+        html_file = "file:///"+chart_file
+        print(html_file)
+        browser.get(html_file)
+
+        img = browser.find_element_by_id('vue').screenshot_as_png
+        browser.close()
+
+        png_file = os.path.join(
+            OUTPUT_DIR, 'charts', f"chart{chart_count}.png")
+        with open(png_file, 'wb') as out_file:
+            out_file.write(img)
+
+        markdown = before + \
+            f"<img src='build/charts/chart{chart_count}.png'/>" + after
         start = markdown.find(delim)
 
     return markdown
@@ -350,8 +484,6 @@ def make_section(graph, section, parent=None):
     print("Outputting into ", section['slug'])
     directory = os.path.join(OUTPUT_DIR, section['slug'])
     os.makedirs(directory)
-    print("Contents of Section", section['slug'])
-    print([t['slug'] for t in section['children']])
     for topic in section['children']:
         if topic['directory']:
             print("Sub directories are currently unsupported.")
@@ -362,16 +494,6 @@ def make_section(graph, section, parent=None):
 
 
 def rewrite_image_urls(content, path="."):
-    print("IMG SRC")
-    print(path)
-    delim = "<img"
-    start = content.find(delim)
-    while (start >= 0):
-        end = content.find("/>", start+1)
-        img = content[start:end+2]
-        print(img)
-        start = content.find(delim, end)
-
     delim = "![]"
     start = content.find(delim)
     while (start >= 0):
@@ -380,7 +502,6 @@ def rewrite_image_urls(content, path="."):
         after = content[end:]
         src = "![](./build/"+path+'/'+content[start+4:end]
         content = before + src + after
-        print(src)
         start = content.find(delim, start+1)
 
     return content
@@ -407,14 +528,14 @@ def write_markdown_content(graph, node, md_file, slug_override=None, path="."):
 
     content = node['content']
     content = rewrite_image_urls(content, path)
-    # content = process_latex_blocks(content)
+    content = process_latex_blocks_pdf(content)
     # content = markdown.markdown(content)
 
     # tables and charts get exploded after markdown conversion - placing actual HTML in
     # the markdown causes some problems (not entirely sure why - looks like a bug
     # in the module perhaps...)
-    # content = process_table_blocks(node['path'], content)
-    # content = process_chart_blocks(path, node['path'], content)
+    content = process_table_blocks_pdf(node['path'], content)
+    content = process_chart_blocks_pdf(path, node['path'], content)
 
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     # content = process_vue_components(content)
@@ -440,33 +561,53 @@ def write_markdown_content(graph, node, md_file, slug_override=None, path="."):
     # with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
 
     # f.write(html.encode('utf-8'))
-    md_file.write(content)
+    md_file.write("\n\n<h2>"+node['metadata']['title']+"</h2>\n\n<section>")
+
+    html = markdown.markdown(content)
+    # We want to downgrade all the headings in the actual section contents, because we already have h1, h2.
+    html = html.replace("<h4>", "<h6>")
+    html = html.replace("</h4>", "</h6>")
+    html = html.replace("<h3>", "<h5>")
+    html = html.replace("</h3>", "</h5>")
+    html = html.replace("<h2>", "<h4>")
+    html = html.replace("</h2>", "</h4>")
+    html = html.replace("<h1>", "<h3>")
+    html = html.replace("</h1>", "</h3>")
+    md_file.write(html)  # was content
+    md_file.write("</section>")
 
 
 def make_markdown_section(graph, section, md_file, parent=None):
     print("Outputting Markdown into ", section['slug'])
     # directory = os.path.join(OUTPUT_DIR, section['slug'])
     # os.makedirs(directory)
-    print("Contents of Section", section['slug'])
-    print([t['slug'] for t in section['children']])
-    for topic in section['children']:
+    md_file.write("\n\n<h1>"+section['metadata']['title']+"</h1>")
+    for topic in sorted(section['children'], key=lambda x: x['sort']):
         if topic['directory']:
             print("Sub directories are currently unsupported.")
         else:
             print("Writing markdown sub-contents",
                   topic['name'], "of", section['slug'])
+
             write_markdown_content(graph, topic, md_file,
                                    None, section['slug'])
 
 
 def pdf(graph):
-    md_file = os.path.join(OUTPUT_DIR, 'edb.md')
+    md_file = os.path.join(OUTPUT_DIR, 'edb.html')
     with io.open(md_file, 'w', encoding='utf8') as f:
-        for section in [dir for dir in graph if dir['directory'] == True]:
+        f.write('<!DOCTYPE html><html lang="en"><head></head><body>')
+        for section in sorted([dir for dir in graph if dir['directory'] == True], key=lambda x: x['sort']):
             make_markdown_section(graph, section, f)
+        f.write('</body></html>')
     pdoc_args = ['--latex-engine=xelatex']
+    # print("Compiling markdown to HTML...")
+    # output = pypandoc.convert_file(
+    #    md_file, format='markdown_strict', to='html+markdown_in_html_blocks+raw_html', extra_args=pdoc_args, outputfile='edb.html')
+
+    print("Compiling HTML to PDF...")
     output = pypandoc.convert_file(
-        md_file, to='pdf', extra_args=pdoc_args, outputfile='edb.pdf')
+        md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='edb.pdf')
 
 
 def html(graph, specials, production=False):

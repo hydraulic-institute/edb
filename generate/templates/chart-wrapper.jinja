@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+    <meta http-equiv=X-UA-Compatible content="IE=edge"/>
+    <meta name=viewport content="width=device-width,initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    <title>HI EDB</title>
+    <style>
+        .chart-title {
+            margin-left:auto;
+            margin-right:auto;
+
+        }
+        #vue {
+            text-align:center;
+            padding-left:20px;
+            padding-right:20px;
+        }
+       .c3-line {
+            stroke-width: 3px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body class="has-navbar-fixed-top">
+    <div id='vue'>
+     {{content}}
+    <script src='../javascript/edb.js'></script>
+    </div>
+</body>
+</html>
