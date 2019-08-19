@@ -4,7 +4,7 @@ def parse_dict(lines):
     def insert_metadata_entry(line):
         try:
             name = line.split(":")[0].strip()
-            value = line.split(":")[1].strip()
+            value = ":".join(line.split(":")[1:]).strip()
         except:
             print("Error processing data block, has malformed entry")
             print(lines)

@@ -267,6 +267,44 @@ def replace_chart_block_pdf(output_path, dir, chart_text):
     return f"<div class='chart-title'>{chart['title']}</div>{us_html}"
 
 
+def replace_ad_block(chart_text):
+    ad = parse_dict(chart_text.strip().split("\n"))
+    template = env.get_template('ad.jinja')
+    ad_html = template.render(ad=ad)
+    return ad_html
+
+
+def process_ad_blocks(markdown):
+    delim = "=^="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + \
+            replace_ad_block(within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
+# Ads are not in PDF, so just snip them out.
+
+
+def process_add_blocks_pdf(markdown):
+    delim = "=^="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + after
+        start = markdown.find(delim)
+
+    return markdown
+
+
 def process_latex_blocks(markdown):
 
     delim = "=+="
@@ -439,7 +477,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # in the module perhaps...)
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
-
+    content = process_ad_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 

@@ -212,3 +212,66 @@ th.numeric {
     text-align: center;
     margin-bottom: 1rem;
 }
+
+
+/**************************************
+ * Ad Styles
+***************************************/
+.ad {
+    box-shadow: 2px 4px 10px #333;
+    padding-left: 10px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.ad-content {
+    display: flex;
+    align-items: center;
+}
+
+.ad-image {
+    flex-grow: 0 0 500px;
+    background-color: red;
+}
+
+.ad-body {
+    flex-grow: 0 1 500px;
+    padding: 15px;
+
+}
+
+.ad-price {
+    flex-grow: 0;
+    padding: 15px;
+}
+
+
+.ad img {
+    min-width: 200px;
+
+}
+
+.ad-title {
+    font-size: 16pt !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+.ad-description {
+    font-size: smaller;
+    color: #666;
+    text-align: justify;
+}
+
+.ad-link {
+    font-size: smaller;
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+
+    .ad-price,
+    .ad-image {
+        display: none;
+    }
+}
