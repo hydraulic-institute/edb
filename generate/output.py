@@ -438,7 +438,12 @@ def clean():
 
 def statics():
     os.makedirs(os.path.join(OUTPUT_DIR, 'statics'))
+
+    copyfile(os.path.join(STATICS_DIR, 'edb.pdf'),
+             os.path.join(OUTPUT_DIR, 'statics', 'edb.pdf'))
+
     css = lesscpy.compile(os.path.join(STATICS_DIR, 'style.less'), minify=True)
+
     with io.open(os.path.join(OUTPUT_DIR, 'statics', 'style.css'), 'w', encoding='utf8') as f:
         f.write(css)
 
@@ -633,19 +638,37 @@ def make_markdown_section(graph, section, md_file, parent=None):
 
 def pdf(graph):
     md_file = os.path.join(OUTPUT_DIR, 'edb.html')
+
+    nodes = [node for node in graph if node['directory'] == False]
+    front_matter = None
+    for node in nodes:
+        so = None
+        if node['slug'] == 'home':
+            so = 'index'
+            front_matter = node
+            front_matter['metadata']['title'] = "HI Engineering Data Book"
+            front_matter['children'] = []
+
     with io.open(md_file, 'w', encoding='utf8') as f:
         f.write('<!DOCTYPE html><html lang="en"><head></head><body>')
+        f.write("\n\n<h1>"+node['metadata']['title']+"</h1>")
+        write_markdown_content(graph, node, f,
+                               None, node['slug'])
         for section in sorted([dir for dir in graph if dir['directory'] == True], key=lambda x: x['sort']):
             make_markdown_section(graph, section, f)
         f.write('</body></html>')
-    pdoc_args = ['--latex-engine=xelatex']
+
+    print("HTML file saved to " + md_file)
+
+    pdoc_args = ['--toc', '--chapters', '--latex-engine=xelatex',
+                 '-V', 'geometry:margin=1.5cm']  # '--template', 'template.latex', '--variable=subparagraph',
     # print("Compiling markdown to HTML...")
     # output = pypandoc.convert_file(
     #    md_file, format='markdown_strict', to='html+markdown_in_html_blocks+raw_html', extra_args=pdoc_args, outputfile='edb.html')
 
     print("Compiling HTML to PDF...")
     output = pypandoc.convert_file(
-        md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='edb.pdf')
+        md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='./generate/static/edb.pdf')
 
 
 def html(graph, specials, production=False):

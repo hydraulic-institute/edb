@@ -52,12 +52,14 @@ data: IIB1-2.csv
 ## Specific Gravities vs. Degrees Baumé
 
 *Calculated from the formula, specific gravity 60°/60° F = 140 / (160 - Deg. Bé)*
+
 =|=
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Lighter than Water
 data: IIB2-1.csv
 =|=
 
 *Calculated from the formula, specific gravity 60°/60° F = 145 / (145 - Deg. Bé)*
+
 =|=
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Heavier than Water
 data: IIB2-2.csv

@@ -1,1 +1,21 @@
-<table><caption>{{meta.title}}</caption><thead>{% for heading in table.headings %}<tr>{%for header in heading.data %}<th class="{{header.type}}"> {{header.data}}</th>{% endfor %}</tr>{% endfor %}</thead><tbody>{% for row in table.rows %}<tr>{%for column in row.data %}<td class="{{column.type}}"> {{column.data}}</td>{% endfor %}</tr>{% endfor %}</tbody></table>
+<table>
+    <caption>{{meta.title}}</caption>
+    <thead>
+        {% for heading in table.headings %}
+            <tr>
+                {%for header in heading.data %}
+                    <th> {{header.data}}</th>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </thead>
+    <tbody>
+        {% for row in table.rows %}
+            <tr>
+                {%for column in row.data %}
+                    <td> {{column.data}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -46,8 +46,13 @@
                 <div class="navbar-end">
                     <div class="columns">
                     
-                        
+                         <div class="navbar-item pad-horizontal">
+                          <div class='buttons'>
+                                <a class='button is-info' title='Download PDF' target='_blank' href='./statics/edb.pdf'>PDF</a>
+                            </div>
+                            </div>
                         <div class="navbar-item pad-horizontal">
+                           
                             <div id="units-toggle" class="buttons">
                                 <button v-if='unit_set=="us"' class='button is-warning is-outlined' title='Click to change to metric units' @click='to_metric'>US</button>
                                 <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
