@@ -22,7 +22,50 @@
     
     {% endblock %}
 </head>
+
+
+<script type="text/x-template" id="friction-loss-calculator-template">
+	<form>
+        <div>
+            <label>Select Material</label>
+            <select v-model='material'>
+                <option value=''></option>
+                <option :value='m' v-for='m in materials'>${m}</option>
+            </select>
+        </div>
+        <div v-if='sizes && sizes.length'>
+            <label>Select Nominal Size</label>
+            <select v-model='nominal_size'>
+                <option value=''></option>
+                <option :value='m' v-for='m in sizes'>${m}in</option>
+            </select>
+        </div>
+        <div v-if='schedules && schedules.length'>
+            <label>Select Schedule</label>
+            <select v-model='schedule'>
+                <option value=''></option>
+                <option :value='m' v-for='m in schedules'>${m}</option>
+            </select>
+        </div>
+        <div v-if='entry'>
+            <div>
+                <label>Nominal Outside Diameter</label>
+                <span> ${entry[2]}in</span>
+            </div>
+            <div>
+                <label>Inside Diamenter</label>
+                <span> ${entry[4]}in</span>
+            </div>
+            <div>
+                <label>Epsilon</label>
+                <span> ${entry[5]}</span>
+            </div>
+        </div>
+    </form>
+</script>
+
 <body class="has-navbar-fixed-top">
+
     <div id='vue'>
         <nav id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">

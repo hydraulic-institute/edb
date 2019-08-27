@@ -128,6 +128,78 @@ Vue.component('units', {
 });
 
 
+Vue.component('friction-loss-calculator', {
+    delimiters: ['${', '}'],
+    data: function () {
+        return {
+            data: null,
+            materials: null,
+            sizes: null,
+            schedules: null,
+            material: null,
+            nominal_size: null,
+
+            schedule: null,
+            entry: null,
+        };
+    }, //   
+    template: '#friction-loss-calculator-template',
+    mounted: function () {
+        console.log("Friction Loss Calculator mounted");
+        axios.get("/statics/friction-loss-materials.json")
+            .then((response) => {
+                this.data = response.data;
+                //console.log(JSON.stringify(this.materials, null, 2));
+                this.materials = [];
+                for (const m in this.data) this.materials.push(m);
+
+
+            }).catch((err) => {
+                console.log(err);
+                console.error('Friction loss material data could not be downloaded.')
+            })
+    },
+    methods: {
+
+    },
+    computed: {
+
+    },
+    watch: {
+        material: function () {
+            this.sizes = [];
+            this.nominal_size = null
+            if (this.material) {
+                for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
+            } else {
+                this.schedule = null;
+                this.entry = null;
+            }
+
+        },
+        nominal_size: function () {
+            this.schedules = [];
+            this.schedule = null;
+            if (this.nominal_size) {
+                for (const m in this.data[this.material].nominal_sizes[this.nominal_size].schedules) this.schedules.push(m);
+            } else {
+
+                this.entry = null;
+            }
+
+        },
+        schedule: function () {
+            if (this.schedule && this.nominal_size && this.material) {
+                this.entry = this.data[this.material].nominal_sizes[this.nominal_size].schedules[this.schedule];
+                console.log(this.entry);
+            } else {
+                this.entry = null;
+            }
+        }
+    }
+});
+
+
 
 new Vue({
     el: '#vue',
