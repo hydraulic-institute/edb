@@ -179,6 +179,8 @@ Vue.component('friction-loss-calculator', {
 
         results: function () {
             if (!this.entry) return [];
+            if (!this.flow) return [];
+            if (!this.viscosity) return [];
             const phi = (1 + Math.sqrt(5)) / 2;
             const id = this.entry[5];
             const eps = this.entry[6];
