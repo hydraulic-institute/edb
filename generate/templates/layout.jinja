@@ -26,41 +26,91 @@
 
 <script type="text/x-template" id="friction-loss-calculator-template">
 	<form>
-        <div>
-            <label>Select Material</label>
-            <select v-model='material'>
-                <option value=''></option>
-                <option :value='m' v-for='m in materials'>${m}</option>
-            </select>
-        </div>
-        <div v-if='sizes && sizes.length'>
-            <label>Select Nominal Size</label>
-            <select v-model='nominal_size'>
-                <option value=''></option>
-                <option :value='m' v-for='m in sizes'>${m}in</option>
-            </select>
-        </div>
-        <div v-if='schedules && schedules.length'>
-            <label>Select Schedule</label>
-            <select v-model='schedule'>
-                <option value=''></option>
-                <option :value='m' v-for='m in schedules'>${m}</option>
-            </select>
-        </div>
-        <div v-if='entry'>
-            <div>
-                <label>Nominal Outside Diameter</label>
-                <span> ${entry[2]}in</span>
+        <div class='columns'>
+            <div class='column'>
+                <div class='field'>
+                    <label class='label'>Select Material</label>
+                    <select  class="input" v-model='material'>
+                        <option value=''></option>
+                        <option :value='m' v-for='m in materials'>${m}</option>
+                    </select>
+                </div>
+                <div class='field' v-if='sizes && sizes.length'>
+                    <label class='label'>Select Nominal Size</label>
+                    <select class='input'v-model='nominal_size'>
+                        <option value=''></option>
+                        <option :value='m' v-for='m in sizes'>${m}in</option>
+                    </select>
+                </div>
+                <div class='field' v-if='schedules && schedules.length'>
+                    <label class='label'>Select Schedule</label>
+                    <select class='input'v-model='schedule'>
+                        <option value=''></option>
+                        <option :value='m' v-for='m in schedules'>${m}</option>
+                    </select>
+                </div>
+                <div v-if='entry'>
+                    <div class='field'>
+                        <label class='label'>Nominal Outside Diameter</label>
+                        <span> ${entry[3]}in</span>
+                    </div>
+                    <div class='field'>
+                        <label class='label'>Inside Diamenter</label>
+                        <span> ${entry[5]}in</span>
+                    </div>
+                    <div class='field'>
+                        <label class='label'>Rougness Parameter (epsilon) (ft)</label>
+                        <span> ${entry[6]}</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label>Inside Diamenter</label>
-                <span> ${entry[4]}in</span>
-            </div>
-            <div>
-                <label>Epsilon</label>
-                <span> ${entry[5]}</span>
-            </div>
+        
+            <div class='column'>
+            <div v-if='entry'>
+                <div class='field'>
+                    <label class='label' >Flow Rate (gpm)</label>
+                    <input class='input' type='number' step='0.00001' v-model='flow'/>
+                </div>
+                <div class='field'>
+                    <label class='label' >Pipe Length (ft)</label>
+                    <input class='input' type='number' step='0.00001' v-model='length'/>
+                </div>
+                <div class='field'>
+                    <label class='label' >Kinematic Viscosity</label>
+                    <input class='input' type='number' step='0.00001' v-model='viscosity'/>
+                </div>
+
+           </div>
+         </div>
         </div>
+         <div v-if='entry'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flow Rate</th>
+                        <th>Average Velocity</th>
+                        <th>Reynolds</th>
+                        <th>Laminar</th>
+                        <th>Friction Loss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for='sample in results'>
+                        <td>${sample.flow}</td>
+                        <td>${sample.velocity}</td>
+                        <td>${sample.reynolds}</td>
+                        <td>
+                            <span v-if='sample.laminar'>Laminar</span>
+                            <span v-else>Non-Laminar</span>
+                        </td>
+                        <td>
+                            <span>${sample.friction_loss}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+
     </form>
 </script>
 

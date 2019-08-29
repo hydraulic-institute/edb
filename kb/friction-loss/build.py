@@ -9,21 +9,26 @@ df = pd.read_excel(
     'Section IV - Piping Materials - Revison to EDB.xlsx', sheet_name="Pipe-Tube Data")
 
 Entry = namedtuple(
-    'Entry', 'material nominal_size nominal_od schedule id epsilon')
+    'Entry', 'type material nominal_size nominal_od schedule id epsilon')
 
 r = 0
 entries = []
 for row in df.itertuples():
-    # material (F)
-    # nominal size (G)
-    # nominal outside diameter (H)
-    # schedule (N)
-    # inside diameter
-    # (AB) epsilon
+    # Piping:
+      # material (F)
+      # nominal size (G)
+      # nominal outside diameter (H)
+      # schedule (N)
+      # inside diameter
+      # (AB) epsilon
+    # Tubing
 
     if r > 1 and not math.isnan(float(row[28])) and not math.isnan(float(row[23])) and str(row[14]) != "nan":
-        entries.append(Entry(row[6], row[7], row[8],
+        entries.append(Entry('Piping', row[6], row[7], row[8],
                              row[14], row[23], row[28]))
+    # elif r > 1 and not math.isnan(float(row[28])) and not math.isnan(float(row[23])):
+    #    entries.append(Entry('Tubing', row[6], row[7], row[8],
+    #                         None, row[23], row[28]))
 
     r = r + 1
 

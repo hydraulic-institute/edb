@@ -132,6 +132,7 @@ Vue.component('friction-loss-calculator', {
     delimiters: ['${', '}'],
     data: function () {
         return {
+            calculated: false,
             data: null,
             materials: null,
             sizes: null,
@@ -141,6 +142,10 @@ Vue.component('friction-loss-calculator', {
 
             schedule: null,
             entry: null,
+
+            flow: null,
+            length: null,
+            viscosity: null
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -160,10 +165,72 @@ Vue.component('friction-loss-calculator', {
             })
     },
     methods: {
-
+        calculate() {
+            console.log("O :PBR <TTU")
+        },
+        Reynolds: function (flow) {
+            if (!this.entry) return NaN;
+            const id = this.entry[5];
+            const velocity = flow / (Math.PI * Math.pow(id / 2, 2));
+            return id * velocity / this.viscosity;
+        },
     },
     computed: {
 
+        results: function () {
+            if (!this.entry) return [];
+            const phi = (1 + Math.sqrt(5)) / 2;
+            const id = this.entry[5];
+            const eps = this.entry[6];
+            const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
+            const results = [];
+            for (const factor of steps) {
+                const flow = this.flow * factor;
+                const velocity = flow / (Math.PI * Math.pow(id / 2, 2));
+                const Re = this.Reynolds(flow);
+                const sample = {
+                    flow: flow,
+                    velocity: velocity,
+                    reynolds: Re
+                }
+                const f_lam = 64 / Re;
+                if (Re < 2000) {
+                    sample.laminar = true;
+                    sample.friction_loss = f_lam;
+                    results.push(sample);
+                } else {
+                    const tol = f_lam / 100000;
+                    let a = 0;
+                    let b = 10;
+                    let c = b - (b - a) / phi;
+                    let d = a + (b - a) / phi;
+                    let Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
+                    let Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
+                    let i = 0;
+
+                    while (Math.abs(Fc - Fd) > tol) {
+                        if (Fc < Fd) {
+                            b = d;
+                        } else {
+                            a = c;
+                        }
+                        c = b - (b - a) / phi;
+                        d = a + (b - a) / phi;
+                        Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
+                        Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
+                        i = i++;
+                    }
+
+                    c = b - (b - a) / phi;
+                    d = a + (b - a) / phi;
+
+                    sample.friction_loss = (Fc + Fd) / 2;
+                    sample.laminar = false;
+                    results.push(sample);
+                }
+            }
+            return results;
+        }
     },
     watch: {
         material: function () {
