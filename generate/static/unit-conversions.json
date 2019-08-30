@@ -1,0 +1,79 @@
+[{
+    "measure": "Length",
+    "decimals": 2,
+    "image": "length.png",
+    "units": [{
+        "label": "Meters",
+        "factor": 1
+    }, {
+        "label": "Millimeters",
+        "factor": 1000
+    }, {
+        "label": "Feet",
+        "factor": 3.28083989501312
+    }, {
+        "label": "Inches",
+        "factor": 39.3701
+    }]
+}, {
+    "measure": "Flow, Volumetric",
+    "decimals": 2,
+    "image": "flow-volumetric.png",
+    "units": [{
+        "label": "m3/h",
+        "factor": 1
+    }, {
+        "label": "CFM",
+        "factor": 0.588577754940963
+    }, {
+        "label": "ft3/min",
+        "factor": 0.588577754940963
+    }, {
+        "label": "ft3/s",
+        "factor": 0.00980962924901604
+    }, {
+        "label": "Usgpm",
+        "factor": 4.40286764029913
+    }, {
+        "label": "l/min",
+        "factor": 16.6666646666671
+    }, {
+        "label": "l/s",
+        "factor": 0.2777778
+    }, {
+        "label": "m3/min",
+        "factor": 0.0166666667
+    }, {
+        "label": "m3/s",
+        "factor": 0.0002777778
+    }, {
+        "label": "dm3/min",
+        "factor": 16.6666646666671
+    }, {
+        "label": "Igpm",
+        "factor": 3.66615185100033
+    }, {
+        "label": "m3/day",
+        "factor": 24
+    }, {
+        "label": "Ukgpm",
+        "factor": 3.66615185100033
+    }, {
+        "label": "Usbl/day",
+        "factor": 150.955448280584
+    }, {
+        "label": "Usbl/min",
+        "factor": 0.104830197736574
+    }]
+}, {
+    "measure": "Temperature",
+    "decimals": 2,
+    "image": "temperature.png",
+    "units": [{
+        "label": "Celsius",
+        "factor": 1
+    }, {
+        "label": "Fahrenheit",
+        "factor": null
+    }]
+}]

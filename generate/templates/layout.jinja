@@ -23,6 +23,58 @@
     {% endblock %}
 </head>
 
+<script type="text/x-template" id="converter-template">
+    <form>
+        <div class='columns'>
+            <div class='column'>
+                <nav class="panel">
+                    <p class="panel-heading" style='margin-bottom:0px'>Measures </p>
+                    <a :class='{isActive: u == unit}' v-for='u in units' class='panel-block' @click='unit = u'>
+                        <span class='panel-icon'>
+                            <img :src='"/images/"+u.image'/>
+                        </span>
+                        <span>${u.measure}</span>
+                    </a>
+                </nav>
+            </div>
+            <div class='column'>
+                <nav class="panel" v-if='unit'>
+                    <p class="panel-heading" style='margin-bottom:0px'>${unit.measure}</p>
+                    <div class='panel-block'>
+                        <div class='field'>
+                            <label class='label'>From</label>
+                            <div class='columns'>
+                                <div class='column'>
+                                    <input class='input' v-model='from'/>
+                                </div>
+                                <div class='column'>
+                                    <select  class="input" v-model='unit_from'>
+                                        <option :value='u' v-for='u in unit.units'>${u.label}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    <div class='panel-block'>
+                        <div class='field'>
+                            <label class='label'>To</label>
+                            <div class='columns'>
+                                <div class='column'>
+                                    <input class='input' v-model='to' readonly disabled/>
+                                </div>
+                                <div class='column'>
+                                    <select  class="input" v-model='unit_to'>
+                                        <option :value='u' v-for='u in unit.units'>${u.label}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </form>
+</script>
 
 <script type="text/x-template" id="friction-loss-calculator-template">
 	<form>

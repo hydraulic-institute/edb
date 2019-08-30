@@ -87,6 +87,7 @@ Vue.component('units', {
     },
     methods: {
         process_content: function (_content) {
+            if (!_content) return "";
             let content = _content.slice(0);
             const replacements = [{
                 token: '^',
@@ -294,6 +295,55 @@ Vue.component('friction-loss-calculator', {
         }
     }
 });
+
+Vue.component('converter', {
+    delimiters: ['${', '}'],
+    data: function () {
+        return {
+            units: [],
+            unit: null,
+            from: 1,
+            to: 1,
+            unit_from: null,
+            unit_to: null
+        };
+    }, //   
+    template: '#converter-template',
+    mounted: function () {
+        axios.get("/statics/unit-conversions.json")
+            .then((response) => {
+                this.units = response.data;
+                console.log(JSON.stringify(this.units, null, 2));
+            }).catch((err) => {
+                console.log(err);
+                console.error('Unit conversion data could not be downloaded.')
+            })
+    },
+    methods: {
+        recalculate: function () {
+            const standard = this.from / this.unit_from.factor;
+
+            this.to = (standard * this.unit_to.factor).toFixed(this.unit.decimals);
+        }
+    },
+    computed: {},
+    watch: {
+        unit: function () {
+            if (this.unit) {
+                this.unit_from = this.unit.units[0];
+                this.unit_to = this.unit.units[0];
+                this.recalculate();
+            }
+        },
+        unit_from: function () {
+            this.recalculate();
+        },
+        unit_to: function () {
+            this.recalculate();
+        }
+    }
+});
+
 
 
 
