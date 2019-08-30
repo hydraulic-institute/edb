@@ -127,6 +127,35 @@ Vue.component('units', {
     }
 });
 
+Vue.component('unit-value', {
+    delimiters: ['${', '}'],
+    props: ['value', 'metric_factor', 'precision'],
+    template: '<span>${converted_value}</span>',
+    mounted: function () {
+
+    },
+    computed: {
+        converted_value: function () {
+            return (this.active_factor * this.value).toFixed(this.active_precision);
+        },
+        active_precision: function () {
+            if (this.precision === undefined) {
+                return 3;
+            } else {
+                return this.precision;
+            }
+        },
+        active_factor: function () {
+            if (this.metric_factor === undefined) {
+                return 1;
+            } else {
+                return this.metric_factor;
+            }
+        }
+
+
+    }
+});
 
 Vue.component('friction-loss-calculator', {
     delimiters: ['${', '}'],
@@ -165,13 +194,11 @@ Vue.component('friction-loss-calculator', {
             })
     },
     methods: {
-        calculate() {
-            console.log("O :PBR <TTU")
-        },
+
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.entry[5];
-            const velocity = flow / (Math.PI * Math.pow(id / 2, 2));
+            const velocity = (flow * 0.4085) / (id * id);
             return id * velocity / this.viscosity;
         },
     },
@@ -188,7 +215,7 @@ Vue.component('friction-loss-calculator', {
             const results = [];
             for (const factor of steps) {
                 const flow = this.flow * factor;
-                const velocity = flow / (Math.PI * Math.pow(id / 2, 2));
+                const velocity = (flow * 0.4085) / (id * id);
                 const Re = this.Reynolds(flow);
                 const sample = {
                     flow: flow,

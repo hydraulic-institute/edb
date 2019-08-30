@@ -51,12 +51,12 @@
                 </div>
                 <div v-if='entry'>
                     <div class='field'>
-                        <label class='label'>Nominal Outside Diameter</label>
-                        <span> ${entry[3]}in</span>
+                        <label class='label'>Nominal Outside Diameter (in)</label>
+                        <span> ${entry[3]}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diamenter</label>
-                        <span> ${entry[5]}in</span>
+                        <label class='label'>Inside Diamenter (in)</label>
+                        <span> ${entry[5]}</span>
                     </div>
                     <div class='field'>
                         <label class='label'>Rougness Parameter (epsilon) (ft)</label>
@@ -69,15 +69,15 @@
             <div v-if='entry'>
                 <div class='field'>
                     <label class='label' >Flow Rate (gpm)</label>
-                    <input class='input' type='number' step='0.00001' v-model='flow'/>
+                    <input class='input' type='number' step='0.01' v-model='flow'/>
                 </div>
                 <div class='field'>
                     <label class='label' >Pipe Length (ft)</label>
-                    <input class='input' type='number' step='0.00001' v-model='length'/>
+                    <input class='input' type='number' step='0.01' v-model='length'/>
                 </div>
                 <div class='field'>
-                    <label class='label' >Kinematic Viscosity</label>
-                    <input class='input' type='number' step='0.00001' v-model='viscosity'/>
+                    <label class='label' >Kinematic Viscosity (ft<sup>2</sup>/sec)</label>
+                    <input class='input' type='number' step='0.01' v-model='viscosity'/>
                 </div>
 
            </div>
@@ -87,8 +87,8 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Flow Rate</th>
-                        <th>Average Velocity</th>
+                        <th>Flow Rate (gpm)</th>
+                        <th>Average Velocity (ft/sec)</th>
                         <th>Reynolds</th>
                         <th>Laminar</th>
                         <th>Friction Loss</th>
@@ -96,15 +96,15 @@
                 </thead>
                 <tbody>
                     <tr v-for='sample in results'>
-                        <td>${sample.flow}</td>
-                        <td>${sample.velocity}</td>
-                        <td>${sample.reynolds}</td>
+                        <td><unit-value :value="sample.flow"/></td>
+                        <td><unit-value :value="sample.velocity"/></td>
+                        <td><unit-value :value="sample.reynolds"/></td>
                         <td>
                             <span v-if='sample.laminar'>Laminar</span>
                             <span v-else>Non-Laminar</span>
                         </td>
                         <td>
-                            <span>${sample.friction_loss}</span>
+                            <span><unit-value :value="sample.friction_loss"/></span>
                         </td>
                     </tr>
                 </tbody>
