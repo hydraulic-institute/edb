@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves 
-date:  July 9th, 2019
+date:  September 12th, 2019
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 
@@ -288,6 +288,11 @@ A booster pump is designed to operate at 1800 GPM and 135 ft., with a speed of 1
 Frequency Drive which reduces the pump speed by 10% during low flow conditions. Using the pump curve below and the affinity rules, generate the pump curve for low 
 flow conditions and the new pumping conditions. 
 
+=|=
+title: Data
+data: total-head-feet.csv
+=|=
+
 =/=
 title: 
 data: total-head-feet.csv
@@ -295,11 +300,6 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
-
-=|=
-title: Data
-data: total-head-feet.csv
-=|=
 
 **Determine the Reduced Speed**
 
@@ -316,35 +316,67 @@ $$ n_2= 1566\,RPM $$
 Using equation 1.1, calculate the new values (repeat until you convert all points under the flow column):
 
 =+= 
+<span class= equation-label >(A)</span>
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
-$$ {Q_2 \over 0} = {1566 \over 1740} $$
-$$ Q_2 = 0\,GPM $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2 \over 0} = {1566 \over 1740} $$
+$$ \,\,\,\,\,\,\,\,\,\,Q_2 = 0\,GPM $$
 =+=
 
 =+= 
+<span class= equation-label >(B)</span>
 $$ {Q_2 \over 200} = {1566 \over 1740} $$
-$$ Q_2 = 180\,GPM $$
+$$ \,\,\,\,\,\,\,\,Q_2 = 180\,GPM $$
 =+=
 
 =+= 
+<span class= equation-label >(C)</span>
 $$ {Q_2 \over 400} = {1566 \over 1740} $$
-$$ Q_2 = 360\,GPM $$
+$$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
 =+=
+
 
 **Calculate New Total Head Values**
 
 Using equation 1.2, calculate the new values (repeat until you convert all points under the Total Head column):
 
 =+=
-[units = us]
+<span class= equation-label >(A)</span>
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
-$$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ H_2 = 173\,ft. $$
+$$ \,\,\,\,\,\,\,\,\,\,{H_2 \over 173} = ({1566 \over 1740})^2 $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 173\,ft. $$
 =+=
 
-**Plot Pump Curve**
+=+=
+<span class= equation-label >(B)</span>
+$$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 167\,ft. $$
+=+=
 
-**(need new plots and charts)**
+=+=
+<span class= equation-label >(C)</span>
+$$ {H_2 \over 198} = ({1566 \over 1740})^2 $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 160\,ft. $$
+=+=
+
+
+**Plot Pump Curve for low flow condition**
+
+=|=
+title: Data
+data: total-head-feet-2.csv
+=|=
+
+=/=
+title: 
+data: total-head-feet-2.csv
+x: 1
+series: 2
+series_title_index: 0
+=/=
+
+**Comparison of normal flow and low flow conditions:**
+
+![](./head_vs_flow_2.png "")
 
 
 ### Example 2 (U.S. & Metric Units):
