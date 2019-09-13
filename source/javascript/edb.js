@@ -313,7 +313,6 @@ Vue.component('converter', {
         axios.get("/statics/unit-conversions.json")
             .then((response) => {
                 this.units = response.data;
-                console.log(JSON.stringify(this.units, null, 2));
             }).catch((err) => {
                 console.log(err);
                 console.error('Unit conversion data could not be downloaded.')
@@ -321,9 +320,50 @@ Vue.component('converter', {
     },
     methods: {
         recalculate: function () {
-            const standard = this.from / this.unit_from.factor;
+            const special = isNaN(this.unit_from.factor) || isNaN(this.unit_to.factor);
+            if (special) {
+                switch (this.unit.measure) {
+                    case 'Temperature':
+                        this.recalc_temperature();
+                        break;
+                }
 
-            this.to = (standard * this.unit_to.factor).toFixed(this.unit.decimals);
+            } else {
+                const standard = this.from / this.unit_from.factor;
+                this.to = (standard * this.unit_to.factor).toFixed(this.unit.decimals);
+            }
+        },
+        recalc_temperature() {
+            let celsius;
+            switch (this.unit_from.factor) {
+                case 'C':
+                    celsius = parseFloat(this.from);
+                    break;
+                case 'F':
+                    celsius = (parseFloat(this.from) - 32) / 1.8;
+                    break;
+                case 'K':
+                    celsius = parseFloat(this.from) - 273.15;
+                    break;
+                case 'R':
+                    celsius = (parseFloat(this.from) - 491.67) / 1.8;
+                    break;
+            }
+            switch (this.unit_to.factor) {
+                case 'C':
+                    this.to = celsius;
+                    break;
+                case 'F':
+                    this.to = celsius * 1.8 + 32;
+                    break;
+                case 'K':
+                    this.to = celsius + 273.15;
+                    break;
+                case 'R':
+                    this.to = celsius * 1.8 + 491.67
+                    break;
+            }
+            this.to = this.to.toFixed(this.unit.decimals);
         }
     },
     computed: {},
@@ -331,9 +371,12 @@ Vue.component('converter', {
         unit: function () {
             if (this.unit) {
                 this.unit_from = this.unit.units[0];
-                this.unit_to = this.unit.units[0];
+                this.unit_to = this.unit.units[1];
                 this.recalculate();
             }
+        },
+        from: function () {
+            this.recalculate();
         },
         unit_from: function () {
             this.recalculate();

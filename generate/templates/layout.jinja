@@ -49,7 +49,7 @@
                                 </div>
                                 <div class='column'>
                                     <select  class="input" v-model='unit_from'>
-                                        <option :value='u' v-for='u in unit.units'>${u.label}</option>
+                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
                                     </select>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class='column'>
                                     <select  class="input" v-model='unit_to'>
-                                        <option :value='u' v-for='u in unit.units'>${u.label}</option>
+                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
                                     </select>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                     <input class='input' type='number' step='0.01' v-model='length'/>
                 </div>
                 <div class='field'>
-                    <label class='label' >Kinematic Viscosity (ft<sup>2</sup>/sec)</label>
+                    <label class='label' >Dynamic Viscosity (cP)</label>
                     <input class='input' type='number' step='0.01' v-model='viscosity'/>
                 </div>
 
