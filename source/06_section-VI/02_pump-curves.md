@@ -289,7 +289,7 @@ Frequency Drive which reduces the pump speed by 10% during low flow conditions. 
 flow conditions and the new pumping conditions. 
 
 =|=
-title: Data
+title: Data (Normal Conditions)
 data: total-head-feet.csv
 =|=
 
@@ -359,10 +359,10 @@ $$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 160\,ft. $$
 =+=
 
 
-**Plot Pump Curve for low flow condition**
+**Plot Pump Curve for low flow conditions**
 
 =|=
-title: Data
+title: Data (Low Flow Conditions)
 data: total-head-feet-2.csv
 =|=
 

@@ -141,12 +141,19 @@ where:
 - D = pipe inside diameter in <units us = "feet" metric = "meters"/>
 - ΣK = sum of the minor losses, which includes losses across valves
 
-Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
+<units us = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
 Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.00085 feet will be satisfactory for uncoated
-cast iron and cast steel elbows. Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski<sup>(g)</sup> 13 are
+cast iron and cast steel elbows." metric = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
+are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
+The broken line curves may be used as a guide to probable resistance coefficients for intermediate
+values of the relative roughness factor ε/D. A value of ε = 0.259 mm will be satisfactory for uncoated
+cast iron and cast steel elbows."/>
+
+Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski<sup>(g)</sup> 13 are
 shown in Fig. IIIB-5B. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
 coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. IIIB-5A and IIIB-5B in Section
 IIIB are not reliable below R/D = 1, where R is the radius of the elbow in feet. The approximate radius
