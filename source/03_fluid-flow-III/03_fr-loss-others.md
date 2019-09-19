@@ -1,6 +1,7 @@
 -----
 title:  C) Friction Loss – Other Fluids
 date: June 28th, 2019
+description: Friction loss calculations for other fluids. Includes friction loss modulus.
 -----
 
 # Calculation of Friction Loss for Other Fluids

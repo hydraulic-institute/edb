@@ -1,7 +1,7 @@
 -----
 title: D) Pump Principles
 date:  June 28th, 2019
-description: Overview of specific speed, suction specific speed, other pump principles.
+description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
 # Pump Principles

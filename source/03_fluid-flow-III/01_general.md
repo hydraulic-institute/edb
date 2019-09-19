@@ -1,7 +1,7 @@
 -----
 title:  A) General
 date: June 28th, 2019
-description: General overview of fluid flow. Friction factors, Reynolds number, resistance.
+description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance.
 -----
 
 # General

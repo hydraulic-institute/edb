@@ -1,7 +1,7 @@
 -----
 title: C) Combined Pump & System Curves 
 date:  July 9th, 2019
-description: Contains a combined pump and systems curves tutorial, demonstration, and worked examples.
+description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
 -----
 
 # Combined Pump & System Curves 
