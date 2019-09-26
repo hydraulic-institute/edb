@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temp. (°F),Specific Volume (Cu Ft/Lb),SG 39.2 °F Ref,SG 60 °F Ref,SG 68 °F Ref,Specific Weight (Lbf/Cu Ft),Vapor Pressure (Psi Abs)
+heading,Temp. (°F),Spec. Volume (Cu Ft/Lb),SG 39.2 °F Ref,SG 60 °F Ref,SG 68 °F Ref,Spec. Weight (Lbf/Cu Ft),Vapor Pressure (Psi Abs)
 data,32,0.01602,1,1.001,1.002,62.42,0.088
 data,35,0.01602,1,1.001,1.002,62.42,0.1
 data,40,0.01602,1,1.001,1.002,62.42,0.1217

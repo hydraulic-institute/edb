@@ -4,9 +4,9 @@ date: July 16th, 2019
 description: Properties of other fluids, such as mixtures or slurries. Determining specific gravity of mixture or slurry.
 -----
 
-# Properties of Other Fluids
+# Properties of Other Fluids 
 
-## Degrees A.P.I. vs. Specific Gravity for Oil
+## Degrees A.P.I. vs. Specific Gravity for Oil          
 
 The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
 
