@@ -2,6 +2,7 @@
 title: E) Other Considerations
 date:  September 12th, 2019
 description: Frequently asked questions regarding pump and system curves; pump systems.
+hide_units: true
 -----
 
 # Other Considerations

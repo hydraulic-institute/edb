@@ -2,6 +2,7 @@
 title: C) Combined Pump & System Curves 
 date:  July 9th, 2019
 description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
+hide_units: true
 -----
 
 # Combined Pump & System Curves 
@@ -152,7 +153,7 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-## Worked Example (U.S. Customary Units)
+## Worked Example 
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
