@@ -2,7 +2,6 @@
 title: D) Viscosity
 date:  July 1st, 2019
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
-hide_units: true
 -----
 
 # Viscosity
@@ -56,10 +55,10 @@ $$ force{time \over {length^2}} $$
 is the pound-second per square foot which is numerically
 identical with the slug per foot-second." metric = "The unit of dynamic 
 viscosity in Metric measure is the dyne-second per square centimeter, 
-called the POISE, which is numerically identical with the
+called the poise, which is numerically identical with the
 gram per centimeter-second. It usually is more
-convenient to express numerical values in CENTIPOISES
-such that 100 centipoises equal one POISE."/>
+convenient to express numerical values in centipoise
+such that 100 centipoise equal one poise."/>
 
 ![](IIC-1_Fig-1.png "")
 
@@ -83,9 +82,9 @@ $$ {length^2} \over time $$
 <units us = "The unit of kinematic viscosity in English measure
 is the square foot per second." metric = "The unit of kinematic
 viscosity in Metric measure is the square
-centimeter per second called the STOKE. It usually
+centimeter per second called the stoke. It usually
 is more convenient to express numerical values in
-CENTISTOKES such that 100 centistokes equal
+centistokes such that 100 centistokes equal
 one stoke."/>
 
 The distinction between the dynamic and the kinematic
@@ -100,13 +99,13 @@ follows:
 
 **1 square foot = 929.034 square centimeters**
 
-**1 dyne-second per sq cm = 1 poise = 100 centipoises**
+**1 dyne-second per sq cm = 1 poise = 100 centipoise**
 
 **1 sq cm/sec = 1 stoke = 100 centistokes**
 
-**1 lb-sec/sq ft = 478.801 poises = 47,880.1 centipoises**
+**1 lb-sec/sq ft = 478.801 poises = 47,880.1 centipoise**
 
-**μ lb-sec/sq ft = (μ/47,880.1)centipoises = 0.0000208855 centipoises**
+**μ lb-sec/sq ft = (μ/47,880.1)centipoise = 0.0000208855 centipoise**
 
 **𝜈 sq ft/sec =  𝜈 sq cm/sec / 929.034 = 0.00107639 stokes**
 
@@ -116,7 +115,7 @@ follows:
     
 where:
 
-- 𝜈 = centipoises, and
+- 𝜈 = centipoise, and
 - w = <units us = "lbf/cu ft" metric = "N/m^3^"/>
 - g = <units us = "32.17 ft/s^2^ at sea
 level and approximately 45 degrees latitude" 
@@ -197,16 +196,16 @@ non-Newtonian fluids. There are many other viscosimeters
 for special purposes, discussion of
 which is beyond the scope of this Manual. Viscosity
 conversion tables for use with the above described
-viscosimeters are shown in Tables IIC-3 and 4. A
-viscosity blending chart for use with oils is shown
-in IIC-2. Let oil (A) have the higher viscosity and oil
+viscosimeters are shown below. A
+viscosity blending chart for use with oils is also shown
+below. Let oil (A) have the higher viscosity and oil
 (B) the lower viscosity. Mark the viscosity of (A) and
 (B) on the right and left hand scales, respectively,
 and draw a straight line connecting the marks as
 shown. The viscosity of any blend of (A) and (B) will
 be shown by the intersection of the vertical line
 representing the percentage composition and the
-line described above. See examples 1 and 2.
+line described above. 
 
 
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
@@ -236,17 +235,17 @@ data: visc-conv-2.csv
 
 =+=
 <span class= equation-label >*</span>
-$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoises)} \over Density\,(in\,g/cm^3)} $$
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
 =+=
 
 When the Metric System terms centistokes and
-centipoises are used, the density is numerically
+centipoise are used, the density is numerically
 equal to the specific gravity. Therefore, the following
 expression can be used which will be sufficiently
 accurate for most calculations:
 
 =+=
-$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoises)} \over Specific\,Gravity} $$
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Specific\,Gravity} $$
 =+=
 
 When the English System units are used, the density

@@ -7,10 +7,12 @@ description: The Hydraulic Institute (HI) is the global authority on pumps and p
 
 # Engineering Data Book
 The HI Engineering Data Book is a comprenhensive guide for pump users, pump manufacturers and engineers in need of references for pump principles, 
-calculations and unit conversions. It covers topics like Net Positive Suction Head, Pump and System Curves, and frictional losses, and utilizes standards developed by
-HI and other reputable sources.
+calculations and unit conversions. It covers topics like Net Positive Suction Head, Pump and System Curves, and frictional losses, utilizing standards developed by
+HI and other reputable sources. The data book will be updated frequently with new information.
 
-To toggle between U.S. and metric units, use the toggle button on the upper right corner of each page **(Note: If a page does not contain this button, it is implied that this page only deals with one set of units).**
+To search for specific words or topics, use the search bar on the upper left corner of each page. 
+
+To toggle between U.S. and metric units, use the toggle button on the upper right corner of each page **(Note: If a page does not contain a unit button, the page only deals with one set of units).**
 
 <units us = "This page is currently set to U.S. customary units." metric = "This page is currently set to metric units."/>
 

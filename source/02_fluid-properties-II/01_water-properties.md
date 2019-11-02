@@ -68,7 +68,7 @@ data-metric: auxiliary-metric.csv
 =|=
 
 
-### Equation of States
+### Equation of State
 The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, 
 and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R. 
 In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but 
