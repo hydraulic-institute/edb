@@ -1,13 +1,13 @@
 -----
-title:  C) Friction Loss – Other Fluids
+title:  C) Frictional Losses – Other Fluids
 date: June 28th, 2019
-description: Friction loss calculations for other fluids. Includes friction loss modulus.
+description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
-# Calculation of Friction Loss for Other Fluids
+# Calculation of Frictional Losses for Other Fluids
 
 The pipe friction charts, Figs. IIIC-2 thru IIIC-13
-incl., show friction-loss moduli for the incompressible
+incl., show frictional-loss moduli for the incompressible
 flow of viscous fluids, including water, in several
 sizes of new clean steel or wrought iron pipes
 having Schedule 40 wall thickness. Each chart covers
@@ -31,7 +31,7 @@ Both of these regions represent stable states
 of flow. A diagonal line separates the regions of
 laminar and turbulent flow and represents the critical
 zone, a region in which it is difficult to predict
-the state of flow and hence, the friction loss. The
+the state of flow and hence, the frictional loss. The
 critical zone usually represents a region of unstable
 flow. The critical zone line gives approximate
 moduli on the high side for this region of
@@ -88,7 +88,7 @@ does not intersect the viscosity line in either turbulent
 or laminar flow, use the intersection with the
 critical zone line.
 
-d) Compute the friction loss in pressure drop or
+d) Compute the frictional loss in pressure drop or
 head, as desired, from Equations (11) or (12)
 above. These equations are repeated on each chart.
 

@@ -1,10 +1,10 @@
 -----
-title:  E) Friction Loss of Paper Stock
+title:  E) Frictional Losses of Paper Stock
 date: June 28th, 2019
-description: Friction loss of paper stock, pulp suspensions. Different consistencies.
+description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
-# Friction Loss of Paper Stock
+# Frictional Losses of Paper Stock
 
 ### I. Introduction
 
@@ -16,32 +16,32 @@ static head, velocity head and total friction head
 produced by friction between the pulp suspension
 and the pipe, bends, and fittings. The total friction
 head is the most difficult to determine because of the
-complex, non-linear nature of the friction loss curve.
+complex, non-linear nature of the frictional loss curve.
 This curve can be affected by many factors.
 
 The following analytical method for determining
-pipe friction loss is based on the recently published
+pipe frictional losses is based on the recently published
 TAPPI Technical Information Sheet (TIS) 408-4 (Reference I), 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)
-are considered to have the same friction loss
+are considered to have the same frictional losses
 characteristic as water. This paper only applies to
 systems using centrifugal pumps which is normal
 for these consistencies. The method for determining
-the friction loss of pulp suspensions in pipe, as presented
+the frictional losses of pulp suspensions in pipe, as presented
 here, is intended to supersede the various
 methods previously issued.
 
 ### II. Background
 
-Figure 1 and Figure 2 show typical friction loss curves for two different 
+Figure 1 and Figure 2 show typical frictional loss curves for two different 
 consistencies (C<sub>2</sub> < C<sub>1</sub>) of chemical pulp and mechanical
 pulp, respectively.
 
 ![](fig1_2.png "")
 
-The friction loss curve for chemical pulp can be conveniently divided
+The frictional loss curve for chemical pulp can be conveniently divided
 into three regions, as illustrated by the shaded areas of Figure 3.
 
 ![](fig3_&_4.png "")
@@ -49,7 +49,7 @@ into three regions, as illustrated by the shaded areas of Figure 3.
 Regions shown in Fig. 3 may be described as follows:
 
 **Region 1**:
-(Curve AB) is a linear region where friction
+(Curve AB) is a linear region where frictional
 loss for a given pulp is a function of
 consistency, velocity, and pipe diameter.
 The velocity at the upper limit of this
@@ -58,35 +58,35 @@ v<sub>max</sub>.
 
 **Region 2**:
 (Curve BCD) shows an initial decrease
-in friction loss (to Point C) after which
-the friction loss again increases. The
+in frictional losses (to Point C) after which
+the frictional losses again increases. The
 intersection of the pulp friction loss
-curve and the water friction loss curve
+curve and the water frictional loss curve
 (Point D) is termed the onset of drag
 reduction. The velocity at this point is
 designated v<sub>w</sub>.
 
 **Region 3**:
-(Curve DE) shows the friction loss curve
+(Curve DE) shows the frictional loss curve
 for pulp fiber suspensions below the
 water curve. This is due to a phenomenon
 called drag reduction. Reference 2
 describes the mechanisms which occur
 in this region.
 
-Regions 2 and 3 are separated by the friction loss
+Regions 2 and 3 are separated by the frictional loss
 curve for water, which is a straight line with a slope
 approximately equal to 2.
 
-The friction loss curve for mechanical pulp, as illustrated
+The frictional loss curve for mechanical pulp, as illustrated
 in Figure 4, is divided into only two regions:
-Regions 1 and 3. For this pulp type, the friction loss
+Regions 1 and 3. For this pulp type, the frictional loss
 curve crosses the water curve v<sub>w</sub> and there is no true
 v<sub>max</sub>·
 
 ### III. Design Parameters
 
-To determine the pipe friction loss component for a specified design basis (usually daily mass flow rate),
+To determine the pipe frictional loss component for a specified design basis (usually daily mass flow rate),
 the following parameters must be defined:
 
 a) **Pulp Type** — Chemical or mechanical
@@ -118,7 +118,7 @@ rate.
 e) **Stock temperature, T** — Required to
 adjust for the effect of changes in
 viscosity of water (the suspending
-medium) on pipe friction loss.
+medium) on pipe frictional losses.
 
 f) **Freeness** — Used to indicate the
 degree of refining or to define the
@@ -140,10 +140,10 @@ expansion.
 The bulk velocity will fall into one of the regions
 previously discussed. Once it has been determined
 in which region the design velocity will occur, the
-appropriate correlations for determining pipe friction
+appropriate correlations for determining pipe frictional
 loss value(s) may be selected. The following
 describes the procedure to be used for estimating
-pipe friction loss in each of the regions.
+pipe frictional losses in each of the regions.
 
 **Region 1**: The upper limit of Region 1 in Figure 3
 (Point B) is designated v<sub>max.</sub> The value
@@ -244,7 +244,7 @@ worst flow condition, ΔH/L at the maximum point
 (v max) can be used for all design velocities between
 v<sub>max</sub> and v<sub>w</sub>·
 
-**Region 3**: A conservative estimate of friction loss is
+**Region 3**: A conservative estimate of frictional losses is
 obtained by using the water curve.
 (Δh/ L)<sub>w</sub> can be obtained from a Friction
 Factor vs. Reynolds Number plot (Reference
@@ -270,7 +270,7 @@ where:
 - D = pipe diameter (in.)
 
 Previously published methods for calculating pipe
-friction loss of pulp suspensions gave a very conservative
+frictional losses of pulp suspensions gave a very conservative
 estimate of head loss. The method just described
 gives a more accurate estimate of head loss
 due to friction, and has been used successfully in
@@ -282,7 +282,7 @@ problems are located in Appendix B.
 
 ### V. Head Losses in Valves, Bends and Fittings
 
-The friction head loss of pulp suspensions in valves, bends
+The frictional head losses of pulp suspensions in valves, bends
 and fittings may be determined from the basic equation
 for head loss, provided in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.
 
@@ -313,7 +313,7 @@ NOTES:
 1. Estimates for pulps based on published literature.
 2. Original data obtained in stainless steel and PVC pipe (7, 8, 9).
 3. No safety factors are included in the above correlations.
-4. The friction loss depends considerably on the condition of the inside of the pipe surface (10).
+4. The frictional loss depends considerably on the condition of the inside of the pipe surface (10).
 5. Wood is New Zealand Kraft pulp.
 
 ## Appendix A
@@ -419,7 +419,7 @@ $$ F_3 = 0.8\,for\,pulps\,that\,have\,been\,dried\,and\,resulurried $$
 
 - F<sub>4</sub> = correction factor for beating. Data have shown
 that progressive beating causes, initially, a
-small decrease in friction loss, followed by a
+small decrease in frictional losses, followed by a
 substantial increase. For a kraft pine pulp
 initially at 725 CSF and F<sub>4</sub> = 1.0, beating
 caused the freeness to decrease to 636 CSF
@@ -434,13 +434,13 @@ given to future requirements.
 
 ## Appendix B
 
-The following is an example that illustrates the method for determining pipe friction loss in each of the three regions shown in Figure 3.
+The following is an example that illustrates the method for determining pipe frictional losses in each of the three regions shown in Figure 3.
 
 ### Example
 
-<units us = "Determine the friction loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
+<units us = "Determine the frictional loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
 6 inch schedule 40 stainless steel pipe (inside diameter = 6.065 in). The pulp temperature is 90°F, the flow rate 1100 U.S. GPM."
-metric = "Determine the friction loss (per 100 m of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
+metric = "Determine the frictional loss (per 100 m of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
 6 inch schedule 40 stainless steel pipe (inside diameter = 154.051 mm). The pulp temperature is 32.22°C, the flow rate 249.84 m^3^/h."/>
 
 **Solution:**
@@ -525,7 +525,7 @@ $$ v_{w} = 4.00(2.0^{1.40}) = 10.56 ft/s. $$
 $$ v_{w} = 1.2192(2.0^{1.40}) = 3.22 m/s. $$
 =+=
 
-d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The friction loss is calculated as that of water flowing at
+d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional loss is calculated as that of water flowing at
 the same velocity.
 
 =+=
@@ -551,7 +551,7 @@ $$ = 0.58(12.22^{1.75})(6.065^{-1.25}) = 4.85\,m\,head\,loss/100\,m\,of\,pipe $$
 =+=
 
 This will be a conservative estimate, as the actual
-friction loss curve for pulp suspensions under these
+frictional loss curve for pulp suspensions under these
 conditions will be below the water curve.
 
 ## References

@@ -1,14 +1,14 @@
 -----
-title:  B) Friction Loss – Water
+title:  B) Frictional Losses – Water
 date: July 9th, 2019
-description: Friction loss information for water. Resistance coefficients.
+description: Frictional losses information for water. Resistance coefficients.
 -----
 
-# Friction Loss – Water
+# Frictional Losses – Water
 
 **(Tables 1-31 will be replaced by calculator)**
 
-## IIIB-4 – Friction Loss for Water in <units us = "Feet / 100 Feet of Pipe" metric = "Meters / 100 Meters of Pipe"/>
+## IIIB-4 – Frictional Losses for Water in <units us = "Feet / 100 Feet of Pipe" metric = "Meters / 100 Meters of Pipe"/>
 
 =|=
 title: Table 1 – 1/8 Inch Nominal, Steel Schedule 40 (ID = 0.269 in, ε/D = 0.00669)

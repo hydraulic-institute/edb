@@ -80,7 +80,7 @@ References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best 
 Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
 the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
 
-### Tables of Friction Loss for Water, Explanation
+### Tables of Frictional Losses for Water, Explanation
 
 
 Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
@@ -121,7 +121,7 @@ where:
  
 
 Values of (K) for valves and fittings may be referenced
-below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Friction Loss – Water</a>.  Reference to the literature will reveal wide differences in the published values of
+below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Frictional Losses – Water</a>.  Reference to the literature will reveal wide differences in the published values of
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings. 

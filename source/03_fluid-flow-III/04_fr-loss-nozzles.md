@@ -1,7 +1,7 @@
 -----
-title:  D) Friction Loss of Nozzles
+title:  D) Frictional Losses of Nozzles
 date: June 11th, 2019
-description: Calculation of friction loss of nozzles. 
+description: Calculation of frictional losses of nozzles. 
 -----
 
-# Friction Loss of Nozzles
+# Frictional Losses of Nozzles
