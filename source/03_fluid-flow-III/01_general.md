@@ -35,7 +35,7 @@ $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \
 
 where:
 
-- ϵ = pipe roughness, in <units us = "inches" metric = "mm"/>
+- ε = pipe roughness, in <units us = "inches" metric = "mm"/>
 - Re = Reynolds number for fluid flow
 
 Another common form, which can be solved without iteration, is shown below.
@@ -80,11 +80,6 @@ Determining the frictional roughness for old pipe is beyond this tutorial. Deter
 and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
 it is recommended that 15 percent be added to the values shown above.
 
-References 1, 2, 3, 4, 5, 6 and 7 in Section VJ were studied to obtain the best value of the roughness parameter (ε) and the probable variations in the friction factors for new pipes.
-
-Equation (2) was combined with Equation (1) and solutions carried out for each kind and size of pipe. These were used to construct large-scale logarithmic plots from which
-the values of (h<sub>f</sub>) shown in Section IIIB, Tables 1–31 incl., were obtained.
-
 ### Tables of Frictional Losses for Water, Explanation
 
 
@@ -121,7 +116,7 @@ where:
 
 - h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet" metric = "meters"/> of fluid 
 - v = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
-- g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
+- g = Acceleration due to gravity, <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient for valve or fitting
  
 
@@ -165,10 +160,6 @@ IIIB are not reliable below R/D = 1, where R is the radius of the elbow in feet.
 of a flanged elbow may be obtained by subtracting the flange thickness from the center-to-face dimension. The center-to-face dimension for a reducing
 elbow is usually identical with that of an elbow of the same straight size as the larger end. 
 
-The resistance coefficients for miter bends as reported by Shubert<sup>(g)</sup> 12b are shown in Section IIIB,
-Table 33. The rough pipe used in the Shubert investigation had a relative roughness factor, ε/D of about 0.0022. Reference 12b of Section VI.
-should be consulted for information on the variation of the resistance coefficients with variation in the Reynolds Number.
-
 The resistance to flow (head loss) caused by a sudden enlargement may be computed from the equation:
 
 =+=
@@ -192,7 +183,7 @@ where:
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
 - v<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
-- g = <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
+- g = Acceleration due to gravity, <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
 Equation (5) is useful for computing the resistance to flow caused by conical increasers and diffusers.
@@ -274,7 +265,7 @@ in any pipe is given by the equation:
 
 =+=
 <span class= equation-label >(8)</span>
-$$ f = {64 \over R}$$
+$$ f = {64 \over Re}$$
 =+=
 
 If the Reynolds Number is above 4000, the flow will
