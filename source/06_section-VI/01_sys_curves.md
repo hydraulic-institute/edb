@@ -14,22 +14,22 @@ A **system curve** represents the relationship between flow through a system and
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
 =+=
-$$ \Delta h_{stat} = \Delta (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
+$$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
 where:
 
-- z is elevation
-- P is pressure
-- ρ is fluid density
-- g is gravitational acceleration
+- z is elevation, in <units us = "feet" metric = "meters"/>
+- P is pressure, in <units us = "lbs per square inch" metric = "kPa"/>
+- ρ is fluid density, in <units us = "lbm / ft^3" metric = "kg/m^3"/>
+- g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
 
 
-Note that if the supply and destination are at the same pressure, as is often the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
+Note that if the supply and destination are at the same pressure, as is the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
 
 ### Frictional Head (Major Losses)
 
-The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportional to the square of the velocity.
+The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportionally to the square of the velocity.
 
 Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation
 (defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>).
@@ -61,7 +61,7 @@ $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{suppl
 
 ### Shape of the System Curve
 
-In some systems the frictional losses will be dominate part of the overall head loss. These systems will have a steeper system curve.
+In some systems the frictional losses will be the majority of overall head loss. These systems will have a steeper system curve.
 
 ![](friction-dom.png "")
 ![](elev-changes.png "")
@@ -89,8 +89,6 @@ price: 99.99
 =^=
 
 ## Educational Demonstration
-
-*(Demonstrator will be placed here)*
 
 This education demonstrator will show how changing the static and frictional losses changes the system curve.
 
@@ -127,7 +125,7 @@ $$ \Delta h_{stat} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
 
 To simplify this example, we will consider the friction factor to be constant at 0.02. In general, the friction factor would vary as the flow rate (velocity) varies. Additionally, the flow would be laminar for low velocities. These considerations should be taken into account when calculating the pipe losses.
 
-<units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.26 mm (0.10226 m). The overall pipe length in this example is 77.72 meters."/>
+<units us = "A 4-inch, schedule 40 steel pipe has an inner diameter of 4.026 inches (0.3355 feet). The overall pipe length in this example is 1255 feet." metric = "A 4-inch, schedule 40 steel pipe has an inner diameter of 102.26 mm (0.10226 m). The overall pipe length in this example is 382.5 meters."/>
 
 **Determine the Minor or Component Loss**
 

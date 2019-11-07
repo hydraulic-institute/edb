@@ -5,3 +5,6 @@ description: Effects of altitude on barometric pressure.
 -----
 
 # Barometric Pressure – Effects of Altitude
+
+
+**Content will be added soon.**

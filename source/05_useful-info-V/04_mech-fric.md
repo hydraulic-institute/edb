@@ -5,3 +5,7 @@ description: Effects of mechanical friction in line shafts.
 -----
 
 # Mechanical Friction in Line Shafts
+
+
+**Content will be added soon.**
+
