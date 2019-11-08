@@ -65,6 +65,7 @@ $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} = {{ωQ'^{0.5}} \over {(y')^{0.75}}
 
 where:
 
+- K = type number
 - Q’ = discharge per eye, <units us = "in cubic feet per second" metric = "in cubic meters per second"/>
 - H’ = head of first stage in <units us = "feet" metric = "meters"/>
 - n = rotational speed, in revolutions per minute
@@ -140,8 +141,6 @@ showing the fluid reaching a pressure below that of its vapor pressure, causing 
 
 ![](bubble-formation.png "")
 
-![](npsh-pic.png "")
-
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
 
 =+=
@@ -166,8 +165,3 @@ the NPSH3 is approximately 11 feet, as this is when the head drops 3% - in this 
 
 ![](NPSHr-test.png "")
 
-## Affinity Rules
-
-*This section will include examples, animations, and a calculator*
-
-Affinity rules are used in turbomachinery to approximately calculate a centrifugal pump’s influence on capacity, head, and power consumption with changing speed or impeller diameter.  

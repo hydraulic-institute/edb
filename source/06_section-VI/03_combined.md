@@ -13,8 +13,8 @@ It is important to understand how the pump will interact with the system it is u
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
 in <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
-Knowing the shape of the system curve will help to understand how the pump operating conditions will change if the system changes due to things like valve position, parts of the system coming
-on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help in determining if the pump is sized correctly to overcome the static and dynamic head of the system.
+Knowing the shape of the system curve will help illustrate the pump operating conditions as the system conditions vary due to changes in valve position, parts of the system coming
+on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determinine if the pump is sized correctly to overcome the static and dynamic head of the system.
 
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
@@ -23,7 +23,7 @@ This will also help ensure the pump operation will be as close to the Best Effic
 ### Reading a Pump and System Curve Plot
 
 As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
-and the dynamic head, which is the frictional losses at varying flow rates. The operating point is where the two curves intersect.
+and the dynamic head, which is the frictional losses at varying flow rates. The operating point is generally where the two curves intersect.
 
 ![](./reading-1.png "")
 
@@ -48,7 +48,7 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ### Changes in Impeller Size
 
-In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use different sized impellers to shift the pump curve.
+In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/section-VI/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
@@ -85,7 +85,7 @@ loss across the control valve, since the system flow rate has not changed.
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in the <a href="/section-VI/faq.html" target="_blank">FAQ section</a>.
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in <a href="/section-VI/other-considerations.html" target="_blank">Other Considerations</a>.
 
 ### Parallel and Series System Implications
 
@@ -153,7 +153,7 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-## Worked Example 
+## Worked Example (U.S. Customary Units)
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
@@ -169,7 +169,7 @@ We need this system to operate at 200 GPM. Based on the system curve previously 
 we select some data points from the pump curve which are shown in the following table.
 
 =|=
-title: Data
+title: Pump Curve Data
 data: qdH-us.csv
 =|=
 

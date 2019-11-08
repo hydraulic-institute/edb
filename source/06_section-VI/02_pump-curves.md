@@ -144,7 +144,7 @@ Depending on the specific speed of the pump, which is further defined in the pum
 The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate,
 as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life.
 The pump manufacturer should be consulted to define this region. Typically, operating 
-intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions, and the graph below shows the types of 
+intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions and the types of 
 issues that can occur when operating outside of the POR and AOR.
 
 **Shut-off Head and Pump Runout:**
@@ -245,8 +245,6 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 ![](./fig4.png "")
 
 ## Educational Demonstration
-
-*(Demonstrator will be placed here)*
 
 ### Pumps in Series
 This demo explores how impeller diameter and speed affect three different pumps
@@ -388,8 +386,6 @@ Instead of designing a new pump the manufacturer recommends trimming the impelle
 
 **Calculate the New Impeller Diameter**
 
-During low flow conditions the speed of the pump is reduced by 10%.
-
 =+=
 [units = us]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
@@ -409,8 +405,6 @@ $$ D_2 = 247\,mm $$
 =+=
 
 **Calculate the New Flow**
-
-During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
 [units = us]

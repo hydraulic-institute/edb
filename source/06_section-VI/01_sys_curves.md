@@ -66,7 +66,7 @@ In some systems the frictional losses will be the majority of overall head loss.
 ![](friction-dom.png "")
 ![](elev-changes.png "")
 
-In other systems the elevation change, or static head, will be dominate part of the overall head loss. The system curve in this case will start at a higher
+In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
 ![](static-dom.png "")
