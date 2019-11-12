@@ -5,9 +5,9 @@ description: Frequently asked questions regarding pump and system curves; pump s
 hide_units: true
 -----
 
-# Other Considerations
+## Other Considerations
 
-## Pump Sizing in the Real World
+### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
 piping conditions over time, or the use of pressurized tanks. The below is an example of a system curve envelope which dictates all the conditions seen. It is up to the system designer to specify
@@ -26,12 +26,12 @@ that exist within the curve envelope.  Using affinity rules will allow the engin
 duty condition within the curve envelope.  It is important to remember that at any given time, the only point to dictate pump performance is where the present system
 curve will intersect the pump curve.
 
-## Undersized or Oversized Pumps
+### Undersized or Oversized Pumps
 
 It is important to note that as the flow increases, the pump head produced will decrease as the system flow losses increases. Oversized or undersized pumps will have curves that do not
 intersect at the required flow rate or will not cross at all. This will show that a different pump should be selected.
 
-## Frequently Asked Questions
+### Frequently Asked Questions
 
 A list of frequently asked questions regarding pumping systems can be accessed <a href="http://pumps.org/Pump_Fundamentals/Pump_FAQs.aspx" target="_blank">here</a> at Hydraulic Institute's website.
 

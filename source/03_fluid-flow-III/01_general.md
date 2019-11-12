@@ -4,8 +4,6 @@ date: June 28th, 2019
 description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance.
 -----
 
-# General
-
 ## Fluid Flow – General
 
 ### Pipe Friction (Major Losses)

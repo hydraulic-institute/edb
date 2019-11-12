@@ -4,7 +4,7 @@ date:  June 11th, 2019
 description: Effects of mechanical friction in line shafts.
 -----
 
-# Mechanical Friction in Line Shafts
+## Mechanical Friction in Line Shafts
 
 
 **Content will be added soon.**

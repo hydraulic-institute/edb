@@ -4,7 +4,7 @@ date: June 28th, 2019
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
-# Frictional Losses of Paper Stock
+## Frictional Losses of Paper Stock
 
 ### I. Introduction
 
@@ -316,7 +316,7 @@ NOTES:
 4. The frictional loss depends considerably on the condition of the inside of the pipe surface (10).
 5. Wood is New Zealand Kraft pulp.
 
-## Appendix A
+### Appendix A
 
 The following gives supplemental information to that provided in the main text.
 
@@ -432,7 +432,7 @@ required.
 by company policy with consideration
 given to future requirements.
 
-## Appendix B
+### Appendix B
 
 The following is an example that illustrates the method for determining pipe frictional losses in each of the three regions shown in Figure 3.
 
@@ -554,7 +554,7 @@ This will be a conservative estimate, as the actual
 frictional loss curve for pulp suspensions under these
 conditions will be below the water curve.
 
-## References
+### References
 
 (1) TAPPI Technical Information Sheet (TIS) 408-4. Technical
 Association of the Pulp and Paper Industry, Atlanta. Georgia

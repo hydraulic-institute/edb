@@ -4,9 +4,9 @@ date: July 16th, 2019
 description: Properties of other fluids.
 -----
 
-# Properties of Other Fluids 
+## Properties of Other Fluids 
 
-## Degrees A.P.I. vs. Specific Gravity for Oil          
+### Degrees A.P.I. vs. Specific Gravity for Oil          
 
 The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
 
@@ -45,11 +45,11 @@ data: IIB1-1.csv
 data: IIB1-2.csv
 =|=
 
-## Temperature-Volume Relation for Oil
+### Temperature-Volume Relation for Oil
 
 ![](temp-vol-oil.png "")
 
-## Specific Gravities vs. Degrees Baumé
+### Specific Gravities vs. Degrees Baumé
 
 *Calculated from the formula, specific gravity 60°/60° F = 140 / (160 - Deg. Bé)*
 

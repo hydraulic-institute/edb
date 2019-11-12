@@ -4,9 +4,9 @@ date:  June 28th, 2019
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
-# Pump Principles
+## Pump Principles
 
-## Impeller Specific Speed 
+### Impeller Specific Speed 
 
 **Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. Specific speed is expressed by the following equation:
 
@@ -75,7 +75,7 @@ where:
 
 Type number derived using the stated metric units, multiplied by a factor of 11.19, is equal to the type number derived using the stated (US) units.
 
-## Suction Specific Speed
+### Suction Specific Speed
 
 **Suction Specific Speed** is an index of pump suction operating characteristics.
 It is determined at the BEP flow rate with the maximum diameter impeller.
@@ -106,7 +106,7 @@ The user is cautioned to check carefully the basis of calculation of specific sp
 
 ![](stable-window.png "")
 
-## Impeller Types
+### Impeller Types
 
 There are many different impeller types (pictured below) based on desired performance characteristics and type of fluid pumped. The main types of impellers are shown below. 
 As the flow increases with respect to the developed head, the larger the waterways become and the smaller the diameter becomes.
@@ -125,7 +125,7 @@ share some of the advantages and disadvantages of each. The reason for loss of e
 the pump case surface increases over time due to wear. This allows for leakage back to suction, reducing efficiency. Another benefit of closed impellers is that 
 setting axial distance doesn’t need to be as precise for this same reason.
 
-## Net Positive Suction Head (NPSH)
+### Net Positive Suction Head (NPSH)
 
 **NPSH is the net positive suction head** in <units us = "feet (US). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
 fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 

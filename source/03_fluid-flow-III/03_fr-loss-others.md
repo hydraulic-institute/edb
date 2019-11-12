@@ -4,7 +4,7 @@ date: June 28th, 2019
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
-# Calculation of Frictional Losses for Other Fluids
+## Calculation of Frictional Losses for Other Fluids
 
 The pipe friction charts, Figs. IIIC-2 thru IIIC-13
 incl., show frictional-loss moduli for the incompressible

@@ -132,19 +132,19 @@ are usually restricted to <units us = "100 ft/s." metric = "30 m/s."/>
 Classification of pumps according to particle size is
 shown in Figure IIB-6.
 
-## Approximate Comparison of Hardness Values of Common Ores and Minerals
+### Approximate Comparison of Hardness Values of Common Ores and Minerals
 
 ![](IIB-4.png "")
 
-## Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
+### Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries
 
 ![](IIB-5.png "")
 
-## Classification of Pumps According to Solid Size
+### Classification of Pumps According to Solid Size
 
 ![](IIB-6-new.jpg "")
 
-## Vapor Pressure of Liquid H<sub>2</sub>
+### Vapor Pressure of Liquid H<sub>2</sub>
 
 =|=
 title: Data Points
@@ -161,7 +161,7 @@ series: 2
 series_title_index: 0
 =/=
 
-## Vapor Pressure of Helium
+### Vapor Pressure of Helium
 
 =|=
 title: Data Points
@@ -180,7 +180,7 @@ series_title_index: 0
 
 *(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
 
-## Sources
+### Sources
 
 **H<sub>2</sub>**
 

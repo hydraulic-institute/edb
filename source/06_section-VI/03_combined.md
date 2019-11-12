@@ -7,7 +7,7 @@ hide_units: true
 
 # Combined Pump & System Curves 
 
-## Tutorial
+### Tutorial
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
@@ -37,8 +37,8 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ### Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule. As the pump is slowed the pump curve
-will be shifted down and to the left, getting closer to the plot origin.
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/section-VI/pump-curves.html" target="_blank">Pump Curves</a>). 
+As the pump is slowed the pump curve will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
 shown in the pump system plot – the system flow and the pump head generated. Slowing the pump down, as depicted in the chart, will reduce pump head 
@@ -100,7 +100,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ![](./pumps-series.png "")
 
-## Educational Demonstration
+### Educational Demonstration
 
 This educational demonstrator will show how changing the pump speed and the system curve will change the operating point. This is a representative demonstration and does not have actual values.
 
@@ -153,7 +153,7 @@ reservoir elevation levels.
 
 ![](series-2.png "")
 
-## Worked Example (U.S. Customary Units)
+### Worked Example (U.S. Customary Units Only)
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 

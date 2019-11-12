@@ -4,9 +4,9 @@ date:  July 1st, 2019
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
-# Viscosity
+## Viscosity
 
-## Definitions and Methods of Measurement
+### Definitions and Methods of Measurement
 
 The **viscosity** of a fluid (liquid or gas) is that property
 which tends to resist a shearing force. Since
@@ -115,7 +115,7 @@ follows:
     
 where:
 
-- 𝜈 = centipoise, and
+- 𝜈 = centipoise
 - w = <units us = "lbf/cu ft" metric = "N/m^3^"/>
 - g = <units us = "32.17 ft/s^2^ at sea
 level and approximately 45 degrees latitude" 
@@ -211,12 +211,12 @@ line described above.
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-## Viscosity Blending Chart
+### Viscosity Blending Chart
    
 ![](IIC-2.png "")
 
 
-## Viscosity Conversion Tables
+### Viscosity Conversion Tables
 
 The following tables will give an approximate comparison of various viscosity ratings so that if the viscosity
 is given in terms other than Saybolt Universal, it can be translated quickly by following horizontally to the
