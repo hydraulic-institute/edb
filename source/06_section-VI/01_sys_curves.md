@@ -32,7 +32,7 @@ Note that if the supply and destination are at the same pressure, as is the case
 The **head loss due to friction** will vary based on flow rate (velocity) and can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment, etc. These losses typically vary proportionally to the square of the velocity.
 
 Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation
-(defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>).
+(defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>).
 
 These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
 pipe diameter (D<sub>h</sub>), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
@@ -48,7 +48,7 @@ for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe
 obstruct or change the flow and pressure can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss).
 
 The loss created by the component is often characterized by a constant, K. The head loss is usually
-proportional to the square of the fluid velocity and can be determined by the equation defined in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>
+proportional to the square of the fluid velocity and can be determined by the equation defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>
 (K values for some types of components are also tabulated here).
 
 ### System Curve

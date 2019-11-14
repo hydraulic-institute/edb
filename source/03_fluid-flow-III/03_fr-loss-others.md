@@ -21,7 +21,7 @@ on viscosity and commonly accepted viscosity
 values for liquids will be found in the <a href="/fluid-properties-II/viscosity.html" target="_blank">viscosity section</a>.
 No allowance has been made for abnormal
 conditions of interior surface or installation nor for
-the deterioration with age. (See the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.)
+the deterioration with age. (See <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>.)
 
 Friction loss moduli for laminar flow are shown by
 the 45-degree lines in the upper left hand portion

@@ -53,13 +53,13 @@ $$ Re = {ρvD \over μ} = {vD \over 𝜈} = {QD \over {𝜈A}} $$
 
 where, for cylindrical pipes:
 
-- ρ is fluid density
-- v is fluid velocity
-- D is pipe inner diameter
-- μ is dynamic viscosity
-- 𝜈 is kinematic viscosity
-- Q is volumetric flow rate
-- A is pipe cross-sectional area
+- ρ is fluid density in <units us = "lbm/ft^3 " metric = "kg/m^3"/>
+- v is fluid velocity in <units us = "ft/s" metric = "m/s"/>
+- D is pipe inner diameter in <units us = "feet" metric = "meters"/>
+- μ is dynamic viscosity in <units us = "lbf*s/ft^2" metric = "kg/(m*s)"/>
+- 𝜈 is kinematic viscosity in <units us = "ft^2^/s" metric = "m^2^/s"/>
+- Q is volumetric flow rate in <units us = "ft^3^/s" metric = "m^3^/s"/>
+- A is pipe cross-sectional area in <units us = "ft^2 " metric = "m^2"/>
 
 At Reynolds numbers less than about 2300, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
 At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.

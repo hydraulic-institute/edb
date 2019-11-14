@@ -284,7 +284,7 @@ problems are located in Appendix B.
 
 The frictional head losses of pulp suspensions in valves, bends
 and fittings may be determined from the basic equation
-for head loss, provided in the <a href="/fluid-flow-III/general.html" target="_blank">general fluid flow section</a>.
+for head loss, provided in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>.
 
 Values of K for the flow of water through various
 types of bends and fittings are tabulated in numerous

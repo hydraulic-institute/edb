@@ -124,7 +124,7 @@ series_title_index: 0
 ### Net Positive Suction Head Required (NPSHr) Curve
 
 The final curve typically shown on a pump performance chart is the NPSHr for different flow rates. NPSHr is the minimum NPSH needed to achieve the specified performance 
-at the specified flow rate, speed, and pumped liquid. NPSHr is further defined in the <a href="/section-VI/pump-principles.html" target="_blank">pump principles section.</a> 
+at the specified flow rate, speed, and pumped liquid. NPSHr is further defined in <a href="/section-VI/pump-principles.html" target="_blank">Pump Principles.</a> 
 
 =/=
 title: NPSHr Curve
