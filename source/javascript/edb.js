@@ -1,5 +1,5 @@
 /* Handles hamburger button toggles */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($navbarBurgers.length > 0) {
 
         // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
+        $navbarBurgers.forEach(function (el) {
+            el.addEventListener('click', function () {
 
                 // Get the target from the "data-target" attribute
                 const target = el.dataset.target;
@@ -181,15 +181,16 @@ Vue.component('friction-loss-calculator', {
     template: '#friction-loss-calculator-template',
     mounted: function () {
         console.log("Friction Loss Calculator mounted");
+        const v = this;
         axios.get("/statics/friction-loss-materials.json")
-            .then((response) => {
-                this.data = response.data;
+            .then(function (response) {
+                v.data = response.data;
                 //console.log(JSON.stringify(this.materials, null, 2));
-                this.materials = [];
-                for (const m in this.data) this.materials.push(m);
+                v.materials = [];
+                for (const m in v.data) v.materials.push(m);
 
 
-            }).catch((err) => {
+            }).catch(function (err) {
                 console.log(err);
                 console.error('Friction loss material data could not be downloaded.')
             })
@@ -310,10 +311,11 @@ Vue.component('converter', {
     }, //   
     template: '#converter-template',
     mounted: function () {
+        const v = this;
         axios.get("/statics/unit-conversions.json")
-            .then((response) => {
-                this.units = response.data;
-            }).catch((err) => {
+            .then(function (response) {
+                v.units = response.data;
+            }).catch(function (err) {
                 console.log(err);
                 console.error('Unit conversion data could not be downloaded.')
             })
@@ -419,7 +421,8 @@ new Vue({
     },
     watch: {
         unit_set: function () {
-            setTimeout(() => {
+
+            setTimeout(function () {
                 if (typeof (Event) === 'function') {
                     // modern browsers
                     window.dispatchEvent(new Event('resize'));
@@ -463,16 +466,18 @@ new Vue({
             console.log("Local storage not available on this browser - unit sets will need to switch manually");
         }
 
+        const v = this;
         // Download the search topic JSON file...
         axios.get("/statics/haystack.json")
-            .then((response) => {
-                this.haystack = response.data;
-                this.fuse = new Fuse(this.haystack, this.search_options);
+            .then(function (response) {
+                v.haystack = response.data;
+                v.fuse = new Fuse(v.haystack, v.search_options);
                 if (typeof (Storage) !== "undefined") {
-                    this.needle = localStorage.getItem("needle")
+                    v.needle = localStorage.getItem("needle")
                 }
-            }).catch((err) => {
+            }).catch(function (err) {
                 console.error('Search is disabled, could not load topic list');
+                console.error(err);
             })
 
 
@@ -484,12 +489,15 @@ new Vue({
             return this.search_results !== undefined;
         },
         results_for_display() {
+            const v = this;
             if (this.search_display) {
 
-                return this.search_results.map((r) => {
-                    const paths = this.haystack.map(g => g.path);
+                return this.search_results.map(function (r) {
+                    const paths = v.haystack.map(function (g) {
+                        return g.path;
+                    });
                     const h = paths.indexOf(r);
-                    return this.haystack[h];
+                    return v.haystack[h];
                 });
 
             } else {
