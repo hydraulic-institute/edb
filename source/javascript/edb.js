@@ -175,7 +175,8 @@ Vue.component('friction-loss-calculator', {
 
             flow: null,
             length: null,
-            viscosity: null
+            viscosity: null,
+            local_loading: false
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -188,6 +189,17 @@ Vue.component('friction-loss-calculator', {
                 //console.log(JSON.stringify(this.materials, null, 2));
                 v.materials = [];
                 for (const m in v.data) v.materials.push(m);
+                v.local_loading = true;
+                Vue.set(v, 'material', localStorage.getItem('material'));
+                console.log(localStorage.getItem('nominal_size'));
+                Vue.set(v, 'nominal_size', localStorage.getItem('nominal_size'));
+                Vue.set(v, 'schedule', localStorage.getItem('schedule'));
+                Vue.set(v, 'flow', localStorage.getItem('flow'));
+                Vue.set(v, 'length', localStorage.getItem('length'));
+                Vue.set(v, 'viscosity', localStorage.getItem('viscosity'));
+                Vue.nextTick(function () {
+                    v.local_loading = false;
+                });
 
 
             }).catch(function (err) {
@@ -210,6 +222,7 @@ Vue.component('friction-loss-calculator', {
             if (!this.entry) return [];
             if (!this.flow) return [];
             if (!this.viscosity) return [];
+            if (this.viscosity <= 0) return [];
             const phi = (1 + Math.sqrt(5)) / 2;
             const id = this.entry[5];
             const eps = this.entry[6];
@@ -261,12 +274,84 @@ Vue.component('friction-loss-calculator', {
                 }
             }
             return results;
+        },
+        results_revision: function () {
+            if (!this.entry) return [];
+            if (!this.flow) return [];
+            if (!this.viscosity) return [];
+
+            const SG = 1;
+            const specific_weight = SG * 62.43;
+            const WT = 0.25;
+            const D = (this.nominal_size - WT * 2) / 12;
+            const A = Math.PI * D * D / 4;
+            const epsilon = this.entry[6];
+            const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
+            const results = [];
+            for (const factor of steps) {
+                // converting to ft3/sec
+                const flow = this.flow * factor * 0.1336806 / 60;
+                const velocity = flow / A;
+                const kyn_viscosity = 0.00067197 * this.viscosity / specific_weight;
+                const Re = velocity * D / kyn_viscosity;
+                const sample = {
+                    flow: this.flow * factor,
+                    velocity: velocity,
+                    reynolds: Re,
+                    reference: Math.abs(factor - 1) < 0.001
+                }
+                const f_lam = 64 / Re;
+                if (Re < 2000) {
+                    // Laminar
+
+                    sample.laminar = true;
+                    sample.friction_loss = f_lam;
+                    results.push(sample);
+                } else {
+
+                    let fi = 1 / 100000;
+                    let f = fi;
+
+                    const f1calc = function (f) {
+                        return 1 / Math.sqrt(f);
+                    }
+                    const f2calc = function (f) {
+                        return -2 * Math.log(epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
+                    }
+                    let f1 = f1calc(f);
+                    let f2 = f2calc(f);
+                    let diff = f1 - f2
+
+                    while (diff > 1 / 1000) {
+                        f = f + fi
+                        f1 = f1calc(f);
+                        f2 = f2calc(f);
+                        diff = f1 - f2;
+                    }
+
+                    sample.friction_loss = f;
+                    sample.laminar = false;
+                    results.push(sample);
+                }
+            }
+
+            localStorage.setItem('material', this.material);
+            localStorage.setItem('nominal_size', this.nominal_size);
+            localStorage.setItem('schedule', this.schedule);
+            localStorage.setItem('flow', this.flow);
+            localStorage.setItem('length', this.length);
+            localStorage.setItem('viscosity', this.viscosity);
+            return results;
         }
     },
     watch: {
         material: function () {
             this.sizes = [];
-            this.nominal_size = null
+            if (!this.local_loading) {
+                console.log("Setting nominal size to null");
+                this.nominal_size = null;
+            }
+
             if (this.material) {
                 for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
             } else {
@@ -276,8 +361,11 @@ Vue.component('friction-loss-calculator', {
 
         },
         nominal_size: function () {
+
             this.schedules = [];
-            this.schedule = null;
+            if (!this.local_loading) {
+                this.schedule = null;
+            }
             if (this.nominal_size) {
                 for (const m in this.data[this.material].nominal_sizes[this.nominal_size].schedules) this.schedules.push(m);
             } else {
@@ -287,9 +375,9 @@ Vue.component('friction-loss-calculator', {
 
         },
         schedule: function () {
+
             if (this.schedule && this.nominal_size && this.material) {
                 this.entry = this.data[this.material].nominal_sizes[this.nominal_size].schedules[this.schedule];
-                console.log(this.entry);
             } else {
                 this.entry = null;
             }

@@ -107,7 +107,7 @@
                         <span> ${entry[3]}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diamenter (in)</label>
+                        <label class='label'>Inside Diameter (in)</label>
                         <span> ${entry[5]}</span>
                     </div>
                     <div class='field'>
@@ -135,21 +135,21 @@
            </div>
          </div>
         </div>
-         <div v-if='entry && results.length'>
+         <div v-if='entry && results_revision.length'>
             <table>
                 <thead>
                     <tr>
                         <th>Flow Rate (gpm)</th>
-                        <th>Average Velocity (ft/sec)</th>
+                        <!--<th>Average Velocity (ft/sec)</th>-->
                         <th>Reynolds</th>
                         <th>Laminar</th>
                         <th>Friction Loss</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for='sample in results'>
+                    <tr v-for='sample in results_revision' :class="{reference_flow: sample.reference}">
                         <td><unit-value :value="sample.flow"/></td>
-                        <td><unit-value :value="sample.velocity"/></td>
+                        <!--<td><unit-value :value="sample.velocity"/></td>-->
                         <td><unit-value :value="sample.reynolds"/></td>
                         <td>
                             <span v-if='sample.laminar'>Laminar</span>
