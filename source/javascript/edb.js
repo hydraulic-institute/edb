@@ -176,7 +176,12 @@ Vue.component('friction-loss-calculator', {
             flow: null,
             length: null,
             viscosity: null,
-            local_loading: false
+            sg: 1,
+            vka: 'kinematic',
+
+            local_loading: false,
+
+            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka']
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -189,99 +194,62 @@ Vue.component('friction-loss-calculator', {
                 //console.log(JSON.stringify(this.materials, null, 2));
                 v.materials = [];
                 for (const m in v.data) v.materials.push(m);
-                v.local_loading = true;
-                Vue.set(v, 'material', localStorage.getItem('material'));
-                console.log(localStorage.getItem('nominal_size'));
-                Vue.set(v, 'nominal_size', localStorage.getItem('nominal_size'));
-                Vue.set(v, 'schedule', localStorage.getItem('schedule'));
-                Vue.set(v, 'flow', localStorage.getItem('flow'));
-                Vue.set(v, 'length', localStorage.getItem('length'));
-                Vue.set(v, 'viscosity', localStorage.getItem('viscosity'));
-                Vue.nextTick(function () {
-                    v.local_loading = false;
-                });
-
-
+                v.load_inputs();
             }).catch(function (err) {
                 console.log(err);
                 console.error('Friction loss material data could not be downloaded.')
             })
     },
     methods: {
-
+        load_inputs: function () {
+            this.local_loading = true;
+            for (const prop of this.saved_props) {
+                Vue.set(this, prop, localStorage.getItem(prop));
+            }
+            if (!this.vka || this.vka == 'null') this.vka = 'kinematic';
+            const v = this;
+            Vue.nextTick(function () {
+                v.local_loading = false;
+            });
+        },
+        save_inputs: function () {
+            for (const prop of this.saved_props) {
+                localStorage.setItem(prop, this[prop]);
+            }
+            if (!this.vka) localStorage.setItem('vka', 'kinematic');
+        },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.entry[5];
             const velocity = (flow * 0.4085) / (id * id);
-            return id * velocity / this.viscosity;
+            return id * velocity / this.absolute_viscosity;
         },
     },
     computed: {
 
-        results: function () {
-            if (!this.entry) return [];
-            if (!this.flow) return [];
-            if (!this.viscosity) return [];
-            if (this.viscosity <= 0) return [];
-            const phi = (1 + Math.sqrt(5)) / 2;
-            const id = this.entry[5];
-            const eps = this.entry[6];
-            const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
-            const results = [];
-            for (const factor of steps) {
-                const flow = this.flow * factor;
-                const velocity = (flow * 0.4085) / (id * id);
-                const Re = this.Reynolds(flow);
-                const sample = {
-                    flow: flow,
-                    velocity: velocity,
-                    reynolds: Re
-                }
-                const f_lam = 64 / Re;
-                if (Re < 2000) {
-                    sample.laminar = true;
-                    sample.friction_loss = f_lam;
-                    results.push(sample);
-                } else {
-                    const tol = f_lam / 100000;
-                    let a = 0;
-                    let b = 10;
-                    let c = b - (b - a) / phi;
-                    let d = a + (b - a) / phi;
-                    let Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
-                    let Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
-                    let i = 0;
-
-                    while (Math.abs(Fc - Fd) > tol) {
-                        if (Fc < Fd) {
-                            b = d;
-                        } else {
-                            a = c;
-                        }
-                        c = b - (b - a) / phi;
-                        d = a + (b - a) / phi;
-                        Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
-                        Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
-                        i = i++;
-                    }
-
-                    c = b - (b - a) / phi;
-                    d = a + (b - a) / phi;
-
-                    sample.friction_loss = (Fc + Fd) / 2;
-                    sample.laminar = false;
-                    results.push(sample);
-                }
+        kinematic_viscosity: function () {
+            if (this.vka == 'absolute') {
+                return 0.00067197 * this.viscosity / this.specific_weight;
+            } else {
+                return this.viscosity;
             }
-            return results;
+        },
+        absolute_viscosity: function () {
+            if (this.vka == 'absolute') {
+                return this.viscosity;
+
+            } else {
+                return this.viscosity * this.specific_weight / 0.00067197;
+            }
+        },
+        specific_weight: function () {
+            return this.sg * 62.43;
         },
         results_revision: function () {
             if (!this.entry) return [];
             if (!this.flow) return [];
             if (!this.viscosity) return [];
 
-            const SG = 1;
-            const specific_weight = SG * 62.43;
             const WT = 0.25;
             const D = (this.nominal_size - WT * 2) / 12;
             const A = Math.PI * D * D / 4;
@@ -292,8 +260,8 @@ Vue.component('friction-loss-calculator', {
                 // converting to ft3/sec
                 const flow = this.flow * factor * 0.1336806 / 60;
                 const velocity = flow / A;
-                const kyn_viscosity = 0.00067197 * this.viscosity / specific_weight;
-                const Re = velocity * D / kyn_viscosity;
+                //const kyn_viscosity = 0.00067197 * this.viscosity / this.specific_weight;
+                const Re = velocity * D / this.kinematic_viscosity;
                 const sample = {
                     flow: this.flow * factor,
                     velocity: velocity,
@@ -303,9 +271,11 @@ Vue.component('friction-loss-calculator', {
                 const f_lam = 64 / Re;
                 if (Re < 2000) {
                     // Laminar
-
                     sample.laminar = true;
                     sample.friction_loss = f_lam;
+                    const t1 = this.length / D;
+                    const t2 = sample.velocity / (2 * 32.17);
+                    sample.head_loss = sample.friction_loss * t1 * t2;
                     results.push(sample);
                 } else {
 
@@ -330,17 +300,15 @@ Vue.component('friction-loss-calculator', {
                     }
 
                     sample.friction_loss = f;
+                    const t1 = this.length / D;
+                    const t2 = sample.velocity / (2 * 32.17);
+                    sample.head_loss = sample.friction_loss * t1 * t2;
                     sample.laminar = false;
                     results.push(sample);
                 }
             }
 
-            localStorage.setItem('material', this.material);
-            localStorage.setItem('nominal_size', this.nominal_size);
-            localStorage.setItem('schedule', this.schedule);
-            localStorage.setItem('flow', this.flow);
-            localStorage.setItem('length', this.length);
-            localStorage.setItem('viscosity', this.viscosity);
+            this.save_inputs();
             return results;
         }
     },

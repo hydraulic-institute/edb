@@ -101,6 +101,7 @@
                         <option :value='m' v-for='m in schedules'>${m}</option>
                     </select>
                 </div>
+                <hr/>
                 <div v-if='entry'>
                     <div class='field'>
                         <label class='label'>Nominal Outside Diameter (in)</label>
@@ -127,36 +128,74 @@
                     <label class='label' >Pipe Length (ft)</label>
                     <input class='input' type='number' step='0.01' v-model='length'/>
                 </div>
+                <hr/>
                 <div class='field'>
-                    <label class='label' >Dynamic Viscosity (cP)</label>
+                    <label class='label' >Viscosity</label>
+                    <div class='control'>
+                        
+                        <label class='radio'>
+                            <input type='radio' name = 'viscosity_mode' value='kinematic' v-model='vka'/>
+                            Kinematic
+                        </label>
+                        <label class='radio'>
+                            <input type='radio' name = 'viscosity_mode' value='absolute' v-model='vka'/>
+                            Dynamic (absolute)
+                        </label>
+                    </div>
+                </div>
+                <div class='field' v-if='vka == "absolute"'>
+                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
                     <input class='input' type='number' step='0.01' v-model='viscosity'/>
                 </div>
-
+                <div class='field' v-else>
+                    <label class='label'>Kinematic Viscosity (cSt)</label>
+                    <input class='input' type='number' step='0.01' v-model='viscosity'/>
+                </div>
+                <div class='field'>
+                    <label class='label'>Specific Gravity</label>
+                    <input class='input' type='number' step='0.01' v-model='sg'/>
+                </div>
            </div>
          </div>
+         <hr/>
         </div>
          <div v-if='entry && results_revision.length'>
             <table>
                 <thead>
                     <tr>
-                        <th>Flow Rate (gpm)</th>
-                        <!--<th>Average Velocity (ft/sec)</th>-->
-                        <th>Reynolds</th>
-                        <th>Laminar</th>
-                        <th>Friction Loss</th>
+                        <th>Flowrate</th>
+                        <th>Fluid Velocity</th>
+                        <th>Velocity Head</th>
+                        <th>Reynolds number</th>
+                        <th>Flow Regime</th>
+                        <th>Friction Factor</th>
+                        <th>Head Loss</th>
+                    </tr>
+                     <tr>
+                        <th>(gpm)</th>
+                        <th>(ft/sec)</th>
+                        <th>(ft)</th>
+                        <th></th>
+                        <th></th>
+                        <th>f</th>
+                        <th>h<sub>f</sub></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for='sample in results_revision' :class="{reference_flow: sample.reference}">
                         <td><unit-value :value="sample.flow"/></td>
-                        <!--<td><unit-value :value="sample.velocity"/></td>-->
+                        <td><unit-value :value="sample.velocity"/></td>
+                        <td><unit-value :value="sample.velocity * sample.velocity / (2 * 32.17)"/></td>
                         <td><unit-value :value="sample.reynolds"/></td>
                         <td>
                             <span v-if='sample.laminar'>Laminar</span>
-                            <span v-else>Non-Laminar</span>
+                            <span v-else>Turbulent</span>
                         </td>
                         <td>
                             <span><unit-value :value="sample.friction_loss"/></span>
+                        </td>
+                        <td>
+                            <span><unit-value :value="sample.head_loss"/></span>
                         </td>
                     </tr>
                 </tbody>

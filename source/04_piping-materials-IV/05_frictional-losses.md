@@ -5,6 +5,4 @@ description: Frictional loss calculator for piping constructed of various materi
 -----
 
 ## Frictional Loss Calculator
-Some text can go here...
-
 <friction-loss-calculator/>
