@@ -181,7 +181,9 @@ Vue.component('friction-loss-calculator', {
 
             local_loading: false,
 
-            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka']
+            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka'],
+
+
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -460,6 +462,7 @@ new Vue({
             threshold: 0.4,
             shouldSort: true,
             tokenize: true,
+            includeMatches: true,
             keys: [{
                 name: 'title',
                 weight: 0.5
@@ -473,7 +476,9 @@ new Vue({
             id: 'path'
         },
         fuse: null,
-        search_results: undefined
+        search_results: undefined,
+        marks: [],
+        mark_index: 0
     },
     watch: {
         unit_set: function () {
@@ -492,22 +497,26 @@ new Vue({
             }, 5)
         },
         needle: function () {
+
             if (!this.needle || !this.needle.trim()) {
                 // Nothing in search box - kill the search results.
                 this.search_results = undefined;
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", "");
                 }
-                return;
-            }
-            if (this.haystack) {
-                // Scroll to top of screen to ensure the search results appear where they should.
 
+            } else if (this.haystack) {
+                // Scroll to top of screen to ensure the search results appear where they should.
+                console.log("[Searching for " + this.needle + "]");
                 this.search_results = this.fuse.search(this.needle);
+                //console.log(this.search_results);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
                 }
             }
+            this.mark_search();
+
+
         }
     },
     mounted: function () {
@@ -531,11 +540,12 @@ new Vue({
                 if (typeof (Storage) !== "undefined") {
                     v.needle = localStorage.getItem("needle")
                 }
+                console.log("Marking search")
+
             }).catch(function (err) {
                 console.error('Search is disabled, could not load topic list');
                 console.error(err);
             })
-
 
 
     },
@@ -547,13 +557,14 @@ new Vue({
         results_for_display() {
             const v = this;
             if (this.search_display) {
-
                 return this.search_results.map(function (r) {
                     const paths = v.haystack.map(function (g) {
                         return g.path;
                     });
-                    const h = paths.indexOf(r);
-                    return v.haystack[h];
+                    const h = paths.indexOf(r.item);
+                    const hit = v.haystack[h];
+
+                    return hit;
                 });
 
             } else {
@@ -576,6 +587,48 @@ new Vue({
         to_metric() {
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
+        },
+        jump_to_mark() {
+            const existing = document.querySelectorAll(".current_mark");
+            existing.forEach(function (e) {
+                e.classList.remove("current_mark");
+            });
+            if (this.marks[this.mark_index]) {
+                this.marks[this.mark_index].scrollIntoView();
+                window.scrollBy(0, -100)
+                this.marks[this.mark_index].classList.add("current_mark");
+            }
+        },
+        mark_jump_back() {
+            this.mark_index--;
+            this.jump_to_mark();
+        },
+        mark_jump_next() {
+            this.mark_index++;
+            this.jump_to_mark();
+        },
+        mark_search() {
+            const markInstance = new Mark(document.querySelector("#content"));
+            const v = this;
+            v.marks = [];
+            v.mark_index = 0;
+            markInstance.unmark({
+                done: function () {
+                    if (v.search_display) {
+                        markInstance.mark(v.needle, {
+                            separateWordSearch: true,
+                            done: function () {
+                                v.marks = document.querySelectorAll("mark");
+                                v.jump_to_mark();
+                                console.log("JUMP");
+                            }
+                        });
+                    }
+                }
+            });
+
+
+
         }
     }
 });

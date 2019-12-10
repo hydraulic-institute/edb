@@ -11,6 +11,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name=viewport content="width=device-width,initial-scale=1"/>
@@ -256,17 +257,25 @@
                             </div>
                         </div>
                         <aside class='sidebar navbar-item column is-hidden-desktop'>
+                            <div v-if='marks && marks.length'>
+                                <p class="menu-label">${mark_index+1} of ${marks.length} matches in this topic</p>
+                                <div class='buttons'>
+                                <button class='button is-info' v-if='mark_index > 0' v-on:click='mark_jump_back'>&lt;</button>
+                                <button class='button is-info' v-if='mark_index < marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
+                                </div>
+                            </div>
                             <ul class='search-results' v-if='search_display'>
                                 <li class="menu-list" v-if='!search_results.length'>
                                     <span class="menu-label">Nothing match was found</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length'>
-                                    <span class="menu-label">${search_results.length} matches</span>
+                                    <span class="menu-label">${search_results.length} topic matches</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
                                     <a :href="topic.path+'.html'">${topic.title}</a>
                                 </li>
                             </ul>
+                            
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
@@ -300,17 +309,25 @@
                             </div>
                         
                     </div>
+                    <div v-if='marks && marks.length'>
+                        <p class="menu-label">${mark_index+1} of ${marks.length} matches in this topic</p>
+                        <div class='buttons'>
+                        <button class='button is-info' v-if='mark_index > 0' v-on:click='mark_jump_back'>&lt;</button>
+                        <button class='button is-info' v-if='mark_index < marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
+                        </div>
+                    </div>
                     <ul class='search-results' v-if='search_display'>
                         <li class="menu-list" v-if='!search_results.length'>
                             <span class="menu-label">Nothing match was found</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length'>
-                            <span class="menu-label">${search_results.length} matches</span>
+                            <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
                             <a :href="topic.path+'.html'">${topic.title}</a>
                         </li>
                     </ul>
+                    
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         {% for section in sections|sort(attribute='sort') %} 
                             <li>
@@ -335,7 +352,7 @@
             </div>
             
             <div id="content" class="column content">
-                
+               
                 {% block content %}{% endblock %}
             </div>
         </div>
