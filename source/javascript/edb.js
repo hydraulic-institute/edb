@@ -459,8 +459,9 @@ new Vue({
         needle: null,
         haystack: null,
         search_options: {
-            threshold: 0.4,
+            threshold: 0.2,
             shouldSort: true,
+            includeScore: true,
             tokenize: true,
             includeMatches: true,
             keys: [{
@@ -468,10 +469,10 @@ new Vue({
                 weight: 0.5
             }, {
                 name: 'slug',
-                weight: 0.3
+                weight: 0.2
             }, {
                 name: 'text',
-                weight: 0.2
+                weight: 0.3
             }],
             id: 'path'
         },
@@ -506,9 +507,14 @@ new Vue({
                 }
 
             } else if (this.haystack) {
+                console.log(this.haystack);
                 // Scroll to top of screen to ensure the search results appear where they should.
                 console.log("[Searching for " + this.needle + "]");
                 this.search_results = this.fuse.search(this.needle);
+                console.log(this.search_results.map(function (r) {
+                    return r.score;
+                }));
+                console.log(this.search_results);
                 //console.log(this.search_results);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
