@@ -208,8 +208,8 @@
 
 <body class="has-navbar-fixed-top">
 
-    <div id='vue' >
-        <nav v-cloak id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div id='vue'>
+        <nav id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
                     <img alt='Hydraulic Instituted' src="/images/logo.png" width="30">
@@ -260,10 +260,9 @@
                             <div v-if='marks && marks.length'>
                                 <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
                                 <div class='buttons'>
-                                <span class="menu-label">Navigate current topics
-                                <button class='button is-info' v-if='mark_index > 0' v-on:click='mark_jump_back'>&lt;</button>
-                                <button class='button is-info' v-if='mark_index < marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
-                                
+                                    <span class="menu-label">Navigate current topics
+                                    <button class='button is-info' :disabled='mark_index <= 0' v-on:click='mark_jump_back'>&lt;</button>
+                                    <button class='button is-info' :disabled='mark_index >= marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
                                 </div>
                             </div>
                             <ul class='search-results' v-if='search_display'>
@@ -298,7 +297,7 @@
                 </div>
             </div>
         </nav>
-        <div v-cloak class="page columns is-fullheight">
+        <div class="page columns is-fullheight">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div>
@@ -312,12 +311,12 @@
                         
                     </div>
                     <div v-if='marks && marks.length'>
-                                <p class="menu-label"> Found in current topic</p>
-                                <div class='buttons'>
-                                <button class='button is-info' :disabled='mark_index <= 0' v-on:click='mark_jump_back'>&lt;</button>
-                                <span class="menu-label" style="margin-right:5px">${mark_index+1} of ${marks.length} matches</span>
-                                <button class='button is-info' :disabled='mark_index == marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
-                                
+                        <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
+                        <div class='buttons'>
+                            <span class="menu-label">Navigate current topics
+                            <button class='button is-info' :disabled='mark_index <= 0' v-on:click='mark_jump_back'>&lt;</button>
+                            <button class='button is-info' :disabled='mark_index >= marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
+                        </div>
                     </div>
                     <ul class='search-results' v-if='search_display'>
                         <li class="menu-list" v-if='!search_results.length'>
