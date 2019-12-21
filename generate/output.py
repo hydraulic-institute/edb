@@ -497,7 +497,8 @@ def write_content(graph, node, slug_override=None, path="."):
     # Related is a list of lists with the same section (it's always size 1)
     related = [item for sublist in related for item in sublist]
     # Related is not all topics under the same section, we need to filter out this node
-    related = [topic for topic in related if topic['name'] != node['name']]
+    related = [topic for topic in related if topic['directory']
+               != True and topic['name'] != node['name']]
 
     # print("======================================")
     # pprinter.pprint(related)
@@ -529,15 +530,22 @@ def make_root(graph):
 
 def make_section(graph, section, parent=None):
     print("Outputting into ", section['slug'])
-    directory = os.path.join(OUTPUT_DIR, section['slug'])
+    slug = section['slug']
+    if parent:
+        slug = os.path.join(parent['slug'], slug)
+        print("MAKING SUBSECTION")
+    directory = os.path.join(OUTPUT_DIR, slug)
+    print("makedirs for " + directory)
     os.makedirs(directory)
     for topic in section['children']:
         if topic['directory']:
             print("Sub directories are currently unsupported.")
+            make_section(graph, topic, section)
         else:
             print("Writing sub-contents",
                   topic['name'], "of", section['slug'])
-            write_content(graph, topic, None, section['slug'])
+
+            write_content(graph, topic, None, directory)
 
 
 def rewrite_image_urls(content, path="."):

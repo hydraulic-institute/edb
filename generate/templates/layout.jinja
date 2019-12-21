@@ -336,7 +336,22 @@
                                 <label class="menu-label">{{section['metadata']['title']}}</label>
                                 <ul>
                                     {% for topic in section['children']|sort(attribute='sort') %}
-                                        {% if topic['metadata']['title']%}
+                                        {% if topic['directory']%}
+                                            <li class="menu-list">
+                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</label>
+                                                <ul>
+                                                    {% for stopic in topic['children']|sort(attribute='sort') %}
+                                                    <li style="padding-left:1em" class="menu-list">
+                                                        {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
+                                                            <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                        {% else %}
+                                                            <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                        {% endif %}
+                                                    </li>
+                                                     {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% elif topic['metadata']['title']%}
                                             <li class="menu-list">
                                                 {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
                                                     <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
