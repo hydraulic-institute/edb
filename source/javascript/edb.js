@@ -231,7 +231,10 @@ Vue.component('friction-loss-calculator', {
 
         kinematic_viscosity: function () {
             if (this.vka == 'absolute') {
-                return 0.00067197 * this.viscosity / this.specific_weight;
+
+                const kv = 0.00067197 * this.viscosity / this.specific_weight;
+                console.log("Kinematic Viscosity = " + kv);
+                return kv;
             } else {
                 return this.viscosity;
             }
@@ -252,9 +255,14 @@ Vue.component('friction-loss-calculator', {
             if (!this.flow) return [];
             if (!this.viscosity) return [];
 
-            const WT = 0.25;
-            const D = (this.nominal_size - WT * 2) / 12;
-            const A = Math.PI * D * D / 4;
+            const WT = 0.154;
+            const OD = this.entry[3];
+            const D = (OD - WT * 2) / 12;
+            const A = Math.PI * (D * D) / 4;
+            /*console.log(this.nominal_size);
+            console.log(WT);
+            console.log(D);
+            console.log(A);*/
             const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
@@ -262,6 +270,11 @@ Vue.component('friction-loss-calculator', {
                 // converting to ft3/sec
                 const flow = this.flow * factor * 0.1336806 / 60;
                 const velocity = flow / A;
+                /*if (factor == 1) {
+                    console.log(flow);
+                    console.log(velocity);
+                }*/
+
                 //const kyn_viscosity = 0.00067197 * this.viscosity / this.specific_weight;
                 const Re = velocity * D / this.kinematic_viscosity;
                 const sample = {
