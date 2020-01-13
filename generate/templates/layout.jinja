@@ -11,6 +11,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name=viewport content="width=device-width,initial-scale=1"/>
@@ -101,13 +102,14 @@
                         <option :value='m' v-for='m in schedules'>${m}</option>
                     </select>
                 </div>
+                <hr/>
                 <div v-if='entry'>
                     <div class='field'>
                         <label class='label'>Nominal Outside Diameter (in)</label>
                         <span> ${entry[3]}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diamenter (in)</label>
+                        <label class='label'>Inside Diameter (in)</label>
                         <span> ${entry[5]}</span>
                     </div>
                     <div class='field'>
@@ -127,36 +129,74 @@
                     <label class='label' >Pipe Length (ft)</label>
                     <input class='input' type='number' step='0.01' v-model='length'/>
                 </div>
+                <hr/>
                 <div class='field'>
-                    <label class='label' >Dynamic Viscosity (cP)</label>
+                    <label class='label' >Viscosity</label>
+                    <div class='control'>
+                        
+                        <label class='radio'>
+                            <input type='radio' name = 'viscosity_mode' value='kinematic' v-model='vka'/>
+                            Kinematic
+                        </label>
+                        <label class='radio'>
+                            <input type='radio' name = 'viscosity_mode' value='absolute' v-model='vka'/>
+                            Dynamic (absolute)
+                        </label>
+                    </div>
+                </div>
+                <div class='field' v-if='vka == "absolute"'>
+                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
                     <input class='input' type='number' step='0.01' v-model='viscosity'/>
                 </div>
-
+                <div class='field' v-else>
+                    <label class='label'>Kinematic Viscosity (cSt)</label>
+                    <input class='input' type='number' step='0.01' v-model='viscosity'/>
+                </div>
+                <div class='field'>
+                    <label class='label'>Specific Gravity</label>
+                    <input class='input' type='number' step='0.01' v-model='sg'/>
+                </div>
            </div>
          </div>
+         <hr/>
         </div>
-         <div v-if='entry && results.length'>
+         <div v-if='entry && results_revision.length'>
             <table>
                 <thead>
                     <tr>
-                        <th>Flow Rate (gpm)</th>
-                        <th>Average Velocity (ft/sec)</th>
-                        <th>Reynolds</th>
-                        <th>Laminar</th>
-                        <th>Friction Loss</th>
+                        <th>Flowrate</th>
+                        <th>Fluid Velocity</th>
+                        <th>Velocity Head</th>
+                        <th>Reynolds number</th>
+                        <th>Flow Regime</th>
+                        <th>Friction Factor</th>
+                        <th>Head Loss</th>
+                    </tr>
+                     <tr>
+                        <th>(gpm)</th>
+                        <th>(ft/sec)</th>
+                        <th>(ft)</th>
+                        <th></th>
+                        <th></th>
+                        <th>f</th>
+                        <th>h<sub>f</sub></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for='sample in results'>
+                    <tr v-for='sample in results_revision' :class="{reference_flow: sample.reference}">
                         <td><unit-value :value="sample.flow"/></td>
                         <td><unit-value :value="sample.velocity"/></td>
+                        <td><unit-value :value="sample.velocity * sample.velocity / (2 * 32.17)"/></td>
                         <td><unit-value :value="sample.reynolds"/></td>
                         <td>
                             <span v-if='sample.laminar'>Laminar</span>
-                            <span v-else>Non-Laminar</span>
+                            <span v-else>Turbulent</span>
                         </td>
                         <td>
                             <span><unit-value :value="sample.friction_loss"/></span>
+                        </td>
+                        <td>
+                            <span><unit-value :value="sample.head_loss"/></span>
                         </td>
                     </tr>
                 </tbody>
@@ -217,17 +257,26 @@
                             </div>
                         </div>
                         <aside class='sidebar navbar-item column is-hidden-desktop'>
+                            <div v-if='marks && marks.length'>
+                                <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
+                                <div class='buttons'>
+                                    <span class="menu-label">Navigate current topics
+                                    <button class='button is-info' :disabled='mark_index <= 0' v-on:click='mark_jump_back'>&lt;</button>
+                                    <button class='button is-info' :disabled='mark_index >= marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
+                                </div>
+                            </div>
                             <ul class='search-results' v-if='search_display'>
                                 <li class="menu-list" v-if='!search_results.length'>
                                     <span class="menu-label">Nothing match was found</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length'>
-                                    <span class="menu-label">${search_results.length} matches</span>
+                                    <span class="menu-label">${search_results.length} topic matches</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
                                     <a :href="topic.path+'.html'">${topic.title}</a>
                                 </li>
                             </ul>
+                            
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
@@ -261,24 +310,48 @@
                             </div>
                         
                     </div>
+                    <div v-if='marks && marks.length'>
+                        <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
+                        <div class='buttons'>
+                            <span class="menu-label">Navigate current topics
+                            <button class='button is-info' :disabled='mark_index <= 0' v-on:click='mark_jump_back'>&lt;</button>
+                            <button class='button is-info' :disabled='mark_index >= marks.length-1' v-on:click='mark_jump_next'>&gt;</button>
+                        </div>
+                    </div>
                     <ul class='search-results' v-if='search_display'>
                         <li class="menu-list" v-if='!search_results.length'>
                             <span class="menu-label">Nothing match was found</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length'>
-                            <span class="menu-label">${search_results.length} matches</span>
+                            <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
                             <a :href="topic.path+'.html'">${topic.title}</a>
                         </li>
                     </ul>
+                    
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         {% for section in sections|sort(attribute='sort') %} 
                             <li>
                                 <label class="menu-label">{{section['metadata']['title']}}</label>
                                 <ul>
                                     {% for topic in section['children']|sort(attribute='sort') %}
-                                        {% if topic['metadata']['title']%}
+                                        {% if topic['directory']%}
+                                            <li class="menu-list">
+                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</label>
+                                                <ul>
+                                                    {% for stopic in topic['children']|sort(attribute='sort') %}
+                                                    <li style="padding-left:1em" class="menu-list">
+                                                        {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
+                                                            <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                        {% else %}
+                                                            <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                        {% endif %}
+                                                    </li>
+                                                     {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% elif topic['metadata']['title']%}
                                             <li class="menu-list">
                                                 {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
                                                     <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
@@ -296,7 +369,7 @@
             </div>
             
             <div id="content" class="column content">
-                
+               
                 {% block content %}{% endblock %}
             </div>
         </div>

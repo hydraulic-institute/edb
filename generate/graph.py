@@ -15,6 +15,7 @@ def build_content_graph(specials):
     rootDir = os.path.join(BASE_DIR, "..", "./source")
     graph = []
     meta = None
+    sub_sections = []
     for dirName, subdirList, fileList in os.walk(rootDir):
         # Special folders are dealt with separately, they are not
         # part of the content graph.
@@ -26,8 +27,18 @@ def build_content_graph(specials):
             meta = make_directory_node(dirName)
             graph.append(meta)
 
+            for sub in subdirList:
+                print("---------------------")
+                print("Sub directory = [" + sub + "] in " + dirName)
+                smeta = make_directory_node(sub, dirName, meta)
+                meta['children'].append(smeta)
+                sub_sections.append({
+                    "path": os.path.join(dirName, sub),
+                    "node": smeta})
+
         for fname in fileList:
-            print("Compiling " + fname)
+            print("Compiling " + fname + ", " + dirName)
+
             if fname.endswith(".md") and fname != 'index.md':
                 print(" - Markdown (non-index)")
                 node = make_page_node(dirName, fname)
@@ -54,10 +65,38 @@ def build_content_graph(specials):
     print("------------------------------------")
     print("Loaded", [n['slug'] for n in graph])
     print("------------------------------------")
+
+    print(sub_sections)
+
+    # Now post process... find the nodes at the top level that actually should be inside a sub_section
+    for topic in graph:
+        if 'children' in topic:
+            for node in topic['children']:
+                sub_section_paths = [s['path'] for s in sub_sections]
+
+                if (node["path"] in sub_section_paths):
+                    if node["directory"] != True:
+                        print("SUB -> " + node["path"])
+                        ind = sub_section_paths.index(node["path"])
+                        sub = sub_sections[ind]["node"]
+                        sub['children'].append(node)
+                        topic['children'].remove(node)
+                        # this node needs to be removed from this topic, and added
+                        # to the subsection topic.
+                        print(node)
+    for topic in graph:
+        if 'children' in topic:
+            if len(topic['children']) < 1:
+                graph.remove(topic)
     return graph
 
 
-def make_directory_node(dirName):
+def make_directory_node(dirName, parentDir=None, parentNode=None):
+
+    path = dirName
+    if parentDir:
+        path = os.path.join(parentDir, dirName)
+
     name = os.path.split(dirName)
     try:
         sort = name[1].split("_")[0]
@@ -69,12 +108,13 @@ def make_directory_node(dirName):
     return {
         "sort": sort,
         "slug": slug,
-        "path": dirName,
-        "metadata": read_metadata(dirName+"/index.md"),
+        "path": path,
+        "metadata": read_metadata(path+"/index.md"),
         "directory": True,
         "children": [],
         "copy_only": False,
-        "is_topic": False
+        "is_topic": False,
+        "parent": parentNode
     }
 
 

@@ -1,5 +1,5 @@
 /* Handles hamburger button toggles */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($navbarBurgers.length > 0) {
 
         // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
+        $navbarBurgers.forEach(function (el) {
+            el.addEventListener('click', function () {
 
                 // Get the target from the "data-target" attribute
                 const target = el.dataset.target;
@@ -175,97 +175,166 @@ Vue.component('friction-loss-calculator', {
 
             flow: null,
             length: null,
-            viscosity: null
+            viscosity: null,
+            sg: 1,
+            vka: 'kinematic',
+
+            local_loading: false,
+
+            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka'],
+
+
         };
     }, //   
     template: '#friction-loss-calculator-template',
     mounted: function () {
         console.log("Friction Loss Calculator mounted");
+        const v = this;
         axios.get("/statics/friction-loss-materials.json")
-            .then((response) => {
-                this.data = response.data;
+            .then(function (response) {
+                v.data = response.data;
                 //console.log(JSON.stringify(this.materials, null, 2));
-                this.materials = [];
-                for (const m in this.data) this.materials.push(m);
-
-
-            }).catch((err) => {
+                v.materials = [];
+                for (const m in v.data) v.materials.push(m);
+                v.load_inputs();
+            }).catch(function (err) {
                 console.log(err);
                 console.error('Friction loss material data could not be downloaded.')
             })
     },
     methods: {
-
+        load_inputs: function () {
+            this.local_loading = true;
+            for (const prop of this.saved_props) {
+                Vue.set(this, prop, localStorage.getItem(prop));
+            }
+            if (!this.vka || this.vka == 'null') this.vka = 'kinematic';
+            const v = this;
+            Vue.nextTick(function () {
+                v.local_loading = false;
+            });
+        },
+        save_inputs: function () {
+            for (const prop of this.saved_props) {
+                localStorage.setItem(prop, this[prop]);
+            }
+            if (!this.vka) localStorage.setItem('vka', 'kinematic');
+        },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.entry[5];
             const velocity = (flow * 0.4085) / (id * id);
-            return id * velocity / this.viscosity;
+            return id * velocity / this.absolute_viscosity;
         },
     },
     computed: {
 
-        results: function () {
+        kinematic_viscosity: function () {
+            if (this.vka == 'absolute') {
+
+                const kv = 0.00067197 * this.viscosity / this.specific_weight;
+                console.log("Kinematic Viscosity = " + kv);
+                return kv;
+            } else {
+                return this.viscosity;
+            }
+        },
+        absolute_viscosity: function () {
+            if (this.vka == 'absolute') {
+                return this.viscosity;
+
+            } else {
+                return this.viscosity * this.specific_weight / 0.00067197;
+            }
+        },
+        specific_weight: function () {
+            return this.sg * 62.43;
+        },
+        results_revision: function () {
             if (!this.entry) return [];
             if (!this.flow) return [];
             if (!this.viscosity) return [];
-            const phi = (1 + Math.sqrt(5)) / 2;
-            const id = this.entry[5];
-            const eps = this.entry[6];
+
+            const WT = 0.154;
+            const OD = this.entry[3];
+            const D = (OD - WT * 2) / 12;
+            const A = Math.PI * (D * D) / 4;
+            /*console.log(this.nominal_size);
+            console.log(WT);
+            console.log(D);
+            console.log(A);*/
+            const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
             for (const factor of steps) {
-                const flow = this.flow * factor;
-                const velocity = (flow * 0.4085) / (id * id);
-                const Re = this.Reynolds(flow);
+                // converting to ft3/sec
+                const flow = this.flow * factor * 0.1336806 / 60;
+                const velocity = flow / A;
+                /*if (factor == 1) {
+                    console.log(flow);
+                    console.log(velocity);
+                }*/
+
+                //const kyn_viscosity = 0.00067197 * this.viscosity / this.specific_weight;
+                const Re = velocity * D / this.kinematic_viscosity;
                 const sample = {
-                    flow: flow,
+                    flow: this.flow * factor,
                     velocity: velocity,
-                    reynolds: Re
+                    reynolds: Re,
+                    reference: Math.abs(factor - 1) < 0.001
                 }
                 const f_lam = 64 / Re;
                 if (Re < 2000) {
+                    // Laminar
                     sample.laminar = true;
                     sample.friction_loss = f_lam;
+                    const t1 = this.length / D;
+                    const t2 = sample.velocity / (2 * 32.17);
+                    sample.head_loss = sample.friction_loss * t1 * t2;
                     results.push(sample);
                 } else {
-                    const tol = f_lam / 100000;
-                    let a = 0;
-                    let b = 10;
-                    let c = b - (b - a) / phi;
-                    let d = a + (b - a) / phi;
-                    let Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
-                    let Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
-                    let i = 0;
 
-                    while (Math.abs(Fc - Fd) > tol) {
-                        if (Fc < Fd) {
-                            b = d;
-                        } else {
-                            a = c;
-                        }
-                        c = b - (b - a) / phi;
-                        d = a + (b - a) / phi;
-                        Fc = 1 / Math.sqrt(c) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(c)));
-                        Fd = 1 / Math.sqrt(d) + 2 * Math.log(eps / (3.7 * id) + 2.52 / (Re * Math.sqrt(d)));
-                        i = i++;
+                    let fi = 1 / 100000;
+                    let f = fi;
+
+                    const f1calc = function (f) {
+                        return 1 / Math.sqrt(f);
+                    }
+                    const f2calc = function (f) {
+                        return -2 * Math.log(epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
+                    }
+                    let f1 = f1calc(f);
+                    let f2 = f2calc(f);
+                    let diff = f1 - f2
+
+                    while (diff > 1 / 1000) {
+                        f = f + fi
+                        f1 = f1calc(f);
+                        f2 = f2calc(f);
+                        diff = f1 - f2;
                     }
 
-                    c = b - (b - a) / phi;
-                    d = a + (b - a) / phi;
-
-                    sample.friction_loss = (Fc + Fd) / 2;
+                    sample.friction_loss = f;
+                    const t1 = this.length / D;
+                    const t2 = sample.velocity / (2 * 32.17);
+                    sample.head_loss = sample.friction_loss * t1 * t2;
                     sample.laminar = false;
                     results.push(sample);
                 }
             }
+
+            this.save_inputs();
             return results;
         }
     },
     watch: {
         material: function () {
             this.sizes = [];
-            this.nominal_size = null
+            if (!this.local_loading) {
+                console.log("Setting nominal size to null");
+                this.nominal_size = null;
+            }
+
             if (this.material) {
                 for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
             } else {
@@ -275,8 +344,11 @@ Vue.component('friction-loss-calculator', {
 
         },
         nominal_size: function () {
+
             this.schedules = [];
-            this.schedule = null;
+            if (!this.local_loading) {
+                this.schedule = null;
+            }
             if (this.nominal_size) {
                 for (const m in this.data[this.material].nominal_sizes[this.nominal_size].schedules) this.schedules.push(m);
             } else {
@@ -286,9 +358,9 @@ Vue.component('friction-loss-calculator', {
 
         },
         schedule: function () {
+
             if (this.schedule && this.nominal_size && this.material) {
                 this.entry = this.data[this.material].nominal_sizes[this.nominal_size].schedules[this.schedule];
-                console.log(this.entry);
             } else {
                 this.entry = null;
             }
@@ -310,10 +382,11 @@ Vue.component('converter', {
     }, //   
     template: '#converter-template',
     mounted: function () {
+        const v = this;
         axios.get("/statics/unit-conversions.json")
-            .then((response) => {
-                this.units = response.data;
-            }).catch((err) => {
+            .then(function (response) {
+                v.units = response.data;
+            }).catch(function (err) {
                 console.log(err);
                 console.error('Unit conversion data could not be downloaded.')
             })
@@ -399,27 +472,32 @@ new Vue({
         needle: null,
         haystack: null,
         search_options: {
-            threshold: 0.4,
+            threshold: 0.2,
             shouldSort: true,
+            includeScore: true,
             tokenize: true,
+            includeMatches: true,
             keys: [{
                 name: 'title',
                 weight: 0.5
             }, {
                 name: 'slug',
-                weight: 0.3
+                weight: 0.2
             }, {
                 name: 'text',
-                weight: 0.2
+                weight: 0.3
             }],
             id: 'path'
         },
         fuse: null,
-        search_results: undefined
+        search_results: undefined,
+        marks: [],
+        mark_index: 0
     },
     watch: {
         unit_set: function () {
-            setTimeout(() => {
+
+            setTimeout(function () {
                 if (typeof (Event) === 'function') {
                     // modern browsers
                     window.dispatchEvent(new Event('resize'));
@@ -433,22 +511,31 @@ new Vue({
             }, 5)
         },
         needle: function () {
+
             if (!this.needle || !this.needle.trim()) {
                 // Nothing in search box - kill the search results.
                 this.search_results = undefined;
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", "");
                 }
-                return;
-            }
-            if (this.haystack) {
-                // Scroll to top of screen to ensure the search results appear where they should.
 
+            } else if (this.haystack) {
+                console.log(this.haystack);
+                // Scroll to top of screen to ensure the search results appear where they should.
+                console.log("[Searching for " + this.needle + "]");
                 this.search_results = this.fuse.search(this.needle);
+                console.log(this.search_results.map(function (r) {
+                    return r.score;
+                }));
+                console.log(this.search_results);
+                //console.log(this.search_results);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
                 }
             }
+            this.mark_search();
+
+
         }
     },
     mounted: function () {
@@ -463,18 +550,21 @@ new Vue({
             console.log("Local storage not available on this browser - unit sets will need to switch manually");
         }
 
+        const v = this;
         // Download the search topic JSON file...
         axios.get("/statics/haystack.json")
-            .then((response) => {
-                this.haystack = response.data;
-                this.fuse = new Fuse(this.haystack, this.search_options);
+            .then(function (response) {
+                v.haystack = response.data;
+                v.fuse = new Fuse(v.haystack, v.search_options);
                 if (typeof (Storage) !== "undefined") {
-                    this.needle = localStorage.getItem("needle")
+                    v.needle = localStorage.getItem("needle")
                 }
-            }).catch((err) => {
-                console.error('Search is disabled, could not load topic list');
-            })
+                console.log("Marking search")
 
+            }).catch(function (err) {
+                console.error('Search is disabled, could not load topic list');
+                console.error(err);
+            })
 
 
     },
@@ -484,12 +574,16 @@ new Vue({
             return this.search_results !== undefined;
         },
         results_for_display() {
+            const v = this;
             if (this.search_display) {
+                return this.search_results.map(function (r) {
+                    const paths = v.haystack.map(function (g) {
+                        return g.path;
+                    });
+                    const h = paths.indexOf(r.item);
+                    const hit = v.haystack[h];
 
-                return this.search_results.map((r) => {
-                    const paths = this.haystack.map(g => g.path);
-                    const h = paths.indexOf(r);
-                    return this.haystack[h];
+                    return hit;
                 });
 
             } else {
@@ -512,6 +606,48 @@ new Vue({
         to_metric() {
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
+        },
+        jump_to_mark() {
+            const existing = document.querySelectorAll(".current_mark");
+            existing.forEach(function (e) {
+                e.classList.remove("current_mark");
+            });
+            if (this.marks[this.mark_index]) {
+                this.marks[this.mark_index].scrollIntoView();
+                window.scrollBy(0, -100)
+                this.marks[this.mark_index].classList.add("current_mark");
+            }
+        },
+        mark_jump_back() {
+            this.mark_index--;
+            this.jump_to_mark();
+        },
+        mark_jump_next() {
+            this.mark_index++;
+            this.jump_to_mark();
+        },
+        mark_search() {
+            const markInstance = new Mark(document.querySelector("#content"));
+            const v = this;
+            v.marks = [];
+            v.mark_index = 0;
+            markInstance.unmark({
+                done: function () {
+                    if (v.search_display) {
+                        markInstance.mark(v.needle, {
+                            separateWordSearch: true,
+                            done: function () {
+                                v.marks = document.querySelectorAll("mark");
+                                v.jump_to_mark();
+                                console.log("JUMP");
+                            }
+                        });
+                    }
+                }
+            });
+
+
+
         }
     }
 });
