@@ -1,6 +1,6 @@
 -----
 title: F) Frictional Losses
-date: August 28th, 2019
+date: January 15th, 2020
 description: Frictional loss calculator for piping constructed of various materials.
 -----
 

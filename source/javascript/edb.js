@@ -253,7 +253,7 @@ Vue.component('friction-loss-calculator', {
             if (!this.flow) return [];
             if (!this.viscosity) return [];
 
-            const WT = 0.154;
+
             const OD = this.entry[3];
             const D = this.entry[5] / 12; //(OD - WT * 2) / 12;
             console.log(D * 12);
@@ -277,7 +277,7 @@ Vue.component('friction-loss-calculator', {
                 const sample = {
                     flow: this.flow * factor,
                     velocity: velocity,
-                    reynolds: Re,
+                    reynolds: Re.toFixed(0),
                     reference: Math.abs(factor - 1) < 0.001
                 }
 
@@ -287,7 +287,7 @@ Vue.component('friction-loss-calculator', {
                     sample.laminar = true;
                     sample.friction_loss = f_lam;
                     const t1 = this.length / D;
-                    const t2 = sample.velocity / (2 * 32.17);
+                    const t2 = (sample.velocity * sample.velocity) / (2 * 32.174);
                     sample.head_loss = sample.friction_loss * t1 * t2;
                     results.push(sample);
                 } else {
@@ -312,8 +312,16 @@ Vue.component('friction-loss-calculator', {
                     }
 
                     sample.friction_loss = f;
+                    console.log("-------------");
+                    console.log(factor);
+                    console.log(sample.friction_loss);
+
                     const t1 = this.length / D;
-                    const t2 = (sample.velocity * sample.velocity) / (2 * 32.17);
+                    const t2 = (sample.velocity * sample.velocity) / (2 * 32.174);
+                    console.log(t1);
+                    console.log(t2);
+                    console.log(sample.velocity);
+                    console.log("-------------");
                     sample.head_loss = sample.friction_loss * t1 * t2;
                     sample.laminar = false;
                     results.push(sample);
