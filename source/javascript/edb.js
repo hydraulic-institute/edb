@@ -255,12 +255,11 @@ Vue.component('friction-loss-calculator', {
 
             const WT = 0.154;
             const OD = this.entry[3];
-            const D = (OD - WT * 2) / 12;
+            const D = this.entry[5] / 12; //(OD - WT * 2) / 12;
+            console.log(D * 12);
+            console.log("OD:  " + OD)
+            console.log("Diameter in A calcualtion:  " + D)
             const A = Math.PI * (D * D) / 4;
-            /*console.log(this.nominal_size);
-            console.log(WT);
-            console.log(D);
-            console.log(A);*/
             const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
@@ -268,10 +267,8 @@ Vue.component('friction-loss-calculator', {
                 // converting to ft3/sec
                 const flow = this.flow * factor * 0.1336806 / 60;
                 const velocity = flow / A;
-                /*if (factor == 1) {
-                    console.log(flow);
-                    console.log(velocity);
-                }*/
+
+
 
                 // kinematic viscosity is entered as cSt (mm2/sec), needs to 
                 // be converted to ft2/second for the Re c alculation.
@@ -283,6 +280,7 @@ Vue.component('friction-loss-calculator', {
                     reynolds: Re,
                     reference: Math.abs(factor - 1) < 0.001
                 }
+
                 const f_lam = 64 / Re;
                 if (Re < 2000) {
                     // Laminar
@@ -293,7 +291,6 @@ Vue.component('friction-loss-calculator', {
                     sample.head_loss = sample.friction_loss * t1 * t2;
                     results.push(sample);
                 } else {
-
                     let fi = 1 / 100000;
                     let f = fi;
 
