@@ -163,6 +163,7 @@ Vue.component('friction-loss-calculator', {
     delimiters: ['${', '}'],
     data: function () {
         return {
+            units: "-",
             calculated: false,
             data: null,
             materials: null,
@@ -183,13 +184,22 @@ Vue.component('friction-loss-calculator', {
             local_loading: false,
 
             saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka'],
-
-
         };
     }, //   
     template: '#friction-loss-calculator-template',
     mounted: function () {
         const v = this;
+        this.$root.$on('unit-change', (value) => {
+            this.units = value;
+        });
+
+        if (typeof (Storage) !== "undefined") {
+            const stored = localStorage.getItem("unit-set");
+            this.units = stored;
+        } else {
+            console.log("Local storage not available on this browser - unit sets will need to switch manually");
+        }
+
         axios.get("/statics/friction-loss-materials.json")
             .then(function (response) {
                 v.data = response.data;
@@ -220,6 +230,18 @@ Vue.component('friction-loss-calculator', {
             }
             if (!this.vka) localStorage.setItem('vka', 'kinematic');
         },
+        value_flowrate: function (value) {
+            if (this.units == 'us') return value;
+            else return value / 4.40286764029913; // convert to cubic meters / hr
+        },
+        value_velocity: function (value) {
+            if (this.units == 'us') return value;
+            else return value * 0.3048; // convert to m/sec
+        },
+        value_length_long: function (value) {
+            if (this.units == 'us') return value;
+            else return value * 0.3048; // convert to meters
+        },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.inner_diameter;
@@ -231,6 +253,26 @@ Vue.component('friction-loss-calculator', {
         }
     },
     computed: {
+        units_flowrate: function () {
+            if (this.units == 'us') return 'gpm';
+            else return 'm3/hr'
+        },
+        units_length_long: function () {
+            if (this.units == 'us') return 'ft';
+            else return 'm'
+        },
+        units_length_mid: function () {
+            if (this.units == 'us') return 'in';
+            else return 'cm'
+        },
+        units_length_short: function () {
+            if (this.units == 'us') return 'in';
+            else return 'mm'
+        },
+        units_velocity: function () {
+            if (this.units == 'us') return 'ft/sec';
+            else return 'm/sec'
+        },
 
         kinematic_viscosity: function () {
             if (this.vka == 'absolute') {
@@ -609,10 +651,12 @@ new Vue({
         to_us() {
             this.unit_set = 'us';
             localStorage.setItem("unit-set", this.unit_set);
+            this.$root.$emit('unit-change', 'us');
         },
         to_metric() {
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
+            this.$root.$emit('unit-change', 'metric');
         },
         jump_to_mark() {
             const existing = document.querySelectorAll(".current_mark");

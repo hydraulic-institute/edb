@@ -92,7 +92,7 @@
                     <label class='label'>Select Nominal Size</label>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
-                        <option :value='m' v-for='m in sizes'>${m}in</option>
+                        <option :value='m' v-for='m in sizes'>${m}${units_length_short}</option>
                     </select>
                 </div>
                 <div class='field' v-if='schedules && schedules.length'>
@@ -105,15 +105,15 @@
                 <hr/>
                 <div v-if='entry'>
                     <div class='field'>
-                        <label class='label'>Nominal Outside Diameter (in)</label>
+                        <label class='label'>Nominal Outside Diameter (${units_length_short})</label>
                         <span> ${entry[3]}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diameter (in)</label>
+                        <label class='label'>Inside Diameter (${units_length_short})</label>
                         <span> ${entry[5]}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Rougness Parameter (epsilon) (ft)</label>
+                        <label class='label'>Rougness Parameter (epsilon) (${units_length_long})</label>
                         <span> ${entry[6]}</span>
                     </div>
                 </div>
@@ -122,11 +122,11 @@
             <div class='column'>
             <div v-if='entry'>
                 <div class='field'>
-                    <label class='label' >Flow Rate (gpm)</label>
+                    <label class='label' >Flow Rate (${units_flowrate})</label>
                     <input class='input' type='number' step='0.01' v-model='flow'/>
                 </div>
                 <div class='field'>
-                    <label class='label' >Pipe Length (ft)</label>
+                    <label class='label' >Pipe Length (${units_length_long})</label>
                     <input class='input' type='number' step='0.01' v-model='length'/>
                 </div>
                 <hr/>
@@ -173,20 +173,20 @@
                         <th style="text-align:center">Head Loss</th>
                     </tr>
                      <tr>
-                        <th style="text-align:center">(gpm)</th>
-                        <th style="text-align:center"><b>V</b>&nbsp;&nbsp;(ft/sec)</th>
-                        <th style="text-align:center"><b>V<sup>2</sup>/2g</b>&nbsp;&nbsp;(ft)</th>
+                        <th style="text-align:center">(${units_flowrate})</th>
+                        <th style="text-align:center"><b>V</b>&nbsp;&nbsp;(${units_velocity})</th>
+                        <th style="text-align:center"><b>V<sup>2</sup>/2g</b>&nbsp;&nbsp;(${units_length_long})</th>
                         <th style="text-align:center"><b>Re</b></th>
                         <th style="text-align:center"></th>
                         <th style="text-align:center">f</th>
-                        <th style="text-align:center">h<sub>f</sub></th>
+                        <th style="text-align:center">h<sub>f</sub> (${units_length_long})</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for='sample in results_revision' :class="{reference_flow: sample.reference}">
-                        <td style="text-align:center"><unit-value :value="sample.flow"/></td>
-                        <td style="text-align:center"><unit-value :value="sample.velocity"/></td>
-                        <td style="text-align:center"><unit-value :value="sample.velocity * sample.velocity / (2 * 32.17)"/></td>
+                        <td style="text-align:center"><unit-value :value="value_flowrate(sample.flow)"/></td>
+                        <td style="text-align:center"><unit-value :value="value_velocity(sample.velocity)"/></td>
+                        <td style="text-align:center"><unit-value :value="value_length_long(sample.velocity * sample.velocity / (2 * 32.17))"/></td>
                         <td style="text-align:center">${sample.reynolds}</td>
                         <td style="text-align:center">
                             <span v-if='sample.laminar'>Laminar</span>
@@ -196,7 +196,7 @@
                             <span><unit-value :value="sample.friction_loss"/></span>
                         </td>
                         <td style="text-align:center">
-                            <span><unit-value :value="sample.head_loss"/></span>
+                            <span><unit-value :value="value_length_long(sample.head_loss)"/></span>
                         </td>
                     </tr>
                 </tbody>
