@@ -164,38 +164,38 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Flowrate</th>
-                        <th>Fluid Velocity</th>
-                        <th>Velocity Head</th>
-                        <th>Reynolds number</th>
-                        <th>Flow Regime</th>
-                        <th>Friction Factor</th>
-                        <th>Head Loss</th>
+                        <th style="text-align:center">Flowrate</th>
+                        <th style="text-align:center">Fluid Velocity</th>
+                        <th style="text-align:center">Velocity Head</th>
+                        <th style="text-align:center">Reynolds Number</th>
+                        <th style="text-align:center">Flow Regime</th>
+                        <th style="text-align:center">Friction Factor</th>
+                        <th style="text-align:center">Head Loss</th>
                     </tr>
                      <tr>
-                        <th>(gpm)</th>
-                        <th>(ft/sec)</th>
-                        <th>(ft)</th>
-                        <th></th>
-                        <th></th>
-                        <th>f</th>
-                        <th>h<sub>f</sub></th>
+                        <th style="text-align:center">(gpm)</th>
+                        <th style="text-align:center"><b>V</b>&nbsp;&nbsp;(ft/sec)</th>
+                        <th style="text-align:center"><b>V<sup>2</sup>/2g</b>&nbsp;&nbsp;(ft)</th>
+                        <th style="text-align:center"><b>Re</b></th>
+                        <th style="text-align:center"></th>
+                        <th style="text-align:center">f</th>
+                        <th style="text-align:center">h<sub>f</sub></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for='sample in results_revision' :class="{reference_flow: sample.reference}">
-                        <td><unit-value :value="sample.flow"/></td>
-                        <td><unit-value :value="sample.velocity"/></td>
-                        <td><unit-value :value="sample.velocity * sample.velocity / (2 * 32.17)"/></td>
-                        <td><unit-value :value="sample.reynolds"/></td>
-                        <td>
+                        <td style="text-align:center"><unit-value :value="sample.flow"/></td>
+                        <td style="text-align:center"><unit-value :value="sample.velocity"/></td>
+                        <td style="text-align:center"><unit-value :value="sample.velocity * sample.velocity / (2 * 32.17)"/></td>
+                        <td style="text-align:center">${sample.reynolds}</td>
+                        <td style="text-align:center">
                             <span v-if='sample.laminar'>Laminar</span>
                             <span v-else>Turbulent</span>
                         </td>
-                        <td>
+                        <td style="text-align:center">
                             <span><unit-value :value="sample.friction_loss"/></span>
                         </td>
-                        <td>
+                        <td style="text-align:center">
                             <span><unit-value :value="sample.head_loss"/></span>
                         </td>
                     </tr>

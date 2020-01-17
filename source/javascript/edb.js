@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+const G = 32.174;
 
 Vue.component('chart', {
     props: ['chart_key', 'title', 'chart'],
@@ -83,7 +84,7 @@ Vue.component('units', {
     }, //   
     template: '<span><span v-if="units==\'us\'" v-html="us_content"></span><span v-else v-html="metric_content"></span></span>',
     mounted: function () {
-        console.log(this.units)
+
     },
     methods: {
         process_content: function (_content) {
@@ -188,7 +189,6 @@ Vue.component('friction-loss-calculator', {
     }, //   
     template: '#friction-loss-calculator-template',
     mounted: function () {
-        console.log("Friction Loss Calculator mounted");
         const v = this;
         axios.get("/statics/friction-loss-materials.json")
             .then(function (response) {
@@ -222,18 +222,19 @@ Vue.component('friction-loss-calculator', {
         },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
-            const id = this.entry[5];
+            const id = this.inner_diameter;
             const velocity = (flow * 0.4085) / (id * id);
             return id * velocity / this.absolute_viscosity;
         },
+        head_loss: function (friction_factor, velocity_head) {
+            return friction_factor * this.length * 12 / this.inner_diameter * velocity_head;
+        }
     },
     computed: {
 
         kinematic_viscosity: function () {
             if (this.vka == 'absolute') {
-
                 const kv = 0.00067197 * this.viscosity / this.specific_weight;
-                console.log("Kinematic Viscosity = " + kv);
                 return kv;
             } else {
                 return this.viscosity;
@@ -250,19 +251,24 @@ Vue.component('friction-loss-calculator', {
         specific_weight: function () {
             return this.sg * 62.43;
         },
+        inner_diameter: function () {
+            if (this.entry && this.entry.length > 5) {
+                return this.entry[5];
+            }
+        },
+        outer_diameter: function () {
+            if (this.entry && this.entry.length > 3) {
+                return this.entry[3];
+            }
+        },
+
         results_revision: function () {
             if (!this.entry) return [];
             if (!this.flow) return [];
             if (!this.viscosity) return [];
 
-            const WT = 0.154;
-            const OD = this.entry[3];
-            const D = (OD - WT * 2) / 12;
+            const D = this.inner_diameter / 12;
             const A = Math.PI * (D * D) / 4;
-            /*console.log(this.nominal_size);
-            console.log(WT);
-            console.log(D);
-            console.log(A);*/
             const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
@@ -270,30 +276,27 @@ Vue.component('friction-loss-calculator', {
                 // converting to ft3/sec
                 const flow = this.flow * factor * 0.1336806 / 60;
                 const velocity = flow / A;
-                /*if (factor == 1) {
-                    console.log(flow);
-                    console.log(velocity);
-                }*/
 
-                //const kyn_viscosity = 0.00067197 * this.viscosity / this.specific_weight;
-                const Re = velocity * D / this.kinematic_viscosity;
+                // kinematic viscosity is entered as cSt (mm2/sec), needs to 
+                // be converted to ft2/second for the Re c alculation.
+                const kv_ft_sec = this.kinematic_viscosity / 92903.04;
+                const Re = velocity * D / kv_ft_sec;
                 const sample = {
                     flow: this.flow * factor,
                     velocity: velocity,
-                    reynolds: Re,
+                    velocity_head: velocity * velocity / (2 * G),
+                    reynolds: Re.toFixed(0),
                     reference: Math.abs(factor - 1) < 0.001
                 }
+
                 const f_lam = 64 / Re;
                 if (Re < 2000) {
                     // Laminar
-                    sample.laminar = true;
                     sample.friction_loss = f_lam;
-                    const t1 = this.length / D;
-                    const t2 = sample.velocity / (2 * 32.17);
-                    sample.head_loss = sample.friction_loss * t1 * t2;
-                    results.push(sample);
+                    sample.laminar = true;
                 } else {
 
+                    // Turbulent
                     let fi = 1 / 100000;
                     let f = fi;
 
@@ -315,12 +318,25 @@ Vue.component('friction-loss-calculator', {
                     }
 
                     sample.friction_loss = f;
-                    const t1 = this.length / D;
-                    const t2 = sample.velocity / (2 * 32.17);
-                    sample.head_loss = sample.friction_loss * t1 * t2;
                     sample.laminar = false;
-                    results.push(sample);
                 }
+                sample.head_loss = this.head_loss(sample.friction_loss, sample.velocity_head);
+
+                if (factor == 1) {
+                    console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
+                    console.log("Full precision printout 100% flowrate");
+                    console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
+                    console.log("Flowrate (gpm):          " + sample.flow);
+                    console.log("Reynolds:                " + sample.reynolds);
+                    console.log("Fluid velocity (ft/sec)  " + sample.velocity);
+                    console.log("Inner Diameter (in):     " + this.inner_diameter);
+                    console.log("Length (ft):             " + this.length);
+                    console.log("Velocity head (ft):      " + sample.velocity_head);
+                    console.log("Friction factor (f):     " + sample.friction_loss);
+                    console.log("Head loss (hf):          " + sample.head_loss);
+                    console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
+                }
+                results.push(sample);
             }
 
             this.save_inputs();
@@ -520,15 +536,8 @@ new Vue({
                 }
 
             } else if (this.haystack) {
-                console.log(this.haystack);
                 // Scroll to top of screen to ensure the search results appear where they should.
-                console.log("[Searching for " + this.needle + "]");
                 this.search_results = this.fuse.search(this.needle);
-                console.log(this.search_results.map(function (r) {
-                    return r.score;
-                }));
-                console.log(this.search_results);
-                //console.log(this.search_results);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
                 }
@@ -559,8 +568,6 @@ new Vue({
                 if (typeof (Storage) !== "undefined") {
                     v.needle = localStorage.getItem("needle")
                 }
-                console.log("Marking search")
-
             }).catch(function (err) {
                 console.error('Search is disabled, could not load topic list');
                 console.error(err);
@@ -639,7 +646,6 @@ new Vue({
                             done: function () {
                                 v.marks = document.querySelectorAll("mark");
                                 v.jump_to_mark();
-                                console.log("JUMP");
                             }
                         });
                     }
