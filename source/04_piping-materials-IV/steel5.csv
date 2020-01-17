@@ -1,4 +1,4 @@
-,data,data,data,data,data,data,data,data,data,data,data
+,numeric,numeric,string,string,numeric,numeric,numeric,numeric,numeric,numeric,numeric
 heading,Nominal Size (in),Nominal Outside Diamter (in),API Standard,"Standard, X-Strong, or XX-Strong",Pipe Schedule,"Nominal Wall Thickness
 (in)",Nominal Internal Diameter (in),Internal Area (in²),Internal Diameter (ft),Internal Area (ft²),"e/D
 (e=0.00015 ft)"

@@ -1,4 +1,4 @@
-,data,data,data,data,data,data,data,data
+,numeric,numeric,numeric,numeric,numeric,numeric,numeric, numeric
 heading,Nominal Size,Nominal Outside dia (in),Pipe Schedule,Nominal Wall Thickness (in),"Wall Thickness, Min (in)","Wall Thickness, Max (in)",Nominal Internal Diameter (in),e (ft)
 data,2,2.375,5,0.065,0.053,0.077,2.245,0.000007
 data,2,2.375,10,0.109,0.095,0.123,2.157,0.000007
