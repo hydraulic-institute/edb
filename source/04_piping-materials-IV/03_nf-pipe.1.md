@@ -1,6 +1,6 @@
 -----
 title: C) Non-Ferrous Pipe
-date: January 17th, 2020
+date: January 21st, 2020
 hide_units: true
 -----
 
@@ -58,8 +58,72 @@ data: threadless-cop.csv
 
 ## Pipe Dimensions: Seamless Copper Water Tube Plumbing and Fluid Conveyance Tubing (According to ASTM B88-16)
 
+=|=
+data: seamless-cop-water-1.csv
+=|=
+
+=|=
+data: seamless-cop-water-2.csv
+=|=
+
 ## Pipe Dimensions: Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
+
+=|=
+data: wrought-seamless-tube-1.csv
+=|=
+
+=|=
+data: wrought-seamless-tube-2.csv
+=|=
+
+=|=
+data: wrought-seamless-tube-3.csv
+=|=
+
+=|=
+data: wrought-seamless-tube-4.csv
+=|=
+
+=|=
+data: wrought-seamless-tube-5.csv
+=|=
+
+=|=
+data: wrought-seamless-tube-6.csv
+=|=
+
+## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
+
+=|=
+data: tolerances-wrought.csv
+=|=
 
 ## Pipe Dimensions: Copper Capillary Tube, Hard-Drawn (According to ASTM B360-15)
 
-## Pipe Dimensions: Seamless Copper - Nickel Pipe And Tube (According to ASTM B466/B466M-14)
+=|=
+data: copper-cap.csv
+=|=
+
+## Alloy Compositions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: alloys.csv
+=|=
+
+## Pipe Dimensions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: seamless-cop-nic.csv
+=|=
+
+## Wall Thickness Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: seamless-cop-nic-tol.csv
+=|=
+
+## Average Diameter Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: diam-tol.csv
+=|=
