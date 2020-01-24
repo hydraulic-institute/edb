@@ -1,0 +1,91 @@
+,numeric,numeric,numeric
+heading,Nominal Size,"Nominal Wall Thickness
+(in)",Wall Thickness Tolerance +/-
+data,1/32 to 1/8,Up to 0.018,0.002
+data,>1/8 to 5/8,Up to 0.018,0.001
+data,> 5/8 to 1,Up to 0.018,0.0015
+data,>1 to 2,Up to 0.018,0.002
+data,>2 to 4,Up to 0.018,--
+data,> 4 to 7,Up to 0.018,--
+data,> 7 to 10,Up to 0.018,--
+data,1/32 to 1/8,0.018 inclusive to 0.025,0.003
+data,>1/8 to 5/8,0.018 inclusive to 0.025,0.002
+data,> 5/8 to 1,0.018 inclusive to 0.025,0.002
+data,>1 to 2,0.018 inclusive to 0.025,0.0025
+data,>2 to 4,0.018 inclusive to 0.025,--
+data,> 4 to 7,0.018 inclusive to 0.025,--
+data,> 7 to 10,0.018 inclusive to 0.025,--
+data,1/32 to 1/8,0.025 inclusive to 0.035,0.003
+data,>1/8 to 5/8,0.025 inclusive to 0.035,0.0025
+data,> 5/8 to 1,0.025 inclusive to 0.035,0.0025
+data,>1 to 2,0.025 inclusive to 0.035,0.003
+data,>2 to 4,0.025 inclusive to 0.035,0.004
+data,> 4 to 7,0.025 inclusive to 0.035,--
+data,> 7 to 10,0.025 inclusive to 0.035,--
+data,1/32 to 1/8,0.035 inclusive to 0.058,0.003
+data,>1/8 to 5/8,0.035 inclusive to 0.058,0.003
+data,> 5/8 to 1,0.035 inclusive to 0.058,0.0035
+data,>1 to 2,0.035 inclusive to 0.058,0.0035
+data,>2 to 4,0.035 inclusive to 0.058,0.005
+data,> 4 to 7,0.035 inclusive to 0.058,0.007
+data,> 7 to 10,0.035 inclusive to 0.058,--
+data,1/32 to 1/8,0.058 inclusive to 0.083,--
+data,>1/8 to 5/8,0.058 inclusive to 0.083,0.0035
+data,> 5/8 to 1,0.058 inclusive to 0.083,0.004
+data,>1 to 2,0.058 inclusive to 0.083,0.004
+data,>2 to 4,0.058 inclusive to 0.083,0.006
+data,> 4 to 7,0.058 inclusive to 0.083,0.006
+data,> 7 to 10,0.058 inclusive to 0.083,0.01
+data,1/32 to 1/8,0.083 inclusive to 0.120,--
+data,>1/8 to 5/8,0.083 inclusive to 0.120,0.004
+data,> 5/8 to 1,0.083 inclusive to 0.120,0.005
+data,>1 to 2,0.083 inclusive to 0.120,0.005
+data,>2 to 4,0.083 inclusive to 0.120,0.007
+data,> 4 to 7,0.083 inclusive to 0.120,0.009
+data,> 7 to 10,0.083 inclusive to 0.120,0.011
+data,1/32 to 1/8,0.120 inclusive to 0.165,--
+data,>1/8 to 5/8,0.120 inclusive to 0.165,0.005
+data,> 5/8 to 1,0.120 inclusive to 0.165,0.006
+data,>1 to 2,0.120 inclusive to 0.165,0.006
+data,>2 to 4,0.120 inclusive to 0.165,0.008
+data,> 4 to 7,0.120 inclusive to 0.165,0.01
+data,> 7 to 10,0.120 inclusive to 0.165,0.012
+data,1/32 to 1/8,0.165 inclusive to 0.220,--
+data,>1/8 to 5/8,0.165 inclusive to 0.220,0.007
+data,> 5/8 to 1,0.165 inclusive to 0.220,0.0075
+data,>1 to 2,0.165 inclusive to 0.220,0.008
+data,>2 to 4,0.165 inclusive to 0.220,0.01
+data,> 4 to 7,0.165 inclusive to 0.220,0.012
+data,> 7 to 10,0.165 inclusive to 0.220,0.014
+data,1/32 to 1/8,0.220 inclusive to 0.284,--
+data,>1/8 to 5/8,0.220 inclusive to 0.284,--
+data,> 5/8 to 1,0.220 inclusive to 0.284,0.009
+data,>1 to 2,0.220 inclusive to 0.284,0.01
+data,>2 to 4,0.220 inclusive to 0.284,0.012
+data,> 4 to 7,0.220 inclusive to 0.284,0.014
+data,> 7 to 10,0.220 inclusive to 0.284,0.016
+data,1/32 to 1/8,0.284 inclusive to 0.380,--
+data,>1/8 to 5/8,0.284 inclusive to 0.380,--
+data,> 5/8 to 1,0.284 inclusive to 0.380,0.011
+data,>1 to 2,0.284 inclusive to 0.380,0.012
+data,>2 to 4,0.284 inclusive to 0.380,0.014
+data,> 4 to 7,0.284 inclusive to 0.380,0.016
+data,> 7 to 10,0.284 inclusive to 0.380,0.018
+data,1/32 to 1/8,0.380 and over,--
+data,>1/8 to 5/8,0.380 and over,--
+data,> 5/8 to 1,0.380 and over,--
+data,>1 to 2,0.380 and over,0.05
+data,>2 to 4,0.380 and over,0.05
+data,> 4 to 7,0.380 and over,0.05
+data,> 7 to 10,0.380 and over,0.05
+data,</= 1/8,--,0.002
+data,1/8 </= 5/8,--,0.002
+data,5/8 </= 1,--,0.0025
+data,1 </= 2,--,0.003
+data,2 </= 3,--,0.004
+data,3 </= 4,--,0.005
+data,4 </= 5,--,0.006
+data,5 </= 6,--,0.007
+data,6 </= 8,--,0.008
+data,8 </= 10,--,0.01
+,,,
