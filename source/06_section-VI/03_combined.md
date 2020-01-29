@@ -54,10 +54,14 @@ to size the impeller to your desired duty conditions.
 
 ### Active Control Valves
 
-An **active control valve** is one that continually changes position (loss) to maintain a set flow or pressure. It is important to note that there is no human intervention involved.
-Since they continuously vary their loss to maintain a flow or pressure, there is no unique valve over a range of system flows. Because of this, they are not normally included in the 
-system curve. But they are shown on the pump system plot as the difference between the two curves at the operating point. In other words, a system with an active control valve will not 
-operate at the intersection of the pump and system curves since the control valve will fix the system at a certain point. 
+An **active control valve** is one that continually changes position (loss) to maintain a set flow or set pressure. It is important to note that there is no human intervention involved.
+Since they continuously vary their position (and head loss) to maintain a flow or pressure, there is no single valve over a range of system flows. Since there are many system flows, there are 
+many valve positions and losses. Because of this, active control valves are not normally included in the system curve. However, they are shown on the pump system plot as the difference between 
+the two curves at the operating point. In other words, a system with an active control valve will not operate at the intersection of the pump and system curves since the control valve will fix
+the system at a certain point. 
+
+The plot below is an example of a control valve set to maintain a certain flow through the system. The control valve can open or close (modulate) to regulate the flow. 
+This will change the head loss across the valve and will affect the pump operating point.
 
 This pump system plot shows two things. First, with the control valve in the system, the pump head required is the sum of the static head, frictional losses and the loss across the control valve. 
 It also shows that the flow in the system is less than the flow in the system without the control valve.
@@ -65,7 +69,7 @@ It also shows that the flow in the system is less than the flow in the system wi
 The plot also is useful in determining the margin available on the control valve. Having sufficient, but not excessive, pressure drop across most control valves is required so the valve can properly control 
 to the setpoint.
 
-![](./reading-4.png "")
+![](./reading-4v2.png "")
 
 ### Changing the Setpoint on an Active Control Valve
 
@@ -73,14 +77,14 @@ Changing the **setpoint (*or control point*)** on an active control valve will c
 control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
 required for the pump will increase.
 
-![](./reading-5.png "")
+![](./reading-5v2.png "")
 
 ### Changing the Pump Speed with an Active Control Valve
 
 When the pump speed is changed and there is an active control valve in the system, the difference in head produced by the pump will be reflected in the difference in 
 loss across the control valve, since the system flow rate has not changed.
 
-![](./reading-6.png "")
+![](./reading-6v2.png "")
 
 ### Pump Sizing in the Real World
 
