@@ -2,6 +2,7 @@
 title: C) Other Fluids
 date: July 16th, 2019
 description: Properties of other fluids.
+hide_units: true
 -----
 
 ## Properties of Other Fluids 
