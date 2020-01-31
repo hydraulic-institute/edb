@@ -163,15 +163,18 @@ Vue.component('friction-loss-calculator', {
     delimiters: ['${', '}'],
     data: function () {
         return {
+            units: "-",
             calculated: false,
             data: null,
             materials: null,
             sizes: null,
-            schedules: null,
+
             material: null,
             nominal_size: null,
 
-            schedule: null,
+            selector: null,
+            selectors: null,
+            selection: null,
             entry: null,
 
             flow: null,
@@ -182,15 +185,24 @@ Vue.component('friction-loss-calculator', {
 
             local_loading: false,
 
-            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka'],
-
-
+            saved_props: ['material', 'nominal_size', 'selection', 'flow', 'length', 'viscosity', 'sg', 'vka'],
         };
     }, //   
     template: '#friction-loss-calculator-template',
     mounted: function () {
         const v = this;
-        axios.get("/statics/friction-loss-materials.json")
+        this.$root.$on('unit-change', (value) => {
+            this.units = value;
+        });
+
+        if (typeof (Storage) !== "undefined") {
+            const stored = localStorage.getItem("unit-set");
+            this.units = stored;
+        } else {
+            console.log("Local storage not available on this browser - unit sets will need to switch manually");
+        }
+
+        axios.get("/statics/friction-loss-materials-full.json")
             .then(function (response) {
                 v.data = response.data;
                 //console.log(JSON.stringify(this.materials, null, 2));
@@ -220,6 +232,22 @@ Vue.component('friction-loss-calculator', {
             }
             if (!this.vka) localStorage.setItem('vka', 'kinematic');
         },
+        value_flowrate: function (value) {
+            if (this.units == 'us') return value;
+            else return value / 4.40286764029913; // convert to cubic meters / hr
+        },
+        value_velocity: function (value) {
+            if (this.units == 'us') return value;
+            else return value * 0.3048; // convert to m/sec
+        },
+        value_length_long: function (value) {
+            if (this.units == 'us') return value;
+            else return value * 0.3048; // convert to meters
+        },
+        value_length_short: function (value) {
+            if (this.units == 'us') return value;
+            else return (value * 25.4).toFixed(2); // convert in to mm
+        },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.inner_diameter;
@@ -227,10 +255,38 @@ Vue.component('friction-loss-calculator', {
             return id * velocity / this.absolute_viscosity;
         },
         head_loss: function (friction_factor, velocity_head) {
-            return friction_factor * this.length * 12 / this.inner_diameter * velocity_head;
+            return friction_factor * this.input_length_feet * 12 / this.inner_diameter * velocity_head;
         }
     },
     computed: {
+        units_flowrate: function () {
+            if (this.units == 'us') return 'gpm';
+            else return 'm3/hr'
+        },
+        units_length_long: function () {
+            if (this.units == 'us') return 'ft';
+            else return 'm'
+        },
+        units_length_mid: function () {
+            if (this.units == 'us') return 'in';
+            else return 'cm'
+        },
+        units_length_short: function () {
+            if (this.units == 'us') return 'in';
+            else return 'mm'
+        },
+        units_velocity: function () {
+            if (this.units == 'us') return 'ft/sec';
+            else return 'm/sec'
+        },
+        input_flowrate_gpm: function () {
+            if (this.units == 'us') return this.flow;
+            else return this.flow * 4.40286764029913; // convert to meters
+        },
+        input_length_feet: function () {
+            if (this.units == 'us') return this.length;
+            else return this.length / 0.3048; // convert to meters
+        },
 
         kinematic_viscosity: function () {
             if (this.vka == 'absolute') {
@@ -252,13 +308,18 @@ Vue.component('friction-loss-calculator', {
             return this.sg * 62.43;
         },
         inner_diameter: function () {
-            if (this.entry && this.entry.length > 5) {
-                return this.entry[5];
+            if (this.entry) {
+                return this.entry.id;
+            }
+        },
+        epsilon: function () {
+            if (this.entry) {
+                return this.entry.epsilon;
             }
         },
         outer_diameter: function () {
-            if (this.entry && this.entry.length > 3) {
-                return this.entry[3];
+            if (this.entry) {
+                return this.entry.od;
             }
         },
 
@@ -269,12 +330,11 @@ Vue.component('friction-loss-calculator', {
 
             const D = this.inner_diameter / 12;
             const A = Math.PI * (D * D) / 4;
-            const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
             for (const factor of steps) {
                 // converting to ft3/sec
-                const flow = this.flow * factor * 0.1336806 / 60;
+                const flow = this.input_flowrate_gpm * factor * 0.1336806 / 60;
                 const velocity = flow / A;
 
                 // kinematic viscosity is entered as cSt (mm2/sec), needs to 
@@ -282,7 +342,7 @@ Vue.component('friction-loss-calculator', {
                 const kv_ft_sec = this.kinematic_viscosity / 92903.04;
                 const Re = velocity * D / kv_ft_sec;
                 const sample = {
-                    flow: this.flow * factor,
+                    flow: this.input_flowrate_gpm * factor,
                     velocity: velocity,
                     velocity_head: velocity * velocity / (2 * G),
                     reynolds: Re.toFixed(0),
@@ -299,12 +359,12 @@ Vue.component('friction-loss-calculator', {
                     // Turbulent
                     let fi = 1 / 100000;
                     let f = fi;
-
+                    const v = this;
                     const f1calc = function (f) {
                         return 1 / Math.sqrt(f);
                     }
                     const f2calc = function (f) {
-                        return -2 * Math.log(epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
+                        return -2 * Math.log(v.epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
                     }
                     let f1 = f1calc(f);
                     let f2 = f2calc(f);
@@ -353,31 +413,49 @@ Vue.component('friction-loss-calculator', {
 
             if (this.material) {
                 for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
+
             } else {
-                this.schedule = null;
+                this.selector = null;
                 this.entry = null;
             }
 
         },
         nominal_size: function () {
+            // When nominal size is selected, build a list of selector values, if the 
+            // material selected supports selectors.
+            this.selectors = [];
+            const mat = this.data[this.material];
+            this.selector = mat.selector ? mat.selector : null;
 
-            this.schedules = [];
-            if (!this.local_loading) {
-                this.schedule = null;
+            if (this.selector && this.nominal_size) {
+                const pipes = mat.nominal_sizes[this.nominal_size]
+                for (const m of pipes.map(function (p) {
+                        return p.selector;
+                    })) {
+                    this.selectors.push(m);
+                }
+                console.log(this.selectors);
+            } else if (this.nominal_size) {
+                // There is only one listing for each nominal size, so just select it.
+                this.entry = pipes[0];
+                console.log("Pipe selected ");
+                console.log(this.entry);
             }
-            if (this.nominal_size) {
-                for (const m in this.data[this.material].nominal_sizes[this.nominal_size].schedules) this.schedules.push(m);
-            } else {
-
-                this.entry = null;
-            }
-
         },
-        schedule: function () {
-
-            if (this.schedule && this.nominal_size && this.material) {
-                this.entry = this.data[this.material].nominal_sizes[this.nominal_size].schedules[this.schedule];
-            } else {
+        selection: function () {
+            // Selection has changed, if it is changing to null - skip.
+            // otherwise, pick the pipe.
+            if (this.selection) {
+                const mat = this.data[this.material];
+                const pipes = mat.nominal_sizes[this.nominal_size]
+                const v = this;
+                this.entry = pipes.filter(function (p) {
+                    return v.selection === p.selector;
+                })[0];
+                console.log("Pipe selected by selector");
+                console.log(this.entry);
+            }
+            if (!this.selection && this.selector) {
                 this.entry = null;
             }
         }
@@ -609,10 +687,12 @@ new Vue({
         to_us() {
             this.unit_set = 'us';
             localStorage.setItem("unit-set", this.unit_set);
+            this.$root.$emit('unit-change', 'us');
         },
         to_metric() {
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
+            this.$root.$emit('unit-change', 'metric');
         },
         jump_to_mark() {
             const existing = document.querySelectorAll(".current_mark");
