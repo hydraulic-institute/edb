@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+
+
 const G = 32.174;
 
 Vue.component('chart', {

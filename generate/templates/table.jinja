@@ -12,6 +12,15 @@
         </thead>
         <tbody>
             {% for row in table.rows %} 
+                {% if loop.index % 15 == 0 %}
+                    {% for heading in table.headings %} 
+                        <tr>
+                            {%for header in heading.data %}
+                                <th class="small-heading {{header.type}}"> {{header.data}}</th>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
                 <tr>
                     {%for column in row.data %}
                         <td class="{{column.type}}"> {{column.data}}</td>
