@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             {% for row in table.rows %} 
-                {% if loop.index % 15 == 0 and loop.length > 40 %}
+                {% if loop.index % 15 == 0 and loop.length - loop.index > 7 %}
                     {% for heading in table.headings %} 
                         <tr>
                             {%for header in heading.data %}
