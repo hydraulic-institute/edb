@@ -91,10 +91,10 @@
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size</label>
+                    <label class='label'>Select Nominal Size (in)</label>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
-                        <option :value='m' v-for='m in sizes'>${m}${units_length_short}</option>
+                        <option :value='m' v-for='m in sizes'>${m}</option>
                     </select>
                 </div>
                 <div class='field' v-if='selector'>
@@ -108,14 +108,14 @@
                 <div v-if='entry'>
                     <div class='field'>
                         <label class='label'>Nominal Outside Diameter (${units_length_short})</label>
-                        <span> ${outer_diameter}</span>
+                        <span> ${value_length_short(outer_diameter)}</span>
                     </div>
                     <div class='field'>
                         <label class='label'>Inside Diameter (${units_length_short})</label>
-                        <span> ${inner_diameter}</span>
+                        <span> ${value_length_short(inner_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Rougness Parameter (epsilon) (${units_length_long})</label>
+                        <label class='label'>Rougness Parameter (epsilon)</label>
                         <span> ${epsilon}</span>
                     </div>
                 </div>

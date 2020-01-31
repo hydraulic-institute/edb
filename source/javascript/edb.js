@@ -244,6 +244,10 @@ Vue.component('friction-loss-calculator', {
             if (this.units == 'us') return value;
             else return value * 0.3048; // convert to meters
         },
+        value_length_short: function (value) {
+            if (this.units == 'us') return value;
+            else return (value * 25.4).toFixed(2); // convert in to mm
+        },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
             const id = this.inner_diameter;
@@ -251,7 +255,7 @@ Vue.component('friction-loss-calculator', {
             return id * velocity / this.absolute_viscosity;
         },
         head_loss: function (friction_factor, velocity_head) {
-            return friction_factor * this.length * 12 / this.inner_diameter * velocity_head;
+            return friction_factor * this.input_length_feet * 12 / this.inner_diameter * velocity_head;
         }
     },
     computed: {
@@ -274,6 +278,14 @@ Vue.component('friction-loss-calculator', {
         units_velocity: function () {
             if (this.units == 'us') return 'ft/sec';
             else return 'm/sec'
+        },
+        input_flowrate_gpm: function () {
+            if (this.units == 'us') return this.flow;
+            else return this.flow * 4.40286764029913; // convert to meters
+        },
+        input_length_feet: function () {
+            if (this.units == 'us') return this.length;
+            else return this.length / 0.3048; // convert to meters
         },
 
         kinematic_viscosity: function () {
@@ -322,7 +334,7 @@ Vue.component('friction-loss-calculator', {
             const results = [];
             for (const factor of steps) {
                 // converting to ft3/sec
-                const flow = this.flow * factor * 0.1336806 / 60;
+                const flow = this.input_flowrate_gpm * factor * 0.1336806 / 60;
                 const velocity = flow / A;
 
                 // kinematic viscosity is entered as cSt (mm2/sec), needs to 
@@ -330,7 +342,7 @@ Vue.component('friction-loss-calculator', {
                 const kv_ft_sec = this.kinematic_viscosity / 92903.04;
                 const Re = velocity * D / kv_ft_sec;
                 const sample = {
-                    flow: this.flow * factor,
+                    flow: this.input_flowrate_gpm * factor,
                     velocity: velocity,
                     velocity_head: velocity * velocity / (2 * G),
                     reynolds: Re.toFixed(0),
@@ -347,12 +359,12 @@ Vue.component('friction-loss-calculator', {
                     // Turbulent
                     let fi = 1 / 100000;
                     let f = fi;
-
+                    const v = this;
                     const f1calc = function (f) {
                         return 1 / Math.sqrt(f);
                     }
                     const f2calc = function (f) {
-                        return -2 * Math.log(this.epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
+                        return -2 * Math.log(v.epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
                     }
                     let f1 = f1calc(f);
                     let f2 = f2calc(f);
@@ -442,6 +454,9 @@ Vue.component('friction-loss-calculator', {
                 })[0];
                 console.log("Pipe selected by selector");
                 console.log(this.entry);
+            }
+            if (!this.selection && this.selector) {
+                this.entry = null;
             }
         }
     }
