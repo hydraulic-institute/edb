@@ -168,11 +168,13 @@ Vue.component('friction-loss-calculator', {
             data: null,
             materials: null,
             sizes: null,
-            schedules: null,
+
             material: null,
             nominal_size: null,
 
-            schedule: null,
+            selector: null,
+            selectors: null,
+            selection: null,
             entry: null,
 
             flow: null,
@@ -183,7 +185,7 @@ Vue.component('friction-loss-calculator', {
 
             local_loading: false,
 
-            saved_props: ['material', 'nominal_size', 'schedule', 'flow', 'length', 'viscosity', 'sg', 'vka'],
+            saved_props: ['material', 'nominal_size', 'selection', 'flow', 'length', 'viscosity', 'sg', 'vka'],
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -200,7 +202,7 @@ Vue.component('friction-loss-calculator', {
             console.log("Local storage not available on this browser - unit sets will need to switch manually");
         }
 
-        axios.get("/statics/friction-loss-materials.json")
+        axios.get("/statics/friction-loss-materials-full.json")
             .then(function (response) {
                 v.data = response.data;
                 //console.log(JSON.stringify(this.materials, null, 2));
@@ -294,13 +296,18 @@ Vue.component('friction-loss-calculator', {
             return this.sg * 62.43;
         },
         inner_diameter: function () {
-            if (this.entry && this.entry.length > 5) {
-                return this.entry[5];
+            if (this.entry) {
+                return this.entry.id;
+            }
+        },
+        epsilon: function () {
+            if (this.entry) {
+                return this.entry.epsilon;
             }
         },
         outer_diameter: function () {
-            if (this.entry && this.entry.length > 3) {
-                return this.entry[3];
+            if (this.entry) {
+                return this.entry.od;
             }
         },
 
@@ -311,7 +318,6 @@ Vue.component('friction-loss-calculator', {
 
             const D = this.inner_diameter / 12;
             const A = Math.PI * (D * D) / 4;
-            const epsilon = this.entry[6];
             const steps = [0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3];
             const results = [];
             for (const factor of steps) {
@@ -346,7 +352,7 @@ Vue.component('friction-loss-calculator', {
                         return 1 / Math.sqrt(f);
                     }
                     const f2calc = function (f) {
-                        return -2 * Math.log(epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
+                        return -2 * Math.log(this.epsilon / (3.7 * D) + 2.51 / (Re * Math.sqrt(f))) / Math.log(10);
                     }
                     let f1 = f1calc(f);
                     let f2 = f2calc(f);
@@ -395,32 +401,47 @@ Vue.component('friction-loss-calculator', {
 
             if (this.material) {
                 for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
+
             } else {
-                this.schedule = null;
+                this.selector = null;
                 this.entry = null;
             }
 
         },
         nominal_size: function () {
+            // When nominal size is selected, build a list of selector values, if the 
+            // material selected supports selectors.
+            this.selectors = [];
+            const mat = this.data[this.material];
+            this.selector = mat.selector ? mat.selector : null;
 
-            this.schedules = [];
-            if (!this.local_loading) {
-                this.schedule = null;
+            if (this.selector && this.nominal_size) {
+                const pipes = mat.nominal_sizes[this.nominal_size]
+                for (const m of pipes.map(function (p) {
+                        return p.selector;
+                    })) {
+                    this.selectors.push(m);
+                }
+                console.log(this.selectors);
+            } else if (this.nominal_size) {
+                // There is only one listing for each nominal size, so just select it.
+                this.entry = pipes[0];
+                console.log("Pipe selected ");
+                console.log(this.entry);
             }
-            if (this.nominal_size) {
-                for (const m in this.data[this.material].nominal_sizes[this.nominal_size].schedules) this.schedules.push(m);
-            } else {
-
-                this.entry = null;
-            }
-
         },
-        schedule: function () {
-
-            if (this.schedule && this.nominal_size && this.material) {
-                this.entry = this.data[this.material].nominal_sizes[this.nominal_size].schedules[this.schedule];
-            } else {
-                this.entry = null;
+        selection: function () {
+            // Selection has changed, if it is changing to null - skip.
+            // otherwise, pick the pipe.
+            if (this.selection) {
+                const mat = this.data[this.material];
+                const pipes = mat.nominal_sizes[this.nominal_size]
+                const v = this;
+                this.entry = pipes.filter(function (p) {
+                    return v.selection === p.selector;
+                })[0];
+                console.log("Pipe selected by selector");
+                console.log(this.entry);
             }
         }
     }
