@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Nominal Size,Nominal Outside dia (in),Nominal Wall Thickness (in),Nominal Internal Diameter (in),Internal Area (in²),e (ft),Nominal Plain-End Weight (lb/ft),Maximum Allowable Residue (grams per linear foot)
+heading,Nominal Size,Nominal Outside Dia. (in),Nominal Wall Thickness (in),Nominal Internal Diameter (in),Internal Area (in²),e (ft),Nominal Plain-End Weight (lb/ft),Maximum Allowable Residue (grams per linear foot)
 data,0.072,0.072,0.023,0.026,0.000530929,0.002000,0.01373,0.0002
 data,0.072,0.072,0.022,0.028,0.000615752,0.002000,0.134,0.00021
 data,0.081,0.081,0.025,0.031,0.000754768,0.002000,0.01705,0.00023

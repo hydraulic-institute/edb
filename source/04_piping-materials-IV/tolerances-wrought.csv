@@ -1,6 +1,6 @@
 ,numeric,numeric,numeric
-heading,Nominal Size,"Nominal Wall Thickness
-(in)",Wall Thickness Tolerance +/-
+heading,Nominal Size,Nominal Wall Thickness
+(in),Wall Thickness Tolerance +/-
 data,1/32 to 1/8,Up to 0.018,0.002
 data,>1/8 to 5/8,Up to 0.018,0.001
 data,>5/8 to 1,Up to 0.018,0.0015

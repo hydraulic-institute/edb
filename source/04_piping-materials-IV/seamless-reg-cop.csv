@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Nominal Size,Nominal Outside dia (in),Outside Diameter (Min),Outside Diameter (Max),Nominal Wall Thickness (in),Wall Thickness Tolerance +/-,Nominal Internal Diameter (in),e (ft)
+heading,Nominal Size,Nominal Outside Dia. (in),Outside Diameter (Min),Outside Diameter (Max),Nominal Wall Thickness (in),Wall Thickness Tolerance +/-,Nominal Internal Diameter (in),e (ft)
 data,0.125,0.405,0.401,0.405,0.062,0.004,0.281,0.002000
 data,0.25,0.54,0.536,0.54,0.082,0.005,0.376,0.002000
 data,0.375,0.675,0.67,0.675,0.090,0.005,0.495,0.002000

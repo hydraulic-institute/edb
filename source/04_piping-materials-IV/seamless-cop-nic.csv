@@ -1,6 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,string
-heading,Nominal Size,Nominal Outside dia (in),"Nominal Wall Thickness
-(in)",Nominal Internal Diameter,e (ft),Thickness Class
+heading,Nominal Size,Nominal Outside Dia. (in),Nominal Wall Thickness(in),Nominal Internal Diameter,e (ft),Thickness Class
 data,0.125,0.405,0.058,0.289,0.002000,Special 1
 data,0.125,0.405,0.062,0.281,0.002000,Regular
 data,0.125,0.405,0.1,0.205,0.002000,Extra Strong

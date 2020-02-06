@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,
-heading,Nominal Size,Nominal Outside dia (in),Outside Diameter (Min),Outside Diameter (Max),Pipe Schedule,Nominal Wall Thickness (in),"Wall Thickness, Min (in)","Wall Thickness, Max (in)",Nominal Internal Diameter (in),e (ft),"Nominal Plain-End Weight (lb/ft)
+heading,Nominal Size,Nominal Outside Dia. (in),Outside Diameter (Min),Outside Diameter (Max),Pipe Schedule,Nom. Wall Thickness (in),Min Wall Thickness (in),Max Wall Thickness (in),Nom. Internal Diameter (in),e (ft),"Nominal Plain-End Weight (lb/ft)
 ","Max Plain-End Weight (lb/ft)
 "
 data,0.125,0.405,0.374,0.420,40,0.068,0.060,--,0.269,0.000007,0.085,0.091

@@ -1,6 +1,5 @@
 ,numeric,numeric,numeric,numeric
-heading,Nominal Size,"Outside Diameter, min (in)","Nominal Wall Thickness
-(in)",Wall Thickness tolerance +/-
+heading,Nominal Size,Min Outside Diameter (in),Nominal Wall Thickness (in),Wall Thickness tolerance +/-
 data,1/32 to 1/8,1/32 to 1/8,0 to 0.017,0.0025
 data,>1/8 to 5/8,>1/8 to 5/8,0 to 0.017,0.0015
 data,>5/8 to 1,>5/8 to 1,0 to 0.017,0.002

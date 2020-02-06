@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,string,string
-heading,Nominal Size,Nominal Outside dia (in),Average Outside Diameter Tolerance (in),Nominal Wall Thickness (in),Nominal Internal Diameter (in),e (ft),"t/D, Ratio of Nominal Wall Thickness to Nominal Outside Diameter","Diameter Roundness Tolerances, percent of outside diameter",Diameter Roundness Tolerances (in),"Nominal Plain-End Weight
+heading,Nominal Size,Nominal Outside Dia. (in),Avg. Outside Dia. Tolerance (in),Nom. Wall Thickness (in),Nom. Internal Diameter (in),e (ft),"t/D, Ratio of Nom. Wall Thickness to Nom. Outside Dia.","Diameter Roundness Tolerances, Percent of Outside Dia.",Diameter Roundness Tolerances (in),"Nominal Plain-End Weight
 (lb/ft)",Form,Type
 data,0.25,0.375,0.002,0.035,0.305,0.002,0.093333333,0.008,0.003,0.145,Annealed,K
 data,0.375,0.5,0.0025,0.049,0.402,0.002,0.098,0.008,0.004,0.269,Annealed,K

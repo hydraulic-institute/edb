@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,
-heading,Nominal Size,Nominal Outside dia (in),"Nominal Wall Thickness
+heading,Nominal Size,Nominal Outside Dia. (in),"Nominal Wall Thickness
 (in)",e (ft),Thickness Class
 data,3,3.96,0.280,0.00085,2
 data,3,3.96,0.310,0.00085,3

@@ -372,8 +372,8 @@ $$ v = {{354Q}\over D^2}\, (m/s) $$
 where:
 
 - Q = rate of flow <units us = "(gpm)," metric = "(m^3^/h)"/>
-- A = inside area of pipe <units us = "(in.^2^), and" metric = "(mm^2^)"/>
-- D = inside diameter of pipe <units us = "(in.)" metric = "(mm)"/>
+- A = inside area of pipe <units us = "(in^2^), and" metric = "(mm^2^)"/>
+- D = inside diameter of pipe <units us = "(in)" metric = "(mm)"/>
 
 **3) Multiplication Factor, F (included in Equation (2)) —**
 
