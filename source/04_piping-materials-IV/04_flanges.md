@@ -1,6 +1,6 @@
 -----
 title: E) Flanges
-date: January 30th, 2020
+date: February 5th, 2020
 description: Dimensions of flanges.
 hide_units: true
 -----
@@ -8,11 +8,7 @@ hide_units: true
 ## Dimensions: Steel Pipe Flanges and Flanged Fittings - 150 to 2500 lb (According to ASME B16.5-2017, ASME B16.47-2017, & AWWA C207-18)
 
 =|=
-data: steel-flang-fit-400.csv
-=|=
-
-=|=
-data: steel-flang-fit-2500.csv
+data: steel-flang-fit.csv
 =|=
 
 ## Dimensions of Facings (According to ASME B16.5-2017)

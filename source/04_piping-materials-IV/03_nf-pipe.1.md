@@ -1,17 +1,13 @@
 -----
 title: C) Non-Ferrous Pipe
-date: January 21st, 2020
+date: February 5th, 2020
 hide_units: true
 -----
 
 ## Pipe Dimensions: Aluminum-Alloy Seamless Pipe and Extruded Tube (According to ANSI H35.2)
 
 =|=
-data: seamless-extruded-1.csv
-=|=
-
-=|=
-data: seamless-extruded-2.csv
+data: seamless-extruded.csv
 =|=
 
 ## Pipe Dimensions: Aluminum-Alloy Pipe Oil and Gas Transmission and Distributing Piping Systems (According to ANSI H35.2)
@@ -59,37 +55,13 @@ data: threadless-cop.csv
 ## Pipe Dimensions: Seamless Copper Water Tube Plumbing and Fluid Conveyance Tubing (According to ASTM B88-16)
 
 =|=
-data: seamless-cop-water-1.csv
-=|=
-
-=|=
-data: seamless-cop-water-2.csv
+data: seamless-cop-water.csv
 =|=
 
 ## Pipe Dimensions: Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
 
 =|=
-data: wrought-seamless-tube-1.csv
-=|=
-
-=|=
-data: wrought-seamless-tube-2.csv
-=|=
-
-=|=
-data: wrought-seamless-tube-3.csv
-=|=
-
-=|=
-data: wrought-seamless-tube-4.csv
-=|=
-
-=|=
-data: wrought-seamless-tube-5.csv
-=|=
-
-=|=
-data: wrought-seamless-tube-6.csv
+data: wrought-seamless-tube.csv
 =|=
 
 ## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
