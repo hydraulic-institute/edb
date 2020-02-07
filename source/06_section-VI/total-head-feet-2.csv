@@ -1,5 +1,5 @@
 ,numeric,numeric
-heading,Flow (gpm),Total Head (ft)
+heading,Flow (gpm),Total Head (feet)
 data,0,173
 data,180,167
 data,360,160

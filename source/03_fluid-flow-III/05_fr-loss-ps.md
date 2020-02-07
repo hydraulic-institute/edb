@@ -12,9 +12,9 @@ In any stock piping system, the pump provides flow
 and develops hydraulic pressure (head) to overcome
 the differential in head between two points. This
 total head consists of pressure head,
-static head, velocity head and total friction head
+static head, velocity head and total frictional head
 produced by friction between the pulp suspension
-and the pipe, bends, and fittings. The total friction
+and the pipe, bends, and fittings. The total frictional
 head is the most difficult to determine because of the
 complex, non-linear nature of the frictional loss curve.
 This curve can be affected by many factors.
@@ -60,7 +60,7 @@ v<sub>max</sub>.
 (Curve BCD) shows an initial decrease
 in frictional losses (to Point C) after which
 the frictional losses again increases. The
-intersection of the pulp friction loss
+intersection of the pulp frictional loss
 curve and the water frictional loss curve
 (Point D) is termed the onset of drag
 reduction. The velocity at this point is

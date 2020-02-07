@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temp. (°C),Spec. Volume (Cu m/kg),SG 39.2 °F Ref,SG 60 °F Ref,SG 68 °F Ref,Spec. Weight (kN/Cu m),Vapor Pressure (kPa)
+heading,Temp. (°C),Spec. Volume (m³/kg),SG 39.2 °F Ref,SG 60 °F Ref,SG 68 °F Ref,Spec. Weight (kN/m³),Vapor Pressure (kPa)
 data,0,0.00100,1.000,1.001,1.002,9.81,0.607
 data,1.7,0.00100,1.000,1.001,1.002,9.81,0.689
 data,4.4,0.00100,1.000,1.001,1.002,9.81,0.839

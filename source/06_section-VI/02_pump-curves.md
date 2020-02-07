@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves 
-date:  September 12th, 2019
+date:  February 7th, 2020
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 

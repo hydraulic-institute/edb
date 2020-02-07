@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric
-heading,Flow Rate (m3/h),Velocity (m/sec),Head Loss (meters)
+heading,Flow Rate (m³/h),Velocity (m/sec),Head Loss (meters)
 data,0,0,80.77
 data,4.54,0.154,80.77
 data,9.07,0.307,81.08

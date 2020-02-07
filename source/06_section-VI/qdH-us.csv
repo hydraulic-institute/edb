@@ -1,5 +1,5 @@
 ,numeric,numeric
-heading,Q(gpm),ΔH(ft)
+heading,Q(gpm),Δh(feet)
 data,0,380
 data,150,330.5
 data,200,296

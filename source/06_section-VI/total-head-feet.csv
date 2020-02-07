@@ -1,5 +1,5 @@
 ,numeric,numeric
-heading,Q (gpm),Total Head (ft)
+heading,Q (gpm),Total Head (feet)
 data,0,213
 data,200,206
 data,400,198

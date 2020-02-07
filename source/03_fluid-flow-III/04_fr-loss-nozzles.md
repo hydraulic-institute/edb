@@ -1,6 +1,6 @@
 -----
 title:  D) Frictional Losses of Nozzles
-date: June 11th, 2019
+date: February 7th, 2020
 description: Calculation of frictional losses of nozzles. 
 -----
 
@@ -27,8 +27,8 @@ The following amounts of water are recommended to move 1 cubic foot:
 
 <units us = "For sprinkling golf courses it is reasonably safe to
 figure 10 gallons per minute for each green with 35
-PSIA at hose valve outlet and 25 gallons per minute
-for each fairway with 35 PSIA at hose valve outlet.
+psia at hose valve outlet and 25 gallons per minute
+for each fairway with 35 psia at hose valve outlet.
 The standard conditions are 100 feet of 3/4 inch
 hose for greens sprinklers and 100 feet of 1 inch
 hose for fairways sprinklers. Use gate valves with
