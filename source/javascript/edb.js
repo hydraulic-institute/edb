@@ -430,6 +430,7 @@ Vue.component('friction-loss-calculator', {
             this.selector = mat.selector ? mat.selector : null;
 
             if (this.selector && this.nominal_size) {
+                console.log(mat);
                 const pipes = mat.nominal_sizes[this.nominal_size]
                 for (const m of pipes.map(function (p) {
                         return p.selector;
@@ -439,6 +440,7 @@ Vue.component('friction-loss-calculator', {
                 console.log(this.selectors);
             } else if (this.nominal_size) {
                 // There is only one listing for each nominal size, so just select it.
+                const pipes = mat.nominal_sizes[this.nominal_size]
                 this.entry = pipes[0];
                 console.log("Pipe selected ");
                 console.log(this.entry);
