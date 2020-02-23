@@ -291,19 +291,27 @@ Vue.component('friction-loss-calculator', {
         },
 
         kinematic_viscosity: function () {
+            // Returns viscosity in cSt
             if (this.vka == 'absolute') {
-                const kv = 0.00067197 * this.viscosity / this.specific_weight;
+                // Convert from cP to cSt
+                console.log("Converting from Cp to Cst");
+                const kv = (this.viscosity / this.sg);
+                console.log(kv + " " + this.vka);
                 return kv;
             } else {
+                // Already in cSt
                 return this.viscosity;
             }
         },
         absolute_viscosity: function () {
+            // returns viscosity in cP
             if (this.vka == 'absolute') {
+                // Already in cP
                 return this.viscosity;
 
             } else {
-                return this.viscosity * this.specific_weight / 0.00067197;
+                // Convert from Cst to Cp
+                return this.viscosity * this.sg;
             }
         },
         specific_weight: function () {
