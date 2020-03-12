@@ -1,10 +1,10 @@
 -----
-title:  E) Frictional Losses of Paper Stock
+title:  E) Losses in Paper Stock
 date: June 28th, 2019
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
-## Frictional Losses of Paper Stock
+## Losses in Paper Stock
 
 ### I. Introduction
 
@@ -44,7 +44,7 @@ pulp, respectively.
 The frictional loss curve for chemical pulp can be conveniently divided
 into three regions, as illustrated by the shaded areas of Figure 3.
 
-![](fig3_&_4.png "")
+![](fig3_4.png "")
 
 Regions shown in Fig. 3 may be described as follows:
 

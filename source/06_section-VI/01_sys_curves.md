@@ -97,13 +97,7 @@ price: 99.99
 
 ### Educational Demonstration
 
-This education demonstrator will show how changing the static and frictional losses changes the system curve.
-
-The static head can be varied by changing the supply and destination levels. The overall frictional loss (piping and minor) can be varied by moving the slider. 
-This is a representative demonstration and does not have actual values.
-
-![](./sc-demo-2.png "")
-![](./sc-demo-1.png "")
+Content will be added soon.
 
 ### Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>

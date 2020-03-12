@@ -259,6 +259,8 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 
 ### Educational Demonstration
 
+Content will be added soon.
+
 ### Pumps in Series
 This demo explores how impeller diameter and speed affect three different pumps
 (A, B, and C).  This demo also explores different scenarios of the three pumps operating in

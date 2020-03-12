@@ -61,7 +61,7 @@ where, for cylindrical pipes:
 - Q is volumetric flow rate in <units us = "ft^3^/s" metric = "m^3^/s"/>
 - A is pipe cross-sectional area in <units us = "ft^2 " metric = "m^2"/>
 
-At Reynolds numbers less than about 2300, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
+At Reynolds numbers less than about 2000, the flow tends to be laminar where it is traveling in a smooth, orderly manner with little mixing. 
 At Reynolds numbers higher than about 4000, the flow is considered turbulent, with eddies forming and irregular motion.
 
 ### Pipe Roughness
