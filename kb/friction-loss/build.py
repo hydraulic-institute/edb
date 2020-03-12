@@ -64,3 +64,4 @@ for material in materials:
 
 with open('../../generate/static/friction-loss-materials.json', 'w') as fp:
     json.dump(materials, fp)
+
