@@ -37,10 +37,12 @@ is the dynamic viscosity. The foregoing may be expressed
 by the equations
 
 =+=
+<span class= equation-label >(2.7)</span>
 $$ τ = {F \over A} = μ{v \over d} $$
 =+=
 
 =+=
+<span class= equation-label >(2.8)</span>
 $$ μ = {τ \over {v/d}} $$
 =+=
 
@@ -69,6 +71,7 @@ divided by the acceleration of gravity (g). These
 relationships may be expressed by the equation
 
 =+=
+<span class= equation-label >(2.9)</span>
 $$ ν = {μ \over {w/g}} = {μ \over ρ} $$
 =+=
 
@@ -144,8 +147,8 @@ time, but when shear occurs only for shear stress
 above a fixed minimum greater than zero, a fluid
 is said to be **plastic.**
 
-When the ratio of shear stress to shear rate decrez.
-ses as shear rate increases, reversibly and
+When the ratio of shear stress to shear rate decreases
+as shear rate increases, reversibly and
 independent of time, and zero shear rate occurs
 only at zero shear stress, a fluid is said to be
 **pseudo-plastic.**

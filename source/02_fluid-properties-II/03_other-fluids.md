@@ -12,6 +12,7 @@ hide_units: true
 The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
 
 =+=
+<span class= equation-label >(2.5)</span>
 $$ {Degrees\,A.P.I. = {141.5 \over g} - 131.5} $$
 =+=
 
@@ -25,6 +26,7 @@ and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828
 To determine the resulting specific gravity by mixing oils of different specific gravities:
 
 =+=
+<span class= equation-label >(2.6)</span>
 $$ {D = {{md_{1} + nd_{2}} \over {m+n}}} $$
 =+=
 

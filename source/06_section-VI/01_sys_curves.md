@@ -15,6 +15,7 @@ and minor head losses (component losses). Each of these is described in further 
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
 =+=
+<span class= equation-label >(6.1)</span>
 $$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
@@ -60,6 +61,7 @@ Based on these concepts, the total head losses at any given flow rate is the sum
 be represented using the following equation:
 
 =+=
+<span class= equation-label >(6.2)</span>
 $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{supply}) \over \rho g} + {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
