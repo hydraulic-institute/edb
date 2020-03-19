@@ -68,5 +68,11 @@ title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Heavier 
 data: IIB2-2.csv
 =|=
 
+### Brix Viscosities of Sucrose Solutions at Various Temperatures
+
+**Degree Brix** is the measure of concentration of sugar in aqueous solution. Degree Brix is the percentage of sucrose by weight in aqueous solution. 
+One-degree brix equals 1 gram of sugar into 100 grams of sugar solution.
+
+More content will be added soon.
 
 

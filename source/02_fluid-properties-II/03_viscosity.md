@@ -271,6 +271,3 @@ title: Conversion Factors
 data:SSU-conv.csv
 =|=
 
-### Brix Viscosities of Sucrose Solutions at Various Temperatures
-
-Content will be added soon.
