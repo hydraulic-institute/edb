@@ -1,5 +1,5 @@
 -----
-title: D) Viscosity
+title: C) Viscosity
 date:  July 1st, 2019
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----

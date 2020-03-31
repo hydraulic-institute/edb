@@ -1,5 +1,5 @@
 -----
-title: C) Other Fluids
+title: D) Other Fluids
 date: July 16th, 2019
 description: Properties of other fluids.
 hide_units: true
@@ -71,8 +71,53 @@ data: IIB2-2.csv
 ### Brix Viscosities of Sucrose Solutions at Various Temperatures
 
 **Degree Brix** is the measure of concentration of sugar in aqueous solution. Degree Brix is the percentage of sucrose by weight in aqueous solution. 
-One-degree brix equals 1 gram of sugar into 100 grams of sugar solution.
+One-Degree Brix equals 1 gram of sugar into 100 grams of sugar solution. The Degree Brix can be represented in symbolic way as °Bx. This designation of
+Degree Brix is only valid for pure sucrose solutions. If the solution contains dissolved solids other than pure sucrose, then the °Bx only approximates the
+dissolved solid content.
 
-More content will be added soon.
+Sucrose is common sugar. It is a disaccharide, a molecule composed of two monosaccharides: glucose and fructose. Sucrose is produced
+naturally in plants, from which table sugar is refined. It has molecular formula C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>. For human consumption, sucrose is extracted from sugarcane or sugar beet. 
+
+The measurement of sugar solution i.e. Degree Brix is required in many food processing industries including sugar production, fruit juice processing, soft drink production
+and many other food processing areas where sweeteners are involved.
 
 
+### Relation of Viscosity of Aqueous Sucrose Solution with Temperature and Degree Brix
+
+The Degree Brix is a concentration of sucrose into aqueous solution. However, the relation between Degree Brix, temperature, specific gravity and viscosity is established [1]. Based on this circular, 
+the graphs of viscosity in centipoise versus temperature and Degree Brix are established.  From the graphical representation. it is easier to understand the behavior of sucrose solution against temperature
+and value of Degree Brix. The exact value of viscosity can be found by interpolating the adjacent graphs of Degree Brix with respect to temperature.
+
+Viscosity is inversely proportional to temperature and directly proportional to Degree Brix. From the graph, it can be observed that as the temperature increases keeping Brix value constant, the 
+corresponding viscosity value is decreasing. On other hand keeping temperature constant, the viscosity increases as Degree Brix increases.
+
+### Measurement of Brix
+
+One traditional method to measure the °Brix is by constant weight hydrometer. The constant weight hydrometer works on the law of buoyancy. The hydrometer is floated in a fluid and the density (specific gravity)
+of the fluid is determined by the fluid level on the scale of the stem. A hydrometer measures the density of the solution to determine the °Brix.
+
+**Coriolis Brix principle:** The Coriolis meter’s density measurement works on the principle that the period of oscillation of the flow tubes. Performing the same primary measurement as hydrometer, the Coriolis 
+meter determines the °Brix as a function of the specific gravity of the solution. 
+
+### Charts
+
+-	The following charts represent the value of viscosity of sucrose solution in centipoise (cP) at various temperature for various Brix values.
+-	[1] All the values are taken from National Bureau of Standards Circular 440 issued on July 31, 1958 United States Department of Commerce by considering viscosity of water at 20°C is 0.010020 poise.
+-	On the X-axis temperature is plotted in °C whereas on Y-axis viscosity of sucrose in aqueous solution is plotted in centipoise (cP) and the graph is plotted for various degree Brix values ranging from 20° Brix to 75° Brix.
+-	The below graphs represents the exponentially decreasing nature.
+-	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value and it is inversely proportional to the temperature.
+
+![](Brix1.png "")
+
+![](Brix2.png "")
+
+![](Brix3.png "")
+
+![](Brix4.png "")
+
+![](Brix5.png "")
+
+![](Brix6.png "")
+
+### References
+[1] J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).

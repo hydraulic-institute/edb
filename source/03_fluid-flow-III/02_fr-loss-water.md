@@ -22,7 +22,7 @@ data: K-variation.csv
 
 ### Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
 
-![](table-33.png "")
+![](resized.png "")
 
 ### Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 
