@@ -118,7 +118,6 @@ follows:
     
 where:
 
-- 𝜈 = centipoise
 - w = <units us = "lbf/cu ft" metric = "N/m^3^"/>
 - g = <units us = "32.17 ft/s^2^ at sea
 level and approximately 45 degrees latitude" 
@@ -153,7 +152,7 @@ independent of time, and zero shear rate occurs
 only at zero shear stress, a fluid is said to be
 **pseudo-plastic.**
 
-When the ratio of shear stress t-0 shear rate decreases
+When the ratio of shear stress to shear rate decreases
 as shear rate increases and is time dependent
 in that this ratio increases back to its "rest"
 value gradually with lapse of time at zero shear

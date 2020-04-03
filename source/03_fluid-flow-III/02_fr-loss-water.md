@@ -22,7 +22,11 @@ data: K-variation.csv
 
 ### Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
 
-![](resized.png "")
+![](miter-bends.png "")
+
+K<sub>s</sub> = RESISTANCE COEFFICIENT FOR SMOOTH SURFACE
+
+K<sub>r</sub> = RESISTANCE COEFFICIENT FOR ROUGH SURFACE, ε/D = 0.0022
 
 ### Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 

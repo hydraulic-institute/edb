@@ -33,7 +33,7 @@ $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \
 
 where:
 
-- ε = pipe roughness, in <units us = "inches" metric = "mm"/>
+- ε = absolute roughness, feet <units us = "inches" metric = "mm"/>
 - Re = Reynolds number for fluid flow
 
 Another common form, which can be solved without iteration, is shown below.
