@@ -1,34 +1,39 @@
 -----
-title:  B) Frictional Losses – Water
+title:  B) Losses in Valves, Fittings, and Bends
 date: July 9th, 2019
-description: Frictional losses information for water. Resistance coefficients.
+description: Frictional loss information for water. Resistance coefficients.
 -----
 
-## Frictional Losses – Water
+## Losses in Water
 
-### IIIB-5 – Typical Resistance Coefficients for Valves and Fittings
-
-### Table 32(a)
+### Typical Resistance Coefficients for Valves and Fittings
 
 ![](table-32a.png "")
 
-### Table 32(b)
-
 ![](table-32b.png "")
 
-### Table 32(c)
+=|=
+title: Approximate Range of Variation for K
+data: K-variation.csv
+=|=
 
-![](table-32c.png "")
+1. The value of D given in the charts is nominal IPS (Iron Pipe Size).
+2. <units us = "For velocities below 15 feet per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts." metric = "For velocities below 4.6 meters per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts."/>
 
-### Table 33 – Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
+### Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
 
-![](table-33.png "")
+![](miter-bends.png "")
 
-### IIIB-5A – Resistance Coefficients for 90 Degree Bends of Uniform Diameter
+K<sub>s</sub> = RESISTANCE COEFFICIENT FOR SMOOTH SURFACE
+
+K<sub>r</sub> = RESISTANCE COEFFICIENT FOR ROUGH SURFACE, ε/D = 0.0022
+
+### Resistance Coefficients for 90 Degree Bends of Uniform Diameter
 
 ![](IIIB-5A.png "")
 
-### IIIB-5B – Resistance Coefficients for 90 Degree Bends of Uniform Diameter and Smooth Surface at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
+### Resistance Coefficients for 90 Degree Bends of Uniform Diameter and Smooth Surface at Reynolds Number ≈ 2.25 x 10<sup>5</sup>
 
 ![](IIIB-5B.png "")
 
+**(Tables and Graphs courtesy of Hydraulic Institute Engineering Databook, 1990, Section III)**

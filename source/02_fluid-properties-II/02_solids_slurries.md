@@ -8,10 +8,11 @@ description: Properties of solid mixtures and slurries. Determining specific gra
 
 ### Useful Formulas
 
-a. The formula for specific gravity of a solids-liquids
+**a)** The formula for specific gravity of a solids-liquids
 mixture or slurry, S<sub>m</sub> is:
 
 =+=
+<span class= equation-label >(2.1)</span>
 $$ S_{m} = {{S_{s} * S_{1}} \over {S_{s} + C_{w}(S_{1} - S{s})}} $$
 =+=
 
@@ -31,7 +32,7 @@ the solids having a specific gravity of 2.2 then:
 $$ S_{m} = {{2.2 * 1.2} \over {2.2 + .35(1.2 - 2.2)}} = 1.43 $$
 =+=
 
-b. Basic relationships among concentration and
+**b)** Basic relationships among concentration and
 specific gravities of solid liquid mixtures are shown
 below.
 
@@ -47,10 +48,12 @@ of the mixture components is required in order to select
 the correct type of pump and materials of construction.
 
 =+=
+<span class= equation-label >(2.2)</span>
 $$ C_{w} = {weight\, of\, dry\, solids \over { weight\, of\, dry\, solids\, + weight\, of\, liquid\, phase }} $$
 =+=
 
 =+=
+<span class= equation-label >(2.3)</span>
 $$ C_{v} = {volume\, of\, dry\, solids \over { volume\, of\, dry\, solids\, + volume\, of\, liquid\, phase }} $$
 =+=
 
@@ -58,15 +61,18 @@ A nomograph for the relationship of concentration
 to specific gravity of dry solids in water is shown in
 Figure IIB-5.
 
-c. Slurry flow requirements can be determined from
+**c)** Slurry flow requirements can be determined from
 the expression:
 
 =+=
+<span class= equation-label >(2.4)</span>
 [units = us]
 $$ Q_{m} = {{4 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
 
 =+=
+<span class= equation-label >(2.4)</span>
+
 [units = metric]
 $$ Q_{m} = {{0.9085 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
@@ -95,7 +101,7 @@ $$ Q_{m} = {{4 * 100} \over {.3 * 1.23}} = 1,084\,GPM $$
 $$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
 =+=
 
-d. Abrasive wear:
+**d)** Abrasive wear:
 
 Wear increases rapidly when the particle hardness
 exceeds that of the metal surfaces being abraded.

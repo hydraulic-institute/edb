@@ -1,10 +1,10 @@
 -----
-title:  E) Frictional Losses of Paper Stock
+title:  E) Losses in Paper Stock
 date: June 28th, 2019
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
-## Frictional Losses of Paper Stock
+## Losses in Paper Stock
 
 ### I. Introduction
 
@@ -44,7 +44,7 @@ pulp, respectively.
 The frictional loss curve for chemical pulp can be conveniently divided
 into three regions, as illustrated by the shaded areas of Figure 3.
 
-![](fig3_&_4.png "")
+![](fig3_4.png "")
 
 Regions shown in Fig. 3 may be described as follows:
 
@@ -148,16 +148,16 @@ pipe frictional losses in each of the regions.
 **Region 1**: The upper limit of Region 1 in Figure 3
 (Point B) is designated v<sub>max.</sub> The value
 of v<sub>max</sub> is determined using Equation
-(1) and data given in Table I.
+(3.15) and data given in Table I.
 
 =+=
-<span class= equation-label >(1)</span>
+<span class= equation-label >(3.15)</span>
 [units = us]
 $$ v_{max} = {K'C^{σ}} (ft/s) $$
 =+=
 
 =+=
-<span class= equation-label >(1)</span>
+<span class= equation-label >(3.15)</span>
 [units = metric]
 $$ v_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
@@ -186,17 +186,17 @@ NOTES:
 
 If the proposed design velocity (v) is less than v<sub>max</sub>,
 the value of flow resistance (Δh/L) may be calculated
-using Equation (2) and data given in Table II
+using Equation (3.16) and data given in Table II
 and the appendices.
 
 =+=
-<span class= equation-label >(2)</span>
+<span class= equation-label >(3.16)</span>
 [units = us]
 $$ Δh/L = FKv^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 
 =+=
-<span class= equation-label >(2)</span>
+<span class= equation-label >(3.16)</span>
 [units = metric]
 $$ Δh/L = 0.3048FKv^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
@@ -211,8 +211,8 @@ where:
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
 For mechancial pulps, there is no true v<sub>max</sub>· The
-upper limit of the correlation equation (Equation (2))
-is also given by Equation (1) in this case, the upper
+upper limit of the correlation equation (Equation (3.16))
+is also given by Equation (3.15) in this case, the upper
 velocity is actually v<sub>w</sub>·
 
 **Region 2**: The lower limit of Region 2 in Figure 3
@@ -222,13 +222,13 @@ at the onset of drag reduction is determined
 using Equation (3).
 
 =+=
-<span class= equation-label >(3)</span>
+<span class= equation-label >(3.17)</span>
 [units = us]
 $$ v_{w} = 4.00C^{1.40} (ft/s) $$
 =+=
 
 =+=
-<span class= equation-label >(3)</span>
+<span class= equation-label >(3.17)</span>
 [units = metric]
 $$ v_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
@@ -237,7 +237,7 @@ where:
 
 - C = consistency (oven-dried,expressed as a percentage, not decimally).
 
-If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (2) may be
+If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (3.16) may be
 used to determine ΔH/L at the maximum point
 (v<sub>max</sub>)· Because the system must cope with the
 worst flow condition, ΔH/L at the maximum point
@@ -253,13 +253,13 @@ from the following equation (based on
 the Blasius equation).
 
 =+=
-<span class= equation-label >(4)</span>
+<span class= equation-label >(3.18)</span>
 [units = us]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(ft/100\, ft) $$
 =+=
 
 =+=
-<span class= equation-label >(4)</span>
+<span class= equation-label >(3.18)</span>
 [units = metric]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(m/100\, m) $$
 =+=
@@ -301,7 +301,7 @@ consistency. Please note that this is an approximation;
 actual values of K may differ, depending on the
 type of bend or fitting under consideration (4).
 
-The following is data for use with Equation (2) to determine head loss, ΔH/L.
+The following is data for use with Equation (3.16) to determine head loss, ΔH/L.
 
 =|=
 title: Table II
@@ -324,13 +324,13 @@ The following gives supplemental information to that provided in the main text.
 
 =+=
 [units = us]
-<span class= equation-label >(i)</span>
+<span class= equation-label >(3.19)</span>
 $$ Q = {{16.65(T.P.D.)}\over C} \, (gpm) $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(i)</span>
+<span class= equation-label >(3.19)</span>
 $$ Q = {{3.782(T.P.D.)}\over C} \, (m^{3}/h) $$
 =+=
 
@@ -347,25 +347,25 @@ and
 
 =+=
 [units = us]
-<span class= equation-label >(ii)</span>
+<span class= equation-label >(3.20)</span>
 $$ v = {{0.321Q}\over A}\, (ft/s),\, or $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(ii)</span>
+<span class= equation-label >(3.20)</span>
 $$ v = {{278Q}\over A}\, (m/s),\, or $$
 =+=
 
 =+=
 [units = us]
-<span class= equation-label >(iii)</span>
+<span class= equation-label >(3.21)</span>
 $$ v = {{0.4085Q}\over D^2}\, (ft/s) $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(iii)</span>
+<span class= equation-label >(3.21)</span>
 $$ v = {{354Q}\over D^2}\, (m/s) $$
 =+=
 
@@ -375,10 +375,10 @@ where:
 - A = inside area of pipe <units us = "(in^2^), and" metric = "(mm^2^)"/>
 - D = inside diameter of pipe <units us = "(in)" metric = "(mm)"/>
 
-**3) Multiplication Factor, F (included in Equation (2)) —**
+**3) Multiplication Factor, F (included in Equation (3.16)) —**
 
 =+=
-<span class= equation-label >(iv)</span>
+<span class= equation-label >(3.22)</span>
 $$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
 =+=
 
@@ -389,13 +389,13 @@ decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This 
 
 =+=
 [units = us]
-<span class= equation-label >(v)</span>
+<span class= equation-label >(3.23)</span>
 $$ F_1 = 1.526 - 0.00556T $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(v)</span>
+<span class= equation-label >(3.23)</span>
 $$ F_1 = 1.34808 - 0.010008T $$
 =+=
 
@@ -459,13 +459,11 @@ $$ v = {{354Q}\over{D^2}} $$
 
 =+=
 [units = us]
-<span class= equation-label >(iii)</span>
 $$ = {{0.4085(1100)}\over{6.065^2}} = 12.22 ft/s  $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(iii)</span>
 $$ = {{354(249.84)}\over{154.051^2}} = 3.72 m/s  $$
 =+=
 
@@ -475,13 +473,11 @@ determine V<sub>max</sub>.
 
 =+=
 [units = us]
-<span class= equation-label >(1)</span>
 $$ v_{max} = K'C^{σ}, $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(1)</span>
 $$ v_{max} = 0.3048*K'C^{σ}, $$
 =+=
 
@@ -505,13 +501,11 @@ of drag reduction, v<sub>W</sub>, must be calculated.
 
 =+=
 [units = us]
-<span class= equation-label >(3)</span>
 $$ v_{w} = 4.00C^{1.40}, $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(3)</span>
 $$ v_{w} = 1.2192C^{1.40}, $$
 =+=
 
@@ -529,13 +523,11 @@ d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional
 the same velocity.
 
 =+=
-<span class= equation-label >(4)</span>
 [units = us]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
 =+=
 
 =+=
-<span class= equation-label >(4)</span>
 [units = metric]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
 =+=

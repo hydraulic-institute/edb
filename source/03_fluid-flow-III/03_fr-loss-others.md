@@ -1,10 +1,12 @@
 -----
-title:  C) Frictional Losses – Other Fluids
+title:  C) Losses in Other Fluids
 date: June 28th, 2019
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
-## Calculation of Frictional Losses for Other Fluids
+## Losses in Other Fluids
+
+### Calculation of Frictional Losses for Other Fluids
 
 The pipe friction charts, Figs. IIIC-2 thru IIIC-13
 incl., show frictional-loss moduli for the incompressible
@@ -46,7 +48,7 @@ vertical scales, labeled "Friction Loss Modulus for
 100 Feet of Pipe", represent values of the ratio
 
 =+=
-<span class= equation-label >(10)</span>
+<span class= equation-label >(3.12)</span>
 $$ M = {Δp \over s} $$
 =+=
 
@@ -59,14 +61,14 @@ where:
 The loss due to pipe friction may be obtained as follows:
 
 =+=
-<span class= equation-label >(11)</span>
+<span class= equation-label >(3.13)</span>
 $$ Δp = M * s $$
 =+=
 
 and
 
 =+=
-<span class= equation-label >(12)</span>
+<span class= equation-label >(3.14)</span>
 $$ h_{f} = 2.31M $$
 =+=
 
@@ -74,7 +76,7 @@ where:
 
 - h<sub>f</sub> = Friction head loss in <units us = "feet of fluid per 100 feet of pipe" metric = "meters of fluid per 100 meters of pipe"/>
 
-The other quantities are listed under Equation (10).
+The other quantities are listed under Equation (3.12).
 
 To use the charts, proceed as follows:
 
@@ -89,7 +91,7 @@ or laminar flow, use the intersection with the
 critical zone line.
 
 d) Compute the frictional loss in pressure drop or
-head, as desired, from Equations (11) or (12)
+head, as desired, from Equations (3.13) or (3.14)
 above. These equations are repeated on each chart.
 
 

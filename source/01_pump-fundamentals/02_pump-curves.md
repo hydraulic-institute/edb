@@ -19,8 +19,15 @@ across a range of flow rates. On the y-axis is the pressure developed, typically
 x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). Head can be determined from the following equation:"/>
 
 =+=
+<span class= equation-label >(6.3)</span>
 [units = us]
 $$ H =  {{2.31 * p} \over s} $$
+=+=
+
+=+=
+<span class= equation-label >(6.3)</span>
+[units = metric]
+$$ H =  {{0.102 * p} \over s} $$
 =+=
 
 where:
@@ -29,14 +36,10 @@ where:
 - P = pressure in <units us = "psi" metric = "kPa"/>
 - s = specific gravity (unitless)
 
-=+=
-[units = metric]
-$$ H =  {{0.102 * p} \over s} $$
-=+=
-
 Specific gravity can be found by using the following equation:
 
 =+=
+<span class= equation-label >(6.4)</span>
 $$ s = {ρ_{pumped fluid} \over ρ_{water}}  $$
 =+=
 
@@ -61,6 +64,7 @@ series_title_index: 0
 **Pump efficiency** is shown as a percentage on most pump curves. Pump efficiency is defined by the equation below:
 
 =+=
+<span class= equation-label >(6.5)</span>
 $$ η_{p} = {P_{w} \over P_{p}}  $$
 =+=
 
@@ -87,11 +91,13 @@ The **pump input power curve** shows the amount of input power required for diff
 where Q is flow in <units us = "GPM:" metric = "m^3^/h:"/>
 
 =+=
+<span class= equation-label >(6.6)</span>
 [units = us]
 $$ P_p = {{Q * H * s} \over {3960 * η_{p}}} $$
 =+=
 
 =+=
+<span class= equation-label >(6.6)</span>
 [units = metric]
 $$ P_p = {{Q * H * s} \over {366.6 * η_{p}}} $$
 =+=
@@ -107,6 +113,7 @@ where:
 Pump input power can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
 
 =+=
+<span class= equation-label >(6.7)</span>
 $$ P_p = {P_{w} \over η_{p}}  $$
 =+=
 
@@ -181,15 +188,15 @@ a constant impeller size or a change in impeller size while maintaining a consta
 As seen below flow (Q), head (H), and power (P) are all proportional to the rotational speed (n):
 
 =+=
-<span class= equation-label >(1.1)</span>
+<span class= equation-label >(6.8a)</span>
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 =+=
 =+=
-<span class= equation-label >(1.2)</span>
+<span class= equation-label >(6.8b)</span>
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2 $$
 =+=
 =+=
-<span class= equation-label >(1.3)</span>
+<span class= equation-label >(6.8c)</span>
 $$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
 =+=
 
@@ -198,15 +205,15 @@ $$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
 As seen below flow (Q), head (H), and power (P) are all proportional to the impeller Size (D):
 
 =+=
-<span class= equation-label >(2.1)</span>
+<span class= equation-label >(6.9a)</span>
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 =+=
 =+=
-<span class= equation-label >(2.2)</span>
+<span class= equation-label >(6.9b)</span>
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 = ({Q_2 \over Q_1})^2  $$
 =+=
 =+=
-<span class= equation-label >(2.3)</span>
+<span class= equation-label >(6.9c)</span>
 $$ {P_2 \over P_1} = ({D_2 \over D_1})^3 = ({Q_2 \over Q_1})^3  $$
 =+=
 
@@ -257,39 +264,9 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 
 ![](./fig4.png "")
 
-### Educational Demonstration
+### Educational Demonstration (Pumps in Series)
 
-### Pumps in Series
-This demo explores how impeller diameter and speed affect three different pumps
-(A, B, and C).  This demo also explores different scenarios of the three pumps operating in
-series.
-
-***Change the Static Head***
-
-Use the toggle buttons by the reservoirs to increase or decrease elevation levels, thereby
-changing the static head.
-
-***Explore How Speed Affects a Pump Curve***
-
-Use the toggle buttons in the blue area to increase or decrease speed for a particular pump.
-
-***Explore How Impeller Diameter Affects a Pump Curve***
-
-Use the toggle buttons in the orange area to increase or decrease diameter for a particular pump.
-
-**Turn Different Curves On/Off**
-
-1)	Click the chart
-
-2)	Select the "Chart Filters" Icon 
-
-![](chart-filters.png "")
-
-3) Select/deselect desired curves (always make sure "Ghost" is checked - this keeps the axes values constant), then click "Apply".
-
-![](select-deselect.png "")
-
-![](pumps-in-parallel.png "")
+Content will be added soon.
 
 ## Worked Examples
 
@@ -324,7 +301,7 @@ $$ n_2= 1566\,RPM $$
 
 **Calculate New Flow Values**
 
-Using equation 1.1, calculate the new values (repeat until you convert all points under the flow column):
+Using Equation (6.8a), calculate the new values (repeat until you convert all points under the flow column):
 
 =+= 
 <span class= equation-label >(A)</span>
@@ -348,7 +325,7 @@ $$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
 
 **Calculate New Total Head Values**
 
-Using equation 1.2, calculate the new values (repeat until you convert all points under the Total Head column):
+Using Equation (6.8b), calculate the new values (repeat until you convert all points under the Total Head column):
 
 =+=
 <span class= equation-label >(A)</span>
