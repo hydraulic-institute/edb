@@ -42,10 +42,12 @@ Vue.component('chart', {
         const x_axis = this.chart_data.x.data;
         x_axis.unshift('x');
         columns = [x_axis];
+        let y_axis = null;
         for (const series of this.chart_data.series) {
             const series_data = series.data;
             series_data.unshift(series.title);
             columns.push(series_data);
+            y_axis = series.title;
         }
         const x_title = this.chart_data.x.title;
         let config = {
@@ -59,6 +61,13 @@ Vue.component('chart', {
                 x: {
                     label: {
                         text: x_title,
+                        position: 'outer-center'
+                    }
+                },
+                y: {
+                    label: {
+                        show: true,
+                        text: y_axis,
                         position: 'outer-center'
                     }
                 }
@@ -706,6 +715,13 @@ new Vue({
                 console.error(err);
             })
 
+        // Scroll selected topic into view
+        const active = document.getElementsByClassName("active_topic");
+        for (const element of active) {
+            element.scrollIntoView({
+                block: "center"
+            });
+        }
 
     },
 

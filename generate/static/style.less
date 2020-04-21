@@ -19,6 +19,10 @@ body {
     height: 100%;
 }
 
+#navigation {
+    padding-top: 0px;
+}
+
 aside {
     padding: @std_pad;
 }
@@ -82,6 +86,9 @@ aside {
     }
 }
 
+
+
+
 // sidebar is hidden below touch size (1023
 @media (min-width: 1024px) {
     #content {
@@ -95,7 +102,24 @@ aside {
         bottom: 0;
 
     }
+
+    .sticky_search {
+        border-bottom: solid 1px darken(@hi_blue, 10%);
+        position: -webkit-sticky;
+        /* Safari */
+        position: sticky;
+        padding-top: @std_pad;
+        top: 0;
+        padding-bottom: @std_pad;
+        z-index: 5000;
+        margin-top: 0px;
+        background-color: @hi_blue
+    }
+
 }
+
+
+
 
 h1 {
     font-size: 3rem !important;
@@ -159,6 +183,8 @@ caption {
         color: @er_super_light  !important;
     }
 }
+
+
 
 
 .topic-source {

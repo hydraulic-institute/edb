@@ -254,7 +254,7 @@
                             {%endif%}
                         </div>
                         <div class="navbar-item pad-horizontal is-hidden-desktop">
-                            <div>
+                            <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
                                         <input v-model='needle' class="input" type="text" placeholder="Search"/>
@@ -309,7 +309,7 @@
         <div class="page columns is-fullheight">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
-                    <div>
+                    <div class='sticky_search'>
                         <div class='field has-addons'>
                             <div class='control'>
                                 <input v-model='needle' class="input" type="text" placeholder="Search"/>
@@ -317,7 +317,7 @@
                             <div v-if='needle' class='control'>
                                 <a class='button is-info' @click='needle=""'> &times; </a>
                             </div>
-                        
+                        </div>
                     </div>
                     <div v-if='marks && marks.length'>
                         <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
@@ -352,7 +352,7 @@
                                                     {% for stopic in topic['children']|sort(attribute='sort') %}
                                                     <li style="padding-left:1em" class="menu-list">
                                                         {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
-                                                            <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                            <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
                                                         {% else %}
                                                             <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
                                                         {% endif %}
@@ -363,7 +363,7 @@
                                         {% elif topic['metadata']['title']%}
                                             <li class="menu-list">
                                                 {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                    <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                                    <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
                                                 {% else %}
                                                     <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
                                                 {% endif %}
