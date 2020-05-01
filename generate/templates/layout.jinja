@@ -281,8 +281,11 @@
                                 <li class="menu-list" v-if='search_results.length'>
                                     <span class="menu-label">${search_results.length} topic matches</span>
                                 </li>
+                                <li>
+                                    
+                                </li>
                                 <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                                    <a :href="topic.path+'.html'">${topic.title}</a>
+                                    <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
                                 </li>
                             </ul>
                             
@@ -335,7 +338,9 @@
                             <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                            <a :href="topic.path+'.html'">${topic.title}</a>
+                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
+                            
+                            
                         </li>
                     </ul>
                     
