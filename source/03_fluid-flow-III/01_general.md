@@ -101,7 +101,7 @@ tolerances, or any abnormal conditions of interior surface. Any factor of safety
 from the local conditions and the requirements of each particular installation. An example illustrating
 the use of the tables will be found in Section IIIB.
 
-To learn more about the effects of pipe friction on rotodynamic pumps, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+To learn more about the effects of pipe friction on rotodynamic pumps, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 ### Valves and Fittings (Minor Losses)
 
@@ -121,7 +121,7 @@ where:
  
 
 Values of (K) for valves and fittings may be referenced
-below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Water</a>.  Reference to the literature will reveal wide differences in the published values of
+below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Valves, Fittings, and Bends</a>.  Reference to the literature will reveal wide differences in the published values of
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings. 

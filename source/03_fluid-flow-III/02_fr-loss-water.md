@@ -4,7 +4,7 @@ date: July 9th, 2019
 description: Frictional loss information for water. Resistance coefficients.
 -----
 
-## Losses in Water
+## Losses in Valves, Fittings, and Bends
 
 ### Typical Resistance Coefficients for Valves and Fittings
 
@@ -36,4 +36,3 @@ K<sub>r</sub> = RESISTANCE COEFFICIENT FOR ROUGH SURFACE, ε/D = 0.0022
 
 ![](IIIB-5B.png "")
 
-**(Tables and Graphs courtesy of Hydraulic Institute Engineering Databook, 1990, Section III)**
