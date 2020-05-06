@@ -115,8 +115,12 @@
                         <span> ${value_length_short(inner_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Rougness Parameter (epsilon)</label>
-                        <span> ${epsilon}</span>
+                        <label class='label'>Absolute roughness (epsilon)</label>
+                        <span> ${value_length_ft_mm(epsilon, 7)} ${units_length_ftmm}</span>
+                    </div>
+                    <div class='field'>
+                        <label class='label'>Relative roughness (epsilon/D)</label>
+                        <span> ${(epsilon/(inner_diameter/12)).toFixed(5)}</span>
                     </div>
                 </div>
             </div>
@@ -146,17 +150,19 @@
                         </label>
                     </div>
                 </div>
-                <div class='field' v-if='vka == "absolute"'>
-                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
-                    <input class='input' type='number' step='0.01' v-model='viscosity'/>
-                </div>
-                <div class='field' v-else>
+                <div class='field'>
                     <label class='label'>Kinematic Viscosity (cSt)</label>
-                    <input class='input' type='number' step='0.01' v-model='viscosity'/>
+                    <input class='input' :disabled="vka == 'absolute'" type='number' step='0.01' v-model='input_kinematic_v'/>
                 </div>
+                
+                <div class='field'>
+                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
+                    <input class='input' :disabled="vka != 'absolute'" type='number' step='0.01' v-model='input_dynamic_v'/>
+                </div>
+                
                 <div class='field'>
                     <label class='label'>Specific Gravity</label>
-                    <input class='input' type='number' step='0.01' v-model='sg'/>
+                    <input class='input' :disabled="vka != 'absolute'" type='number' step='0.01' v-model='sg'/>
                 </div>
            </div>
          </div>
@@ -232,12 +238,13 @@
 
                 <div class="navbar-end">
                     <div class="columns">
-                    
+                        <!--
                          <div class="navbar-item pad-horizontal">
                           <div class='buttons'>
-                                <a class='button is-info' title='Download PDF' target='_blank' href='./statics/edb.pdf'>PDF</a>
-                            </div>
-                            </div>
+                            <a class='button is-info' title='Download PDF' target='_blank' href='./statics/edb.pdf'>PDF</a>
+                          </div>
+                        </div>
+                        -->
                         <div class="navbar-item pad-horizontal">
                             {% if not node or not node['metadata']['hide_units'] %} 
                             <div id="units-toggle" class="buttons">
@@ -247,7 +254,7 @@
                             {%endif%}
                         </div>
                         <div class="navbar-item pad-horizontal is-hidden-desktop">
-                            <div>
+                            <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
                                         <input v-model='needle' class="input" type="text" placeholder="Search"/>
@@ -274,8 +281,11 @@
                                 <li class="menu-list" v-if='search_results.length'>
                                     <span class="menu-label">${search_results.length} topic matches</span>
                                 </li>
+                                <li>
+                                    
+                                </li>
                                 <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                                    <a :href="topic.path+'.html'">${topic.title}</a>
+                                    <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
                                 </li>
                             </ul>
                             
@@ -302,7 +312,7 @@
         <div class="page columns is-fullheight">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
-                    <div>
+                    <div class='sticky_search'>
                         <div class='field has-addons'>
                             <div class='control'>
                                 <input v-model='needle' class="input" type="text" placeholder="Search"/>
@@ -310,7 +320,7 @@
                             <div v-if='needle' class='control'>
                                 <a class='button is-info' @click='needle=""'> &times; </a>
                             </div>
-                        
+                        </div>
                     </div>
                     <div v-if='marks && marks.length'>
                         <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
@@ -328,7 +338,9 @@
                             <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                            <a :href="topic.path+'.html'">${topic.title}</a>
+                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
+                            
+                            
                         </li>
                     </ul>
                     
@@ -345,7 +357,7 @@
                                                     {% for stopic in topic['children']|sort(attribute='sort') %}
                                                     <li style="padding-left:1em" class="menu-list">
                                                         {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
-                                                            <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
+                                                            <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
                                                         {% else %}
                                                             <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
                                                         {% endif %}
@@ -356,7 +368,7 @@
                                         {% elif topic['metadata']['title']%}
                                             <li class="menu-list">
                                                 {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                    <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                                    <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
                                                 {% else %}
                                                     <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
                                                 {% endif %}

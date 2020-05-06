@@ -42,10 +42,12 @@ Vue.component('chart', {
         const x_axis = this.chart_data.x.data;
         x_axis.unshift('x');
         columns = [x_axis];
+        let y_axis = null;
         for (const series of this.chart_data.series) {
             const series_data = series.data;
             series_data.unshift(series.title);
             columns.push(series_data);
+            y_axis = series.title;
         }
         const x_title = this.chart_data.x.title;
         let config = {
@@ -59,6 +61,13 @@ Vue.component('chart', {
                 x: {
                     label: {
                         text: x_title,
+                        position: 'outer-center'
+                    }
+                },
+                y: {
+                    label: {
+                        show: true,
+                        text: y_axis,
                         position: 'outer-center'
                     }
                 }
@@ -184,10 +193,12 @@ Vue.component('friction-loss-calculator', {
             viscosity: null,
             sg: 1,
             vka: 'kinematic',
+            input_dynamic_v: 1,
+            input_kinematic_v: 1,
 
             local_loading: false,
 
-            saved_props: ['material', 'nominal_size', 'selection', 'flow', 'length', 'viscosity', 'sg', 'vka'],
+            saved_props: ['input_dynamic_v', 'input_kinematic_v', 'material', 'nominal_size', 'selection', 'flow', 'length', 'viscosity', 'sg', 'vka'],
         };
     }, //   
     template: '#friction-loss-calculator-template',
@@ -220,7 +231,9 @@ Vue.component('friction-loss-calculator', {
         load_inputs: function () {
             this.local_loading = true;
             for (const prop of this.saved_props) {
-                Vue.set(this, prop, localStorage.getItem(prop));
+                if (localStorage.getItem(prop)) {
+                    Vue.set(this, prop, localStorage.getItem(prop));
+                }
             }
             if (!this.vka || this.vka == 'null') this.vka = 'kinematic';
             const v = this;
@@ -246,9 +259,15 @@ Vue.component('friction-loss-calculator', {
             if (this.units == 'us') return value;
             else return value * 0.3048; // convert to meters
         },
-        value_length_short: function (value) {
+        value_length_short: function (value, digits) {
+            const d = digits === undefined ? 2 : digits
             if (this.units == 'us') return value;
-            else return (value * 25.4).toFixed(2); // convert in to mm
+            else return (value * 25.4).toFixed(d); // convert in to mm
+        },
+        value_length_ft_mm: function (value, digits) {
+            const d = digits === undefined ? 2 : digits
+            if (this.units == 'us') return value;
+            else return (value * 25.4 * 12).toFixed(d); // convert ft to mm
         },
         Reynolds: function (flow) {
             if (!this.entry) return NaN;
@@ -275,6 +294,10 @@ Vue.component('friction-loss-calculator', {
         },
         units_length_short: function () {
             if (this.units == 'us') return 'in';
+            else return 'mm'
+        },
+        units_length_ftmm: function () {
+            if (this.units == 'us') return 'ft';
             else return 'mm'
         },
         units_velocity: function () {
@@ -414,6 +437,35 @@ Vue.component('friction-loss-calculator', {
         }
     },
     watch: {
+        input_dynamic_v: function () {
+            console.log("Input dynamic changed - " + this.vka);
+            if (this.vka == 'absolute') {
+                // User input mode is dynamic, update _kinematic_v
+                this.input_kinematic_v = this.input_dynamic_v / this.sg;
+                this.viscosity = this.input_dynamic_v;
+                console.log(" - set viscosity");
+            }
+        },
+        input_kinematic_v: function () {
+            console.log("Input kinematic changed - " + this.vka);
+            if (this.vka != 'absolute') {
+                // User input mode is dynamic, update _kinematic_v
+                this.input_dynamic_v = this.input_kinematic_v * this.sg;
+                this.viscosity = this.input_kinematic_v;
+                console.log(" - set viscosity");
+            }
+            console.log("===========================");
+            console.log("Viscosity:         " + this.viscosity);
+            console.log("Dynamic Visocity   " + this.absolute_viscosity);
+            console.log("Kinematic Visocity " + this.kinematic_viscosity);
+            console.log("===========================");
+        },
+        sg: function () {
+            if (this.vka == 'absolute') {
+                this.input_kinematic_v = this.input_dynamic_v / this.sg;
+            }
+
+        },
         material: function () {
             this.sizes = [];
             if (!this.local_loading) {
@@ -663,6 +715,13 @@ new Vue({
                 console.error(err);
             })
 
+        // Scroll selected topic into view
+        const active = document.getElementsByClassName("active_topic");
+        for (const element of active) {
+            element.scrollIntoView({
+                block: "center"
+            });
+        }
 
     },
 
