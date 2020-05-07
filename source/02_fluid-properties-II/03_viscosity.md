@@ -213,7 +213,7 @@ line described above.
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-### Viscosity Blending Chart
+### Viscosity Blending Chart [1]
    
 ![](IIC-2.png "")
 
@@ -270,3 +270,5 @@ title: Conversion Factors
 data:SSU-conv.csv
 =|=
 
+### References
+1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIC-2.

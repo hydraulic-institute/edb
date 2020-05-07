@@ -273,8 +273,9 @@ If the Reynolds Number is above 4000, the flow will
 usually be turbulent and the **Moody Diagram** pictured below can be used to determine the friction factor.
 The range Re = 2000–4000 is called the critical zone in which the flow may be highly unstable and the friction factor indeterminate.
 
-### Moody Diagram
+### Moody Diagram [1]
 
 ![](moody-diagram-2.png "")
 
-(Original data from L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
+### References
+1. L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944

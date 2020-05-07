@@ -547,33 +547,22 @@ frictional loss curve for pulp suspensions under these
 conditions will be below the water curve.
 
 ### References
-
-(1) TAPPI Technical Information Sheet (TIS) 408-4. Technical
+1. TAPPI Technical Information Sheet (TIS) 408-4. Technical
 Association of the Pulp and Paper Industry, Atlanta. Georgia
 (1981).
-
-(2) K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
-
-(3) Hydraulic Institute Engineering Data Book, First Edition.
+2. K. Molier and G. G. Duffy. TAPPI 61 , 1, 63 (1978).
+3. Hydraulic Institute Engineering Data Book, First Edition.
 Hydraulic Institute. Cleveland. Ohio (1979).
-
-(4) K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).
-
-(5) W. Brecht and H. Heller. TAPPI 33, 9, 14A (1950).
-
-(6) R. E. Durst and L. C. Jenness. TAPPI 39, 5, 277 (1956).
-
-(7) K. Molier. G. G. Duffy and A. L. Titchener. APPITA 26, 4, 278
+4. K. Molier and G. Elmquist. TAPPI 63, 3, 101 (1980).
+5. W. Brecht and H. Heller. TAPPI 33, 9, 14A (1950).
+6. R. E. Durst and L. C. Jenness. TAPPI 39, 5, 277 (1956).
+7. K. Molier. G. G. Duffy and A. L. Titchener. APPITA 26, 4, 278
 (1973).
-
-(8) G. G. Duffy and A. L. Tichener. TAPPI 57, 5, 162 (1974).
-
-(9) G. G. Duffy, K. Molier, P. F. W. Lee and S. W. A. Mine,
+8. G. G. Duffy and A. L. Tichener. TAPPI 57, 5, 162 (1974).
+9. G. G. Duffy, K. Molier, P. F. W. Lee and S. W. A. Mine,
 APPITA 27, 5, 327 (1974).
-
-(10) G. G. Duffy, TAPPI 59, 8, 124 (1976).
-
-(11) G. G. Duffy. Company Communications Goulds Pumps.
+10. G. G. Duffy, TAPPI 59, 8, 124 (1976).
+11. G. G. Duffy. Company Communications Goulds Pumps.
 Inc. (1980-1981).
     
 
