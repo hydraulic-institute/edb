@@ -213,7 +213,7 @@ line described above.
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-### Viscosity Blending Chart [1]
+### Figure 1 – Viscosity Blending Chart [1]
    
 ![](IIC-2.png "")
 

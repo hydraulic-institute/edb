@@ -21,7 +21,7 @@ This curve can be affected by many factors.
 
 The following analytical method for determining
 pipe frictional losses is based on the recently published
-TAPPI Technical Information Sheet (TIS) 408-4 (Reference I), 
+TAPPI Technical Information Sheet (TIS) 408-4 [1], 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)
@@ -70,7 +70,7 @@ designated v<sub>w</sub>.
 (Curve DE) shows the frictional loss curve
 for pulp fiber suspensions below the
 water curve. This is due to a phenomenon
-called drag reduction. Reference 2
+called drag reduction. [2]
 describes the mechanisms which occur
 in this region.
 
@@ -247,8 +247,7 @@ v<sub>max</sub> and v<sub>w</sub>·
 **Region 3**: A conservative estimate of frictional losses is
 obtained by using the water curve.
 (Δh/ L)<sub>w</sub> can be obtained from a Friction
-Factor vs. Reynolds Number plot (Reference
-3, for example), or approximated
+Factor vs. Reynolds Number plot ([3],for example), or approximated
 from the following equation (based on
 the Blasius equation).
 
@@ -288,7 +287,7 @@ for head loss, provided in <a href="/fluid-flow-III/general.html" target="_blank
 
 Values of K for the flow of water through various
 types of bends and fittings are tabulated in numerous
-reference sources (Reference 3, for example).
+reference sources ([3], for example).
 The loss coefficient for valves may be obtained from
 the valve manufacturer.
 

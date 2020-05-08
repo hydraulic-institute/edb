@@ -229,7 +229,7 @@ which is the reduction of the impeller diameter.
 
 ### Pump Fundamentals: Parallel and Series Pump Implications
 
-Two or more pumps in a system can be placed either in parallel or series.  In **parallel**, a system consists of two or more pumps that are configured such that each 
+Two or more pumps in a system can be placed either in parallel or in series.  In **parallel**, a system consists of two or more pumps that are configured such that each 
 draw from the same suction reservoir, wet well, or header, and each discharge to the same discharge reservoir or header.  In **series**, a system consists of two or more 
 pumps that are configured such that the discharge of one pump feeds the suction of a subsequent pump.
 

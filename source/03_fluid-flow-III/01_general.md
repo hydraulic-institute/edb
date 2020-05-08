@@ -143,20 +143,20 @@ where:
 - ΣK = sum of the minor losses, which includes losses across valves
 
 <units us = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Section IIIB, Fig. 3
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.00085 feet will be satisfactory for uncoated
 cast iron and cast steel elbows." metric = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Section IIIB, Fig. 3
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.259 mm will be satisfactory for uncoated
 cast iron and cast steel elbows."/>
 
 Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski<sup>(g)</sup> 13 are
-shown in Fig. IIIB-5B. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
-coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. IIIB-5A and IIIB-5B in Section
+shown in Section IIIB, Fig. 4. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
+coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. 3 and 4 in Section
 IIIB are not reliable below R/D = 1, where R is the radius of the elbow in feet. The approximate radius
 of a flanged elbow may be obtained by subtracting the flange thickness from the center-to-face dimension. The center-to-face dimension for a reducing
 elbow is usually identical with that of an elbow of the same straight size as the larger end. 
@@ -189,7 +189,7 @@ where:
 
 Equation (3.7) is useful for computing the resistance to flow caused by conical increasers and diffusers.
 Values of (K) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
-Fig. IIB-6 or may be computed by the equation:
+Fig. 5 or may be computed by the equation:
 
 =+=
 <span class= equation-label >(3.8)</span>
@@ -202,10 +202,9 @@ where:
 
 Equation (3.8) applies only to values of θ between 7.5 and 35 degrees. Noteworthy is the fact that above
 50 degrees a sudden enlargement will be as good or better than a conical increaser. Values of (k) for
-conical diffusers as reported by Reference 11 of Section VI are shown in Section IIIB, Fig. IIIB-6.
+conical diffusers as reported by Reference 11 of Section VI are shown in Section IIIB, Fig. 5.
 The values shown include the entrance mouthpiece which accounts in part for the increase over Gibson's
-values for conical increasers. Resistance coefficients for reducers, as reported by Russell are
-given in Section IIIB, Fig. IIIB-7.
+values for conical increasers. 
 
 ### Friction Factor Diagrams
 
