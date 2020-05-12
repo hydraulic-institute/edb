@@ -150,45 +150,7 @@ shown in Figure 3.
 
 ![](IIB-6-new.jpg "")
 
-### Vapor Pressure of Liquid H<sub>2</sub> [4]
-
-=|=
-title: Data Points
-data-us: VP-H2.csv
-data-metric: VP-H2-met.csv
-=|=
-
-=/=
-title: Liquid Hydrogen Vapor Pressure Plot 
-data-us: VP-H2.csv
-data-metric: VP-H2-met.csv
-x: 1
-series: 2
-series_title_index: 0
-=/=
-
-### Vapor Pressure of Helium [5]
-
-=|=
-title: Data Points
-data-us: VP-helium.csv
-data-metric: VP-helium-met.csv
-=|=
-
-=/=
-title: Helium Vapor Pressure Plot 
-data-us: VP-helium.csv
-data-metric: VP-helium-met.csv
-x: 1
-series: 2
-series_title_index: 0
-=/=
-
-*(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
-
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIB-4.
 2. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIB-5.
 3. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIB-6.
-4. [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C1333740&Type=SatP&Digits=5&THigh=59&TLow=26&TInc=1&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
-5. [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7440597&Type=SatP&Digits=5&THigh=9.2&TLow=4&TInc=.2&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
