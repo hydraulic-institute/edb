@@ -80,29 +80,6 @@ Determining the frictional roughness for old pipe is beyond this tutorial. Deter
 and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
 it is recommended that 15 percent be added to the values shown above.
 
-### Tables of Frictional Losses for Water, Explanation
-
-
-Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
-cast iron pipe are given in Section IIIB, Tables 1–31 incl., herein.*
-
-The tables show the discharge in cubic feet per second, the average velocity in feet per second,
-and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
-The values of the friction head (h<sub>f</sub>) in feet of fluid per 100 feet of pipe apply to any fluid having a kinematic viscosity, v  = 0.00001216 square feet per second
-(1.130 centistokes) which is the value for pure fresh water at 60° F. The friction heads are average values for pipes having the ε/D values given in the tables, 
-where (ε) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
-is given in Section IV.
-
-The tabulated values of (h<sub>f</sub>) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
-pipe (Schedule 40)* or of new clean asphalt-dipped cast iron pipe as specified.
-
-No allowance has been made for age, differences in diameter resulting from manufacturing
-tolerances, or any abnormal conditions of interior surface. Any factor of safety must be estimated
-from the local conditions and the requirements of each particular installation. An example illustrating
-the use of the tables will be found in Section IIIB.
-
-To learn more about the effects of pipe friction on rotodynamic pumps, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
-
 ### Valves and Fittings (Minor Losses)
 
 The resistance to flow (head loss) caused by a valve or fitting may be computed from the equation:
