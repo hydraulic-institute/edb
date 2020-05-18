@@ -80,29 +80,6 @@ Determining the frictional roughness for old pipe is beyond this tutorial. Deter
 and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 
 it is recommended that 15 percent be added to the values shown above.
 
-### Tables of Frictional Losses for Water, Explanation
-
-
-Frictional resistances for water flowing in new, clean steel pipe (Schedule 40)* or in asphalt-dipped
-cast iron pipe are given in Section IIIB, Tables 1–31 incl., herein.*
-
-The tables show the discharge in cubic feet per second, the average velocity in feet per second,
-and the velocity head in feet for any fluid in a circular pipe of the same diameter as that specified in each table for rates of flow in gallons per minute. 
-The values of the friction head (h<sub>f</sub>) in feet of fluid per 100 feet of pipe apply to any fluid having a kinematic viscosity, v  = 0.00001216 square feet per second
-(1.130 centistokes) which is the value for pure fresh water at 60° F. The friction heads are average values for pipes having the ε/D values given in the tables, 
-where (ε) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Further information on the roughness parameter
-is given in Section IV.
-
-The tabulated values of (h<sub>f</sub>) are in feet of pure fresh water (60° F) per 100 feet of new clean steel
-pipe (Schedule 40)* or of new clean asphalt-dipped cast iron pipe as specified.
-
-No allowance has been made for age, differences in diameter resulting from manufacturing
-tolerances, or any abnormal conditions of interior surface. Any factor of safety must be estimated
-from the local conditions and the requirements of each particular installation. An example illustrating
-the use of the tables will be found in Section IIIB.
-
-To learn more about the effects of pipe friction on rotodynamic pumps, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
-
 ### Valves and Fittings (Minor Losses)
 
 The resistance to flow (head loss) caused by a valve or fitting may be computed from the equation:
@@ -121,7 +98,7 @@ where:
  
 
 Values of (K) for valves and fittings may be referenced
-below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Water</a>.  Reference to the literature will reveal wide differences in the published values of
+below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Valves, Fittings, and Bends</a>.  Reference to the literature will reveal wide differences in the published values of
 (K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
 IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
 fittings. The resistance coefficients decrease with the increasing size of most valves and fittings. 
@@ -143,20 +120,20 @@ where:
 - ΣK = sum of the minor losses, which includes losses across valves
 
 <units us = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Section IIIB, Fig. 3
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.00085 feet will be satisfactory for uncoated
 cast iron and cast steel elbows." metric = "Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends.
-Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Fig. IIIB-5A 
+Values of the resistance coefficient (K) may be taken from Section IIIB. The solid line curves in Section IIIB, Fig. 3
 are given by Reference 12a of Section VI with the range of scatter of the test points as indicated.
 The broken line curves may be used as a guide to probable resistance coefficients for intermediate
 values of the relative roughness factor ε/D. A value of ε = 0.259 mm will be satisfactory for uncoated
 cast iron and cast steel elbows."/>
 
 Resistance coefficients for pipe bends with less than 90 degree deflection angles as reported by Wasielewski<sup>(g)</sup> 13 are
-shown in Fig. IIIB-5B. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
-coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. IIIB-5A and IIIB-5B in Section
+shown in Section IIIB, Fig. 4. The curves shown are for smooth surfaces but may be used as a guide to approximating the resistance 
+coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. 3 and 4 in Section
 IIIB are not reliable below R/D = 1, where R is the radius of the elbow in feet. The approximate radius
 of a flanged elbow may be obtained by subtracting the flange thickness from the center-to-face dimension. The center-to-face dimension for a reducing
 elbow is usually identical with that of an elbow of the same straight size as the larger end. 
@@ -189,7 +166,7 @@ where:
 
 Equation (3.7) is useful for computing the resistance to flow caused by conical increasers and diffusers.
 Values of (K) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
-Fig. IIB-6 or may be computed by the equation:
+Fig. 5 or may be computed by the equation:
 
 =+=
 <span class= equation-label >(3.8)</span>
@@ -202,10 +179,9 @@ where:
 
 Equation (3.8) applies only to values of θ between 7.5 and 35 degrees. Noteworthy is the fact that above
 50 degrees a sudden enlargement will be as good or better than a conical increaser. Values of (k) for
-conical diffusers as reported by Reference 11 of Section VI are shown in Section IIIB, Fig. IIIB-6.
+conical diffusers as reported by Reference 11 of Section VI are shown in Section IIIB, Fig. 5.
 The values shown include the entrance mouthpiece which accounts in part for the increase over Gibson's
-values for conical increasers. Resistance coefficients for reducers, as reported by Russell are
-given in Section IIIB, Fig. IIIB-7.
+values for conical increasers. 
 
 ### Friction Factor Diagrams
 
@@ -273,8 +249,9 @@ If the Reynolds Number is above 4000, the flow will
 usually be turbulent and the **Moody Diagram** pictured below can be used to determine the friction factor.
 The range Re = 2000–4000 is called the critical zone in which the flow may be highly unstable and the friction factor indeterminate.
 
-### Moody Diagram
+### Moody Diagram [1]
 
 ![](moody-diagram-2.png "")
 
-(Original data from L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944)
+### References
+1. L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944

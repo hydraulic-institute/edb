@@ -131,7 +131,7 @@ series_title_index: 0
 ### Net Positive Suction Head Required (NPSHr) Curve
 
 The final curve typically shown on a pump performance chart is the NPSHr for different flow rates. NPSHr is the minimum NPSH needed to achieve the specified performance 
-at the specified flow rate, speed, and pumped liquid. NPSHr is further defined in <a href="/section-VI/pump-principles.html" target="_blank">Pump Principles.</a> 
+at the specified flow rate, speed, and pumped liquid. NPSHr is further defined in <a href="/pump-fundamentals/pump-principles.html" target="blank">Pump Principles.</a> 
 
 =/=
 title: NPSHr Curve
@@ -175,7 +175,7 @@ Operating at this point for more than a few seconds can cause serious mechanical
 flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
 operating pumps.
 
-To learn more about pump operating regions, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+To learn more about pump operating regions, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 ### Affinity Rules
 
@@ -229,7 +229,7 @@ which is the reduction of the impeller diameter.
 
 ### Pump Fundamentals: Parallel and Series Pump Implications
 
-Two or more pumps in a system can be placed either in parallel or series.  In **parallel**, a system consists of two or more pumps that are configured such that each 
+Two or more pumps in a system can be placed either in parallel or in series.  In **parallel**, a system consists of two or more pumps that are configured such that each 
 draw from the same suction reservoir, wet well, or header, and each discharge to the same discharge reservoir or header.  In **series**, a system consists of two or more 
 pumps that are configured such that the discharge of one pump feeds the suction of a subsequent pump.
 

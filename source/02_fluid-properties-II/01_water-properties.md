@@ -6,6 +6,14 @@ description: Properties of water (liquid and vapor); saturation properties, dens
 
 ## Water Properties 
 
+**Specific gravity**, also referred to as **relative density**, is the ratio of the densities of one fluid at a known temperature and pressure to a reference fluid at a specific
+temperature and pressure. In most cases, the reference fluid is water at atmospheric pressure. The most common reference temperatures in the standards and literature are
+<units us = "39.2 °F at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering
+and petroleum applications use 60 °F." metric = "4 °C at which water is the most dense, 15.56 °C, and 20 °C. Generally, scientific research and common fluids use 4 °C  while engineering
+and petroleum applications use 15.56 °C."/>
+
+The values for specific gravity of water based on these common reference temperatures are listed in the table below. 
+
 =|=
 title: Water Properties at Various Temperatures
 data-us: water-properties-us.csv
@@ -83,5 +91,5 @@ The uncertainty in isobaric heat capacity is 0.2% in the vapor and 0.1% in the l
 
 The uncertainties of saturation conditions are 0.025% in vapor pressure, 0.0025% in saturated liquid density, and 0.1% in saturated vapor density. The uncertainties in the saturated densities increase substantially as the critical region is approached. 
 
-### Source
+### Reference for Data
 [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved February 19, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7732185&Type=SatP&Digits=5&THigh=705.1&TLow=32&TInc=20&RefState=DEF&TUnit=F&PUnit=psia&DUnit=lbm%2Fft3&HUnit=Btu%2Flb-mole&WUnit=ft%2Fs&VisUnit=cP&STUnit=lb%2Fin)

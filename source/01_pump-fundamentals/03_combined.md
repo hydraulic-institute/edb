@@ -11,7 +11,7 @@ hide_units: true
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
-in <a href="https://estore.pumps.org/Standards/Rotodynamic/RotodynamicPumpsforDesignApplication.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+in <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 Knowing the shape of the system curve will help illustrate the pump operating conditions as the system conditions vary due to changes in valve position, parts of the system coming
 on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determinine if the pump is sized correctly to overcome the static and dynamic head of the system.
@@ -37,7 +37,7 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ### Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/section-VI/pump-curves.html" target="_blank">Pump Curves</a>). 
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/pump-fundamentals/pump-curves.html" target="_blank">Pump Curves</a>). 
 As the pump is slowed the pump curve will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
@@ -48,7 +48,7 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ### Changes in Impeller Size
 
-In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/section-VI/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
+In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
@@ -89,7 +89,7 @@ loss across the control valve, since the system flow rate has not changed.
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in <a href="/section-VI/other-considerations.html" target="_blank">Other Considerations</a>.
+piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in <a href="/pump-fundamentals/other-considerations.html" target="_blank">Other Considerations</a>.
 
 ### Parallel and Series System Implications
 

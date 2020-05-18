@@ -22,7 +22,7 @@ $$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(P_{destination} - P_{sup
 where:
 
 - z is elevation, in <units us = "feet" metric = "meters"/>
-- P is pressure, in <units us = "lbs per square inch" metric = "kPa"/>
+- P is pressure, in <units us = "psi" metric = "kPa"/>
 - ρ is fluid density, in <units us = "lbm / ft^3" metric = "kg/m^3"/>
 - g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
 
