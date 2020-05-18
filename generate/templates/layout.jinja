@@ -40,10 +40,17 @@
             </div>
             <div class='column'>
                 <nav class="panel" v-if='unit'>
+                <button @click='swap' type="button" style="float:right;margin-right:1rem;margin-top:0.5rem" class="button is-small is-link is-light">Swap</button>
+                    
                     <p class="panel-heading" style='margin-bottom:0px'>${unit.measure}</p>
                     <div class='panel-block'>
+                        
                         <div class='field'>
-                            <label class='label'>From</label>
+                        
+                           <label class='label'>
+                                <span>From</span>
+                                
+                            </label>
                             <div class='columns'>
                                 <div class='column'>
                                     <input class='input' v-model='from'/>
@@ -58,7 +65,10 @@
                       </div>
                     <div class='panel-block'>
                         <div class='field'>
-                            <label class='label'>To</label>
+                            <label class='label'>
+                                <span>To</span>
+                                
+                            </label>
                             <div class='columns'>
                                 <div class='column'>
                                     <input class='input' v-model='to' readonly disabled/>

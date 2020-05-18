@@ -550,6 +550,11 @@ Vue.component('converter', {
             })
     },
     methods: {
+        swap() {
+            const t = this.unit_from;
+            this.unit_from = this.unit_to;
+            this.unit_to = t;
+        },
         recalculate: function () {
             const special = isNaN(this.unit_from.factor) || isNaN(this.unit_to.factor);
             if (special) {
