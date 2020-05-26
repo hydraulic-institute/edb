@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves 
-date:  February 7th, 2020
+date:  May 26th, 2020
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 
@@ -175,7 +175,13 @@ Operating at this point for more than a few seconds can cause serious mechanical
 flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
 operating pumps.
 
-To learn more about pump operating regions, refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+=^=
+title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Webinar
+description: Learn how the Preferred Operating Region (POR) and Allowable Operating Region (AOR) are defined for centrifugal, mixed and axial flow pumps and their impact on efficiency and reliably.  Curve shape, hydraulic loading, temperature rise, vibration/noise, suction recirculation, priming, NPSH margin and more will be discussed related to a pumps AOR as well as methods to ensure operating in the AOR will be presented.  This webinar is a must for pump end users, application engineers, pump system designers, specifying engineers and pump service providers.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPreferred_and_Allowable_Operating_Regions_for_Rotodynamic_Pumps_to_Maximize_Reliability_Nov_2019__webinar_icon.png
+url: https://estore.pumps.org/Preferred-and-Allowable-Operating-Regions-for-Rotodynamic-Pumps-to-Maximize-Reliability-1-Part-On-Demand-Webinar-P3169.aspx
+price: 59.00
+=^=
 
 ### Affinity Rules
 
@@ -223,9 +229,13 @@ Part 1 of the affinity rules is ideal for instances where you have a Variable Fr
 therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
-![](./vsp-cover.png "")
-
-(Purchase HI's <a href="https://estore.pumps.org/Guidebooks/VSP_Guide.aspx" target="_blank"> Application Guideline for Variable Speed Pumping</a> at the Hydraulic Institute eStore.)
+=^=
+title: Application Guideline for Variable Speed Pumping
+description: This guideline has been created to provide pump industry professionals and the end user operators of pumps with the knowledge required to apply variable speed pumping so that it will result in improved energy efficiency and increased reliability. This intension of this guidebook is to educate the pumping industry and to ensure the safe, reliable, and efficient operation of the pumping equipment we all depend on every day.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP-2017.png
+url: https://estore.pumps.org/Guidebooks/VSP_Guide.aspx
+price: 166.00
+=^=
 
 ### Pump Fundamentals: Parallel and Series Pump Implications
 
@@ -267,6 +277,14 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 ### Educational Demonstration (Pumps in Series)
 
 Content will be added soon.
+
+<!--=^=-->
+<!--title: Variable Speed Pumping - 4 Part Webinar Series-->
+<!--description: This course reviews the new Variable Speed Pumping Guidebook and how to use variable speed pumping for more efficient and better controlled pumping. It explains how flow and pressure are controlled with variable speed pumping and when to use each. Also covered are the devices used to achieve variable speed pumping, including variable frequency drives. The attendee will also learn the benefits provided by variable speed pumping, in relation to cost, operation, and energy savings.-->
+<!--image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP_Solo_Image.png-->
+<!--url: https://estore.pumps.org/Variable-Speed-Pumping-4-Part-On-Demand-Webinar-Series-P3014.aspx-->
+<!--price: 149.00-->
+<!--=^=-->
 
 ## Worked Examples
 

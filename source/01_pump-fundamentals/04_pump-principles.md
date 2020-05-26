@@ -1,6 +1,6 @@
 -----
 title: D) Pump Principles
-date:  June 28th, 2019
+date: May 26th, 2020
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
@@ -52,6 +52,14 @@ An alternative method of calculating this value is to use (m3/h) as the unit of 
 Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
 
 ![](specific-speed-charts.png "")
+
+=^=
+title: Rotodynamic Pump Efficiency Prediction
+description: ANSI/HI 20.3 presents a simplified method to predict normally attainable efficiency levels at the best efficiency point for selected types of rotodynamic pumps when the rate of flow, total head per stage, net positive suction head available (NPSHA), and the service conditions are known.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f20_3-2015.png
+url: https://estore.pumps.org/Standards/Rotodynamic/EfficiencyPrediction.aspx
+price: 50.00
+=^=
 
 Below is a graph that shows the maximum practically attainable efficiency for different flow rates. This proves useful in selection of hydraulics for 
 particular applications, based on desired flow and head.
@@ -128,6 +136,14 @@ as many types of fluids as open impellers, but they are stronger and experience 
 share some of the advantages and disadvantages of each. The reason for loss of efficiency in an open or semi-open impeller is that the distance between the vanes and 
 the pump case surface increases over time due to wear. This allows for leakage back to suction, reducing efficiency. Another benefit of closed impellers is that 
 setting axial distance doesn’t need to be as precise for this same reason.
+
+=^=
+title: Rotodynamic Pumps for Design and Application
+description: The purpose of this standard is to provide guidance and recommendations for the general application and design of rotodynamic pumps. This standard provides accepted methods for the evaluation of the hydraulic performance and design of all related and supporting equipment. It does not include detailed hydraulic design methods. This standard recognizes and identifies application requirements, principal features, performance considerations, and the necessary precautions for proper use of rotodynamic pumps.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f143web.jpg
+url: https://estore.pumps.org/Standards/Rotodynamic/Design.aspx
+price: 240.00
+=^=
 
 ### Net Positive Suction Head (NPSH)
 

@@ -1,6 +1,6 @@
 -----
 title: B) Solids and Slurries
-date:  October 31st, 2019
+date: May 12th, 2020
 description: Properties of solid mixtures and slurries. Determining specific gravity of mixture or slurry.
 -----
 

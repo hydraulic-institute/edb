@@ -1,6 +1,6 @@
 -----
 title:  A) General
-date: June 28th, 2019
+date: May 12th, 2020
 description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance.
 -----
 
