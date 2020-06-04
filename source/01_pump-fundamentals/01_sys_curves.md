@@ -60,7 +60,7 @@ title: Basic System Hydraulics - 1 Part Webinar
 description: It’s important to be able to visualize pump curves and system curves to understand their interaction. Learn the basics of system hydraulics in this 1-part webinar.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fBasic_System.png
 url: https://estore.pumps.org/Basic-System-Hydraulics-1-Part-On-Demand-Webinar-P3174.aspx
-price: 59.00
+price:
 =^=
 
 ### System Curve
@@ -102,7 +102,7 @@ title: Pump System Assessments - 2 Part Webinar
 description: Pump system assessments and pump system optimization present significant opportunities for operations and maintenance cost savings and for reducing energy consumption. In this course, the user will learn the tasks and knowledge required for pump system assessments, the different levels of assessments, and the steps required to implement a pump system assessment. Also covered are the elements and format of the pump system assessment report, including examples. The user is also presented with case studies and real-world examples of pump system assessments and examples of how to use analysis tools, such as hydraulic modeling, to assist with the assessment.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSA-2Part-Dec-2016.png
 url: https://estore.pumps.org/Pump-System-Assessments-2-Part-Webinar-P2779.aspx
-price: 99.99
+price: 
 =^=
 
 ### Educational Demonstration

@@ -183,6 +183,14 @@ conical diffusers as reported by Reference 11 of Section VI are shown in Section
 The values shown include the entrance mouthpiece which accounts in part for the increase over Gibson's
 values for conical increasers. 
 
+=^=
+title: Pump System Optimization Guidebook (PSO)
+description: This guidebook is intended to assist those who need to understand details of pump system optimization coupled with important capital equipment decisions. It presents practical information for those who have not had broad exposure to pumping systems and for those who wish to improve the systems for which they are responsible.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
+url: https://estore.pumps.org/Guidebooks/PSO.aspx
+price:
+=^=
+
 ### Friction Factor Diagrams
 
 As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from equation (3.1)

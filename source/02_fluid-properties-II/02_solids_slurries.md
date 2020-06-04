@@ -101,6 +101,14 @@ $$ Q_{m} = {{4 * 100} \over {.3 * 1.23}} = 1,084\,GPM $$
 $$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
 =+=
 
+=^=
+title: Rotodynamic Centrifugal Slurry Pumps
+description: This standard offers a basic educational overview on rotodynamic (centrifugal) slurry pumps, design and application considerations related to the selection of the right pump for a specific industry including pump installation as well as operation and maintenance procedures.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f12_1-12_6_-_2016.png
+url: https://estore.pumps.org/Standards/Rotodynamic/Slurry.aspx
+price:
+=^=
+
 **d)** Abrasive wear:
 
 Wear increases rapidly when the particle hardness

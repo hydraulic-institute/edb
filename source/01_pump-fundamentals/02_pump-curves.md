@@ -180,7 +180,7 @@ title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximi
 description: Learn how the Preferred Operating Region (POR) and Allowable Operating Region (AOR) are defined for centrifugal, mixed and axial flow pumps and their impact on efficiency and reliably.  Curve shape, hydraulic loading, temperature rise, vibration/noise, suction recirculation, priming, NPSH margin and more will be discussed related to a pumps AOR as well as methods to ensure operating in the AOR will be presented.  This webinar is a must for pump end users, application engineers, pump system designers, specifying engineers and pump service providers.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPreferred_and_Allowable_Operating_Regions_for_Rotodynamic_Pumps_to_Maximize_Reliability_Nov_2019__webinar_icon.png
 url: https://estore.pumps.org/Preferred-and-Allowable-Operating-Regions-for-Rotodynamic-Pumps-to-Maximize-Reliability-1-Part-On-Demand-Webinar-P3169.aspx
-price: 59.00
+price:
 =^=
 
 ### Affinity Rules
