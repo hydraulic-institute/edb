@@ -95,6 +95,7 @@ description: Pump system assessments and pump system optimization present signif
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSA-2Part-Dec-2016.png
 url: https://estore.pumps.org/Pump-System-Assessments-2-Part-Webinar-P2779.aspx
 price: 99.99
+hide_price: true
 =^=
 
 ### Educational Demonstration

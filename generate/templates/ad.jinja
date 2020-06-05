@@ -12,9 +12,11 @@
                <a target="_blank" href="{{ad['url']}}">Learn more</a>
             </p>
          </section>
+         {% if not ad['hide_price']%}
          <section class='go-price'>
             <p>${{ad['price']}}</p>
          </section>
+         {%endif%}
       </section>
    </a>
  </div>
