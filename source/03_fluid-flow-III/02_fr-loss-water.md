@@ -1,6 +1,6 @@
 -----
 title:  B) Losses in Valves, Fittings, and Bends
-date: July 9th, 2019
+date: May 12th, 2020
 description: Frictional loss information for water. Resistance coefficients.
 -----
 

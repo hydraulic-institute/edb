@@ -1,6 +1,6 @@
 -----
 title: C) Combined Pump & System Curves 
-date:  July 9th, 2019
+date: May 26th, 2020
 description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
 hide_units: true
 -----
@@ -19,6 +19,14 @@ on and off line, and upset conditions. Additionally, by overlaying the pump curv
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
 This will also help ensure the pump operation will be as close to the Best Efficiency Point (BEP) as possible to reduce energy consumption and increase pump reliability.
+
+=^=
+title: Pump System Optimization Guidebook (PSO)
+description: This guidebook is intended to assist those who need to understand details of pump system optimization coupled with important capital equipment decisions. It presents practical information for those who have not had broad exposure to pumping systems and for those who wish to improve the systems for which they are responsible.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
+url: https://estore.pumps.org/Guidebooks/PSO.aspx
+price:
+=^=
 
 ### Reading a Pump and System Curve Plot
 

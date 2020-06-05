@@ -279,6 +279,14 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
+=^=
+title: Power Plant Pumping Systems: Pump Selection, System Optimization, and Improving Reliability - 3 Part Webinar Series
+description: This course provides an overview of the power generation industry and details the different power plant configurations. It explains the process and considerations involved in selecting pumps for boiler feed, condensate, circulating water, and service water applications in power plants. Methods for installation and troubleshooting of pumps and pumping systems in power plant applications is also covered.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPower_Plant_Pumps_Webinar_Image.jpg
+url: https://estore.pumps.org/Power-Plant-Pumping-Systems-Pump-Selection-System-Optimization-and-Improving-Reliability-3-Part-On-Demand-Webinar-Series-P3009.aspx
+price:
+=^=
+
 ### V. Head Losses in Valves, Bends and Fittings
 
 The frictional head losses of pulp suspensions in valves, bends
