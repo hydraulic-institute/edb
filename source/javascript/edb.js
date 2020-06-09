@@ -623,6 +623,126 @@ Vue.component('converter', {
     }
 });
 
+Vue.component('viscosity-converter', {
+    delimiters: ['${', '}'],
+    data: function () {
+        return {
+            units: [],
+            from_value: null,
+            to_value: null,
+            from_unit: null,
+            to_unit: null,
+            sg: 1, 
+            steps: [], 
+            show_steps: false
+
+        };
+    }, //   
+    template: '#viscosity-converter-template',
+    mounted: function () {
+        const v = this;
+        axios.get("/statics/viscosity.json")
+            .then(function (response) {
+                v.units = response.data;
+                v.from_unit = v.units.filter(v => v.category == "D")[0];
+                v.to_unit = v.units.filter(v => v.category == "K")[0];
+                v.from_value = 1
+            }).catch(function (err) {
+                console.log(err);
+                console.error('Viscosity unit data could not be downloaded.')
+            })
+    },
+    methods: {
+        dd() {
+            const input = parseFloat(this.from_value);
+            const centipoise = input * this.from_unit.toPrime;
+            if (this.from_unit.id != 1)
+                this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
+            const output = centipoise / this.to_unit.toPrime;
+            if (this.to_unit.id !=1)
+                this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
+            this.to_value = output;
+        },
+        dk() {
+            const input = parseFloat(this.from_value);
+            const centipoise = input * this.from_unit.toPrime;
+            if (this.from_unit.id != 1)
+                this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
+            const centistoke = centipoise * parseFloat(this.sg);
+            this.steps.push(`${centipoise} Centipoise * ${this.sg} = ${centistoke} Centisoke`);
+            const output = centistoke / this.to_unit.toPrime;
+            if (this.to_unit.id !=5)
+                this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
+            this.to_value = output;
+        },
+        kk() {
+            const input = parseFloat(this.from_value);
+            const centistoke = input * this.from_unit.toPrime;
+            if ( this.from_unit.id != 5) 
+                this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
+            const output = centistoke / this.to_unit.toPrime;
+            if (this.to_unit.id !=5)
+                this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
+            this.to_value = output;
+        },
+        kd() {
+            const input = parseFloat(this.from_value);
+            const centistoke = input * this.from_unit.toPrime;
+            if ( this.from_unit.id != 5) 
+                this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
+            const centipoise = input / parseFloat(this.sg);
+            this.steps.push(`${input} Centisokes / ${this.sg} = ${centipoise} Centipoise`);
+            const output = centipoise / this.to_unit.toPrime;
+            if (this.to_unit.id !=1)
+                this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
+            this.to_value = output;
+        },
+        calculate() {
+            this.steps = [];
+            if ( this.to_unit && this.from_unit) {
+                if ( this.from_unit.category == 'D' && this.to_unit.category == 'D') {
+                    this.dd();
+                } else if ( this.from_unit.category == 'D' && this.to_unit.category == 'K') {
+                    this.dk();
+                } else if ( this.from_unit.category == 'K' && this.to_unit.category == 'K') {
+                    this.kk();
+                }
+                else if ( this.from_unit.category == 'K' && this.to_unit.category == 'D') {
+                    this.kd();
+                } 
+                else {
+                    console.error('Invalid unit conversion');
+                }
+
+            }
+            // else units aren't fully specified.
+            console.log("Calculating " + this.from_unit.label + " to " + this.to_unit.label);
+        }
+    },
+    computed: {
+        show_sg: function () {
+            if (this.from_unit && this.to_unit) {
+                return this.from_unit.category != this.to_unit.category;
+            } else {
+                return false;
+            }
+        }
+    },
+    watch: {
+        to_unit: function () {
+            this.calculate();
+        },
+        from_value: function () {
+            this.calculate();
+        },
+        from_unit: function () {
+            this.calculate();
+        },
+        sg: function () {
+            this.calculate();
+        },
+    }
+});
 
 
 
@@ -817,59 +937,3 @@ new Vue({
 
 
 
-Vue.component('viscosity-converter', {
-    delimiters: ['${', '}'],
-    data: function () {
-        return {
-            units: [],
-            from_value: null,
-            to_value: null,
-            from_unit: null,
-            to_unit: null,
-            sg: 1
-
-        };
-    }, //   
-    template: '#viscosity-converter',
-    mounted: function () {
-        const v = this;
-        axios.get("/statics/viscosity.json")
-            .then(function (response) {
-                v.units = response.data;
-                v.from_unit = v.units.filter(v => v.category == "D")[0];
-                v.to_unit = v.units.filter(v => v.category == "K")[0];
-                v.from_value = 1
-            }).catch(function (err) {
-                console.log(err);
-                console.error('Viscosity unit data could not be downloaded.')
-            })
-    },
-    methods: {
-        calculate() {
-            console.log("Calculating " + this.from_unit.label + " to " + this.to_unit.label);
-        }
-    },
-    computed: {
-        show_sg: function () {
-            if (this.from_unit && this.to_unit) {
-                return this.from_unit.category != this.to_unit.category;
-            } else {
-                return false;
-            }
-        }
-    },
-    watch: {
-        to_unit: function () {
-            this.calculate();
-        },
-        from_value: function () {
-            this.calculate();
-        },
-        from_unit: function () {
-            this.calculate();
-        },
-        sg: function () {
-            this.calculate();
-        },
-    }
-});

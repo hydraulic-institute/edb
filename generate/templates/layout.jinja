@@ -24,6 +24,66 @@
     {% endblock %}
 </head>
 
+<script type="text/x-template" id="viscosity-converter-template">
+    <div>
+    <form>
+        <div class='field'>
+            <label class='label'>
+                <span>Convert from</span>
+            </label>
+            <div class='columns'>
+                <div class='column'>
+                    <input class='input' v-model='from_value'/>
+                </div>
+                <div class='column'>
+                    <select  class="input" v-model='from_unit'>
+                        <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class='field'>  
+            <label class='label'>
+                <span>To</span>
+            </label>
+            <div class='columns'>
+                <div class='column'>
+                    <select  class="input" v-model='to_unit'>
+                        <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                    </select>                   
+                </div>
+                <div class='column'    v-if='show_sg'>
+                    <div class="columns">
+                        <div class='column'>
+                            <label class='label'>
+                                <span>w/ SG</span>
+                            </label>
+                        </div>
+                        <div class='column'>
+                            <input class='input' v-model='sg'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field" v-if='to_unit'>
+            <div class='column'>
+                ${to_value} ${to_unit.label}
+            </div>
+        </div>
+    </form>
+    <div v-if='steps.length'>
+        <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
+        <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
+        <div v-if='show_steps'>
+            <pre v-for="step in steps">${step}</pre>
+        </div>
+    </div>
+    
+    </div>
+</script>
+
+
 <script type="text/x-template" id="converter-template">
     <form>
         <div class='columns'>
