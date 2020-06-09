@@ -1,0 +1,56 @@
+[{
+        "category": "D",
+        "label": "Centipoise",
+        "toPrime": 1,
+        "id": 1
+    },
+    {
+        "category": "D",
+        "label": "mPa•s",
+        "toPrime": 1,
+        "id": 2
+    },
+    {
+        "category": "D",
+        "label": "Poise",
+        "toPrime": 100,
+        "id": 3
+    },
+    {
+        "category": "D",
+        "label": "d•s/cm2",
+        "toPrime": 100,
+        "id": 4
+    },
+    {
+        "category": "K",
+        "label": "Centistoke",
+        "toPrime": 1,
+        "id": 5
+    },
+    {
+        "category": "K",
+        "label": "Stoke",
+        "toPrime": 100,
+        "id": 6
+    }, {
+        "category": "K",
+        "label": "cm2/s",
+        "toPrime": 100,
+        "id": 7
+    },
+    {
+        "category": "K",
+        "label": "SSU (100 F)",
+        "toPrime": 0.2159,
+        "cSt_cuttoff": 500,
+        "id": 8
+    },
+    {
+        "category": "K",
+        "label": "SSU (210 F)",
+        "toPrime": 0.2144,
+        "cSt_cuttoff": 120,
+        "id": 9
+    }
+]

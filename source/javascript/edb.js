@@ -813,3 +813,63 @@ new Vue({
         }
     }
 });
+
+
+
+
+Vue.component('viscosity-converter', {
+    delimiters: ['${', '}'],
+    data: function () {
+        return {
+            units: [],
+            from_value: null,
+            to_value: null,
+            from_unit: null,
+            to_unit: null,
+            sg: 1
+
+        };
+    }, //   
+    template: '#viscosity-converter',
+    mounted: function () {
+        const v = this;
+        axios.get("/statics/viscosity.json")
+            .then(function (response) {
+                v.units = response.data;
+                v.from_unit = v.units.filter(v => v.category == "D")[0];
+                v.to_unit = v.units.filter(v => v.category == "K")[0];
+                v.from_value = 1
+            }).catch(function (err) {
+                console.log(err);
+                console.error('Viscosity unit data could not be downloaded.')
+            })
+    },
+    methods: {
+        calculate() {
+            console.log("Calculating " + this.from_unit.label + " to " + this.to_unit.label);
+        }
+    },
+    computed: {
+        show_sg: function () {
+            if (this.from_unit && this.to_unit) {
+                return this.from_unit.category != this.to_unit.category;
+            } else {
+                return false;
+            }
+        }
+    },
+    watch: {
+        to_unit: function () {
+            this.calculate();
+        },
+        from_value: function () {
+            this.calculate();
+        },
+        from_unit: function () {
+            this.calculate();
+        },
+        sg: function () {
+            this.calculate();
+        },
+    }
+});

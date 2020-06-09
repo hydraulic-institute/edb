@@ -447,6 +447,8 @@ def statics():
              os.path.join(OUTPUT_DIR, 'statics', 'friction-loss-materials-full.json'))
     copyfile(os.path.join(STATICS_DIR, 'unit-conversions.json'),
              os.path.join(OUTPUT_DIR, 'statics', 'unit-conversions.json'))
+    copyfile(os.path.join(STATICS_DIR, 'viscosity.json'),
+             os.path.join(OUTPUT_DIR, 'statics', 'viscosity.json'))
 
     css = lesscpy.compile(os.path.join(STATICS_DIR, 'style.less'), minify=True)
 
