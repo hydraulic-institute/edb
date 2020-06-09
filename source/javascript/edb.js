@@ -632,9 +632,10 @@ Vue.component('viscosity-converter', {
             to_value: null,
             from_unit: null,
             to_unit: null,
-            sg: 1, 
-            steps: [], 
-            show_steps: false
+            sg: 1,
+            steps: [],
+            show_steps: false,
+            kinematic_warning: null
 
         };
     }, //   
@@ -655,62 +656,73 @@ Vue.component('viscosity-converter', {
     methods: {
         dd() {
             const input = parseFloat(this.from_value);
-            const centipoise = input * this.from_unit.toPrime;
+            const centipoise = (input * this.from_unit.toPrime).toFixed(4);
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
-            const output = centipoise / this.to_unit.toPrime;
-            if (this.to_unit.id !=1)
+            const output = (centipoise / this.to_unit.toPrime).toFixed(4);
+            if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
         },
         dk() {
             const input = parseFloat(this.from_value);
-            const centipoise = input * this.from_unit.toPrime;
+            const centipoise = (input * this.from_unit.toPrime).toFixed(4);
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
-            const centistoke = centipoise * parseFloat(this.sg);
+            const centistoke = (centipoise * parseFloat(this.sg)).toFixed(4);
             this.steps.push(`${centipoise} Centipoise * ${this.sg} = ${centistoke} Centisoke`);
-            const output = centistoke / this.to_unit.toPrime;
-            if (this.to_unit.id !=5)
+            const output = (centistoke / this.to_unit.toPrime).toFixed(4);
+            if (this.to_unit.id != 5)
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
+
+            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            }
         },
         kk() {
             const input = parseFloat(this.from_value);
-            const centistoke = input * this.from_unit.toPrime;
-            if ( this.from_unit.id != 5) 
+            const centistoke = (input * this.from_unit.toPrime).toFixed(4);
+            if (this.from_unit.id != 5)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
-            const output = centistoke / this.to_unit.toPrime;
-            if (this.to_unit.id !=5)
+            const output = (centistoke / this.to_unit.toPrime).toFixed(4);
+            if (this.to_unit.id != 5)
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
+
+            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            }
         },
         kd() {
             const input = parseFloat(this.from_value);
-            const centistoke = input * this.from_unit.toPrime;
-            if ( this.from_unit.id != 5) 
+            const centistoke = (input * this.from_unit.toPrime).toFixed(4);
+            if (this.from_unit.id != 5)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
-            const centipoise = input / parseFloat(this.sg);
+
+            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            }
+            const centipoise = (input / parseFloat(this.sg)).toFixed(4);
             this.steps.push(`${input} Centisokes / ${this.sg} = ${centipoise} Centipoise`);
-            const output = centipoise / this.to_unit.toPrime;
-            if (this.to_unit.id !=1)
+            const output = (centipoise / this.to_unit.toPrime).toFixed(4);
+            if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
         },
         calculate() {
             this.steps = [];
-            if ( this.to_unit && this.from_unit) {
-                if ( this.from_unit.category == 'D' && this.to_unit.category == 'D') {
+            this.kinematic_warning = null;
+            if (this.to_unit && this.from_unit) {
+                if (this.from_unit.category == 'D' && this.to_unit.category == 'D') {
                     this.dd();
-                } else if ( this.from_unit.category == 'D' && this.to_unit.category == 'K') {
+                } else if (this.from_unit.category == 'D' && this.to_unit.category == 'K') {
                     this.dk();
-                } else if ( this.from_unit.category == 'K' && this.to_unit.category == 'K') {
+                } else if (this.from_unit.category == 'K' && this.to_unit.category == 'K') {
                     this.kk();
-                }
-                else if ( this.from_unit.category == 'K' && this.to_unit.category == 'D') {
+                } else if (this.from_unit.category == 'K' && this.to_unit.category == 'D') {
                     this.kd();
-                } 
-                else {
+                } else {
                     console.error('Invalid unit conversion');
                 }
 
@@ -933,7 +945,3 @@ new Vue({
         }
     }
 });
-
-
-
-
