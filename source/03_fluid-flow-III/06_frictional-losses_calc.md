@@ -30,6 +30,7 @@ title: Rotodynamic Pumps: Guideline for NPSH Margin - 1 Part Webinar
 description: The Hydraulic Institute’s Net Positive Suction Head (NPSH) Margin committee has developed this in depth webinar, based on the American National Standard ANSI/HI 9.6.1 Rotodynamic Pumps – Guideline for NPSH Margin, to teach attendees how to calculate the available NPSH to the pump, what the pump requires, and important terminology
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fNPSH_Webinar_Image.jpg
 url: https://estore.pumps.org/Rotodynamic-Pumps-Guidelines-for-NPSH-Margin-1-Part-On-Demand-Webinar-P3105.aspx
-price:
+price: 59.00
+hide_price: true
 =^=
 

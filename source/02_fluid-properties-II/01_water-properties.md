@@ -58,6 +58,15 @@ series: 2
 series_title_index: 0
 =/=
 
+=^=
+title: Water Treatment Plant Pumps - 3 Part Webinar Series
+description: The world is dealing with the scarcity of fresh water due a multitude of factors, including a lack of rainfall and limited fresh water natural resources, increasing global population and water consumption, wasteful usage of water, and pollution and contamination of raw water sources. The purpose of water treatment system operations is to provide for the controlled removal of solids and other contaminants and to disinfect water constituents for safe use and human consumption. 
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fWater_Treatment_Plant_Pumps.png
+url: https://estore.pumps.org/Water-Treatment-Plant-Pumps-3-Part-On-Demand-Webinar-Session-P3012.aspx
+price: 134.00
+hide_price: true
+=^=
+
 ## Auxiliary Data
 
 ### Reference States, Default for Fluid

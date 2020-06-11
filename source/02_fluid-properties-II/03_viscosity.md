@@ -218,7 +218,8 @@ title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
 description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f3_1-3_5-2015.png
 url: https://estore.pumps.org/Standards/Rotary/Pumps.aspx
-price:
+price: 166.00
+hide_price: true
 =^=
 
 ### Figure 1 – Viscosity Blending Chart [1]
