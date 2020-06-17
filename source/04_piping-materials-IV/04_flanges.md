@@ -5,6 +5,15 @@ description: Dimensions of flanges.
 hide_units: true
 -----
 
+=^=
+title: Fundamentals of Water Hammer and Surge Suppression - 1 Part Webinar
+description: This webinar has been created to provide an overview of water hammer, pulsation dampeners, effects of water hammer on pumps and valves, transient cavitation, surge supression and case studies.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fFundamentals-Water-Hammer-Surge-Suppression_webinar_icon.png
+url: https://estore.pumps.org/Fundamentals-of-Water-Hammer-and-Surge-Suppression-1-Part-On-Demand-Webinar-P3213.aspx
+price: 59.00
+hide_price: true
+=^=
+
 ## Dimensions: Steel Pipe Flanges and Flanged Fittings - 150 to 2500 lb (According to ASME B16.5-2017, ASME B16.47-2017, & AWWA C207-18)
 
 =|=
