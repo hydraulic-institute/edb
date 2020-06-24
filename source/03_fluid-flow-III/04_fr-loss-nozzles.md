@@ -30,5 +30,6 @@ title: Hydraulic Modeling and Simulation of Pumping Systems - 2 Part Webinar
 description: This course discusses the differences between component optimization and system optimization and demonstrates how analysis software can be used to improve pump system operation. It provides examples and case studies demonstrating how hydraulic modeling software, such as the P·SMART tool, is used to diagnose and correct problems with pump system operation in real-world situations.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fFlow_Modeling_Simulation_Pump_Systems_Image.png
 url: https://estore.pumps.org/Hydraulic-Modeling-and-Simulation-of-Pumping-Systems-2-Part-On-Demand-Webinar-P3004.aspx
-price:
+price: 99.00
+hide_price: true
 =^=

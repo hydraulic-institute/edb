@@ -78,6 +78,7 @@
     <div v-if='steps.length'>
         <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
         <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
+        <button type='button' class='button is-small' @click='swap()'>Swap from/to units</button>
         <div style='padding-top:1rem;' v-if='show_steps'>
             <pre v-for="step in steps">${step}</pre>
         </div>

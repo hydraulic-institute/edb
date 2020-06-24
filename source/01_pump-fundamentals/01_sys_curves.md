@@ -60,7 +60,8 @@ title: Basic System Hydraulics - 1 Part Webinar
 description: It’s important to be able to visualize pump curves and system curves to understand their interaction. Learn the basics of system hydraulics in this 1-part webinar.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fBasic_System.png
 url: https://estore.pumps.org/Basic-System-Hydraulics-1-Part-On-Demand-Webinar-P3174.aspx
-price:
+price: 59.00
+hide_price: true
 =^=
 
 ### System Curve
@@ -239,5 +240,8 @@ title: Data
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
+
+
+
 
 

@@ -1,8 +1,17 @@
 -----
-title: C) Non-Ferrous Pipe
+title: C) Non-Ferrous Pipe and Tube
 date: February 5th, 2020
 hide_units: true
 -----
+
+=^=
+title: Pump Application Guideline for Commercial Building Services
+description: This guideline has been created to provide engineers, trainers, maintenance staff, and plant operators with the knowledge necessary to effectively specify pumps in North America. The material in this publication has been compiled by the Hydraulic Institute (HI) Pump Application Guidelines Committee and is intended to capture the experience and collective knowledge of pump and pumping systems experts for reference by system designers, constructors, and end users.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fCBS_Black_Border_Cover_92419.jpg
+url: https://estore.pumps.org/Guidebooks/CBS.aspx
+price: 150.00
+hide_price: true
+=^=
 
 ## Pipe Dimensions: Aluminum-Alloy Seamless Pipe and Extruded Tube (According to ANSI H35.2)
 

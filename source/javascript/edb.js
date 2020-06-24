@@ -654,6 +654,11 @@ Vue.component('viscosity-converter', {
             })
     },
     methods: {
+        swap() {
+            const tmp = this.from_unit;
+            this.from_unit = this.to_unit;
+            this.to_unit = tmp;
+        },
         dd() {
             const input = parseFloat(this.from_value);
             const centipoise = (input * this.from_unit.toPrime).toFixed(4);
