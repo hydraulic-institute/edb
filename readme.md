@@ -535,7 +535,7 @@ git push origin master
 Once that completes successfully, you can go back to working on other things.
 
 ## Hosting
-The HI EDB is deployed to an Amazon S3 bucket, and served to the public internet from there.
+The HI EDL is deployed to an Amazon S3 bucket, and served to the public internet from there.
 
 ### S3 Configuration
 *The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose - it is not something you need to do yourself*
