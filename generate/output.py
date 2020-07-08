@@ -662,7 +662,7 @@ def pdf(graph):
         if node['slug'] == 'home':
             so = 'index'
             front_matter = node
-            front_matter['metadata']['title'] = "HI Engineering Data Book"
+            front_matter['metadata']['title'] = "HI Engineering Data Library"
             front_matter['children'] = []
 
     with io.open(md_file, 'w', encoding='utf8') as f:

@@ -674,8 +674,8 @@ Vue.component('viscosity-converter', {
             const centipoise = (input * this.from_unit.toPrime).toFixed(4);
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
-            const centistoke = (centipoise * parseFloat(this.sg)).toFixed(4);
-            this.steps.push(`${centipoise} Centipoise * ${this.sg} = ${centistoke} Centisoke`);
+            const centistoke = (centipoise / parseFloat(this.sg)).toFixed(4);
+            this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centisoke`);
             const output = (centistoke / this.to_unit.toPrime).toFixed(4);
             if (this.to_unit.id != 5)
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
@@ -708,8 +708,8 @@ Vue.component('viscosity-converter', {
             if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
-            const centipoise = (input / parseFloat(this.sg)).toFixed(4);
-            this.steps.push(`${input} Centisokes / ${this.sg} = ${centipoise} Centipoise`);
+            const centipoise = (input * parseFloat(this.sg)).toFixed(4);
+            this.steps.push(`${input} Centisokes * ${this.sg} = ${centipoise} Centipoise`);
             const output = (centipoise / this.to_unit.toPrime).toFixed(4);
             if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
