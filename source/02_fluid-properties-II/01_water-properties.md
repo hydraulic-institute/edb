@@ -39,19 +39,19 @@ series_title_index: 0
 
 =|=
 title: Sat. Properties for Water (Liquid)
-data-us: liquid-water-us.csv
+data-us: liquid-water-US.csv
 data-metric: liquid-water-metric.csv
 =|=
 
 =|=
 title: Sat. Properties for Water (Vapor)
-data-us: vapor-water-us.csv
+data-us: vapor-water-US.csv
 data-metric: vapor-water-metric.csv
 =|=
 
 =/=
 title: Water Vapor Saturation Curve  
-data-us: vapor-water-us.csv
+data-us: vapor-water-US.csv
 data-metric: vapor-water-metric.csv
 x: 1
 series: 2
