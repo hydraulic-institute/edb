@@ -12,7 +12,7 @@ description: Properties of solid mixtures and slurries. Determining specific gra
 mixture or slurry, S<sub>m</sub> is:
 
 =+=
-<span class= equation-label >(2.1)</span>
+<span class= equation-label >(2.B.1)</span>
 $$ S_{m} = {{S_{s} * S_{1}} \over {S_{s} + C_{w}(S_{1} - S{s})}} $$
 =+=
 
@@ -48,12 +48,12 @@ of the mixture components is required in order to select
 the correct type of pump and materials of construction.
 
 =+=
-<span class= equation-label >(2.2)</span>
+<span class= equation-label >(2.B.2)</span>
 $$ C_{w} = {weight\, of\, dry\, solids \over { weight\, of\, dry\, solids\, + weight\, of\, liquid\, phase }} $$
 =+=
 
 =+=
-<span class= equation-label >(2.3)</span>
+<span class= equation-label >(2.B.3)</span>
 $$ C_{v} = {volume\, of\, dry\, solids \over { volume\, of\, dry\, solids\, + volume\, of\, liquid\, phase }} $$
 =+=
 
@@ -65,13 +65,13 @@ Figure 2.
 the expression:
 
 =+=
-<span class= equation-label >(2.4)</span>
+<span class= equation-label >(2.B.4)</span>
 [units = us]
 $$ Q_{m} = {{4 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
 
 =+=
-<span class= equation-label >(2.4)</span>
+<span class= equation-label >(2.B.4)</span>
 
 [units = metric]
 $$ Q_{m} = {{0.9085 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$

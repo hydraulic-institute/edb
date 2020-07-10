@@ -37,12 +37,12 @@ is the dynamic viscosity. The foregoing may be expressed
 by the equations
 
 =+=
-<span class= equation-label >(2.7)</span>
+<span class= equation-label >(2.C.1)</span>
 $$ τ = {F \over A} = μ{v \over d} $$
 =+=
 
 =+=
-<span class= equation-label >(2.8)</span>
+<span class= equation-label >(2.C.2)</span>
 $$ μ = {τ \over {v/d}} $$
 =+=
 
@@ -71,7 +71,7 @@ divided by the acceleration of gravity (g). These
 relationships may be expressed by the equation
 
 =+=
-<span class= equation-label >(2.9)</span>
+<span class= equation-label >(2.C.3)</span>
 $$ ν = {μ \over {w/g}} = {μ \over ρ} $$
 =+=
 

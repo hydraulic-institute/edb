@@ -11,13 +11,13 @@ description: Overview of specific speed, suction specific speed, other pump prin
 **Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. Specific speed is expressed by the following equation:
 
 =+=
-<span class= equation-label >(6.10)</span>
+<span class= equation-label >(1.D.1)</span>
 [units = us]
 $$ Ns = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
 
 =+=
-<span class= equation-label >(6.10)</span>
+<span class= equation-label >(1.D.2)</span>
 [units = metric]
 $$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
@@ -71,7 +71,7 @@ particular applications, based on desired flow and head.
 of best efficiency, which is defined by the following formula:
 
 =+=
-<span class= equation-label >(6.11)</span>
+<span class= equation-label >(1.D.2)</span>
 $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} = {{ωQ'^{0.5}} \over {(y')^{0.75}}} $$
 =+=
 
@@ -95,13 +95,13 @@ Suction specific speed is an indicator of the NPSHR for a 3% drop in head (NPSH3
 rate of flow and rotational speed. Suction specific speed is expressed by the following equation:
 
 =+=
-<span class= equation-label >(6.12)</span>
+<span class= equation-label >(1.D.3)</span>
 [units = us]
 $$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 =+=
 
 =+=
-<span class= equation-label >(6.12)</span>
+<span class= equation-label >(1.D.3)</span>
 [units = metric]
 $$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 =+=
@@ -166,7 +166,7 @@ showing the fluid reaching a pressure below that of its vapor pressure, causing 
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
 
 =+=
-<span class= equation-label >(6.13)</span>
+<span class= equation-label >(1.D.4)</span>
 $$ NPSH_{a} = {h_{sa}} - {h_{vp}} $$
 =+=
 

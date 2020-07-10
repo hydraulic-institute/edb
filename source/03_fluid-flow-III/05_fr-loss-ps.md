@@ -151,13 +151,13 @@ of v<sub>max</sub> is determined using Equation
 (3.15) and data given in Table I.
 
 =+=
-<span class= equation-label >(3.15)</span>
+<span class= equation-label >(3.E.1)</span>
 [units = us]
 $$ v_{max} = {K'C^{σ}} (ft/s) $$
 =+=
 
 =+=
-<span class= equation-label >(3.15)</span>
+<span class= equation-label >(3.E.1)</span>
 [units = metric]
 $$ v_{max} = 0.3048{K'C^{σ}} (m/s) $$
 =+=
@@ -190,13 +190,13 @@ using Equation (3.16) and data given in Table II
 and the appendices.
 
 =+=
-<span class= equation-label >(3.16)</span>
+<span class= equation-label >(3.E.2)</span>
 [units = us]
 $$ Δh/L = FKv^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
 =+=
 
 =+=
-<span class= equation-label >(3.16)</span>
+<span class= equation-label >(3.E.2)</span>
 [units = metric]
 $$ Δh/L = 0.3048FKv^{α}C^{β}D^{γ}\, (m/100\, m) $$
 =+=
@@ -222,13 +222,13 @@ at the onset of drag reduction is determined
 using Equation (3).
 
 =+=
-<span class= equation-label >(3.17)</span>
+<span class= equation-label >(3.E.3)</span>
 [units = us]
 $$ v_{w} = 4.00C^{1.40} (ft/s) $$
 =+=
 
 =+=
-<span class= equation-label >(3.17)</span>
+<span class= equation-label >(3.E.3)</span>
 [units = metric]
 $$ v_{w} = 1.2192C^{1.40} (m/s) $$
 =+=
@@ -252,13 +252,13 @@ from the following equation (based on
 the Blasius equation).
 
 =+=
-<span class= equation-label >(3.18)</span>
+<span class= equation-label >(3.E.4)</span>
 [units = us]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(ft/100\, ft) $$
 =+=
 
 =+=
-<span class= equation-label >(3.18)</span>
+<span class= equation-label >(3.E.4)</span>
 [units = metric]
 $$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(m/100\, m) $$
 =+=
@@ -309,7 +309,7 @@ consistency. Please note that this is an approximation;
 actual values of K may differ, depending on the
 type of bend or fitting under consideration (4).
 
-The following is data for use with Equation (3.16) to determine head loss, ΔH/L.
+The following is data for use with Equation (3.E.2) to determine head loss, ΔH/L.
 
 =|=
 title: Table II
@@ -332,13 +332,13 @@ The following gives supplemental information to that provided in the main text.
 
 =+=
 [units = us]
-<span class= equation-label >(3.19)</span>
+<span class= equation-label >(3.E.5)</span>
 $$ Q = {{16.65(T.P.D.)}\over C} \, (gpm) $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(3.19)</span>
+<span class= equation-label >(3.E.5)</span>
 $$ Q = {{3.782(T.P.D.)}\over C} \, (m^{3}/h) $$
 =+=
 
@@ -355,25 +355,25 @@ and
 
 =+=
 [units = us]
-<span class= equation-label >(3.20)</span>
+<span class= equation-label >(3.E.6)</span>
 $$ v = {{0.321Q}\over A}\, (ft/s),\, or $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(3.20)</span>
+<span class= equation-label >(3.E.6)</span>
 $$ v = {{278Q}\over A}\, (m/s),\, or $$
 =+=
 
 =+=
 [units = us]
-<span class= equation-label >(3.21)</span>
+<span class= equation-label >(3.E.7)</span>
 $$ v = {{0.4085Q}\over D^2}\, (ft/s) $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(3.21)</span>
+<span class= equation-label >(3.E.7)</span>
 $$ v = {{354Q}\over D^2}\, (m/s) $$
 =+=
 
@@ -386,7 +386,7 @@ where:
 **3) Multiplication Factor, F (included in Equation (3.16)) —**
 
 =+=
-<span class= equation-label >(3.22)</span>
+<span class= equation-label >(3.E.8)</span>
 $$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
 =+=
 
@@ -397,13 +397,13 @@ decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This 
 
 =+=
 [units = us]
-<span class= equation-label >(3.23)</span>
+<span class= equation-label >(3.E.9)</span>
 $$ F_1 = 1.526 - 0.00556T $$
 =+=
 
 =+=
 [units = metric]
-<span class= equation-label >(3.23)</span>
+<span class= equation-label >(3.E.9)</span>
 $$ F_1 = 1.34808 - 0.010008T $$
 =+=
 
