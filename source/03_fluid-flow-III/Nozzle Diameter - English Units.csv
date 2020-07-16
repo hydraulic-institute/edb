@@ -1,6 +1,7 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-Heading,,,,Diameter of Nozzle (inches),,,,,,,,,,,,,,,,,,,,,,,,,
-Heading,Pressure (psig),Head (ft),Velocity (ft/sec),0.06,0.125,0.188,0.25,0.375,0.50,0.625,0.75,0.875,1.00,1.125,1.25,1.375,1.50,1.75,2.00,2.25,2.50,2.75,3.00,3.50,4.00,4.50,5.00,5.50,6.00
+Heading,,,,,,,,,,,,,,Diameter,of,Nozzle,(inches),,,,,,,,,,,,
+Heading,,,,0.06,0.125,0.188,0.25,0.375,0.50,0.625,0.75,0.875,1.00,1.125,1.25,1.375,1.50,1.75,2.00,2.25,2.50,2.75,3.00,3.50,4.00,4.50,5.00,5.50,6.00
+Heading,Pressure (psig),Head (ft),Velocity (ft/sec),,,,,,,,,,,,,,,,,,,,,,,,,,
 data,10,23.1,38.6,0.4,1.5,3.3,5.9,13.3,23.6,36.9,53,72,94,119,147,178,212,289,378,478,590,714,849,1156,1510,1911,2359,2855,3398
 data,15,34.65,47.2,0.5,1.8,4.1,7.2,16.3,28.9,45.2,65,88,116,146,181,219,260,354,462,585,722,874,1040,1416,1849,2341,2890,3496,4161
 data,20,46.2,54.5,0.5,2.1,4.7,8.3,18.8,33.4,52.1,75,102,133,169,209,252,300,409,534,676,834,1009,1201,1635,2135,2703,3337,4037,4805

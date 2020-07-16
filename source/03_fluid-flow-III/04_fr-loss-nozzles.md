@@ -26,7 +26,7 @@ The following amounts of water are recommended to move 1 cubic foot:
 **Average quarry overburden:** <units us = "8 to 10 cubic feet of water" metric = "0.23 to 0.28 cubic meters of water"/>
 
 =|=
-title: Nozzle Diameter
+title: 
 data-us: Nozzle Diameter - English Units.csv
 data-metric: Nozzle Diameter - Metric Units.csv
 =|=
