@@ -98,10 +98,9 @@ where:
  
 
 Values of (K) for valves and fittings may be referenced
-below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Valves, Fittings, and Bends</a>.  Reference to the literature will reveal wide differences in the published values of
-(K) for all types of valves and fittings. The available data are inconclusive. As indicated in Section 
-IIIB, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and 
-fittings. The resistance coefficients decrease with the increasing size of most valves and fittings. 
+below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Valves, Fittings, and Bends</a>.  Wide differences are found in the published values of (K) for all types of valves
+and fittings. The available data are inconclusive. As indicated in the above references section, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and fittings.
+The resistance coefficients decrease with the increasing size of most valves and fittings.
 
 ![](friction-factors.png "")
 
@@ -183,14 +182,6 @@ conical diffusers as reported by Reference 11 of Section VI are shown in Section
 The values shown include the entrance mouthpiece which accounts in part for the increase over Gibson's
 values for conical increasers. 
 
-=^=
-title: Pump System Optimization Guidebook (PSO)
-description: This guidebook is intended to assist those who need to understand details of pump system optimization coupled with important capital equipment decisions. It presents practical information for those who have not had broad exposure to pumping systems and for those who wish to improve the systems for which they are responsible.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
-url: https://estore.pumps.org/Guidebooks/PSO.aspx
-price: 205.00
-hide_price: true
-=^=
 
 ### Friction Factor Diagrams
 
@@ -200,42 +191,16 @@ As previously stated, the resistance to the incompressible flow of any fluid (he
 $$h_f = f * {L \over D} * {v^2 \over 2g}$$ 
 =+=
 
-Values of (*f*) may be obtained directly from Fig. IIIA-1 where the pipe is new clean asphalt-dipped
-cast iron, from Fig. IIIA-2 where the pipe is new clean steel of Schedule 40 wall thickness, or from
-Fig. IIIA-3 which applies to any size and type of surface. The probable variations in (*f*) for some
-classes of new clean pipe are given in Table A. It will be necessary to know the approximate value of
-the relative roughness factor, ε/D to enter Fig. IIIA-3 and this can be obtained, for several kinds of
-pipes, from Fig. llIA-4. If the fluid is fresh water at = 60° F or atmospheric
-air at 60° F the scales at the top of Figs. IIIA-1-3 incl., may be used. For convenience in air and
-water computations only, the scale reading is the product of the average velocity in feet/second and
-the internal diameter in inches, (VD"). 
-
-
-For other fluids or temperatures the scales at the
-bottom of Figs. IIIA-1-3 incl., must be used. The
-scale reading is the Reynolds Number, Re, given
-by equation (3.1).
-
-The data for Figs. IIIA-1-3 incl., were obtained directly
-from solutions of Equation (3.2). Figs. IIIA-4
-and IIIA-5 were taken from Reference 2 with minor
-changes.
+Values of (*f*) may be obtained directly from Fig. 3.A.2 based on Reynolds Number (Re) and Relative Roughness (ε/D) of the pipe.
+Values of (ε) may be obtained from the Roughness Values table in Section 3.A where the pipe is new clean asphalt-dipped cast iron, 
+new clean commercial steel or wrought iron, or other materials shown. There will be probable variations in (ε) for these materials.
 
 Values of the kinematic viscosity (*v*) at various
 temperatures are given in Fig. IIIA-5 for a number
-of different fluids. The Reynolds Number also may
-be obtained directly from Fig. IIIA-5 with the aid of
-the quantity (VD) mentioned above. The tracer
-line shows that for kerosene at 175° F flowing with
-an average velocity of 12.5 ft/sec in a pipe of 4
-inches internal diameter, the Reynolds Number
-would be 3.5 x 10^5^. In cases where viscosities are
-obtained from sources other than Fig. IIIA-5, it is
-*absolutely essential* that they be expressed in sq
-ft/sec in order that they may be used with Fig.
-IIIA-5 or Equation (3.4). Kinematic viscosities measured
-in stokes or centistokes may be converted
-to *v* in sq ft/sec by the formula:
+of different fluids. The Reynolds Number assistanceis calculated using Equation 3.4. It is absolutely essential that viscosities
+obtained from sources be expressed in the correct units, typically sq ft/sec or stokes or centistokes. Kinematic viscosities  measured 
+in stokes or centistokes may be converted to v in sq ft/sec by the formula:
+
 
 =+=
 <span class= equation-label >(3.A.9)</span>
@@ -261,6 +226,15 @@ The range Re = 2000–4000 is called the critical zone in which the flow may be 
 ### Moody Diagram [1]
 
 ![](moody-diagram-2.png "")
+
+=^=
+title: Pump System Optimization Guidebook (PSO)
+description: This guidebook is intended to assist those who need to understand details of pump system optimization coupled with important capital equipment decisions. It presents practical information for those who have not had broad exposure to pumping systems and for those who wish to improve the systems for which they are responsible.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
+url: https://estore.pumps.org/Guidebooks/PSO.aspx
+price: 205.00
+hide_price: true
+=^=
 
 ### References
 1. L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944
