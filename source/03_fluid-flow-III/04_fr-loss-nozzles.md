@@ -25,6 +25,28 @@ The following amounts of water are recommended to move 1 cubic foot:
 
 **Average quarry overburden:** <units us = "8 to 10 cubic feet of water" metric = "0.23 to 0.28 cubic meters of water"/>
 
+
+
+=+= 
+<span class='equation-label'>Eq. 1</span>
+$$  Q = 19.636*C*{d_1}^2*\sqrt {h} $$
+=+= 
+
+Where:
+
+- Q  = Flowrate in <units us = "gallons per minute" metric = "m^3^/s"/>
+- d<sub>1</sub> = Nozzle Diameter in <units us = "inches" metric = "inches"/>
+- h = Head in <units us = "feet" metric = "meters"/> 
+- C = Discharge Coefficient = 1
+
+For sprinkling golf courses is it reasonably safe to figure 10 gallons per minute
+for each Green with 35 PSIA at hose valve outlet and 25 gallons per minute for each 
+Fairway with 35 PSIA at hose valve outlet. The standard conditions are 100 feet of 
+¾ inch hose for greens sprinklers and 100 feet of 1 inch hose for fairway sprinklers.
+Use gate valves with a hose nipple at all outlets instead of the customary hose faucets 
+on account of the friction loss in the hose faucets.
+
+### Theoretical Discharge of Nozzles in <units us = "Gallons per Minute" metric = "m^3^/s"/>
 =|=
 title: 
 data-us: Nozzle Diameter - English Units.csv
