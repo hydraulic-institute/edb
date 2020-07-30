@@ -16,17 +16,17 @@ The values for specific gravity of water based on these common reference tempera
 
 =|=
 title: Water Properties at Various Temperatures
-data-us: water-properties-us.csv
-data-metric: water-properties-orig.csv
+data-us: SpecificGravity-US.csv
+data-metric: SpecificGravity-Metric.csv
 =|=
 
 
 =/=
 title: Specific Gravity vs. Temperature for Water
-data-us: water-properties-us.csv
-data-metric: water-properties-metric.csv
-x: 2
-series: 5
+data-us: SpecificGravity-US.csv
+data-metric: SpecificGravity-Metric.csv
+x: 1
+series: 6
 series_title_index: 0
 =/=
 
