@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-Heading,Temperature (F),Density (lbm/ft3),Specific Volume (ft3/lbm),SG 39.2° Ref,SG 60° Ref,SG 68° Ref,Pressure (psia)
+Heading,Temperature (F),Density (lbm/ft3),Specific Volume (ft3/lbm),SG 39.2 Ref,SG 60 Ref,SG 68 Ref,Pressure (psia)
 data,32,62.415,0.01602,0.999872,1.000818,1.001637,0.08872
 data,40,62.423,0.01602,1,1.000946,1.001765,0.12173
 data,50,62.406,0.01602,0.999728,1.000673,1.001492,0.17814

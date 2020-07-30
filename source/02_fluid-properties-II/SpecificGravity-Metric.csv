@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Temperature (C),Density (kg/m3),Specific Volume (ft3/lbm),SG 4° C Ref,SG 15.56° C Ref,SG 20° C Ref,Pressure (kPa)
+heading,Temperature (C),Density (kg/m3),Specific Volume (ft3/lbm),SG 4 C Ref,SG 15.56 C Ref,SG 20 C Ref,Pressure (kPa)
 data,0.0,999.79200,0.00100,16.01640,16.03155,16.04467,0.61170
 data,4.4,999.92000,0.00100,16.01845,16.03361,16.04673,0.83930
 data,10.0,999.64800,0.00100,16.01409,16.02924,16.04236,1.22823
