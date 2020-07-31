@@ -228,6 +228,14 @@ Vue.component('friction-loss-calculator', {
             })
     },
     methods: {
+        no_negative: function (e) {
+            if (!((e.keyCode > 95 && e.keyCode < 106) ||
+                    (e.keyCode > 47 && e.keyCode < 58) ||
+                    e.keyCode == 8)) {
+                e.preventDefault();
+                return false;
+            }
+        },
         load_inputs: function () {
             this.local_loading = true;
             for (const prop of this.saved_props) {
@@ -351,6 +359,7 @@ Vue.component('friction-loss-calculator', {
             }
         },
         outer_diameter: function () {
+            let x = this.nominal_size;
             if (this.entry) {
                 return this.entry.od;
             }
@@ -483,6 +492,8 @@ Vue.component('friction-loss-calculator', {
 
         },
         nominal_size: function () {
+
+
             // When nominal size is selected, build a list of selector values, if the 
             // material selected supports selectors.
             this.selectors = [];
@@ -490,20 +501,17 @@ Vue.component('friction-loss-calculator', {
             this.selector = mat.selector ? mat.selector : null;
 
             if (this.selector && this.nominal_size) {
-                console.log(mat);
                 const pipes = mat.nominal_sizes[this.nominal_size]
                 for (const m of pipes.map(function (p) {
                         return p.selector;
                     })) {
                     this.selectors.push(m);
                 }
-                console.log(this.selectors);
+                this.entry = pipes[0];
             } else if (this.nominal_size) {
                 // There is only one listing for each nominal size, so just select it.
                 const pipes = mat.nominal_sizes[this.nominal_size]
                 this.entry = pipes[0];
-                console.log("Pipe selected ");
-                console.log(this.entry);
             }
         },
         selection: function () {
