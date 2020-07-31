@@ -713,13 +713,13 @@ def html(graph, specials, production=False):
     # After search, the search results will be populated with the title/slug combo
     # to render.
 
-    Topic = namedtuple('Topic', 'path slug title text')
+    Topic = namedtuple('Topic', 'path slug title text section')
     haystack = list()
 
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
             haystack.append(Topic(
-                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content']))
+                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content'], section['metadata']['title']))
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
         json.dump([t._asdict() for t in haystack], outfile)

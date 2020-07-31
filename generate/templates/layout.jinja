@@ -437,9 +437,9 @@
                             <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
-                            
-                            
+                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>
+                                <span style='font-size:smaller'>${topic.section}</span> <br/> ${topic.title}
+                            </a>
                         </li>
                     </ul>
                     
