@@ -679,58 +679,97 @@ Vue.component('viscosity-converter', {
             this.from_unit = this.to_unit;
             this.to_unit = tmp;
         },
+        sigfigs(n) {
+            n = Math.abs(String(n).replace(".", "")); //remove decimal and make positive
+            if (n == 0) return 0;
+            while (n != 0 && n % 10 == 0) n /= 10; //kill the 0s at the end of n
+
+            return Math.floor(Math.log(n) / Math.log(10)) + 1; //get number of digits
+        },
+        ssu(cst) {
+            return 4.6324 * cst + ((1 + 0.03264 * cst) / ((3930.2 + 262.7 * cst + 23.97 * cst * cst + 1.646 * cst * cst * cst) * 1e-5));
+        },
         dd() {
             const input = parseFloat(this.from_value);
-            const centipoise = (input * this.from_unit.toPrime).toFixed(4);
+            const centipoise = (input * this.from_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
-            const output = (centipoise / this.to_unit.toPrime).toFixed(4);
+
+            const output = (centipoise / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
         },
         dk() {
             const input = parseFloat(this.from_value);
-            const centipoise = (input * this.from_unit.toPrime).toFixed(4);
+            //-----------------------------------
+            // Find significant figures of input
+            const centipoise = (input * this.from_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
-            const centistoke = (centipoise / parseFloat(this.sg)).toFixed(4);
+            const centistoke = (centipoise / parseFloat(this.sg)).toPrecision(this.output_sig_fig);
             this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centisoke`);
-            const output = (centistoke / this.to_unit.toPrime).toFixed(4);
+
+            //-----------------------------------
+            // Set precision with significant figures
+            let output;
+            if (this.to_unit.toPrime === "ssu100") {
+                output = this.ssu(centistoke).toPrecision(this.output_sig_fig);
+            } else {
+                output = (centistoke / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
+            }
             if (this.to_unit.id != 5)
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
 
-            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
-                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            if (this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff_max}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            }
+            if (this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
         },
         kk() {
             const input = parseFloat(this.from_value);
-            const centistoke = (input * this.from_unit.toPrime).toFixed(4);
+            //-----------------------------------
+            // Find significant figures of input
+            const centistoke = (input * this.from_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.from_unit.id != 5)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
-            const output = (centistoke / this.to_unit.toPrime).toFixed(4);
+
+            //-----------------------------------
+            // Set precision with significant figures
+            let output;
+            if (this.to_unit.toPrime === "ssu100") {
+                output = this.ssu(centistoke).toPrecision(this.output_sig_fig);
+            } else {
+                output = (centistoke / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
+            }
             if (this.to_unit.id != 5)
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
 
-            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
-                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            if (this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff_max}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            }
+            if (this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
         },
         kd() {
             const input = parseFloat(this.from_value);
-            const centistoke = (input * this.from_unit.toPrime).toFixed(4);
+            //-----------------------------------
+            // Find significant figures of input
+            const centistoke = (input * this.from_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.from_unit.id != 5)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
 
             if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
-            const centipoise = (input * parseFloat(this.sg)).toFixed(4);
+            const centipoise = (input * parseFloat(this.sg)).toPrecision(this.output_sig_fig);
             this.steps.push(`${input} Centisokes * ${this.sg} = ${centipoise} Centipoise`);
-            const output = (centipoise / this.to_unit.toPrime).toFixed(4);
+            const output = (centipoise / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
@@ -757,6 +796,11 @@ Vue.component('viscosity-converter', {
         }
     },
     computed: {
+        output_sig_fig() {
+            const input = parseFloat(this.from_value);
+            const sigfig = this.sigfigs(input);
+            return Math.max(6, sigfig + 2);
+        },
         show_sg: function () {
             if (this.from_unit && this.to_unit) {
                 return this.from_unit.category != this.to_unit.category;

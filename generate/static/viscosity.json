@@ -40,17 +40,12 @@
         "id": 7
     },
     {
+        "no_input": true,
         "category": "K",
         "label": "SSU (100 F)",
-        "toPrime": 0.21588946,
-        "cSt_cuttoff": 500,
+        "toPrime": "ssu100",
+        "cSt_cuttoff_max": 500,
+        "cSt_cuttoff_min": 1.81,
         "id": 8
-    },
-    {
-        "category": "K",
-        "label": "SSU (210 F)",
-        "toPrime": 0.21440823,
-        "cSt_cuttoff": 120,
-        "id": 9
     }
 ]

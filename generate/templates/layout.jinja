@@ -37,7 +37,7 @@
                 </div>
                 <div class='column'>
                     <select  class="input" v-model='from_unit'>
-                        <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                        <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
                     </select>
                 </div>
             </div>
