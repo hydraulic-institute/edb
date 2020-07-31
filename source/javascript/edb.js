@@ -558,6 +558,13 @@ Vue.component('converter', {
             })
     },
     methods: {
+        sigfigs(n) {
+            n = Math.abs(String(n).replace(".", "")); //remove decimal and make positive
+            if (n == 0) return 0;
+            while (n != 0 && n % 10 == 0) n /= 10; //kill the 0s at the end of n
+
+            return Math.floor(Math.log(n) / Math.log(10)) + 1; //get number of digits
+        },
         swap() {
             const t = this.unit_from;
             this.unit_from = this.unit_to;
@@ -574,7 +581,7 @@ Vue.component('converter', {
 
             } else {
                 const standard = this.from / this.unit_from.factor;
-                this.to = (standard * this.unit_to.factor).toFixed(this.unit.decimals);
+                this.to = (standard * this.unit_to.factor).toPrecision(this.sig_fig_output);
             }
         },
         recalc_temperature() {
@@ -607,10 +614,15 @@ Vue.component('converter', {
                     this.to = celsius * 1.8 + 491.67
                     break;
             }
-            this.to = this.to.toFixed(this.unit.decimals);
+            this.to = this.to.toPrecision(this.sig_fig_output);
         }
     },
-    computed: {},
+    computed: {
+        sig_fig_output() {
+            const input = this.sigfigs(this.from);
+            return Math.max(6, input + 2);
+        }
+    },
     watch: {
         unit: function () {
             if (this.unit) {
