@@ -28,7 +28,7 @@ The following amounts of water are recommended to move 1 cubic foot:
 
 
 =+= 
-<span class='equation-label'>Eq. 1</span>
+<span class='equation-label'>(3.D.1)</span>
 $$  Q = 19.636*C*{d_1}^2*\sqrt {h} $$
 =+= 
 
