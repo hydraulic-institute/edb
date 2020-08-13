@@ -1,7 +1,7 @@
 -----
 title: A) Steel Pipe
 date: February 5th, 2020
-description: Dimensions of wrought and stainless steel pipes.
+description: Dimensions of wrought steel pipes.
 hide_units: true
 -----
 
@@ -14,7 +14,7 @@ price: 59.00
 hide_price: true
 =^=
 
-## Pipe Dimensions: Wrought Steel & Stainless Steel 
+## Pipe Dimensions: Wrought Steel 
 
 =|=
 data: steel.csv
