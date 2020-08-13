@@ -26,7 +26,7 @@ title: Specific Gravity vs. Temperature for Water
 data-us: SpecificGravity-US.csv
 data-metric: SpecificGravity-Metric.csv
 x: 1
-series: 7
+series: 6
 series_title_index: 0
 =/=
 

@@ -47,6 +47,8 @@ Use gate valves with a hose nipple at all outlets instead of the customary hose 
 on account of the friction loss in the hose faucets.
 
 ### Theoretical Discharge of Nozzles in <units us = "Gallons per Minute" metric = "m^3^/s"/>
+
+
 =|=
 title: 
 data-us: Nozzle Diameter - English Units.csv
