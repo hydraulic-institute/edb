@@ -70,7 +70,7 @@ data: seamless-cop-water.csv
 ## Pipe Dimensions: Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
 
 =|=
-data: wrought-seamless-tube.csv
+data: wrought-seamless-tube2.csv
 =|=
 
 ## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
