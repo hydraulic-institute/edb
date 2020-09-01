@@ -1,4 +1,9 @@
 .vscode/
+.aws
+.DS_Store
+generate/.DS_Store
+kb/.DS_Store
+kb/friction-loss/.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
