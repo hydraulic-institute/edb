@@ -190,7 +190,7 @@ Vue.component('friction-loss-calculator', {
 
             flow: null,
             length: null,
-            viscosity: null,
+            viscosity: 1,
             sg: 1,
             vka: 'kinematic',
             input_dynamic_v: 1,
@@ -230,12 +230,12 @@ Vue.component('friction-loss-calculator', {
     methods: {
         no_negative: function (e) {
             if (!((e.keyCode > 95 && e.keyCode < 106) ||
-                    (e.keyCode > 47 && e.keyCode < 58) ||
-                    e.keyCode == 190 || // period
-                    e.keyCode == 110 || // decimal point
-                    e.keyCode == 27 || // escape
-                    e.keyCode == 46 || // delete
-                    e.keyCode == 8)) { // backspace
+                (e.keyCode > 47 && e.keyCode < 58) ||
+                e.keyCode == 190 || // period
+                e.keyCode == 110 || // decimal point
+                e.keyCode == 27 || // escape
+                e.keyCode == 46 || // delete
+                e.keyCode == 8)) { // backspace
                 e.preventDefault();
                 return false;
             }
@@ -370,9 +370,18 @@ Vue.component('friction-loss-calculator', {
         },
 
         results_revision: function () {
-            if (!this.entry) return [];
-            if (!this.flow) return [];
-            if (!this.viscosity) return [];
+            if (!this.entry) {
+                console.log("No entry");
+                return [];
+            }
+            if (!this.flow) {
+                console.log("No flow");
+                return [];
+            }
+            if (!this.viscosity) {
+                console.log("No viscosity");
+                return [];
+            }
 
             const D = this.inner_diameter / 12;
             const A = Math.PI * (D * D) / 4;
@@ -487,9 +496,12 @@ Vue.component('friction-loss-calculator', {
             }
 
             if (this.material) {
-                for (const m in this.data[this.material].nominal_sizes) this.sizes.push(m);
-
+                for (const m in this.data[this.material].nominal_sizes) {
+                    this.sizes.push(m);
+                }
+                console.log("Material set, pushing nominal sizes");
             } else {
+                console.log("Selector and entry not set - no material");
                 this.selector = null;
                 this.entry = null;
             }
@@ -507,16 +519,21 @@ Vue.component('friction-loss-calculator', {
             if (this.selector && this.nominal_size) {
                 const pipes = mat.nominal_sizes[this.nominal_size]
                 for (const m of pipes.map(function (p) {
-                        return p.selector;
-                    })) {
+                    return p.selector;
+                })) {
                     this.selectors.push(m);
                 }
+                console.log("Entry set to first selection");
                 this.entry = pipes[0];
             } else if (this.nominal_size) {
                 // There is only one listing for each nominal size, so just select it.
+                console.log("Entry set to only size");
                 const pipes = mat.nominal_sizes[this.nominal_size]
                 this.entry = pipes[0];
             }
+            console.log("Nominal size not yet selected");
+            console.log(this.selector)
+            console.log(this.nominal_size)
         },
         selection: function () {
             // Selection has changed, if it is changing to null - skip.
