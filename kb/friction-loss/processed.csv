@@ -1485,103 +1485,103 @@ Wrought Steel (According to ASME B36.10M-2015),36.0,36.0,35.0,0.5,0.00015,API St
 Wrought Steel (According to ASME B36.10M-2015),36.0,36.0,34.876,0.562,0.00015,API Standard / Pipe Schedule,5L 5LX
 Wrought Steel (According to ASME B36.10M-2015),36.0,36.0,34.75,0.625,0.00015,API Standard / Pipe Schedule,5L 5LX / 30
 Wrought Steel (According to ASME B36.10M-2015),36.0,36.0,34.5,0.75,0.00015,API Standard / Pipe Schedule,5L 5LX / 40
-Stainless Steel (According to ASME B36.10M-2015),0.125,0.405,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
-Stainless Steel (According to ASME B36.10M-2015),0.125,0.405,0.307,0.049,5e-05,API Standard / Pipe Schedule,10S / 0.049
-Stainless Steel (According to ASME B36.10M-2015),0.125,0.405,0.269,0.068,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.068
-Stainless Steel (According to ASME B36.10M-2015),0.125,0.405,0.215,0.095,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.095
-Stainless Steel (According to ASME B36.10M-2015),0.25,0.54,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
-Stainless Steel (According to ASME B36.10M-2015),0.25,0.54,0.41,0.065,5e-05,API Standard / Pipe Schedule,10S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),0.25,0.54,0.364,0.088,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.088
-Stainless Steel (According to ASME B36.10M-2015),0.25,0.54,0.302,0.119,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.119
-Stainless Steel (According to ASME B36.10M-2015),0.375,0.675,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
-Stainless Steel (According to ASME B36.10M-2015),0.375,0.675,0.545,0.065,5e-05,API Standard / Pipe Schedule,10S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),0.375,0.675,0.493,0.091,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.091
-Stainless Steel (According to ASME B36.10M-2015),0.375,0.675,0.423,0.126,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.126
-Stainless Steel (According to ASME B36.10M-2015),0.5,0.84,0.71,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),0.5,0.84,0.674,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),0.5,0.84,0.622,0.109,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),0.5,0.84,0.546,0.147,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.147
-Stainless Steel (According to ASME B36.10M-2015),0.75,1.05,0.92,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),0.75,1.05,0.884,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),0.75,1.05,0.824,0.113,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.113
-Stainless Steel (According to ASME B36.10M-2015),0.75,1.05,0.742,0.154,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.154
-Stainless Steel (According to ASME B36.10M-2015),1.0,1.315,1.185,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),1.0,1.315,1.149,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),1.0,1.315,1.049,0.133,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.133
-Stainless Steel (According to ASME B36.10M-2015),1.0,1.315,0.957,0.179,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.179
-Stainless Steel (According to ASME B36.10M-2015),1.25,1.66,1.53,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),1.25,1.66,1.442,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),1.25,1.66,1.38,0.14,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.14
-Stainless Steel (According to ASME B36.10M-2015),1.25,1.66,1.278,0.191,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.191
-Stainless Steel (According to ASME B36.10M-2015),1.5,1.9,1.77,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),1.5,1.9,1.682,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),1.5,1.9,1.61,0.145,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.145
-Stainless Steel (According to ASME B36.10M-2015),1.5,1.9,1.5,0.2,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.2
-Stainless Steel (According to ASME B36.10M-2015),2.0,2.375,2.245,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
-Stainless Steel (According to ASME B36.10M-2015),2.0,2.375,2.157,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),2.0,2.375,2.067,0.154,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.154
-Stainless Steel (According to ASME B36.10M-2015),2.0,2.375,1.939,0.218,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.218
-Stainless Steel (According to ASME B36.10M-2015),2.5,2.875,2.709,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),2.5,2.875,2.635,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
-Stainless Steel (According to ASME B36.10M-2015),2.5,2.875,2.469,0.203,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.203
-Stainless Steel (According to ASME B36.10M-2015),2.5,2.875,2.323,0.276,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.276
-Stainless Steel (According to ASME B36.10M-2015),3.0,3.5,3.334,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),3.0,3.5,3.26,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
-Stainless Steel (According to ASME B36.10M-2015),3.0,3.5,3.068,0.216,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.216
-Stainless Steel (According to ASME B36.10M-2015),3.0,3.5,2.9,0.3,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.3
-Stainless Steel (According to ASME B36.10M-2015),3.5,4.0,3.834,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),3.5,4.0,3.76,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
-Stainless Steel (According to ASME B36.10M-2015),3.5,4.0,3.548,0.226,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.226
-Stainless Steel (According to ASME B36.10M-2015),3.5,4.0,3.364,0.318,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.318
-Stainless Steel (According to ASME B36.10M-2015),4.0,4.5,4.334,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
-Stainless Steel (According to ASME B36.10M-2015),4.0,4.5,4.26,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
-Stainless Steel (According to ASME B36.10M-2015),4.0,4.5,4.026,0.237,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.237
-Stainless Steel (According to ASME B36.10M-2015),4.0,4.5,3.826,0.337,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.337
-Stainless Steel (According to ASME B36.10M-2015),5.0,5.563,5.345,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),5.0,5.563,5.295,0.134,5e-05,API Standard / Pipe Schedule,10S / 0.134
-Stainless Steel (According to ASME B36.10M-2015),5.0,5.563,5.047,0.258,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.258
-Stainless Steel (According to ASME B36.10M-2015),5.0,5.563,4.813,0.375,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),6.0,6.625,6.407,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),6.0,6.625,6.357,0.134,5e-05,API Standard / Pipe Schedule,10S / 0.134
-Stainless Steel (According to ASME B36.10M-2015),6.0,6.625,6.065,0.28,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.28
-Stainless Steel (According to ASME B36.10M-2015),6.0,6.625,5.761,0.432,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.432
-Stainless Steel (According to ASME B36.10M-2015),8.0,8.625,8.407,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
-Stainless Steel (According to ASME B36.10M-2015),8.0,8.625,8.329,0.148,5e-05,API Standard / Pipe Schedule,10S / 0.148
-Stainless Steel (According to ASME B36.10M-2015),8.0,8.625,7.981,0.322,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.322
-Stainless Steel (According to ASME B36.10M-2015),8.0,8.625,7.625,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),10.0,10.75,10.482,0.134,5e-05,API Standard / Pipe Schedule,5S / 0.134
-Stainless Steel (According to ASME B36.10M-2015),10.0,10.75,10.42,0.165,5e-05,API Standard / Pipe Schedule,10S / 0.165
-Stainless Steel (According to ASME B36.10M-2015),10.0,10.75,10.02,0.365,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.365
-Stainless Steel (According to ASME B36.10M-2015),10.0,10.75,9.75,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),12.0,12.75,12.438,0.156,5e-05,API Standard / Pipe Schedule,5S / 0.156
-Stainless Steel (According to ASME B36.10M-2015),12.0,12.75,12.39,0.18,5e-05,API Standard / Pipe Schedule,10S / 0.18
-Stainless Steel (According to ASME B36.10M-2015),12.0,12.75,12.0,0.375,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),12.0,12.75,11.75,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),14.0,14.0,13.688,0.156,5e-05,API Standard / Pipe Schedule,5S / 0.156
-Stainless Steel (According to ASME B36.10M-2015),14.0,14.0,13.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
-Stainless Steel (According to ASME B36.10M-2015),14.0,14.0,13.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),14.0,14.0,13.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),16.0,16.0,15.67,0.165,5e-05,API Standard / Pipe Schedule,5S / 0.165
-Stainless Steel (According to ASME B36.10M-2015),16.0,16.0,15.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
-Stainless Steel (According to ASME B36.10M-2015),16.0,16.0,15.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),16.0,16.0,15.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),18.0,18.0,17.67,0.165,5e-05,API Standard / Pipe Schedule,5S / 0.165
-Stainless Steel (According to ASME B36.10M-2015),18.0,18.0,17.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
-Stainless Steel (According to ASME B36.10M-2015),18.0,18.0,17.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),18.0,18.0,17.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),20.0,20.0,19.624,0.188,5e-05,API Standard / Pipe Schedule,5S / 0.188
-Stainless Steel (According to ASME B36.10M-2015),20.0,20.0,19.564,0.218,5e-05,API Standard / Pipe Schedule,10S / 0.218
-Stainless Steel (According to ASME B36.10M-2015),20.0,20.0,19.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),20.0,20.0,19.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),22.0,22.0,21.624,0.188,5e-05,API Standard / Pipe Schedule,5S / 0.188
-Stainless Steel (According to ASME B36.10M-2015),22.0,22.0,21.564,0.218,5e-05,API Standard / Pipe Schedule,10S / 0.218
-Stainless Steel (According to ASME B36.10M-2015),22.0,22.0,21.25,0.375,5e-05,API Standard / Pipe Schedule,40S* / 0.375
-Stainless Steel (According to ASME B36.10M-2015),22.0,22.0,21.0,0.5,5e-05,API Standard / Pipe Schedule,80S* / 0.5
-Stainless Steel (According to ASME B36.10M-2015),24.0,24.0,23.564,0.218,5e-05,API Standard / Pipe Schedule,5S / 0.218
-Stainless Steel (According to ASME B36.10M-2015),24.0,24.0,23.5,0.25,5e-05,API Standard / Pipe Schedule,10S / 0.25
-Stainless Steel (According to ASME B36.10M-2015),24.0,24.0,23.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
-Stainless Steel (According to ASME B36.10M-2015),24.0,24.0,23.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
-Stainless Steel (According to ASME B36.10M-2015),30.0,30.0,29.5,0.25,5e-05,API Standard / Pipe Schedule,5S / 0.25
-Stainless Steel (According to ASME B36.10M-2015),30.0,30.0,29.376,0.312,5e-05,API Standard / Pipe Schedule,10S / 0.312
-Stainless Steel (According to ASME B36.10M-2015),30.0,30.0,29.25,0.375,5e-05,API Standard / Pipe Schedule,40S* / 0.375
-Stainless Steel (According to ASME B36.10M-2015),30.0,30.0,29.0,0.5,5e-05,API Standard / Pipe Schedule,80S* / 0.5
+Stainless Steel (According to ASME 19M-2018),0.125,0.405,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
+Stainless Steel (According to ASME 19M-2018),0.125,0.405,0.307,0.049,5e-05,API Standard / Pipe Schedule,10S / 0.049
+Stainless Steel (According to ASME 19M-2018),0.125,0.405,0.269,0.068,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.068
+Stainless Steel (According to ASME 19M-2018),0.125,0.405,0.215,0.095,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.095
+Stainless Steel (According to ASME 19M-2018),0.25,0.54,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
+Stainless Steel (According to ASME 19M-2018),0.25,0.54,0.41,0.065,5e-05,API Standard / Pipe Schedule,10S / 0.065
+Stainless Steel (According to ASME 19M-2018),0.25,0.54,0.364,0.088,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.088
+Stainless Steel (According to ASME 19M-2018),0.25,0.54,0.302,0.119,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.119
+Stainless Steel (According to ASME 19M-2018),0.375,0.675,0.0,0.0,5e-05,API Standard / Pipe Schedule,5S / 0
+Stainless Steel (According to ASME 19M-2018),0.375,0.675,0.545,0.065,5e-05,API Standard / Pipe Schedule,10S / 0.065
+Stainless Steel (According to ASME 19M-2018),0.375,0.675,0.493,0.091,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.091
+Stainless Steel (According to ASME 19M-2018),0.375,0.675,0.423,0.126,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.126
+Stainless Steel (According to ASME 19M-2018),0.5,0.84,0.71,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),0.5,0.84,0.674,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
+Stainless Steel (According to ASME 19M-2018),0.5,0.84,0.622,0.109,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.109
+Stainless Steel (According to ASME 19M-2018),0.5,0.84,0.546,0.147,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.147
+Stainless Steel (According to ASME 19M-2018),0.75,1.05,0.92,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),0.75,1.05,0.884,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
+Stainless Steel (According to ASME 19M-2018),0.75,1.05,0.824,0.113,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.113
+Stainless Steel (According to ASME 19M-2018),0.75,1.05,0.742,0.154,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.154
+Stainless Steel (According to ASME 19M-2018),1.0,1.315,1.185,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),1.0,1.315,1.149,0.083,5e-05,API Standard / Pipe Schedule,10S / 0.083
+Stainless Steel (According to ASME 19M-2018),1.0,1.315,1.049,0.133,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.133
+Stainless Steel (According to ASME 19M-2018),1.0,1.315,0.957,0.179,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.179
+Stainless Steel (According to ASME 19M-2018),1.25,1.66,1.53,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),1.25,1.66,1.442,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
+Stainless Steel (According to ASME 19M-2018),1.25,1.66,1.38,0.14,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.14
+Stainless Steel (According to ASME 19M-2018),1.25,1.66,1.278,0.191,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.191
+Stainless Steel (According to ASME 19M-2018),1.5,1.9,1.77,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),1.5,1.9,1.682,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
+Stainless Steel (According to ASME 19M-2018),1.5,1.9,1.61,0.145,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.145
+Stainless Steel (According to ASME 19M-2018),1.5,1.9,1.5,0.2,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.2
+Stainless Steel (According to ASME 19M-2018),2.0,2.375,2.245,0.065,5e-05,API Standard / Pipe Schedule,5S / 0.065
+Stainless Steel (According to ASME 19M-2018),2.0,2.375,2.157,0.109,5e-05,API Standard / Pipe Schedule,10S / 0.109
+Stainless Steel (According to ASME 19M-2018),2.0,2.375,2.067,0.154,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.154
+Stainless Steel (According to ASME 19M-2018),2.0,2.375,1.939,0.218,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.218
+Stainless Steel (According to ASME 19M-2018),2.5,2.875,2.709,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
+Stainless Steel (According to ASME 19M-2018),2.5,2.875,2.635,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
+Stainless Steel (According to ASME 19M-2018),2.5,2.875,2.469,0.203,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.203
+Stainless Steel (According to ASME 19M-2018),2.5,2.875,2.323,0.276,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.276
+Stainless Steel (According to ASME 19M-2018),3.0,3.5,3.334,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
+Stainless Steel (According to ASME 19M-2018),3.0,3.5,3.26,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
+Stainless Steel (According to ASME 19M-2018),3.0,3.5,3.068,0.216,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.216
+Stainless Steel (According to ASME 19M-2018),3.0,3.5,2.9,0.3,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.3
+Stainless Steel (According to ASME 19M-2018),3.5,4.0,3.834,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
+Stainless Steel (According to ASME 19M-2018),3.5,4.0,3.76,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
+Stainless Steel (According to ASME 19M-2018),3.5,4.0,3.548,0.226,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.226
+Stainless Steel (According to ASME 19M-2018),3.5,4.0,3.364,0.318,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.318
+Stainless Steel (According to ASME 19M-2018),4.0,4.5,4.334,0.083,5e-05,API Standard / Pipe Schedule,5S / 0.083
+Stainless Steel (According to ASME 19M-2018),4.0,4.5,4.26,0.12,5e-05,API Standard / Pipe Schedule,10S / 0.12
+Stainless Steel (According to ASME 19M-2018),4.0,4.5,4.026,0.237,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.237
+Stainless Steel (According to ASME 19M-2018),4.0,4.5,3.826,0.337,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.337
+Stainless Steel (According to ASME 19M-2018),5.0,5.563,5.345,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
+Stainless Steel (According to ASME 19M-2018),5.0,5.563,5.295,0.134,5e-05,API Standard / Pipe Schedule,10S / 0.134
+Stainless Steel (According to ASME 19M-2018),5.0,5.563,5.047,0.258,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.258
+Stainless Steel (According to ASME 19M-2018),5.0,5.563,4.813,0.375,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.375
+Stainless Steel (According to ASME 19M-2018),6.0,6.625,6.407,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
+Stainless Steel (According to ASME 19M-2018),6.0,6.625,6.357,0.134,5e-05,API Standard / Pipe Schedule,10S / 0.134
+Stainless Steel (According to ASME 19M-2018),6.0,6.625,6.065,0.28,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.28
+Stainless Steel (According to ASME 19M-2018),6.0,6.625,5.761,0.432,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.432
+Stainless Steel (According to ASME 19M-2018),8.0,8.625,8.407,0.109,5e-05,API Standard / Pipe Schedule,5S / 0.109
+Stainless Steel (According to ASME 19M-2018),8.0,8.625,8.329,0.148,5e-05,API Standard / Pipe Schedule,10S / 0.148
+Stainless Steel (According to ASME 19M-2018),8.0,8.625,7.981,0.322,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.322
+Stainless Steel (According to ASME 19M-2018),8.0,8.625,7.625,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
+Stainless Steel (According to ASME 19M-2018),10.0,10.75,10.482,0.134,5e-05,API Standard / Pipe Schedule,5S / 0.134
+Stainless Steel (According to ASME 19M-2018),10.0,10.75,10.42,0.165,5e-05,API Standard / Pipe Schedule,10S / 0.165
+Stainless Steel (According to ASME 19M-2018),10.0,10.75,10.02,0.365,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.365
+Stainless Steel (According to ASME 19M-2018),10.0,10.75,9.75,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
+Stainless Steel (According to ASME 19M-2018),12.0,12.75,12.438,0.156,5e-05,API Standard / Pipe Schedule,5S / 0.156
+Stainless Steel (According to ASME 19M-2018),12.0,12.75,12.39,0.18,5e-05,API Standard / Pipe Schedule,10S / 0.18
+Stainless Steel (According to ASME 19M-2018),12.0,12.75,12.0,0.375,5e-05,API Standard / Pipe Schedule,STD / 40S / 0.375
+Stainless Steel (According to ASME 19M-2018),12.0,12.75,11.75,0.5,5e-05,API Standard / Pipe Schedule,XS / 80S / 0.5
+Stainless Steel (According to ASME 19M-2018),14.0,14.0,13.688,0.156,5e-05,API Standard / Pipe Schedule,5S / 0.156
+Stainless Steel (According to ASME 19M-2018),14.0,14.0,13.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
+Stainless Steel (According to ASME 19M-2018),14.0,14.0,13.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
+Stainless Steel (According to ASME 19M-2018),14.0,14.0,13.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
+Stainless Steel (According to ASME 19M-2018),16.0,16.0,15.67,0.165,5e-05,API Standard / Pipe Schedule,5S / 0.165
+Stainless Steel (According to ASME 19M-2018),16.0,16.0,15.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
+Stainless Steel (According to ASME 19M-2018),16.0,16.0,15.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
+Stainless Steel (According to ASME 19M-2018),16.0,16.0,15.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
+Stainless Steel (According to ASME 19M-2018),18.0,18.0,17.67,0.165,5e-05,API Standard / Pipe Schedule,5S / 0.165
+Stainless Steel (According to ASME 19M-2018),18.0,18.0,17.624,0.188,5e-05,API Standard / Pipe Schedule,10S / 0.188
+Stainless Steel (According to ASME 19M-2018),18.0,18.0,17.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
+Stainless Steel (According to ASME 19M-2018),18.0,18.0,17.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
+Stainless Steel (According to ASME 19M-2018),20.0,20.0,19.624,0.188,5e-05,API Standard / Pipe Schedule,5S / 0.188
+Stainless Steel (According to ASME 19M-2018),20.0,20.0,19.564,0.218,5e-05,API Standard / Pipe Schedule,10S / 0.218
+Stainless Steel (According to ASME 19M-2018),20.0,20.0,19.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
+Stainless Steel (According to ASME 19M-2018),20.0,20.0,19.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
+Stainless Steel (According to ASME 19M-2018),22.0,22.0,21.624,0.188,5e-05,API Standard / Pipe Schedule,5S / 0.188
+Stainless Steel (According to ASME 19M-2018),22.0,22.0,21.564,0.218,5e-05,API Standard / Pipe Schedule,10S / 0.218
+Stainless Steel (According to ASME 19M-2018),22.0,22.0,21.25,0.375,5e-05,API Standard / Pipe Schedule,40S* / 0.375
+Stainless Steel (According to ASME 19M-2018),22.0,22.0,21.0,0.5,5e-05,API Standard / Pipe Schedule,80S* / 0.5
+Stainless Steel (According to ASME 19M-2018),24.0,24.0,23.564,0.218,5e-05,API Standard / Pipe Schedule,5S / 0.218
+Stainless Steel (According to ASME 19M-2018),24.0,24.0,23.5,0.25,5e-05,API Standard / Pipe Schedule,10S / 0.25
+Stainless Steel (According to ASME 19M-2018),24.0,24.0,23.25,0.375,5e-05,API Standard / Pipe Schedule,40S / 0.375
+Stainless Steel (According to ASME 19M-2018),24.0,24.0,23.0,0.5,5e-05,API Standard / Pipe Schedule,80S / 0.5
+Stainless Steel (According to ASME 19M-2018),30.0,30.0,29.5,0.25,5e-05,API Standard / Pipe Schedule,5S / 0.25
+Stainless Steel (According to ASME 19M-2018),30.0,30.0,29.376,0.312,5e-05,API Standard / Pipe Schedule,10S / 0.312
+Stainless Steel (According to ASME 19M-2018),30.0,30.0,29.25,0.375,5e-05,API Standard / Pipe Schedule,40S* / 0.375
+Stainless Steel (According to ASME 19M-2018),30.0,30.0,29.0,0.5,5e-05,API Standard / Pipe Schedule,80S* / 0.5

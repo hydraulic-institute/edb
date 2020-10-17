@@ -368,7 +368,9 @@ Vue.component('friction-loss-calculator', {
                 return this.entry.od;
             }
         },
-
+        specified: function () {
+            return this.entry != null && (this.selector == null || (this.selector != null && this.selection != null));
+        },
         results_revision: function () {
             if (!this.entry) {
                 console.log("No entry");
@@ -490,6 +492,8 @@ Vue.component('friction-loss-calculator', {
         },
         material: function () {
             this.sizes = [];
+            this.selection = null;
+            this.entry = null;
             if (!this.local_loading) {
                 console.log("Setting nominal size to null");
                 this.nominal_size = null;
@@ -517,19 +521,23 @@ Vue.component('friction-loss-calculator', {
             this.selector = mat.selector ? mat.selector : null;
 
             if (this.selector && this.nominal_size) {
-                const pipes = mat.nominal_sizes[this.nominal_size]
-                for (const m of pipes.map(function (p) {
-                    return p.selector;
-                })) {
-                    this.selectors.push(m);
+                let pipes = mat.nominal_sizes[this.nominal_size]
+                if (pipes) {
+                    for (const m of pipes.map(function (p) {
+                        return p.selector;
+                    })) {
+                        this.selectors.push(m);
+                    }
+                    console.log("Entry set to first selection");
+                    this.entry = pipes[0];
                 }
-                console.log("Entry set to first selection");
-                this.entry = pipes[0];
             } else if (this.nominal_size) {
                 // There is only one listing for each nominal size, so just select it.
                 console.log("Entry set to only size");
                 const pipes = mat.nominal_sizes[this.nominal_size]
-                this.entry = pipes[0];
+                if (pipes) {
+                    this.entry = pipes[0];
+                }
             }
             console.log("Nominal size not yet selected");
             console.log(this.selector)

@@ -20,7 +20,7 @@ hide_price: true
 data: stainlesssteel.csv
 =|=
 
-**(According to ASME B36.10M-2015)**
+**(According to ASME B36.19M-2018)**
 
 
 
