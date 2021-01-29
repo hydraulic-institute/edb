@@ -186,9 +186,9 @@ hide_price: true
 
 ### Affinity Rules
 
-Under the assumption that both pumps maintain the same efficiencies, the **Affinity Rules** show the relationships between pump parameters (flow, pressure/head, power) and pump 
-characteristics (speed and impeller size). There are two parts to the Affinity Rules which vary by application; a change in speed while maintaining
-a constant impeller size or a change in impeller size while maintaining a constant speed.
+Under the assumption that changing speed or impeller diameter of a pump maintains the same efficiencies, 
+the Affinity Rules show the relationships between pump parameters (flow, pressure/head, power) and pump 
+charactereistics (speed and impeller size) or a change in impeller size while maintaining a constant speed.
 
 **1. Changing Speed / Constant Impeller Size**
 
