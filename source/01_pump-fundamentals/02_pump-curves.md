@@ -146,9 +146,9 @@ series_title_index: 0
 
 ![](./bep-flowrate.png "")
 
-**Best efficiency point (BEP):**
+**Best Efficiency Point (BEP):**
 
-A pump’s best efficiency pointis defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
+A pump’s best efficiency point is defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
 of the impeller vanes at entry.

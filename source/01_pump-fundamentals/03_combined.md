@@ -26,7 +26,7 @@ description: This guidebook is intended to assist those who need to understand d
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
 url: https://estore.pumps.org/Guidebooks/PSO.aspx
 price: 205.00
-hide_price: true
+
 =^=
 
 ### Reading a Pump and System Curve Plot
@@ -86,7 +86,7 @@ Changing the **setpoint (*or control point*)** on an active control valve will c
 control valve, and the head required on the pump. In the example here, the setpoint is changed so that the flow is decreased. Notice that with this decreased flow, the head 
 required for the pump will increase.
 
-![](./reading-5v3.png "")
+![](./reading-5v4.png "")
 
 ### Changing the Pump Speed with an Active Control Valve
 

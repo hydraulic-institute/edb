@@ -47,7 +47,7 @@ for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe
 
 ### Minor Losses
 
-Minor losses in a piping system occur when fluid passes through a fitting, valve, area change, or enters or exits a tank, etc. Any system component that obstructs for changes the 
+Minor losses in a piping system occur when fluid passes through a fitting, valve, area change, or enters or exits a tank, etc. Any system component that obstructs or changes the 
 direction or pressure of the flow can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss). These minor losses can be the
 dominant system loss. 
 
