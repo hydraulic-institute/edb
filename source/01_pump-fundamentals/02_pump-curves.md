@@ -200,11 +200,11 @@ $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 =+=
 =+=
 <span class= equation-label >(1.B.6b)</span>
-$$ {H_2 \over H_1} = ({n_2 \over n_1})^2 = ({Q_2 \over Q_1})^2 $$
+$$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
 =+=
 =+=
 <span class= equation-label >(1.B.6c)</span>
-$$ {P_2 \over P_1} = ({n_2 \over n_1})^3 = ({Q_2 \over Q_1})^3  $$
+$$ {P_2 \over P_1} = ({n_2 \over n_1})^3  $$
 =+=
 
 **2. Changing Impeller Size / Constant Speed**

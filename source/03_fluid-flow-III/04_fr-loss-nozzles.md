@@ -39,7 +39,7 @@ Where:
 - h = Head in <units us = "feet" metric = "meters"/> 
 - C = Discharge Coefficient = 1
 
-For sprinkling golf courses is it reasonably safe to figure 10 gallons per minute
+For sprinkling golf courses it is reasonably safe to figure 10 gallons per minute
 for each Green with 35 PSIA at hose valve outlet and 25 gallons per minute for each 
 Fairway with 35 PSIA at hose valve outlet. The standard conditions are 100 feet of 
 ¾ inch hose for greens sprinklers and 100 feet of 1 inch hose for fairway sprinklers.

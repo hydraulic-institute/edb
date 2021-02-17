@@ -163,7 +163,7 @@ where:
 - g = Acceleration due to gravity, <units us = "32.17 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient, usually taken as unity since the variation is almost always less than ±3 per cent.
 
-Equation (3.7) is useful for computing the resistance to flow caused by conical increasers and diffusers.
+Equation (3.A.7) is useful for computing the resistance to flow caused by conical increasers and diffusers.
 Values of (K) for conical increasers based on data reported by Gibson<sup>(g)</sup> 14 are given in Section IIIB,
 Fig. 5 or may be computed by the equation:
 
