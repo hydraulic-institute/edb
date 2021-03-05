@@ -40,7 +40,7 @@ Another common form, which can be solved without iteration, is shown below.
 
 =+=
 <span class= equation-label >(3.A.3)</span>
-$$ {1 \over \sqrt f} = -2 \log({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
+$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
 The **Reynolds number** (Re) is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,

@@ -23,6 +23,7 @@ target="_blank">ANSI/HI 9.6.7</a> acts as a guideline that explains these effect
 
 There are two basic viscosity parameters:
 **dynamic (*or absolute*) viscosity** and **kinematic viscosity**.
+ (See the <a href="/tools/viscosity.html" target="_blank">Kinematic and Dynamic Viscosity Conversion Tool</a> to perform viscosity conversions.)
 The dynamic viscosity may be defined with the aid of Fig. 1 which 
 shows two parallel plane surfaces of area (A) separated a distance
 (d) and the space between completely filled

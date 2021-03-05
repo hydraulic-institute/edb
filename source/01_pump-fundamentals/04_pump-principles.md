@@ -131,7 +131,7 @@ rear shroud. Closed impellers have a front and rear shroud.
 
 ![](impeller-configs.png "")
 
-**Open impellers** are typically used on smaller pumps and are weaker than closed impellers because of the lack of reinforcement of shrouds. They are typically cheaper to 
+**Centrifugal open impellers** are typically used on smaller pumps, axial flow pumps, and for speciality applications such as non-clog pumps. They are typically cheaper to 
 manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
 as many types of fluids as open impellers, but they are stronger and experience a much lower decrease in efficiency over the life of the pump. **Semi-open impellers** 
 share some of the advantages and disadvantages of each. The reason for loss of efficiency in an open or semi-open impeller is that the distance between the vanes and 

@@ -217,11 +217,11 @@ $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 =+=
 =+=
 <span class= equation-label >(1.B.7b)</span>
-$$ {H_2 \over H_1} = ({D_2 \over D_1})^2 = ({Q_2 \over Q_1})^2  $$
+$$ {H_2 \over H_1} = ({D_2 \over D_1})^2  $$
 =+=
 =+=
 <span class= equation-label >(1.B.7c)</span>
-$$ {P_2 \over P_1} = ({D_2 \over D_1})^3 = ({Q_2 \over Q_1})^3  $$
+$$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 =+=
 
 **Speed Reduction and Impeller Trimming**

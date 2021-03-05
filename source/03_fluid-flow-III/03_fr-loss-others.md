@@ -1,10 +1,10 @@
 -----
-title:  C) Losses in Other Fluids
+title:  C) Losses With Other Fluids
 date: May 12th, 2020
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
-## Losses in Other Fluids
+## Losses With Other Fluids
 
 ### Calculation of Frictional Losses for Other Fluids
 

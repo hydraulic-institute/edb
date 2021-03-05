@@ -1,10 +1,10 @@
 -----
-title:  E) Losses in Paper Stock
+title:  E) Losses With Paper Stock
 date: June 28th, 2019
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
-## Losses in Paper Stock
+## Losses With Paper Stock
 
 ### I. Introduction
 
@@ -148,7 +148,7 @@ pipe frictional losses in each of the regions.
 **Region 1**: The upper limit of Region 1 in Figure 3
 (Point B) is designated v<sub>max.</sub> The value
 of v<sub>max</sub> is determined using Equation
-(3.15) and data given in Table I.
+(3.E.1) and data given in Table I.
 
 =+=
 <span class= equation-label >(3.E.1)</span>
@@ -168,7 +168,7 @@ where:
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally), 2-6% limit.
 - σ = exponent (constant for a given pulp), obtained from Table I
 
-The following is data for use with Equation (1) to determine velocity limit, v<sub>max</sub>·
+The following is data for use with Equation (3.E.1) to determine velocity limit, v<sub>max</sub>·
 
 =|=
 title: Table I
@@ -186,7 +186,7 @@ NOTES:
 
 If the proposed design velocity (v) is less than v<sub>max</sub>,
 the value of flow resistance (Δh/L) may be calculated
-using Equation (3.16) and data given in Table II
+using Equation (3.E.2) and data given in Table II
 and the appendices.
 
 =+=
@@ -211,15 +211,15 @@ where:
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
 For mechancial pulps, there is no true v<sub>max</sub>· The
-upper limit of the correlation equation (Equation (3.16))
-is also given by Equation (3.15) in this case, the upper
+upper limit of the correlation equation (Equation (3.E.2))
+is also given by Equation (3.E.1) in this case, the upper
 velocity is actually v<sub>w</sub>·
 
 **Region 2**: The lower limit of Region 2 in Figure 3
 (Point B) is v<sub>max</sub> and the upper limit
 (Point 0) is v<sub>w</sub>. The velocity of the stock
 at the onset of drag reduction is determined
-using Equation (3).
+using Equation (3.E.3).
 
 =+=
 <span class= equation-label >(3.E.3)</span>
@@ -237,7 +237,7 @@ where:
 
 - C = consistency (oven-dried,expressed as a percentage, not decimally).
 
-If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (3.16) may be
+If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (3.E.2) may be
 used to determine ΔH/L at the maximum point
 (v<sub>max</sub>)· Because the system must cope with the
 worst flow condition, ΔH/L at the maximum point
@@ -383,7 +383,7 @@ where:
 - A = inside area of pipe <units us = "(in^2^), and" metric = "(mm^2^)"/>
 - D = inside diameter of pipe <units us = "(in)" metric = "(mm)"/>
 
-**3) Multiplication Factor, F (included in Equation (3.16)) —**
+**3) Multiplication Factor, F (included in Equation (3.E.2)) —**
 
 =+=
 <span class= equation-label >(3.E.8)</span>
