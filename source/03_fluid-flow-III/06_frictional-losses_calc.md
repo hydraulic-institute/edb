@@ -4,6 +4,8 @@ date: May 6th, 2020
 description: Frictional loss calculator for piping constructed of various materials.
 -----
 ## Calculator: Frictional Losses in Pipes
+Instructions: To use this calculator, select the material and complete the subsequent drop down menus.  Further instructions and details are found below the Calculator.
+
 <friction-loss-calculator/>
 
 Frictional Resistance for incompressible viscous liquids, including water, in a pipe is computed as a loss in head.  The method outlined in <a href="/fluid-flow-III/general.html" target="blank">(See Section IIIA)</a>  describes the fundamental formulas and methodology for calculating pipe friction.

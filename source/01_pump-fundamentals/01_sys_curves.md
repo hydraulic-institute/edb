@@ -202,7 +202,7 @@ metric = "The following can be used to convert a flow rate in m3/h (cubic meters
 
 =+=
 [units us]
-$$ v = 0.002228*Q*({4 \over \pi D^2}) $$
+$$ v = 0.320833*Q*({4 \over \pi D^2}) $$
 =+=
 
 =+=
