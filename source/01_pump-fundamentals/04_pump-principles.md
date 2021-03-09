@@ -51,7 +51,7 @@ An alternative method of calculating this value is to use (m3/h) as the unit of 
 
 Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
 
-![](specific-speed-charts.png "")
+![](specific-speed-charts.PNG "")
 
 =^=
 title: Rotodynamic Pump Efficiency Prediction

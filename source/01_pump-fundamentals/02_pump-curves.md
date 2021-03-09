@@ -81,7 +81,7 @@ title: Efficiency Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
-series: 2, 3
+series: 3
 series_title_index: 0
 =/=
 
@@ -121,10 +121,10 @@ The pump input power curve is important, as it allows proper selection of a driv
 
 =/=
 title: Pump Input Power Curve
-data-us: pc-data.csv
-data-metric: pc-data-metric.csv
+data-us: pc-data-PIP.csv
+data-metric: pc-data-metric-PIP.csv
 x: 1
-series: 2, 3, 4
+series: 4
 series_title_index: 0
 =/=
 
@@ -138,7 +138,7 @@ title: NPSHr Curve
 data-us: pc-data.csv
 data-metric: pc-data-metric.csv
 x: 1
-series: 2, 3, 4, 5
+series: 5
 series_title_index: 0
 =/=
 

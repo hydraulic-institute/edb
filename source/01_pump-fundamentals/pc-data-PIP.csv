@@ -1,6 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric
 heading,Flow (GPM),Head (ft),Efficiency (%),Pp (hp),NPSHr (ft),System
-data,0,200,0,0,0,0
 data,100,199,25,20.1,0,1.913580247
 data,200,196,40,24.7,0,7.654320988
 data,300,192,50,29.1,0,17.22222222
