@@ -13,13 +13,13 @@ description: Overview of specific speed, suction specific speed, other pump prin
 Specific speed, Ns, is used with <units us = "US customary units" metric = "metric customary units"/> and is expressed by the following equation:
 
 =+=
-<span class= equation-label ><units us ="(1.D.1)" metric = "(1.D.2)"/></span>
-=+=
+<span class= equation-label >(1.D.1)</span>
 [units us]
 $$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
 =+=
 
 =+=
+<span class= equation-label >(1.D.2)</span>
 [units = metric]
 $$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
@@ -31,19 +31,6 @@ where:
 - Q = Total Pump flow rate at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
 - H = Head per stage, <units us = "in feet" metric = "in meters"/> 
 
-Specific speed, ns, is used with metric customary units, and is expressed by the following equation:
-
-=+=
-<span class= equation-label >(1.D.2)</span>
-$$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
-=+=
-
-where:
-
-- ns= Specific Speed
-- n = Rotational speed, in revolutions per minute 
-- Q = Total Pump flow rate at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
-- H = Head per stage, <units us = "in feet" metric = "in meters"/>
 
 
 When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (  51.6 x ns  = Ns )
