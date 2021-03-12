@@ -8,42 +8,50 @@ description: Overview of specific speed, suction specific speed, other pump prin
 
 ### Impeller Specific Speed 
 
-**Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. Specific speed is expressed by the following equation:
+**Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
+
+Specific speed, Ns, is used with <units us = "US customary units" metric = "metric customary units"/> and is expressed by the following equation:
 
 =+=
-<span class= equation-label >(1.D.1)</span>
-[units = us]
-$$ Ns = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
+<span class= equation-label ><units us ="(1.D.1)" metric = "(1.D.2)"/></span>
+=+=
+[units us]
+$$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
 =+=
 
 =+=
-<span class= equation-label >(1.D.2)</span>
 [units = metric]
 $$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
 
 where:
 
-- <units us = "Ns = Specific Speed " metric = "n_s_ = Specific Speed "/> 
+- Ns = Specific Speed  
 - n = Rotational speed, in revolutions per minute 
-- Q = Discharge at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
-- H<sub>t</sub> = Total head, <units us = "in feet" metric = "in meters"/> 
+- Q = Total Pump flow rate at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
+- H = Head per stage, <units us = "in feet" metric = "in meters"/> 
 
-The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature.
-
-When calculating specific speed using units of cubic meters per second for flow rate and meters for head per stage, 51.6 is the conversion factor for specific speed in US gallons per minute and feet (i.e., metric × 51.6 = US customary units.)
-
-The usual symbol for specific speed  is:
+Specific speed, ns, is used with metric customary units, and is expressed by the following equation:
 
 =+=
-[units = us]
-$$ Ns $$
+<span class= equation-label >(1.D.2)</span>
+$$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
 =+=
 
-=+=
-[units = metric]
-$$ n_s $$
-=+=
+where:
+
+- ns= Specific Speed
+- n = Rotational speed, in revolutions per minute 
+- Q = Total Pump flow rate at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
+- H = Head per stage, <units us = "in feet" metric = "in meters"/>
+
+
+When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (  51.6 x ns  = Ns )
+An alternative method of calculating this value is to use (m^3/h) as the unit of measurement for rate of flow, which then results in a value that is i.e., 60 times greater.
+The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant 
+differences in methods used throughout industry and in related textbooks and literature.  For more information on the specific speed definition refer to 
+<a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
+
 
 <units us = "When calculating the value for specific speed and suction specific speed, the unit of measurement used for rate of flow is defined in US gallons per minute (gpm)." 
 metric= " When calculating the value for specific speed and suction specific speed, the unit of measurement used within this standard for rate of flow is cubic meters per second (m3/s).
@@ -67,8 +75,10 @@ particular applications, based on desired flow and head.
 
 ![](specific-speed-eff.png "")
 
-**Type number** is a variation of impeller specific speed. It is a dimensionless quantity calculated at the point
-of best efficiency, which is defined by the following formula:
+**Type number** is a variation of impeller specific speed. isType number is a dimensionless quantity calculated at the point of best efficiency. 
+Note, that to obtain a dimensionless value, the specified units of measure for each variable below may be different than the units of measure assigned 
+to that variable in other parts of the Engineering Data Library.  Close attention to the units of measure for the variables in any calculation is advised.  
+Type number is  defined by the following formula:
 
 =+=
 <span class= equation-label >(1.D.2)</span>
