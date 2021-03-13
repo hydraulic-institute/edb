@@ -236,5 +236,9 @@ price: 205.00
 hide_price: true
 =^=
 
+
+A <a href="/tools/frictional-losses.html" target="_blank">Frictional Loss Calculator</a> is available to determine the pipe friction according to this methodology.
+
+
 ### References
 1. L.F. Moody, "Friction factors for Pipe Flow", Trans. A.S.M.E., Vol 66, 1944
