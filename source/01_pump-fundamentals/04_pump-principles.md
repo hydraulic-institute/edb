@@ -62,27 +62,24 @@ particular applications, based on desired flow and head.
 
 ![](specific-speed-eff.png "")
 
-**Type number** is a variation of impeller specific speed. isType number is a dimensionless quantity calculated at the point of best efficiency. 
+**Type number** is a variation of impeller specific speed. Type number is a dimensionless quantity calculated at the point of best efficiency. 
 Note, that to obtain a dimensionless value, the specified units of measure for each variable below may be different than the units of measure assigned 
 to that variable in other parts of the Engineering Data Library.  Close attention to the units of measure for the variables in any calculation is advised.  
 Type number is  defined by the following formula:
 
 =+=
-<span class= equation-label >(1.D.2)</span>
-$$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} = {{ωQ'^{0.5}} \over {(y')^{0.75}}} $$
+<span class= equation-label >(1.D.3)</span>
+$$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} $$
 =+=
 
 where:
 
 - K = type number
-- Q’ = discharge per eye, <units us = "in cubic feet per second" metric = "in cubic meters per second"/>
+- Q’ = flowrate per impeller eye, <units us = "in cubic feet per second" metric = "in cubic meters per second"/>
 - H’ = head of first stage in <units us = "feet" metric = "meters"/>
 - n = rotational speed, in revolutions per minute
 - g = gravitational acceleration, <units us = "in feet per second squared" metric = "in meters per second squared "/>
-- ω = angular velocity, in radians per second
-- y’ = specific energy, <units us = "in British thermal unit per pound mass" metric = "in kilojoules per kilogram"/>
 
-Type number derived using the stated metric units, multiplied by a factor of 11.19, is equal to the type number derived using the stated (US) units.
 
 ### Suction Specific Speed
 
@@ -92,13 +89,13 @@ Suction specific speed is an indicator of the NPSHR for a 3% drop in head (NPSH3
 rate of flow and rotational speed. Suction specific speed is expressed by the following equation:
 
 =+=
-<span class= equation-label >(1.D.3)</span>
+<span class= equation-label >(1.D.4)</span>
 [units = us]
 $$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 =+=
 
 =+=
-<span class= equation-label >(1.D.3)</span>
+<span class= equation-label >(1.D.5)</span>
 [units = metric]
 $$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 =+=
@@ -107,12 +104,16 @@ where:
 
 - <units us = "Nss = Suction Specific Speed" metric = "S = Suction Specific Speed"/>
 - n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye *OR* total flow rate for single suction impellers *OR* one half total flow rate for double suction impellers, <units us = "in US gallons per minute" metric = "in cubic meters per second"/>
+- Q' = flow rate per impeller eye <units us = "in US gallons per minute" metric = "in cubic meters per second"/> 
+    - =total flow rate for single suction impellers
+    - =one half total flow rate for double suction impellers, 
 - NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
-Suction specific speed derived using cubic meters per second and meters, multiplied by a factor of 51.6, is equal to suction specific speed derived using US gallons per minute and feet. The US customary symbol N<sub>SS</sub> is sometimes used to designate suction specific speed.
+When converting suction specific speed values between the US and metric convention, 51.6 is the conversion factor ( 51.6 x S  = Nss )
+The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any 
+comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature. 
+For more information on the suction specific speed definition refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
 
-The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature.
 
 ![](stable-window.png "")
 
@@ -163,7 +164,7 @@ showing the fluid reaching a pressure below that of its vapor pressure, causing 
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
 
 =+=
-<span class= equation-label >(1.D.4)</span>
+<span class= equation-label >(1.D.6)</span>
 $$ NPSH_{a} = {h_{sa}} - {h_{vp}} $$
 =+=
 
