@@ -12,37 +12,42 @@ description: Overview of specific speed, suction specific speed, other pump prin
 
 Specific speed, Ns, is used with <units us = "US customary units" metric = "metric customary units"/> and is expressed by the following equation:
 
-=+=
-<span class= equation-label >(1.D.1)</span>
-[units us]
-$$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
-=+=
 
-=+=
-<span class= equation-label >(1.D.2)</span>
-[units = metric]
-$$ n_s = { {n(Q)^{0.5} } \over {(H_{t})^{0.75} } } $$
-=+=
+<span class= equation-label >(1.D.1)</span>
+
+$$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
 
 where:
 
 - Ns = Specific Speed  
 - n = Rotational speed, in revolutions per minute 
-- Q = Total Pump flow rate at best efficiency point (BEP) <units us = "in gallons per minute" metric = "in cubic meters per second"/> 
-- H = Head per stage, <units us = "in feet" metric = "in meters"/> 
+- Q = Total Pump flow rate at best efficiency point in gallons per minute
+- H = Head per stage, in feet
+
+
+<span class= equation-label >(1.D.2)</span>
+
+$$ n_s = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$
+
+
+where:
+
+- Ns = Specific Speed  
+- n = Rotational speed, in revolutions per minute 
+- Q = Total Pump flow rate at best efficiency point (BEP) in cubic meters per second 
+- H = Head per stage in meters
 
 
 
 When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (  51.6 x ns  = Ns )
-An alternative method of calculating this value is to use (m^3/h) as the unit of measurement for rate of flow, which then results in a value that is i.e., 60 times greater.
+
+An alternate definition for specific speed is also used based on flow rate per impeller eye (Q’) rather than total flow rate.  When applying this alternative method to the 
+double suction impeller pump, the resultant value of specific speed is less by a factor of 0.707 times less.
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant 
 differences in methods used throughout industry and in related textbooks and literature.  For more information on the specific speed definition refer to 
 <a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
 
 
-<units us = "When calculating the value for specific speed and suction specific speed, the unit of measurement used for rate of flow is defined in US gallons per minute (gpm)." 
-metric= " When calculating the value for specific speed and suction specific speed, the unit of measurement used within this standard for rate of flow is cubic meters per second (m3/s).
-An alternative method of calculating this value is to use (m3/h) as the unit of measurement for rate of flow, which then results in a value that is i.e., 60 times greater."/>
 
 Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
 
@@ -72,13 +77,21 @@ Type number is  defined by the following formula:
 $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} $$
 =+=
 
-where:
+where in US Units:
 
 - K = type number
-- Q’ = flowrate per impeller eye, <units us = "in cubic feet per second" metric = "in cubic meters per second"/>
-- H’ = head of first stage in <units us = "feet" metric = "meters"/>
-- n = rotational speed, in revolutions per minute
-- g = gravitational acceleration, <units us = "in feet per second squared" metric = "in meters per second squared "/>
+- Q’ = flowrate per impeller eye in cubic feet per second
+- H’ = head of first stage in feet
+- n = rotational speed, in revolutions per second
+- g = gravitational acceleration in feet per second squared
+
+where in Metric Units:
+
+- K = type number
+- Q’ = flowrate per impeller eye in cubic meters per second
+- H’ = head of first stage in meters
+- n = rotational speed, in revolutions per second
+- g = gravitational acceleration in meters per second squared
 
 
 ### Suction Specific Speed
@@ -86,30 +99,42 @@ where:
 **Suction Specific Speed** is an index of pump suction operating characteristics.
 It is determined at the BEP flow rate with the maximum diameter impeller.
 Suction specific speed is an indicator of the NPSHR for a 3% drop in head (NPSH3) at a given
-rate of flow and rotational speed. Suction specific speed is expressed by the following equation:
+rate of flow and rotational speed.
 
-=+=
+
+Suction specific speed Nss, is used with US customary units, and is expressed by the following equation:
+
 <span class= equation-label >(1.D.4)</span>
-[units = us]
-$$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
-=+=
 
-=+=
-<span class= equation-label >(1.D.5)</span>
-[units = metric]
-$$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
-=+=
+$$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 
 where:
 
-- <units us = "Nss = Suction Specific Speed" metric = "S = Suction Specific Speed"/>
+- Nss = Suction Specific Speed
 - n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye <units us = "in US gallons per minute" metric = "in cubic meters per second"/> 
+- Q' = flow rate per impeller eye in US gallons per minute 
+    - =total flow rate for single suction impellers
+    - =one half total flow rate for double suction impellers, 
+- NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
+
+Suction Specific speed, S, is used with metric customary units, and is expressed by the following equation:
+
+<span class= equation-label >(1.D.5)</span>
+
+$$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
+
+
+where:
+
+- S = Suction Specific Speed
+- n = Rotational speed, in revolutions per minute
+- Q' = flow rate per impeller eye in cubic meters per second 
     - =total flow rate for single suction impellers
     - =one half total flow rate for double suction impellers, 
 - NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
 When converting suction specific speed values between the US and metric convention, 51.6 is the conversion factor ( 51.6 x S  = Nss )
+
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any 
 comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature. 
 For more information on the suction specific speed definition refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
