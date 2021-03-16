@@ -10,7 +10,7 @@ description: Overview of specific speed, suction specific speed, other pump prin
 
 **Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
 
-Specific speed, Ns, is used with <units us = "US customary units" metric = "metric customary units"/> and is expressed by the following equation:
+Specific speed, Ns, is used with US customary units and is expressed by the following equation: 
 
 
 <span class= equation-label >(1.D.1)</span>
@@ -24,6 +24,7 @@ where:
 - Q = Total Pump flow rate at best efficiency point in gallons per minute
 - H = Head per stage, in feet
 
+Specific speed, ns, is used with metric customary and is expressed by the following equation:
 
 <span class= equation-label >(1.D.2)</span>
 
@@ -32,7 +33,7 @@ $$ n_s = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$
 
 where:
 
-- Ns = Specific Speed  
+- ns = Specific Speed  
 - n = Rotational speed, in revolutions per minute 
 - Q = Total Pump flow rate at best efficiency point (BEP) in cubic meters per second 
 - H = Head per stage in meters
