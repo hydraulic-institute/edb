@@ -21,8 +21,8 @@ No allowance has been made for abnormal conditions of interior surface or instal
 =^=
 title: Basic System Hydraulics - 1 Part Webinar
 description: It’s important to be able to visualize pump curves and system curves to understand their interaction. Learn the basics of system hydraulics in this 1-part webinar.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fBasic_System_Hydraulics.png
-url: https://estore.pumps.org/Basic-System-Hydraulics-1-Part-On-Demand-Webinar-P3174.aspx
+image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+url: https://training.pumps.org/products/basic-system-hydraulics-1-part-on-demand-webinar
 price: 59.00
 hide_price: true
 =^=

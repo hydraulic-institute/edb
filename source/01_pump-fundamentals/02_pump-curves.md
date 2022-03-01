@@ -178,9 +178,9 @@ operating pumps.
 =^=
 title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Webinar
 description: Learn how the Preferred Operating Region (POR) and Allowable Operating Region (AOR) are defined for centrifugal, mixed and axial flow pumps and their impact on efficiency and reliably.  Curve shape, hydraulic loading, temperature rise, vibration/noise, suction recirculation, priming, NPSH margin and more will be discussed related to a pumps AOR as well as methods to ensure operating in the AOR will be presented.  This webinar is a must for pump end users, application engineers, pump system designers, specifying engineers and pump service providers.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fOperating_Regions_on_demand_estore_icon.png
-url: https://estore.pumps.org/Preferred-and-Allowable-Operating-Regions-for-Rotodynamic-Pumps-to-Maximize-Reliability-1-Part-On-Demand-Webinar-P3169.aspx
-price: 59.00
+image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+url: https://training.pumps.org/products/preferred-and-allowable-operating-regions-for-rotodynamic-pumps-to-maximize-reliability-1-part-on-demand-webinar
+price: 119.00
 hide_price: true
 =^=
 
@@ -234,7 +234,7 @@ which is the reduction of the impeller diameter.
 title: Application Guideline for Variable Speed Pumping
 description: This guideline has been created to provide pump industry professionals and the end user operators of pumps with the knowledge required to apply variable speed pumping so that it will result in improved energy efficiency and increased reliability. This intension of this guidebook is to educate the pumping industry and to ensure the safe, reliable, and efficient operation of the pumping equipment we all depend on every day.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP-2017.png
-url: https://estore.pumps.org/Guidebooks/VSP_Guide.aspx
+url: https://www.pumps.org/product/application-guideline-for-variable-speed-pumping/
 price: 166.00
 hide_price: true
 =^=

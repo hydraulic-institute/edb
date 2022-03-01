@@ -52,7 +52,7 @@ data: IIB1-2.csv
 title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
 description: ANSI/HI 9.6.7-2015 outlines the method for predicting performance of rotodynamic pumps in Newtonian liquids of viscosity greater than water. The standard applies to single and multi-stage rotodynamic pumps having radial impellers n<sub>s</sub> = 60, (N<sub>s</sub> = 3000), handling liquids exhibiting Newtonian behavior, and a kinematic viscosity greater than 1 and less than 4000 centistokes.
 image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f9_6_7-2015.png
-url: https://estore.pumps.org/Standards/Rotodynamic/Viscosity.aspx
+url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
 price: 130.00
 hide_price: true
 =^=
