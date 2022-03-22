@@ -16,6 +16,15 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name=viewport content="width=device-width,initial-scale=1"/>
     <meta charset="UTF-8"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYDF9G5TWW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-BYDF9G5TWW');
+    </script>
     {% if node.metadata and node.metadata['description'] %}
         <meta name="Description" content="{{node.metadata['description']}}"/>
     {% endif %}
