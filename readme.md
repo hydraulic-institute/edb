@@ -23,16 +23,16 @@ Next, clone the repository with the following command:
 git clone https://github.com/hydraulic-institute/edb
 ```
 
-This will create a directory called `hi-edb` under your `C:\projects` directory.
+This will create a directory called `edb` under your `C:\projects` directory.
 
 Later, as you begin to make changes to the EDB, you will need to use `git` to commit your changes.  The details of this is covered below in the "Version control with `git`" section.
 
 ## Text Editor - Visual Studio Code
 While any text editor is suitable for creating the EDB content, you should use something geared towards programming, to avoid character encoding problems.  You may download and install this [here](https://code.visualstudio.com/).
 
-Once installed, you can open the `hi-edb` directory.  **Important** - to develop content, you will *only* make edits and additions to the `/source` directory.  The other directories contain application code (which you should not edit) and output artifacts (`/build`) that is content the application generates for publishing the site.
+Once installed, you can open the `edb` directory.  **Important** - to develop content, you will *only* make edits and additions to the `/source` directory.  The other directories contain application code (which you should not edit) and output artifacts (`/build`) that is content the application generates for publishing the site.
 
-Visual Studio Code allows you to open a folder - `hi-edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
+Visual Studio Code allows you to open a folder - `edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
 
 ## Python Setup
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
@@ -61,8 +61,10 @@ pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
-pip3 install awscli --upgrade --user
-pip3 install s3-deploy-website
+pip3 install awscli --upgrade 
+pip3 install s3-deploy-website --upgrade
+pip3 install pypandoc
+pip3 install selenium
 ```
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
@@ -80,7 +82,7 @@ There is already content in the EDB, so as a quick check that you have everythig
 python3 serve.py
 ```
 
-This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8081](http://localhost:8081).
+This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8080](http://localhost:8080).
 
 You should see the web site:
 
