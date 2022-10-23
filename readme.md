@@ -43,7 +43,7 @@ During installation, make sure you add Python to your path, and check off the fo
 
 <img src='python.png'/>
 
-After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `hi-edb` directory using the `cd` command (`cd C:\projects\hi-edb`).
+After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `edb` directory using the `cd` command (`cd C:\projects\edb`).
 
 Next, execute the following commands one by one. There are dependencies for the EDB application itself. The `pip3 install` commands will contain a good deal of output - please make sure each completes successfully.
 
@@ -458,7 +458,7 @@ All text content you create in the topic pages is indexed and made available to 
 A PDF version of the EDB will be generated from the same content as the web site.  This feature is not yet complete.
 
 # EDB Management
-To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `hi-edb` directory, and issue the following command:
+To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `edb` directory, and issue the following command:
 
 ```
 source ./env/bin/activate
