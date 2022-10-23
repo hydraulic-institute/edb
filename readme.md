@@ -63,9 +63,9 @@ pip3 install watchdog
 pip3 install htmlmin
 pip3 install pypandoc
 pip3 install selenium
-pip3 install awscli --upgrade --user
-pip3 install s3-deploy-website
-```
+pip3 install awscli --upgrade
+pip3 install s3-deploy-website --updrade
+
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
 To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.
@@ -82,7 +82,7 @@ There is already content in the EDB, so as a quick check that you have everythig
 python3 serve.py
 ```
 
-This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8081](http://localhost:8081).
+This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8080](http://localhost:8080).
 
 You should see the web site:
 
