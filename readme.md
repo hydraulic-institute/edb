@@ -61,6 +61,8 @@ pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
+pip3 install pypandoc
+pip3 install selenium
 pip3 install awscli --upgrade --user
 pip3 install s3-deploy-website
 ```
