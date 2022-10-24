@@ -50,15 +50,13 @@ def launch_web_server():
     server = StoppableHTTPServer(("127.0.0.1", PORT),
                                  http.server.SimpleHTTPRequestHandler)
 
-    # thread = threading.Thread(None, server.run)
-    # thread.start()
-    print("Server kk running at", PORT)
+    thread = threading.Thread(None, server.run)
+    thread.start()
+    print("Server running at", PORT)
 
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S')
-    
-    server.run()
 
 
 if __name__ == "__main__":
