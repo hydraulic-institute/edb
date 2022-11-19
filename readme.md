@@ -43,7 +43,7 @@ During installation, make sure you add Python to your path, and check off the fo
 
 <img src='python.png'/>
 
-After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `edb` directory using the `cd` command (`cd C:\projects\edb`).
+After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `hi-edb` directory using the `cd` command (`cd C:\projects\hi-edb`).
 
 Next, execute the following commands one by one. There are dependencies for the EDB application itself. The `pip3 install` commands will contain a good deal of output - please make sure each completes successfully.
 
@@ -61,11 +61,11 @@ pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
+pip3 install awscli --upgrade 
+pip3 install s3-deploy-website --upgrade
 pip3 install pypandoc
 pip3 install selenium
-pip3 install awscli --upgrade
-pip3 install s3-deploy-website --updrade
-
+```
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
 To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.
@@ -458,7 +458,7 @@ All text content you create in the topic pages is indexed and made available to 
 A PDF version of the EDB will be generated from the same content as the web site.  This feature is not yet complete.
 
 # EDB Management
-To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `edb` directory, and issue the following command:
+To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `hi-edb` directory, and issue the following command:
 
 ```
 source ./env/bin/activate
@@ -479,7 +479,7 @@ This script automatically builds the EDB, and monitors file changes in the `sour
 
 The EDB is always built to the `build` directory.  The files contained there are suitable for viewing with a web browser - *but you shouldn't open them directly* by clicking on them.  **Instead, the `server` script also launches a local web server** so you can view the built EDB in your web browser exactly as if it is deployed.
 
-To view the EDB while you are developing, got to [http://localhost:8081](http://localhost:8081).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
+To view the EDB while you are developing, got to [http://localhost:8080](http://localhost:8080).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
 
 ## Version control with `git`
 It is critical that we all remain in sync with eachother while working on the EDB.  Even if only one person is creating content, developers will be creating code enhancements to the application.  Therefore, you must take care to always ensure you keep up to date with changes, and also always upload your changes regularly.  When used properly, `git` will allow us to roll back any mistakes that may be made.  It's important to understand that pushing your changes to `git` does **not** cause the content on the EDB website to change - so don't hesitate to push changes frequently!
@@ -587,7 +587,9 @@ $ export AWS_SECRET_ACCESS_KEY=*******
 $ export AWS_DEFAULT_REGION=us-east-2
 ```
 
-### Deploying to Beta
+### Deploying to Beta 
+11/14/22 - This is currently on a website called `netlify.com` - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+
 Execute the following from the command line
 ```
 python3 beta.py
@@ -596,6 +598,8 @@ The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amaz
 
 
 ### Deploying to Production
+11/14/22 - We are planning on moving this to [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+
 Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
 
 *More details to come on production deployment - we have not setup the URL or hosting site yet*.
@@ -615,3 +619,23 @@ python3 build-pdf
 ```
 
 sudo apt-get install chromium-browser
+ 
+# On Windows:
+```
+winget install pandoc
+```
+
+Install texlive at:  https://tug.org/texlive/windows.html
+
+
+# Creating PDF using the Markdown PDF Extension
+Install the `Markdown PDF` extension in Visual Studio Code
+
+<img src='MarkdownExt.png'/>
+
+- Open the markdown file in Visual Studio Code
+- Press `F1` and type `export` and you should see `markdown...` options
+
+<img src='f1MarkdownOptions.png'>
+
+- Select whatever option you want and it should download the converted file to the same directory as your markdown file
