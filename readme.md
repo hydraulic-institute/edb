@@ -53,8 +53,8 @@ Next, execute the following commands one by one. There are dependencies for the 
 pip3 install virtualenv
 python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS
-source env/bin/activate  <- # IF USING LINUX or MAC
+env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
 pip3 install Jinja2   
 pip3 install lesscpy
