@@ -227,13 +227,13 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 **Speed Reduction and Impeller Trimming**
 
 Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
-therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
+therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pump characteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
 =^=
 title: Application Guideline for Variable Speed Pumping
 description: This guideline has been created to provide pump industry professionals and the end user operators of pumps with the knowledge required to apply variable speed pumping so that it will result in improved energy efficiency and increased reliability. This intension of this guidebook is to educate the pumping industry and to ensure the safe, reliable, and efficient operation of the pumping equipment we all depend on every day.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP-2017.png
+image: https://www.pumps.org/wp-content/uploads/2021/10/VSP-2017.png
 url: https://www.pumps.org/product/application-guideline-for-variable-speed-pumping/
 price: 166.00
 hide_price: true
