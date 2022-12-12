@@ -23,16 +23,16 @@ Next, clone the repository with the following command:
 git clone https://github.com/hydraulic-institute/edb
 ```
 
-This will create a directory called `edb` under your `C:\projects` directory.
+This will create a directory called `hi-edb` under your `C:\projects` directory.
 
 Later, as you begin to make changes to the EDB, you will need to use `git` to commit your changes.  The details of this is covered below in the "Version control with `git`" section.
 
 ## Text Editor - Visual Studio Code
 While any text editor is suitable for creating the EDB content, you should use something geared towards programming, to avoid character encoding problems.  You may download and install this [here](https://code.visualstudio.com/).
 
-Once installed, you can open the `edb` directory.  **Important** - to develop content, you will *only* make edits and additions to the `/source` directory.  The other directories contain application code (which you should not edit) and output artifacts (`/build`) that is content the application generates for publishing the site.
+Once installed, you can open the `hi-edb` directory.  **Important** - to develop content, you will *only* make edits and additions to the `/source` directory.  The other directories contain application code (which you should not edit) and output artifacts (`/build`) that is content the application generates for publishing the site.
 
-Visual Studio Code allows you to open a folder - `edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
+Visual Studio Code allows you to open a folder - `hi-edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
 
 ## Python Setup
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
@@ -43,7 +43,7 @@ During installation, make sure you add Python to your path, and check off the fo
 
 <img src='python.png'/>
 
-After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `edb` directory using the `cd` command (`cd C:\projects\edb`).
+After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `hi-edb` directory using the `cd` command (`cd C:\projects\hi-edb`).
 
 Next, execute the following commands one by one. There are dependencies for the EDB application itself. The `pip3 install` commands will contain a good deal of output - please make sure each completes successfully.
 
@@ -61,8 +61,6 @@ pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
-pip3 install pypandoc
-pip3 install selenium
 pip3 install awscli --upgrade --user
 pip3 install s3-deploy-website
 ```
@@ -458,7 +456,7 @@ All text content you create in the topic pages is indexed and made available to 
 A PDF version of the EDB will be generated from the same content as the web site.  This feature is not yet complete.
 
 # EDB Management
-To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `edb` directory, and issue the following command:
+To build, view, and publish the EDB, you will need to invoke Python programs.  Before doing anything, always make sure you open the Command Prompt, navigate into the `hi-edb` directory, and issue the following command:
 
 ```
 source ./env/bin/activate
@@ -510,7 +508,7 @@ git pull origin master
 ```
 This will make sure you don't try to push your changes overwriting changes someone else has made while you were working.
 
-Next, you must add your changes to git.  Do this by entering the `edb` folder with the command prompt and issuing the following command:
+Next, you must add your changes to git.  Do this by entering the `hi-edb` folder with the command prompt and issuing the following command:
 
 ```
 git add .
