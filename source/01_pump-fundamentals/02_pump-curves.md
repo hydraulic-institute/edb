@@ -227,7 +227,7 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 **Speed Reduction and Impeller Trimming**
 
 Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
-therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
+therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pump characteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
 =^=
