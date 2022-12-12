@@ -51,7 +51,7 @@ data: IIB1-2.csv
 =^=
 title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
 description: ANSI/HI 9.6.7-2015 outlines the method for predicting performance of rotodynamic pumps in Newtonian liquids of viscosity greater than water. The standard applies to single and multi-stage rotodynamic pumps having radial impellers n<sub>s</sub> = 60, (N<sub>s</sub> = 3000), handling liquids exhibiting Newtonian behavior, and a kinematic viscosity greater than 1 and less than 4000 centistokes.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f9_6_7-2015.png
+image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-600x776.jpg
 url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
 price: 130.00
 hide_price: true
@@ -131,8 +131,8 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 =^=
 title: Sealless Rotodynamic Pumps for Nomenclature, Definitions, Application, Operation, and Test
 description: ANSI/HI 5.1-5.6 offers a basic educational overview on sealless rotodynamic pumps including design and application considerations related to the selection of the right pump for a specific industry use, pump operating and maintenance procedures as well as different types of tests that can be conducted on pumps to ensure their performance.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f5_1-5_6-2016.png
-url: https://estore.pumps.org/Standards/Rotodynamic/Sealless.aspx
+image: https://www.pumps.org/wp-content/uploads/2021/10/5156PDFCoverFrontBlackBorder107.jpg
+url: https://www.pumps.org/product/ansi-hi-5-1-5-6-2016-r2021-sealless-rotodynamic-pumps-for-nomenclature-definitions-application-operation-and-test/
 price: 90.00
 hide_price: true
 =^=

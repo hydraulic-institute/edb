@@ -18,7 +18,7 @@ having the same specific gravity (1.48) and
 the same Brix rating (90) may vary in viscosity
 from 128,000 to 303,000 Seconds Saybolt Universal
 (SSU). In rotodynamic pumps, fluid viscosity can have a significant impact on performance. 
-<a href="https://estore.pumps.org/Rotodynamic-Pumps-Guideline-for-Effects-of-LiquidViscosity-on-Performance-ANSIHI-967-2015-P1108.aspx" 
+<a href="https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/" 
 target="_blank">ANSI/HI 9.6.7</a> acts as a guideline that explains these effects.
 
 There are two basic viscosity parameters:
@@ -217,7 +217,7 @@ Pa. 19103.
 =^=
 title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
 description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f3_1-3_5-2015.png
+image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL3135CoverFrontBlackBorder107.jpg
 url: https://www.pumps.org/product/ansi-hi-3-1-3-5-2021-rotary-pumps-for-nomenclature-definitions-application-and-operation/
 price: 166.00
 hide_price: true
