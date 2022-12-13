@@ -57,11 +57,11 @@ data-metric: Nozzle Diameter - Metric Units.csv
 
 
 
-<!--=^=
-title: Hydraulic Modeling and Simulation of Pumping Systems - 2 Part Webinar
-description: This course discusses the differences between component optimization and system optimization and demonstrates how analysis software can be used to improve pump system operation. It provides examples and case studies demonstrating how hydraulic modeling software, such as the P·SMART tool, is used to diagnose and correct problems with pump system operation in real-world situations.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fHydraulic_Modeling_and_Simulation_of_Pumping_Systems_on_demand.png
-url: https://estore.pumps.org/Hydraulic-Modeling-and-Simulation-of-Pumping-Systems-2-Part-On-Demand-Webinar-P3004.aspx
+-=^=
+title: Fundamentals of Variable Speed Pumping: 1-Part On-Demand Webinar
+description: This webinar is an introduction to variable speed pumping and how to use it for more efficient and better controlled pumping. It explains how flow and pressure are controlled with variable speed pumping and when to use each. Also covered are the devices used to achieve variable speed pumping, including variable frequency drives. The attendee will also learn the benefits provided by variable speed pumping, in relation to cost, operation, and energy savings.
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_393becd30058bdaf236507781e2c8a19.png
+url: https://training.pumps.org/products/fundamentals-of-variable-speed-pumping-1-part-on-demand-webinar
 price: 99.00
 hide_price: true
-=^=--!>
+=^=

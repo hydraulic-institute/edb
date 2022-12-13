@@ -105,7 +105,7 @@ $$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
 title: Rotodynamic Centrifugal Slurry Pumps
 description: This standard offers a basic educational overview on rotodynamic (centrifugal) slurry pumps, design and application considerations related to the selection of the right pump for a specific industry including pump installation as well as operation and maintenance procedures.
 image: https://www.pumps.org/wp-content/uploads/2022/03/ANSIHI-Standard-Front-ONLY-12.1-12.6-2021-600x776.jpg
-url: https://www.pumps.org/product/ansi-hi-12-1-12-6-2016-rotodynamic-centrifugal-slurry-pumps/
+url: https://www.pumps.org/product/12-1-12-6-2022/
 price: 205.00
 hide_price: true
 =^=
