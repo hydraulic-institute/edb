@@ -81,7 +81,7 @@ def table_data(units, table, path, filename):
             f"Error - the table {table.title} refers to {file} which does not exist")
         return None
 
-    with open(file, newline='') as csvfile:
+    with open(file, newline='', encoding='utf-8') as csvfile:
         csv_data = csv.reader(csvfile)
         first_row = next(csv_data)
         columns = first_row[1:]
