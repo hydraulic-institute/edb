@@ -285,7 +285,8 @@ Content will be added soon.
 <!--description: This course reviews the new Variable Speed Pumping Guidebook and how to use variable speed pumping for more efficient and better controlled pumping. It explains how flow and pressure are controlled with variable speed pumping and when to use each. Also covered are the devices used to achieve variable speed pumping, including variable frequency drives. The attendee will also learn the benefits provided by variable speed pumping, in relation to cost, operation, and energy savings.-->
 <!--image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP_Solo_Image.png-->
 <!--url: https://estore.pumps.org/Variable-Speed-Pumping-4-Part-On-Demand-Webinar-Series-P3014.aspx-->
-<!--price: 149.00-->
+<!--price: 149.00
+hide_price: true-->
 <!--=^=-->
 
 ## Worked Examples
