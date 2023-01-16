@@ -135,10 +135,10 @@ at the specified flow rate, speed, and pumped liquid. NPSHr is further defined i
 
 =/=
 title: NPSHr Curve
-data-us: pc-data.csv
-data-metric: pc-data-metric.csv
+data-us: pc-data-npshr.csv
+data-metric: pc-data-metric-npshr.csv
 x: 1
-series: 5
+series: 2
 series_title_index: 0
 =/=
 
