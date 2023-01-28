@@ -53,8 +53,8 @@ Next, execute the following commands one by one. There are dependencies for the 
 pip3 install virtualenv
 python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS
-source env/bin/activate  <- # IF USING LINUX or MAC
+env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
 pip3 install Jinja2   
 pip3 install lesscpy
@@ -80,7 +80,7 @@ There is already content in the EDB, so as a quick check that you have everythig
 python3 serve.py
 ```
 
-This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8081](http://localhost:8081).
+This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8080](http://localhost:8080).
 
 You should see the web site:
 
@@ -477,7 +477,7 @@ This script automatically builds the EDB, and monitors file changes in the `sour
 
 The EDB is always built to the `build` directory.  The files contained there are suitable for viewing with a web browser - *but you shouldn't open them directly* by clicking on them.  **Instead, the `server` script also launches a local web server** so you can view the built EDB in your web browser exactly as if it is deployed.
 
-To view the EDB while you are developing, got to [http://localhost:8081](http://localhost:8081).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
+To view the EDB while you are developing, got to [http://localhost:8080](http://localhost:8080).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
 
 ## Version control with `git`
 It is critical that we all remain in sync with eachother while working on the EDB.  Even if only one person is creating content, developers will be creating code enhancements to the application.  Therefore, you must take care to always ensure you keep up to date with changes, and also always upload your changes regularly.  When used properly, `git` will allow us to roll back any mistakes that may be made.  It's important to understand that pushing your changes to `git` does **not** cause the content on the EDB website to change - so don't hesitate to push changes frequently!
@@ -585,7 +585,9 @@ $ export AWS_SECRET_ACCESS_KEY=*******
 $ export AWS_DEFAULT_REGION=us-east-2
 ```
 
-### Deploying to Beta
+### Deploying to Beta 
+11/14/22 - This is currently on a website called `netlify.com` - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+
 Execute the following from the command line
 ```
 python3 beta.py
@@ -594,6 +596,8 @@ The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amaz
 
 
 ### Deploying to Production
+11/14/22 - We are planning on moving this to [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+
 Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
 
 *More details to come on production deployment - we have not setup the URL or hosting site yet*.
@@ -613,3 +617,23 @@ python3 build-pdf
 ```
 
 sudo apt-get install chromium-browser
+ 
+# On Windows:
+```
+winget install pandoc
+```
+
+Install texlive at:  https://tug.org/texlive/windows.html
+
+
+# Creating PDF using the Markdown PDF Extension
+Install the `Markdown PDF` extension in Visual Studio Code
+
+<img src='MarkdownExt.png'/>
+
+- Open the markdown file in Visual Studio Code
+- Press `F1` and type `export` and you should see `markdown...` options
+
+<img src='f1MarkdownOptions.png'>
+
+- Select whatever option you want and it should download the converted file to the same directory as your markdown file
