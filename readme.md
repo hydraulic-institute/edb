@@ -628,7 +628,7 @@ winget install pandoc
 Install texlive at:  https://tug.org/texlive/windows.html
 
 
-# Creating PDF using the Markdown PDF Extension
+# Creating README PDF using the Markdown PDF Extension
 Install the `Markdown PDF` extension in Visual Studio Code
 
 <img src='MarkdownExt.png'/>
