@@ -279,14 +279,14 @@ Pertinent equations, in addition to those herein
 presented, are located in Appendix A. Example
 problems are located in Appendix B.
 
-=^=
-title: Power Plant Pumping Systems: Pump Selection, System Optimization, and Improving Reliability - 3 Part Webinar Series
-description: This course provides an overview of the power generation industry and details the different power plant configurations. It explains the process and considerations involved in selecting pumps for boiler feed, condensate, circulating water, and service water applications in power plants. Methods for installation and troubleshooting of pumps and pumping systems in power plant applications is also covered.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPower_Plant_Pumping_Systems.png
-url: https://estore.pumps.org/Power-Plant-Pumping-Systems-Pump-Selection-System-Optimization-and-Improving-Reliability-3-Part-On-Demand-Webinar-Series-P3009.aspx
+-=^=
+title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability: 1-Part On-Demand Webinar
+description: This webinar covers how the Preferred Operating Region (POR) and Allowable Operating Region (AOR) are defined for centrifugal, mixed and axial flow pumps and their impact on efficiency and reliably. Curve shape, hydraulic loading, temperature rise, vibration/noise, suction recirculation, priming, NPSH margin and more will be discussed related to a pumps AOR as well as methods to ensure operating in the AOR will be presented. This webinar is a must for pump end users, application engineers, pump system designers, specifying engineers and pump service providers.
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_393becd30058bdaf236507781e2c8a19.png
+url: https://training.pumps.org/products/preferred-and-allowable-operating-regions-for-rotodynamic-pumps-to-maximize-reliability-1-part-on-demand-webinar
 price: 134.00
 hide_price: true
-=^=
+-=^=
 
 ### V. Head Losses in Valves, Bends and Fittings
 

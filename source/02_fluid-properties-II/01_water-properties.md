@@ -59,9 +59,9 @@ series_title_index: 0
 =/=
 
 =^=
-title: Pump and System Fundamentals Live Course - 3 Part Webinar Series
+title: Pump and System Fundamentals Live Course
 description: Educate and train pump engineers, technical sales, pump system owners, designers, and operators on the fundamentals of pump and system design, including system hydraulics and calculations, pump and system curves, system components, factors affecting reliably and energy consumption, and control. 
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fWater_Treatment_Plant_Pumps.png
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_6ce03fc70274b2d8f6015f6a52b4f7ae.png
 url: https://training.pumps.org/pump-and-system-fundamentals-course 
 price: 700.00
 hide_price: true

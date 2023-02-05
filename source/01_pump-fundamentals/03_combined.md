@@ -11,7 +11,7 @@ hide_units: true
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
-in <a href="https://estore.pumps.org/Standards/Rotodynamic/Design.aspx" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+in <a href="https://www.pumps.org/product/ansi-hi-9-6-1-2017-rotodynamic-pumps-guideline-for-npsh-margin/" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
 
 Knowing the shape of the system curve will help illustrate the pump operating conditions as the system conditions vary due to changes in valve position, parts of the system coming
 on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determinine if the pump is sized correctly to overcome the static and dynamic head of the system.
@@ -20,14 +20,13 @@ on and off line, and upset conditions. Additionally, by overlaying the pump curv
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
 This will also help ensure the pump operation will be as close to the Best Efficiency Point (BEP) as possible to reduce energy consumption and increase pump reliability.
 
-=^=
+<!--=^=
 title: Pump System Optimization Guidebook (PSO)
 description: This guidebook is intended to assist those who need to understand details of pump system optimization coupled with important capital equipment decisions. It presents practical information for those who have not had broad exposure to pumping systems and for those who wish to improve the systems for which they are responsible.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSOHalf.png
+image: https://www.pumps.org/wp-content/uploads/2021/10/PSOHalf.png
 url: https://www.pumps.org/product/pump-system-optimization-a-guide-for-improved-energy-efficiency-reliability-and-profitability/
-price: 205.00
-
-=^=
+price: $225.00
+=^=-->
 
 ### Reading a Pump and System Curve Plot
 

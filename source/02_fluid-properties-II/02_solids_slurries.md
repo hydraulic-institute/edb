@@ -40,7 +40,7 @@ below.
 
 Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
 This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
-<a href="https://estore.pumps.org/Standards/Rotodynamic/Slurry.aspx" target="_blank">ANSI/HI 12.1-12.6 – Rotodynamic Centrifugal Slurry Pumps</a> contains more information regarding the operation 
+<a href="https://www.pumps.org/product/12-1-12-6-2022/" target="_blank">ANSI/HI 12.1-12.6 – Rotodynamic Centrifugal Slurry Pumps</a> contains more information regarding the operation 
 and applications of slurry pumps.
 
 For any slurry pump application a complete description
@@ -104,8 +104,8 @@ $$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
 =^=
 title: Rotodynamic Centrifugal Slurry Pumps
 description: This standard offers a basic educational overview on rotodynamic (centrifugal) slurry pumps, design and application considerations related to the selection of the right pump for a specific industry including pump installation as well as operation and maintenance procedures.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f12_1-12_6_-_2016.png
-url: https://www.pumps.org/product/ansi-hi-12-1-12-6-2016-rotodynamic-centrifugal-slurry-pumps/
+image: https://www.pumps.org/wp-content/uploads/2022/03/ANSIHI-Standard-Front-ONLY-12.1-12.6-2021-600x776.jpg
+url: https://www.pumps.org/product/12-1-12-6-2022/
 price: 205.00
 hide_price: true
 =^=
