@@ -537,72 +537,44 @@ git push origin master
 Once that completes successfully, you can go back to working on other things.
 
 ## Hosting
-The HI EDL is deployed to an Amazon S3 bucket, and served to the public internet from there.
+The HI EDL is deployed **Netlify.com** and served to the public internet from there.
 
-### S3 Configuration
-*The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose - it is not something you need to do yourself*
-- Create bucket - named `hi-edb-beta`
-- Region:  US East (N. Virginia)
-- Next
-- Next (default configuration options)
-- Set Permissions:  Uncheck Block all public access
+### Deploying to Beta & Production
+#### Beta Site
+We have a Beta account on **Netlify.com** - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+- Login with `higladetech@gmail.com`
 
-After creating the bucket, click on it from the list.  Click on the Bucket Policy and add the following:
+#### Production Site
+We have a Production account on **Netlify.com** [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+- Login with `erdb@gladetech.net`
+
+Prepping for Deployment:
+- In your development environment, stash any local changes you have
 ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::hi-edb-beta/*"
-            ]
-        }
-    ]
-}
+$> git stash
 ```
-
-Go to properties, and then Static website hosting.  Enable web hosting on the bucket.
-
-### Setting Credentials
-Before being able to deploy, you must setup HI's amazon credentials on your machine.  **You will be given credentials separately, please do not check the credentials into any files within this project for security purposes**.
-
+- Checkout the `beta` or `master` branch
 ```
-aws configure
-AWS Access Key ID [********************]:  <enter access key>
-AWS Secret Access Key [********************]:  <enter secret key>
-
+$> git checkout [beta | master]
+```
+- Update the local [beta | master] branch 
+```
+$> git pull
+```
+- Run the server and verify it is the website you want to deploy.
+```
+$> python serve.py
 ```
 
-**Note:** when developing on AWS C9, `aws configure` often fails.  You can instead set your environment variables manually to enable deploy:
-
-```
-export AWS_ACCESS_KEY_ID=******
-$ export AWS_SECRET_ACCESS_KEY=*******
-$ export AWS_DEFAULT_REGION=us-east-2
-```
-
-### Deploying to Beta 
-11/14/22 - This is currently on a website called `netlify.com` - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
-
-Execute the following from the command line
-```
-python3 beta.py
-```
-The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/](http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/).
-
-
-### Deploying to Production
-11/14/22 - We are planning on moving this to [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
-
-Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
-
-*More details to come on production deployment - we have not setup the URL or hosting site yet*.
+To Deploy:
+- Log onto `Netlify.com` with the appropriate Login and Password
+- Click on `Sites`
+- Click on `edl-beta`
+- Click on `Deploys`
+- Drag the `builds` folder that was just created in your development environment when you ran `$>python serve.py`
+onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
+- Follow any additional instructions.  Include a description if you are able.
+- Your website will be deployed!
 
 # PDF Generation
 Relies on `pandoc`
