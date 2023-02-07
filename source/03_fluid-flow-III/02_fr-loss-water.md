@@ -15,8 +15,8 @@ description: Frictional loss information for water. Resistance coefficients.
 =^=
 title: Rotodynamic Pumps for Pump Piping
 description: ANSI/HI 9.6.6 details pump piping requirements for rotodynamic pumps and effects of inlet/outlet piping on pump performance. This standard is applicable to all piping downstream and upstream from the pump but not when entering tank, vessel or intake structure. This document is intended to complement ANSI/HI 9.8 Intake Design for Rotodynamic Pumps.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f9_6_6_2016.png
-url: https://www.pumps.org/product/ansi-hi-9-6-6-2016-rotodynamic-pumps-for-pump-piping/
+image: https://www.pumps.org/wp-content/uploads/2022/12/9.6.6_small.jpg
+url: https://www.pumps.org/product/ansi-hi-9-6-6-rotodynamic-pumps-for-pump-piping/
 price: 130.00 
 hide_price: true
 =^=

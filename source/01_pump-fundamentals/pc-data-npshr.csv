@@ -1,0 +1,10 @@
+,numeric,numeric,numeric,numeric,numeric,numeric
+heading,Flow (GPM),NPSHr (ft)
+data,500,6
+data,600,7
+data,700,8
+data,800,9.5
+data,900,11
+data,1000,13
+data,1100,15
+data,1200,18

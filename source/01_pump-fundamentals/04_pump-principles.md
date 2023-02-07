@@ -46,7 +46,7 @@ An alternate definition for specific speed is also used based on flow rate per i
 double suction impeller pump, the resultant value of specific speed is less by a factor of 0.707 times less.
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant 
 differences in methods used throughout industry and in related textbooks and literature.  For more information on the specific speed definition refer to 
-<a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
+<a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
 
 
 
@@ -57,7 +57,7 @@ Below is the approximate shape of performance curves based on the impeller speci
 =^=
 title: Rotodynamic Pump Efficiency Prediction
 description: ANSI/HI 20.3 presents a simplified method to predict normally attainable efficiency levels at the best efficiency point for selected types of rotodynamic pumps when the rate of flow, total head per stage, net positive suction head available (NPSHA), and the service conditions are known.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f20_3-2015.png
+image: https://www.pumps.org/wp-content/uploads/2022/01/FINAL-HI20.3-CoverFrontBlackBorder-4.6.21-600x776.jpg
 url: https://www.pumps.org/product/hi-20-3-2020-rotodynamic-pump-efficiency-prediction/
 price: 50.00
 hide_price: true
@@ -138,7 +138,7 @@ When converting suction specific speed values between the US and metric conventi
 
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any 
 comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature. 
-For more information on the suction specific speed definition refer to <a href="https://estore.pumps.org/Standards/Rotodynamic/NomenclaturePDF.aspx" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
+For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
 
 
 ![](stable-window.png "")
@@ -165,7 +165,7 @@ setting axial distance doesn’t need to be as precise for this same reason.
 =^=
 title: Rotodynamic Pumps for Design and Application
 description: The purpose of this standard is to provide guidance and recommendations for the general application and design of rotodynamic pumps. This standard provides accepted methods for the evaluation of the hydraulic performance and design of all related and supporting equipment. It does not include detailed hydraulic design methods. This standard recognizes and identifies application requirements, principal features, performance considerations, and the necessary precautions for proper use of rotodynamic pumps.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2f143web.jpg
+image: https://www.pumps.org/wp-content/uploads/2021/10/143web.jpg
 url: https://www.pumps.org/product/ansi-hi-14-3-2019-rotodynamic-pumps-for-design-and-application/
 price: 240.00
 hide_price: true
@@ -204,7 +204,7 @@ where:
 A pump’s **net positive suction head required (NPSHr)** is important, as it allows a pump user to determine the amount of NPSHa needed at their pump site to ensure pump
 performance is met. The occurrence of visible cavitation, increase of noise and vibration due to cavitation, beginning of head or efficiency drop, and cavitation 
 erosion can occur when margin above NPSHr is present. NPSH3 is the value of NPSHr when the first-stage total head drops by 3% due to cavitation. 
-<a href="https://estore.pumps.org/Standards/Rotodynamic/NPSH.aspx" target="_blank">ANSI/HI 9.6.1 – Rotodynamic Pumps – Guideline for NPSH Margin</a> establishes
+<a href="https://www.pumps.org/product/ansi-hi-9-6-1-2017-rotodynamic-pumps-guideline-for-npsh-margin/" target="_blank">ANSI/HI 9.6.1 – Rotodynamic Pumps – Guideline for NPSH Margin</a> establishes
 recommended net positive suction head available (NPSHA) above the published NPSH required (NPSHR) that will lead to acceptable pump performance and service life.
 
 Below is a common graph seen when testing a pump for NPSHr. This shows that as NPSHa is reduced, there is a point at which the head starts to drop off. On this test,

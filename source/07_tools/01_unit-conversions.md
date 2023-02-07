@@ -15,8 +15,8 @@ Select a dimension or measure, then input a value to convert to the desired unit
 =^=
 title: Effective Pump Intake Design and Troubleshooting Problem Intakes - 4 Part Webinar Series
 description: This webinar series is based on the Hydraulic Institute’s Intake Design for Rotodynamic Pumps (ANSI/HI 9.8–2018) Standard. The standard enables designers, owners, and users to configure functional pumping facility designs and provides remedial measures for problem intakes. This webinar series visually aids the standard’s overview of design objectives, required inlet bell design diameter, submergence requirements, using the standard for proper instructions on intake structures for clear liquids and solids-handling pumps, highlights of key technologies used when designing the pump intake including physical and computation fluid dynamics (CFD).
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fEffective_Pump_Intake_Design_and_Troubleshooting_Problem_Intakes.png
-url: https://estore.pumps.org/Effective-Pump-Intake-Design-and-Troubleshooting-Problem-Intakes-4-Part-On-Demand-Webinar-Series-P3158.aspx
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_2a02519363d2804a706ed681c86dc0ad.png
+url: https://training.pumps.org/products/effective-pump-intake-design-and-troubleshooting-problem-intakes-4-part-on-demand-webinar-series
 price: 149.00
 hide_price: true
 =^=
