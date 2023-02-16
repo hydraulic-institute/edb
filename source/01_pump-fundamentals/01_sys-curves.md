@@ -59,8 +59,8 @@ equation defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid
 title: Basic System Hydraulics - 1 Part On-Demand Webinar
 description: It’s important to be able to visualize pump curves and system curves to understand their interaction. Learn the basics of system hydraulics in this 1-part webinar.
 image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
-url: https://training.pumps.org/products/basic-system-hydraulics-1-part-on-demand-webinar
-price: 59.00
+url: https://training.pumps.org/products/basic-system-hydraulics-pump-system-curves-energy-consumption-control-methods-1-part-on-demand-webinar
+price: 119.00
 hide_price: true
 =^=
 
@@ -99,10 +99,10 @@ Real-world applications tend to consider a range or family of system curves. Thi
 operating pressures, valve arrangements, etc. 
 
 =^=
-title: Assessing Pump Systems for Optimization - 2 Part On-Demand Webinar
-description: Pump system assessments and pump system optimization present significant opportunities for operations and maintenance cost savings and for reducing energy consumption. In this course, the user will learn the tasks and knowledge required for pump system assessments, the different levels of assessments, and the steps required to implement a pump system assessment. Also covered are the elements and format of the pump system assessment report, including examples. The user is also presented with case studies and real-world examples of pump system assessments and examples of how to use analysis tools, such as hydraulic modeling, to assist with the assessment.
+title: Introduction to Vibration in Rotodynamic Pumps: 1-Part On-Demand Webinar
+description: This webinar presents an introduction to vibration analysis of rotodynamic pumps and will provide basic concepts of vibration analysis and provide some guidelines to help the diagnostic process of dynamic behavior on rotodynamic pumps and their systems. The focus is on centrifugal pumps of all types regarding their typical vibration issues such as imbalance, misalignment, rubs, looseness, etc.  Troubleshooting methods and fixes are discussed with real life case histories.
 image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
-url: https://training.pumps.org/products/assessing-pumping-systems-for-optimization-2-part-on-demand-webinar#tab-product_tab_overview
+url: https://training.pumps.org/products/introduction-to-vibration-in-rotodynamic-pumps-1-part-on-demand-webinar 
 price: 159.99
 hide_price: true
 =^=

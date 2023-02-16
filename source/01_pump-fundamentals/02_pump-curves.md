@@ -135,10 +135,10 @@ at the specified flow rate, speed, and pumped liquid. NPSHr is further defined i
 
 =/=
 title: NPSHr Curve
-data-us: pc-data.csv
-data-metric: pc-data-metric.csv
+data-us: pc-data-npshr.csv
+data-metric: pc-data-metric-npshr.csv
 x: 1
-series: 5
+series: 2
 series_title_index: 0
 =/=
 
@@ -227,13 +227,13 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 **Speed Reduction and Impeller Trimming**
 
 Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
-therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pumpcharacteristics after impeller trimming 
+therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pump characteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
 =^=
 title: Application Guideline for Variable Speed Pumping
 description: This guideline has been created to provide pump industry professionals and the end user operators of pumps with the knowledge required to apply variable speed pumping so that it will result in improved energy efficiency and increased reliability. This intension of this guidebook is to educate the pumping industry and to ensure the safe, reliable, and efficient operation of the pumping equipment we all depend on every day.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP-2017.png
+image: https://www.pumps.org/wp-content/uploads/2021/10/VSP-2017.png
 url: https://www.pumps.org/product/application-guideline-for-variable-speed-pumping/
 price: 166.00
 hide_price: true
@@ -280,13 +280,14 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 
 Content will be added soon.
 
-<!--=^=-->
-<!--title: Variable Speed Pumping - 4 Part Webinar Series-->
-<!--description: This course reviews the new Variable Speed Pumping Guidebook and how to use variable speed pumping for more efficient and better controlled pumping. It explains how flow and pressure are controlled with variable speed pumping and when to use each. Also covered are the devices used to achieve variable speed pumping, including variable frequency drives. The attendee will also learn the benefits provided by variable speed pumping, in relation to cost, operation, and energy savings.-->
-<!--image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVSP_Solo_Image.png-->
-<!--url: https://estore.pumps.org/Variable-Speed-Pumping-4-Part-On-Demand-Webinar-Series-P3014.aspx-->
-<!--price: 149.00-->
-<!--=^=-->
+=^=
+title: Factory Performance Testing: Hydraulic, Mechanical, and Hydrostatic: 1-Part On-Demand Webinar
+-description: This webinar will provide a summary of all HI laboratory test standards for rotodynamic pumps. The presenter will cover test procedures, setups, and arrangements along with data acquisition, acceptance grades, and instrumentation. Learn the basics of factory performance testing in this 1-part on-demand webinar
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_393becd30058bdaf236507781e2c8a19.png
+url: https://training.pumps.org/products/factory-performance-testing-hydraulic-mechanical-and-hydrostatic-1-part-on-demand-webinar
+price: 119.00
+hide_price: true
+=^=
 
 ## Worked Examples
 

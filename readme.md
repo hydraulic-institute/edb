@@ -53,18 +53,18 @@ Next, execute the following commands one by one. There are dependencies for the 
 pip3 install virtualenv
 python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS
-source env/bin/activate  <- # IF USING LINUX or MAC
+env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
 pip3 install Jinja2   
 pip3 install lesscpy
 pip3 install Markdown
 pip3 install watchdog
 pip3 install htmlmin
+pip3 install awscli --upgrade 
+pip3 install s3-deploy-website --upgrade
 pip3 install pypandoc
 pip3 install selenium
-pip3 install awscli --upgrade --user
-pip3 install s3-deploy-website
 ```
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
@@ -82,7 +82,7 @@ There is already content in the EDB, so as a quick check that you have everythig
 python3 serve.py
 ```
 
-This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8081](http://localhost:8081).
+This builds the EDB content and launches a web server locally on your machine.  The functionality of this tool is described in more detail later in this readme, but for now, open a web browser and navigate to [http://localhost:8080](http://localhost:8080).
 
 You should see the web site:
 
@@ -479,7 +479,7 @@ This script automatically builds the EDB, and monitors file changes in the `sour
 
 The EDB is always built to the `build` directory.  The files contained there are suitable for viewing with a web browser - *but you shouldn't open them directly* by clicking on them.  **Instead, the `server` script also launches a local web server** so you can view the built EDB in your web browser exactly as if it is deployed.
 
-To view the EDB while you are developing, got to [http://localhost:8081](http://localhost:8081).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
+To view the EDB while you are developing, got to [http://localhost:8080](http://localhost:8080).  While the EDB is automatically rebuilt whenever any source files change, **you must click the refresh button on your web browser to see the changes**.
 
 ## Version control with `git`
 It is critical that we all remain in sync with eachother while working on the EDB.  Even if only one person is creating content, developers will be creating code enhancements to the application.  Therefore, you must take care to always ensure you keep up to date with changes, and also always upload your changes regularly.  When used properly, `git` will allow us to roll back any mistakes that may be made.  It's important to understand that pushing your changes to `git` does **not** cause the content on the EDB website to change - so don't hesitate to push changes frequently!
@@ -537,68 +537,44 @@ git push origin master
 Once that completes successfully, you can go back to working on other things.
 
 ## Hosting
-The HI EDL is deployed to an Amazon S3 bucket, and served to the public internet from there.
+The HI EDL is deployed **Netlify.com** and served to the public internet from there.
 
-### S3 Configuration
-*The following is only necessary once, to setup Amazon S3 - it is documented here for historical purpose - it is not something you need to do yourself*
-- Create bucket - named `hi-edb-beta`
-- Region:  US East (N. Virginia)
-- Next
-- Next (default configuration options)
-- Set Permissions:  Uncheck Block all public access
+### Deploying to Beta & Production
+#### Beta Site
+We have a Beta account on **Netlify.com** - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+- Login with `higladetech@gmail.com`
 
-After creating the bucket, click on it from the list.  Click on the Bucket Policy and add the following:
+#### Production Site
+We have a Production account on **Netlify.com** [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+- Login with `erdb@gladetech.net`
+
+Prepping for Deployment:
+- In your development environment, stash any local changes you have
 ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::hi-edb-beta/*"
-            ]
-        }
-    ]
-}
+$> git stash
 ```
-
-Go to properties, and then Static website hosting.  Enable web hosting on the bucket.
-
-### Setting Credentials
-Before being able to deploy, you must setup HI's amazon credentials on your machine.  **You will be given credentials separately, please do not check the credentials into any files within this project for security purposes**.
-
+- Checkout the `beta` or `master` branch
 ```
-aws configure
-AWS Access Key ID [********************]:  <enter access key>
-AWS Secret Access Key [********************]:  <enter secret key>
-
+$> git checkout [beta | master]
+```
+- Update the local [beta | master] branch 
+```
+$> git pull
+```
+- Run the server and verify it is the website you want to deploy.
+```
+$> python serve.py
 ```
 
-**Note:** when developing on AWS C9, `aws configure` often fails.  You can instead set your environment variables manually to enable deploy:
-
-```
-export AWS_ACCESS_KEY_ID=******
-$ export AWS_SECRET_ACCESS_KEY=*******
-$ export AWS_DEFAULT_REGION=us-east-2
-```
-
-### Deploying to Beta
-Execute the following from the command line
-```
-python3 beta.py
-```
-The live (beta) page will be here: [http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/](http://hi-edb-beta.s3-website-us-east-1.amazonaws.com/#/).
-
-
-### Deploying to Production
-Production deployment requires a few more steps than beta, because we use Amazon Cloudfront to reduce response time.  In addition, we use build flags to use compressed versions of the site to further increase response time.
-
-*More details to come on production deployment - we have not setup the URL or hosting site yet*.
+To Deploy:
+- Log onto `Netlify.com` with the appropriate Login and Password
+- Click on `Sites`
+- Click on `edl-beta`
+- Click on `Deploys`
+- Drag the `builds` folder that was just created in your development environment when you ran `$>python serve.py`
+onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
+- Follow any additional instructions.  Include a description if you are able.
+- Your website will be deployed!
 
 # PDF Generation
 Relies on `pandoc`
@@ -615,3 +591,23 @@ python3 build-pdf
 ```
 
 sudo apt-get install chromium-browser
+ 
+# On Windows:
+```
+winget install pandoc
+```
+
+Install texlive at:  https://tug.org/texlive/windows.html
+
+
+# Creating README PDF using the Markdown PDF Extension
+Install the `Markdown PDF` extension in Visual Studio Code
+
+<img src='MarkdownExt.png'/>
+
+- Open the markdown file in Visual Studio Code
+- Press `F1` and type `export` and you should see `markdown...` options
+
+<img src='f1MarkdownOptions.png'>
+
+- Select whatever option you want and it should download the converted file to the same directory as your markdown file
