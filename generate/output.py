@@ -202,6 +202,12 @@ def chart_data(units, chart, path, filename):
         chart_dict['series'] = [series._asdict() for series in chart.series]
         return chart_dict
 
+def replace_demonstrator_block(output_path, dir):
+    template = env.get_template('demo.jinja')
+    key = str(uuid.uuid4())
+    demoHtml = template.render(key=key, title="hello", units='us')
+
+    return demoHtml
 
 def replace_chart_block(output_path, dir, chart_text):
     chart = parse_dict(chart_text.strip().split("\n"))
@@ -378,6 +384,19 @@ def process_chart_blocks(output_path, dir, markdown):
 
     return markdown
 
+def process_demonstrator_blocks(output_path, dir, markdown):
+    delim = "=d="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + replace_demonstrator_block(output_path, dir) + after
+        start = markdown.find(delim)
+
+    return markdown
+
 
 def process_chart_blocks_pdf(output_path, dir, markdown):
     global chart_count
@@ -490,6 +509,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # in the module perhaps...)
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
+    content = process_demonstrator_blocks(path, node['path'], content)
     content = process_ad_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)

@@ -855,8 +855,7 @@ Vue.component('viscosity-converter', {
 });
 
 
-
-new Vue({
+var appView = new Vue({
     el: '#vue',
     delimiters: ['${', '}'],
     data: {
