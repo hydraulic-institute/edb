@@ -111,7 +111,11 @@ hide_price: true
 
 =d=
 title: Hello World Demonstrator
-kind:HelloWorld
+kind: system-curve
+lowerTankLevel: 5
+upperTankLevel: 10
+upperTankPressure: 10
+overallResistance: 5
 =d=
 
 ### Worked Example (U.S. & Metric Units)
