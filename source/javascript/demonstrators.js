@@ -309,25 +309,42 @@ Vue.component("demo-flow-line", {
 
 Vue.component("demo-system-curve-inputs", {
     template: `
-      <div>
-        <div class="d-flex" style="height: 200px">
-          <div class="mt-auto">
-            <p class="text-sm-left mb-0">Lower Tank</p>
-            <div style="margin-left: 5px">
-              <demo-tank v-model="lowerLevelValue" :max-height="100"></demo-tank>
-            </div>
-          </div>              
-          <demo-flow-line :length="200" :direction="'far'" class="mt-auto" style="margin: 0px -14px 15px -15px"></demo-flow-line>
-          <div>
-            <p class="text-sm-left mb-0">Upper Tank</p>
-            <demo-tank v-model="upperLevelValue" :max-height="100" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+    <div>  
+    <div class="row mb-2">
+      <div class="col-6"></div>
+        <div class="col-5 upper_tank_pressure" align="center">
+          <div>        
+            <p class="text-sm-left mb-0 mt-2">Upper Tank Pressure</p>
+            <p class="text-sm-left mb-0 mt-0">0 = atmosphere</p>
+            <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
           </div>
         </div>
-        <p class="text-sm-left mb-0">Resistance</p>
-        <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
-        <p class="text-sm-left mb-0 mt-2">Pressure</p>
-        <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
+    </div>
+    <div class="row d-flex">
+      <div class="col-3 mt-auto">
+        <p class="text-sm-left mb-0">Lower Tank Level</p>
+        <div align="center">
+          <demo-tank v-model="lowerLevelValue" :max-height="100"></demo-tank>
+        </div>
       </div>
+      <div class="col-4 mt-auto">              
+        <demo-flow-line :length="200" :direction="'far'" class="mt-auto" style="margin: 0px -14px 15px -15px"></demo-flow-line>
+      </div>
+      <div class="col" align="left">
+        <p class="text-sm-left mb-0">Upper Tank Level</p>
+        <demo-tank v-model="upperLevelValue" :max-height="100" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 resistance" align="center">
+        <div>        
+          <p class="text-sm-left mb-0">Overall Resistance</p>
+          <p class="text-sm-left mb-0">(Major + Minor Losses)</p>
+          <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
+        </div>
+      </div>
+    </div>
+    </div>
     `,
     props: {
         rangeInputColor: { 
@@ -410,7 +427,7 @@ Vue.component('demo-system-curves', {
   }, 
   template: `
     <div class="demonstrator row">
-      <div class="demo-inputs col">
+      <div class="demo-inputs col-5">
         <demo-system-curve-inputs 
           :lower-level.sync="lowerLevel"
           :upper-level.sync="upperLevel"
@@ -419,8 +436,10 @@ Vue.component('demo-system-curves', {
         >
         </demo-system-curve-inputs>
       </div>
-      <div class="demo-chart col">
+      <div class="demo-chart col-6">
       </div>
+      <!--div class="demo-bar-chart col"> KK TODO
+      </div-->
     </div>
   `,
   mounted: function () {
