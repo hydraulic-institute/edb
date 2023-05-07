@@ -315,7 +315,6 @@ Vue.component("demo-system-curve-inputs", {
         <div class="col-5 upper_tank_pressure" align="center">
           <div>        
             <p class="text-sm-left mb-0 mt-2">Upper Tank Pressure</p>
-            <p class="text-sm-left mb-0 mt-0">0 = atmosphere</p>
             <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
           </div>
         </div>
@@ -338,7 +337,7 @@ Vue.component("demo-system-curve-inputs", {
     <div class="row">
       <div class="col-5 resistance" align="center">
         <div>        
-          <p class="text-sm-left mb-0">Overall Resistance</p>
+          <p class="text-sm-left mb-0">Friction Losses</p>
           <p class="text-sm-left mb-0">(Major + Minor Losses)</p>
           <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
         </div>
@@ -469,9 +468,7 @@ Vue.component('demo-system-curves', {
         enabled: false
       },
       tooltip: {
-        custom: function({ series, seriesIndex, dataPointIndex, w}) {
-          return component.getTooltip(dataPointIndex);
-        }
+        enabled: false,
       },
       stroke: {
         curve: "straight",
@@ -485,7 +482,8 @@ Vue.component('demo-system-curves', {
       },
       grid: {
         xaxis: { lines: { show: true } },
-        yaxis: { lines: { show: true } }
+        yaxis: { lines: { show: true } },
+        borderColor: '#85929E',
       },
       xaxis: {
         velocities: this.velocities,
@@ -500,7 +498,7 @@ Vue.component('demo-system-curves', {
         },
         tooltip: {
           enabled: false
-        }
+        },
       },
       yaxis: { 
         min: 0,
