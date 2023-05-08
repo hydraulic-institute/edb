@@ -4,7 +4,7 @@
     props: {
         maxHeight: { 
             type: Number,
-            default: 200
+            default: 100
         },
         maxWidth: { 
             type: Number,
@@ -258,7 +258,7 @@ Vue.component("demo-flow-line", {
     props: {
         width: {
             type: Number,
-            default: 200
+            default: 100
         },
         height: { 
             type: Number,
@@ -311,35 +311,32 @@ Vue.component("demo-system-curve-inputs", {
     template: `
     <div>  
     <div class="row mb-2">
-      <div class="col-6"></div>
-        <div class="col-5 upper_tank_pressure" align="center">
-          <div>        
-            <p class="text-sm-left mb-0 mt-2">Upper Tank Pressure</p>
-            <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
-          </div>
+      <div class="col" align="right">
+        <div class="upper_tank_pressure">      
+          <p class="mb-0 mt-2" style="font-size: 1vw">Upper Tank Pressure</p>
+          <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
         </div>
+      </div>
     </div>
-    <div class="row d-flex">
-      <div class="col-3 mt-auto">
-        <p class="text-sm-left mb-0">Lower Tank Level</p>
-        <div align="center">
-          <demo-tank v-model="lowerLevelValue" :max-height="100"></demo-tank>
-        </div>
+    <div class="row mb-2">
+      <div class="col-4 mt-auto" style="min-width:30%">
+        <p class="mt-5 mb-0" style="font-size: 1vw" align="right">Lower Tank Level</p>
+        <demo-tank v-model="lowerLevelValue" :max-height="100" align="right"></demo-tank>
       </div>
-      <div class="col-4 mt-auto">              
-        <demo-flow-line :length="200" :direction="'far'" class="mt-auto" style="margin: 0px -14px 15px -15px"></demo-flow-line>
+      <div class="col-4 d-flex align-items-center" style="min-width:30%; justify-content:center;">           
+        <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
       </div>
-      <div class="col" align="left">
-        <p class="text-sm-left mb-0">Upper Tank Level</p>
+      <div class="col-4" style="min-width:30%">
+        <p class="mt-0 mb-0" style="font-size: 1vw" align="left">Upper Tank Level</p>
         <demo-tank v-model="upperLevelValue" :max-height="100" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
       </div>
     </div>
-    <div class="row">
-      <div class="col-5 resistance" align="center">
-        <div>        
-          <p class="text-sm-left mb-0">Friction Losses</p>
-          <p class="text-sm-left mb-0">(Major + Minor Losses)</p>
-          <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
+    <div class="row mb-2 mt-1">
+      <div class="col" align="left">
+        <div class="resistance">      
+          <p class="mb-0" style="font-size: 1vw">Friction Losses</p>
+          <p class="mb-0" style="font-size: .8vw">(Major + Minor Losses)</p>
+          <demo-tank v-model="resistanceValue":orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
         </div>
       </div>
     </div>
@@ -423,10 +420,10 @@ Vue.component('demo-system-curves', {
         velocities: [0,1,2,3,4,5,6,7,8,9,10],
         chart: null
       };
-  }, 
+  },
   template: `
     <div class="demonstrator row">
-      <div class="demo-inputs col-5">
+      <div class="demo-inputs col-5" style="min-width:50%">
         <demo-system-curve-inputs 
           :lower-level.sync="lowerLevel"
           :upper-level.sync="upperLevel"
@@ -435,7 +432,7 @@ Vue.component('demo-system-curves', {
         >
         </demo-system-curve-inputs>
       </div>
-      <div class="demo-chart col-6">
+      <div class="demo-chart col-6" style="min-width=50%">
       </div>
       <!--div class="demo-bar-chart col"> KK TODO
       </div-->
@@ -453,16 +450,6 @@ Vue.component('demo-system-curves', {
         toolbar: { show: false },
         height: 300
       },
-      responsive: [
-        {
-          breakpoint: 1200,
-          options: { 
-            chart: {
-              width: 300
-            }
-          }
-        }
-      ],
       series: series,
       dataLabels: {
         enabled: false
