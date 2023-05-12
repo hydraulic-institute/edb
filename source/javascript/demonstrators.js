@@ -12,7 +12,7 @@
         },
         knobRadius: { 
             type: Number,
-            default: 8
+            default: 10
         },
         tankStroke: { 
             type:Number,
@@ -40,8 +40,12 @@
         },
         levelColor: {
             type: String,
-            default: "aquamarine"
-        }
+            default: "#4863A0"
+        },
+        fillColor: {
+          type: String,
+          default: "#FFFFFF"
+        },
     },
     data: function() {
         return {
@@ -70,23 +74,24 @@
             waterLevel: new Konva.Rect({
                 fill: this.levelColor,
                 x: this.knobRadius,
-                opacity: .85,
+                opacity: 1.0,
             }),
             tank: new Konva.Rect({
                 x: this.knobRadius,
                 y: this.knobRadius,
                 width: this.maxWidth,
                 height: this.maxHeight,
-                fill: "azure",
-                opacity: 0.25,
+                fill: this.fillColor,
+                opacity: 0.80,
                 stroke: "black",
                 strokeWidth: this.tankStroke
             }),
-            knob: new Konva.Circle({
-                fill: "darkblue",
+            knob: new Konva.RegularPolygon({
+                fill: "red",
+                sides: 3,
                 radius: this.knobRadius,
                 draggable: true,
-                opacity: 0.5,
+                opacity: 1.0,
                 dragBoundFunc: (pos) => {
                     const maxVal = Math.max(
                         this.yPositionRange.min, 
@@ -314,7 +319,7 @@ Vue.component("demo-system-curve-inputs", {
       <div class="col" align="right">
         <div class="upper_tank_pressure">      
           <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
-          <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
+          <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
         </div>
       </div>
     </div>
@@ -328,7 +333,7 @@ Vue.component("demo-system-curve-inputs", {
       </div>
       <div class="col-4" style="min-width:30%">
         <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :max-height="100" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+        <demo-tank v-model="upperLevelValue" :max-height="100" :fill-color="upperTankFillColor" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
@@ -336,7 +341,7 @@ Vue.component("demo-system-curve-inputs", {
         <div class="resistance">      
           <p class="mb-0" style="font-size: smaller">Friction Losses</p>
           <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
-          <demo-tank v-model="resistanceValue":orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="5" :level-color="rangeInputColor"></demo-tank>
+          <demo-tank v-model="resistanceValue":orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
         </div>
       </div>
     </div>
@@ -345,7 +350,11 @@ Vue.component("demo-system-curve-inputs", {
     props: {
         rangeInputColor: { 
           type: String,
-          default: "goldenrod"
+          default: "#00827F"
+        },
+        upperTankFillColor: {
+          type: String,
+          default: "orange"
         },
         lowerLevel: {
           type: Number,
@@ -461,7 +470,7 @@ Vue.component('demo-system-curves', {
       dataLabels: {
         enabled: false
       },
-      colors: ["#FF8800", "#0000FF", "#FF8800"], 
+      //colors: ["#FF8800", "#0000FF", "#FF8800"], 
       tooltip: {
         enabled: false,
       },
