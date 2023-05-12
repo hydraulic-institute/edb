@@ -461,15 +461,16 @@ Vue.component('demo-system-curves', {
       dataLabels: {
         enabled: false
       },
+      colors: ["#FF8800", "#0000FF", "#FF8800"], 
       tooltip: {
         enabled: false,
       },
       stroke: {
         curve: "straight",
-        width: [2, 2, 0]
+        width: [3, 3, 0]
       },
       fill: {
-        opacity: [1, 1, 0.10]
+        opacity: [1, 0.25, 0.25],
       },
       markers: {
         hover: { sizeOffset: 6 }
@@ -556,7 +557,7 @@ Vue.component('demo-system-curves', {
       });
       series.push({
         name: 'Static Head',
-        type: 'line',
+        type: 'area',
         data: this.velocities.map(v => ({ x: v, y: curveData.staticHead[v] })) 
       });
       series.push({
