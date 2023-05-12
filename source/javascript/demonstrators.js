@@ -46,6 +46,10 @@
           type: String,
           default: "#FFFFFF"
         },
+        cornerRadius: {
+          type: Array,
+          default: 0
+        }
     },
     data: function() {
         return {
@@ -75,6 +79,7 @@
                 fill: this.levelColor,
                 x: this.knobRadius,
                 opacity: 1.0,
+                cornerRadius: [0,0,this.cornerRadius,this.cornerRadius]
             }),
             tank: new Konva.Rect({
                 x: this.knobRadius,
@@ -82,6 +87,7 @@
                 width: this.maxWidth,
                 height: this.maxHeight,
                 fill: this.fillColor,
+                cornerRadius: this.cornerRadius,
                 opacity: 0.80,
                 stroke: "black",
                 strokeWidth: this.tankStroke
@@ -294,8 +300,8 @@ Vue.component("demo-flow-line", {
             x: 0,
             y: 0,
             points: [
-                0, this.height - (this.pointerWidth/2 + 6), 
-                (this.width / 2) - 8, this.height - (this.pointerWidth/2 + 6),
+                0, this.height - (this.pointerWidth/2 + 5), 
+                (this.width / 2) - 8, this.height - (this.pointerWidth/2 + 5),
             ],
             pointerLength: this.pointerWidth,
             pointerWidth: this.pointerWidth,
@@ -306,8 +312,8 @@ Vue.component("demo-flow-line", {
         const line2 = new Konva.Line({
           x: 0,
           y: 0,
-          points: [ (this.width / 2) + 5, this.height - (this.pointerWidth + 6),
-              (this.width / 2) + 20, this.height - (this.pointerWidth + 6)
+          points: [ (this.width / 2) + 5, this.height - (this.pointerWidth + 15),
+              (this.width / 2) + 20, this.height - (this.pointerWidth + 15)
           ],
           pointerLength: this.pointerWidth,
           pointerWidth: this.pointerWidth,
@@ -319,7 +325,7 @@ Vue.component("demo-flow-line", {
         x: 0,
         y: 0,
         points: [ 
-            (this.width / 2) + 20, this.height - (this.pointerWidth + 6),
+            (this.width / 2) + 20, this.height - (this.pointerWidth + 15),
             (this.width / 2) + 20, (this.pointerWidth / 2) + 2,
             this.width - 2, (this.pointerWidth / 2) + 2
         ],
@@ -370,14 +376,14 @@ Vue.component("demo-system-curve-inputs", {
     <div class="row mb-2">
       <div class="col-4 mt-auto" style="min-width:30%">
         <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
-        <demo-tank v-model="lowerLevelValue" :max-height="100" align="right"></demo-tank>
+        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" align="right"></demo-tank>
       </div>
       <div class="col-4 d-flex mt-auto" style="min-width:30%; justify-content:center;">           
         <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
       </div>
       <div class="col-4" style="min-width:30%">
         <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :max-height="100" :fill-color="upperTankFillColor" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
