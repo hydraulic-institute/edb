@@ -86,12 +86,11 @@
                 stroke: "black",
                 strokeWidth: this.tankStroke
             }),
-            knob: new Konva.RegularPolygon({
+            knob: new Konva.Circle({
                 fill: "red",
-                sides: 3,
                 radius: this.knobRadius,
                 draggable: true,
-                opacity: 1.0,
+                opacity: .75,
                 dragBoundFunc: (pos) => {
                     const maxVal = Math.max(
                         this.yPositionRange.min, 
@@ -291,14 +290,12 @@ Vue.component("demo-flow-line", {
 
         const layer = new Konva.Layer();
 
-        const line = new Konva.Arrow({
+        const line1 = new Konva.Arrow({
             x: 0,
             y: 0,
             points: [
-                0, this.height -2, 
-                (this.width / 2) - 1, this.height -2,
-                (this.width / 2) - 1, (this.pointerWidth / 2) + 2,
-                this.width - 2, (this.pointerWidth / 2) + 2
+                0, this.height - (this.pointerWidth/2 + 6), 
+                (this.width / 2) - 8, this.height - (this.pointerWidth/2 + 6),
             ],
             pointerLength: this.pointerWidth,
             pointerWidth: this.pointerWidth,
@@ -306,8 +303,55 @@ Vue.component("demo-flow-line", {
             stroke: "darkgrey",
             strokeWidth: 1
         });
+        const line2 = new Konva.Line({
+          x: 0,
+          y: 0,
+          points: [ (this.width / 2) + 5, this.height - (this.pointerWidth + 6),
+              (this.width / 2) + 20, this.height - (this.pointerWidth + 6)
+          ],
+          pointerLength: this.pointerWidth,
+          pointerWidth: this.pointerWidth,
+          fill: "black",
+          stroke: "black",
+          strokeWidth: 1
+      });
+      const line3 = new Konva.Arrow({
+        x: 0,
+        y: 0,
+        points: [ 
+            (this.width / 2) + 20, this.height - (this.pointerWidth + 6),
+            (this.width / 2) + 20, (this.pointerWidth / 2) + 2,
+            this.width - 2, (this.pointerWidth / 2) + 2
+        ],
+        pointerLength: this.pointerWidth,
+        pointerWidth: this.pointerWidth,
+        fill: "black",
+        stroke: "darkgrey",
+        strokeWidth: 1
+    });
+      const circle1 = new Konva.Circle({
+        x: (this.width / 2),
+        y: this.height - 16,
+        radius: 10,
+        fill: "#FFFFFF",
+        stroke: "black",
+        strokeWidth: 1
+      });
+      const triangle1 = new Konva.RegularPolygon({
+        x: (this.width / 2),
+        y: this.height - 6,
+        radius: 10,
+        sides: 3,
+        fill: "#FFFFFF",
+        stroke: "black",
+        strokeWidth: 1
+      });
 
-        layer.add(line);
+        layer.add(triangle1);
+        layer.add(circle1);
+        layer.add(line1);
+        layer.add(line2);
+        layer.add(line3);
         stage.add(layer);
     }
 });
@@ -328,7 +372,7 @@ Vue.component("demo-system-curve-inputs", {
         <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
         <demo-tank v-model="lowerLevelValue" :max-height="100" align="right"></demo-tank>
       </div>
-      <div class="col-4 d-flex align-items-center" style="min-width:30%; justify-content:center;">           
+      <div class="col-4 d-flex mt-auto" style="min-width:30%; justify-content:center;">           
         <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
       </div>
       <div class="col-4" style="min-width:30%">
@@ -337,7 +381,7 @@ Vue.component("demo-system-curve-inputs", {
       </div>
     </div>
     <div class="row mb-2 mt-1">
-      <div class="col" align="left">
+      <div class="col" align="center">
         <div class="resistance">      
           <p class="mb-0" style="font-size: smaller">Friction Losses</p>
           <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
@@ -350,7 +394,7 @@ Vue.component("demo-system-curve-inputs", {
     props: {
         rangeInputColor: { 
           type: String,
-          default: "#00827F"
+          default: "#848482"
         },
         upperTankFillColor: {
           type: String,
