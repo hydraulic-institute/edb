@@ -46,9 +46,41 @@
           type: String,
           default: "#FFFFFF"
         },
-        cornerRadius: {
-          type: Array,
-          default: 0
+        tankCornerRadius: {
+          type: Number,
+          default: 1
+        },
+        bottomColor: {
+          type: String,
+          default: "black"
+        },
+        leftColor: {
+          type: String,
+          default: "black"
+        },
+        rightColor: {
+          type: String,
+          default: "black"
+        },
+        topColor: {
+          type: String,
+          default: "black"
+        },
+        bottomOpacity: {
+          type: Number,
+          default: 1
+        },
+        leftOpacity: {
+          type: Number,
+          default: 1
+        },
+        rightOpacity: {
+          type: Number,
+          default: 1
+        },
+        topOpacity: {
+          type: Number,
+          default: 1
         }
     },
     data: function() {
@@ -79,7 +111,7 @@
                 fill: this.levelColor,
                 x: this.knobRadius,
                 opacity: 1.0,
-                cornerRadius: [0,0,this.cornerRadius,this.cornerRadius]
+                cornerRadius: [0,0,this.tankCornerRadius,this.tankCornerRadius]
             }),
             tank: new Konva.Rect({
                 x: this.knobRadius,
@@ -87,10 +119,54 @@
                 width: this.maxWidth,
                 height: this.maxHeight,
                 fill: this.fillColor,
-                cornerRadius: this.cornerRadius,
+                cornerRadius: [0,0,this.tankCornerRadius,this.tankCornerRadius],
                 opacity: 0.80,
                 stroke: "black",
                 strokeWidth: this.tankStroke
+            }),
+            bottom: new Konva.Line({
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.maxHeight, this.knobRadius+this.maxWidth, this.maxHeight ],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: this.bottomColor,
+              stroke: this.bottomColor,
+              strokeWidth: 1,
+              opacity: this.bottomOpacity
+            }),
+            top: new Konva.Line({
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.knobRadius, this.knobRadius+this.maxWidth, this.knobRadius ],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: this.topColor,
+              stroke: this.topColor,
+              strokeWidth: 1,
+              opacity: this.topOpacity
+            }),
+            leftside: new Konva.Line({
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.knobRadius, this.knobRadius, this.knobRadius+this.maxHeight ],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: this.leftColor,
+              stroke: this.leftColor,
+              strokeWidth: 1,
+              opacity: this.leftOpacity
+            }),
+            rightside: new Konva.Line({
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius + this.maxWidth, this.knobRadius, this.knobRadius + this.maxWidth, this.knobRadius+this.maxHeight ],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: this.rightColor,
+              stroke: this.rightColor,
+              strokeWidth: 1,
+              opacity: this.rightOpacity
             }),
             knob: new Konva.Circle({
                 fill: "red",
@@ -126,7 +202,19 @@
             }))
         };
 
-        tank.group.add(tank.tank);
+        //TODO: Still needs a little work.  Build the open top tank if the top is transparent
+        if (!this.topOpacity) {
+          //This is an open top tank
+          tank.group.add(tank.bottom);
+          tank.group.add(tank.leftside);
+          tank.group.add(tank.rightside);
+          //tank.group.add(tank.top);
+        }
+        else {
+          //This is a closed tank
+          tank.group.add(tank.tank);
+        }
+
         tank.group.add(tank.waterLevel);
         tank.group.add(tank.knob);
         tank.ticks.forEach(t => tank.group.add(t));
@@ -376,7 +464,7 @@ Vue.component("demo-system-curve-inputs", {
     <div class="row mb-2">
       <div class="col-4 mt-auto" style="min-width:30%">
         <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
-        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" align="right"></demo-tank>
+        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" align="right"></demo-tank>
       </div>
       <div class="col-4 d-flex mt-auto" style="min-width:30%; justify-content:center;">           
         <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
