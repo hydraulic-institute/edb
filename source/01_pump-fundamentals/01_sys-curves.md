@@ -109,7 +109,14 @@ hide_price: true
 
 ### Educational Demonstration
 
-Content will be added soon.
+=d=
+title: Hello World Demonstrator
+kind: system-curve
+lowerTankLevel: 5
+upperTankLevel: 10
+upperTankPressure: 10
+overallResistance: 5
+=d=
 
 ### Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
@@ -240,8 +247,3 @@ title: Data
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
-
-
-
-
-
