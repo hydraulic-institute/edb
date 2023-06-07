@@ -1,13 +1,23 @@
 -----
-title: Coming Soon
-date: March 17th, 2021
+title: A) Steel Pipe
+date: February 5th, 2020
 description: Dimensions of wrought steel pipes.
 hide_units: true
 -----
 
-### Coming Soon ###
+=^=
+title: Rotodynamic Pumps for Vibration Measurement & Allowable Values – 1 Part Webinar
+description: Webinar viewers will gain in-depth insights into critical measurements made on non-rotating components of rotodynamic pumps, including maximum allowable vibration values and acceptance tests. If your customers use rotodynamic pumps in clear water, this webinar will be useful for factory (vibration) acceptance tests as well as field vibration testing.
+image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fVibration_Webinar_Image.jpg
+url: https://estore.pumps.org/Rotodynamic-Pumps-for-Vibration-Measurement-Allowable-Values-On-Demand-Webinar-P3095.aspx
+price: 59.00
+hide_price: true
+=^=
 
-- Dimensions of wrought steel pipes
-- Dimensions of stainless steel pipes
-- Non-Ferrous Pipe and Tube
-- Dimensions of flanges
+## Pipe Dimensions: Wrought Steel 
+
+=|=
+data: steel.csv
+=|=
+
+**(According to ASME B36.10M-2015)**
