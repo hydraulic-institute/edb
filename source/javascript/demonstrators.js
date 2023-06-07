@@ -508,7 +508,7 @@ Vue.component("demo-system-curve-inputs", {
         <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
       </div>
       <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">           
-        <demo-flow-line align="left" :direction="'far'"></demo-flow-line>
+        <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
       </div>
       <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
         <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
@@ -618,27 +618,25 @@ Vue.component('demo-system-curves', {
       };
   },
   template: `
-  <table class="table">
-    <tr class="demonstrator">
-      <td colspan="5">
-        <div  class="demo-inputs" style="min-width:50%">
+  <div class="container-fluid">
+    <div class="row demonstrator">
+      <div class="col-sm-12 col-md-5">
+        <div  class="demo-inputs" style="">
           <demo-system-curve-inputs 
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
             :resistance.sync="totalResistence"
             :pressure.sync="atmospheres"
           >
-        </demo-system-curve-inputs>
+          </demo-system-curve-inputs>
         </div>
-      </td>
-      <td colspan="6">
-        <div class="demo-chart" style="min-width=50%">
-        </div>
-      </td>
-      <!--div class="demo-bar-chart col"> KK TODO
-      </div-->
-    </tr>
-  </table>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="demo-chart" style=""></div>
+      </div>
+      <!--div class="demo-bar-chart col"> KK TODO</div-->
+    </div>
+  </div>
   `,
   mounted: function () {
     //const chartElem = $(this.$el).children('div .demo-chart')[0];
