@@ -33,6 +33,7 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
 STATICS_DIR = os.path.join(BASE_DIR, "./static")
 SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
+UPLOAD_DIR = os.path.join(OUTPUT_DIR, "./uploads")
 
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
@@ -754,6 +755,8 @@ def html(graph, specials, production=False):
             url['changefreq'] = 'monthly'
             url['priority'] = '0.8'
             sitemap.append(url)
+
+    os.makedirs(UPLOAD_DIR)
 
     base_url = 'https://edb.pumps.org'
     xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
