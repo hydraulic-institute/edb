@@ -267,7 +267,6 @@
         });
 
         tank.knob.on("dragend", (e) => {
-          console.log("knob-dragged");
             this.renderTankLevel(this.levelValue);
             setKnobDefaultFill();
         });
@@ -275,12 +274,10 @@
         const defaultCursor = this.tank.stage.container().style.cursor;
 
         tank.knob.on("mouseenter", () => {
-          console.log("knob-mouseenter");
             this.tank.stage.container().style.cursor = "pointer";
         });
 
         tank.knob.on("mouseleave", () => {
-          console.log("knob-mouseleave");
             this.tank.stage.container().style.cursor = defaultCursor;
         });
 
@@ -331,8 +328,12 @@
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
-            this.tank.knob.absolutePosition({x:levelPosition.x+(this.tank.tank.width()/2), y:levelPosition.y, newHeight:levelPosition.newHeight});
+            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            let x_level=levelPosition.x
+            if (!this.isHorizontal) {
+              x_level=levelPosition.x+(this.tank.tank.width()/2);
+            }
+            this.tank.knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
             this.tank.waterLevel.size({ width: this.maxWidth, height: levelPosition.newHeight});
         }
     },
