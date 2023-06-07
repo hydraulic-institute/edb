@@ -81,6 +81,10 @@
         topOpacity: {
           type: Number,
           default: 1
+        },
+        placement: {
+          type: String,
+          default: "lower"
         }
     },
     data: function() {
@@ -172,7 +176,7 @@
                 fill: "red",
                 radius: this.knobRadius,
                 draggable: true,
-                opacity: .75,
+                opacity: 1,
                 dragBoundFunc: (pos) => {
                     const maxVal = Math.max(
                         this.yPositionRange.min, 
@@ -263,6 +267,7 @@
         });
 
         tank.knob.on("dragend", (e) => {
+          console.log("knob-dragged");
             this.renderTankLevel(this.levelValue);
             setKnobDefaultFill();
         });
@@ -270,10 +275,12 @@
         const defaultCursor = this.tank.stage.container().style.cursor;
 
         tank.knob.on("mouseenter", () => {
+          console.log("knob-mouseenter");
             this.tank.stage.container().style.cursor = "pointer";
         });
 
         tank.knob.on("mouseleave", () => {
+          console.log("knob-mouseleave");
             this.tank.stage.container().style.cursor = defaultCursor;
         });
 
@@ -324,7 +331,8 @@
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            this.tank.knob.absolutePosition(levelPosition);
+            console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            this.tank.knob.absolutePosition({x:levelPosition.x+(this.tank.tank.width()/2), y:levelPosition.y, newHeight:levelPosition.newHeight});
             this.tank.waterLevel.size({ width: this.maxWidth, height: levelPosition.newHeight});
         }
     },
@@ -356,11 +364,11 @@ Vue.component("demo-flow-line", {
     props: {
         width: {
             type: Number,
-            default: 100
+            default: 120
         },
         height: { 
             type: Number,
-            default: 100
+            default: 120
         },
         pointerWidth: { 
             type: Number,
@@ -383,13 +391,59 @@ Vue.component("demo-flow-line", {
         });
 
         const layer = new Konva.Layer();
-
+        const circle1 = new Konva.Circle({
+          x: (this.width / 2),
+          y: this.height - 16,
+          radius: 10,
+          fill: "#FFFFFF",
+          stroke: "black",
+          strokeWidth: 1
+        });
+        const triangle1 = new Konva.RegularPolygon({
+          x: (this.width / 2),
+          y: this.height - 6,
+          radius: 10,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "black",
+          strokeWidth: 1
+        });
+        const elbow1 = new Konva.Line({
+          x: 0,
+          y: 0,
+          points: [ (this.width / 2) + 20, this.height - (this.pointerWidth + 15),
+              (this.width / 2) + 30, this.height - (this.pointerWidth + 15),
+              (this.width /2) + 30, this.height - (this.pointerWidth + 25)
+          ],
+          stroke: "grey",
+          strokeWidth: 8
+      });
+        const leftbowtie = new Konva.RegularPolygon({
+          x: (this.width / 2) + 25,
+          y: (this.pointerWidth / 2) + 2,
+          radius: 5,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "grey",
+          strokeWidth: 1,
+          rotation: -30,
+        });
+        const rightbowtie = new Konva.RegularPolygon({
+          x: (this.width / 2) + 35,
+          y: (this.pointerWidth / 2) + 2,
+          radius: 5,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "grey",
+          strokeWidth: 1,
+          rotation: 30,
+        });
         const line1 = new Konva.Arrow({
             x: 0,
             y: 0,
             points: [
-                0, this.height - (this.pointerWidth/2 + 5), 
-                (this.width / 2) - 8, this.height - (this.pointerWidth/2 + 5),
+                0, this.height - (this.pointerWidth + 5), 
+                (this.width / 2) - circle1.radius(), this.height - (this.pointerWidth + 5),
             ],
             pointerLength: this.pointerWidth,
             pointerWidth: this.pointerWidth,
@@ -401,7 +455,7 @@ Vue.component("demo-flow-line", {
           x: 0,
           y: 0,
           points: [ (this.width / 2) + 5, this.height - (this.pointerWidth + 15),
-              (this.width / 2) + 20, this.height - (this.pointerWidth + 15)
+              (this.width / 2) + 30, this.height - (this.pointerWidth + 15)
           ],
           pointerLength: this.pointerWidth,
           pointerWidth: this.pointerWidth,
@@ -413,48 +467,35 @@ Vue.component("demo-flow-line", {
         x: 0,
         y: 0,
         points: [ 
-            (this.width / 2) + 20, this.height - (this.pointerWidth + 15),
-            (this.width / 2) + 20, (this.pointerWidth / 2) + 2,
-            this.width - 2, (this.pointerWidth / 2) + 2
+            (this.width / 2) + 30, this.height - (this.pointerWidth + 15),
+            (this.width / 2) + 30, this.pointerWidth - 5,
+            this.width - 2, this.pointerWidth - 5
         ],
         pointerLength: this.pointerWidth,
         pointerWidth: this.pointerWidth,
         fill: "black",
         stroke: "darkgrey",
         strokeWidth: 1
-    });
-      const circle1 = new Konva.Circle({
-        x: (this.width / 2),
-        y: this.height - 16,
-        radius: 10,
-        fill: "#FFFFFF",
-        stroke: "black",
-        strokeWidth: 1
       });
-      const triangle1 = new Konva.RegularPolygon({
-        x: (this.width / 2),
-        y: this.height - 6,
-        radius: 10,
-        sides: 3,
-        fill: "#FFFFFF",
-        stroke: "black",
-        strokeWidth: 1
-      });
+      
 
         layer.add(triangle1);
         layer.add(circle1);
         layer.add(line1);
         layer.add(line2);
         layer.add(line3);
+        layer.add(elbow1);
+        layer.add(leftbowtie);
+        layer.add(rightbowtie);
         stage.add(layer);
     }
 });
 
 Vue.component("demo-system-curve-inputs", {
     template: `
-    <div>  
+    <div class="wrap">  
     <div class="row mb-2">
-      <div class="col" align="right">
+      <div class="col" align="right" id="upper-tank-pressure-id">
         <div class="upper_tank_pressure">      
           <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
           <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
@@ -462,20 +503,20 @@ Vue.component("demo-system-curve-inputs", {
       </div>
     </div>
     <div class="row mb-2">
-      <div class="col-4 mt-auto" style="min-width:30%">
+      <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
         <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
-        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" align="right"></demo-tank>
+        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
       </div>
-      <div class="col-4 d-flex mt-auto" style="min-width:30%; justify-content:center;">           
-        <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
+      <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">           
+        <demo-flow-line align="left" :direction="'far'"></demo-flow-line>
       </div>
-      <div class="col-4" style="min-width:30%">
-        <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+      <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
+        <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
-      <div class="col" align="center">
+      <div class="col" align="center" id="friction-losses-id">
         <div class="resistance">      
           <p class="mb-0" style="font-size: smaller">Friction Losses</p>
           <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
@@ -493,6 +534,14 @@ Vue.component("demo-system-curve-inputs", {
         upperTankFillColor: {
           type: String,
           default: "orange"
+        },
+        lower: {
+          type: String,
+          default: "lower"
+        },
+        upper: {
+          type: String,
+          default: "upper"
         },
         lowerLevel: {
           type: Number,
