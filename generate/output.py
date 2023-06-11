@@ -97,6 +97,12 @@ def table_data(units, table, path, filename):
                 rows.append(r)
         return Table(units, columns, headings, rows)
 
+def replace_definitions_block(dir, definitions_text):
+    definitions_table = parse_dict(definitions_text.strip().split("\n"))
+    template = env.get_template('definitions.jinja')
+    defs = table_data('us', definitions_table, dir, definitions_table['data'])
+    def_html = template.render(meta=definitions_table, table=defs)
+    return def_html
 
 def replace_table_block(dir, table_text):
     table = parse_dict(table_text.strip().split("\n"))
@@ -341,6 +347,20 @@ def process_latex_blocks_pdf(markdown):
     return markdown
 
 
+def process_definitions_block(dir, markdown):
+    delim = "=defs="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + \
+            replace_definitions_block(dir, within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
 def process_table_blocks(dir, markdown):
     delim = "=|="
     start = markdown.find(delim)
@@ -508,9 +528,12 @@ def write_content(graph, node, slug_override=None, path="."):
     # tables and charts get exploded after markdown conversion - placing actual HTML in
     # the markdown causes some problems (not entirely sure why - looks like a bug
     # in the module perhaps...)
+    if "table-of-definitions" in node["name"]:
+        print("HERE")
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
     content = process_demonstrator_blocks(path, node['path'], content)
+    content = process_definitions_block(node['path'], content)
     content = process_ad_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
