@@ -203,10 +203,11 @@ def chart_data(units, chart, path, filename):
         return chart_dict
 
 def replace_demonstrator_block(output_path, dir, markdownProps):
-    init = parse_dict(markdownProps)
+    useMarkdown = markdownProps.strip().split("\n")
+    init = parse_dict(useMarkdown)
     template = env.get_template('demo.jinja')
     key = str(uuid.uuid4())
-    demoHtml = template.render(key=key, init=init)
+    demoHtml = template.render(key=key, kind=init["kind"], init=json.dumps(init))
 
     return demoHtml
 
