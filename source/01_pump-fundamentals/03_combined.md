@@ -44,6 +44,7 @@ lowerTankLevel: 5
 upperTankLevel: 10
 upperTankPressure: 10
 overallResistance: 5
+pumpSpeed: 95
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve

@@ -670,6 +670,102 @@ Vue.component("demo-system-curve-inputs", {
     }
 });
 
+Vue.component("demo-pump-system-plot-inputs", {
+  template: `
+  <div class="wrap">  
+  <div class="row mb-2">
+    <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
+      <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
+      <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
+    </div>
+    <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">           
+      <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
+    </div>
+    <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
+      <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
+      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
+    </div>
+  </div>
+  <div class="row mb-2 mt-1">
+    <div class="col" align="center" id="pump-speed-id">
+      <div class="">      
+        <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
+        <demo-tank v-model="pumpSpeedValue" :level-min="0" :level-max="70" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2 mt-1">
+    <div class="col" align="center" id="friction-losses-id">
+      <div class="resistance">
+        <p class="mb-0" style="font-size: smaller">Friction Losses</p>
+        <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
+        <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div>
+  </div>
+  `,
+  props: {
+      rangeInputColor: { 
+        type: String,
+        default: "#848482"
+      },
+      upperTankFillColor: {
+        type: String,
+        default: "orange"
+      },
+      lower: {
+        type: String,
+        default: "lower"
+      },
+      upper: {
+        type: String,
+        default: "upper"
+      },
+      lowerLevel: {
+        type: Number,
+        default: 0
+      },
+      upperLevel: {
+        type: Number,
+        default: 0
+      },
+      resistance: {
+        type: Number,
+        default: 0
+      },
+      pumpSpeed: { 
+        type: Number,
+        default: 95
+      }
+  },
+  data: function() {
+      return {
+        lowerLevelValue: 5,
+        upperLevelValue: 6,
+        resistanceValue: 2,
+        pumpSpeedValue: 45
+      }
+  },
+  mounted: function() {
+
+  },
+  watch: {
+    lowerLevelValue: function(value) {
+      this.$emit("update:lowerLevel", value)
+    },
+    upperLevelValue: function(value) {
+      this.$emit("update:upperLevel", value)
+    },
+    resistanceValue: function(value) {
+      this.$emit("update:resistance", value)
+    },
+    pumpSpeedValue: function(value) {
+      this.$emit("update:pumpSpeed", value + 50)
+    },
+  }
+});
+
 Vue.component("demo-input-slider", {
   props: ['value', 'label', 'min', 'max'],
   template: `
@@ -877,13 +973,14 @@ Vue.component('demo-pump-curve', {
   <table class="table">
     <tr class="demonstrator">
       <td colspan="5">
-        <div  class="demo-inputs" style="min-width:50%">
-          <demo-system-curve-inputs 
+        <div class="demo-inputs" style="min-width:50%">
+          <demo-pump-system-plot-inputs
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
             :resistance.sync="totalResistence"
+            :pump-speed.sync="pumpSpeed"
           >
-        </demo-system-curve-inputs>
+          </demo-pump-system-plot-inputs>
         </div>
       </td>
       <td colspan="6">
@@ -910,13 +1007,12 @@ Vue.component('demo-pump-curve', {
       dataLabels: {
         enabled: false
       },
-      //colors: ["#FF8800", "#0000FF", "#FF8800"], 
       tooltip: {
         enabled: false,
       },
       stroke: {
         curve: "straight",
-        width: [3, 3, 0]
+        width: [3, 3, 0, 3, 3]
       },
       fill: {
         opacity: [1, 0.25, 0.25],
@@ -946,7 +1042,7 @@ Vue.component('demo-pump-curve', {
       },
       yaxis: { 
         min: 0,
-        max: 140,
+        max: 100,
         decimalsInFloat: false,
         title: {
           text: "Head"
@@ -1039,7 +1135,9 @@ Vue.component('demo-pump-curve', {
     },
     totalResistence: function() {
       this.refreshChart();
+    },
+    pumpSpeed: function() {
+      this.refreshChart();
     }
   }
-
 })
