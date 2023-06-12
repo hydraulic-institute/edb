@@ -99,7 +99,7 @@ def defs_table_data(table, path, filename):
                            for i, d in enumerate(row[1:])]
             row_id = "0"
             if len(row[0]):
-                section = row[0]
+                section = row[0].split(" (")[0]
             if "ACRONYM" in section:
                 acronym.append(row[2].lower())
                 ids.append(row[1])

@@ -3,7 +3,7 @@
         <caption>{{meta.title}}</caption>
         <tbody>
             {% for row in table.rows %}
-                {% if (row.section == row.type) and row.type %}
+                {% if (row.section in row.type) and row.type %}
                     <tr>
                     <td colspan="{{cols}}"><b>{{row.section}}</b></td>
                     </tr>
