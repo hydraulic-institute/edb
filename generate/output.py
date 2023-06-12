@@ -37,6 +37,7 @@ SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
+DefRow = namedtuple('DefRow', 'section type data id')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -73,6 +74,44 @@ def replace_latex_block(latex):
     else:
         return "<p class='formula'>" + latex + "</p>"
 
+def defs_table_data(table, path, filename):    
+    file = os.path.join(SOURCE_DIR, path, filename)
+    if not os.path.isfile(file):
+        print(
+            f"Error - the table {table.title} refers to {file} which does not exist")
+        return None
+
+    with open(file, newline='', encoding='utf-8') as csvfile:
+        csv_data = csv.reader(csvfile)
+        first_row = next(csv_data)
+        #Find the first row starting with "Table" 
+        while first_row[0] != "Table":
+            first_row = next(csv_data)
+        columns = first_row[1:]
+        rows = []
+        headings = []
+        acronym = []
+        ids = []
+        section = ""
+        row_columns = []
+        for row in csv_data:
+            row_columns = [TableColumn(columns[i], d)
+                           for i, d in enumerate(row[1:])]
+            row_id = "0"
+            if len(row[0]):
+                section = row[0]
+            if "ACRONYM" in section:
+                acronym.append(row[2].lower())
+                ids.append(row[1])
+            else:
+                try:
+                    indexes = [i for i, x in enumerate(acronym) if x in row[1].lower()]
+                    row_id = ids[indexes[0]]
+                except:
+                    row_id = "0"
+            r = DefRow(section, row[0], row_columns, row_id)
+            rows.append(r)
+        return Table('us', columns, headings, rows)
 
 def table_data(units, table, path, filename):
     file = os.path.join(SOURCE_DIR, path, filename)
@@ -100,8 +139,8 @@ def table_data(units, table, path, filename):
 def replace_definitions_block(dir, definitions_text):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    defs = table_data('us', definitions_table, dir, definitions_table['data'])
-    def_html = template.render(meta=definitions_table, table=defs)
+    defs = defs_table_data(definitions_table, dir, definitions_table['data'])
+    def_html = template.render(meta=definitions_table, table=defs, cols=len(defs.columns))
     return def_html
 
 def replace_table_block(dir, table_text):
