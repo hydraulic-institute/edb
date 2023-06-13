@@ -37,7 +37,7 @@ SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
-DefRow = namedtuple('DefRow', 'section type data id link')
+DefinitionRow = namedtuple('DefinitionRow', 'section type data id link')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -74,7 +74,7 @@ def replace_latex_block(latex):
     else:
         return "<p class='formula'>" + latex + "</p>"
 
-def defs_table_data(table, path, filename, sections):    
+def definitions_table_data(table, path, filename, sections):    
     file = os.path.join(SOURCE_DIR, path, filename)
     if not os.path.isfile(file):
         print(
@@ -118,7 +118,7 @@ def defs_table_data(table, path, filename, sections):
                 if len(datarow[-1]) and "Table" not in row[0]:
                     section_link = definition_create_section_link(sections, datarow[-1])
 
-            r = DefRow(section, row[0], row_columns, row_id, section_link)
+            r = DefinitionRow(section, row[0], row_columns, row_id, section_link)
             rows.append(r)
         return Table('us', columns, headings, rows)
     
@@ -166,7 +166,7 @@ def table_data(units, table, path, filename):
 def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    defs = defs_table_data(definitions_table, dir, definitions_table['data'], sections)
+    defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
     def_html = template.render(meta=definitions_table, table=defs, cols=len(defs.columns))
     return def_html
 

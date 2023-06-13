@@ -1,6 +1,6 @@
 -----
 title:  Table of Definitions
-date: June 7th, 2023
+date: June 13th, 2023
 description: Table of Definitions 
 -----
 
