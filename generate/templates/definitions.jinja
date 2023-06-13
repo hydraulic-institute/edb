@@ -1,0 +1,40 @@
+<div class='table-container'>
+    <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth" v-if="{{table.units}}_visible">
+        <tbody>
+            {% for row in table.rows %} 
+                {% if (row.section in row.type) and row.type %}
+                    <tr>
+                    <td colspan="{{cols}}"><b>{{row.section}}</b></td>
+                    </tr>
+                    <tr>
+                    {% for heading in table.headings %} 
+                        <th> {{heading}}</th>
+                    {% endfor %}
+                    </tr>
+                {% endif %}
+                {% if loop.index % 15 == 0 and loop.length - loop.index > 7 %}
+                    <tr>
+                    {% for heading in table.headings %}
+                        <th class="small-heading"> {{heading}}</th>
+                    {% endfor %}
+                    </tr>
+                {% endif %}
+                {% if row.id != "0" %}
+                    <tr id="{{row.id}}">
+                {% else %}
+                    <tr>
+                {% endif %}
+                {%for column in row.data %}
+                    {% if 'ACRONYM' in row.section and column.type == "Term" %}
+                        <td><a href="#{{column.data}}">{{column.data}}</a></td>
+                    {% elif 'Section' in column.type and row.link %}
+                        <td><a href="{{row.link}}">{{column.data}}</a></td>
+                    {% else %}
+                        <td>{{column.data}}</td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
