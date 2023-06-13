@@ -1,7 +1,6 @@
 <div class='table-container'>
     <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth" v-if="{{table.units}}_visible">
         <tbody>
-        <tbody>
             {% for row in table.rows %} 
                 {% if (row.section in row.type) and row.type %}
                     <tr>

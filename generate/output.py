@@ -123,10 +123,19 @@ def defs_table_data(table, path, filename, sections):
         return Table('us', columns, headings, rows)
     
 def definition_create_section_link(sections, in_section):
-    # Seatch the sections for the in_section
+    # Search the sections for the path
+    if ":" in in_section:
+        section_slug = in_section.split(": ")[0]
+        child_slug = in_section.split(": ")[1]
+    else:
+        section_slug = None
+        child_slug = in_section
     for obj in sections:
+        if section_slug:
+            if section_slug not in obj['metadata']['title']:
+                continue
         for child in obj['children']:
-            if 'title' in child['metadata'] and in_section in child['metadata']['title']:
+            if 'title' in child['metadata'] and child_slug in child['metadata']['title']:
                 section_link = f"/{obj['slug']}/{child['slug']}.html"
                 return section_link
     return ""
