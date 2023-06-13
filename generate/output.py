@@ -37,7 +37,7 @@ SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
-DefRow = namedtuple('DefRow', 'section type data id')
+DefRow = namedtuple('DefRow', 'section type data id link')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -74,7 +74,7 @@ def replace_latex_block(latex):
     else:
         return "<p class='formula'>" + latex + "</p>"
 
-def defs_table_data(table, path, filename):    
+def defs_table_data(table, path, filename, sections):    
     file = os.path.join(SOURCE_DIR, path, filename)
     if not os.path.isfile(file):
         print(
@@ -84,34 +84,52 @@ def defs_table_data(table, path, filename):
     with open(file, newline='', encoding='utf-8') as csvfile:
         csv_data = csv.reader(csvfile)
         first_row = next(csv_data)
-        #Find the first row starting with "Table" 
-        while first_row[0] != "Table":
-            first_row = next(csv_data)
         columns = first_row[1:]
         rows = []
-        headings = []
+        headings = first_row[1:5]
         acronym = []
-        ids = []
+        acronym_ids = []
+        section_ids = []
         section = ""
+        row_section_link=""
         row_columns = []
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d)
-                           for i, d in enumerate(row[1:])]
-            row_id = "0"
-            if len(row[0]):
+            if len(row[0]) and "Table" not in row[0]:
                 section = row[0].split(" (")[0]
+            datarow=row[1:5]
+            row_columns = [TableColumn(columns[i], d)
+                           for i, d in enumerate(datarow)]
+            row_id = "0"
+            section_link=""
+            # Acronymn Link
             if "ACRONYM" in section:
-                acronym.append(row[2].lower())
-                ids.append(row[1])
+                acronym.append(datarow[1].lower())
+                acronym_ids.append(datarow[0])
             else:
                 try:
-                    indexes = [i for i, x in enumerate(acronym) if x in row[1].lower()]
-                    row_id = ids[indexes[0]]
+                    # Check for acronym link
+                    indexes = [i for i, x in enumerate(acronym) if x in datarow[0].lower()]
+                    row_id = acronym_ids[indexes[0]]
                 except:
                     row_id = "0"
-            r = DefRow(section, row[0], row_columns, row_id)
+                # Row Section Link
+                # Check the section reference row
+                section_link=""
+                if len(datarow[-1]) and "Table" not in row[0]:
+                    section_link = definition_create_section_link(sections, datarow[-1])
+
+            r = DefRow(section, row[0], row_columns, row_id, section_link)
             rows.append(r)
         return Table('us', columns, headings, rows)
+    
+def definition_create_section_link(sections, in_section):
+    # Seatch the sections for the in_section
+    for obj in sections:
+        for child in obj['children']:
+            if 'title' in child['metadata'] and in_section in child['metadata']['title']:
+                section_link = f"/{obj['slug']}/{child['slug']}.html"
+                return section_link
+    return ""
 
 def table_data(units, table, path, filename):
     file = os.path.join(SOURCE_DIR, path, filename)
@@ -136,10 +154,10 @@ def table_data(units, table, path, filename):
                 rows.append(r)
         return Table(units, columns, headings, rows)
 
-def replace_definitions_block(dir, definitions_text):
+def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    defs = defs_table_data(definitions_table, dir, definitions_table['data'])
+    defs = defs_table_data(definitions_table, dir, definitions_table['data'], sections)
     def_html = template.render(meta=definitions_table, table=defs, cols=len(defs.columns))
     return def_html
 
@@ -386,16 +404,16 @@ def process_latex_blocks_pdf(markdown):
     return markdown
 
 
-def process_definitions_block(dir, markdown):
+def process_definitions_block(dir, markdown, sections):
     delim = "=defs="
     start = markdown.find(delim)
     while (start >= 0):
         end = markdown.find(delim, start+1)
         before = markdown[:start]
-        within = markdown[start+3:end]
-        after = markdown[end+3:]
+        within = markdown[start+len(delim):end]
+        after = markdown[end+len(delim):]
         markdown = before + \
-            replace_definitions_block(dir, within) + after
+            replace_definitions_block(dir, within, sections) + after
         start = markdown.find(delim)
 
     return markdown
@@ -548,6 +566,9 @@ def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
     global options
     print(f'Processing {node["name"]} at path {path}')
+    
+    sections = [dir for dir in graph if dir['directory'] == True]
+
     if node['copy_only'] == True:
         out = os.path.join(OUTPUT_DIR, path, node['name'])
         src = os.path.join(node['path'], node['name'])
@@ -567,18 +588,15 @@ def write_content(graph, node, slug_override=None, path="."):
     # tables and charts get exploded after markdown conversion - placing actual HTML in
     # the markdown causes some problems (not entirely sure why - looks like a bug
     # in the module perhaps...)
-    if "table-of-definitions" in node["name"]:
-        print("HERE")
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
     content = process_demonstrator_blocks(path, node['path'], content)
-    content = process_definitions_block(node['path'], content)
+    content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 
     template = env.get_template('topic.jinja')
-    sections = [dir for dir in graph if dir['directory'] == True]
     related = [section['children'] for section in sections if section['path']
                == node['path'] and section['slug'] != node['slug']]
     # Related is a list of lists with the same section (it's always size 1)

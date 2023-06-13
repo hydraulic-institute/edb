@@ -1,13 +1,12 @@
-,Highlighted rows require feedback or definition established by the EDL Committee,,,,,
-Table,Term,Description,Source,Section (to Link),Classification,Comment
-ACRONYMS (add link to definition),AOR,Allowable Operating Region,Link to Definition,Add Link to Definition,Acronym,
-,BEP,best efficiency point,,Add Link to Definition,Acronym,
-,NPSH3,Net positive suction head required resulting in 3% loss of total head,,Add Link to Definition,Acronym,
-,NPSHA,Net positive suction head available ,,Add Link to Definition,Acronym,
-,NPSHr,Net Positive Suction Head Required,,Add Link to Definition,Acronym,
-,POR,Preferred Operating Region,,Add Link to Definition,Acronym,
-,VFD,Variable frequency drive,,Add Link to Definition,Acronym,
-,VSD,Variable speed drive,,Add Link to Definition,Acronym,
+Table,Term,Description,Source,Section,Classification,Comment
+ACRONYMS (add link to definition),AOR,Allowable Operating Region,,,Acronym,
+,BEP,best efficiency point,,,Acronym,
+,NPSH3,Net positive suction head required resulting in 3% loss of total head,,,Acronym,
+,NPSHA,Net positive suction head available ,,,Acronym,
+,NPSHr,Net Positive Suction Head Required,,,Acronym,
+,POR,Preferred Operating Region,,,Acronym,
+,VFD,Variable frequency drive,,,Acronym,
+,VSD,Variable speed drive,,,Acronym,
 DEFINITIONS (add link to relevant EDL section),Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ","12.1-12.6, 14.3, Seals",Solids and Slurries,Definition,
 ,Affinity Rules,"A characteristic of rotodynamic pumps is that it is possible to determine the change in rate of flow, head, and power at any point on the pump characteristic curves by calculation when there is a change in the speed of rotation (or frequency).
 (EDL committee awaiting guidance from 14.1-14.2 on official definition)","14.3
@@ -20,13 +19,13 @@ of this type are sometimes called propellers and do not have shrouds. Axial-flow
 head, single-stage applications. Pumps of this type usually have a specific speed above approximately 200 (10,000).","14.1, 14.3",Pump Principles,Definition,
 ,Barske Impeller,"This impeller design represents the lowest range of specific speed for rotodynamic pumps. It usually consists of straight, radial vanes with open or semiopen construction These types of impellers are typically used in high-speed pumps where high head and low flow are required.",14.3,Pump Principles,Definition,
 ,Best efficiency point (BEP),The best efficiency point (BEP) is the rate of flow and head at which the pump efficiency is a maximum at rated rpm or at a given speed and impeller diameter.,"1.1-1.2, 1.6, 2.1-2.2, 2.6, 9.6.3, 9.6.8, 11.6, 12.1-12.6, 14.2, BOK, PSO, REL, VSP, WW",Pump Curves,Definition,
-,Cavitation,"Cavitation is the phenomenon of vapor bubble formation in a liquid, in a region where the pressure falls below the liquid�s vapor pressure, followed by sudden collapse of bubbles due to an increase in pressure in the same region, or downstream.","3.1-3.5, 9.8, 10.1-10.5, 10.6, BOK, PSO, Seals, VSP",Pump Principles,Definition,
+,Cavitation,"Cavitation is the phenomenon of vapor bubble formation in a liquid, in a region where the pressure falls below the liquid's vapor pressure, followed by sudden collapse of bubbles due to an increase in pressure in the same region, or downstream.","3.1-3.5, 9.8, 10.1-10.5, 10.6, BOK, PSO, Seals, VSP",Pump Principles,Definition,
 ,Closed Impeller,An enclosed impeller has both a inlet and hub shroud. Leakage is controlled by internal running clearances. Running clearances can be established by separate renewable components (rings) or integrally machined surfaces.,14.1,Pump Principles,Definition,
 ,Concentration of solids by mass (or weight),"The mass (or weight) of dry solids in a given volume of slurry, divided by the total mass (or weight) of that volume of slurry, multiplied by 100 and expressed in percent.",12.1-12.6,Solids and Slurries,Definition,
 ,Concentration of solids by volume,"The actual volume of the solid material in a given volume of slurry, divided by the given volume of slurry, multiplied by 100, and expressed in percent.",12.1-12.6,Solids and Slurries,Definition,
 ,Corrosion,Loss of material created by chemical or electrochemical reaction within the pump environment,12.1-12.6,Solids and Slurries,Definition,
 ,Dynamic head,The component of the total head attributable to fluid motion.,(EDL?),System Curves,Definition,Clint is looking at this. Reference friction head and velocity head?
-,Francis-Vane Impeller,"This type of impeller usually has higher specific speeds than the radial flow type. The impellers are normally single suction. In pumps of this type, the liquid enters the eye of the impeller axially and exits semi-radially, at about a 60� to 70� angle to the shaft axis. Impellers of this type are either semi-open or enclosed.","14.1, 14.3",Pump Principles,Definition,
+,Francis-Vane Impeller,"This type of impeller usually has higher specific speeds than the radial flow type. The impellers are normally single suction. In pumps of this type, the liquid enters the eye of the impeller axially and exits semi-radially, at about a 60° to 70° angle to the shaft axis. Impellers of this type are either semi-open or enclosed.","14.1, 14.3",Pump Principles,Definition,
 ,Friction head,Friction head is the hydraulic energy required to overcome frictional resistance of a piping system to liquid flow expressed in meters (feet) of liquid.,"1.1-1.2, 2.1-2.2, 12.1-12.6, 14.2, BOK, PSO, VSP",System Curves,Definition,
 ,K Value (Valves and Fittings),"Head loss though valves and standard fittings (minor losses) can be expressed in terms of a resistance coefficient K and the velocity head (V^2/2g). The value of K can be found for various fittings in the referenced sources and the Losses in Valves, Fittings and Bends section of the EDL. ","Cameron Hydraulic Data, 18th edition, pg 3-110 and Pump Handbook, 4th edition, pg 11.54",Combined Curves,Definition,"Establish definition, Jeff is checking on this"
 ,Major losses (pipe friction),The friction head loss associated with fluid moving through straight pipe. Refer to Friction Loss Calculator (https://edl.pumps.org/tools/frictional-losses.html),(EDL?),Fluid Flow General,Definition,"
@@ -39,8 +38,8 @@ From internet:
 (Wikipedia) The friction loss in uniform, straight sections of pipe, known as ""major loss"", is caused by the effects of viscosity, the movement of fluid molecules against each other or against the (possibly rough) wall of the pipe. Here, it is greatly affected by whether the flow is laminar (Re < 2000) or turbulent (Re > 4000):[1]
 
 (Nuclear-power.com) Head loss of the hydraulic system is divided into two main categories:
-Major Head Loss � due to friction in straight pipes
-Minor Head Loss � due to components as valves, bends�"
+Major Head Loss - due to friction in straight pipes
+Minor Head Loss - due to components as valves, bends..."
 ,Pump Runout (Maximum Flow),"The highest flowrate that a rotodynamic pump can be operated considering the pumps mechanical design and application limitations. 
 The highest flowrate shown on the published pump curve.","(EDL?) 14.3, 9.6.3
 EDL A&D Group",Pump Curves,Definition,"Confirm or modify definition (no official source), Pete has provided suggested definition that is within the HI Standards/Guideline Text. Jeff is checking on this with 14.3 and 9.6.3
@@ -55,7 +54,7 @@ These points are important during manufacturer testing to fully define the shape
 
 2023-04-27: EDL A&D Group agreed to the definition ""The highest flowrate shown on the published pump curve."" and to change the main term defined from ""Maximum Flow (Pump Runout)"" to ""Pump Runout (Maximum Flow)"""
 ,Minor losses (valves & fittings),"The friction head loss associated with fluid moving through anything that is not straight pipe (valves, fittings, bends, nozzles, tank entrance and exits, etc.) Also see K value.",(EDL?),Fluid Flow General,Definition,Pete updated the definition. See notes in Major losses above.
-,Mixed flow Impeller,"The mixed-flow pump has a single inlet impeller with the flow entering axially and discharging about 45� with shaft axis, to the periphery. Impellers of this type are either semi-open or enclosed.  This type of impeller is used with both volutes and bowls.","BOK, PSO, VSP, 14.1, 14.3",Pump Principles,Definition,
+,Mixed flow Impeller,"The mixed-flow pump has a single inlet impeller with the flow entering axially and discharging about 45° with shaft axis, to the periphery. Impellers of this type are either semi-open or enclosed.  This type of impeller is used with both volutes and bowls.","BOK, PSO, VSP, 14.1, 14.3",Pump Principles,Definition,
 ,Net positive suction head available (NPSHA),"Net positive suction head available is the total suction pressure available from the system at the pump suction condition,
 minus the vapor pressure of the liquid at pumping temperature, acceleration head loss, friction losses, and pressure pulsations due to acoustical resonances. NPSHA for a reciprocating pump is normally expressed in kilopascals
 (pounds per square inch). ","1.1-1.2, 1.6, 2.1-2.2, 2.6, 6.1-6.5, 6.6, 7.1-7.5, 7.6, 8.1-8.5, 11.6, 9.6.1, 14.3, 12.1-12.6, 14.2, 14.6, BOK, LCC, PSO, Seals, VSP, CBS",Pump Curves,Definition,
@@ -76,8 +75,8 @@ hydraulic efficiency and the operational reliability of the pump are not substan
 ,Slurry,"Slurry is a mixture of solids (specific gravity typically greater than 1) in a liquid carrier, usually water. It is often used as a means to transport solids. Slurries also occur when solids are present as an incidental part of the process. Properties of the solids and the liquid, as well as the amount of solids, are variable. The solids particle size may vary from a few micrometers, often referred to as microns, up to hundreds of millimeters, and depending upon the size different solids will tend to settle below different threshold transport velocities. Therefore, the properties of slurry are highly variable. Slurry may behave like a Newtonian or non-Newtonian fluid. It may be abrasive and/or corrosive depending on the composition. Slurry pumps are typically used to transport slurries with specific gravities up to 5.3 and solids concentration between 2% and 50% by volume. Slurries with solids of wood, paper, specialized chemical particulates, wastewater, and other organic materials also exist but are not covered in this document.",12.1-12.6,Solids and Slurries,Definition,
 ,Specific gravity of liquid,Specific Gravity is the ratio of density of a liquid relative to the density of water. The reference density for liquid used in Hydraulic Institute standards is based on water at 20 C (68 F) which is 998.2 kg/m3 (62.31 lbm/ft3),14.2,Solids and Slurries,Definition,
 ,Specific gravity of slurry (or mixture),The relative density of the slurry (mixture) to that of water at the same temperature.,12.1-12.6,Solids and Slurries,Definition,
-,Specific gravity of solids,The relative density of solids with respect to water at standard temperature of 4� C (39.2� F).,12.1-12.6,Solids and Slurries,Definition,
-,Specific speed,"An index of pump performance at the pump�s best efficiency
+,Specific gravity of solids,The relative density of solids with respect to water at standard temperature of 4° C (39.2° F).,12.1-12.6,Solids and Slurries,Definition,
+,Specific speed,"An index of pump performance at the pump's best efficiency
 point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. ","BOK, 9.8, 14.3, 14.2, VSP, PSO, LCC",Pump Principles,Definition,
 ,Static head,The liquid level and pressure difference (expressed in height of the liquid) that is acting on the pump.,EDL A&D Group,System Curves,Definition,"Pete modified definition  from LCC guidebook
 
@@ -101,4 +100,4 @@ operating characteristics determined at the BEP rate of flow with the maximum di
 ,Variable frequency drive (VFD),An electronic device used primarily for controlling the rotational speed of an alternating current (AC) electric motor by controlling the frequency of the electrical power supplied to the motor.,VSP,Pump Curves,Definition,
 ,Variable speed drive (VSD),"Any device that can be used to vary the speed of the pump, either mechanically or electronically. This may include (but is not limited to) eddy current drives, magnetic drives, variable frequency drives, a hydraulic clutch, fluid drives, variable V-belt drives, and various variable mechanical drives, steam turbines, and gas turbines.",VSP,Pump Curves,Definition,
 ,Velocity head,Velocity head is the kinetic energy per unit mass of the liquid in movement divided by g at a given section.,"1.1-1.2, 1.6, 2.1-2.2, 2.6, 11.6, 12.1-12.6, 14.6, 14.2, BOK, PSO",System Curves,Definition,
-,"Viscosity (absolute viscosity, dynamic viscosity)","A measure of a liquid�s tendency to resist an internal shearing force. For the same given internal shear rate, a liquid that requires a high shear stress has a high viscosity and a liquid that requires a low shear stress has a low viscosity.","BOK, Proper Lubrication Methods for Bearings WP, 10.1-10.5, PSO, VSP",Viscosity,Definition,
+,"Viscosity (absolute viscosity, dynamic viscosity)","A measure of a liquid's tendency to resist an internal shearing force. For the same given internal shear rate, a liquid that requires a high shear stress has a high viscosity and a liquid that requires a low shear stress has a low viscosity.","BOK, Proper Lubrication Methods for Bearings WP, 10.1-10.5, PSO, VSP",Viscosity,Definition,
