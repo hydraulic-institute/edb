@@ -4,11 +4,6 @@
     return parseFloat(value);
   };
 
-  const calcPumpSystemPlotStaticHead = (upperLevel, lowerLevel, elevation) => {
-    const value = upperLevel - lowerLevel + elevation;
-    return value;
-  }
-
   const calcFrictionHead = (velocityIndex, resistance) => {
     const value = resistance * (velocityIndex / 4) ** 2;
     return value;
@@ -18,27 +13,17 @@
     return Math.pow(speed,2)*coefA + speed*coefB*velocityIndex + coefC*Math.pow(velocityIndex,2);
   }
 
-  const calcPumpSystemPlotValues = (
-    velocities, upperLevel, lowerLevel, elevation, totalResistence, 
-    speed, coefA, coefB, coefC) => {
+  const calcPumpSystemPlotValues = ( 
+    velocities, speed, coefA, coefB, coefC) => {
       const values = {
-        frictionHead: [],
-        staticHead:[],
-        totalHead:[],
         pumpHead: [],
         pumpHeadFullSpeed: []
       };
 
-      const staticHead = calcPumpSystemPlotStaticHead(upperLevel, lowerLevel, elevation);
       velocities.forEach(v => {
-        const frictionHead = calcFrictionHead(v, parseFloat(totalResistence));
-        const totalHead = staticHead + frictionHead;
         const pumpHead = calcPumpHead(v, speed, coefA, coefB, coefC);
         const pumpHeadFullSpeed = calcPumpHead(v, 1, coefA, coefB, coefC);
 
-        values.staticHead.push(staticHead.toFixed(2));
-        values.frictionHead.push(frictionHead.toFixed(2));
-        values.totalHead.push(totalHead.toFixed(2));
         values.pumpHead.push(pumpHead.toFixed(2));
         values.pumpHeadFullSpeed.push(pumpHeadFullSpeed.toFixed(2));
       });
@@ -74,7 +59,6 @@
   
   window.CurveCalculators = {
     calcSysCurveStaticHead,
-    calcPumpSystemPlotStaticHead,
     calcFrictionHead,
     calcSystemCurveValues,
     calcPumpSystemPlotValues
@@ -578,7 +562,8 @@ Vue.component("demo-system-curve-inputs", {
     template: `
     <div class="wrap">  
     <div class="row mb-2">
-      <div class="col" align="right" id="upper-tank-pressure-id">
+      <div class="col-8"></div>
+      <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">
         <div class="upper_tank_pressure">      
           <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
           <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
@@ -594,8 +579,8 @@ Vue.component("demo-system-curve-inputs", {
         <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
       </div>
       <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
-        <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+        <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
@@ -674,6 +659,15 @@ Vue.component("demo-pump-system-plot-inputs", {
   template: `
   <div class="wrap">  
   <div class="row mb-2">
+    <div class="col-8"></div>
+    <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">   
+      <div class="upper_tank_pressure">
+        <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
+        <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div> 
+  <div class="row mb-2">
     <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
       <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
       <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
@@ -682,8 +676,8 @@ Vue.component("demo-pump-system-plot-inputs", {
       <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
     </div>
     <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
-      <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
-      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
+      <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
+      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
     </div>
   </div>
   <div class="row mb-2 mt-1">
@@ -744,7 +738,8 @@ Vue.component("demo-pump-system-plot-inputs", {
         lowerLevelValue: 5,
         upperLevelValue: 6,
         resistanceValue: 2,
-        pumpSpeedValue: 45
+        pumpSpeedValue: 45,
+        pressureValue: 15
       }
   },
   mounted: function() {
@@ -762,6 +757,9 @@ Vue.component("demo-pump-system-plot-inputs", {
     },
     pumpSpeedValue: function(value) {
       this.$emit("update:pumpSpeed", value + 50)
+    },
+    pressureValue: function(value) {
+      this.$emit("update:pressure", value)
     },
   }
 });
@@ -811,7 +809,6 @@ Vue.component('demo-system-curve', {
       <div class="col-sm-12 col-md-7">
         <div class="demo-chart" style=""></div>
       </div>
-      <!--div class="demo-bar-chart col"> KK TODO</div-->
     </div>
   </div>
   `,
@@ -961,6 +958,7 @@ Vue.component('demo-pump-curve', {
       lowerLevel: 5,
       upperLevel: 10,
       totalResistence: 5,
+      atmospheres: 7,
       pumpSpeed: 95, // percentage
       velocities: [0,1,2,3,4,5,6,7,8,9,10],
       coefA: 70,
@@ -970,27 +968,25 @@ Vue.component('demo-pump-curve', {
     };
   },
   template: `
-  <table class="table">
-    <tr class="demonstrator">
-      <td colspan="5">
-        <div class="demo-inputs" style="min-width:50%">
+  <div class="container-fluid">
+  <div class="row demonstrator">
+    <div class="col-sm-12 col-md-5">
+      <div  class="demo-inputs" style="">
           <demo-pump-system-plot-inputs
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
             :resistance.sync="totalResistence"
+            :pressure.sync="atmospheres"
             :pump-speed.sync="pumpSpeed"
           >
           </demo-pump-system-plot-inputs>
         </div>
-      </td>
-      <td colspan="6">
-        <div class="demo-chart" style="min-width=50%">
-        </div>
-      </td>
-      <!--div class="demo-bar-chart col"> KK TODO
-      </div-->
-    </tr>
-  </table>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="demo-chart" style=""></div>
+      </div>
+    </div>
+  </div>
   `,
   mounted: function() { 
     const chartElem = $(this.$el).find('.demo-chart')[0];
@@ -1042,7 +1038,7 @@ Vue.component('demo-pump-curve', {
       },
       yaxis: { 
         min: 0,
-        max: 100,
+        max: 140,
         decimalsInFloat: false,
         title: {
           text: "Head"
@@ -1060,17 +1056,24 @@ Vue.component('demo-pump-curve', {
   },
   methods: {
     calculations: function() {
-      return CurveCalculators.calcPumpSystemPlotValues(
-        this.velocities,
-        this.upperLevel,
-        this.lowerLevel,
+      const sys_values = CurveCalculators.calcSystemCurveValues(
+        this.velocities, 
+        this.atmospheres, 
+        this.upperLevel, 
+        this.lowerLevel, 
         this.elevation,
-        this.totalResistence,
-        this.pumpSpeed / 100,
-        this.coefA,
-        this.coefB,
-        this.coefC
-      )
+        this.totalResistence);
+
+      const pump_values = CurveCalculators.calcPumpSystemPlotValues(
+          this.velocities,
+          this.pumpSpeed / 100,
+          this.coefA,
+          this.coefB,
+          this.coefC
+        );
+      
+      const values=Object.assign({}, sys_values, pump_values);
+      return values;
     },
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
@@ -1111,11 +1114,12 @@ Vue.component('demo-pump-curve', {
         `<div><strong>Total Head: </strong><span>${curveData.totalHead[dataPointIndex]}</span></div>` +
         `<div><strong>Static Head: </strong><span>${curveData.staticHead[dataPointIndex]}</span></div>` +
         `<div><strong>Friction Head: </strong><span>${curveData.frictionHead[dataPointIndex]}</span></div>` +
-      '</div>';
+        `<div><strong>Pump Head: </strong><span>${curveData.pumpHead[dataPointIndex]}</span></div>` +      
+        `<div><strong>Full Speed Pump: </strong><span>${curveData.pumpHeadFullSpeed[dataPointIndex]}</span></div>` +      
+        '</div>';
     },
     refreshChart: function() {
       const series = this.getSeries();
-
       this.chart.updateSeries(series);
     }
   },
@@ -1137,6 +1141,9 @@ Vue.component('demo-pump-curve', {
       this.refreshChart();
     },
     pumpSpeed: function() {
+      this.refreshChart();
+    },
+    atmospheres: function() {
       this.refreshChart();
     }
   }
