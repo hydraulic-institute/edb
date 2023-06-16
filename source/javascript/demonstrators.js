@@ -562,7 +562,8 @@ Vue.component("demo-system-curve-inputs", {
     template: `
     <div class="wrap">  
     <div class="row mb-2">
-      <div class="col" align="right" id="upper-tank-pressure-id">
+      <div class="col-8"></div>
+      <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">
         <div class="upper_tank_pressure">      
           <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
           <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
@@ -578,8 +579,8 @@ Vue.component("demo-system-curve-inputs", {
         <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
       </div>
       <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
-        <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+        <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
@@ -658,8 +659,9 @@ Vue.component("demo-pump-system-plot-inputs", {
   template: `
   <div class="wrap">  
   <div class="row mb-2">
-    <div class="col" align="right" id="upper-tank-pressure-id">
-      <div class="upper_tank_pressure">      
+    <div class="col-8"></div>
+    <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">   
+      <div class="upper_tank_pressure">
         <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
         <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
@@ -674,8 +676,8 @@ Vue.component("demo-pump-system-plot-inputs", {
       <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
     </div>
     <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
-      <p class="mt-0 mb-0" style="font-size: smaller" align="right">Upper Tank Level</p>
-      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+      <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
+      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
     </div>
   </div>
   <div class="row mb-2 mt-1">
@@ -966,10 +968,10 @@ Vue.component('demo-pump-curve', {
     };
   },
   template: `
-  <table class="table">
-    <tr class="demonstrator">
-      <td colspan="5">
-        <div class="demo-inputs" style="min-width:50%">
+  <div class="container-fluid">
+  <div class="row demonstrator">
+    <div class="col-sm-12 col-md-5">
+      <div  class="demo-inputs" style="">
           <demo-pump-system-plot-inputs
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
@@ -979,13 +981,12 @@ Vue.component('demo-pump-curve', {
           >
           </demo-pump-system-plot-inputs>
         </div>
-      </td>
-      <td colspan="6">
-        <div class="demo-chart" style="min-width=50%">
-        </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="demo-chart" style=""></div>
+      </div>
+    </div>
+  </div>
   `,
   mounted: function() { 
     const chartElem = $(this.$el).find('.demo-chart')[0];
