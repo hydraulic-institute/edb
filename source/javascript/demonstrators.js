@@ -1,5 +1,71 @@
 (() => {
-  Vue.component("demo-tank", {
+  const calcSysCurveStaticHead = (atmospheres, upperLevel, lowerLevel, elevation) => {
+    const value = (atmospheres * 2.31) + upperLevel - lowerLevel + elevation;
+    return parseFloat(value);
+  };
+
+  const calcFrictionHead = (velocityIndex, resistance) => {
+    const value = resistance * (velocityIndex / 4) ** 2;
+    return value;
+  }
+
+  const calcPumpHead = (velocityIndex, speed, coefA, coefB, coefC) => {
+    return Math.pow(speed,2)*coefA + speed*coefB*velocityIndex + coefC*Math.pow(velocityIndex,2);
+  }
+
+  const calcPumpSystemPlotValues = ( 
+    velocities, speed, coefA, coefB, coefC) => {
+      const values = {
+        pumpHead: [],
+        pumpHeadFullSpeed: []
+      };
+
+      velocities.forEach(v => {
+        const pumpHead = calcPumpHead(v, speed, coefA, coefB, coefC);
+        const pumpHeadFullSpeed = calcPumpHead(v, 1, coefA, coefB, coefC);
+
+        values.pumpHead.push(pumpHead.toFixed(2));
+        values.pumpHeadFullSpeed.push(pumpHeadFullSpeed.toFixed(2));
+      });
+
+      return values;
+  }
+
+  const calcSystemCurveValues = (velocities, atmospheres, upperLevel, lowerLevel, elevation, totalResistence) => {
+    const values = {
+        frictionHead: [],
+        staticHead:[],
+        totalHead:[]
+      };
+
+      const staticHead = calcSysCurveStaticHead(
+        parseFloat(atmospheres), 
+        parseFloat(upperLevel), 
+        parseFloat(lowerLevel), 
+        parseFloat(elevation)
+      );
+
+      velocities.forEach(v => {
+        const frictionHead = calcFrictionHead(v, parseFloat(totalResistence));
+        const totalHead = staticHead + frictionHead;
+  
+        values.frictionHead.push(frictionHead.toFixed(2));
+        values.staticHead.push(staticHead.toFixed(2));
+        values.totalHead.push(totalHead.toFixed(2));
+    });
+
+    return values;
+  }
+  
+  window.CurveCalculators = {
+    calcSysCurveStaticHead,
+    calcFrictionHead,
+    calcSystemCurveValues,
+    calcPumpSystemPlotValues
+  }
+})();
+
+Vue.component("demo-tank", {
     template: "<div class='demo-canvas'></div>",
     props: {
         maxHeight: { 
@@ -81,6 +147,10 @@
         topOpacity: {
           type: Number,
           default: 1
+        },
+        placement: {
+          type: String,
+          default: "lower"
         }
     },
     data: function() {
@@ -172,7 +242,7 @@
                 fill: "red",
                 radius: this.knobRadius,
                 draggable: true,
-                opacity: .75,
+                opacity: 1,
                 dragBoundFunc: (pos) => {
                     const maxVal = Math.max(
                         this.yPositionRange.min, 
@@ -324,7 +394,12 @@
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            this.tank.knob.absolutePosition(levelPosition);
+            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            let x_level=levelPosition.x
+            if (!this.isHorizontal) {
+              x_level=levelPosition.x+(this.tank.tank.width()/2);
+            }
+            this.tank.knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
             this.tank.waterLevel.size({ width: this.maxWidth, height: levelPosition.newHeight});
         }
     },
@@ -356,11 +431,11 @@ Vue.component("demo-flow-line", {
     props: {
         width: {
             type: Number,
-            default: 100
+            default: 120
         },
         height: { 
             type: Number,
-            default: 100
+            default: 120
         },
         pointerWidth: { 
             type: Number,
@@ -383,13 +458,59 @@ Vue.component("demo-flow-line", {
         });
 
         const layer = new Konva.Layer();
-
+        const circle1 = new Konva.Circle({
+          x: (this.width / 2),
+          y: this.height - 16,
+          radius: 10,
+          fill: "#FFFFFF",
+          stroke: "black",
+          strokeWidth: 1
+        });
+        const triangle1 = new Konva.RegularPolygon({
+          x: (this.width / 2),
+          y: this.height - 6,
+          radius: 10,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "black",
+          strokeWidth: 1
+        });
+        const elbow1 = new Konva.Line({
+          x: 0,
+          y: 0,
+          points: [ (this.width / 2) + 20, this.height - (this.pointerWidth + 15),
+              (this.width / 2) + 30, this.height - (this.pointerWidth + 15),
+              (this.width /2) + 30, this.height - (this.pointerWidth + 25)
+          ],
+          stroke: "grey",
+          strokeWidth: 8
+      });
+        const leftbowtie = new Konva.RegularPolygon({
+          x: (this.width / 2) + 25,
+          y: (this.pointerWidth / 2) + 2,
+          radius: 5,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "grey",
+          strokeWidth: 1,
+          rotation: -30,
+        });
+        const rightbowtie = new Konva.RegularPolygon({
+          x: (this.width / 2) + 35,
+          y: (this.pointerWidth / 2) + 2,
+          radius: 5,
+          sides: 3,
+          fill: "#FFFFFF",
+          stroke: "grey",
+          strokeWidth: 1,
+          rotation: 30,
+        });
         const line1 = new Konva.Arrow({
             x: 0,
             y: 0,
             points: [
-                0, this.height - (this.pointerWidth/2 + 5), 
-                (this.width / 2) - 8, this.height - (this.pointerWidth/2 + 5),
+                0, this.height - (this.pointerWidth + 5), 
+                (this.width / 2) - circle1.radius(), this.height - (this.pointerWidth + 5),
             ],
             pointerLength: this.pointerWidth,
             pointerWidth: this.pointerWidth,
@@ -401,7 +522,7 @@ Vue.component("demo-flow-line", {
           x: 0,
           y: 0,
           points: [ (this.width / 2) + 5, this.height - (this.pointerWidth + 15),
-              (this.width / 2) + 20, this.height - (this.pointerWidth + 15)
+              (this.width / 2) + 30, this.height - (this.pointerWidth + 15)
           ],
           pointerLength: this.pointerWidth,
           pointerWidth: this.pointerWidth,
@@ -413,48 +534,36 @@ Vue.component("demo-flow-line", {
         x: 0,
         y: 0,
         points: [ 
-            (this.width / 2) + 20, this.height - (this.pointerWidth + 15),
-            (this.width / 2) + 20, (this.pointerWidth / 2) + 2,
-            this.width - 2, (this.pointerWidth / 2) + 2
+            (this.width / 2) + 30, this.height - (this.pointerWidth + 15),
+            (this.width / 2) + 30, this.pointerWidth - 5,
+            this.width - 2, this.pointerWidth - 5
         ],
         pointerLength: this.pointerWidth,
         pointerWidth: this.pointerWidth,
         fill: "black",
         stroke: "darkgrey",
         strokeWidth: 1
-    });
-      const circle1 = new Konva.Circle({
-        x: (this.width / 2),
-        y: this.height - 16,
-        radius: 10,
-        fill: "#FFFFFF",
-        stroke: "black",
-        strokeWidth: 1
       });
-      const triangle1 = new Konva.RegularPolygon({
-        x: (this.width / 2),
-        y: this.height - 6,
-        radius: 10,
-        sides: 3,
-        fill: "#FFFFFF",
-        stroke: "black",
-        strokeWidth: 1
-      });
+      
 
         layer.add(triangle1);
         layer.add(circle1);
         layer.add(line1);
         layer.add(line2);
         layer.add(line3);
+        layer.add(elbow1);
+        layer.add(leftbowtie);
+        layer.add(rightbowtie);
         stage.add(layer);
     }
 });
 
 Vue.component("demo-system-curve-inputs", {
     template: `
-    <div>  
+    <div class="wrap">  
     <div class="row mb-2">
-      <div class="col" align="right">
+      <div class="col-8"></div>
+      <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">
         <div class="upper_tank_pressure">      
           <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
           <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
@@ -462,20 +571,20 @@ Vue.component("demo-system-curve-inputs", {
       </div>
     </div>
     <div class="row mb-2">
-      <div class="col-4 mt-auto" style="min-width:30%">
+      <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
         <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
-        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" align="right"></demo-tank>
+        <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
       </div>
-      <div class="col-4 d-flex mt-auto" style="min-width:30%; justify-content:center;">           
-        <demo-flow-line align="left" :length="100" :direction="'far'"></demo-flow-line>
+      <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">           
+        <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
       </div>
-      <div class="col-4" style="min-width:30%">
+      <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
         <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" style="margin-bottom: 90px;margin-left: 5px"></demo-tank>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
-      <div class="col" align="center">
+      <div class="col" align="center" id="friction-losses-id">
         <div class="resistance">      
           <p class="mb-0" style="font-size: smaller">Friction Losses</p>
           <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
@@ -493,6 +602,14 @@ Vue.component("demo-system-curve-inputs", {
         upperTankFillColor: {
           type: String,
           default: "orange"
+        },
+        lower: {
+          type: String,
+          default: "lower"
+        },
+        upper: {
+          type: String,
+          default: "upper"
         },
         lowerLevel: {
           type: Number,
@@ -538,7 +655,114 @@ Vue.component("demo-system-curve-inputs", {
     }
 });
 
-})();
+Vue.component("demo-pump-system-plot-inputs", {
+  template: `
+  <div class="wrap">  
+  <div class="row mb-2">
+    <div class="col-8"></div>
+    <div class="col-4" align="left" id="upper-tank-pressure-id" style="padding: 0px;">   
+      <div class="upper_tank_pressure">
+        <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
+        <demo-tank v-model="pressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div> 
+  <div class="row mb-2">
+    <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
+      <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
+      <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
+    </div>
+    <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">           
+      <demo-flow-line align="center" :direction="'far'"></demo-flow-line>
+    </div>
+    <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
+      <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
+      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
+    </div>
+  </div>
+  <div class="row mb-2 mt-1">
+    <div class="col" align="center" id="pump-speed-id">
+      <div class="">      
+        <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
+        <demo-tank v-model="pumpSpeedValue" :level-min="0" :level-max="70" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2 mt-1">
+    <div class="col" align="center" id="friction-losses-id">
+      <div class="resistance">
+        <p class="mb-0" style="font-size: smaller">Friction Losses</p>
+        <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
+        <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+      </div>
+    </div>
+  </div>
+  </div>
+  `,
+  props: {
+      rangeInputColor: { 
+        type: String,
+        default: "#848482"
+      },
+      upperTankFillColor: {
+        type: String,
+        default: "orange"
+      },
+      lower: {
+        type: String,
+        default: "lower"
+      },
+      upper: {
+        type: String,
+        default: "upper"
+      },
+      lowerLevel: {
+        type: Number,
+        default: 0
+      },
+      upperLevel: {
+        type: Number,
+        default: 0
+      },
+      resistance: {
+        type: Number,
+        default: 0
+      },
+      pumpSpeed: { 
+        type: Number,
+        default: 95
+      }
+  },
+  data: function() {
+      return {
+        lowerLevelValue: 5,
+        upperLevelValue: 6,
+        resistanceValue: 2,
+        pumpSpeedValue: 45,
+        pressureValue: 15
+      }
+  },
+  mounted: function() {
+
+  },
+  watch: {
+    lowerLevelValue: function(value) {
+      this.$emit("update:lowerLevel", value)
+    },
+    upperLevelValue: function(value) {
+      this.$emit("update:upperLevel", value)
+    },
+    resistanceValue: function(value) {
+      this.$emit("update:resistance", value)
+    },
+    pumpSpeedValue: function(value) {
+      this.$emit("update:pumpSpeed", value + 50)
+    },
+    pressureValue: function(value) {
+      this.$emit("update:pressure", value)
+    },
+  }
+});
 
 Vue.component("demo-input-slider", {
   props: ['value', 'label', 'min', 'max'],
@@ -553,7 +777,7 @@ Vue.component("demo-input-slider", {
   `
 });
 
-Vue.component('demo-system-curves', {
+Vue.component('demo-system-curve', {
   props: ['init'],
   data: function () {
       return {
@@ -569,31 +793,27 @@ Vue.component('demo-system-curves', {
       };
   },
   template: `
-  <table class="table">
-    <tr class="demonstrator">
-      <td colspan="5">
-        <div  class="demo-inputs" style="min-width:50%">
+  <div class="container-fluid">
+    <div class="row demonstrator">
+      <div class="col-sm-12 col-md-5">
+        <div  class="demo-inputs" style="">
           <demo-system-curve-inputs 
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
             :resistance.sync="totalResistence"
             :pressure.sync="atmospheres"
           >
-        </demo-system-curve-inputs>
+          </demo-system-curve-inputs>
         </div>
-      </td>
-      <td colspan="6">
-        <div class="demo-chart" style="min-width=50%">
-        </div>
-      </td>
-      <!--div class="demo-bar-chart col"> KK TODO
-      </div-->
-    </tr>
-  </table>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="demo-chart" style=""></div>
+      </div>
+    </div>
+  </div>
   `,
   mounted: function () {
-    //const chartElem = $(this.$el).children('div .demo-chart')[0];
-    const chartElem = document.getElementsByClassName("demo-chart")[0];
+    const chartElem = $(this.$el).find('.demo-chart')[0];
     const component = this;
     const series = this.getSeries();
 
@@ -661,37 +881,14 @@ Vue.component('demo-system-curves', {
   },
   methods: {
     systemCalculator: function() {
-      const values = {
-        frictionHead: [],
-        staticHead:[],
-        totalHead:[]
-      };
-  
-      const calcStaticHead = (atmospheres, upperLevel, lowerLevel, elevation) => {
-        const value = (atmospheres * 2.31) + upperLevel - lowerLevel + elevation;
-        return parseFloat(value);
-      };
-  
-      const calcFrictionHead = (velocity, resistance) => {
-        const value = resistance * (velocity / 4) ** 2;
-        return value;
-      }
-  
-      this.velocities.forEach(v => {
-        const staticHead = calcStaticHead(
-          parseFloat(this.atmospheres), 
-          parseFloat(this.upperLevel), 
-          parseFloat(this.lowerLevel), 
-          parseFloat(this.elevation));
-        const frictionHead = calcFrictionHead(v, parseFloat(this.totalResistence));
-        const totalHead = staticHead + frictionHead;
-  
-        values.frictionHead.push(frictionHead.toFixed(2));
-        values.staticHead.push(staticHead.toFixed(2));
-        values.totalHead.push(totalHead.toFixed(2));  
-      })
-
-      return values;
+      return CurveCalculators.calcSystemCurveValues(
+        this.velocities, 
+        this.atmospheres, 
+        this.upperLevel, 
+        this.lowerLevel, 
+        this.elevation,
+        this.totalResistence
+      )
     },
     getSeries: function() {
       const curveData = this.systemCurveData;
@@ -750,3 +947,204 @@ Vue.component('demo-system-curves', {
     }
   }
 });
+
+Vue.component('demo-pump-curve', {
+  props: ['init'],
+  data: function () {
+    return {
+      elevation: 10,
+      min: 0,
+      max: 10,
+      lowerLevel: 5,
+      upperLevel: 10,
+      totalResistence: 5,
+      atmospheres: 7,
+      pumpSpeed: 95, // percentage
+      velocities: [0,1,2,3,4,5,6,7,8,9,10],
+      coefA: 70,
+      coefB: -2,
+      coefC: -0.4,
+      chart: null
+    };
+  },
+  template: `
+  <div class="container-fluid">
+  <div class="row demonstrator">
+    <div class="col-sm-12 col-md-5">
+      <div  class="demo-inputs" style="">
+          <demo-pump-system-plot-inputs
+            :lower-level.sync="lowerLevel"
+            :upper-level.sync="upperLevel"
+            :resistance.sync="totalResistence"
+            :pressure.sync="atmospheres"
+            :pump-speed.sync="pumpSpeed"
+          >
+          </demo-pump-system-plot-inputs>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="demo-chart" style=""></div>
+      </div>
+    </div>
+  </div>
+  `,
+  mounted: function() { 
+    const chartElem = $(this.$el).find('.demo-chart')[0];
+    const series = this.getSeries();
+
+    const options = {
+      chart: {
+        type: "rangeArea",
+        animations: { enabled: false },
+        toolbar: { show: false },
+        height: 300
+      },
+      series: series,
+      dataLabels: {
+        enabled: false
+      },
+      tooltip: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "straight",
+        width: [3, 3, 0, 3, 3]
+      },
+      fill: {
+        opacity: [1, 0.25, 0.25],
+      },
+      markers: {
+        hover: { sizeOffset: 6 }
+      },
+      grid: {
+        xaxis: { lines: { show: true } },
+        yaxis: { lines: { show: true } },
+        borderColor: '#85929E',
+      },
+      xaxis: {
+        velocities: this.velocities,
+        title: {
+          text: "Rate of Flow"
+        },
+        labels: { 
+          show: false
+        },
+        axisTicks: {
+          show: false
+        },
+        tooltip: {
+          enabled: false
+        },
+      },
+      yaxis: { 
+        min: 0,
+        max: 140,
+        decimalsInFloat: false,
+        title: {
+          text: "Head"
+        },
+        labels: {
+          show: false
+        }
+      }
+    };
+      
+    this.chart = new ApexCharts(chartElem, options);
+    
+    this.chart.render();
+
+  },
+  methods: {
+    calculations: function() {
+      const sys_values = CurveCalculators.calcSystemCurveValues(
+        this.velocities, 
+        this.atmospheres, 
+        this.upperLevel, 
+        this.lowerLevel, 
+        this.elevation,
+        this.totalResistence);
+
+      const pump_values = CurveCalculators.calcPumpSystemPlotValues(
+          this.velocities,
+          this.pumpSpeed / 100,
+          this.coefA,
+          this.coefB,
+          this.coefC
+        );
+      
+      const values=Object.assign({}, sys_values, pump_values);
+      return values;
+    },
+    getSeries: function() {
+      const curveData = this.pumpSystemCurveData;
+      const series = [];
+
+      series.push({
+        name: 'Total Head',
+        type: 'line',
+        data: this.velocities.map(v => ({ x: v, y: curveData.totalHead[v] }))
+      });
+      series.push({
+        name: 'Static Head',
+        type: 'area',
+        data: this.velocities.map(v => ({ x: v, y: curveData.staticHead[v] })) 
+      });
+      series.push({
+        name: 'Friction Head',
+        type: 'rangeArea',
+        data: this.velocities.map(v => ({ x: v, y: [ curveData.staticHead[v], curveData.totalHead[v] ] })) 
+      });
+      series.push({
+        name: 'Pump Head',
+        type: 'line',
+        data: this.velocities.map(v => ({ x: v, y: curveData.pumpHead[v] })) 
+      });
+      series.push({
+        name: 'Full Speed Pump',
+        type: 'line',
+        data: this.velocities.map(v => ({ x: v, y: curveData.pumpHeadFullSpeed[v] })) 
+      });
+
+      return series;
+
+    },
+    getTooltip: function(dataPointIndex) {
+      const curveData = this.pumpSystemCurveData;
+      return '<div>' +
+        `<div><strong>Total Head: </strong><span>${curveData.totalHead[dataPointIndex]}</span></div>` +
+        `<div><strong>Static Head: </strong><span>${curveData.staticHead[dataPointIndex]}</span></div>` +
+        `<div><strong>Friction Head: </strong><span>${curveData.frictionHead[dataPointIndex]}</span></div>` +
+        `<div><strong>Pump Head: </strong><span>${curveData.pumpHead[dataPointIndex]}</span></div>` +      
+        `<div><strong>Full Speed Pump: </strong><span>${curveData.pumpHeadFullSpeed[dataPointIndex]}</span></div>` +      
+        '</div>';
+    },
+    refreshChart: function() {
+      const series = this.getSeries();
+      this.chart.updateSeries(series);
+    }
+  },
+  computed: {
+    pumpSystemCurveData: {
+      get() {
+        return this.calculations(this.velocities);
+      }
+    }
+  },
+  watch: {
+    lowerLevel: function() {
+      this.refreshChart();
+    },
+    upperLevel: function() {
+      this.refreshChart();
+    },
+    totalResistence: function() {
+      this.refreshChart();
+    },
+    pumpSpeed: function() {
+      this.refreshChart();
+    },
+    atmospheres: function() {
+      this.refreshChart();
+    }
+  }
+})

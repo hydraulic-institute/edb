@@ -35,6 +35,18 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 
 ![](./reading-1.png "")
 
+### Educational Demonstration
+
+=d=
+title: Hello World Demonstrator
+kind: pump-curve
+lowerTankLevel: 5
+upperTankLevel: 10
+upperTankPressure: 10
+overallResistance: 5
+pumpSpeed: 95
+=d=
+
 ### Flow Rate Change Using Manual Throttling Valve
 
 As a manual (or passive) valve is changed (opening or closing) it will change the system curve by affecting the K value. Closing a valve will add resistance to
