@@ -306,89 +306,45 @@
 
 <script type="text/x-template" id="mechanical-friction-loss-calculator-template">
     <div>
-    <form>
-        <div class='row'>
-            <div class='col-4'>
-                <div class='field'>
-                    <label class='label'>
-                        <span>Shaft Diameter</span>
-                    </label>
-                    <div class='columns'>
-                        <div class='column'>
-                            <input class='input' type='number' @keydown='no_negative' min="0" step="0.1" v-model='shaft_diameter'/>
+        <form>
+            <div class='row'>
+                <div class='col-4'>
+                    <div class='field'>
+                        <label class='label'>
+                            <span>Shaft Diameter</span>
+                        </label>
+                        <div class='columns'>
+                            <div class='column'>
+                                <input class='input' type='number' @keydown='no_negative' min="0" step="0.1" v-model='shaft_diameter'/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class='col-4'>
-                <div class='field'>
-                    <label class='label'>
-                        <span>RPM (between 450 RPM 3600)</span>
-                    </label>
-                    <div class='columns'>
-                        <div class='column'>
-                            <input class='input' type='number' @keydown='no_negative' min="450" max="3500" step="0.1" v-model='rpm_value'/>
+                <div class='col-4'>
+                    <div class='field'>
+                        <label class='label'>
+                            <span>RPM (between 450 RPM 3600)</span>
+                        </label>
+                        <div class='columns'>
+                            <div class='column'>
+                                <input class='input' type='number' @keydown='no_negative' min="450" max="3500" step="0.1" v-model='rpm_value'/>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>   
-            <div class='col-4'> 
-                <br>
-                <div class='columns'>
-                <div class='column'>
-                    <button type='button' class='button is-small' @click='calculate()'>Calculate</button>
-                </div>
-                </div>
+                </div>   
             </div>
-        </div>
+        </form>
         <br>
-        <div class="field">
-            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction: </span>
-                <input class='has-text-warning' style='margin-right:0.1em;' type='text' v-model='mechanical_friction_result' disabled/>
+        <div>
+            <div class="field">
+                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction: &nbsp;&nbsp;</span>
+                    <span class='has-text-white-bis'>${mech_friction_loss}</span>
+                </div>
             </div>
         </div>
-    </form>
     </div>
 </script>
-
-<!--script type="text/x-template" id="mechanical-friction-loss-calculator-template">
-    <div>
-    <form>
-        <div class='field'>
-            <label class='label'>
-                <span>Shaft</span>
-            </label>
-            <div class='columns'>
-                <div class='column'>
-                    <input class='input' type='number' @keydown='no_negative' min="0" step="0.1" v-model='shaft'/>
-                </div>
-            </div>
-        </div>
-        <div class='field'>
-            <label class='label'>
-                <span>RPM</span>
-            </label>
-            <div class='columns'>
-                <div class='column'>
-                    <input class='input' type='number' @keydown='no_negative' min="450" max="3500" step="0.1" v-model='rpm'/>
-                </div>
-            </div>
-        </div>
-        <div v-if='entry && results_revision.length'>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align:center">Loss</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td style="text-align:center"><unit-value :value="25"/></td></tr>
-                </tbody>
-            </table>
-        </div>
-    </form>
-</script-->
 
 <body class="has-navbar-fixed-top">
 
