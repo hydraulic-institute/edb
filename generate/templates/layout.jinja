@@ -308,41 +308,49 @@
     <div>
         <form>
             <div class='row'>
-                <div class='col-4'>
-                    <div class='field'>
-                        <label class='label'>
-                            <span>Shaft Diameter</span>
-                        </label>
-                        <div class='columns'>
-                            <div class='column'>
-                                <input class='input' type='number' @keydown='no_negative' min="0" step="0.1" v-model='shaft_diameter'/>
+                <div class='col'>
+                    <div class='row'>
+                        <div class='col-4'>
+                            <div class='field'>
+                                <label class='label'>
+                                    <span>Shaft Diameter (in)</span>
+                                </label>
+                                <div class='columns'>
+                                    <div class='column'>
+                                        <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col'>
+                            <div class='field'>
+                                <label class='label'>
+                                    <span>RPM (450-3600 RPM)</span>
+                                </label>
+                                <div class='columns'>
+                                    <div class='column'>
+                                        <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col mt-2'>
+                            <div class="field">
+                                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction (HP/100 ft): &nbsp;&nbsp;</span>
+                                    <span v-if='mech_friction_loss != 0' class='has-text-white-bis'>${mech_friction_loss}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class='col-4'>
-                    <div class='field'>
-                        <label class='label'>
-                            <span>RPM (between 450 RPM 3600)</span>
-                        </label>
-                        <div class='columns'>
-                            <div class='column'>
-                                <input class='input' type='number' @keydown='no_negative' min="450" max="3500" step="0.1" v-model='rpm_value'/>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
+                <div class='col' align='center'>
+                    <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" width="80">     
+                </div>      
             </div>
         </form>
-        <br>
-        <div>
-            <div class="field">
-                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction: &nbsp;&nbsp;</span>
-                    <span class='has-text-white-bis'>${mech_friction_loss}</span>
-                </div>
-            </div>
-        </div>
     </div>
 </script>
 

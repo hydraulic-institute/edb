@@ -860,7 +860,10 @@ Vue.component('mechanical-friction-loss-calculator', {
         return {
             shaft_diameter: null,
             rpm_value: null,
-            mech_friction_loss: null
+            mech_friction_loss: null,
+            A:.00030322,
+            B: .003395,
+            EXP: 1.8927
         };
     },
     template: '#mechanical-friction-loss-calculator-template',
@@ -869,15 +872,11 @@ Vue.component('mechanical-friction-loss-calculator', {
             this.shaft_diameter = parseFloat(this.shaft_diameter);
             this.rpm_value = parseFloat(this.rpm_value);
             if (this.shaft_diameter && this.rpm_value >= 450 && this.rpm_value <= 3600) {
-                console.log('Shaft Len: '+ this.shaft_diameter);
-                console.log('RPM Value: ' + this.rpm_value);
-                const A=.00030322;
-                const B=.003395;
-                const EXP=1.8927;
-                this.mech_friction_loss=((A * this.rpm_value) + B) * Math.pow(this.shaft_diameter, EXP);
+                this.mech_friction_loss=((this.A * this.rpm_value) + this.B) * Math.pow(this.shaft_diameter, this.EXP);
+                this.mech_friction_loss=this.mech_friction_loss.toFixed(3);
             }
             else {
-                this.mech_friction_loss = "NaN";
+                this.mech_friction_loss = null;
             }
         },
         
@@ -888,20 +887,23 @@ Vue.component('mechanical-friction-loss-calculator', {
                 e.keyCode == 110 || // decimal point
                 e.keyCode == 27 || // escape
                 e.keyCode == 46 || // delete
-                e.keyCode == 8)) { // backspace
+                e.keyCode == 8 || // backspace
+                e.keyCode == 9) ) { //tab
+                e.preventDefault();
                 return false;
             }
         }
     },
     watch: {
         shaft_diameter: function () {
-            this.calculate();
+            if (this.shaft_diameter && this.rpm_value) {
+                this.calculate();
+            }
         },
         rpm_value: function () {
-            this.calculate();
-        },
-        mech_friction_loss: function() {
-            this.calculate();
+            if (this.rpm_value && this.shaft_diameter) {
+                this.calculate();
+            }
         }
     }
 })
