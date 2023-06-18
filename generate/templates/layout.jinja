@@ -339,8 +339,8 @@
                         <div class='col mt-2'>
                             <div class="field">
                                 <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction (HP/100 ft): &nbsp;&nbsp;</span>
-                                    <span v-if='mech_friction_loss != 0' class='has-text-white-bis'>${mech_friction_loss}</span>
+                                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per 100 ft of Line Shaft: &nbsp;&nbsp;</span>
+                                    <span v-if='mech_friction_loss' class='has-text-white-bis'>${mech_friction_loss} hp</span>
                                 </div>
                             </div>
                         </div>
@@ -413,6 +413,7 @@
                          <a href="/tools/unit-conversions.html" class="dropdown-item">Unit Conversions</a>
                          <a href="/tools/viscosity.html" class="dropdown-item">Kinematic and Dynamic Viscosity Conversion</a>
                          <a href="/tools/frictional-losses.html" class="dropdown-item">Frictional Loss Calculator</a>
+                         <!--a href="/useful-info-V/mechanical-friction-loss.html" class="dropdown-item">Mechanical Friction Loss Calculator</a-->
                          <a href="/tools/table-of-definitions.html" class="dropdown-item">Table of Definitions</a>
                         </div>
                     </div>
