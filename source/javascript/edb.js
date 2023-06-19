@@ -861,6 +861,7 @@ Vue.component('mechanical-friction-loss-calculator', {
             shaft_diameter: null,
             rpm_value: null,
             mech_friction_loss: null,
+            bearing_spacing: 10,
             A:.00030322,
             B: .003395,
             EXP: 1.8927
@@ -874,6 +875,9 @@ Vue.component('mechanical-friction-loss-calculator', {
             if (this.shaft_diameter && this.rpm_value >= 450 && this.rpm_value <= 3600) {
                 this.mech_friction_loss=((this.A * this.rpm_value) + this.B) * Math.pow(this.shaft_diameter, this.EXP);
                 this.mech_friction_loss=this.mech_friction_loss.toFixed(3);
+                if (this.bearing_spacing == "5") {
+                    this.mech_friction_loss*=2;
+                }
             }
             else {
                 this.mech_friction_loss = null;
@@ -901,6 +905,11 @@ Vue.component('mechanical-friction-loss-calculator', {
             }
         },
         rpm_value: function () {
+            if (this.rpm_value && this.shaft_diameter) {
+                this.calculate();
+            }
+        },
+        bearing_spacing: function () {
             if (this.rpm_value && this.shaft_diameter) {
                 this.calculate();
             }
