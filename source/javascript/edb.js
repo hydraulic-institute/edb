@@ -854,6 +854,59 @@ Vue.component('viscosity-converter', {
     }
 });
 
+Vue.component('mechanical-friction-loss-calculator', {
+    delimiters: ['${', '}'],
+    data: function () {
+        return {
+            shaft_diameter: null,
+            rpm_value: null,
+            mech_friction_loss: null,
+            A:.00030322,
+            B: .003395,
+            EXP: 1.8927
+        };
+    },
+    template: '#mechanical-friction-loss-calculator-template',
+    methods: {
+        calculate() {
+            this.shaft_diameter = parseFloat(this.shaft_diameter);
+            this.rpm_value = parseFloat(this.rpm_value);
+            if (this.shaft_diameter && this.rpm_value >= 450 && this.rpm_value <= 3600) {
+                this.mech_friction_loss=((this.A * this.rpm_value) + this.B) * Math.pow(this.shaft_diameter, this.EXP);
+                this.mech_friction_loss=this.mech_friction_loss.toFixed(3);
+            }
+            else {
+                this.mech_friction_loss = null;
+            }
+        },
+        
+        no_negative: function (e) {
+            if (!((e.keyCode > 95 && e.keyCode < 106) ||
+                (e.keyCode > 47 && e.keyCode < 58) ||
+                e.keyCode == 190 || // period
+                e.keyCode == 110 || // decimal point
+                e.keyCode == 27 || // escape
+                e.keyCode == 46 || // delete
+                e.keyCode == 8 || // backspace
+                e.keyCode == 9) ) { //tab
+                e.preventDefault();
+                return false;
+            }
+        }
+    },
+    watch: {
+        shaft_diameter: function () {
+            if (this.shaft_diameter && this.rpm_value) {
+                this.calculate();
+            }
+        },
+        rpm_value: function () {
+            if (this.rpm_value && this.shaft_diameter) {
+                this.calculate();
+            }
+        }
+    }
+})
 
 var appView = new Vue({
     el: '#vue',

@@ -1,6 +1,6 @@
 -----
 title: Coming Soon
-date:  March 15th, 2021
+date:  June 19th, 2023
 description: Conversion tables for different volume tanks.
 -----
 **Data Library additions in the near future include:**
@@ -9,8 +9,6 @@ description: Conversion tables for different volume tanks.
 - Volume of cylindrical horizontal tanks with flat and hemispherical shaped heads
 - Barometric Pressure-Effect of Altitude
 - Motor frame sizes and dimensions (NEMA, IEC, etc.)
-- Mechanical Friction in Vertical Line-shaft Pumps
-
 
 
 =^=
