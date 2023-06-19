@@ -307,48 +307,42 @@
 <script type="text/x-template" id="mechanical-friction-loss-calculator-template">
     <div>
         <form>
-            <div class='row'>
-                <div class='col'>
-                    <div class='row'>
-                        <div class='col-4'>
+            <div class='columns'>
+                <div class='column'>
+                    <div class='columns'>
+                        <div class='column'>
                             <div class='field'>
                                 <label class='label'>
                                     <span>Shaft Diameter (in)</span>
                                 </label>
-                                <div class='columns'>
-                                    <div class='column'>
-                                        <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
-                                    </div>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
                                 </div>
                             </div>
                         </div>
-                        <div class='col'>
+                        <div class='column'>
                             <div class='field'>
                                 <label class='label'>
                                     <span>RPM (450-3600 RPM)</span>
                                 </label>
-                                <div class='columns'>
-                                    <div class='column'>
-                                        <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
-                                    </div>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class='row'>
-                        <div class='col mt-2'>
-                            <div class="field">
-                                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                                    <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per 100 ft of Line Shaft: &nbsp;&nbsp;</span>
-                                    <span v-if='mech_friction_loss' class='has-text-white-bis'>${mech_friction_loss} hp</span>
-                                </div>
+                    <div class='mt-2'>
+                        <div class="field">
+                            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per 100 ft of Line Shaft: &nbsp;&nbsp;</span>
+                                <span v-if='mech_friction_loss' class='has-text-white-bis'>${mech_friction_loss} hp</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class='col' align='center'>
+                    </div> 
+                </div>    
+                <div class='column' align='center'>
                     <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" width="80">     
-                </div>      
+                </div>
             </div>
         </form>
     </div>
