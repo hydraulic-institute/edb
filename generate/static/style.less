@@ -146,6 +146,7 @@ caption {
     font-size: 2rem !important;
     color: @hi_dark;
     text-align: left;
+    caption-side: top;
 }
 
 .is-viewport-height {
@@ -220,6 +221,69 @@ caption {
 /**************************************
  * Data Table Styles
 ***************************************/
+/* Sticky header and scrollbar */
+.fixed-header {
+table-layout: fixed;
+border-collapse: collapse;
+width: 100%;
+font-size: .8vw;
+}
+
+.fixed-header thead, tbody tr {
+table-layout: fixed;
+display: table;
+width: 100%;
+}
+.fixed-header tbody {
+    display: block;
+    overflow-y: scroll;
+    table-layout: fixed;
+    max-height: 400px;
+}
+.fixed-header thead {
+background: #49d4ef;
+//width: calc( 100% - 1.2em );
+}
+
+.fixed_header th,
+.fixed_header td {
+  padding: 5px;
+  text-align: left;
+}
+
+/* Another try */
+.tableFixHeadx {
+    overflow-y: scroll; /* make the table scrollable if height is more than 200 px  */
+    height: 200px; /* gives an initial height of 200px to the table */
+  }
+  .tableFixHeadx th {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  }
+  table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+    position: relative;
+  }
+  th {
+    position: sticky;
+    top: 0px;
+  }
+  th,
+  td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+  }
+  th {
+    background: #eee;
+  }
+
+.table-caption {
+    padding: 10px;
+    caption-side: top;
+    color: black;
+}
+
 td.numeric {
     font-family: monospace;
     text-align: right !important;
