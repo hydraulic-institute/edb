@@ -1,5 +1,5 @@
  <div class='table-container'>
-    <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth fixed-header" v-if="{{table.units}}_visible">
+    <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth {{meta.table_fixed_header}}-header" v-if="{{table.units}}_visible">
         <caption>{{meta.title}}</caption>
         <thead>
             {% for heading in table.headings %} 

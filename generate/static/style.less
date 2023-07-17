@@ -188,6 +188,7 @@ caption {
 
 
 
+
 .topic-source {
     text-align: right;
     font-size: smaller;
@@ -229,11 +230,16 @@ width: 100%;
 font-size: .8vw;
 }
 
-.fixed-header thead, tbody tr {
+.fixed-header thead, .fixed-header tbody tr {
 table-layout: fixed;
 display: table;
 width: 100%;
 }
+.not-fixed-header tbody tr {
+table-layout: fixed;
+width: 100%;
+}
+
 .fixed-header tbody {
     display: block;
     overflow-y: scroll;

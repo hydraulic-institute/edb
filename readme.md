@@ -317,6 +317,12 @@ data-metric: datapoints_metric.csv
 
 The block above would create a table in the page titled "Data Points".  The `data-us` and `data-metric` lines in the meta data block point to a CSV file containing the data.  Alternatively, if the table does not need to support units, then you may specify a `data` value instead of the `us` and `metric` variants.
 
+**Options**
+- **hide_units: true** - 
+Including **hide_units** in the markdown will HIDE the units block on the horizontal nav bar otherwise, the Units block will be VISIBLE.
+- **table_fixed_header: false** - 
+Setting to "false" will generate a static table vs. a fixed header/scrolling table, otherwise tables WILL be fixed/scrolling.
+
 **Remember, CSV files are not Excel files - which end in a .xlsx extension**.  While it is convenient to edit CSV files in Excel, you must always remember to save as CSV (which have a .csv extension).  When opening a CSV in VSCode or whatever Markdown editor you are using, you will clearly see that CSV means "comman separated values".  CSV files are just straight text files, with rows on each line, columns separated by commas.
 
 The CSV files do contain additional meta data to provide the platform information about how to format the table (or chart, see below).  This metadata appears in the first row and first column.
