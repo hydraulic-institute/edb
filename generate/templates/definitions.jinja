@@ -1,18 +1,20 @@
 
 <div class='table-container'>
     {% for row in table.rows %} 
-        {% if (row.section in row.type) and row.type %}
-            {% if 'DESCRIPTION' in row.section %}
+        {% if row.type != "" %}
+            {% if 'DEFINITION' in row.section %}
                 </tbody>
                 </table>
+                </div>
                 <br>
             {% endif %}
-            <table class="{{table.units}}-units data-table table is-striped is-hoverable is-fullwidth fixed-header" v-if="{{table.units}}_visible">
-            <caption class="table-caption">{{row.section}}</caption>
-            <thead>
+            <h3>{{row.section}}</h3>
+            <div class="fixed-container">
+            <table class="{{table.units}}-units data-table table is-striped is-hoverable is-fullwidth">
+            <thead class="fixed-thead">
             <tr>
             {% for heading in table.headings %} 
-                <th>{{heading}}</th>
+                <th class="fixed-header" scope="col">{{heading}}</th>
             {% endfor %}
             </tr>
             </thead>
@@ -36,4 +38,5 @@
     {% endfor %}
     </tbody>
     </table>
+    </div>
 </div>

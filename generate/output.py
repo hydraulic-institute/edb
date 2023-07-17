@@ -198,6 +198,8 @@ def replace_table_block(dir, table_text):
 
     us_html = template.render(meta=table, table=us)
     metric_html = template.render(meta=table, table=metric)
+    if 'title' in table:
+        return '<h3>'+table['title']+'</h3>'+us_html+metric_html
     return us_html+metric_html
 
 
@@ -225,6 +227,8 @@ def replace_table_block_pdf(dir, table_text):
 
     us_html = template.render(meta=table, table=us)
     metric_html = template.render(meta=table, table=metric)
+    if 'title' in table:
+        return '<h3>'+table['title']+'</h3>'+us_html #+metric_html
     return us_html  # +metric_html
 
 

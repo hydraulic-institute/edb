@@ -188,7 +188,6 @@ caption {
 
 
 
-
 .topic-source {
     text-align: right;
     font-size: smaller;
@@ -224,38 +223,26 @@ caption {
 ***************************************/
 /* Sticky header and scrollbar */
 .fixed-header {
-table-layout: fixed;
-border-collapse: collapse;
-width: 100%;
-font-size: .8vw;
+    position:sticky;
+    top:0;
 }
-
-.fixed-header thead, .fixed-header tbody tr {
-table-layout: fixed;
-display: table;
-width: 100%;
+.fixed-container {
+    width: 100%;
+    height: 400px;
+    overflow:auto;
+}
+.fixed-thead {
+    position:sticky;
+    top:0;
+    background: #49d4ef !important;
+}
+.not-fixed-thead { 
+    background: #49d4ef !important;
 }
 .not-fixed-header tbody tr {
-table-layout: fixed;
-width: 100%;
+    width: 100%;
 }
 
-.fixed-header tbody {
-    display: block;
-    overflow-y: scroll;
-    table-layout: fixed;
-    max-height: 400px;
-}
-.fixed-header thead {
-background: #49d4ef;
-//width: calc( 100% - 1.2em );
-}
-
-.fixed_header th,
-.fixed_header td {
-  padding: 5px;
-  text-align: left;
-}
 
 /* Another try */
 .tableFixHeadx {
@@ -288,6 +275,7 @@ background: #49d4ef;
     padding: 10px;
     caption-side: top;
     color: black;
+    position: sticky;
 }
 
 td.numeric {
