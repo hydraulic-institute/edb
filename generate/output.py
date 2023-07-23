@@ -28,6 +28,9 @@ chart_count = 0
 global pprinter
 pprinter = pprint.PrettyPrinter(indent=2)
 
+global all_tables
+all_tables=[]
+
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
@@ -37,7 +40,7 @@ SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
-DefinitionRow = namedtuple('DefinitionRow', 'section type data id link')
+DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -74,7 +77,7 @@ def replace_latex_block(latex):
     else:
         return "<p class='formula'>" + latex + "</p>"
 
-def definitions_table_data(table, path, filename, sections):    
+def definitions_table_data(table, path, filename, in_sections):    
     file = os.path.join(SOURCE_DIR, path, filename)
     if not os.path.isfile(file):
         print(
@@ -83,44 +86,65 @@ def definitions_table_data(table, path, filename, sections):
 
     with open(file, newline='', encoding='utf-8') as csvfile:
         csv_data = csv.reader(csvfile)
-        first_row = next(csv_data)
-        columns = first_row[1:]
-        rows = []
-        headings = first_row[1:5]
+        page_sections = []
+        columns = []
+        headings = []
         acronym = []
         acronym_ids = []
-        section_ids = []
-        section = ""
-        row_section_link=""
         row_columns = []
+        comment_idx=1
+        ref_idx=-1
+        source_idx=-1
+        section_idx=-1
+        section=""
+        source_url=""
         for row in csv_data:
-            if len(row[0]) and "Table" not in row[0]:
+            if len(row[0]):
                 section = row[0].split(" (")[0]
-            datarow=row[1:5]
+                columns = [row[i] for i,x in enumerate(row) if i != 0]
+                try:
+                    comment_idx = columns.index("Comment")
+                except:
+                    comment_idx = columns.index("")
+                columns = columns[0:comment_idx]
+                try:
+                    ref_idx = columns.index("Section")
+                    source_idx = [i for i,x in enumerate(columns) if "Source" in x][0]
+                    source_url=columns[source_idx].split("::")[1].strip()
+                    columns[source_idx] = "Source"
+                except:
+                    pass             
+                headings = columns.copy()
+                page_sections.append({'section':section, 'headings':headings, 'rows':[]})
+                continue
+            datarow=row[1:comment_idx+1]
             row_columns = [TableColumn(columns[i], d)
                            for i, d in enumerate(datarow)]
-            row_id = "0"
-            section_link=""
-            # Acronymn Link
-            if "ACRONYM" in section:
-                acronym.append(datarow[1].lower())
-                acronym_ids.append(datarow[0])
-            else:
-                try:
-                    # Check for acronym link
-                    indexes = [i for i, x in enumerate(acronym) if x in datarow[0].lower()]
-                    row_id = acronym_ids[indexes[0]]
-                except:
-                    row_id = "0"
-                # Row Section Link
-                # Check the section reference row
+            if section:
+                row_id = "0"
                 section_link=""
-                if len(datarow[-1]) and "Table" not in row[0]:
-                    section_link = definition_create_section_link(sections, datarow[-1])
+                source_link=""
+                # Acronymn Link
+                if "ACRONYM" in section:
+                    acronym.append(datarow[1].lower())
+                    acronym_ids.append(datarow[0])
+                else:
+                    try:
+                        # Check for acronym link
+                        indexes = [i for i, x in enumerate(acronym) if x in datarow[0].lower()]
+                        row_id = acronym_ids[indexes[0]]
+                    except:
+                        row_id = "0"
+                    # Row Section Link
+                    # Check the section reference row
+                    if len(datarow[ref_idx]):
+                        section_link = definition_create_section_link(in_sections, datarow[ref_idx])
+                    if len(datarow[source_idx]) and len(source_url):
+                        source_link = source_url.replace("{{SOURCE}}",datarow[source_idx].split(',')[0])
 
-            r = DefinitionRow(section, row[0], row_columns, row_id, section_link)
-            rows.append(r)
-        return Table('us', columns, headings, rows)
+                r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
+                page_sections[section_idx]['rows'].append(r)
+        return page_sections
     
 def definition_create_section_link(sections, in_section):
     # Search the sections for the path
@@ -167,7 +191,7 @@ def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
     defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
-    def_html = template.render(meta=definitions_table, table=defs, cols=len(defs.columns))
+    def_html = template.render(meta=definitions_table, table=defs, units='us')
     return def_html
 
 def replace_table_block(dir, table_text):
@@ -190,7 +214,8 @@ def replace_table_block(dir, table_text):
         print(
             f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
         return ""
-
+    all_tables.append(data_us)
+ 
     template = env.get_template('table.jinja')
 
     us = table_data('us', table, dir, data_us)
@@ -866,3 +891,5 @@ def html(graph, specials, production=False):
     with io.open(os.path.join(OUTPUT_DIR, 'robots.txt'), 'w', encoding='utf8') as f:
         f.write(robots)
         # f.write(html.encode('utf-8'))
+    table_str="\n".join(all_tables)
+    print(f"TABLES: {table_str}")
