@@ -79,10 +79,15 @@ aside {
 
     .menu-list a {
         color: @er_super_light;
+        text-decoration: none;
     }
 
     .menu-list a:hover {
         color: @hi_blue;
+    }
+
+    .menu-label:not(:last-child) {
+        margin-bottom: auto;
     }
 }
 
@@ -131,6 +136,10 @@ h2 {
 
 h3 {
     font-size: 2rem !important;
+}
+
+ul {
+    padding-left: 0rem !important;
 }
 
 .small {
