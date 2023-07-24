@@ -1,40 +1,39 @@
+
 <div class='table-container'>
-    <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth" v-if="{{table.units}}_visible">
+    {% for section in table %}
+        <h3>{{section.section}}</h3>
+        <div class="fixed-container">
+        <table class="{{units}}-units data-table table is-striped is-hoverable is-fullwidth">
+        <thead class="fixed-thead">
+        <tr>
+        {% for heading in section.headings %} 
+            <th class="fixed-header" scope="col">{{heading}}</th>
+        {% endfor %}
+        </tr>
+        </thead>
         <tbody>
-            {% for row in table.rows %} 
-                {% if (row.section in row.type) and row.type %}
-                    <tr>
-                    <td colspan="{{cols}}"><b>{{row.section}}</b></td>
-                    </tr>
-                    <tr>
-                    {% for heading in table.headings %} 
-                        <th> {{heading}}</th>
-                    {% endfor %}
-                    </tr>
-                {% endif %}
-                {% if loop.index % 15 == 0 and loop.length - loop.index > 7 %}
-                    <tr>
-                    {% for heading in table.headings %}
-                        <th class="small-heading"> {{heading}}</th>
-                    {% endfor %}
-                    </tr>
-                {% endif %}
-                {% if row.id != "0" %}
-                    <tr id="{{row.id}}">
+        {% for row in section.rows %}
+            {% if row.id != "0" %}
+                <tr id="{{row.id}}">
+            {% else %}
+                <tr>
+            {% endif %}
+            {%for column in row.data %}
+                {% if 'ACRONYM' in section.section and column.type == "Term" %}
+                    <td><a href="#{{column.data}}">{{column.data}}</a></td>
+                {% elif 'Section' in column.type and row.ref_link %}
+                    <td><a href="{{row.ref_link}}">{{column.data}}</a></td>
+                {% elif 'Source' in column.type and row.source_link %}
+                    <td><a href="{{row.source_link}}" target="_blank">{{column.data}}</a></td>
                 {% else %}
-                    <tr>
+                    <td>{{column.data}}</td>
                 {% endif %}
-                {%for column in row.data %}
-                    {% if 'ACRONYM' in row.section and column.type == "Term" %}
-                        <td><a href="#{{column.data}}">{{column.data}}</a></td>
-                    {% elif 'Section' in column.type and row.link %}
-                        <td><a href="{{row.link}}">{{column.data}}</a></td>
-                    {% else %}
-                        <td>{{column.data}}</td>
-                    {% endif %}
-                {% endfor %}
-                </tr>
             {% endfor %}
+            </tr>
+        {% endfor %}
         </tbody>
-    </table>
+        </table>
+        </div>
+        <br>
+    {% endfor %}
 </div>

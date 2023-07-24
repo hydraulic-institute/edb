@@ -278,6 +278,7 @@ SSU:
 =|=
 title: Conversion Factors
 data:SSU-conv.csv
+table_fixed_header: false
 =|=
 
 ### References

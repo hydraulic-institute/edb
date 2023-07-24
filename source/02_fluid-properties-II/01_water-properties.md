@@ -82,6 +82,7 @@ S = <units us = "39.198 Btu/lb-mole*R at 80.3 °F and 0.15 psia" metric = "9.104
 title: Additional Fluid Properties
 data-us: auxiliary-us.csv
 data-metric: auxiliary-metric.csv
+table_fixed_header: false
 =|=
 
 
