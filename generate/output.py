@@ -892,4 +892,4 @@ def html(graph, specials, production=False):
         f.write(robots)
         # f.write(html.encode('utf-8'))
     table_str="\n".join(all_tables)
-    print(f"TABLES: {table_str}")
+    #print(f"TABLES: {table_str}")
