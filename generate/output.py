@@ -666,14 +666,22 @@ def write_content(graph, node, slug_override=None, path="."):
 def make_root(graph):
     statics()
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
 
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-        print("Writing", node['name'], 'from ', node['path'])
-        write_content(graph, node, so)
+        print("Writing", content_node['name'], 'from ', content_node['path'])
+        write_content(graph, content_node, so)
 
 
 def make_section(graph, section, parent=None):
@@ -799,13 +807,22 @@ def make_markdown_section(graph, section, md_file, parent=None):
 def pdf(graph):
     md_file = os.path.join(OUTPUT_DIR, 'edb.html')
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
     front_matter = None
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-            front_matter = node
+        if so == 'index':
+            front_matter = content_node
             front_matter['metadata']['title'] = "HI Engineering Data Library"
             front_matter['children'] = []
 

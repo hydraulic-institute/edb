@@ -1,6 +1,6 @@
 -----
-title:  Table of Definitions
-date: June 13th, 2023
+title:  Definitions, Pump Types & References
+date: July 24th, 2023
 description: Table of Definitions 
 hide_units: true
 -----
