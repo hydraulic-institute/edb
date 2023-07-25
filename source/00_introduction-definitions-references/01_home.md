@@ -1,5 +1,6 @@
 -----
 description: The Hydraulic Institute (HI) is the global authority on pumps and pumping systems.HI is a pump association of positive displacement and rotodynamic, centrifugal pump manufacturers and suppliers whose mission is to be a value-adding resource to member companies, engineering consulting firms, and pump users worldwide.
+title: Welcome & Introduction
 -----
 <!-- Display on tablet and up> -->
 <section class="is-hidden-mobile" style='text-align:center;'>
