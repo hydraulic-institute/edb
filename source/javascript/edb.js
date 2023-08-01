@@ -854,34 +854,77 @@ Vue.component('viscosity-converter', {
     }
 });
 
+
 Vue.component('mechanical-friction-loss-calculator', {
     delimiters: ['${', '}'],
     data: function () {
         return {
+            units: "-",
             shaft_diameter: null,
+            shaft_min: 0.5,
+            shaft_max: 7,
             rpm_value: null,
-            mech_friction_loss: null,
+            rpm_min: 450,
+            rpm_max: 3600,
+            msg: {},
+            length: 100,
+            mech_friction_loss: '',
             bearing_spacing: 10,
             A:.00030322,
             B: .003395,
-            EXP: 1.8927
+            EXP: 1.8927,
+            metric_conv: .005368,
+            precision: 1,
+            saved_props: ['shaft_diameter','rpm_value','length','bearing_spacing','mech_friction_loss'],
         };
     },
     template: '#mechanical-friction-loss-calculator-template',
+    mounted: function () {
+        const v = this;
+        this.$root.$on('unit-change', (value) => {
+            console.log("unit change");
+            this.units = value;
+            this.do_page_load();
+        });
+        if (typeof (Storage) !== "undefined") {
+            this.load_inputs();
+        } else {
+            console.log("Local storage not available on this browser - unit sets will need to switch manually");
+        }
+        this.do_page_load();
+    },
     methods: {
         calculate() {
-            this.shaft_diameter = parseFloat(this.shaft_diameter);
-            this.rpm_value = parseFloat(this.rpm_value);
-            if (this.shaft_diameter && this.rpm_value >= 450 && this.rpm_value <= 3600) {
-                this.mech_friction_loss=((this.A * this.rpm_value) + this.B) * Math.pow(this.shaft_diameter, this.EXP);
-                this.mech_friction_loss=this.mech_friction_loss.toFixed(3);
-                if (this.bearing_spacing == "5") {
-                    this.mech_friction_loss*=2;
-                }
+            let conversion=1;
+            const base_us_length=100;
+            const base_metric_length=100;
+            const temp_shaft_diameter = parseFloat(this.shaft_diameter);
+            const temp_rpm_value = parseFloat(this.rpm_value);
+            const temp_length = parseFloat(this.length);
+            const temp_bearing_spacing = parseFloat(this.bearing_spacing);
+            //Validate
+            let invalid=false;
+            if (!this.validate(temp_shaft_diameter,"shaft",this.shaft_min,this.shaft_max)) 
+                invalid=true;
+            if (!this.validate(temp_rpm_value,"rpm",this.rpm_min,this.rpm_max)) 
+                invalid=true;
+            if (!temp_length)
+                invalid=true;
+            if (invalid) { 
+                this.mech_friction_loss=null;
+                return;  
             }
-            else {
-                this.mech_friction_loss = null;
+            var base_length=base_us_length/temp_length;
+            if (this.units == 'metric') {
+                conversion=this.metric_conv;
+                base_length = base_metric_length/temp_length;
             }
+            this.mech_friction_loss=((this.A * temp_rpm_value) + this.B) * Math.pow(temp_shaft_diameter, this.EXP);
+            if (temp_bearing_spacing == 5) {
+                this.mech_friction_loss*=2;
+            }
+            this.mech_friction_loss = (this.mech_friction_loss * conversion * base_length).toFixed(this.precision);
+            this.save_inputs();
         },
         
         no_negative: function (e) {
@@ -896,23 +939,97 @@ Vue.component('mechanical-friction-loss-calculator', {
                 e.preventDefault();
                 return false;
             }
+        },
+        load_inputs: function () {
+            this.local_loading = true;
+            for (const prop of this.saved_props) {
+                if (localStorage.getItem(prop)) {
+                    Vue.set(this, prop, localStorage.getItem(prop));
+                }
+            }
+            this.units = localStorage.getItem("unit-set");
+        },
+        do_page_load: function() { 
+            this.mech_friction_loss=null;
+            if (this.units != 'metric') {this.shaft_min=0.5; this.shaft_max=7;}
+            else {this.shaft_min=12; this.shaft_max=175;}
+            this.calculate();
+        },
+        save_inputs: function () {
+            for (const prop of this.saved_props) {
+                localStorage.setItem(prop, this[prop]);
+            }
+        },
+        value_friction_loss: function(value) {
+            if (this.units != 'metric') return value;
+            else return value * this.metric_conv;
+        },
+        value_bearing_spacing: function(value) {
+            if (this.units != 'metric') return value;
+            else {
+                if (value == 5) { return 1.5; }
+                return 3;
+            } 
+        },
+        value_length_long: function (value) {
+            if (this.units != 'metric') return value;
+            else return value * 0.3048; // convert to meters
+        },
+        value_length_short: function (value, digits) {
+            const d = digits === undefined ? 2 : digits
+            if (this.units != 'metric') return value;
+            else return (value * 25.4).toFixed(d); // convert in to mm
+        },
+        value_length_ft_mm: function (value, digits) {
+            const d = digits === undefined ? 2 : digits
+            if (this.units != 'metric') return value;
+            else return (value * 25.4 * 12).toFixed(d); // convert ft to mm
+        },
+        validate: function (value,item,min,max) {
+            if ((value < min) || (value > max)) {
+                this.msg[item]="Entry must be between "+min+" and "+max;
+                return false;
+            }
+            else { 
+                this.msg[item]="";
+                return true;
+            }
+        },
+    },
+    computed: {
+        units_measure_in_mm: function () {
+            if (this.units != 'metric') return 'in';
+            else return 'mm';
+        },
+        units_friction_loss: function() {
+            if (this.units != 'metric') return 'HP/100ft'
+            else return 'kW/30.5m';
+        },
+        units_result_title: function() {
+            if (this.units != 'metric') return this.length+' ft';
+            else return this.length+' m';
+        },
+        units_measure_ft_m: function() {
+            if (this.units != 'metric') return 'ft';
+            else return 'm';
+        },
+        units_friction: function() {
+            if (this.units != 'metric') return 'hp';
+            else return 'kW';
         }
     },
     watch: {
-        shaft_diameter: function () {
-            if (this.shaft_diameter && this.rpm_value) {
-                this.calculate();
-            }
+        shaft_diameter: function() { 
+            this.calculate();
         },
-        rpm_value: function () {
-            if (this.rpm_value && this.shaft_diameter) {
-                this.calculate();
-            }
+        rpm_value: function () { 
+            this.calculate();
         },
         bearing_spacing: function () {
-            if (this.rpm_value && this.shaft_diameter) {
-                this.calculate();
-            }
+            this.calculate();
+        },
+        length: function() {
+            this.calculate();
         }
     }
 })
@@ -992,6 +1109,10 @@ var appView = new Vue({
                 this.unit_set = 'us';
             } else if (stored === 'metric') {
                 this.unit_set = 'metric';
+            }
+            else {
+                this.unit_set = 'us';
+                localStorage.setItem("unit-set",'us');
             }
         } else {
             console.log("Local storage not available on this browser - unit sets will need to switch manually");
