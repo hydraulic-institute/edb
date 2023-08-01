@@ -337,32 +337,38 @@
                             <div class='field'>
                                 <label class='label' >Pipe Length (${units_measure_ft_m})</label>
                                 <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
+                                <span>&nbsp;</span>
+                            </div>
+                            <div class='field'>
+                                <label class='label'>
+                                    <span>Bearing Spacing</span>
+                                </label>
+                                <div class='control'>
+                                    <label class='radio'>
+                                        <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
+                                        ${value_bearing_spacing(10)} ${units_measure_ft_m}
+                                    </label>
+                                    <label class='radio'>
+                                        <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
+                                        ${value_bearing_spacing(5)} ${units_measure_ft_m}
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class='mt-2'>
-                        <div class='field'>
-                            <label class='label'>
-                                <span>Bearing Spacing</span>
-                            </label>
-                            <div class='control'>
-                                <label class='radio'>
-                                    <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
-                                    ${value_bearing_spacing(10)} ${units_measure_ft_m}
-                                </label>
-                                <label class='radio'>
-                                    <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
-                                    ${value_bearing_spacing(5)} ${units_measure_ft_m}
-                                </label>
-                            </div>
-                        </div>
                     </div>
                     <div class='mt-4'>
                         <div class="field">
                             <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per <span class='has-text-white-bis'>${units_result_title}</span> of Line Shaft: </span>
-                                <br>
-                                <span v-bind:class = "mech_friction_loss?'has-text-white-bis':'has-text-danger'">${mech_friction_loss} ${units_friction}</span>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction_loss}): </span>
+                                <span v-bind:class = "mech_friction_loss?'has-text-white-bis':'has-text-danger'">${mech_friction_loss} ${units_friction_loss}</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction}): </span>
+                                <span v-bind:class = "mech_friction?'has-text-white-bis':'has-text-danger'">${mech_friction} ${units_friction}</span>
                             </div>
                         </div>
                     </div> 
