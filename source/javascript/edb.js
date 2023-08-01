@@ -991,7 +991,7 @@ Vue.component('mechanical-friction-loss-calculator', {
             else return (value * 25.4 * 12).toFixed(d); // convert ft to mm
         },
         validate: function (value,item,min,max) {
-            if ((value < min) || (value > max)) {
+            if (!value || (value < min) || (value > max)) {
                 this.msg[item]="Entry must be between "+min+" and "+max;
                 return false;
             }
