@@ -869,13 +869,14 @@ Vue.component('mechanical-friction-loss-calculator', {
             msg: {},
             length: 100,
             mech_friction_loss: '',
+            mech_friction: '',
             bearing_spacing: 10,
             A:.00030322,
             B: .003395,
             EXP: 1.8927,
-            metric_conv: .005368,
+            metric_conv: .001636,
             precision: 1,
-            saved_props: ['shaft_diameter','rpm_value','length','bearing_spacing','mech_friction_loss'],
+            saved_props: ['shaft_diameter','rpm_value','length','bearing_spacing','mech_friction_loss','mech_friction'],
         };
     },
     template: '#mechanical-friction-loss-calculator-template',
@@ -897,33 +898,36 @@ Vue.component('mechanical-friction-loss-calculator', {
         calculate() {
             let conversion=1;
             const base_us_length=100;
-            const base_metric_length=100;
-            const temp_shaft_diameter = parseFloat(this.shaft_diameter);
-            const temp_rpm_value = parseFloat(this.rpm_value);
-            const temp_length = parseFloat(this.length);
-            const temp_bearing_spacing = parseFloat(this.bearing_spacing);
+            const base_metric_length=30.5;
+            const float_shaft_diameter = parseFloat(this.shaft_diameter);
+            const float_rpm_value = parseFloat(this.rpm_value);
+            const float_length = parseFloat(this.length);
+            const float_bearing_spacing = parseFloat(this.bearing_spacing);
             //Validate
             let invalid=false;
-            if (!this.validate(temp_shaft_diameter,"shaft",this.shaft_min,this.shaft_max)) 
+            if (!this.validate(float_shaft_diameter,"shaft",this.shaft_min,this.shaft_max)) 
                 invalid=true;
-            if (!this.validate(temp_rpm_value,"rpm",this.rpm_min,this.rpm_max)) 
+            if (!this.validate(float_rpm_value,"rpm",this.rpm_min,this.rpm_max)) 
                 invalid=true;
-            if (!temp_length)
+            if (!float_length)
                 invalid=true;
             if (invalid) { 
                 this.mech_friction_loss=null;
+                this.mech_friction=null;
                 return;  
             }
-            var base_length=base_us_length/temp_length;
+            var length_calc=float_length/base_us_length;
             if (this.units == 'metric') {
                 conversion=this.metric_conv;
-                base_length = base_metric_length/temp_length;
+                length_calc = float_length/base_metric_length;
             }
-            this.mech_friction_loss=((this.A * temp_rpm_value) + this.B) * Math.pow(temp_shaft_diameter, this.EXP);
-            if (temp_bearing_spacing == 5) {
+            this.mech_friction_loss=((this.A * float_rpm_value) + this.B) * Math.pow(float_shaft_diameter, this.EXP);
+            if (float_bearing_spacing == 5) {
                 this.mech_friction_loss*=2;
             }
-            this.mech_friction_loss = (this.mech_friction_loss * conversion * base_length).toFixed(this.precision);
+            this.mech_friction_loss = (this.mech_friction_loss * conversion);
+            this.mech_friction = (this.mech_friction_loss * length_calc).toFixed(this.precision);
+            this.mech_friction_loss = this.mech_friction_loss.toFixed(this.precision);
             this.save_inputs();
         },
         
@@ -951,6 +955,7 @@ Vue.component('mechanical-friction-loss-calculator', {
         },
         do_page_load: function() { 
             this.mech_friction_loss=null;
+            this.mech_friction=null;
             if (this.units != 'metric') {this.shaft_min=0.5; this.shaft_max=7;}
             else {this.shaft_min=12; this.shaft_max=175;}
             this.calculate();
@@ -967,7 +972,7 @@ Vue.component('mechanical-friction-loss-calculator', {
         value_bearing_spacing: function(value) {
             if (this.units != 'metric') return value;
             else {
-                if (value == 5) { return 1.5; }
+                if (value == 5) { return 1.5;}
                 return 3;
             } 
         },
@@ -1002,12 +1007,8 @@ Vue.component('mechanical-friction-loss-calculator', {
             else return 'mm';
         },
         units_friction_loss: function() {
-            if (this.units != 'metric') return 'HP/100ft'
+            if (this.units != 'metric') return 'hp/100ft';
             else return 'kW/30.5m';
-        },
-        units_result_title: function() {
-            if (this.units != 'metric') return this.length+' ft';
-            else return this.length+' m';
         },
         units_measure_ft_m: function() {
             if (this.units != 'metric') return 'ft';
