@@ -181,7 +181,7 @@
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size (in)</label>
+                    <label class='label'>Select Nominal Size (${units_length_long})</label>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
                         <option :value='m' v-for='m in sizes'>${m}</option>
@@ -313,21 +313,30 @@
                         <div class='column'>
                             <div class='field'>
                                 <label class='label'>
-                                    <span>Shaft Diameter (in)</span>
+                                    <span>Shaft Diameter (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
                                 </label>
                                 <div>
+                                    <!--input type="text" inputmode="numeric" class='input' @keydown='no_negative' v-model='shaft_diameter'/-->
                                     <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
+                                    <span v-if='msg.shaft' style="color:red; font-size:smaller"><i>${msg.shaft}</i></span>
+                                    <span v-else>&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class='field'>
+                                <label class='label'>
+                                    <span>Speed (${rpm_min}-${rpm_max} RPM)</span>
+                                </label>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
+                                    <span v-if='msg.rpm' style="color:red; font-size:smaller"><i>${msg.rpm}</i></span>
+                                    <span v-else>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
                         <div class='column'>
                             <div class='field'>
-                                <label class='label'>
-                                    <span>RPM (450-3600 RPM)</span>
-                                </label>
-                                <div>
-                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
-                                </div>
+                                <label class='label' >Pipe Length (${units_measure_ft_m})</label>
+                                <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
                             </div>
                         </div>
                     </div>
@@ -339,11 +348,11 @@
                             <div class='control'>
                                 <label class='radio'>
                                     <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
-                                    10 ft
+                                    ${value_bearing_spacing(10)} ${units_measure_ft_m}
                                 </label>
                                 <label class='radio'>
                                     <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
-                                    5 ft
+                                    ${value_bearing_spacing(5)} ${units_measure_ft_m}
                                 </label>
                             </div>
                         </div>
@@ -351,9 +360,9 @@
                     <div class='mt-4'>
                         <div class="field">
                             <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per 100 ft of Line Shaft: </span>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per <span class='has-text-white-bis'>${units_result_title}</span> of Line Shaft: </span>
                                 <br>
-                                <span v-if='mech_friction_loss' class='has-text-white-bis'>${mech_friction_loss} hp</span>
+                                <span v-bind:class = "mech_friction_loss?'has-text-white-bis':'has-text-danger'">${mech_friction_loss} ${units_friction}</span>
                             </div>
                         </div>
                     </div> 
