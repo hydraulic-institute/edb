@@ -47,6 +47,18 @@ overallResistance: 5
 pumpSpeed: 95
 =d=
 
+### Vertical Tank Demonstrator
+
+=d=
+title: Vertical Tank Demonstrator
+kind: vertical-tank
+lowerTankLevel: 5
+upperTankLevel: 10
+upperTankPressure: 10
+overallResistance: 5
+pumpSpeed: 95
+=d=
+
 ### Flow Rate Change Using Manual Throttling Valve
 
 As a manual (or passive) valve is changed (opening or closing) it will change the system curve by affecting the K value. Closing a valve will add resistance to
