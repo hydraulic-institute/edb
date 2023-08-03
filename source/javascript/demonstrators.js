@@ -1147,4 +1147,9 @@ Vue.component('demo-pump-curve', {
       this.refreshChart();
     }
   }
-})
+});
+
+Vue.component('vertical-tank-demo', {
+  delimiters: ['${', '}'],
+  template: '#vertical-tank-demo-template'
+});
