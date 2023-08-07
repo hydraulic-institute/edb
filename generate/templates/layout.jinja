@@ -316,7 +316,6 @@
                                     <span>Shaft Diameter (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
                                 </label>
                                 <div>
-                                    <!--input type="text" inputmode="numeric" class='input' @keydown='no_negative' v-model='shaft_diameter'/-->
                                     <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
                                     <span v-if='msg.shaft' style="color:red; font-size:smaller"><i>${msg.shaft}</i></span>
                                     <span v-else>&nbsp;</span>
@@ -380,51 +379,89 @@
         </form>
     </div>
 </script>
-<script type="text/x-template" id="vertical-tank-demo-template"> 
+<script type="text/x-template" id="tank-demo-template"> 
     <div class="wrap">  
+    <div class="row">
+    <div class="col-8">
         <div class="row mt-2">
-            <div class="col-8">
+            <div class="col">
             <div class="row">
                 <div class="col-4">Tank Orientation</div>
-                <div class="col-4">Vertical</div>
+                <div class="col-4">${tank_type}</div>
             </div>
             <div class="row">
-                <div class="col-4"><i>Bottom type</i></div>
-                <div class="col-4">Dropdown input</div>
+                <div class="col-4"><i><b>Bottom type</b></i></div>
+                <div class="col-4">
+                    <select  class="input" v-model='bottom_type'>
+                        <option value=''></option>
+                        <option :value='b' v-for='b in end_types'>${b}</option>
+                    </select>
+                </div>
             </div>
             <div class="row">
-                <div class="col-4"><i>Top type</i></div>
-                <div class="col-4">Dropdown input</div>
+                <div class="col-4"><i><b>Top type</b></i></div>
+                <div class="col-4">
+                    <select  class="input" v-model='top_type'>
+                        <option value=''></option>
+                        <option :value='t' v-for='t in end_types'>${t}</option>
+                    </select>
+                </div>
             </div>
             <div class="row">
-                <div class="col-4">Length Units</div>
-                <div class="col-4">Dropdown input</div>
+                <div class="col-4"><b>Length Units</b></div>
+                <div class="col-4">
+                    <select  class="input" v-model='length_unit'>
+                        <option value=''></option>
+                        <option :value='l' v-for='l in length_types'>${l}</option>
+                    </select>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-4"><i>Tank Diameter: D</i></div>
-                <div class="col-4">Input in Length Units</div>
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <i><b>Tank Diameter: D</b></i>  
+                </div>
+                <div class="col-4">
+                <input class='input' type='number' @keydown='no_negative' v-model='d_diameter'>
+                </div>
+                <div class="col-4" style="text-align:left">
+                ${length_unit}
+                </div>
             </div>
-            <div class="row">
-                <div class="col-4"><i>Length of Cylinder: A</i></div>
-                <div class="col-4">Input in Length Units</div>
+            <div class="row align-items-center">
+                <div class="col-4"><i><b>Length of Cylinder: A</b></i></div>
+                <div class="col-4">
+                <input class='input' type='number' @keydown='no_negative' v-model='a_length'>
+                </div>
+                <div class="col-4" style="text-align:left">
+                ${length_unit}
+                </div>
             </div>
-            <div class="row">
-                <div class="col-4">Fill Depth from bottom: H</div>
-                <div class="col-4">Input in Length Units</div>
+            <div class="row align-items-center">
+                <div class="col-4"><b>Fill Depth from bottom: H</b></div>
+                <div class="col-4">
+                <input class='input' type='number' @keydown='no_negative' v-model='h_filldepth'>
+                </div>
+                <div class="col-4" style="text-align:left">
+                ${length_unit}
+                </div>
             </div>
             <div class="row">
                 <div class="col-4"><i>Percent full</i></div>
-                <div class="col-4">Some sort of calculation</div>
+                <div class="col-4">${percent_full}%</div>
             </div>
             <div class="row">
                 <div class="col-4">Check Depth</div>
-                <div class="col-4">Some result (ok or not)</div>
+                <div class="col-4">
+                    <span v-if='check_depth == 1'><i>OK</i></span>
+                    <span v-else style="color:red"><i>Too Full</i></span></div>
+                </div>
             </div>
-            </div>
-            <div class="col-4">INSERT IMAGE HERE</div>
         </div>
         <div class="row">
         </div>
+    </div>
+    <div class="col-4"><img src="/images/vt-elliptical-flat.png"/></div>
+    </div>
     </div>
 </script>
 
