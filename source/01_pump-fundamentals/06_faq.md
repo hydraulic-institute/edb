@@ -1,5 +1,5 @@
 -----
-title: E) Other Considerations
+title: F) Frequently Asked Questions
 date:  January 15th, 2020
 description: Frequently asked questions regarding pump and system curves; pump systems.
 hide_units: true
@@ -31,7 +31,7 @@ curve will intersect the pump curve.
 It is important to note that as the flow increases, the pump head produced will decrease as the system flow losses increases. Oversized or undersized pumps will have curves that do not
 intersect at the required flow rate or will not cross at all. This will show that a different pump should be selected.
 
-### Frequently Asked Questions
+## Frequently Asked Questions
 
 A list of frequently asked questions regarding pumping systems can be accessed <a href="http://pumps.org/Pump_Fundamentals/Pump_FAQs.aspx" target="_blank">here</a> at Hydraulic Institute's website.
 
