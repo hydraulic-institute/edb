@@ -1149,7 +1149,103 @@ Vue.component('demo-pump-curve', {
   }
 });
 
-Vue.component('vertical-tank-demo', {
+Vue.component('tank-demo', {
   delimiters: ['${', '}'],
-  template: '#vertical-tank-demo-template'
+  props: {
+    tank_type: { 
+      type: String,
+      default: ""
+    }
+  },
+  data: function () {
+    return {
+        tank_types: ['Vertical','Horizontal','Spherical'],
+        tank_data: {'tank_type': ['vt','ht','st']},
+        tank_type_index: 0,
+        d_diameter: 10,
+        a_length: 10,
+        h_filldepth: 10,
+        vol: 0,
+        percent_full: 0,
+        check_depth: 1,
+        end_types: ['2:1 Elliptical','Hemispheric','Flat'],
+        end_image_types: ['elliptical','hemispheric','flat'],
+        top_type: null,
+        bottom_type: null,
+        length_unit: 'Feet',
+        length_types: ['Inch','Feet','Meters','Millimeters'],
+        image_str: '',
+        saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
+    }
+  },
+  template: '#tank-demo-template',
+  mounted: function() {
+    this.top_type=this.end_types[0];
+    this.bottom_type=this.end_types[1];
+    //this.tank_data['top']=this.end_image_types;
+    //this.tank_data['bottom']=this.end_image_types;
+    for (var i=0;i<this.tank_types.length;i++) {
+      if (this.tank_types[i].includes(this.tank_type)) {
+        this.tank_type_index=i;
+        break;
+      }
+    }
+    this.do_tank_image();
+  },
+  methods: {
+    no_negative: function (e) {
+      if (!((e.keyCode > 95 && e.keyCode < 106) ||
+          (e.keyCode > 47 && e.keyCode < 58) ||
+          e.keyCode == 190 || // period
+          e.keyCode == 110 || // decimal point
+          e.keyCode == 27 || // escape
+          e.keyCode == 46 || // delete
+          e.keyCode == 8 || // backspace
+          e.keyCode == 9) ) { //tab
+          e.preventDefault();
+          return false;
+      }
+    },
+    do_tank_image: function() {
+      this.tank_data['tank_parts']={'vt':[this.bottom_type,this.top_type],'ht':[this.top_type],'st':[]};
+      var out_image_str=this.tank_data['tank_type'][this.tank_type_index];
+      var tank_array=this.tank_data['tank_parts'][out_image_str];
+      for(var j=0;j<tank_array.length;j++){
+        var selection=tank_array[j].toLowerCase();
+        selection=selection.split(' ');
+        if (selection.length > 1) { selection=selection[1]; }
+        else { selection=selection[0]; }
+        for (var i=0;i<this.end_image_types.length;i++) {
+          if (this.end_image_types[i].includes(selection)) {
+            out_image_str+='-'+selection;
+            break;
+          }
+        }
+      };
+      this.image_str='/images/'+out_image_str+'.png';
+    },
+    vol_vertical_cylinder: function() {
+      this.vol=Math.PI*this.h_filldepth*Math.pow(this.d_diameter,2)/4
+    },
+  },
+  computed: {
+  }, 
+
+  watch:{
+    bottom_type: function() {
+      this.do_tank_image();
+    },
+    top_type: function() {
+      this.do_tank_image();
+    },
+    d_diameter: function() {
+      console.log('Diameter');
+    },
+    a_length: function() {
+      console.log('Length');
+    },
+    h_filldepth: function() {
+      console.log('Fill Depth');
+    }
+  }
 });
