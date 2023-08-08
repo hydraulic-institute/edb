@@ -1033,7 +1033,7 @@ Vue.component('mechanical-friction-loss-calculator', {
             this.calculate();
         }
     }
-})
+});
 
 var appView = new Vue({
     el: '#vue',

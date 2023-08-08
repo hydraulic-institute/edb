@@ -5,7 +5,6 @@ description: Conversion tables for different volume tanks.
 -----
 **Data Library additions in the near future include:**
 
-- Volume of cylindrical shaped vertical tanks with flat and hemispherical shaped heads
 - Volume of cylindrical horizontal tanks with flat and hemispherical shaped heads
 - Barometric Pressure-Effect of Altitude
 - Motor frame sizes and dimensions (NEMA, IEC, etc.)
