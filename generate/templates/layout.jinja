@@ -389,20 +389,16 @@
                         <div class="col-4">Tank Orientation</div>
                         <div class="col-4">${tank_type}</div>
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-4"><i><b>Bottom type</b></i></div>
-                        <div class="col-4">
-                            <select  class="input" v-model='bottom_type'>
-                                <option :value='b' v-for='b in end_types'>${b}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4"><i><b>Top type</b></i></div>
-                        <div class="col-4">
-                            <select  class="input" v-model='top_type'>
-                                <option :value='t' v-for='t in end_types'>${t}</option>
-                            </select>
+                    <div class="mt-4" v-for='c in volume_strings'>
+                        <div v-if='c.type' class="row">
+                            <div class="col-4">
+                            ${c.type}
+                            </div>
+                            <div class="col-4">
+                                <select  class="input" v-model="$data[c.varname]">
+                                    <option :value='b' v-for='b in end_types'>${b}</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -459,9 +455,6 @@
             </div>
             <div class="col-4"><img :src='image_str'></div>
         </div>
-
-
-
         <div class="row align-items-center">
             <div class="col-6 align-items-left">
                 <b>Volume without Unit Conversions</b>
@@ -475,36 +468,20 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-2 align-items-left">
-                <span :value='v' v-for='v in volume_strings'>${v}</span>
+
+
+        <div v-for='c in volume_strings'>
+            <div class="row">
+                <div class="col-4">
+                ${c.desc}
+                </div>
+                <div class="col-3" style="text-align: right">
+                    ${c.value} Cubic ${length_unit}
+                </div>
+                <div class="col" style="text-align: right">
+                    TBD ${conversion_unit}
+                </div>
             </div>
-            <div class="col-2 align-items-right">
-                <span></span>
-                <span :value='v' v-for='v in volume_array'>${v}</span>
-            </div>
-            <div class="col-2 align-items-left">
-                <span> Cubic ${conversion_unit}</span>
-                <span> Cubic ${conversion_unit}</span>
-                <span> Cubic ${conversion_unit}</span>
-                <span> Cubic ${conversion_unit}</span>
-            </div>
-            <div class="col-2">
-            </div>
-            <!--div class="col-2>
-                <span></span>
-                <span v-model='v_convert(v_bottomhead)'></span>
-                <span v-model='v_convert(v_cylindrical)'></span>
-                <span v-model='v_convert(v_tophead)'></span>
-                <span v-model='v_convert(v_total_liquid)'></span>
-                <span v-model='v_convert(v_total_tank)'></span>
-            </div>
-            <div class="col-2 align-items-left">
-                <span> Cubic ${length_unit}</span>
-                <span> Cubic ${length_unit}</span>
-                <span> Cubic ${length_unit}</span>
-                <span> Cubic ${length_unit}</span>
-            </div-->
         </div>
     </div>
 </script>

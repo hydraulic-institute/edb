@@ -1159,12 +1159,12 @@ Vue.component('tank-demo', {
   },
   data: function () {
     return {
-        volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'value': 0},
-                      'endhead': {'desc': 'Volume in Ends', 'value': 0},
-                      'cylindrical': {'desc': 'Volume in Cylindrical Section', 'value': 0},
-                      'tophead': {'desc': 'Volume in Top Head', 'value': 0},
-                      'total_liquid': {'desc': 'Total Liquid Volume', 'value': 0},
-                      'total_tank': {'desc': 'Total Tank Volume', 'value': 0}
+        volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'type': 'Bottom Type', 'value': '95.43', 'varname': 'bottom_type'},
+                      'endhead': {'desc': 'Volume in Ends', 'type': 'End Type', 'value': '15.90',  'varname': 'end_type'},
+                      'cylindrical': {'desc': 'Volume in Cylindrical Section', 'type': '', 'value': '0.00'},
+                      'tophead': {'desc': 'Volume in Top Head', 'type': 'Top Type', 'value': '111.33',  'varname': 'top_type'},
+                      'total_liquid': {'desc': 'Total Liquid Volume', 'type': '', 'value': '604.36'},
+                      'total_tank': {'desc': 'Total Tank Volume', 'type': '', 'value': '333.33'}
                     },
         volume_strings: [],
         volume_array: [],
@@ -1187,6 +1187,7 @@ Vue.component('tank-demo', {
         end_image_types: ['elliptical','hemispheric','flat'],
         top_type: null,
         bottom_type: null,
+        end_type: null,
         length_unit: 'Feet',
         length_types: ['Inches','Feet','Meters','Millimeters'],
         conversion_unit: 'Cubic Feet',
@@ -1197,18 +1198,20 @@ Vue.component('tank-demo', {
   },
   template: '#tank-demo-template',
   mounted: function() {
-    this.top_type=this.end_types[0];
-    this.bottom_type=this.end_types[1];
+    const v = this;
+    v.top_type=v.end_types[0];
+    v.bottom_type=v.end_types[1];
+    v.end_type=v.end_types[1];
     //this.tank_data['top']=this.end_image_types;
     //this.tank_data['bottom']=this.end_image_types;
-    for (var i=0;i<this.tank_types.length;i++) {
-      if (this.tank_types[i].includes(this.tank_type)) {
-        this.tank_type_index=i;
-        this.tank_key=this.tank_data['tank_type'][i];
+    for (var i=0;i<v.tank_types.length;i++) {
+      if (v.tank_types[i].includes(v.tank_type)) {
+        v.tank_type_index=i;
+        v.tank_key=v.tank_data['tank_type'][i];
         break;
       }
     }
-    this.do_page_calculate();
+    v.do_page_calculate();
   },
   methods: {
     no_negative: function (e) {
@@ -1251,11 +1254,8 @@ Vue.component('tank-demo', {
       this.volume_strings=[];
       //Set up array of strings to show
       for(var i=0;i<str_array.length;i++) {
-        this.volume_strings.push(this.volume_data[str_array[i]]['desc']);
+        this.volume_strings.push(this.volume_data[str_array[i]]);
       }
-
-      //Now calculate the data
-      this.volume_array=[0,1,2,3,4]
     },
     //Vol of cylindrical section
     vol_vertical_cylinder: function() {
@@ -1278,6 +1278,9 @@ Vue.component('tank-demo', {
       this.do_page_calculate();
     },
     top_type: function() {
+      this.do_page_calculate();
+    },
+    end_type: function() {
       this.do_page_calculate();
     },
     d_diameter: function() {
