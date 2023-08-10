@@ -420,7 +420,7 @@
                         ${length_unit}
                         </div>
                     </div>
-                    <div class="row align-items-center">
+                    <div class="row align-items-center" v-if='tank_key != "st"'>
                         <div class="col-4"><i><b>Length of Cylinder: A</b></i></div>
                         <div class="col-4">
                         <input class='input' type='number' @keydown='no_negative' v-model='a_length'>
@@ -479,7 +479,7 @@
                     ${c.value} Cubic ${length_unit}
                 </div>
                 <div class="col" style="text-align: right">
-                    TBD ${conversion_unit}
+                    ${c.converted_value} ${conversion_unit}
                 </div>
             </div>
         </div>

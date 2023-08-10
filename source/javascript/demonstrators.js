@@ -1159,12 +1159,12 @@ Vue.component('tank-demo', {
   },
   data: function () {
     return {
-        volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'type': 'Bottom Type', 'value': '95.43', 'varname': 'bottom_type'},
-                      'endhead': {'desc': 'Volume in Ends', 'type': 'End Type', 'value': '15.90',  'varname': 'end_type'},
-                      'cylindrical': {'desc': 'Volume in Cylindrical Section', 'type': '', 'value': '0.00'},
-                      'tophead': {'desc': 'Volume in Top Head', 'type': 'Top Type', 'value': '111.33',  'varname': 'top_type'},
-                      'total_liquid': {'desc': 'Total Liquid Volume', 'type': '', 'value': '604.36'},
-                      'total_tank': {'desc': 'Total Tank Volume', 'type': '', 'value': '333.33'}
+        volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'type': 'Bottom Type', 'value': null, 'converted_value': null, 'varname': 'bottom_type'},
+                      'endhead': {'desc': 'Volume in Ends', 'type': 'End Type', 'value': null,  'converted_value': null, 'varname': 'end_type'},
+                      'cylindrical': {'desc': 'Volume in Cylindrical Section', 'type': '', 'value': null, 'converted_value': null},
+                      'tophead': {'desc': 'Volume in Top Head', 'type': 'Top Type', 'value': null,  'converted_value': null, 'varname': 'top_type'},
+                      'total_liquid': {'desc': 'Total Liquid Volume', 'type': '', 'value': null, 'converted_value': null },
+                      'total_tank': {'desc': 'Total Tank Volume', 'type': '', 'value': null, 'converted_value': null}
                     },
         volume_strings: [],
         volume_array: [],
@@ -1178,10 +1178,9 @@ Vue.component('tank-demo', {
         },
         tank_type_index: 0,
         tank_key: 'vt',
-        d_diameter: 10,
-        a_length: 10,
-        h_filldepth: 10,
-        percent_full: 0,
+        d_diameter: null,
+        a_length: null,
+        h_filldepth: null,
         check_depth: 1,
         end_types: ['2:1 Elliptical','Hemispheric','Flat'],
         end_image_types: ['elliptical','hemispheric','flat'],
@@ -1192,6 +1191,10 @@ Vue.component('tank-demo', {
         length_types: ['Inches','Feet','Meters','Millimeters'],
         conversion_unit: 'Cubic Feet',
         conversion_types: ['Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons'],
+        conversion_multiplier: {'Inches': {'Cubic_Inches': 1, 'Cubic_Feet': 0.000579,  'Cubic Meters': 0.0000164, 'Gallons': 0.004329},
+                              'Feet': {'Cubic_Inches': 1728, 'Cubic_Feet': 1,  'Cubic Meters': 0.0283, 'Gallons': 7.48},
+                              'Meters': {'Cubic_Inches': 61023.7, 'Cubic_Feet': 35.315,  'Cubic Meters': 1, 'Gallons': 264.172}
+        },
         image_str: '',
         saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
     }
@@ -1228,11 +1231,16 @@ Vue.component('tank-demo', {
       }
     },
     do_page_calculate: function() {
+      //Has anything changed?
+
       this.tank_data['tank_parts']={
         'vt':[this.bottom_type,this.top_type],
         'ht':[this.end_type],
         'st':[]
       };
+      //Calculate the variables
+      this.calculate_volumes();
+
       var out_image_str=this.tank_key;
       var tank_array=this.tank_data['tank_parts'][out_image_str];
       for(var j=0;j<tank_array.length;j++){
@@ -1261,19 +1269,47 @@ Vue.component('tank-demo', {
     vol_vertical_cylinder: function() {
       return Math.PI*this.h_filldepth*Math.pow(this.d_diameter,2)/4
     },
-    do_calculate: function(in_which) {
-      if (in_which == 'bottomhead') {
-        return 1; 
+    vol_spherical_tank: function() {
+      if ((this.h_filldepth == null) || (this.d_diameter == null)) { return null; }
+      this.volume_data['total_liquid']['value'] = ((1/3*Math.PI*Math.pow(this.h_filldepth,2)*(3*(this.d_diameter/2)-this.h_filldepth)).toFixed(2)).toString();
+      this.volume_data['total_tank']['value'] = ((4/3*Math.PI*Math.pow((this.d_diameter/2),3)).toFixed(2)).toString();
+      if (this.h_filldepth > this.d_diameter) { this.check_depth=0; }
+      else { this.check_depth=1; }
+      this.volume_data['total_liquid']['converted_value']=this.convert_val(this.volume_data['total_liquid']['value']);
+      this.volume_data['total_tank']['converted_value']=this.convert_val(this.volume_data['total_tank']['value']);
+    },
+    calculate_volumes: function() {
+      if (this.tank_key == 'st') {
+        this.vol_spherical_tank();
       }
-      else {
-        return 0;
+    },
+    convert_val: function(in_val) {
+      var from_unit = this.length_unit;
+      var to_unit = this.conversion_unit.split(' ').join('_');
+      if ( to_unit.includes(from_unit)) { return in_val; }
+      var use_from_unit = from_unit;
+      if (from_unit == "Millimeters") { use_from_unit = "Meters"}
+      var out_val = parseFloat(in_val) * this.conversion_multiplier[use_from_unit][to_unit];
+      if (use_from_unit != from_unit) {
+        out_val = out_val * Math.pow(1,-9);
       }
+      return (out_val.toFixed(2)).toString();
     }
   },
   computed: {
+    percent_full: function() {
+      var calculation=100*parseFloat(this.volume_data['total_liquid']['value'])/parseFloat(this.volume_data['total_tank']['value']);
+      return (calculation.toFixed(2)).toString();
+    }
   }, 
 
   watch:{
+    conversion_unit: function() {
+      this.calculate_volumes();
+    },
+    length_unit: function() {
+      this.calculate_volumes();
+    },
     bottom_type: function() {
       this.do_page_calculate();
     },
@@ -1285,15 +1321,24 @@ Vue.component('tank-demo', {
     },
     d_diameter: function() {
       console.log('Diameter');
-      this.d_diameter=this.d_diameter.toFixed(2);
+      this.d_diameter=(parseFloat(this.d_diameter).toFixed(2)).toString();
+      if (this.d_diameter.length) {
+        this.calculate_volumes();
+      }
     },
     a_length: function() {
       console.log('Length');
-      this.a_length=this.a_length.toFixed(2);
+      this.a_length=(parseFloat(this.a_length).toFixed(2)).toString();
+      if (this.d_diameter.length) {
+        this.calculate_volumes();
+      }
     },
     h_filldepth: function() {
       console.log('Fill Depth');
-      this.h_filldepth=this.h_filldepth.toFixed(2);
+      this.h_filldepth=(parseFloat(this.h_filldepth).toFixed(2)).toString();
+      if (this.d_diameter.length) {
+        this.calculate_volumes();
+      }
     }
   }
 });
