@@ -1159,13 +1159,28 @@ Vue.component('tank-demo', {
   },
   data: function () {
     return {
+        volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'value': 0},
+                      'endhead': {'desc': 'Volume in Ends', 'value': 0},
+                      'cylindrical': {'desc': 'Volume in Cylindrical Section', 'value': 0},
+                      'tophead': {'desc': 'Volume in Top Head', 'value': 0},
+                      'total_liquid': {'desc': 'Total Liquid Volume', 'value': 0},
+                      'total_tank': {'desc': 'Total Tank Volume', 'value': 0}
+                    },
+        volume_strings: [],
+        volume_array: [],
         tank_types: ['Vertical','Horizontal','Spherical'],
-        tank_data: {'tank_type': ['vt','ht','st']},
+        tank_data: {
+          'tank_type': ['vt','ht','st'], 
+          'tank_volumes': {'vt': ['bottomhead', 'cylindrical', 'tophead', 'total_liquid', 'total_tank'],
+                        'ht': ['endhead', 'cylindrical','total_liquid','total_tank'], 
+                        'st': ['total_liquid','total_tank']},
+          'tank_parts': {'vt': [], 'ht': [], 'st': []},
+        },
         tank_type_index: 0,
+        tank_key: 'vt',
         d_diameter: 10,
         a_length: 10,
         h_filldepth: 10,
-        vol: 0,
         percent_full: 0,
         check_depth: 1,
         end_types: ['2:1 Elliptical','Hemispheric','Flat'],
@@ -1173,7 +1188,9 @@ Vue.component('tank-demo', {
         top_type: null,
         bottom_type: null,
         length_unit: 'Feet',
-        length_types: ['Inch','Feet','Meters','Millimeters'],
+        length_types: ['Inches','Feet','Meters','Millimeters'],
+        conversion_unit: 'Cubic Feet',
+        conversion_types: ['Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons'],
         image_str: '',
         saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
     }
@@ -1187,10 +1204,11 @@ Vue.component('tank-demo', {
     for (var i=0;i<this.tank_types.length;i++) {
       if (this.tank_types[i].includes(this.tank_type)) {
         this.tank_type_index=i;
+        this.tank_key=this.tank_data['tank_type'][i];
         break;
       }
     }
-    this.do_tank_image();
+    this.do_page_calculate();
   },
   methods: {
     no_negative: function (e) {
@@ -1206,9 +1224,13 @@ Vue.component('tank-demo', {
           return false;
       }
     },
-    do_tank_image: function() {
-      this.tank_data['tank_parts']={'vt':[this.bottom_type,this.top_type],'ht':[this.top_type],'st':[]};
-      var out_image_str=this.tank_data['tank_type'][this.tank_type_index];
+    do_page_calculate: function() {
+      this.tank_data['tank_parts']={
+        'vt':[this.bottom_type,this.top_type],
+        'ht':[this.end_type],
+        'st':[]
+      };
+      var out_image_str=this.tank_key;
       var tank_array=this.tank_data['tank_parts'][out_image_str];
       for(var j=0;j<tank_array.length;j++){
         var selection=tank_array[j].toLowerCase();
@@ -1223,29 +1245,52 @@ Vue.component('tank-demo', {
         }
       };
       this.image_str='/images/'+out_image_str+'.png';
+      
+      //create volume strings and calculate based on values
+      let str_array=this.tank_data['tank_volumes'][this.tank_key];
+      this.volume_strings=[];
+      //Set up array of strings to show
+      for(var i=0;i<str_array.length;i++) {
+        this.volume_strings.push(this.volume_data[str_array[i]]['desc']);
+      }
+
+      //Now calculate the data
+      this.volume_array=[0,1,2,3,4]
     },
+    //Vol of cylindrical section
     vol_vertical_cylinder: function() {
-      this.vol=Math.PI*this.h_filldepth*Math.pow(this.d_diameter,2)/4
+      return Math.PI*this.h_filldepth*Math.pow(this.d_diameter,2)/4
     },
+    do_calculate: function(in_which) {
+      if (in_which == 'bottomhead') {
+        return 1; 
+      }
+      else {
+        return 0;
+      }
+    }
   },
   computed: {
   }, 
 
   watch:{
     bottom_type: function() {
-      this.do_tank_image();
+      this.do_page_calculate();
     },
     top_type: function() {
-      this.do_tank_image();
+      this.do_page_calculate();
     },
     d_diameter: function() {
       console.log('Diameter');
+      this.d_diameter=this.d_diameter.toFixed(2);
     },
     a_length: function() {
       console.log('Length');
+      this.a_length=this.a_length.toFixed(2);
     },
     h_filldepth: function() {
       console.log('Fill Depth');
+      this.h_filldepth=this.h_filldepth.toFixed(2);
     }
   }
 });
