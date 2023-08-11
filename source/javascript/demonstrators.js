@@ -1189,11 +1189,13 @@ Vue.component('tank-demo', {
         end_type: null,
         length_unit: 'Feet',
         length_types: ['Inches','Feet','Meters','Millimeters'],
+        length_multiplier: [1,0.083333,0.0254,25.4],
         conversion_unit: 'Cubic Feet',
         conversion_types: ['Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons'],
-        conversion_multiplier: {'Inches': {'Cubic_Inches': 1, 'Cubic_Feet': 0.000579,  'Cubic Meters': 0.0000164, 'Gallons': 0.004329},
-                              'Feet': {'Cubic_Inches': 1728, 'Cubic_Feet': 1,  'Cubic Meters': 0.0283, 'Gallons': 7.48},
-                              'Meters': {'Cubic_Inches': 61023.7, 'Cubic_Feet': 35.315,  'Cubic Meters': 1, 'Gallons': 264.172}
+        conversion_multiplier: [1,0.000579,0.0000164,0.004329],
+        conversion_xmultiplier: {'Inches': {'Cubic_Inches': 1, 'Cubic_Feet': 0.000579,  'Cubic_Meters': 0.0000164, 'Gallons': 0.004329},
+                              'Feet': {'Cubic_Inches': 1728, 'Cubic_Feet': 1,  'Cubic_Meters': 0.0283, 'Gallons': 7.480519},
+                              'Meters': {'Cubic_Inches': 61023.7, 'Cubic_Feet': 35.315,  'Cubic_Meters': 1, 'Gallons': 264.172}
         },
         image_str: '',
         saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
@@ -1271,35 +1273,52 @@ Vue.component('tank-demo', {
     },
     vol_spherical_tank: function() {
       if ((this.h_filldepth == null) || (this.d_diameter == null)) { return null; }
-      this.volume_data['total_liquid']['value'] = ((1/3*Math.PI*Math.pow(this.h_filldepth,2)*(3*(this.d_diameter/2)-this.h_filldepth)).toFixed(2)).toString();
-      this.volume_data['total_tank']['value'] = ((4/3*Math.PI*Math.pow((this.d_diameter/2),3)).toFixed(2)).toString();
-      if (this.h_filldepth > this.d_diameter) { this.check_depth=0; }
+      var use_filldepth = parseFloat(this.h_filldepth);
+      var use_diameter = parseFloat(this.d_diameter);
+      this.volume_data['total_liquid']['value'] = this.format_number(1/3*Math.PI*Math.pow(use_filldepth,2)*(3*(use_diameter/2)-use_filldepth));
+      this.volume_data['total_tank']['value'] = this.format_number(4/3*Math.PI*Math.pow((use_diameter/2),3));
+      if (use_filldepth > use_diameter) { this.check_depth=0; }
       else { this.check_depth=1; }
+      this.h_filldepth = this.format_number(use_filldepth);
+      this.d_diameter = this.format_number(use_diameter);
       this.volume_data['total_liquid']['converted_value']=this.convert_val(this.volume_data['total_liquid']['value']);
       this.volume_data['total_tank']['converted_value']=this.convert_val(this.volume_data['total_tank']['value']);
     },
-    calculate_volumes: function() {
+    calculate_volumes: function(event) {
+      if (event && event.type=="Enter") { event.preventDefault(); }
       if (this.tank_key == 'st') {
         this.vol_spherical_tank();
       }
     },
     convert_val: function(in_val) {
-      var from_unit = this.length_unit;
-      var to_unit = this.conversion_unit.split(' ').join('_');
-      if ( to_unit.includes(from_unit)) { return in_val; }
-      var use_from_unit = from_unit;
-      if (from_unit == "Millimeters") { use_from_unit = "Meters"}
-      var out_val = parseFloat(in_val) * this.conversion_multiplier[use_from_unit][to_unit];
-      if (use_from_unit != from_unit) {
-        out_val = out_val * Math.pow(1,-9);
+      if (true) {
+        var from_unit = this.length_unit;
+        var to_unit = this.conversion_unit.split(' ').join('_');
+        if ( to_unit.includes(from_unit)) { return in_val; }
+        var use_from_unit = from_unit;
+        if (from_unit == "Millimeters") { use_from_unit = "Meters"}
+        var out_val = parseFloat(in_val) * this.conversion_xmultiplier[use_from_unit][to_unit];
+        if (use_from_unit != from_unit) {
+          out_val = out_val*1e-9;
+        }
       }
-      return (out_val.toFixed(2)).toString();
+      if (false) {
+        var from_unit_index = this.length_types.indexOf(this.length_unit);
+        var to_unit_index = this.conversion_types.indexOf(this.conversion_unit);
+        var out_val = (parseFloat(in_val))/(Math.pow(this.length_multiplier[from_unit_index],3));
+        out_val=out_val*this.conversion_multiplier[to_unit_index];
+      }
+      return this.format_number(out_val);
+    },
+    format_number: function(in_number) {
+      return (parseFloat(in_number.toFixed(2))).toLocaleString(undefined, { minimumFractionDigits: 2 });
     }
   },
   computed: {
     percent_full: function() {
+      if (!this.volume_data['total_liquid']['value'] || !this.volume_data['total_tank']['value']) {return null;}
       var calculation=100*parseFloat(this.volume_data['total_liquid']['value'])/parseFloat(this.volume_data['total_tank']['value']);
-      return (calculation.toFixed(2)).toString();
+      return this.format_number(calculation);
     }
   }, 
 
@@ -1319,26 +1338,5 @@ Vue.component('tank-demo', {
     end_type: function() {
       this.do_page_calculate();
     },
-    d_diameter: function() {
-      console.log('Diameter');
-      this.d_diameter=(parseFloat(this.d_diameter).toFixed(2)).toString();
-      if (this.d_diameter.length) {
-        this.calculate_volumes();
-      }
-    },
-    a_length: function() {
-      console.log('Length');
-      this.a_length=(parseFloat(this.a_length).toFixed(2)).toString();
-      if (this.d_diameter.length) {
-        this.calculate_volumes();
-      }
-    },
-    h_filldepth: function() {
-      console.log('Fill Depth');
-      this.h_filldepth=(parseFloat(this.h_filldepth).toFixed(2)).toString();
-      if (this.d_diameter.length) {
-        this.calculate_volumes();
-      }
-    }
   }
 });

@@ -385,26 +385,26 @@
             <div class="col-8">
                 <div class="row mt-2">
                     <div class="col">
-                    <div class="row mt-2">
+                    <div class="row mt-2 mb-2">
                         <div class="col-4">Tank Orientation</div>
                         <div class="col-4">${tank_type}</div>
                     </div>
-                    <div class="mt-4" v-for='c in volume_strings'>
+                    <div v-for='c in volume_strings'>
                         <div v-if='c.type' class="row">
                             <div class="col-4">
                             ${c.type}
                             </div>
                             <div class="col-4">
-                                <select  class="input" v-model="$data[c.varname]">
+                                <select  class="input" style="background-color: #ceffce" v-model="$data[c.varname]">
                                     <option :value='b' v-for='b in end_types'>${b}</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col-4"><b>Length Units</b></div>
                         <div class="col-4">
-                            <select  class="input" v-model='length_unit'>
+                            <select  class="input" style="background-color: #ceffce" v-model='length_unit'>
                                 <option :value='l' v-for='l in length_types'>${l}</option>
                             </select>
                         </div>
@@ -414,27 +414,44 @@
                             <i><b>Tank Diameter: D</b></i>  
                         </div>
                         <div class="col-4">
-                        <input class='input' type='number' @keydown='no_negative' v-model='d_diameter'>
-                        </div>
-                        <div class="col-4" style="text-align:left">
+                        <input class='input' style="background-color: #ceffce"
+                        type='number' 
+                        @keydown='no_negative' 
+                        @keydown.enter="calculate_volumes"
+                        @keydown.tab="calculate_volumes"
+                        @click="calculate_volumes"
+                        v-model='d_diameter'/></div>
+                        <div class="col-2" style="text-align:left">
                         ${length_unit}
                         </div>
                     </div>
                     <div class="row align-items-center" v-if='tank_key != "st"'>
                         <div class="col-4"><i><b>Length of Cylinder: A</b></i></div>
                         <div class="col-4">
-                        <input class='input' type='number' @keydown='no_negative' v-model='a_length'>
+                        <input class='input' style="background-color: #ceffce"
+                        type='number' 
+                        @keydown='no_negative' 
+                        @keydown.enter="calculate_volumes"
+                        @keydown.tab="calculate_volumes"
+                        @click="calculate_volumes"
+                        v-model='a_length'/>
                         </div>
-                        <div class="col-4" style="text-align:left">
+                        <div class="col-2" style="text-align:left">
                         ${length_unit}
                         </div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-4"><b>Fill Depth from bottom: H</b></div>
+                        <div class="col-4" ><b>Fill depth from bottom: H</b></div>
                         <div class="col-4">
-                        <input class='input' type='number' @keydown='no_negative' v-model='h_filldepth'>
+                        <input class='input' style="background-color: #ceffce"
+                        type='number' 
+                        @keydown='no_negative' 
+                        @keydown.enter="calculate_volumes()"
+                        @keydown.tab="calculate_volumes()"
+                        @click="calculate_volumes()"
+                        v-model='h_filldepth'/>
                         </div>
-                        <div class="col-4" style="text-align:left">
+                        <div class="col-2" style="text-align:left">
                         ${length_unit}
                         </div>
                     </div>
@@ -450,12 +467,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-4">
                 </div>
             </div>
             <div class="col-4"><img :src='image_str'></div>
         </div>
-        <div class="row align-items-center">
+        <div class="row mt-4 align-items-center">
             <div class="col-6 align-items-left">
                 <b>Volume without Unit Conversions</b>
             </div>
@@ -463,7 +480,7 @@
                 <b>Volume with Unit Conversions</b>
             </div>
             <div class="col align-items-left">
-                <select  class="input" v-model='conversion_unit'>
+                <select  class="input" style="background-color: #ceffce" v-model='conversion_unit'>
                     <option :value='c' v-for='c in conversion_types'>${c}</option>
                 </select>
             </div>
@@ -472,7 +489,7 @@
 
         <div v-for='c in volume_strings'>
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                 ${c.desc}
                 </div>
                 <div class="col-3" style="text-align: right">
