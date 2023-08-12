@@ -1199,16 +1199,16 @@ Vue.component('tank-demo', {
         },
         image_str: '',
         volume_equations_data: {
-                              'ht': [{'type':'Cylinder','image':'ht-flat.png', 'equation':'equation_horizontal_cylinder.png'},
-                                     {'type': 'Sphere','image':'st.png','equation':'equation_sphere.png'},
-                                     {'type': '2:1 Elliptical End', 'image':'2-1_elliptical_end.png','equation':'equation_2-1_elliptical_end.png'}
+                              'ht': [{'type':'Cylinder','image':'ht-flat.jpg', 'equation':'equation_horizontal_cylinder.jpg'},
+                                     {'type': 'Sphere','image':'st.jpg','equation':'equation_sphere.jpg'},
+                                     {'type': '2:1 Elliptical End', 'image':'2-1_elliptical_end.jpg','equation':'equation_2-1_elliptical_end.jpg'}
                                     ],
-                              'vt': [{'type':'Vertical Cylinder','image':'vt-flat-flat.png', 'equation':'equation_vertical_cylinder.png'},
-                                    {'type': 'Sphere','image':'st.png','equation':'equation_sphere.png'},
-                                    {'type': '2:1 Elliptical Bottom', 'image':'2-1_elliptical_bottom.png','equation':'equation_2-1_elliptical_bottom.png'},
-                                    {'type': '2:1 Elliptical Top', 'image':'2-1_elliptical_top.png','equation':'equation_2-1_elliptical_top.png'}
+                              'vt': [{'type':'Vertical Cylinder','image':'vt-flat-flat.jpg', 'equation':'equation_vertical_cylinder.jpg'},
+                                    {'type': 'Sphere','image':'st.jpg','equation':'equation_sphere.jpg'},
+                                    {'type': '2:1 Elliptical Bottom', 'image':'2-1_elliptical_bottom.jpg','equation':'equation_2-1_elliptical_bottom.jpg'},
+                                    {'type': '2:1 Elliptical Top', 'image':'2-1_elliptical_top.jpg','equation':'equation_2-1_elliptical_top.jpg'}
                                     ],
-                              'st': [{'type':'Sphere', 'image':'st.png','equation':'equation_sphere.png'}],
+                              'st': [{'type':'Sphere', 'image':'st.jpg','equation':'equation_sphere.jpg'}],
                               },
         saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
     }
@@ -1269,7 +1269,7 @@ Vue.component('tank-demo', {
           }
         }
       };
-      this.image_str='/images/'+out_image_str+'.png';
+      this.image_str='/images/'+out_image_str+'.jpg';
       
       //create volume strings and calculate based on values
       let str_array=this.tank_data['tank_volumes'][this.tank_key];
