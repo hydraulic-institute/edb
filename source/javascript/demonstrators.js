@@ -1198,6 +1198,18 @@ Vue.component('tank-demo', {
                               'Meters': {'Cubic_Inches': 61023.7, 'Cubic_Feet': 35.315,  'Cubic_Meters': 1, 'Gallons': 264.172}
         },
         image_str: '',
+        volume_equations_data: {
+                              'ht': [{'type':'Cylinder','image':'ht-flat.png', 'equation':'equation_horizontal_cylinder.png'},
+                                     {'type': 'Sphere','image':'st.png','equation':'equation_sphere.png'},
+                                     {'type': '2:1 Elliptical End', 'image':'2-1_elliptical_end.png','equation':'equation_2-1_elliptical_end.png'}
+                                    ],
+                              'vt': [{'type':'Vertical Cylinder','image':'vt-flat-flat.png', 'equation':'equation_vertical_cylinder.png'},
+                                    {'type': 'Sphere','image':'st.png','equation':'equation_sphere.png'},
+                                    {'type': '2:1 Elliptical Bottom', 'image':'2-1_elliptical_bottom.png','equation':'equation_2-1_elliptical_bottom.png'},
+                                    {'type': '2:1 Elliptical Top', 'image':'2-1_elliptical_top.png','equation':'equation_2-1_elliptical_top.png'}
+                                    ],
+                              'st': [{'type':'Sphere', 'image':'st.png','equation':'equation_sphere.png'}],
+                              },
         saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
     }
   },
