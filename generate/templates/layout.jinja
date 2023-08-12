@@ -500,6 +500,20 @@
                 </div>
             </div>
         </div>
+        <div class="mt-4">
+            <b>Volume Equations</b>
+        </div>
+        <div v-for='(value, name) in volume_equations_data' v-if='name == tank_key'>
+            <div v-for='item in value'>
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <b>${item.type}</b>
+                    </div>
+                    <div class="col-3 mt-2"><img :src="'/images/'+item.image"/></div>
+                    <div class="col"><img :src="'/images/'+item.equation"/></div>
+                </div>
+            </div>
+        </div>
     </div>
 </script>
 
