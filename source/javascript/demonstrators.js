@@ -394,7 +394,7 @@ Vue.component("demo-tank", {
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            ////console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
             let x_level=levelPosition.x
             if (!this.isHorizontal) {
               x_level=levelPosition.x+(this.tank.tank.width()/2);
@@ -1278,13 +1278,13 @@ Vue.component('tank-demo', {
         this.volume_strings.push(this.volume_data[str_array[i]]);
       }
     },
-    vol_spherical_tank: function(in_depth, in_diameter) {
+    vol_spherical_tank: function(in_diameter,in_depth) {
       var radius=in_diameter/2;
       var tot_vol = (Math.PI/3)*Math.pow(in_depth,2)*((3*radius)-in_depth);
       //console.log("Sphere Vol: "+tot_vol);
       return tot_vol;
     },
-    vol_horizontal_cylinder: function(in_depth,in_diameter,in_length) {
+    vol_horizontal_cylinder: function(in_diameter,in_depth,in_length) {
       var radius=in_diameter/2;
       var tot_vol = (Math.acos((radius-in_depth)/radius))*Math.pow(radius,2);
       tot_vol = tot_vol - ((radius-in_depth)*Math.pow((2*radius*in_depth)-Math.pow(in_depth,2),0.5));
@@ -1292,31 +1292,47 @@ Vue.component('tank-demo', {
       //console.log("Horizontal Cylinder Vol: "+tot_vol);
       return tot_vol;
     },
-    vol_vertical_cylinder: function(in_depth, in_diameter) {
-      var tot_vol = in_depth*Math.PI*Math.pow(in_diameter,2)/4;
+    vol_vertical_cylinder: function(in_diameter, in_depth) {
+      var tot_vol = Math.PI*(Math.pow(in_diameter,2)/4)*in_depth;
       //console.log("Vertival Cylinder Vol: "+tot_vol);
       return tot_vol;
     },
-    vol_horizontal_elliptical_end: function(in_depth,in_diameter,in_type) {
-      if ((in_type.toLowerCase()).includes("flat")) {return 0;}
+    vol_horizontal_elliptical_end: function(in_diameter,in_depth,end_type) {
+      if (end_type.includes("flat")) {return 0;}
       //If c is elliptical, then set to 0.5
-      const C=(((this.end_type.toLowerCase()).includes('elliptical'))?0.5:1);
+      const C=this.get_C_const(end_type);
       var tot_vol = Math.pow(in_diameter,3)*C*Math.PI/12;
       tot_vol = tot_vol * ((3*Math.pow((in_depth/in_diameter),2))-(2*Math.pow((in_depth/in_diameter),3)));
       //console.log("Horizontal Elliptical End Vol: "+tot_vol);
       return tot_vol;
     },
-    vol_vertical_elliptical_end: function(in_depth,in_diameter,is_top=false) {
-      var use_end = this.bottom_type;
-      if (is_top) { use_end = this.top_type; }
+    vol_vertical_elliptical_end: function(in_diameter,in_depth,in_length,in_type,is_top=false) {
+      if (in_type == "flat") { return 0;}
       //If c is elliptical, then set to 0.5
-      const C=(((use_end.toLowerCase()).includes('elliptical'))?0.5:1);
+      const C=this.get_C_const(in_type);
       var tot_vol=0;
+      //console.log("Vertical end is_top["+is_top+"] in_type ["+in_type+"] in_depth["+in_depth+"]");
       if (is_top)  {
-        tot_vol = (Math.PI/6)*(((3/C)*in_diameter*Math.pow(in_depth,2))-(Math.pow(in_depth,3)*2/Math.pow(C,2)));
+        if (in_type == 'hemispheric') {
+          // my_H_val=this.get_H_value(in_type,in_diameter,in_depth,in_length,is_top);
+          var working=(in_diameter/2) + in_depth; 
+          //console.log("Working: "+working);
+          var working_vol = this.vol_spherical_tank(in_diameter,working);
+          var half_sphere_vol = Math.PI*0.5*4/3*Math.pow(in_diameter/2,3);
+          //console.log("Half sphere vol ["+half_sphere_vol+"]");
+          tot_vol=working_vol - half_sphere_vol;
+        }
+        else { //elliptical TODO
+          tot_vol = (Math.PI/12)*((3*Math.pow(in_diameter,2)*in_depth)-(Math.pow(in_depth,3)*4/Math.pow(C,2)));
+        }
       }
-      else {
-        tot_vol = (Math.PI/12)*((3*Math.pow(in_diameter,2)*in_depth)-(Math.pow(in_depth,3)*4/Math.pow(C,2)));
+      else { //bottom
+        if (in_type == 'hemispheric') {
+          tot_vol = this.vol_spherical_tank(in_diameter,in_depth);
+        }
+        else { //elliptical
+          tot_vol = (Math.PI/6)*((in_diameter*Math.pow(in_depth,2)*3/C)-(Math.pow(in_depth,3)*2/Math.pow(C,2)));
+        }
       }
       //console.log("Top ["+is_top+"] Vertical Elliptical Vol: "+tot_vol);
       return tot_vol;
@@ -1324,61 +1340,75 @@ Vue.component('tank-demo', {
 
     calculate_volumes: function(event) {
       if (event && event.type=="Enter") { event.preventDefault(); }
-      if (use_filldepth > use_diameter) { this.check_depth=0; }
-      else { this.check_depth=1; }
       if (!this.has_all_data() ) { return null;}
       var use_filldepth = parseFloat(this.h_filldepth);
       var use_diameter = parseFloat(this.d_diameter);
       var use_length = null;
       var tot_liquid_volume = 0;
       var tot_tank_volume = 0;
+      var use_top_type = this.top_type.toLowerCase();
+      var use_bot_type = this.bottom_type.toLowerCase();
+      var use_end_type = this.end_type.toLowerCase();
+      if (use_filldepth > use_diameter) { this.check_depth=0; }
+      else { this.check_depth=1; }
       if (this.tank_key != 'st') {
         use_length = parseFloat(this.a_length);
       }
       //Vol of Sphere used by all
       if (this.tank_key == 'st') {
-        tot_liquid_volume=this.vol_spherical_tank(use_filldepth, use_diameter);
+        //console.log("ST Vol");
+        tot_liquid_volume=this.vol_spherical_tank(use_diameter, use_filldepth);
         tot_tank_volume=this.vol_spherical_tank(use_diameter,use_diameter);
       }
       if (this.tank_key == 'ht') {
+        //console.log("HT Vol");
         //Horizontal Tank
-        this.volume_data['cylindrical']['value']=this.vol_horizontal_cylinder(use_filldepth,use_diameter,use_length);
+        //console.log("Horizontal tank");
+        this.volume_data['cylindrical']['value']=this.vol_horizontal_cylinder(use_diameter,use_filldepth,use_length);
         tot_liquid_volume=this.volume_data['cylindrical']['value'];
         this.volume_data['cylindrical']['value']=this.format_number(this.volume_data['cylindrical']['value']);
         this.volume_data['cylindrical']['converted_value']=this.convert_val(this.volume_data['cylindrical']['value']);
         tot_tank_volume=this.vol_horizontal_cylinder(use_diameter,use_diameter,use_length);
 
         //Both ends
-        this.volume_data['endhead']['value']=(2*this.vol_horizontal_elliptical_end(use_filldepth,use_diameter,this.end_type));
+        //console.log("Do Ends (calc for 1 and double for total)");
+        this.volume_data['endhead']['value']=(2*this.vol_horizontal_elliptical_end(use_diameter,use_filldepth,use_end_type));
         tot_liquid_volume+=this.volume_data['endhead']['value'];
         this.volume_data['endhead']['value']=this.format_number(this.volume_data['endhead']['value']);
         this.volume_data['endhead']['converted_value']=this.convert_val(this.volume_data['endhead']['value']);
-        tot_tank_volume+=(2*this.vol_horizontal_elliptical_end(use_diameter,use_diameter,this.end_type));
+        tot_tank_volume+=(2*this.vol_horizontal_elliptical_end(use_diameter,use_diameter,use_end_type));
       }
       if (this.tank_key == 'vt') {
         //Vertical Tank
-        //Cylinder
-        this.volume_data['cylindrical']['value']=this.vol_vertical_cylinder(use_filldepth,use_diameter,use_length);
-        tot_liquid_volume=this.volume_data['cylindrical']['value'];
-        this.volume_data['cylindrical']['value']=this.format_number(this.volume_data['cylindrical']['value']);
-        this.volume_data['cylindrical']['converted_value']=this.convert_val(this.volume_data['cylindrical']['value']);
-        tot_tank_volume=this.vol_vertical_cylinder(use_diameter,use_diameter,use_length);
-
-        //Bottom
-        var zbot=this.get_z_value(this.bottom_type,use_diameter);
-        var ztop=this.get_z_value(this.top_type,use_diameter);
-        this.volume_data['bottomhead']['value']=this.vol_vertical_elliptical_end(use_filldepth,use_diameter,is_top=false);
-        tot_liquid_volume+=this.volume_data['bottomhead']['value'];
+        //console.log("VT Vol");
+        //Bottom Head
+        //console.log("Bottom Head")
+        var my_H_val=this.get_H_value(use_bot_type,use_diameter,use_filldepth,use_length,is_top=false);
+        this.volume_data['bottomhead']['value']=this.vol_vertical_elliptical_end(use_diameter,my_H_val,use_length,use_bot_type,is_top=false);
+        tot_liquid_volume=this.volume_data['bottomhead']['value'];
         this.volume_data['bottomhead']['value']=this.format_number(this.volume_data['bottomhead']['value']);
         this.volume_data['bottomhead']['converted_value']=this.convert_val(this.volume_data['bottomhead']['value']);
-        tot_tank_volume+=this.vol_vertical_elliptical_end(use_diameter,use_diameter,is_top=false);
+        var zbot=this.get_z_value(use_bot_type,use_diameter);
+        tot_tank_volume=this.vol_vertical_elliptical_end(use_diameter,zbot,use_length,use_bot_type,is_top=false);
 
-        //Top
-        this.volume_data['tophead']['value']=this.vol_vertical_elliptical_end(use_filldepth,use_diameter,is_top=true);
+        //Cylinder 
+        //console.log("Cylinder");
+        var cyl_H_val=this.cylindrical_H_value(use_diameter,use_filldepth,use_length,use_bot_type);
+        this.volume_data['cylindrical']['value']=this.vol_vertical_cylinder(use_diameter,cyl_H_val);
+        tot_liquid_volume+=this.volume_data['cylindrical']['value'];
+        this.volume_data['cylindrical']['value']=this.format_number(this.volume_data['cylindrical']['value']);
+        this.volume_data['cylindrical']['converted_value']=this.convert_val(this.volume_data['cylindrical']['value']);
+        tot_tank_volume+=this.vol_vertical_cylinder(use_diameter,use_length);
+
+        //Top 
+        //console.log("Top Head");
+        my_H_val=this.get_H_value(use_top_type,use_diameter,use_filldepth,use_length,is_top=true);
+        this.volume_data['tophead']['value']=this.vol_vertical_elliptical_end(use_diameter,my_H_val,use_length,use_top_type,is_top=true);
         tot_liquid_volume+=this.volume_data['tophead']['value'];
         this.volume_data['tophead']['value']=this.format_number(this.volume_data['tophead']['value']);
         this.volume_data['tophead']['converted_value']=this.convert_val(this.volume_data['tophead']['value']);
-        tot_tank_volume+=this.vol_vertical_elliptical_end(use_diameter,use_diameter,is_top=true);
+        var ztop=this.get_z_value(use_top_type,use_diameter);
+        tot_tank_volume+=this.vol_vertical_elliptical_end(use_diameter,ztop,use_length,use_top_type,is_top=true);
       }
       this.h_filldepth = this.format_number(use_filldepth);
       this.d_diameter = this.format_number(use_diameter);
@@ -1421,9 +1451,31 @@ Vue.component('tank-demo', {
       }
       return do_check;
     },
+    get_C_const: function(in_type) {
+      return ((in_type.includes('elliptical'))?0.5:1);
+    },
     get_z_value: function(in_type, in_diameter) {
-      return ((in_type == "flat")?0:((in_type == "hemispheric")?in_diameter/2:0.25*in_diameter));
-    }
+      var z_val=((in_type == "flat")?0:((in_type == "hemispheric")?in_diameter/2:0.25*in_diameter));
+      //console.log("Z: "+z_val);
+      return z_val;
+    },
+    get_H_value: function(in_type,in_diameter,in_depth,in_length,is_top=false) {
+      if (in_type == "flat") {return 0;}
+      if (is_top) {
+        //Use Cylindrical H value
+        let H_val=this.cylindrical_H_value(in_diameter,in_depth,in_length,in_type);
+        if (H_val < in_length) {return 0;}
+        return (in_depth-in_length-this.get_z_value(in_type,in_diameter));
+      }
+      else {
+        return Math.min(in_depth,this.get_z_value(in_type,in_diameter));
+      }
+    },
+    cylindrical_H_value: function(in_diameter,in_depth,in_length,in_type) {
+      var c_val=Math.max(0,Math.min(in_length,(in_depth-this.get_z_value(in_type,in_diameter))));
+      //console.log("Cylindrical H Value ["+c_val+"]");
+      return c_val;
+    },
   },
   computed: {
     percent_full: function() {
