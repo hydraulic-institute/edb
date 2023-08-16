@@ -395,7 +395,7 @@
                             ${c.type}
                             </div>
                             <div class="col-4">
-                                <select  class="input" style="background-color: #ceffce" v-model="$data[c.varname]">
+                                <select  class="input" style="min-width:120px; background-color: #ceffce" v-model="$data[c.varname]">
                                     <option :value='b' v-for='b in end_types'>${b}</option>
                                 </select>
                             </div>
@@ -404,7 +404,7 @@
                     <div class="row align-items-center">
                         <div class="col-4"><b>Length Units</b></div>
                         <div class="col-4">
-                            <select  class="input" style="background-color: #ceffce" v-model='length_unit'>
+                            <select  class="input" style="min-width:120px; background-color: #ceffce" v-model='length_unit'>
                                 <option :value='l' v-for='l in length_types'>${l}</option>
                             </select>
                         </div>
@@ -414,9 +414,9 @@
                             <i><b>Tank Diameter: D</b></i>  
                         </div>
                         <div class="col-4">
-                        <input class='input' style="background-color: #ceffce"
+                        <input class='input' style="min-width:120px; background-color: #ceffce"
                         type='number' 
-                        @keydown='no_negative' 
+                        @keydown='no_negative_no_comma' 
                         @keydown.enter="calculate_volumes"
                         @keydown.tab="calculate_volumes"
                         @click="calculate_volumes"
@@ -428,9 +428,9 @@
                     <div class="row align-items-center" v-if='tank_key != "st"'>
                         <div class="col-4"><i><b>Length of Cylinder: A</b></i></div>
                         <div class="col-4">
-                        <input class='input' style="background-color: #ceffce"
+                        <input class='input' style="min-width:120px; background-color: #ceffce"
                         type='number' 
-                        @keydown='no_negative' 
+                        @keydown='no_negative_no_comma' 
                         @keydown.enter="calculate_volumes"
                         @keydown.tab="calculate_volumes"
                         @click="calculate_volumes"
@@ -443,9 +443,9 @@
                     <div class="row align-items-center">
                         <div class="col-4" ><b>Fill depth from bottom: H</b></div>
                         <div class="col-4">
-                        <input class='input' style="background-color: #ceffce"
+                        <input class='input' style="min-width:120px; background-color: #ceffce"
                         type='number' 
-                        @keydown='no_negative' 
+                        @keydown='no_negative_no_comma' 
                         @keydown.enter="calculate_volumes()"
                         @keydown.tab="calculate_volumes()"
                         @click="calculate_volumes()"
@@ -470,35 +470,35 @@
                 <div class="row mt-4">
                 </div>
             </div>
-            <div class="col-4"><img :src='image_str'></div>
+            <div class="col-4"><img :src='image_str' @error="image_str='/images/image_not_available.png'"/></div>
         </div>
-        <div class="row mt-4 align-items-center">
-            <div class="col-6 align-items-left">
-                <b>Volume without Unit Conversions</b>
-            </div>
-            <div class="col-4 align-items-left">
-                <b>Volume with Unit Conversions</b>
-            </div>
-            <div class="col align-items-left">
-                <select  class="input" style="background-color: #ceffce" v-model='conversion_unit'>
-                    <option :value='c' v-for='c in conversion_types'>${c}</option>
-                </select>
-            </div>
-        </div>
-
-
-        <div v-for='c in volume_strings'>
-            <div class="row">
-                <div class="col-3">
-                ${c.desc}
-                </div>
-                <div class="col-3" style="text-align: right">
-                    ${c.value} Cubic ${length_unit}
-                </div>
-                <div class="col" style="text-align: right">
-                    ${c.converted_value} ${conversion_unit}
-                </div>
-            </div>
+        <div class="row mt-4">
+            <table class="table table-bordered table-striped is-narrow is-hoverable is-fullwidth" style="border-width:2px">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 30%"></th>
+                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
+                        <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
+                            <div>
+                                <select class="input" style="width:120px; background-color:#ceffce" v-model='conversion_unit'>
+                                    <option :value='c' v-for='c in conversion_types'>${c}</option>
+                                </select>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for='c in volume_strings'>
+                        <td>${c.desc}</td>
+                        <td style="text-align: right">
+                            ${c.value} Cubic ${length_unit}
+                        </td>
+                        <td colspan="2" style="text-align: right">
+                            ${c.converted_value} ${conversion_unit}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="mt-4">
             <b>Volume Equations</b>
