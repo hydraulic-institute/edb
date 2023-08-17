@@ -5,6 +5,7 @@ import markdown
 import glob
 import io
 import htmlmin
+import copy
 import csv
 import json
 import uuid
@@ -41,6 +42,7 @@ Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
+DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -93,13 +95,12 @@ def definitions_table_data(table, path, filename, in_sections):
         acronym_ids = []
         row_columns = []
         comment_idx=1
-        ref_idx=-1
-        source_idx=-1
         section_idx=-1
         section=""
-        source_url=""
+        orig_col_obj={'url': None, 'ref': None, 'type': None}
         for row in csv_data:
             if len(row[0]):
+                section_idx=None
                 section = row[0].split(" (")[0]
                 columns = [row[i] for i,x in enumerate(row) if i != 0]
                 try:
@@ -107,25 +108,38 @@ def definitions_table_data(table, path, filename, in_sections):
                 except:
                     comment_idx = columns.index("")
                 columns = columns[0:comment_idx]
-                try:
-                    ref_idx = columns.index("Section")
-                    source_idx = [i for i,x in enumerate(columns) if "Source" in x][0]
-                    source_url=columns[source_idx].split("::")[1].strip()
-                    columns[source_idx] = "Source"
-                except:
-                    pass             
+                #Are there any columns that involve links
+                col_link_data=[]
+                #Go through each column and create an array of urls based on column index
+                for i,x in enumerate(columns):
+                    col_obj=copy.deepcopy(orig_col_obj)
+                    col_data = columns[i].split("::")
+                    if "::" in x:
+                        col_obj['url']=col_data[1].strip()
+                        col_obj['type']=col_data[0].strip()
+                        col_link_data.append(col_obj)
+                        columns[i] = col_data[0]
+                    else:
+                        # Push empty data
+                        col_link_data.append(col_obj) 
+                    if col_data[0] == "Section":
+                        section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'headings':headings, 'rows':[]})
+                page_sections.append({'section':section, 'headings':headings, 'rows':[]})        
                 continue
             datarow=row[1:comment_idx+1]
-            row_columns = [TableColumn(columns[i], d)
-                           for i, d in enumerate(datarow)]
             if section:
+                # Working in a section
                 row_id = "0"
                 section_link=""
                 source_link=""
+                num_columns=len(columns)
+                source_links=[]
+                source_links=['' for k in range(num_columns)]
+                row_columns=[DefinitionColumn(d, datarow[i], '')
+                              for i, d in enumerate(columns)]
                 # Acronymn Link
-                if "ACRONYM" in section:
+                if "acronym" in section.lower():
                     acronym.append(datarow[1].lower())
                     acronym_ids.append(datarow[0])
                 else:
@@ -135,15 +149,22 @@ def definitions_table_data(table, path, filename, in_sections):
                         row_id = acronym_ids[indexes[0]]
                     except:
                         row_id = "0"
-                    # Row Section Link
-                    # Check the section reference row
-                    if len(datarow[ref_idx]):
-                        section_link = definition_create_section_link(in_sections, datarow[ref_idx])
-                    if len(datarow[source_idx]) and len(source_url):
-                        source_link = source_url.replace("{{SOURCE}}",datarow[source_idx].split(',')[0])
+                    # If there is a Section Index, then create a link to the navigation section
+                    if section_idx and len(datarow[section_idx]):
+                        section_link = definition_create_section_link(in_sections, datarow[section_idx])
 
+                    # Go through each section_link_data array item, create a link if necessary
+                    for i in range(num_columns):
+                        if col_link_data[i]['url'] and len(datarow[columns.index(col_link_data[i]['type'])]):
+                            # Create a link if there's data
+                            source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",datarow[columns.index(col_link_data[i]['type'])]))
+                        else:
+                            # Replace all new lines with br
+                            datarow[i]=datarow[i].replace('\n','<br>')    
+                row_columns = [DefinitionColumn(columns[i], datarow[i], source_links[i])
+                           for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
-                page_sections[section_idx]['rows'].append(r)
+                page_sections[-1]['rows'].append(r)
         return page_sections
     
 def definition_create_section_link(sections, in_section):

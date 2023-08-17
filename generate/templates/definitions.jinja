@@ -19,12 +19,12 @@
                 <tr>
             {% endif %}
             {%for column in row.data %}
-                {% if 'ACRONYM' in section.section and column.type == "Term" %}
+                {% if 'Acronym' in section.section and column.type == "Term" %}
                     <td><a href="#{{column.data}}">{{column.data}}</a></td>
                 {% elif 'Section' in column.type and row.ref_link %}
                     <td><a href="{{row.ref_link}}">{{column.data}}</a></td>
-                {% elif 'Source' in column.type and row.source_link %}
-                    <td><a href="{{row.source_link}}" target="_blank">{{column.data}}</a></td>
+                {% elif column.links %}
+                    <td><a href="{{column.links}}" target="_blank">{{column.data}}</a></td>
                 {% else %}
                     <td>{{column.data}}</td>
                 {% endif %}
