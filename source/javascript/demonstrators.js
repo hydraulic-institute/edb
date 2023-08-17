@@ -1211,7 +1211,6 @@ Vue.component('tank-demo', {
                                     ],
                               'st': [{'type':'Sphere', 'image':'st.jpg','equation':'equation_sphere.jpg'}],
                               },
-        saved_props: ['d_diameter','a_length','h_filldepth','length_units','top_type','bottom_type'],
     }
   },
   template: '#tank-demo-template',

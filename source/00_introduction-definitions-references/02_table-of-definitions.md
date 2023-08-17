@@ -1,6 +1,6 @@
 -----
 title:  Definitions, Pump Types & References
-date: July 24th, 2023
+date: August 18th, 2023
 description: Table of Definitions 
 hide_units: true
 -----
@@ -9,6 +9,6 @@ hide_units: true
 
 =defs=
 title: Definitions
-data: table-of-definitions.csv
+data: table-of-definitions-references-pump-types.csv
 =defs=
 
