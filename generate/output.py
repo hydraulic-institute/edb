@@ -97,6 +97,7 @@ def definitions_table_data(table, path, filename, in_sections):
         comment_idx=1
         section_idx=-1
         section=""
+        index = {'sections': [], 'height': 200}
         orig_col_obj={'url': None, 'ref': None, 'type': None}
         for row in csv_data:
             if len(row[0]):
@@ -125,7 +126,8 @@ def definitions_table_data(table, path, filename, in_sections):
                     if col_data[0] == "Section":
                         section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'headings':headings, 'rows':[]})        
+                page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
+                index['sections'].append(section)       
                 continue
             datarow=row[1:comment_idx+1]
             if section:
@@ -157,7 +159,12 @@ def definitions_table_data(table, path, filename, in_sections):
                     for i in range(num_columns):
                         if col_link_data[i]['url'] and len(datarow[columns.index(col_link_data[i]['type'])]):
                             # Create a link if there's data
-                            source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",datarow[columns.index(col_link_data[i]['type'])]))
+                            # https://www.pumps.org/what-we-do/standards/?pumps-search-product=ANSI%2FHI+14.1-14.2&hi-order=asc&hi-order-by=name 
+                            # Replace slashes with %2F, replace spaces with + and add &hi-order=asc&hi-order-by=name
+                            search_str='+'.join(datarow[columns.index(col_link_data[i]['type'])].split())
+                            search_str=search_str.replace('/','%2F')
+                            search_str+='&hi-order=asc&hi-order-by=name'
+                            source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",search_str))
                         else:
                             # Replace all new lines with br
                             datarow[i]=datarow[i].replace('\n','<br>')    
@@ -165,7 +172,8 @@ def definitions_table_data(table, path, filename, in_sections):
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
-        return page_sections
+        index['height']=len(index['sections'])*45
+        return index, page_sections
     
 def definition_create_section_link(sections, in_section):
     # Search the sections for the path
@@ -211,8 +219,8 @@ def table_data(units, table, path, filename):
 def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
-    def_html = template.render(meta=definitions_table, table=defs, units='us')
+    index, defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
+    def_html = template.render(meta=definitions_table, table=defs, units='us', index=index)
     return def_html
 
 def replace_table_block(dir, table_text):
