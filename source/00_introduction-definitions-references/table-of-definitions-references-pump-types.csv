@@ -7,8 +7,8 @@ Acronyms,Term,Description,Comment,,
 ,POR,Preferred Operating Region,,,
 ,VFD,Variable frequency drive,,,
 ,VSD,Variable speed drive,,,
-DEFINITIONS,Term,Description,Source:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}},Section,Comment
-,Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ",ANSI/HI 14.1-14.1,Solids and Slurries,
+Definitions,Term,Description,Source:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}},Section,Comment
+,Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ",ANSI/HI 14.1-14.1,Solids and Slurries,Do you mean for this to be 14.1-14.1 or 14.1-14.2?
 ,Affinity Rules,(EDL committee awaiting guidance from 14.1-14.2 on official definition),ANSI/HI 14.1-14.2,Pump Curves,Awaiting final definition
 ,Allowable operating region,"A wider range of rates of flow, inclusive of the POR, over which the service life of a pump, although reduced, is within acceptable limits.",ANSI/HI 9.6.3,Pump Curves,
 ,Axial flow impeller,An axial-flow impeller has a single inlet with the flow entering and discharging axially (or nearly axially). ,ANSI/HI 14.1-14.2,Pump Principles,
@@ -21,14 +21,14 @@ DEFINITIONS,Term,Description,Source:: https://www.pumps.org/what-we-do/standards
 ,Corrosion,Loss of material created by chemical or electrochemical reaction within the pump environment,ANSI/HI 12.1-12.6,Solids and Slurries,
 ,Francis-Vane Impeller,"In impellers of this type, the liquid enters the eye of the impeller axially and exits semi-radially, at about a 60° to 70° angle to the shaft axis. ",ANSI/HI 14.1-14.2,Pump Principles,
 ,Friction head,Friction head is the hydraulic energy required to overcome frictional resistance of a piping system to liquid flow expressed in meters (feet) of liquid.,ANSI/HI 14.1-14.2,System Curves,
-,K Value (Valves and Fittings),"Head loss though valves and standard fittings (minor losses) can be expressed in terms of a resistance coefficient K and the velocity head (V^2/2g). The value of K can be found for various fittings in the referenced sources and the Losses in Valves, Fittings and Bends section of the EDL. ", ,Combined Pump & System Curves,
-,Major losses (pipe friction),The friction head loss associated with fluid moving through straight pipe. Refer to Friction Loss Calculator (https://edl.pumps.org/tools/frictional-losses.html), ,Fluid Flow: General,
+,K Value (Valves and Fittings),"Head loss though valves and standard fittings (minor losses) can be expressed in terms of a resistance coefficient K and the velocity head (V^2/2g). The value of K can be found for various fittings in the referenced sources and the Losses in Valves, Fittings and Bends section of the EDL. ", ,Combined Pump & System Curves,Please make sure to use the complete section name for a Section link.
+,Major losses (pipe friction),The friction head loss associated with fluid moving through straight pipe. Refer to Friction Loss Calculator (https://edl.pumps.org/tools/frictional-losses.html), ,Fluid Flow: General,Please make sure to put a ‘:’ between a Section and subSection for a Section link.
 ,Pump Runout (Maximum Flow),The highest flowrate shown on the published pump curve., ,Pump Curves,
-,Minor losses (valves & fittings),"The friction head loss associated with fluid moving through anything that is not straight pipe (valves, fittings, bends, nozzles, tank entrance and exits, etc.). Also see K value.", ,Fluid Flow: General,
+,Minor losses (valves & fittings),"The friction head loss associated with fluid moving through anything that is not straight pipe (valves, fittings, bends, nozzles, tank entrance and exits, etc.). Also see K value.", ,Fluid Flow: General,Please make sure to put a ‘:’ between a Section and subSection for a Section link.
 ,Mixed flow Impeller,"The mixed-flow impeller has a single inlet  with the flow entering axially and discharging about 45° with shaft axis, to the periphery. ",ANSI/HI 14.1-14.2,Pump Principles,
 ,Net positive suction head 3% (NPSH3), The value of NPSHR at which the first-stage to head drops by 3% due to cavitation.,ANSI/HI 14.1-14.2,Pump Principles,
 ,Net positive suction head available (NPSHA),"(14.1-14.2) The total suction head of liquid absolute, determined at the NPSH datum, less the absolute vapor pressure head of the liquid. 
-(6.1-6.5) For a reciprocating pump, acceleration head loss is subtracted from the total suction head of the liquid absolute.","ANSI/HI 14.1-14.2, ANSI/HI 6.1-6.5",Pump Curves,
+(6.1-6.5) For a reciprocating pump, acceleration head loss is subtracted from the total suction head of the liquid absolute.","ANSI/HI 14.1-14.2, ANSI/HI 6.1-6.5",Pump Curves,I did not generate 2 links here.  I will work on that this week.
 ,Net positive suction head required (NPSHR),"NPSHR is a minimum NPSH given by the manufacturer/supplier for a pump achieving a specified performance at the specified rate of flow, speed, and pumped liquid (occurrence of visible cavitation, increase of noise and vibration due to cavitation, beginning of head or efficiency drop, head or efficiency drop of a given amount, limitation of cavitation erosion).",ANSI/HI 14.1-14.2,Pump Curves,
 ,Open Impeller,"An impeller with no front shroud and no (or a minimum) back shroud with the vanes running in close proximity to mating casing walls, side plates, or liners. ",ANSI/HI 14.1-14.2,Pump Principles,
 ,Parallel operation,Parallel pumping is when two separate pumps operate at the same time using the same inlet and discharge piping.,ANSI/HI 14.3,Pump Curves,
