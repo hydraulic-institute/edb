@@ -313,7 +313,7 @@
                         <div class='column'>
                             <div class='field'>
                                 <label class='label'>
-                                    <span>Shaft Diameter (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
+                                    <span>Shaft Diameter [D] (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
                                 </label>
                                 <div>
                                     <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
@@ -391,12 +391,12 @@
                             <div class="col-4">${tank_type}</div>
                         </div>
                         <div v-for='c in volume_strings'>
-                            <div v-if='c.type' class="row">
+                            <div v-if='c.type' class="row align-items-center">
                                 <div class="col-4">
-                                ${c.type}
+                                <b>${c.type}</b>
                                 </div>
                                 <div class="col-4">
-                                    <select  class="input" style="min-width:120px; background-color: #ceffce" v-model="$data[c.varname]">
+                                    <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
                                         <option :value='b' v-for='b in end_types'>${b}</option>
                                     </select>
                                 </div>
@@ -405,17 +405,17 @@
                         <div class="row align-items-center">
                             <div class="col-4"><b>Length Units</b></div>
                             <div class="col-4">
-                                <select  class="input" style="min-width:120px; background-color: #ceffce" v-model='length_unit'>
+                                <select  class="input" style="min-width:120px;" v-model='length_unit'>
                                     <option :value='l' v-for='l in length_types'>${l}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row align-items-center">
                             <div class="col-4">
-                                <i><b>Tank Diameter: D</b></i>  
+                                <b>Tank Diameter: [D]</b>  
                             </div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px; background-color: #ceffce"
+                            <input class='input' style="min-width:120px;"
                             type='number' 
                             @keydown='no_negative_no_comma' 
                             @keydown.enter="calculate_volumes"
@@ -427,9 +427,9 @@
                             </div>
                         </div>
                         <div class="row align-items-center" v-if='tank_key != "st"'>
-                            <div class="col-4"><i><b>Length of Cylinder: A</b></i></div>
+                            <div class="col-4"><b>Length of Cylinder: [A]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px; background-color: #ceffce"
+                            <input class='input' style="min-width:120px;"
                             type='number' 
                             @keydown='no_negative_no_comma' 
                             @keydown.enter="calculate_volumes"
@@ -442,9 +442,9 @@
                             </div>
                         </div>
                         <div class="row align-items-center">
-                            <div class="col-4" ><b>Fill depth from bottom: H</b></div>
+                            <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px; background-color: #ceffce"
+                            <input class='input' style="min-width:120px;"
                             type='number' 
                             @keydown='no_negative_no_comma' 
                             @keydown.enter="calculate_volumes()"
@@ -475,14 +475,15 @@
             </div>
         </div>
         <div class="row mt-4">
-            <table class="table table-bordered table-striped is-narrow is-hoverable is-fullwidth" style="border-width:2px">
+            <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
                 <thead>
                     <tr>
-                        <th scope="col" style="width: 30%"></th>
-                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
-                        <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
+                        <th scope="col" style="width: 30%; vertical-align:bottom;text-align: center;">Location</th>
+                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:center">Volume without Unit Conversions</th>
+                        <th scope="col" style="width: 30%; text-align:center">Volume with Unit Conversions
                             <div>
-                                <select class="input" style="width:120px; background-color:#ceffce" v-model='conversion_unit'>
+                            <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
+                                <select class="input" style="width:120px;" v-model='conversion_unit'>
                                     <option :value='c' v-for='c in conversion_types'>${c}</option>
                                 </select>
                             </div>
@@ -491,11 +492,11 @@
                 </thead>
                 <tbody>
                     <tr v-for='c in volume_strings'>
-                        <td>${c.desc}</td>
-                        <td style="text-align: right">
+                        <td  style="text-align: center">${c.desc}</td>
+                        <td style="text-align: center">
                             ${c.value} Cubic ${length_unit}
                         </td>
-                        <td colspan="2" style="text-align: right">
+                        <td colspan="2" style="text-align: center">
                             ${c.converted_value} ${conversion_unit}
                         </td>
                     </tr>
