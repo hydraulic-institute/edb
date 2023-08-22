@@ -1,5 +1,5 @@
 -----
-title:  Definitions, Pump Types & References
+title: B) Definitions, Pump Types & References
 date: August 18th, 2023
 description: Table of Definitions 
 hide_units: true

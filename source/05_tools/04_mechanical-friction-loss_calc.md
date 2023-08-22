@@ -1,5 +1,5 @@
 -----
-title: Line Shaft Bearing Loss Calculator
+title: D) Line Shaft Bearing Loss Calculator
 date: July 28th, 2023
 description: Mechanical Friction loss calculator.
 -----
