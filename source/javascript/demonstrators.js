@@ -1191,13 +1191,10 @@ Vue.component('tank-demo', {
         length_types: ['Inches','Feet','Meters','Millimeters'],
         length_multiplier: [1,0.083333,0.0254,25.4],
         conversion_unit: 'Cubic Feet',
-        conversion_types: ['Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons'],
+        conversion_types: ['Cubic Millimeters', 'Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons', 'Barrels (Oil)', 'Liters'],
         swap_conv: false,
-        conversion_multiplier: [1,0.000579,0.0000164,0.004329],
-        conversion_xmultiplier: {'Inches': {'Cubic_Inches': 1, 'Cubic_Feet': 0.000579,  'Cubic_Meters': 0.0000164, 'Gallons': 0.004329},
-                              'Feet': {'Cubic_Inches': 1728, 'Cubic_Feet': 1,  'Cubic_Meters': 0.0283, 'Gallons': 7.480519},
-                              'Meters': {'Cubic_Inches': 61023.7, 'Cubic_Feet': 35.315,  'Cubic_Meters': 1, 'Gallons': 264.172}
-        },
+        conversion_mapper: {'Millimeters': 'mm3', 'Inches': 'in3', 'Feet': 'ft3', 'Meters': 'm3', 'Gallons': 'USgallons', 'Barrels (Oil)': 'barrels (oil)', 'Liters': 'liter'},
+        
         image_str: '',
         volume_equations_data: {
                               'ht': [{'type':'Cylinder','image':'ht-flat.jpg', 'equation':'equation_horizontal_cylinder.jpg'},
@@ -1215,7 +1212,25 @@ Vue.component('tank-demo', {
   },
   template: '#tank-demo-template',
   mounted: function() {
-    const v = this;
+    const v = this; 
+    v.vol_conversions = {};
+    //Conversions
+    axios.get("/statics/unit-conversions.json")
+        .then(function (response) {
+            for (var i=0;i<response.data.length;i++) {
+              if (response.data[i].measure.toLowerCase() == "volume") {
+                var data=response.data[i].units;
+                for (var j=0;j<data.length;j++) {
+                  v.vol_conversions[data[j].label]=data[j].factor;
+                }
+                break;
+              }
+            }
+        }).catch(function (err) {
+            console.log(err);
+            console.error('Unit conversion data could not be downloaded.')
+        })
+    
     v.top_type=v.end_types[0];
     v.bottom_type=v.end_types[1];
     v.end_type=v.end_types[1];
@@ -1253,13 +1268,14 @@ Vue.component('tank-demo', {
       this.h_filldepth = parseFloat(this.h_filldepth);
       this.d_diameter = parseFloat(this.d_diameter);
       if (this.tank_key != 'st') { this.a_length = parseFloat(this.a_length); }
-      if (this.h_filldepth > this.d_diameter) { this.check_depth=0; }
-      else { this.check_depth=1; }
       //Vol of Sphere used by all
       if (this.tank_key == 'st') {
         //console.log("ST Vol");
         tot_liquid_volume=this.vol_spherical_tank(this.d_diameter, this.h_filldepth);
         tot_tank_volume=this.vol_spherical_tank(this.d_diameter,this.d_diameter);
+
+        if (this.h_filldepth > this.d_diameter) { this.check_depth = 0;}
+        else {this.check_depth = 1;}
       }
       if (this.tank_key == 'ht') {
         //console.log("HT Vol");
@@ -1278,6 +1294,9 @@ Vue.component('tank-demo', {
         this.volume_data['endhead']['value']=this.float_to_str(this.volume_data['endhead']['value']);
         this.volume_data['endhead']['converted_value']=this.convert_val(this.volume_data['endhead']['value']);
         tot_tank_volume+=(2*this.vol_horizontal_elliptical_end(this.d_diameter,this.d_diameter,use_end_type));
+
+        if (this.h_filldepth > this.d_diameter) { this.check_depth = 0;}
+        else {this.check_depth = 1;}
       }
       if (this.tank_key == 'vt') {
         //Vertical Tank
@@ -1310,6 +1329,9 @@ Vue.component('tank-demo', {
         this.volume_data['tophead']['converted_value']=this.convert_val(this.volume_data['tophead']['value']);
         var ztop=this.get_z_value(use_top_type,this.d_diameter);
         tot_tank_volume+=this.vol_vertical_elliptical_end(this.d_diameter,ztop,this.a_length,use_top_type,is_top=true);
+
+        if (this.h_filldepth > (this.a_length + zbot + ztop)) { this.check_depth = 0;}
+        else {this.check_depth = 1;}
       }
       
       //Final values
@@ -1353,23 +1375,12 @@ Vue.component('tank-demo', {
       }
     },
     convert_val: function(in_val) {
-      if (!this.swap_conv) {
-        var from_unit = this.length_unit;
-        var to_unit = this.conversion_unit.split(' ').join('_');
-        if ( to_unit.includes(from_unit)) { return in_val; }
-        var use_from_unit = from_unit;
-        if (from_unit == "Millimeters") { use_from_unit = "Meters"}
-        var out_val = this.str_to_float(in_val) * this.conversion_xmultiplier[use_from_unit][to_unit];
-        if (use_from_unit != from_unit) {
-          out_val = out_val*1e-9;
-        }
-      }
-      else {
-        var from_unit_index = this.length_types.indexOf(this.length_unit);
-        var to_unit_index = this.conversion_types.indexOf(this.conversion_unit);
-        var out_val = (this.str_to_float(in_val))/(Math.pow(this.length_multiplier[from_unit_index],3));
-        out_val=out_val*this.conversion_multiplier[to_unit_index];
-      }
+      var from_unit = this.conversion_mapper[this.length_unit];
+      var to_unit = this.conversion_mapper[this.conversion_unit.replace('Cubic ','')];
+      if ( to_unit == from_unit) { return in_val; }
+      const standard = 1 / this.vol_conversions[from_unit];
+      const conv_factor = (standard * this.vol_conversions[to_unit]);
+      var out_val = this.str_to_float(in_val) * conv_factor;
       return this.float_to_str(out_val);
     },
     //Volume calculations
