@@ -5,7 +5,7 @@
   };
 
   const calcFrictionHead = (velocityIndex, resistance) => {
-    const value = resistance * (velocityIndex / 4) ** 2;
+    const value = resistance * Math.pow((velocityIndex / 4),2);
     return value;
   }
 
@@ -24,8 +24,8 @@
         const pumpHead = calcPumpHead(v, speed, coefA, coefB, coefC);
         const pumpHeadFullSpeed = calcPumpHead(v, 1, coefA, coefB, coefC);
 
-        values.pumpHead.push(pumpHead.toFixed(2));
-        values.pumpHeadFullSpeed.push(pumpHeadFullSpeed.toFixed(2));
+        values.pumpHead.push(parseFloat(pumpHead.toFixed(2)));
+        values.pumpHeadFullSpeed.push(parseFloat(pumpHeadFullSpeed.toFixed(2)));
       });
 
       return values;
@@ -49,11 +49,24 @@
         const frictionHead = calcFrictionHead(v, parseFloat(totalResistence));
         const totalHead = staticHead + frictionHead;
   
-        values.frictionHead.push(frictionHead.toFixed(2));
-        values.staticHead.push(staticHead.toFixed(2));
-        values.totalHead.push(totalHead.toFixed(2));
+        values.frictionHead.push(parseFloat(frictionHead.toFixed(2)));
+        values.staticHead.push(parseFloat(staticHead.toFixed(2)));
+        values.totalHead.push(parseFloat(totalHead.toFixed(2)));
     });
 
+    return values;
+  }
+
+  const calcIntersectionPointValue = (totalResistence, speed, staticHead, coefA, coefB, coefC) => {
+    const values = {
+      intersection_value: 0
+    };
+      const A=coefC-totalResistence/Math.pow(4,2);
+      const B=speed*coefB;
+      const C=coefA*Math.pow(speed,2)-staticHead;
+      const xval=((B*-1) - Math.sqrt(Math.pow(B,2)-(4*C*A)))/(2*A);
+
+      values.intersection_value=parseFloat(xval.toFixed(2));
     return values;
   }
   
@@ -61,7 +74,8 @@
     calcSysCurveStaticHead,
     calcFrictionHead,
     calcSystemCurveValues,
-    calcPumpSystemPlotValues
+    calcPumpSystemPlotValues,
+    calcIntersectionPointValue
   }
 })();
 
@@ -633,11 +647,15 @@ Vue.component("demo-system-curve-inputs", {
           lowerLevelValue: 5,
           upperLevelValue: 6,
           resistanceValue: 2,
-          pressureValue: 15
+          pressureValue: 33
         }
     },
     mounted: function() {
-
+      const v=this;
+      v.lowerLevelValue=v.lowerLevel;
+      v.upperLevelValue=v.upperLevel;
+      v.resistanceValue=v.resistance;
+      v.pressureValue=v.pressure;
     },
     watch: {
       lowerLevelValue: function(value) {
@@ -731,19 +749,28 @@ Vue.component("demo-pump-system-plot-inputs", {
       pumpSpeed: { 
         type: Number,
         default: 95
+      },
+      pressure: {
+        type: Number,
+        default: 0
       }
   },
   data: function() {
       return {
-        lowerLevelValue: 5,
-        upperLevelValue: 6,
-        resistanceValue: 2,
-        pumpSpeedValue: 45,
-        pressureValue: 15
+        lowerLevelValue: 0,
+        upperLevelValue: 0,
+        resistanceValue: 0,
+        pumpSpeedValue: 0,
+        pressureValue: 0
       }
   },
   mounted: function() {
-
+    const v = this; 
+    v.lowerLevelValue = v.lowerLevel;
+    v.upperLevelValue = v.upperLevel;
+    v.resistanceValue = v.resistance;
+    v.pumpSpeedValue = v.pumpSpeed;
+    v.pressureValue = v.pressure;
   },
   watch: {
     lowerLevelValue: function(value) {
@@ -787,7 +814,7 @@ Vue.component('demo-system-curve', {
         lowerLevel: 5,
         upperLevel: 10,
         totalResistence: 5,
-        atmospheres: 7,
+        pressure: 7,
         velocities: [0,1,2,3,4,5,6,7,8,9,10],
         chart: null
       };
@@ -798,10 +825,10 @@ Vue.component('demo-system-curve', {
       <div class="col-sm-12 col-md-5">
         <div  class="demo-inputs" style="">
           <demo-system-curve-inputs 
-            :lower-level.sync="lowerLevel"
-            :upper-level.sync="upperLevel"
-            :resistance.sync="totalResistence"
-            :pressure.sync="atmospheres"
+            :lower-level="lowerLevel"
+            :upper-level="upperLevel"
+            :resistance="totalResistence"
+            :pressure="pressure"
           >
           </demo-system-curve-inputs>
         </div>
@@ -883,7 +910,7 @@ Vue.component('demo-system-curve', {
     systemCalculator: function() {
       return CurveCalculators.calcSystemCurveValues(
         this.velocities, 
-        this.atmospheres, 
+        this.pressure, 
         this.upperLevel, 
         this.lowerLevel, 
         this.elevation,
@@ -942,7 +969,7 @@ Vue.component('demo-system-curve', {
     totalResistence: function() {
       this.refreshChart();
     },
-    atmospheres: function() {
+    pressure: function() {
       this.refreshChart();
     }
   }
@@ -956,9 +983,9 @@ Vue.component('demo-pump-curve', {
       min: 0,
       max: 10,
       lowerLevel: 5,
-      upperLevel: 10,
+      upperLevel: 5,
       totalResistence: 5,
-      atmospheres: 7,
+      pressure: 0,
       pumpSpeed: 95, // percentage
       velocities: [0,1,2,3,4,5,6,7,8,9,10],
       coefA: 70,
@@ -976,7 +1003,7 @@ Vue.component('demo-pump-curve', {
             :lower-level.sync="lowerLevel"
             :upper-level.sync="upperLevel"
             :resistance.sync="totalResistence"
-            :pressure.sync="atmospheres"
+            :pressure.sync="pressure"
             :pump-speed.sync="pumpSpeed"
           >
           </demo-pump-system-plot-inputs>
@@ -1008,7 +1035,7 @@ Vue.component('demo-pump-curve', {
       },
       stroke: {
         curve: "straight",
-        width: [3, 3, 0, 3, 3]
+        width: [3, 3, 0, 3, 3, 3]
       },
       fill: {
         opacity: [1, 0.25, 0.25],
@@ -1022,11 +1049,15 @@ Vue.component('demo-pump-curve', {
         borderColor: '#85929E',
       },
       xaxis: {
-        velocities: this.velocities,
+        type: 'numeric',
+        min: 0,
+        max: 10,
+        decimalsInFloat: false,
+        tickAmount: 10,
         title: {
           text: "Rate of Flow"
         },
-        labels: { 
+        labels: {
           show: false
         },
         axisTicks: {
@@ -1037,8 +1068,10 @@ Vue.component('demo-pump-curve', {
         },
       },
       yaxis: { 
+        type: 'numeric',
         min: 0,
-        max: 140,
+        max: this.pumpSystemCurveData.pumpHeadFullSpeed[0]+20,
+        tickAmount: (this.pumpSystemCurveData.pumpHeadFullSpeed[0]+20)/10,
         decimalsInFloat: false,
         title: {
           text: "Head"
@@ -1056,9 +1089,10 @@ Vue.component('demo-pump-curve', {
   },
   methods: {
     calculations: function() {
+      console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistence: "+this.totalResistence+" Speed: "+this.pumpSpeed)
       const sys_values = CurveCalculators.calcSystemCurveValues(
         this.velocities, 
-        this.atmospheres, 
+        this.pressure, 
         this.upperLevel, 
         this.lowerLevel, 
         this.elevation,
@@ -1071,8 +1105,19 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
-      
-      const values=Object.assign({}, sys_values, pump_values);
+
+      const intersection_value = CurveCalculators.calcIntersectionPointValue(
+        this.totalResistence,
+        this.pumpSpeed / 100,
+        sys_values.staticHead[0],
+        this.coefA,
+        this.coefB,
+        this.coefC
+      );
+
+      const values=Object.assign({}, sys_values, pump_values, intersection_value);
+      const kval=JSON.stringify(values);
+      console.log(kval);
       return values;
     },
     getSeries: function() {
@@ -1104,6 +1149,15 @@ Vue.component('demo-pump-curve', {
         type: 'line',
         data: this.velocities.map(v => ({ x: v, y: curveData.pumpHeadFullSpeed[v] })) 
       });
+      const yval=Math.max(curveData.pumpHead[0],curveData.pumpHeadFullSpeed[0],curveData.totalHead[9]);
+      var xval=isNaN(curveData.intersection_value)?0:curveData.intersection_value;
+      xval=Math.min(xval,10);
+      console.log("XVal:"+xval+" YVal:"+yval);
+      series.push({
+        name: 'Operating Point',
+        type: 'line',
+        data: [{x: xval, y: 0},{x: xval, y: yval}]
+      })
 
       return series;
 
@@ -1126,7 +1180,7 @@ Vue.component('demo-pump-curve', {
   computed: {
     pumpSystemCurveData: {
       get() {
-        return this.calculations(this.velocities);
+        return this.calculations();
       }
     }
   },
@@ -1143,7 +1197,7 @@ Vue.component('demo-pump-curve', {
     pumpSpeed: function() {
       this.refreshChart();
     },
-    atmospheres: function() {
+    pressure: function() {
       this.refreshChart();
     }
   }
