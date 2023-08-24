@@ -637,25 +637,25 @@ Vue.component("demo-system-curve-inputs", {
           type: Number,
           default: 0
         },
-        pressure: { 
+        pressure: {
           type: Number,
           default: 0
-        }
+        },
     },
     data: function() {
-        return {
-          lowerLevelValue: 5,
-          upperLevelValue: 6,
-          resistanceValue: 2,
-          pressureValue: 33
-        }
+      return {
+        lowerLevelValue:  0,
+        upperLevelValue: 0,
+        resistanceValue: 0,
+        pressureValue: 0,
+      }
     },
-    mounted: function() {
-      const v=this;
-      v.lowerLevelValue=v.lowerLevel;
-      v.upperLevelValue=v.upperLevel;
-      v.resistanceValue=v.resistance;
-      v.pressureValue=v.pressure;
+    created: function() {
+      const v = this; 
+      v.lowerLevelValue = v.lowerLevel;
+      v.upperLevelValue = v.upperLevel;
+      v.resistanceValue = v.resistance;
+      v.pressureValue = v.pressure;
     },
     watch: {
       lowerLevelValue: function(value) {
@@ -702,7 +702,7 @@ Vue.component("demo-pump-system-plot-inputs", {
     <div class="col" align="center" id="pump-speed-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
-        <demo-tank v-model="pumpSpeedValue" :level-min="0" :level-max="70" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpSpeedValue" :level-min="0" :level-max="120" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -748,7 +748,7 @@ Vue.component("demo-pump-system-plot-inputs", {
       },
       pumpSpeed: { 
         type: Number,
-        default: 95
+        default: 0
       },
       pressure: {
         type: Number,
@@ -764,7 +764,7 @@ Vue.component("demo-pump-system-plot-inputs", {
         pressureValue: 0
       }
   },
-  mounted: function() {
+  created: function() {
     const v = this; 
     v.lowerLevelValue = v.lowerLevel;
     v.upperLevelValue = v.upperLevel;
@@ -783,7 +783,7 @@ Vue.component("demo-pump-system-plot-inputs", {
       this.$emit("update:resistance", value)
     },
     pumpSpeedValue: function(value) {
-      this.$emit("update:pumpSpeed", value + 50)
+      this.$emit("update:pumpSpeed", value)
     },
     pressureValue: function(value) {
       this.$emit("update:pressure", value)
@@ -811,13 +811,20 @@ Vue.component('demo-system-curve', {
         elevation: 10,
         min: 0,
         max: 10,
-        lowerLevel: 5,
-        upperLevel: 10,
-        totalResistence: 5,
-        pressure: 7,
+        lowerLevel: 0,
+        upperLevel: 0,
+        totalResistence: 0,
+        pressure: 0,
         velocities: [0,1,2,3,4,5,6,7,8,9,10],
         chart: null
       };
+  },
+  created: function() {
+    const v=JSON.parse(this.init);
+    this.lowerLevel=parseInt(v.lowerTankLevel);
+    this.upperLevel=parseInt(v.upperTankLevel);
+    this.totalResistence=parseInt(v.overallResistance);
+    this.pressure=parseInt(v.upperTankPressure);
   },
   template: `
   <div class="container-fluid">
@@ -825,10 +832,10 @@ Vue.component('demo-system-curve', {
       <div class="col-sm-12 col-md-5">
         <div  class="demo-inputs" style="">
           <demo-system-curve-inputs 
-            :lower-level="lowerLevel"
-            :upper-level="upperLevel"
-            :resistance="totalResistence"
-            :pressure="pressure"
+            :lower-level.sync="lowerLevel"
+            :upper-level.sync="upperLevel"
+            :resistance.sync="totalResistence"
+            :pressure.sync="pressure"
           >
           </demo-system-curve-inputs>
         </div>
@@ -849,13 +856,14 @@ Vue.component('demo-system-curve', {
         type: "rangeArea",
         animations: { enabled: false },
         toolbar: { show: false },
-        height: 300
+        height: 400
       },
       series: series,
       dataLabels: {
         enabled: false
       },
-      //colors: ["#FF8800", "#0000FF", "#FF8800"], 
+      colors: ['#FF3E30','#176BEF','#F7B529','#179C52','#85929E', '#4A235A'],
+      
       tooltip: {
         enabled: false,
       },
@@ -908,6 +916,7 @@ Vue.component('demo-system-curve', {
   },
   methods: {
     systemCalculator: function() {
+      //console.log("Calc CurveVals: pressure: "+this.pressure+" Upper: "+this.upperLevel+" Lower: "+this.lowerLevel+" Resistance: "+this.totalResistence);
       return CurveCalculators.calcSystemCurveValues(
         this.velocities, 
         this.pressure, 
@@ -955,12 +964,13 @@ Vue.component('demo-system-curve', {
   computed: {
     systemCurveData: {
       get() {
-        return this.systemCalculator(this.velocities);
+        return this.systemCalculator();
       }
     }
   },
   watch: {
     lowerLevel: function() {
+      console.log("LowerLevel changed to: "+this.lowerLevel);
       this.refreshChart();
     },
     upperLevel: function() {
@@ -982,17 +992,25 @@ Vue.component('demo-pump-curve', {
       elevation: 10,
       min: 0,
       max: 10,
-      lowerLevel: 5,
-      upperLevel: 5,
-      totalResistence: 5,
+      lowerLevel: 0,
+      upperLevel: 0,
+      totalResistence: 0,
       pressure: 0,
-      pumpSpeed: 95, // percentage
+      pumpSpeed: 0, // percentage
       velocities: [0,1,2,3,4,5,6,7,8,9,10],
       coefA: 70,
       coefB: -2,
       coefC: -0.4,
       chart: null
     };
+  },
+  created: function() {
+    const v=JSON.parse(this.init);
+    this.lowerLevel=parseInt(v.lowerTankLevel);
+    this.upperLevel=parseInt(v.upperTankLevel);
+    this.totalResistence=parseInt(v.overallResistance);
+    this.pressure=parseInt(v.upperTankPressure);
+    this.pumpSpeed=parseInt(v.pumpSpeed);
   },
   template: `
   <div class="container-fluid">
@@ -1024,9 +1042,10 @@ Vue.component('demo-pump-curve', {
         type: "rangeArea",
         animations: { enabled: false },
         toolbar: { show: false },
-        height: 300
+        height: 400
       },
       series: series,
+      colors: ['#FF3E30','#176BEF','#F7B529','#179C52','#85929E', '#4A235A'],
       dataLabels: {
         enabled: false
       },
@@ -1035,10 +1054,10 @@ Vue.component('demo-pump-curve', {
       },
       stroke: {
         curve: "straight",
-        width: [3, 3, 0, 3, 3, 3]
+        width: [2, 2, 0, 2, 2, 3],
       },
       fill: {
-        opacity: [1, 0.25, 0.25],
+        opacity: [1, 0.25, 0.25, 1, 1, 1],
       },
       markers: {
         hover: { sizeOffset: 6 }
