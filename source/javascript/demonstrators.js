@@ -869,7 +869,7 @@ Vue.component('demo-system-curve', {
       },
       stroke: {
         curve: "straight",
-        width: [3, 3, 0]
+        width: [2, 2, 0]
       },
       fill: {
         opacity: [1, 0.25, 0.25],
@@ -885,7 +885,7 @@ Vue.component('demo-system-curve', {
       xaxis: {
         velocities: this.velocities,
         title: {
-          text: "Rate of Flow"
+          text: "Flow Rate"
         },
         labels: { 
           show: false
@@ -902,7 +902,7 @@ Vue.component('demo-system-curve', {
         max: 140,
         decimalsInFloat: false,
         title: {
-          text: "System Head Loss"
+          text: "Head"
         },
         labels: {
           show: false
@@ -1074,7 +1074,7 @@ Vue.component('demo-pump-curve', {
         decimalsInFloat: false,
         tickAmount: 10,
         title: {
-          text: "Rate of Flow"
+          text: "Flow Rate"
         },
         labels: {
           show: false
