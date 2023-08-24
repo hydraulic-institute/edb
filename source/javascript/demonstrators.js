@@ -880,7 +880,7 @@ Vue.component('demo-system-curve', {
       grid: {
         xaxis: { lines: { show: true } },
         yaxis: { lines: { show: true } },
-        borderColor: '#85929E',
+        borderColor: '#CDD4DB',
       },
       xaxis: {
         velocities: this.velocities,
@@ -938,12 +938,12 @@ Vue.component('demo-system-curve', {
       series.push({
         name: 'Static Head',
         type: 'area',
-        data: this.velocities.map(v => ({ x: v, y: curveData.staticHead[v] })) 
+        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v] - 1) })) 
       });
       series.push({
         name: 'Friction Head',
         type: 'rangeArea',
-        data: this.velocities.map(v => ({ x: v, y: [ curveData.staticHead[v], curveData.totalHead[v] ] })) 
+        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
       });
 
       return series;
@@ -1065,7 +1065,7 @@ Vue.component('demo-pump-curve', {
       grid: {
         xaxis: { lines: { show: true } },
         yaxis: { lines: { show: true } },
-        borderColor: '#85929E',
+        borderColor: '#CDD4DB',
       },
       xaxis: {
         type: 'numeric',
@@ -1151,12 +1151,12 @@ Vue.component('demo-pump-curve', {
       series.push({
         name: 'Static Head',
         type: 'area',
-        data: this.velocities.map(v => ({ x: v, y: curveData.staticHead[v] })) 
+        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v]-1) })) 
       });
       series.push({
         name: 'Friction Head',
         type: 'rangeArea',
-        data: this.velocities.map(v => ({ x: v, y: [ curveData.staticHead[v], curveData.totalHead[v] ] })) 
+        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
       });
       series.push({
         name: 'Pump Head',
