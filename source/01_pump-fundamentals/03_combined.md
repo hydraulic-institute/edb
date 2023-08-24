@@ -42,9 +42,9 @@ title: Hello World Demonstrator
 kind: pump-curve
 lowerTankLevel: 5
 upperTankLevel: 10
-upperTankPressure: 10
+upperTankPressure: 0
 overallResistance: 5
-pumpSpeed: 95
+pumpSpeed: 50
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve
