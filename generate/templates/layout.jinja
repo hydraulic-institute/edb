@@ -478,9 +478,9 @@
             <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
                 <thead>
                     <tr>
-                        <th scope="col" style="width: 30%; vertical-align:bottom;text-align: center;">Location</th>
-                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:center">Volume without Unit Conversions</th>
-                        <th scope="col" style="width: 30%; text-align:center">Volume with Unit Conversions
+                        <th scope="col" style="width: 30%; vertical-align:bottom;text-align:left;">Location</th>
+                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
+                        <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
                             <div>
                             <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
                                 <select class="input" style="width:150px;" v-model='conversion_unit'>
@@ -492,11 +492,11 @@
                 </thead>
                 <tbody>
                     <tr v-for='c in volume_strings'>
-                        <td  style="text-align: center">${c.desc}</td>
-                        <td style="text-align: center">
+                        <td  style="text-align: left">${c.desc}</td>
+                        <td style="text-align: right">
                             ${c.value} Cubic ${length_unit}
                         </td>
-                        <td colspan="2" style="text-align: center">
+                        <td colspan="2" style="text-align: right">
                             ${c.converted_value} ${conversion_unit}
                         </td>
                     </tr>
