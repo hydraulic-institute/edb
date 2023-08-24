@@ -228,11 +228,9 @@ def replace_table_block(dir, table_text):
 
     data_us = ""
     data_metric = ""
-    #Assume fixed if not noted
-    if 'table_fixed_header' not in table or table['table_fixed_header'] == "true":
-        table['table_fixed_header']="fixed"
-    else:
-       table['table_fixed_header']="not-fixed"
+    #All table are default scrolling
+    if 'scrolling' in table and table['scrolling'] == 'false':
+        table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']
@@ -262,7 +260,7 @@ def replace_table_block_pdf(dir, table_text):
 
     data_us = ""
     data_metric = ""
-    table['table_fixed_header']="not-fixed"
+    table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']

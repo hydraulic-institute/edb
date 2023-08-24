@@ -146,6 +146,7 @@ we select some data points from the pump curve which are shown in the following 
 =|=
 title: Pump Curve Data
 data: qdH-us.csv
+scrolling: false
 =|=
 
 Using a second-order polynomial curve fit, we get the following pump curve equation:

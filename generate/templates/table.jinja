@@ -1,11 +1,11 @@
 <div class='table-container {{table.units}}-units' v-if="{{table.units}}_visible">
- <div class='{{meta.table_fixed_header}}-container'>
-    <table class="data-table table is-striped is-narrow is-hoverable is-fullwidth">
-        <thead class="{{meta.table_fixed_header}}-thead">
+ <div class='fixed-container {{meta.scrolling}}' style='{{meta.special}}'>
+    <table class="data-table table is-striped is-fullwidth">
+        <thead class="fixed-thead">
             {% for heading in table.headings %} 
                 <tr>
                     {%for header in heading.data %}
-                        <th class="{{meta.table_fixed_header}}-header {{header.type}}" scope="col"> {{header.data}}</th>
+                        <th class="fixed-header {{header.type}}" scope="col"> {{header.data}}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}

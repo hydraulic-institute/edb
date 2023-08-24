@@ -230,7 +230,7 @@ caption {
 /**************************************
  * Table Styles
 ***************************************/
-/* Data Table Sticky header and scrollbar */
+/* Default is sticky header and scrolling */
 .fixed-header {
     position:sticky;
     top:0;
@@ -245,13 +245,10 @@ caption {
     top:0;
     background: #49d4ef !important;
 }
-.not-fixed-thead { 
-    background: #49d4ef !important;
+.not-scrolling {
+    height: auto;
+    overflow: unset;
 }
-.not-fixed-header tbody tr {
-    width: 100%;
-}
-
 /* Table column types */
 td.numeric {
     font-family: monospace;

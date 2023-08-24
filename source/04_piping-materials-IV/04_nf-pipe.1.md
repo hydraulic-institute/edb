@@ -89,6 +89,7 @@ data: copper-cap.csv
 
 =|=
 data: alloys.csv
+scrolling: false
 =|=
 
 ## Pipe Dimensions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
