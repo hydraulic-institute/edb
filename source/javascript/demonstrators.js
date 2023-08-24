@@ -931,7 +931,7 @@ Vue.component('demo-system-curve', {
       const series = [];
 
       series.push({
-        name: 'Total Head',
+        name: 'System Curve',
         type: 'line',
         data: this.velocities.map(v => ({ x: v, y: curveData.totalHead[v] }))
       });
@@ -951,7 +951,7 @@ Vue.component('demo-system-curve', {
     getTooltip: function(dataPointIndex) {
       const curveData = this.systemCurveData;
       return '<div>' +
-        `<div><strong>Total Head: </strong><span>${curveData.totalHead[dataPointIndex]}</span></div>` +
+        `<div><strong>System Curve: </strong><span>${curveData.totalHead[dataPointIndex]}</span></div>` +
         `<div><strong>Static Head: </strong><span>${curveData.staticHead[dataPointIndex]}</span></div>` +
         `<div><strong>Friction Head: </strong><span>${curveData.frictionHead[dataPointIndex]}</span></div>` +
       '</div>';
@@ -1144,7 +1144,7 @@ Vue.component('demo-pump-curve', {
       const series = [];
 
       series.push({
-        name: 'Total Head',
+        name: 'System Curve',
         type: 'line',
         data: this.velocities.map(v => ({ x: v, y: curveData.totalHead[v] }))
       });
@@ -1159,12 +1159,12 @@ Vue.component('demo-pump-curve', {
         data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
       });
       series.push({
-        name: 'Pump Head',
+        name: 'Pump Curve (speed adjusted)',
         type: 'line',
         data: this.velocities.map(v => ({ x: v, y: curveData.pumpHead[v] })) 
       });
       series.push({
-        name: 'Full Speed Pump',
+        name: 'Pump Curve (base)',
         type: 'line',
         data: this.velocities.map(v => ({ x: v, y: curveData.pumpHeadFullSpeed[v] })) 
       });
