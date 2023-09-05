@@ -165,6 +165,10 @@ Vue.component("demo-tank", {
         placement: {
           type: String,
           default: "lower"
+        },
+        length_units: {
+          type: Number,
+          default: 10
         }
     },
     data: function() {
@@ -178,9 +182,11 @@ Vue.component("demo-tank", {
         const levelYSpacing = this.maxHeight / this.levelMax;
         const tickWidth = this.knobRadius + 6;
         const levelTickValues = _.range(this.levelMin, this.levelMax + 1);
-        const stageNormalWidth = this.maxWidth + this.knobRadius + 2;
-        const stageNormalHeight = this.maxHeight + (this.knobRadius * 2) + 2;
-
+        const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
+        const stageNormalWidth = ((this.placement == "upper") ? calc_stageNormalWidth+20 : calc_stageNormalWidth);
+        const calc_stageNormalHeight = this.maxHeight + (this.knobRadius * 2) + 2;
+        const stageNormalHeight = ((this.placement == "upper") ? (2*calc_stageNormalHeight)-(this.knobRadius*2) : calc_stageNormalHeight);
+    
         const tank = {
             stage: new Konva.Stage({
                 container: this.$el,
@@ -275,6 +281,37 @@ Vue.component("demo-tank", {
                     return newPos;
                 }
             }),
+            width_line: new Konva.Line({
+              x: 0,
+              y: 0,
+              points: [this.knobRadius, this.knobRadius+(this.maxHeight*2),this.knobRadius+this.maxWidth, this.knobRadius+(this.maxHeight*2)],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: "blue",
+              stroke: "blue",
+              strokeWidth: 1
+            }),
+            height_line: new Konva.Arrow({
+              x: 0,
+              y: 0,
+              points: [this.knobRadius+(this.maxWidth/2), this.knobRadius+(this.maxHeight*2),this.knobRadius+(this.maxWidth/2), this.knobRadius+this.maxHeight],
+              pointerLength: this.pointerWidth,
+              pointerWidth: this.pointerWidth,
+              fill: "blue",
+              stroke: "blue",
+              strokeWidth: 1
+            }),
+            height_text: new Konva.Text({
+              x: (this.knobRadius+(this.maxWidth/2)+3),
+              y: (this.knobRadius+(this.maxHeight*2))*(3/4),
+              fontSize: 10,
+              fontFamily: 'Verdana',
+              fill: 'black',
+              align: 'center',
+              text: this.length_units.toString()+" feet",
+              listening: false,
+            }),
+
             ticks: levelTickValues.map(v => new Konva.Rect({
                 name: (this.levelMax - v),
                 x: this.knobRadius,
@@ -297,6 +334,11 @@ Vue.component("demo-tank", {
         else {
           //This is a closed tank
           tank.group.add(tank.tank);
+        }
+        if (this.placement == "upper") {
+          tank.group.add(tank.width_line);
+          tank.group.add(tank.height_line);
+          tank.group.add(tank.height_text);
         }
 
         tank.group.add(tank.waterLevel);
@@ -594,7 +636,7 @@ Vue.component("demo-system-curve-inputs", {
       </div>
       <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
         <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
+        <demo-tank v-model="upperLevelValue" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-left: 5px"></demo-tank>
       </div>
     </div>
     <div class="row mb-2 mt-1">
@@ -695,7 +737,7 @@ Vue.component("demo-pump-system-plot-inputs", {
     </div>
     <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
       <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-bottom: 90px; margin-left: 5px"></demo-tank>
+      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-left: 5px"></demo-tank>
     </div>
   </div>
   <div class="row mb-2 mt-1">
