@@ -126,7 +126,16 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ### Educational Demonstration (Parallel Pumps)
 
-Content will be added soon.
+=d=
+title: Hello World Demonstrator
+kind: parallel-pumps
+lowerTankLevel: 5
+upperTankLevel: 10
+upperTankPressure: 0
+overallResistance: 5
+pumpSpeed: 50
+=d=
+
 
 ### Worked Example (U.S. Customary Units Only)
 
