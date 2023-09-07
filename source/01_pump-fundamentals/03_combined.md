@@ -38,12 +38,13 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 ### Educational Demonstration
 
 =d=
-title: Hello World Demonstrator
+title: System Curve Plot
 kind: pump-curve
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 0
-overallResistance: 5
+pumpType: system
+lowerLevel: 5
+upperLevel: 10
+pressure: 0
+totalResistance: 5
 pumpSpeed: 50
 =d=
 
@@ -126,7 +127,19 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ### Educational Demonstration (Parallel Pumps)
 
-Content will be added soon.
+=d=
+title: Parallel Pumps
+kind: pump-curve
+pumpType: parallel
+lowerLevel: 5
+upperLevel: 10
+pressure: 0
+totalResistance: 5
+pumpSpeed: 50
+pumpCount: 3
+max: 30
+=d=
+
 
 ### Worked Example (U.S. Customary Units Only)
 
