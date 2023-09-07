@@ -40,10 +40,10 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 =d=
 title: Hello World Demonstrator
 kind: pump-curve
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 0
-overallResistance: 5
+lowerLevel: 5
+upperLevel: 10
+pressure: 0
+totalResistance: 5
 pumpSpeed: 50
 =d=
 
@@ -128,12 +128,14 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 =d=
 title: Hello World Demonstrator
-kind: parallel-pumps
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 0
-overallResistance: 5
+kind: pump-curve
+lowerLevel: 5
+upperLevel: 10
+pressure: 0
+totalResistance: 5
 pumpSpeed: 50
+pumpCount: 3
+max: 30
 =d=
 
 
