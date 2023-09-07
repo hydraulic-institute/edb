@@ -894,7 +894,7 @@ Vue.component("demo-pump-system-plot-inputs", {
       this.$emit("update:pressure", value)
     },
     pumpCountValue: function(value) {
-      this.$emit("update:pumpCount", value)
+      this.$emit("update:pumpCount", parseInt(value))
     },
   }
 });
@@ -1105,9 +1105,10 @@ Vue.component('demo-pump-curve', {
       totalResistance: 0,
       pressure: 0,
       pumpSpeed: 0, // percentage
-      velocities: [],
       pumpCount: 1,
       multiplePumps: 0,
+      pumpType: "system",
+      velocities: [],
       coefA: 70,
       coefB: -2,
       coefC: -0.4,
@@ -1121,7 +1122,12 @@ Vue.component('demo-pump-curve', {
     const keys=Object.keys(v);
     for (var val in this._data) {
       if (keys.includes(val)) {
-        this._data[val] = parseInt(v[val]);
+        if (typeof this._data[val] == "string") {
+          this._data[val] = v[val];
+        }
+        else {
+          this._data[val] = parseInt(v[val]);
+        }
       }
     }
     this.velocities=[...Array(this.max+1).keys()]
@@ -1209,7 +1215,7 @@ Vue.component('demo-pump-curve', {
         type: 'numeric',
         min: 0,
         max: this.pumpSystemCurveData.pumps[0].pumpHeadFullSpeed[0]+20,
-        tickAmount: (this.pumpSystemCurveData.pumps[0].pumpHeadFullSpeed[0]+20)/10,
+        tickAmount: 10,
         decimalsInFloat: false,
         title: {
           text: "Head"
@@ -1290,6 +1296,7 @@ Vue.component('demo-pump-curve', {
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
       const series = [];
+      const names = {"system": ['Pump Curve (speed adjusted)'], "parallel": [['Pump Curve (speed adjusted)','Pump Curve (base)','3 Parallel']]}
 
       series.push({
         name: 'System Curve',
@@ -1318,15 +1325,15 @@ Vue.component('demo-pump-curve', {
       });
 
       for ( var i=0;i<this.pumpCount;i++) {
-        let name=['Pump Curve (speed adjusted)','Pump Curve (base)','3 Parallel'][i];
+        let name=[i];
         series.push({
-          name: name,
+          name: name=names[this.pumpType][i],
           type: 'line',
           data: this.velocities.map(v => ({ x: v, y: curveData.pumps[i].pumpHead[v] })) 
         });
       }
 
-      if (this.pumpCount == 1) {
+      if (this.type == "system") {
         series.push({
           name: 'Pump Curve (base)',
           type: 'line',
