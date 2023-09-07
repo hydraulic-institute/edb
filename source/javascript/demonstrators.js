@@ -95,7 +95,9 @@
     console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
     const values={
       headIncrease: parseInt(Math.ceil(((pumpHeadprime-pumpHead)/pumpHead)*100)),
-      flowIncrease: parseInt(Math.ceil(((Qprime-Q)/Q)*100))
+      flowIncrease: parseInt(Math.ceil(((Qprime-Q)/Q)*100)),
+      intersectionPointValues: [Q, Qprime],
+      pumpHeadValues: [pumpHead, pumpHeadprime]
     }
     return values;
   }
@@ -1114,7 +1116,21 @@ Vue.component('demo-pump-curve', {
       coefC: -0.4,
       chart: null,
       flowIncrease: 0,
-      headIncrease: 0
+      headIncrease: 0,
+      series_data: {
+        "System Curve": {"type":"line", "color": "#FF3E30","stroke": 2, "opacity": 1},
+        "Static Head":{"type":"area", "color": "#176BEF","stroke": 2, "opacity": 0.25}, 
+        "Friction Head": {"type":"rangeArea", "color": "#F7B529","stroke": 0, "opacity": 0.25}, 
+        "Operating Point": {"type":"line", "color":"#4A235A","stroke": 3, "opacity": 1}, 
+        "Pump Curve (speed adjusted)": {"type":"line", "color":"#179C52","stroke": 2, "opacity": 1},
+        "Pump Curve (base)": {"type":"line", "color": "#85929E","stroke": 2, "opacity": 1},
+        "3 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1},
+        "Series": {"type":"line", "color": "#90FF33","stroke": 4, "opacity": 1}
+      },
+      series_opacity: [],
+      series_stroke: [],
+      series_color: [],
+      series_names: []
     };
   },
   created: function() {
@@ -1132,6 +1148,12 @@ Vue.component('demo-pump-curve', {
     }
     this.velocities=[...Array(this.max+1).keys()]
     this.multiplePumps=(this.pumpCount > 1?1:0);
+    this.series_names=Object.keys(this.series_data);
+    for (var val in this.series_data) {
+      this.series_opacity.push(this.series_data[val]["opacity"]);
+      this.series_stroke.push(this.series_data[val]["stroke"]);
+      this.series_color.push(this.series_data[val]["color"]);
+    }
   },
   template: `
   <div class="container-fluid">
@@ -1161,6 +1183,7 @@ Vue.component('demo-pump-curve', {
   mounted: function() { 
     const chartElem = $(this.$el).find('.demo-chart')[0];
     const series = this.getSeries();
+    const chart_data = this.series_data;
 
     const options = {
       chart: {
@@ -1170,7 +1193,7 @@ Vue.component('demo-pump-curve', {
         height: 400
       },
       series: series,
-      colors: ['#FF3E30','#176BEF','#F7B529','#4A235A','#179C52','#85929E','#B505AA'],
+      colors: this.series_color,
       dataLabels: {
         enabled: false
       },
@@ -1179,10 +1202,10 @@ Vue.component('demo-pump-curve', {
       },
       stroke: {
         curve: "straight",
-        width: [2, 2, 0, 3, 2, 2, 2],
+        width: this.series_stroke
       },
       fill: {
-        opacity: [1, 0.25, 0.25, 1, 1, 1, 1],
+        opacity: this.series_opacity
       },
       markers: {
         hover: { sizeOffset: 6 }
@@ -1280,37 +1303,37 @@ Vue.component('demo-pump-curve', {
       //const kval=JSON.stringify(values);
       //console.log(kval);
 
-      if (this.pumpCount > 1) {
+      if (this.pumpType == "parallel") {
         const increases=CurveCalculators.calcIncreases(this.pumpCount, this.totalResistance, this.pumpSpeed/100, sys_values.staticHead[0],this.coefA,this.coefB,this.coefC);
         this.headIncrease=increases['headIncrease'];
         this.flowIncrease=increases['flowIncrease'];
+        values['increases']=increases;
       }
       else {
         this.headIncrease=0;
         this.flowIncrease=0;
       }
-      //console.log("headIncrease: "+this.headIncrease+" flowIncrease: "+this.flowIncrease);
       return values;
     },
 
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
       const series = [];
-      const names = {"system": ['Pump Curve (speed adjusted)'], "parallel": [['Pump Curve (speed adjusted)','Pump Curve (base)','3 Parallel']]}
+      const names = {"system": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','Pump Curve (base)','3 Parallel']}
 
       series.push({
         name: 'System Curve',
-        type: 'line',
+        type: this.series_data['System Curve']['type'],
         data: this.velocities.map(v => ({ x: v, y: curveData.totalHead[v] }))
       });
       series.push({
         name: 'Static Head',
-        type: 'area',
+        type: this.series_data['Static Head']['type'],
         data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v]-1) })) 
       });
       series.push({
         name: 'Friction Head',
-        type: 'rangeArea',
+        type: this.series_data['Friction Head']['type'],
         data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
       });
 
@@ -1320,24 +1343,35 @@ Vue.component('demo-pump-curve', {
       console.log("XVal:"+xval+" YVal:"+yval);
       series.push({
         name: 'Operating Point',
-        type: 'line',
+        type: this.series_data['Operating Point']['type'],
         data: [{x: xval, y: 0},{x: xval, y: yval}]
       });
 
       for ( var i=0;i<this.pumpCount;i++) {
-        let name=[i];
+        let name=names[this.pumpType][i];
         series.push({
-          name: name=names[this.pumpType][i],
-          type: 'line',
+          name: name,
+          type: this.series_data[name]['type'],
           data: this.velocities.map(v => ({ x: v, y: curveData.pumps[i].pumpHead[v] })) 
         });
       }
 
-      if (this.type == "system") {
+      if (this.pumpType == "system") {
         series.push({
           name: 'Pump Curve (base)',
-          type: 'line',
+          type: this.series_data['Pump Curve (base)']['type'],
           data: this.velocities.map(v => ({ x: v, y: curveData.pumps[0].pumpHeadFullSpeed[v] })) 
+        });
+      }
+
+      if (this.pumpType == "parallel") {
+        series.push({
+          name: 'Series',
+          type: this.series_data['Series']['type'],
+          data: [
+            {x:curveData.increases.intersectionPointValues[0], y:curveData.increases.pumpHeadValues[0]},
+            {x:curveData.increases.intersectionPointValues[1], y:curveData.increases.pumpHeadValues[1]}
+          ]
         });
       }
       
@@ -1354,9 +1388,32 @@ Vue.component('demo-pump-curve', {
         `<div><strong>Full Speed Pump: </strong><span>${curveData.pumpHeadFullSpeed[dataPointIndex]}</span></div>` +      
         '</div>';
     },
-    refreshChart: function() {
+    refreshChart: function(value=null) {
       const series = this.getSeries();
       this.chart.updateSeries(series);
+      //Update the opacity and stroke
+      if (value) {
+        let out_opacity=[...this.series_opacity];
+        let out_stroke=[...this.series_stroke];
+        let out_color=[...this.series_color];
+        if (value == 2) {
+          //Series is last.  Third pump is next to last
+          let index=Object.keys(this.series_data).length-2;
+          out_opacity.splice(index,1);
+          out_stroke.splice(index,1);
+          out_color.splice(index,1);
+        }
+        this.chart.updateOptions({  
+          colors: out_color,
+          stroke: {
+            curve: "straight",
+            width: out_stroke,
+          },
+          fill: {
+            opacity: out_opacity
+          },
+        })
+      }
     }
   },
   computed: {
@@ -1382,8 +1439,8 @@ Vue.component('demo-pump-curve', {
     pressure: function() {
       this.refreshChart();
     },
-    pumpCount: function() {
-      this.refreshChart();
+    pumpCount: function(value) {
+      this.refreshChart(value);
     }
   }
 });
