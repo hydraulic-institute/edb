@@ -1297,19 +1297,17 @@ Vue.component('demo-pump-curve', {
         out_opacity.splice(index,1);
         out_stroke.splice(index,1);
         out_color.splice(index,1);
-        out_markers.splice(index,1);
-
-        this.chart.updateOptions({  
-          colors: out_color,
-          stroke: {
-            curve: "straight",
-            width: out_stroke,
-          },
-          fill: {
-            opacity: out_opacity
-          }
-        });
       }
+      this.chart.updateOptions({  
+        colors: out_color,
+        stroke: {
+          curve: "straight",
+          width: out_stroke,
+        },
+        fill: {
+          opacity: out_opacity
+        }
+      });
     },
 
     calculations: function() {
@@ -1462,14 +1460,18 @@ Vue.component('demo-pump-curve', {
           x_data = curveData.data.fcv_xValues;
         }
         //Special line
-        series.push({
-          name: 'Series',
+        let special_data={
+          name: 'tbd',
           type: this.series_data['Series']['type'],
           data: [
             {x:x_data[0], y:y_data[0]},
             {x:x_data[1], y:y_data[1]}
           ]
-        });
+        };
+        if ( this.pumpType == "fcv") {
+          special_data['name'] = 'Control Valve Head';
+        }
+        series.push(special_data);
       }
       
       return series;
