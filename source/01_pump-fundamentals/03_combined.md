@@ -45,7 +45,7 @@ lowerLevel: 5
 upperLevel: 10
 pressure: 0
 totalResistance: 5
-pumpSpeed: 50
+pumpSpeed: 75
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve
@@ -117,7 +117,7 @@ lowerLevel: 5
 upperLevel: 10
 pressure: 0
 totalResistance: 5
-pumpSpeed: 50
+pumpSpeed: 75
 valveSetting: 35
 =d=
 
@@ -149,7 +149,7 @@ lowerLevel: 5
 upperLevel: 10
 pressure: 0
 totalResistance: 5
-pumpSpeed: 50
+pumpSpeed: 75
 pumpCount: 3
 max: 30
 =d=
