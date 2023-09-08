@@ -45,7 +45,7 @@ lowerLevel: 5
 upperLevel: 10
 pressure: 0
 totalResistance: 5
-pumpSpeed: 50
+pumpSpeed: 75
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve
@@ -107,6 +107,20 @@ loss across the control valve, since the system flow rate has not changed.
 
 ![](./reading-6v3.png "")
 
+### Educational Demonstration
+
+=d=
+title: Pump and System Curve with Control Valve
+kind: pump-curve
+pumpType: fcv
+lowerLevel: 5
+upperLevel: 10
+pressure: 0
+totalResistance: 5
+pumpSpeed: 75
+valveSetting: 35
+=d=
+
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
@@ -135,7 +149,7 @@ lowerLevel: 5
 upperLevel: 10
 pressure: 0
 totalResistance: 5
-pumpSpeed: 50
+pumpSpeed: 75
 pumpCount: 3
 max: 30
 =d=
