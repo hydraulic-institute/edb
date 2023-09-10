@@ -99,9 +99,6 @@
       //Get info for which_pump
       const Qprime=calcQValue(which_pump,totalResistance,speed,staticHead,coefA,coefB,coefC);
       const pumpHeadprime=calcPumpHead(Qprime,speed,coefs['coefA'],coefs['coefB'],coefs['coefC']);
-      if (!pumpHeadprime) {
-        console.log("HERE");
-      }
       console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
       values['headIncrease']=parseInt(Math.ceil(((pumpHeadprime-pumpHead)/pumpHead)*100));
       values['flowIncrease']=parseInt(Math.ceil(((Qprime-Q)/Q)*100));
@@ -767,7 +764,6 @@ Vue.component("demo-pump-system-plot-inputs", {
   template: `
   <div class="wrap">  
   <div class="row mb-2">
-    <div style="color:red;padding:0px;"><i>{{ errorMessage }}</i></div>
     <div v-if='pumpType === "system"' class="col-8"></div>
     <div v-else-if='pumpType === "parallel"' class="col-6" id="parallel-pumps-id">
       <p class="mt-0 mb-0" style="font-size: smaller" align="left"><strong># Parallel Pumps</strong></p>
@@ -1209,7 +1205,6 @@ Vue.component('demo-pump-curve', {
             :pump-speed.sync="pumpSpeed"
             :pump-count.sync="pumpCount"
             :valve-flow-setting.sync="valveFlowSetting"
-            :error-message="errorMessage"
           >
           </demo-pump-system-plot-inputs>
         </div>
@@ -1324,6 +1319,40 @@ Vue.component('demo-pump-curve', {
           opacity: out_opacity
         }
       });
+    },
+
+    setErrorMessage: function() {
+      if (!this.errorMessage.length) {
+        this.chart.removeAnnotation('errorMessage');
+        return;
+      }
+      let x_val=this.pumpSystemCurveData.data.opPoint_x[0];
+      let y_val = 0.9 * this.chart.axes.w.config.yaxis[0].max;
+      this.chart.addPointAnnotation( {
+            id: 'errorMessage',
+            marker: {
+              size: 0
+            },
+            x: x_val,
+            y: y_val,
+            label: {
+              borderColor: '#FF4560',
+              offsetY: 0,
+              style: {
+                color: '#fff',
+                background: '#FF4560',
+                fontSize: '12px',
+                padding: {
+                  left: 5,
+                  right: 5,
+                  top: 5,
+                  bottom: 5,
+                }
+              },
+              text: this.errorMessage,
+            }
+          }
+        );
     },
 
     getSeriesData: function(in_data) {
@@ -1526,19 +1555,8 @@ Vue.component('demo-pump-curve', {
     },
     refreshChart: function(value=null) {
       const series = this.getSeries();
-      if (false && this.errorMessage) {
-        this.chart.addPointAnnotation({
-          id: 'error-annotation',
-          x: this.velocities.length/2,
-          y: 40,
-          label: {
-            text: 'Lorem Ipsum'
-          },
-        })
-        
-        chart.removeAnnotation('my-annotation')
-      }
       this.chart.updateSeries(series);
+
       //Update the opacity and stroke
       if (value) {
         this.check_colors();
@@ -1573,6 +1591,9 @@ Vue.component('demo-pump-curve', {
     },
     valveFlowSetting: function() {
       this.refreshChart();
+    },
+    errorMessage: function() {
+      this.setErrorMessage();
     }
   }
 });
