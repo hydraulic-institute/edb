@@ -769,7 +769,7 @@ Vue.component("demo-pump-system-plot-inputs", {
       <p class="mt-0 mb-0" style="font-size: smaller" align="left"><strong># Parallel Pumps</strong></p>
       <div class="row m-0">
         <div class="col-6" align="right">
-          <input v-model='pumpCountValue' class="input" type="number" min="2" max="3"/>
+          <input v-model='pumpCountValue' class="input" type="number" min="1"/>
         </div>
       </div>
     </div>
@@ -1484,7 +1484,7 @@ Vue.component('demo-pump-curve', {
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
       const series = [];
-      const names = {"system": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','Pump Curve (base)','3 Parallel'], "fcv":['Pump Curve (speed adjusted)']}
+      const names = {"system": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','Pump Curve (base)'], "fcv":['Pump Curve (speed adjusted)']}
 
       series.push({
         name: 'System Curve',
@@ -1514,9 +1514,13 @@ Vue.component('demo-pump-curve', {
       //Pump Curves
       for ( var i=0;i<this.pumpCount;i++) {
         let name=names[this.pumpType][i];
+        if (!name) {
+          name=this.pumpCount.toString() + " Parallel";
+          i=this.pumpCount-1;
+        }
         series.push({
           name: name,
-          type: this.series_data[name]['type'],
+          type: 'line',
           data: this.velocities.map(v => ({ x: v, y: curveData.pumps[i].pumpHead[v] })) 
         });
       }

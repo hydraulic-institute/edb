@@ -139,7 +139,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ![](./pumps-series.png "")
 
-### Educational Demonstration (Parallel Pumps)
+### Educational Demonstration 
 
 =d=
 title: Parallel Pumps
