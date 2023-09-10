@@ -106,20 +106,6 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div> 
-    </div> 
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne-2" style="margin-bottom:0">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne-2" aria-expanded="false">
-                Vertical Electric Motor Frame Size Dimensions
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
-            <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-2">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -143,6 +129,20 @@ hide_units: true
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne-2" style="margin-bottom:0">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne-2" aria-expanded="false">
+                Vertical Electric Motor Frame Size Dimensions
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
+            <div class="accordion-body">
+                <div class="accordion" id="accordionPanelsStayOpenExample-2">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
