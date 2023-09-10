@@ -339,7 +339,7 @@ def replace_demonstrator_block(output_path, dir, markdownProps):
     init = parse_dict(useMarkdown)
     template = env.get_template('demo.jinja')
     key = str(uuid.uuid4())
-    demoHtml = template.render(key=key, kind=init["kind"], init=json.dumps(init))
+    demoHtml = template.render(key=key, title=init["title"], kind=init["kind"], init=json.dumps(init))
 
     return demoHtml
 

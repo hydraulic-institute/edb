@@ -110,7 +110,7 @@ hide_price: true
 ### Educational Demonstration
 
 =d=
-title: Hello World Demonstrator
+title: System Curve
 kind: system-curve
 lowerTankLevel: 5
 upperTankLevel: 10
