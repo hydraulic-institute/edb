@@ -322,7 +322,7 @@ The block above would create a table in the page titled "Data Points".  The `dat
 Including **hide_units** in the markdown will HIDE the units block on the horizontal nav bar otherwise, the Units block will be VISIBLE.
 - **scrolling: false** - 
 Setting to "false" will generate a static table vs. a scrolling table, otherwise tables WILL be scrolling.
-- **special: style:value;** -
+- **special: style: value;** -
 Special allows you to set special styles for your table just as you would in html.  Use the same format:  
 Ex:  special: height:600px;width:100%;
 
