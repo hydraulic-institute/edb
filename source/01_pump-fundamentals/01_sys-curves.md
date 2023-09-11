@@ -115,7 +115,7 @@ kind: pump-curve
 type: system
 pumpCount: 0
 lowerLevel: 5
-upperLevel: 10
+upperLevel: 5
 upperPressure: 10
 totalResistance: 5
 =d=
