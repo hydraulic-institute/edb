@@ -491,7 +491,7 @@ Vue.component("demo-tank", {
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            ////console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
             let x_level=levelPosition.x
             if (!this.isHorizontal) {
               x_level=levelPosition.x+(this.tank.tank.width()/2);
@@ -660,7 +660,7 @@ Vue.component("demo-flow-line", {
 });
 
 
-Vue.component("demo-pump-system-plot-inputs", {
+Vue.component("demo-pump-inputs", {
   template: `
   <div class="wrap">  
   <div class="row mb-2">
@@ -919,7 +919,7 @@ Vue.component('demo-pump-curve', {
   <div class="row demonstrator">
     <div class="col-sm-12 col-md-5">
       <div  class="demo-inputs" style="">
-          <demo-pump-system-plot-inputs 
+          <demo-pump-inputs 
             :pump-type="pumpType"
             :multiple-pumps="multiplePumps"
             :flow-increase="flowIncrease"
@@ -932,7 +932,7 @@ Vue.component('demo-pump-curve', {
             :pump-count.sync="pumpCount"
             :valve-flow-setting.sync="valveFlowSetting"
           >
-          </demo-pump-system-plot-inputs>
+          </demo-pump-inputs>
         </div>
       </div>
       <div class="col-sm-12 col-md-7">
@@ -954,7 +954,7 @@ Vue.component('demo-pump-curve', {
     const chartElem = $(this.$el).find('.demo-chart')[0];
     const series = this.getSeries();
     let y_max=this.pumpSystemCurveData.totalHead[this.max]+10;
-    let x_max=this.max+10;
+    let x_max=this.max;
     if (this.pumpCount) {
       y_max=this.pumpSystemCurveData.pumps[0].pumpHeadFullSpeed[0]+10;
     }
@@ -990,16 +990,16 @@ Vue.component('demo-pump-curve', {
         type: 'numeric',
         min: 0,
         max: x_max,
-        decimalsInFloat: false,
+        decimalsInFloat: 0,
         tickAmount: 10,
         title: {
           text: "Flow Rate"
         },
         labels: {
-          show: true
+          show: false
         },
         axisTicks: {
-          show: true
+          show: false
         },
         tooltip: {
           enabled: false
@@ -1015,10 +1015,10 @@ Vue.component('demo-pump-curve', {
           text: "Head"
         },
         labels: {
-          show: true
+          show: false
         },
         axisTicks: {
-          show: true
+          show: false
         },
       }
     };
@@ -1211,7 +1211,6 @@ Vue.component('demo-pump-curve', {
             const y0=(fcv>0?phQ:0);
             const y1=(fcv>0?(fhQ+sys_values['staticHead'][0]):0);
             values['data']['series_y']=[y0,y1];
-            //console.log("FCV_X: "+values['data']['series_x']+" FCV_Y: "+values['data']['series_y']);
           }
         }
         
@@ -1231,24 +1230,18 @@ Vue.component('demo-pump-curve', {
         type: this.series_data['System Curve']['type'],
         data: this.velocities.map(v => ({ x: v, y: curveData.totalHead[v] }))
       });
-      console.log("System Curve: X:"+series[series.length-1]['data'][0]);
-      console.log("System Curve: Y:"+series[series.length-1]['data'][1]);
 
       series.push({
         name: 'Static Head',
         type: this.series_data['Static Head']['type'],
         data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v]-1) })) 
       });
-      console.log("Static Head X:"+series[series.length-1]['data'][0]);
-      console.log("Static Head Y:"+series[series.length-1]['data'][1]);
 
       series.push({
         name: 'Friction Head',
         type: this.series_data['Friction Head']['type'],
         data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
       });
-      console.log("Friction Head X:"+series[series.length-1]['data'][0]);
-      console.log("Friction Head y:"+series[series.length-1]['data'][1]);
 
       if (this.pumpCount) {
         series.push({
@@ -1273,9 +1266,6 @@ Vue.component('demo-pump-curve', {
             type: 'line',
             data: this.velocities.map(v => ({ x: v, y: curveData.pumps[i].pumpHead[v] })) 
           });
-          console.log(name+" X: "+series[series.length-1]['data'][0]);
-          console.log(name+" Y: "+series[series.length-1]['data'][1]);
-
         }
 
         if ((this.pumpType == "plot") || (this.pumpType == "fcv")) {
@@ -1284,9 +1274,6 @@ Vue.component('demo-pump-curve', {
             type: this.series_data['Pump Curve (base)']['type'],
             data: this.velocities.map(v => ({ x: v, y: curveData.pumps[0].pumpHeadFullSpeed[v] })) 
           });
-          console.log("Pump Curve (base): X"+series[series.length-1]['data'][0]);
-          console.log("Pump Curve (base): Y"+series[series.length-1]['data'][1]);
-    
         }
 
         if ((this.pumpType == "parallel") || (this.pumpType == "fcv")) {
@@ -1479,7 +1466,6 @@ Vue.component('tank-demo', {
       if (this.tank_key != 'st') { this.a_length = parseFloat(this.a_length); }
       //Vol of Sphere used by all
       if (this.tank_key == 'st') {
-        //console.log("ST Vol");
         tot_liquid_volume=this.vol_spherical_tank(this.d_diameter, this.h_filldepth);
         tot_tank_volume=this.vol_spherical_tank(this.d_diameter,this.d_diameter);
 
@@ -1487,9 +1473,7 @@ Vue.component('tank-demo', {
         else {this.check_depth = 1;}
       }
       if (this.tank_key == 'ht') {
-        //console.log("HT Vol");
         //Horizontal Tank
-        //console.log("Horizontal tank");
         this.volume_data['cylindrical']['value']=this.vol_horizontal_cylinder(this.d_diameter,this.h_filldepth,this.a_length);
         tot_liquid_volume=this.volume_data['cylindrical']['value'];
         this.volume_data['cylindrical']['value']=this.float_to_str(this.volume_data['cylindrical']['value']);
@@ -1497,7 +1481,6 @@ Vue.component('tank-demo', {
         tot_tank_volume=this.vol_horizontal_cylinder(this.d_diameter,this.d_diameter,this.a_length);
 
         //Both ends
-        //console.log("Do Ends (calc for 1 and double for total)");
         this.volume_data['endhead']['value']=(2*this.vol_horizontal_elliptical_end(this.d_diameter,this.h_filldepth,use_end_type));
         tot_liquid_volume+=this.volume_data['endhead']['value'];
         this.volume_data['endhead']['value']=this.float_to_str(this.volume_data['endhead']['value']);
@@ -1509,9 +1492,7 @@ Vue.component('tank-demo', {
       }
       if (this.tank_key == 'vt') {
         //Vertical Tank
-        //console.log("VT Vol");
         //Bottom Head
-        //console.log("Bottom Head")
         var my_H_val=this.get_H_value(use_bot_type,this.d_diameter,this.h_filldepth,this.a_length,is_top=false);
         this.volume_data['bottomhead']['value']=this.vol_vertical_elliptical_end(this.d_diameter,my_H_val,this.a_length,use_bot_type,is_top=false);
         tot_liquid_volume=this.volume_data['bottomhead']['value'];
@@ -1521,7 +1502,6 @@ Vue.component('tank-demo', {
         tot_tank_volume=this.vol_vertical_elliptical_end(this.d_diameter,zbot,this.a_length,use_bot_type,is_top=false);
 
         //Cylinder 
-        //console.log("Cylinder");
         var cyl_H_val=this.cylindrical_H_value(this.d_diameter,this.h_filldepth,this.a_length,use_bot_type);
         this.volume_data['cylindrical']['value']=this.vol_vertical_cylinder(this.d_diameter,cyl_H_val);
         tot_liquid_volume+=this.volume_data['cylindrical']['value'];
@@ -1530,7 +1510,6 @@ Vue.component('tank-demo', {
         tot_tank_volume+=this.vol_vertical_cylinder(this.d_diameter,this.a_length);
 
         //Top 
-        //console.log("Top Head");
         my_H_val=this.get_H_value(use_top_type,this.d_diameter,this.h_filldepth,this.a_length,is_top=true);
         this.volume_data['tophead']['value']=this.vol_vertical_elliptical_end(this.d_diameter,my_H_val,this.a_length,use_top_type,is_top=true);
         tot_liquid_volume+=this.volume_data['tophead']['value'];
