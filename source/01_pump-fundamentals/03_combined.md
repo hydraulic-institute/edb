@@ -42,7 +42,7 @@ title: Pump and System Curve Example
 kind: pump-curve
 pumpType: plot
 lowerLevel: 5
-upperLevel: 10
+upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
@@ -114,7 +114,7 @@ title: Pump and System Curve with Control Valve
 kind: pump-curve
 pumpType: fcv
 lowerLevel: 5
-upperLevel: 10
+upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
@@ -146,7 +146,7 @@ title: Parallel Pumps
 kind: pump-curve
 pumpType: parallel
 lowerLevel: 5
-upperLevel: 10
+upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
