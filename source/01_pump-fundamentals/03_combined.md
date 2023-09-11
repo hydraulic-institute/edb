@@ -38,9 +38,9 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 ### Educational Demonstration
 
 =d=
-title: System Curve Plot
+title: Pump and System Curve Example
 kind: pump-curve
-pumpType: system
+pumpType: plot
 lowerLevel: 5
 upperLevel: 10
 pressure: 0

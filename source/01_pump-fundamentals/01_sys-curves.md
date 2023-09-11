@@ -111,11 +111,13 @@ hide_price: true
 
 =d=
 title: System Curve
-kind: system-curve
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 10
-overallResistance: 5
+kind: pump-curve
+type: system
+pumpCount: 0
+lowerLevel: 5
+upperLevel: 10
+upperPressure: 10
+totalResistance: 5
 =d=
 
 ### Worked Example (U.S. & Metric Units)
