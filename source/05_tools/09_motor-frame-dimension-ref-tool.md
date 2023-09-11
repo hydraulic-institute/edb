@@ -7,10 +7,20 @@ hide_units: true
 
 <h3>Motor Frame Size and Dimension Reference Tool</h3>
 
-<h4>NEMA</h4>
+<div class="row" style="margin-top:50px">
+    <div class="col-6 d-flex justify-content-center"><img src="./HorizontalMotor.png" style="max-width:75%;height:auto"></div>
+    <div class="col-6 d-flex justify-content-center"><img src="./VerticalMotor.png" style="max-width:75%;height:auto"></div>
+</div>
+<div class="row">
+    <div class="col-6 d-flex justify-content-center"><h5>Horizontal Electric Motor</h5></div>
+    <div class="col-6 d-flex justify-content-center"><h5>Vertical Electric Motor</h5></div>
+</div>
+<div class="row" style="margin-top:50px">
+    <div class="col-12"><img src="./NEMALogo-s.jpg" style="height:76px"></div>
+</div>
 
-<div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
+<div class="accordion" id="accordionPanelsStayOpenExample" style="--bs-accordion-bg:#aaefd3">
+    <div class="accordion-item mt-2" >
         <h2 class="accordion-header" id="headingOne" style="margin-bottom:0">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false">
@@ -133,7 +143,7 @@ hide_units: true
             </div>
         </div> 
     </div> 
-    <div class="accordion-item">
+    <div class="accordion-item mt-2">
         <h2 class="accordion-header" id="headingOne-2" style="margin-bottom:0">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#panelsStayOpen-collapseOne-2" aria-expanded="false">
@@ -198,6 +208,127 @@ hide_units: true
                                     ††Either clearance hole or up size shall be specified.
                                     <br>
                                     **AJ dimension—centerline of bolt holes shall be within 0.025 inch of true location. True location is defined as angular and diametrical location with reference to the centerline of the AK dimension.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top:50px">
+    <div class="col-12"><img src="./IECLogo-s.jpg" style="height:100px"></div>
+</div>
+<div class="accordion" id="accordionPanelsStayOpenExample-iec" style="--bs-accordion-bg:#a5cbeb">
+    <div class="accordion-item mt-2">
+        <h2 class="accordion-header" id="headingOne-iec" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-iec" aria-expanded="false">
+            Horizontal Electric Motor Frame Size Dimensions
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-iec" class="accordion-collapse collapse" aria-labelledby="headingOne-iec">
+            <div class="accordion-body">
+                <div class="accordion" id="accordionPanelsStayOpenExample-iec-1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne-iec-1" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne-iec-1" aria-expanded="false">
+                            TBD
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne-iec-1" class="accordion-collapse collapse" aria-labelledby="headingOne-1">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-6"><img src="./motor-4.4.1-1.png "></div>
+                                    <div class="col-6"><img src="./motor-4.4.1-2.png "></div>
+                                </div>
+                                <div style="padding:0">
+                                    Put Content here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo-iec-1" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo-iec-1" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo-iec-1">
+                            TBD
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo-iec-1" class="accordion-collapse collapse" aria-labelledby="headingTwo-iec-1">
+                            <div class="accordion-body">
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.4.png "></div></div>
+                                <div style="padding:0">
+                                    Put Content Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree-iec-2" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree-iec-2" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree-iec-2">
+                            TBD
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree-iec-2" class="accordion-collapse collapse" aria-labelledby="headingThree-iec-2">
+                            <div class="accordion-body">
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.5.png "></div></div>
+                                <div style="padding:0">
+                                    Put Content Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="accordion-item mt-2">
+        <h2 class="accordion-header" id="headingOne-iec-2" style="margin-bottom:0">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne-iec-2" aria-expanded="false">
+                Vertical Electric Motor Frame Size Dimensions
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-iec-2" class="accordion-collapse collapse" aria-labelledby="headingOne-iec-2">
+            <div class="accordion-body">
+                <div class="accordion" id="accordionPanelsStayOpenExample-iec-2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive-iec-2" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFive-iec-2" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFive-iec-2">
+                            TBD
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive-iec-2" class="accordion-collapse collapse" aria-labelledby="headingFive-iec-2">
+                            <div class="accordion-body">
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-vert-18-28-18-30.png "></div></div>
+                                <div style="padding:0">
+                                    Put Content Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour-iec-2" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour-iec-2" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour-iec-2">
+                            TBD
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour-iec-2" class="accordion-collapse collapse" aria-labelledby="headingFour-iec-2">
+                            <div class="accordion-body">
+                                <div class="row"><div class="col-3"></div><div class="col-6"><!--img src="./motor-vert-18-28-18-30.png "--></div></div>
+                                <div style="padding:0">
+                                    Put Content Here
                                 </div>
                             </div>
                         </div>
