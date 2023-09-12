@@ -393,10 +393,9 @@
             <table class="table table-striped">
                 <tbody>
                 <tr v-for='val in table_data'>
-                    <td colspan="1">${val.var}</td>
-                    <td colspan="2">${val.value} ${val.units}</td>
-                    <td colspan="1"></td>
-                    <!--td colspan="2">${val.value} ${val.units}</td-->
+                    <td colspan="1" style="text-align:right">${val.var}</td>
+                    <td colspan="1" style="text-align:center">-</td>
+                    <td colspan="2" style="text-align:left">${val.value} ${val.units}</td>
                     <td colspan="3">${val.desc}</td>
                 </tr>
                 <!--div class="row" v-for="val in table_data">

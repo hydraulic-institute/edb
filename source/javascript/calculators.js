@@ -583,23 +583,25 @@ Vue.component('atmospheric-pressure-calculator', {
                 {'var':'R*', 'metric': {'val':8.3144598, 'units': 'J/(mol-K)'}, 'us': {'val':89494.6, 'units': 'lg-ft^2/(lb_mol-K-s^2)'}, 'desc': 'Universal gas constant'},
                 {'var':'g0', 'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
                 {'var':'M', 'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
-            ]
+            ],
+            out_data:[],
         };
     },
     template: '#atmospheric-pressure-calculator-template',
     created: function () {
+        if (typeof (Storage) !== "undefined") {
+            this.load_inputs();
+        } else {
+            console.log("Local storage not available on this browser - unit sets will need to switch manually");
+        }
+    },
+    mounted: function () {
         const v = this;
         this.$root.$on('unit-change', (value) => {
             console.log("unit change");
             this.units = value;
             this.do_page_load();
         });
-        if (typeof (Storage) !== "undefined") {
-            this.load_inputs();
-        } else {
-            console.log("Local storage not available on this browser - unit sets will need to switch manually");
-        }
-        this.do_page_load();
     },
     methods: {
         no_negative: function (e) {
@@ -620,21 +622,21 @@ Vue.component('atmospheric-pressure-calculator', {
             console.log(this.units);
         },
         do_page_load: function() { 
-            console.log("do_page_load");
+            this.get_var_data();
         },
+        get_var_data: function() {
+            this.out_data=[];
+            for (var val of this.data_table) {
+                let units_str=val[this.units]['units'].replaceAll('^','\u00B2');
+                this.out_data.push({'var': val['var'], 'value': val[this.units]['val'], 'units': units_str, 'desc': val['desc']});
+            }
+            return this.out_data;
+        }
     },
     computed: {
         table_data: function() {
-            //add superscript to stuff
-            var out_data=[];
-            for (var val of this.data_table) {
-                let units_str=val[this.units]['units'].replaceAll('^2','<sup>2</sup>');
-                out_data.push({'var': val['var'], 'value': val[this.units]['val'], 'units': units_str});
-            }
-            return out_data;
-        }, 
-        which_units: function(){
-            return this.units;
+           return this.get_var_data();
         }
     }
+    
   });
