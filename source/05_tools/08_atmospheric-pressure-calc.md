@@ -4,6 +4,6 @@ date: Sept 11th, 2023
 description: Demo Atmospheric Pressure
 -----
 
-## Calculator: Atmospheric Pressure at Altitude Calculator
+## Calculator: Atmospheric Pressure at Altitude
 
 <atmospheric-pressure-calculator/>

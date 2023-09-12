@@ -389,14 +389,14 @@
         <div class='row' style='text-align:center'>
             <a href="https://en.wikipedia.org/wiki/Barometric_formula" target="_blank">https://en.wikipedia.org/wiki/Barometric_formula</a>
         </div>
-        <div class="container mt-5">
-            <table class="table table-striped">
+        <div class="container mt-5" style="display:flex;justify-content:center">
+            <table class="table table-striped" style="width:75%">
                 <tbody>
                 <tr v-for='val in table_data'>
-                    <td colspan="1" style="text-align:right">${val.var}</td>
-                    <td colspan="1" style="text-align:center">-</td>
-                    <td colspan="2" style="text-align:left">${val.value} ${val.units}</td>
-                    <td colspan="3">${val.desc}</td>
+                    <td colspan="1" style="text-align:left">${val.var}</td>
+                    <td colspan="1" style="text-align:left">-</td>
+                    <td colspan="1" style="text-align:left">${val.value} ${val.units}</td>
+                    <td colspan="1" style="text-align:right">${val.desc}</td>
                 </tr>
                 <!--div class="row" v-for="val in table_data">
                     <div class="col-1">${val.var }</div>
