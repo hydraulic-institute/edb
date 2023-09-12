@@ -385,12 +385,12 @@
 </script>
 
 <script type="text/x-template" id="atmospheric-pressure-calculator-template">
-    <div>
+    <div class="wrap">
         <div class='row' style='text-align:center'>
             <a href="https://en.wikipedia.org/wiki/Barometric_formula" target="_blank">https://en.wikipedia.org/wiki/Barometric_formula</a>
         </div>
         <div class="container mt-5" style="display:flex;justify-content:center">
-            <table class="table is-narrow border border-secondary-subtle" style="width:75%">
+            <table v-if='show_table' class="table is-narrow border border-secondary-subtle" style="width:75%">
                 <thead style="background-color:lightgrey">
                     <th style="width:10%">Constant</th>
                     <th style="width:10%""></th>
@@ -398,11 +398,11 @@
                     <th style="width:40%">Description</th>
                 </thead>
                 <tbody>
-                <tr v-for='val in table_data'>
-                    <td>${val.var}</td>
+                <tr v-for='d in table_data'>
+                    <td><b>${d.var}</b></td>
                     <td>-</td>
-                    <td>${val.value} ${val.units}</td>
-                    <td>${val.desc}</td>
+                    <td>${d.val} ${d.units}</td>
+                    <td>${d.desc}</td>
                 </tr>
                 <tr class="mt-3">
                     <td colspan="4" style="text-align: center"><img src="./barometric-pressure-calculation.png"></td>

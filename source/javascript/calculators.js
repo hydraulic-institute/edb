@@ -573,6 +573,12 @@ Vue.component('mechanical-friction-loss-calculator', {
 
 Vue.component('atmospheric-pressure-calculator', {
     delimiters: ['${', '}'],
+    props: {
+        show_table: { 
+          type: Boolean,
+          default: false
+        }
+      },
     data: function() {
         return {
             data_table: [
@@ -584,7 +590,7 @@ Vue.component('atmospheric-pressure-calculator', {
                 {'var':'g0', 'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
                 {'var':'M', 'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
             ],
-            out_data:[],
+            table_data: [],
         };
     },
     template: '#atmospheric-pressure-calculator-template',
@@ -599,9 +605,10 @@ Vue.component('atmospheric-pressure-calculator', {
         const v = this;
         this.$root.$on('unit-change', (value) => {
             console.log("unit change");
-            this.units = value;
+            this.page_units = value;
             this.do_page_load();
         });
+        this.do_page_load();
     },
     methods: {
         no_negative: function (e) {
@@ -618,25 +625,22 @@ Vue.component('atmospheric-pressure-calculator', {
             }
         },
         load_inputs: function () {
-            this.units = localStorage.getItem("unit-set");
-            console.log(this.units);
+            this.page_units = localStorage.getItem("unit-set");
+            console.log(this.page_units);
         },
         do_page_load: function() { 
             this.get_var_data();
         },
         get_var_data: function() {
-            this.out_data=[];
+            this.table_data=[];
             for (var val of this.data_table) {
-                let units_str=val[this.units]['units'].replaceAll('^2','\u00B2');
-                this.out_data.push({'var': val['var'], 'value': val[this.units]['val'], 'units': units_str, 'desc': val['desc']});
+                let units_str=val[this.page_units]['units'].replaceAll('^2','\u00B2');
+                this.table_data.push({'var': val['var'], 'val': val[this.page_units]['val'], 'units': units_str, 'desc': val['desc']});
             }
-            return this.out_data;
+            return this.table_data;
         }
     },
     computed: {
-        table_data: function() {
-           return this.get_var_data();
-        }
     }
     
   });
