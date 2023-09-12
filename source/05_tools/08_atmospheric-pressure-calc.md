@@ -1,8 +1,9 @@
 -----
 title: H) Atmospheric Pressure Demonstrator
-date: July 28th, 2023
+date: Sept 11th, 2023
 description: Demo Atmospheric Pressure
-hide_units: true
 -----
 
-## Atmospheric Pressure Calculator
+## Calculator: Atmospheric Pressure at Altitude Calculator
+
+<atmospheric-pressure-calculator/>

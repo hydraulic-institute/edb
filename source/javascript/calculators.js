@@ -570,3 +570,71 @@ Vue.component('mechanical-friction-loss-calculator', {
       }
   }
 });
+
+Vue.component('atmospheric-pressure-calculator', {
+    delimiters: ['${', '}'],
+    data: function() {
+        return {
+            data_table: [
+                {'var':'Pb', 'metric': {'val':101325, 'units': 'Pa'}, 'us': {'val':29.92126, 'units': 'inHg'}, 'desc': 'Reference pressure'},
+                {'var':'Tb','metric': {'val':288.15, 'units': 'K'}, 'us': {'val':288.15, 'units': 'K'}, 'desc': 'Reference temperature'},
+                {'var':'Lb', 'metric': {'val':-0.0065, 'units': 'K/m'}, 'us': {'val':-0.00198, 'units': 'K/ft'}, 'desc': 'Temperature lapse rate'},
+                {'var':'hb', 'metric': {'val':0, 'units': 'm'}, 'us': {'val':0, 'units': 'ft'}, 'desc': 'Height of reference pressure'},
+                {'var':'R*', 'metric': {'val':8.3144598, 'units': 'J/(mol-K)'}, 'us': {'val':89494.6, 'units': 'lg-ft^2/(lb_mol-K-s^2)'}, 'desc': 'Universal gas constant'},
+                {'var':'g0', 'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
+                {'var':'M', 'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
+            ]
+        };
+    },
+    template: '#atmospheric-pressure-calculator-template',
+    created: function () {
+        const v = this;
+        this.$root.$on('unit-change', (value) => {
+            console.log("unit change");
+            this.units = value;
+            this.do_page_load();
+        });
+        if (typeof (Storage) !== "undefined") {
+            this.load_inputs();
+        } else {
+            console.log("Local storage not available on this browser - unit sets will need to switch manually");
+        }
+        this.do_page_load();
+    },
+    methods: {
+        no_negative: function (e) {
+            if (!((e.keyCode > 95 && e.keyCode < 106) ||
+                (e.keyCode > 47 && e.keyCode < 58) ||
+                e.keyCode == 190 || // period
+                e.keyCode == 110 || // decimal point
+                e.keyCode == 27 || // escape
+                e.keyCode == 46 || // delete
+                e.keyCode == 8 || // backspace
+                e.keyCode == 9) ) { //tab
+                e.preventDefault();
+                return false;
+            }
+        },
+        load_inputs: function () {
+            this.units = localStorage.getItem("unit-set");
+            console.log(this.units);
+        },
+        do_page_load: function() { 
+            console.log("do_page_load");
+        },
+    },
+    computed: {
+        table_data: function() {
+            //add superscript to stuff
+            var out_data=[];
+            for (var val of this.data_table) {
+                let units_str=val[this.units]['units'].replaceAll('^2','<sup>2</sup>');
+                out_data.push({'var': val['var'], 'value': val[this.units]['val'], 'units': units_str});
+            }
+            return out_data;
+        }, 
+        which_units: function(){
+            return this.units;
+        }
+    }
+  });

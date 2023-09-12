@@ -384,6 +384,34 @@
     </div>
 </script>
 
+<script type="text/x-template" id="atmospheric-pressure-calculator-template">
+    <div>
+        <div class='row' style='text-align:center'>
+            <a href="https://en.wikipedia.org/wiki/Barometric_formula" target="_blank">https://en.wikipedia.org/wiki/Barometric_formula</a>
+        </div>
+        <div class="container mt-5">
+            <table class="table table-striped">
+                <tbody>
+                <tr v-for='val in table_data'>
+                    <td colspan="1">${val.var}</td>
+                    <td colspan="2">${val.value} ${val.units}</td>
+                    <td colspan="1"></td>
+                    <!--td colspan="2">${val.value} ${val.units}</td-->
+                    <td colspan="3">${val.desc}</td>
+                </tr>
+                <!--div class="row" v-for="val in table_data">
+                    <div class="col-1">${val.var }</div>
+                    <div class="col-2">${val.metric.val} ${val.metric.units}</div>
+                    <div class="col-2"></div>
+                    <div class="col-2">${val.us.val} ${val.us.units}</div>
+                    <div class="col">${val.desc}</div-->
+                </div-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
+
 <script type="text/x-template" id="tank-demo-template"> 
     <div class="wrap">  
         <div class="row">
