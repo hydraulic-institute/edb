@@ -627,7 +627,7 @@ Vue.component('atmospheric-pressure-calculator', {
         get_var_data: function() {
             this.out_data=[];
             for (var val of this.data_table) {
-                let units_str=val[this.units]['units'].replaceAll('^','\u00B2');
+                let units_str=val[this.units]['units'].replaceAll('^2','\u00B2');
                 this.out_data.push({'var': val['var'], 'value': val[this.units]['val'], 'units': units_str, 'desc': val['desc']});
             }
             return this.out_data;
