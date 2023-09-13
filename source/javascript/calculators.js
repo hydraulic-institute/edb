@@ -577,20 +577,38 @@ Vue.component('atmospheric-pressure-calculator', {
         show_table: { 
           type: Boolean,
           default: false
-        }
+        },
       },
     data: function() {
         return {
-            data_table: [
-                {'var':'Pb', 'metric': {'val':101325, 'units': 'Pa'}, 'us': {'val':29.92126, 'units': 'inHg'}, 'desc': 'Reference pressure'},
-                {'var':'Tb','metric': {'val':288.15, 'units': 'K'}, 'us': {'val':288.15, 'units': 'K'}, 'desc': 'Reference temperature'},
-                {'var':'Lb', 'metric': {'val':-0.0065, 'units': 'K/m'}, 'us': {'val':-0.00198, 'units': 'K/ft'}, 'desc': 'Temperature lapse rate'},
-                {'var':'hb', 'metric': {'val':0, 'units': 'm'}, 'us': {'val':0, 'units': 'ft'}, 'desc': 'Height of reference pressure'},
-                {'var':'R*', 'metric': {'val':8.3144598, 'units': 'J/(mol-K)'}, 'us': {'val':89494.6, 'units': 'lg-ft^2/(lb_mol-K-s^2)'}, 'desc': 'Universal gas constant'},
-                {'var':'g0', 'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
-                {'var':'M', 'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
-            ],
+            data_table: {
+                'Pb': {'metric': {'val':101325, 'units': 'Pa'}, 'us': {'val':29.92126, 'units': 'inHg'}, 'desc': 'Reference pressure'},
+                'Tb': {'metric': {'val':288.15, 'units': 'K'}, 'us': {'val':288.15, 'units': 'K'}, 'desc': 'Reference temperature'},
+                'Lb': {'metric': {'val':-0.0065, 'units': 'K/m'}, 'us': {'val':-0.00198, 'units': 'K/ft'}, 'desc': 'Temperature lapse rate'},
+                'hb': {'metric': {'val':0, 'units': 'm'}, 'us': {'val':0, 'units': 'ft'}, 'desc': 'Height of reference pressure'},
+                'R*': {'metric': {'val':8.3144598, 'units': 'J/(mol-K)'}, 'us': {'val':89494.6, 'units': 'lg-ft^2/(lb_mol-K-s^2)'}, 'desc': 'Universal gas constant'},
+                'g0': {'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
+                'M': {'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
+            },
             table_data: [],
+            elevation_data: {
+                'us': {
+                    'mercury': {"desc": "Inches of mercury (inHg)*","sea_level":"29.92"},
+                    'pressure': {"desc": "Pounds per square inch (psi)*","sea_level":"14.70",},
+                    'height': {"desc": "feet of water*","sea_level":"33.90"}
+                },
+                'metric': {
+                    'mercury': {"desc": "Millimeters of mercury (mmHg)*","sea_level":"761.8"},
+                    'pressure': {"desc": "Kilopascals (kPa)*","sea_level":"101.3"},
+                    'height': {"desc": "meters of water*","sea_level":"10.33"}
+                },
+            },
+            calc_data: [],
+            constants: {},
+            entry: 0,
+            elevation: 2000,
+            max_elevation: "",
+            units_measure_ft_m: "" 
         };
     },
     template: '#atmospheric-pressure-calculator-template',
@@ -628,19 +646,90 @@ Vue.component('atmospheric-pressure-calculator', {
             this.page_units = localStorage.getItem("unit-set");
             console.log(this.page_units);
         },
+
         do_page_load: function() { 
-            this.get_var_data();
-        },
-        get_var_data: function() {
-            this.table_data=[];
-            for (var val of this.data_table) {
-                let units_str=val[this.page_units]['units'].replaceAll('^2','\u00B2');
-                this.table_data.push({'var': val['var'], 'val': val[this.page_units]['val'], 'units': units_str, 'desc': val['desc']});
+            this.constants=this.getConstantsForPage();
+            this.collectTableData();
+            this.calculate();
+            if (this.page_units == 'metric') {
+                this.max_elevation='10,900 meters';
+                this.units_measure_ft_m='meters';
             }
-            return this.table_data;
-        }
+            else {
+                this.max_elevation='36,000 feet';
+                this.units_measure_ft_m='feet';
+            }
+        },
+
+        collectTableData: function() {
+            this.table_data=[];
+            for (var key in this.data_table) {
+                let units_str=this.data_table[key][this.page_units]['units'].replaceAll('^2','\u00B2');
+                this.table_data.push({'var': key, 'val': this.data_table[key][this.page_units]['val'], 'units': units_str, 'desc': this.data_table[key]['desc']});
+            }
+        },
+
+        fixed: function(in_val) {
+            return parseFloat(this.fixed_str(in_val));
+        },
+
+        fixed_str: function(in_val) {
+            return (Math.round(parseFloat(in_val) * 100) / 100).toFixed(2);
+        },
+
+        getConstantsForPage: function() {
+            let out_obj={};
+            for (var key in this.data_table) {
+                out_obj[key]=this.data_table[key][this.page_units]['val'];
+            }
+            return out_obj;
+        },
+        calculateValues: function() {
+            let out_obj={'mercury': {}, 'pressure': {}, 'height': {}};
+            let power_val=(-this.constants['g0']*this.constants['M'])/(this.constants['R*']*this.constants['Lb']);
+            let calculation=this.constants['Pb']*Math.pow(((this.constants['Tb']+(this.elevation - this.constants['hb'])*this.constants['Lb'])/this.constants['Tb']),power_val);
+            if (this.page_units == "us") {
+                out_obj['mercury']['val']=this.fixed(calculation);
+                out_obj['pressure']['val']=this.fixed(out_obj['mercury']['val']*0.491154);
+                out_obj['height']['val']=this.fixed(out_obj['mercury']['val']/0.88267094956417);
+            }
+            else {
+                out_obj['pressure']['val']=this.fixed(calculation/1000);
+                out_obj['mercury']['val']=this.fixed(out_obj['pressure']['val']/0.133);
+                out_obj['height']['val']=this.fixed(out_obj['pressure']['val']*0.10197442889221);
+            }
+            for (var key in out_obj) {
+                out_obj[key]['val']=this.fixed_str(out_obj[key]['val']);
+                out_obj[key]['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units][key]['sea_level']) - out_obj[key]['val']);
+            }
+            //out_obj['mercury']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['mercury']['sea_level']) - out_obj['mercury']['val']);
+            //out_obj['pressure']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['pressure']['sea_level']) - out_obj['pressure']['val']);
+            //out_obj['height']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['height']['sea_level']) - out_obj['height']['val']);
+            console.log("M: "+out_obj['mercury']['val']+" P:"+out_obj['pressure']['val']+" H:"+out_obj['height']['val']);
+            console.log("Md: "+out_obj['mercury']['delta']+" Pd:"+out_obj['pressure']['delta']+" Hd:"+out_obj['height']['delta']);
+            return out_obj;
+        },
+
+        value_elevation: function(value) {
+            if (this.page_units != 'metric') return value;
+            else return value * 0.3048;
+        },
+
+        calculate() {
+            this.calc_data=[];
+            let result=this.calculateValues();
+            let obj=this.elevation_data[this.page_units];
+            let i=0;
+            for (var idx in obj) {
+                this.calc_data[i++]=Object.assign({},obj[idx],result[idx]);
+            }
+            this.entry += 1;
+        },
     },
-    computed: {
+    watch: {
+        elevation: function() { 
+            console.log(this.elevation);
+            this.calculate();
+        },
     }
-    
   });
