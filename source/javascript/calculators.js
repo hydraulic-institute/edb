@@ -607,8 +607,10 @@ Vue.component('atmospheric-pressure-calculator', {
             constants: {},
             entry: 0,
             elevation: 2000,
-            max_elevation: "",
-            units_measure_ft_m: "" 
+            max_elevation_str: "",
+            units_measure_ft_m: "",
+            err_msg:"",
+            max_elevation: {'us': {'val': 36000, 'str': 'feet'}, 'metric':{'val':10900, 'str': 'meters'}}
         };
     },
     template: '#atmospheric-pressure-calculator-template',
@@ -651,14 +653,8 @@ Vue.component('atmospheric-pressure-calculator', {
             this.constants=this.getConstantsForPage();
             this.collectTableData();
             this.calculate();
-            if (this.page_units == 'metric') {
-                this.max_elevation='10,900 meters';
-                this.units_measure_ft_m='meters';
-            }
-            else {
-                this.max_elevation='36,000 feet';
-                this.units_measure_ft_m='feet';
-            }
+            this.max_elevation_str=this.max_elevation[this.page_units]['val'].toLocaleString()+' '+this.max_elevation[this.page_units]['str'];
+            this.units_measure_ft_m=this.max_elevation[this.page_units]['str'];
         },
 
         collectTableData: function() {
@@ -685,7 +681,13 @@ Vue.component('atmospheric-pressure-calculator', {
             return out_obj;
         },
         calculateValues: function() {
-            let out_obj={'mercury': {}, 'pressure': {}, 'height': {}};
+            let out_data={'val': '-', 'delta': '-'};
+            let out_obj={'mercury': {...out_data}, 'pressure': {...out_data}, 'height': {...out_data}, 'error': ""};
+            if ( this.elevation > this.max_elevation[this.page_units]['val'] ) {
+                out_obj['error']="Elevation must be less than "+this.max_elevation[this.page_units]['val'].toLocaleString()+" "+this.max_elevation[this.page_units]['str'];
+                console.log('Empty Values - invalid elevation');
+                return out_obj;
+            }
             let power_val=(-this.constants['g0']*this.constants['M'])/(this.constants['R*']*this.constants['Lb']);
             let calculation=this.constants['Pb']*Math.pow(((this.constants['Tb']+(this.elevation - this.constants['hb'])*this.constants['Lb'])/this.constants['Tb']),power_val);
             if (this.page_units == "us") {
@@ -699,12 +701,10 @@ Vue.component('atmospheric-pressure-calculator', {
                 out_obj['height']['val']=this.fixed(out_obj['pressure']['val']*0.10197442889221);
             }
             for (var key in out_obj) {
+                if (key == 'error') continue;
                 out_obj[key]['val']=this.fixed_str(out_obj[key]['val']);
                 out_obj[key]['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units][key]['sea_level']) - out_obj[key]['val']);
-            }
-            //out_obj['mercury']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['mercury']['sea_level']) - out_obj['mercury']['val']);
-            //out_obj['pressure']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['pressure']['sea_level']) - out_obj['pressure']['val']);
-            //out_obj['height']['delta']=this.fixed_str(this.fixed(this.elevation_data[this.page_units]['height']['sea_level']) - out_obj['height']['val']);
+            }            
             console.log("M: "+out_obj['mercury']['val']+" P:"+out_obj['pressure']['val']+" H:"+out_obj['height']['val']);
             console.log("Md: "+out_obj['mercury']['delta']+" Pd:"+out_obj['pressure']['delta']+" Hd:"+out_obj['height']['delta']);
             return out_obj;
@@ -723,6 +723,7 @@ Vue.component('atmospheric-pressure-calculator', {
             for (var idx in obj) {
                 this.calc_data[i++]=Object.assign({},obj[idx],result[idx]);
             }
+            this.err_msg=result['error'];
             this.entry += 1;
         },
     },
