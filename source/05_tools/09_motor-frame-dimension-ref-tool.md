@@ -19,7 +19,7 @@ hide_units: true
     <div class="col-12"><img src="./NEMALogo-s.jpg" style="height:76px"></div>
 </div>
 
-<div class="accordion" id="accordionPanelsStayOpenExample" style="--bs-accordion-bg:#aaefd3">
+<div class="accordion" id="accordionPanelsStayOpenExample" style="--bs-accordion-btn-bg:#008080;--bs-accordion-btn-color:white;">
     <div class="accordion-item mt-2" >
         <h2 class="accordion-header" id="headingOne" style="margin-bottom:0">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -29,8 +29,8 @@ hide_units: true
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
             <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-1">
-                    <div class="accordion-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample-1" style="--bs-accordion-btn-bg:#AAEFD3">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingOne-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseOne-1" aria-expanded="false">
@@ -77,7 +77,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingTwo-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false"
@@ -116,7 +116,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingThree-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseThree-2" aria-expanded="false"
@@ -152,8 +152,8 @@ hide_units: true
         </h2>
         <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
             <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-2">
-                    <div class="accordion-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample-2" style="--bs-accordion-btn-bg:#AAEFD3">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingFive-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFive-2" aria-expanded="false"
@@ -185,7 +185,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingFour-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFour-2" aria-expanded="false"
@@ -221,7 +221,7 @@ hide_units: true
 <div class="row" style="margin-top:50px">
     <div class="col-12"><img src="./IECLogo-s.jpg" style="height:100px"></div>
 </div>
-<div class="accordion" id="accordionPanelsStayOpenExample-iec" style="--bs-accordion-bg:#a5cbeb">
+<div class="accordion" id="accordionPanelsStayOpenExample-iec" style="--bs-accordion-btn-bg:#0061aa;--bs-accordion-btn-color:white;">
     <div class="accordion-item mt-2">
         <h2 class="accordion-header" id="headingOne-iec" style="margin-bottom:0">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -231,8 +231,8 @@ hide_units: true
         </h2>
         <div id="panelsStayOpen-collapseOne-iec" class="accordion-collapse collapse" aria-labelledby="headingOne-iec">
             <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-iec-1">
-                    <div class="accordion-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample-iec-1" style="--bs-accordion-btn-bg:#a5cbeb">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingOne-iec-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseOne-iec-1" aria-expanded="false">
@@ -251,7 +251,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingTwo-iec-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-iec-1" aria-expanded="false"
@@ -268,7 +268,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingThree-iec-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseThree-iec-2" aria-expanded="false"
@@ -298,8 +298,8 @@ hide_units: true
         </h2>
         <div id="panelsStayOpen-collapseOne-iec-2" class="accordion-collapse collapse" aria-labelledby="headingOne-iec-2">
             <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-iec-2">
-                    <div class="accordion-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample-iec-2"  style="--bs-accordion-btn-bg:#a5cbeb">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingFive-iec-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFive-iec-2" aria-expanded="false"
@@ -316,7 +316,7 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item mt-2">
                         <h2 class="accordion-header" id="headingFour-iec-2" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFour-iec-2" aria-expanded="false"
