@@ -393,9 +393,13 @@
             <div class='field'>
                 <h5>Elevation above sea level (${units_measure_ft_m})**</h5>
                 <div class="row">
-                <div class="col-3">
-                    <input sytle="width:40%" class='input' type='number' min='0' max='36000' @keydown='no_negative' v-model.number='elevation'>
-                </div>
+                    <div class="col-3">
+                        <input sytle="width:40%" class='input' type='number' min='0' @keydown='no_negative' v-model.number='elevation'>
+                    </div>
+                    <div class="col">
+                        <span v-if='err_msg' style="color:red; font-size:smaller"><i>${err_msg}</i></span>
+                        <span v-else>&nbsp;</span>
+                    </div>
                 </div>
             </div>
             <table class="table is-narrow border border-secondary-subtle" :key="entry">
@@ -417,7 +421,7 @@
             <div class="mt-5">
                 <span>*Values do not include local variations due to weather, inc</span>
                 <br>
-                <span>**Elevation above sea level limited to ${max_elevation}</span>
+                <span v-bind:style="err_msg ? 'color:red;' : ''">**Elevation above sea level limited to ${max_elevation_str}</span>
             </div>
         </div>
         <div class="mt-5" style="display:flex;justify-content:center"><img src="./barometric-pressure-calculation.png"></div>
