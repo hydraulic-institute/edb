@@ -38,7 +38,7 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 ### Educational Demonstration
 
 =d=
-title: Pump and System Curve Example
+title: Pump and System Curve
 kind: pump-curve
 pumpType: plot
 lowerLevel: 5
@@ -46,6 +46,8 @@ upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve
@@ -118,7 +120,9 @@ upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
-valveSetting: 35
+pumpSpeedMin: 50
+pumpSpeedMax: 110
+valveFlowSetting: 35
 =d=
 
 ### Pump Sizing in the Real World
@@ -161,7 +165,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 ### Educational Demonstration 
 
 =d=
-title: Parallel Pumps
+title: Parallel Pumps and System Curve
 kind: pump-curve
 pumpType: parallel
 lowerLevel: 5
@@ -169,8 +173,11 @@ upperLevel: 5
 pressure: 0
 totalResistance: 5
 pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
 pumpCount: 3
-max: 30
+pumpCountMax: 5
+maxVelocities: 30
 =d=
 
 

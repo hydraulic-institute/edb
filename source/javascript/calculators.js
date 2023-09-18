@@ -651,7 +651,6 @@ Vue.component('atmospheric-pressure-calculator', {
 
         do_page_load: function() { 
             this.constants=this.getConstantsForPage();
-            this.collectTableData();
             this.calculate();
             this.max_elevation_str=this.max_elevation[this.page_units]['val'].toLocaleString()+' '+this.max_elevation[this.page_units]['str'];
             this.units_measure_ft_m=this.max_elevation[this.page_units]['str'];
