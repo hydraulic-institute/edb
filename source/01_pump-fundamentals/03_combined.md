@@ -38,7 +38,7 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 ### Educational Demonstration
 
 =d=
-title: Pump and System Curve Example
+title: Pump and System Curve
 kind: pump-curve
 pumpType: plot
 lowerLevel: 5
@@ -161,7 +161,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 ### Educational Demonstration 
 
 =d=
-title: Parallel Pumps
+title: Parallel Pumps and System Curve
 kind: pump-curve
 pumpType: parallel
 lowerLevel: 5

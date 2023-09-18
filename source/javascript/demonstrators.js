@@ -123,6 +123,10 @@
 Vue.component("demo-tank", {
     template: "<div class='demo-canvas'></div>",
     props: {
+        title: {
+          type: String,
+          default: ""
+        }, 
         maxHeight: { 
             type: Number,
             default: 100
@@ -216,11 +220,12 @@ Vue.component("demo-tank", {
         return {
             levelValue: 2, 
             settings: null,
-            tank: null
+            tank: null,
+            levelYSpacing: 1
         }
     },
     mounted: function() {
-        const levelYSpacing = this.maxHeight / this.levelMax;
+        this.levelYSpacing = this.maxHeight / (this.levelMax - this.levelMin);
         const tickWidth = this.knobRadius + 6;
         const levelTickValues = _.range(this.levelMin, this.levelMax + 1);
         const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
@@ -356,7 +361,7 @@ Vue.component("demo-tank", {
             ticks: levelTickValues.map(v => new Konva.Rect({
                 name: (this.levelMax - v),
                 x: this.knobRadius,
-                y: this.knobRadius + (v * levelYSpacing) - 1,
+                y: this.knobRadius + (v * this.levelYSpacing) - 1,
                 width: tickWidth,
                 height: 1,
                 fill: "black",
@@ -446,7 +451,7 @@ Vue.component("demo-tank", {
 
         tank.layer.on("click", () => {
             const curYPos = this.tank.tank.getRelativePointerPosition().y;
-            const level = this.levelMax - Math.round(curYPos / levelYSpacing);
+            const level = this.levelMax - Math.round(curYPos / this.levelYSpacing);
 
             this.levelValue = level;
         });
@@ -480,7 +485,7 @@ Vue.component("demo-tank", {
     },
     methods: {
         calculateLevelPos: function(level) {
-            const newHeight = level > 0 ? this.maxHeight * (level / this.levelMax) : 0;
+            const newHeight = level > 0 ? (level - this.levelMin) * this.levelYSpacing : 0;
             let position = { x: this.tank.waterLevel.x(), y: this.maxHeight - newHeight + this.knobRadius };
             position = this.tank.transform.point(position);
             const levelPosition = { x: position.x, y: position.y, newHeight: newHeight };
@@ -668,25 +673,19 @@ Vue.component("demo-pump-inputs", {
     <div v-else-if='pumpType === "system"' class="col-12" align="right" id="upper-tank-pressure-id" style="padding: 0px;">
       <div class="upper_tank_pressure">      
         <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
-        <demo-tank v-model="upperPressureValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="upperPressureValue" :title="'upper tank pressure'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-else-if='pumpType === "parallel"' class="col-6" id="parallel-pumps-id">
-      <p class="mt-0 mb-0" style="font-size: smaller" align="left"><strong># Parallel Pumps</strong></p>
-      <div class="row m-0">
-        <div class="col-6" align="right">
-          <input v-model='pumpCountValue' class="input" type="number" min="1"/>
-        </div>
+      <div class="">      
+        <p class="mb-0" style="font-size: smaller"># Parallel Pumps  (<strong><span v-text="pumpCount"></span></strong>)</p>
+        <demo-tank v-model="pumpCountValue" :title="'parallel pumps'" :level-min="1" :level-max="10" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-else-if='pumpType === "fcv"' class="col-12" id="flow-valve-setting-id">
-      <p class="mt-0 mb-0" style="font-size:smaller;" align="left">
-        <strong>Valve Flow Setting</strong>
-      </p>
-      <div class="row m-0">
-        <div class="col-3" align="right">
-          <input v-model='valveFlowSettingValue' class="input" type="number" min="0" max="100"/>
-        </div>
+      <div class="">      
+        <p class="mb-0" style="font-size: smaller">Valve Flow Setting (<strong><span v-text="valveFlowSetting"></span>)</strong></p>
+        <demo-tank v-model="valveFlowSettingValue" :title="'valve flow setting'" :levelMax="100" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-if='pumpType === "parallel"' class="col" align="left">
@@ -699,21 +698,21 @@ Vue.component("demo-pump-inputs", {
   <div class="row mb-2">
     <div class="col-4 mt-auto" style="padding: 0;" id="lower-tank-level-id">
       <p class="mt-5 mb-0" style="font-size: smaller" align="right">Lower Tank Level</p>
-      <demo-tank v-model="lowerLevelValue" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
+      <demo-tank v-model="lowerLevelValue" :title="'lower tank level'" :corner-radius=10 :max-height="100" :top-opacity="0" :show-ticks="false" :placement="lower" align="right"></demo-tank>
     </div>
     <div class="col-4 mt-auto" style="padding: 0;" id="demo-flow-line-id">         
       <demo-flow-line align="center" :direction="'far'" :pump-type="pumpType"></demo-flow-line>
     </div>
     <div class="col-4" style="padding: 0;" id="upper-tank-level-id">
       <p class="mt-0 mb-0" style="font-size: smaller" align="left">Upper Tank Level</p>
-      <demo-tank v-model="upperLevelValue" ::corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-left: 5px"></demo-tank>
+      <demo-tank v-model="upperLevelValue" :title="'upper tank level'" :corner-radius=10 :max-height="100" :show-ticks="false" :fill-color="upperTankFillColor" :placement="upper" style="margin-left: 5px"></demo-tank>
     </div>
   </div>
   <div v-if='pumpType != "system"'class="row mb-2 mt-1">
     <div class="col" align="center" id="pump-speed-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
-        <demo-tank v-model="pumpSpeedValue" :level-min="0" :level-max="maxSpeed" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpSpeedValue" :title="'pump speed'" :level-min="50" :level-max="110" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -722,7 +721,7 @@ Vue.component("demo-pump-inputs", {
       <div class="resistance">
         <p class="mb-0" style="font-size: smaller">Friction Losses</p>
         <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
-        <demo-tank v-model="resistanceValue" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="resistanceValue" :title="'friction losses'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -802,8 +801,7 @@ Vue.component("demo-pump-inputs", {
         pumpSpeedValue: 0,
         upperPressureValue: 0,
         pumpCountValue: 0,
-        valveFlowSettingValue: 0,
-        maxSpeed: 120
+        valveFlowSettingValue: 0
       }
   },
   created: function() {
@@ -815,9 +813,6 @@ Vue.component("demo-pump-inputs", {
     v.upperPressureValue = v.upperPressure;
     v.pumpCountValue = v.pumpCount;
     v.valveFlowSettingValue = v.valveFlowSetting;
-    if (v.pumpType == "parallel") {
-      v.maxSpeed=100;
-    }
   },
   watch: {
     lowerLevelValue: function(value) {
