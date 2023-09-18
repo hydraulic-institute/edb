@@ -29,10 +29,11 @@
   }
 
   const calcPumpSystemPlotValues = ( 
-    which_pump, velocities, speed, coefA, coefB, coefC) => {
+    which_pump, velocities, speed, max_speed, coefA, coefB, coefC) => {
       const values = {
         pumpHead: [],
-        pumpHeadFullSpeed: []
+        pumpHeadFullSpeed: [],
+        pumpHeadMaxSpeed: []
       };
       const coefs=calc_coefs(which_pump, coefA, coefB, coefC);
 
@@ -43,6 +44,8 @@
         if (which_pump == 1) {
           const pumpHeadFullSpeed = calcPumpHead(v, 1, coefs['coefA'], coefs['coefB'], coefs['coefC']);
           values.pumpHeadFullSpeed.push(parseFloat(pumpHeadFullSpeed.toFixed(2)));
+          const pumpHeadMaxSpeed = calcPumpHead(v,max_speed,coefs['coefA'], coefs['coefB'], coefs['coefC']);
+          values.pumpHeadMaxSpeed.push(parseFloat(pumpHeadMaxSpeed.toFixed(2)));
         }
       });
       return values;
@@ -679,13 +682,13 @@ Vue.component("demo-pump-inputs", {
     <div v-else-if='pumpType === "parallel"' class="col-6" id="parallel-pumps-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller"># Parallel Pumps  (<strong><span v-text="pumpCount"></span></strong>)</p>
-        <demo-tank v-model="pumpCountValue" :title="'parallel pumps'" :level-min="1" :level-max="10" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpCountValue" :title="'parallel pumps'" :level-min="1" :level-max="pumpCountMax" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-else-if='pumpType === "fcv"' class="col-12" id="flow-valve-setting-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Valve Flow Setting (<strong><span v-text="valveFlowSetting"></span>)</strong></p>
-        <demo-tank v-model="valveFlowSettingValue" :title="'valve flow setting'" :levelMax="100" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="valveFlowSettingValue" :title="'valve flow setting'" :levelMax="100" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-if='pumpType === "parallel"' class="col" align="left">
@@ -712,7 +715,7 @@ Vue.component("demo-pump-inputs", {
     <div class="col" align="center" id="pump-speed-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
-        <demo-tank v-model="pumpSpeedValue" :title="'pump speed'" :level-min="50" :level-max="110" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpSpeedValue" :title="'pump speed'" :level-min="pumpSpeedMin" :level-max="pumpSpeedMax" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -760,9 +763,21 @@ Vue.component("demo-pump-inputs", {
         type: Number,
         default: 0
       },
+      pumpSpeedMin: { 
+        type: Number,
+        default: 0
+      },
+      pumpSpeedMax: { 
+        type: Number,
+        default: 0
+      },
       pumpCount: {
         type: Number,
         default: 1
+      },
+      pumpCountMax: {
+        type: Number,
+        default: 3
       },
       upperPressure: {
         type: Number,
@@ -859,17 +874,20 @@ Vue.component('demo-pump-curve', {
     return {
       elevation: 10,
       min: 0,
-      max: 10,
+      maxVelocities: 10,
       lowerLevel: 0,
       upperLevel: 0,
       totalResistance: 0,
       upperPressure: 0,
       pumpSpeed: 0, // percentage
+      pumpSpeedMin: 0,
+      pumpSpeedMax: 100,
       pumpCount: 1,
+      pumpCountMax: 3,
       multiplePumps: 0,
       pumpType: "system",
       allPumpTypes: ["system", "plot", "parallel", "fcv"],
-      valveFlowSetting: 35,
+      valveFlowSetting: 0,
       velocities: [],
       coefA: 70,
       coefB: -2,
@@ -924,7 +942,10 @@ Vue.component('demo-pump-curve', {
             :resistance.sync="totalResistance"
             :upper-pressure.sync="upperPressure"
             :pump-speed.sync="pumpSpeed"
+            :pump-speed-min="pumpSpeedMin"
+            :pump-speed-max="pumpSpeedMax"
             :pump-count.sync="pumpCount"
+            :pump-count-max="pumpCountMax"
             :valve-flow-setting.sync="valveFlowSetting"
           >
           </demo-pump-inputs>
@@ -937,7 +958,7 @@ Vue.component('demo-pump-curve', {
   </div>
   `,
   mounted: function() { 
-    this.velocities=[...Array(this.max+1).keys()]
+    this.velocities=[...Array(this.maxVelocities+1).keys()]
     this.multiplePumps=(this.pumpCount > 1?1:0);
     this.series_names=Object.keys(this.series_data);
     for (var val in this.series_data) {
@@ -948,11 +969,12 @@ Vue.component('demo-pump-curve', {
 
     const chartElem = $(this.$el).find('.demo-chart')[0];
     const series = this.getSeries();
-    let y_max=this.pumpSystemCurveData.totalHead[this.max]+10;
-    let x_max=this.max;
+    let y_max=this.pumpSystemCurveData.totalHead[this.maxVelocities];
+    let x_max=Math.round(this.maxVelocities/10)*10;
     if (this.pumpCount) {
-      y_max=this.pumpSystemCurveData.pumps[0].pumpHeadFullSpeed[0]+10;
+      y_max=Math.max(this.pumpSystemCurveData.pumps[0].pumpHeadFullSpeed[0],this.pumpSystemCurveData.pumps[0].pumpHeadMaxSpeed[0]);
     }
+    y_max=Math.ceil(y_max/10)*10;
 
     const options = {
       chart: {
@@ -985,8 +1007,8 @@ Vue.component('demo-pump-curve', {
         type: 'numeric',
         min: 0,
         max: x_max,
-        decimalsInFloat: 0,
         tickAmount: 10,
+        decimalsInFloat: 0,
         title: {
           text: "Flow Rate"
         },
@@ -1004,7 +1026,7 @@ Vue.component('demo-pump-curve', {
         type: 'numeric',
         min: 0,
         max: y_max,
-        tickAmount: 10,
+        tickAmount: y_max/10,
         decimalsInFloat: false,
         title: {
           text: "Head"
@@ -1100,7 +1122,8 @@ Vue.component('demo-pump-curve', {
       this.errorMessage="";
       console.log("=====================================");
       console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
-      console.log("pumpType: "+this.pumpType+" pumpCount:"+this.pumpCount+" valveSetting:"+this.valveFlowSetting);
+      console.log("pumpType: "+this.pumpType+" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax+" valveSetting: "+this.valveFlowSetting);
+      console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
       const sys_values = CurveCalculators.calcSystemCurveValues(
         this.velocities, 
         this.upperPressure, 
@@ -1119,11 +1142,17 @@ Vue.component('demo-pump-curve', {
           i+1,
           this.velocities,
           this.pumpSpeed / 100,
+          this.pumpSpeedMax / 100,
           this.coefA,
           this.coefB,
           this.coefC
         );
-
+        console.log("Pump["+(i+1)+"]");
+        console.log("PumpHead: "+values['pumpHead']);
+        if (i==0) {
+          console.log("PumpHeadFullSpeed: "+values['pumpHeadFullSpeed']);
+          console.log("PumpHeadMaxSpeed: "+values['pumpHeadMaxSpeed']);
+        }
         values['qValue'] = CurveCalculators.calcQValue(
           i+1,
           this.totalResistance,
@@ -1133,6 +1162,7 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
+        console.log("QVal: "+values['qValue']);
         pumps.push(values);
       }
 
@@ -1167,7 +1197,7 @@ Vue.component('demo-pump-curve', {
             console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
           }
         }
-        console.log("Operating Point - PH[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPH[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TH["+this.max+"]: "+sys_values['totalHead'][this.max]);
+        console.log("Operating Point - PH[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPH[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TH["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
         values['data']['opPoint_x']=[];
         values['data']['opPoint_y']=[];
         if (!isNaN(pumps[this.pumpCount-1].qValue)) {
@@ -1175,13 +1205,13 @@ Vue.component('demo-pump-curve', {
             values['data']['opPoint_y']=[0,pumps[0]['pumpHeadFullSpeed'][0]];
           }
           else {
-            values['data']['opPoint_y']=[0,(Math.max(pumps[0]['pumpHead'][0],pumps[0]['pumpHeadFullSpeed'][0],sys_values['totalHead'][this.max]))];
+            values['data']['opPoint_y']=[0,(Math.max(pumps[0]['pumpHead'][0],pumps[0]['pumpHeadFullSpeed'][0],sys_values['totalHead'][this.maxVelocities]))];
           }
 
           if (this.pumpType != "fcv") {        
             var xval=isNaN(pumps[this.pumpCount-1].qValue)?0:pumps[this.pumpCount-1].qValue;
             console.log("QVal:"+pumps[this.pumpCount-1].qValue);
-            xval=Math.min(xval,this.max);
+            xval=Math.min(xval,this.maxVelocities);
             if (xval >= 0) {
               values['data']['opPoint_x']=[xval,xval];
             }
