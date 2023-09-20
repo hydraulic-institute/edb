@@ -147,7 +147,7 @@ def definitions_table_data(table, path, filename, in_sections):
                 else:
                     try:
                         # Check for acronym link
-                        indexes = [i for i, x in enumerate(acronym) if x in datarow[0].lower()]
+                        indexes = [i for i, x in enumerate(acronym) if ((x in datarow[0].lower()) or (acronym_ids[i] in datarow[0]))]
                         row_id = acronym_ids[indexes[0]]
                     except:
                         row_id = "0"
