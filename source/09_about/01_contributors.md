@@ -1,6 +1,6 @@
 -----
 title: Members and Contributors
-date:  October 16, 2020
+date:  September 20th, 2023
 description: Meet the EDL Committee
 -----
 <div>
@@ -38,6 +38,7 @@ description: Meet the EDL Committee
 <h1 style='margin-top:1em;'>Special Acknowledgements</h1>
 <ul>
 <li>Scott Frees, Web Developer, <i>Frees Consulting and Development LLC.</i></li>
+<li>Tim Knight & Kristin Dahl Knight, Web Developers, <i>GladeTech Technologies</i></li>
 <li>Peter Gaydon, Technical Director, <i>Hydraulic Institute</i></li>
 <li>Susie De Bel, Committee Manager, <i>Hydraulic Institute</i></li>
 <li>Matt Siino, Technical Intern, <i>Hydraulic Institute</i></li>
