@@ -110,12 +110,14 @@ hide_price: true
 ### Educational Demonstration
 
 =d=
-title: Hello World Demonstrator
-kind: system-curve
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 10
-overallResistance: 5
+title: System Curve
+kind: pump-curve
+type: system
+pumpCount: 0
+lowerLevel: 5
+upperLevel: 5
+upperPressure: 10
+totalResistance: 5
 =d=
 
 ### Worked Example (U.S. & Metric Units)

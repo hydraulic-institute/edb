@@ -18,18 +18,21 @@ hide_price: true
 
 =|=
 data: steel-flang-fit.csv
+special: height:600px;
 =|=
 
 ## Dimensions of Facings (According to ASME B16.5-2017)
 
 =|=
 data: facings.csv
+special: height:600px;
 =|=
 
 ## Cast Iron Flange Dimensions and Drilling Templates - 25 to 800 lb (According to ANSI B16.1-1975)
 
 =|=
 data: cast-iron-flange.csv
+special: height:600px;
 =|=
 
 **Note 4:** Height of the raised face is either 1/16 in. or 1/4 in.

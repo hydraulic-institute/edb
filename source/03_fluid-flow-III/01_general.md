@@ -74,6 +74,7 @@ At Reynolds numbers higher than about 4000, the flow is considered turbulent, wi
 title: Roughness Values
 data-us: pipe-roughness-ft.csv
 data-metric: pipe-roughness-mm.csv
+scrolling: false
 =|=
 
 Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid

@@ -5,6 +5,7 @@ import markdown
 import glob
 import io
 import htmlmin
+import copy
 import csv
 import json
 import uuid
@@ -41,6 +42,7 @@ Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
 TableColumn = namedtuple('TableColumn', 'type data')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
+DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -93,13 +95,13 @@ def definitions_table_data(table, path, filename, in_sections):
         acronym_ids = []
         row_columns = []
         comment_idx=1
-        ref_idx=-1
-        source_idx=-1
         section_idx=-1
         section=""
-        source_url=""
+        index = {'sections': [], 'height': 200}
+        orig_col_obj={'url': None, 'ref': None, 'type': None}
         for row in csv_data:
             if len(row[0]):
+                section_idx=None
                 section = row[0].split(" (")[0]
                 columns = [row[i] for i,x in enumerate(row) if i != 0]
                 try:
@@ -107,44 +109,71 @@ def definitions_table_data(table, path, filename, in_sections):
                 except:
                     comment_idx = columns.index("")
                 columns = columns[0:comment_idx]
-                try:
-                    ref_idx = columns.index("Section")
-                    source_idx = [i for i,x in enumerate(columns) if "Source" in x][0]
-                    source_url=columns[source_idx].split("::")[1].strip()
-                    columns[source_idx] = "Source"
-                except:
-                    pass             
+                #Are there any columns that involve links
+                col_link_data=[]
+                #Go through each column and create an array of urls based on column index
+                for i,x in enumerate(columns):
+                    col_obj=copy.deepcopy(orig_col_obj)
+                    col_data = columns[i].split("::")
+                    if "::" in x:
+                        col_obj['url']=col_data[1].strip()
+                        col_obj['type']=col_data[0].strip()
+                        col_link_data.append(col_obj)
+                        columns[i] = col_data[0]
+                    else:
+                        # Push empty data
+                        col_link_data.append(col_obj) 
+                    if col_data[0] == "Section":
+                        section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'headings':headings, 'rows':[]})
+                page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
+                index['sections'].append(section)       
                 continue
             datarow=row[1:comment_idx+1]
-            row_columns = [TableColumn(columns[i], d)
-                           for i, d in enumerate(datarow)]
             if section:
+                # Working in a section
                 row_id = "0"
                 section_link=""
                 source_link=""
+                num_columns=len(columns)
+                source_links=[]
+                source_links=['' for k in range(num_columns)]
+                row_columns=[DefinitionColumn(d, datarow[i], '')
+                              for i, d in enumerate(columns)]
                 # Acronymn Link
-                if "ACRONYM" in section:
+                if "acronym" in section.lower():
                     acronym.append(datarow[1].lower())
                     acronym_ids.append(datarow[0])
                 else:
                     try:
                         # Check for acronym link
-                        indexes = [i for i, x in enumerate(acronym) if x in datarow[0].lower()]
+                        indexes = [i for i, x in enumerate(acronym) if ((x in datarow[0].lower()) or (acronym_ids[i] in datarow[0]))]
                         row_id = acronym_ids[indexes[0]]
                     except:
                         row_id = "0"
-                    # Row Section Link
-                    # Check the section reference row
-                    if len(datarow[ref_idx]):
-                        section_link = definition_create_section_link(in_sections, datarow[ref_idx])
-                    if len(datarow[source_idx]) and len(source_url):
-                        source_link = source_url.replace("{{SOURCE}}",datarow[source_idx].split(',')[0])
+                    # If there is a Section Index, then create a link to the navigation section
+                    if section_idx and len(datarow[section_idx]):
+                        section_link = definition_create_section_link(in_sections, datarow[section_idx])
 
+                    # Go through each section_link_data array item, create a link if necessary
+                    for i in range(num_columns):
+                        if col_link_data[i]['url'] and len(datarow[columns.index(col_link_data[i]['type'])]):
+                            # Create a link if there's data
+                            # https://www.pumps.org/what-we-do/standards/?pumps-search-product=ANSI%2FHI+14.1-14.2&hi-order=asc&hi-order-by=name 
+                            # Replace slashes with %2F, replace spaces with + and add &hi-order=asc&hi-order-by=name
+                            search_str='+'.join(datarow[columns.index(col_link_data[i]['type'])].split())
+                            search_str=search_str.replace('/','%2F')
+                            search_str+='&hi-order=asc&hi-order-by=name'
+                            source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",search_str))
+                        else:
+                            # Replace all new lines with br
+                            datarow[i]=datarow[i].replace('\n','<br>')    
+                row_columns = [DefinitionColumn(columns[i], datarow[i], source_links[i])
+                           for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
-                page_sections[section_idx]['rows'].append(r)
-        return page_sections
+                page_sections[-1]['rows'].append(r)
+        index['height']=len(index['sections'])*45
+        return index, page_sections
     
 def definition_create_section_link(sections, in_section):
     # Search the sections for the path
@@ -190,8 +219,8 @@ def table_data(units, table, path, filename):
 def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
-    def_html = template.render(meta=definitions_table, table=defs, units='us')
+    index, defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
+    def_html = template.render(meta=definitions_table, table=defs, units='us', index=index)
     return def_html
 
 def replace_table_block(dir, table_text):
@@ -199,11 +228,9 @@ def replace_table_block(dir, table_text):
 
     data_us = ""
     data_metric = ""
-    #Assume fixed if not noted
-    if 'table_fixed_header' not in table or table['table_fixed_header'] == "true":
-        table['table_fixed_header']="fixed"
-    else:
-       table['table_fixed_header']="not-fixed"
+    #All table are default scrolling
+    if 'scrolling' in table and table['scrolling'] == 'false':
+        table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']
@@ -233,7 +260,7 @@ def replace_table_block_pdf(dir, table_text):
 
     data_us = ""
     data_metric = ""
-    table['table_fixed_header']="not-fixed"
+    table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']
@@ -312,7 +339,7 @@ def replace_demonstrator_block(output_path, dir, markdownProps):
     init = parse_dict(useMarkdown)
     template = env.get_template('demo.jinja')
     key = str(uuid.uuid4())
-    demoHtml = template.render(key=key, kind=init["kind"], init=json.dumps(init))
+    demoHtml = template.render(key=key, title=init["title"], kind=init["kind"], init=json.dumps(init))
 
     return demoHtml
 
@@ -666,14 +693,22 @@ def write_content(graph, node, slug_override=None, path="."):
 def make_root(graph):
     statics()
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
 
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-        print("Writing", node['name'], 'from ', node['path'])
-        write_content(graph, node, so)
+        print("Writing", content_node['name'], 'from ', content_node['path'])
+        write_content(graph, content_node, so)
 
 
 def make_section(graph, section, parent=None):
@@ -799,13 +834,22 @@ def make_markdown_section(graph, section, md_file, parent=None):
 def pdf(graph):
     md_file = os.path.join(OUTPUT_DIR, 'edb.html')
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
     front_matter = None
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-            front_matter = node
+        if so == 'index':
+            front_matter = content_node
             front_matter['metadata']['title'] = "HI Engineering Data Library"
             front_matter['children'] = []
 

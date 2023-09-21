@@ -7,6 +7,7 @@
     <link rel=icon href=/images/favicon.ico>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"-->
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js'></script>
@@ -19,6 +20,9 @@
     <script src="https://unpkg.com/konva@8/konva.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script-->
+
 
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name=viewport content="width=device-width,initial-scale=1"/>
@@ -181,7 +185,7 @@
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size (in)</label>
+                    <label class='label'>Select Nominal Size (${units_length_long})</label>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
                         <option :value='m' v-for='m in sizes'>${m}</option>
@@ -313,56 +317,249 @@
                         <div class='column'>
                             <div class='field'>
                                 <label class='label'>
-                                    <span>Shaft Diameter (in)</span>
+                                    <span>Shaft Diameter [D] (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
                                 </label>
                                 <div>
                                     <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
+                                    <span v-if='msg.shaft' style="color:red; font-size:smaller"><i>${msg.shaft}</i></span>
+                                    <span v-else>&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class='field'>
+                                <label class='label'>
+                                    <span>Speed (${rpm_min}-${rpm_max} RPM)</span>
+                                </label>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
+                                    <span v-if='msg.rpm' style="color:red; font-size:smaller"><i>${msg.rpm}</i></span>
+                                    <span v-else>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
                         <div class='column'>
                             <div class='field'>
+                                <label class='label' >Pump Length [L] (${units_measure_ft_m})</label>
+                                <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
+                                <span>&nbsp;</span>
+                            </div>
+                            <div class='field'>
                                 <label class='label'>
-                                    <span>RPM (450-3600 RPM)</span>
+                                    <span>Bearing Spacing</span>
                                 </label>
-                                <div>
-                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
+                                <div class='control'>
+                                    <label class='radio'>
+                                        <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
+                                        ${value_bearing_spacing(10)} ${units_measure_ft_m}
+                                    </label>
+                                    <label class='radio'>
+                                        <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
+                                        ${value_bearing_spacing(5)} ${units_measure_ft_m}
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class='mt-2'>
-                        <div class='field'>
-                            <label class='label'>
-                                <span>Bearing Spacing</span>
-                            </label>
-                            <div class='control'>
-                                <label class='radio'>
-                                    <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
-                                    10 ft
-                                </label>
-                                <label class='radio'>
-                                    <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
-                                    5 ft
-                                </label>
-                            </div>
-                        </div>
                     </div>
                     <div class='mt-4'>
                         <div class="field">
                             <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction per 100 ft of Line Shaft: </span>
-                                <br>
-                                <span v-if='mech_friction_loss' class='has-text-white-bis'>${mech_friction_loss} hp</span>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction_loss}): </span>
+                                <span v-bind:class = "mech_friction_loss?'has-text-white-bis':'has-text-danger'">${mech_friction_loss} ${units_friction_loss}</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction}): </span>
+                                <span v-bind:class = "mech_friction?'has-text-white-bis':'has-text-danger'">${mech_friction} ${units_friction}</span>
                             </div>
                         </div>
                     </div> 
                 </div>    
                 <div class='column' align='center'>
-                    <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" width="80">     
+                    <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
                 </div>
             </div>
         </form>
+    </div>
+</script>
+
+<script type="text/x-template" id="atmospheric-pressure-calculator-template">
+    <div class="wrap">
+        <div>
+            Instruction:  Enter an elevation above sea level to see the standard atmospheric pressure difference.  Elevation is limited to 36,000 feet or 10,900 meters.
+        </div>
+        <div class='container mt-5'>
+            <div class='field'>
+                <h5>Elevation above sea level (${units_measure_ft_m})</h5>
+                <div class="row">
+                    <div class="col-3">
+                        <input sytle="width:40%" class='input' type='number' min='0' @keydown='no_negative' v-model.number='elevation'>
+                    </div>
+                    <div class="col">
+                        <span v-if='err_msg' style="color:red; font-size:smaller"><i>${err_msg}</i></span>
+                        <span v-else>&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <table class="table is-narrow border border-secondary-subtle" :key="entry">
+                <thead class="fixed-thead">
+                    <th style="width:40%;">Units</th>
+                    <th style="width:20%;">At Elevation</th>
+                    <th style="width:20%;">At Sea Level (std)</th>
+                    <th style="width:20%;">Delta</th>
+                </thead>
+                <tbody>
+                    <tr v-for='d in calc_data'>
+                        <td><b>${d.desc}</b></td>
+                        <td>${d.val}</td>
+                        <td>${d.sea_level}</td>
+                        <td>${d.delta}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="tank-demo-template"> 
+    <div class="wrap">  
+        <div class="row">
+            <div class="columns">
+                <div class="col-8">
+                    <div class="row mt-2">
+                        <div class="col">
+                        <div class="row mt-2 mb-2">
+                            <div class="col-4">Tank Orientation</div>
+                            <div class="col-4">${tank_type}</div>
+                        </div>
+                        <div v-for='c in volume_strings'>
+                            <div v-if='c.type' class="row align-items-center">
+                                <div class="col-4">
+                                <b>${c.type}</b>
+                                </div>
+                                <div class="col-4">
+                                    <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
+                                        <option :value='b' v-for='b in end_types'>${b}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4"><b>Length Units</b></div>
+                            <div class="col-4">
+                                <select  class="input" style="min-width:120px;" v-model='length_unit'>
+                                    <option :value='l' v-for='l in length_types'>${l}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4">
+                                <b>Tank Diameter: [D]</b>  
+                            </div>
+                            <div class="col-4">
+                            <input class='input' style="min-width:120px;"
+                            type='number' 
+                            @keydown='no_negative_no_comma' 
+                            @keydown.enter="calculate_volumes"
+                            @keydown.tab="calculate_volumes"
+                            @click="calculate_volumes"
+                            v-model='d_diameter'/></div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row align-items-center" v-if='tank_key != "st"'>
+                            <div class="col-4"><b>Length of Cylinder: [A]</b></div>
+                            <div class="col-4">
+                            <input class='input' style="min-width:120px;"
+                            type='number' 
+                            @keydown='no_negative_no_comma' 
+                            @keydown.enter="calculate_volumes"
+                            @keydown.tab="calculate_volumes"
+                            @click="calculate_volumes"
+                            v-model='a_length'/>
+                            </div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
+                            <div class="col-4">
+                            <input class='input' style="min-width:120px;"
+                            type='number' 
+                            @keydown='no_negative_no_comma' 
+                            @keydown.enter="calculate_volumes()"
+                            @keydown.tab="calculate_volumes()"
+                            @click="calculate_volumes()"
+                            v-model='h_filldepth'/>
+                            </div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4"><i>Percent full</i></div>
+                            <div class="col-4">${percent_full}%</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4">Check Depth</div>
+                            <div class="col-4">
+                                <span v-if='check_depth == 1'><i>OK</i></span>
+                                <span v-else style="color:red"><i>Too Full</i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                    </div>
+                </div>
+                <div class="col-4"><img :src='image_str' @error="image_str='/images/image_not_available.png'"/></div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 30%; vertical-align:bottom;text-align:left;">Location</th>
+                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
+                        <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
+                            <div>
+                            <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
+                                <select class="input" style="width:150px;" v-model='conversion_unit'>
+                                    <option :value='c' v-for='c in conversion_types'>${c}</option>
+                                </select>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for='c in volume_strings'>
+                        <td  style="text-align: left">${c.desc}</td>
+                        <td style="text-align: right">
+                            ${c.value} Cubic ${length_unit}
+                        </td>
+                        <td colspan="2" style="text-align: right">
+                            ${c.converted_value} ${conversion_unit}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4">
+            <b>Volume Equations</b>
+        </div>
+        <div v-for='(value, name) in volume_equations_data' v-if='name == tank_key'>
+            <div v-for='item in value'>
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <b>${item.type}</b>
+                    </div>
+                    <div class="col-3 mt-2"><img :src="'/images/'+item.image"/></div>
+                    <div class="col"><img :src="'/images/'+item.equation"/></div>
+                </div>
+            </div>
+        </div>
     </div>
 </script>
 
@@ -584,6 +781,8 @@
             </div>
         </div>
     </div>
+    <script src='/javascript/tank_calculators.js'></script>
+    <script src='/javascript/calculators.js'></script>
     <script src='/javascript/demonstrators.js'></script>
     <script src='/javascript/edb.js'></script>
     <script>
@@ -597,5 +796,5 @@
             }
         );
     </script>
-</body>
+    </body>
 </html>

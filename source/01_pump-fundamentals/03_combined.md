@@ -38,13 +38,16 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 ### Educational Demonstration
 
 =d=
-title: Hello World Demonstrator
+title: Pump and System Curve
 kind: pump-curve
-lowerTankLevel: 5
-upperTankLevel: 10
-upperTankPressure: 10
-overallResistance: 5
-pumpSpeed: 95
+pumpType: plot
+lowerLevel: 5
+upperLevel: 5
+pressure: 0
+totalResistance: 5
+pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
 =d=
 
 ### Flow Rate Change Using Manual Throttling Valve
@@ -106,10 +109,45 @@ loss across the control valve, since the system flow rate has not changed.
 
 ![](./reading-6v3.png "")
 
+### Educational Demonstration
+
+=d=
+title: Pump and System Curve with Control Valve
+kind: pump-curve
+pumpType: fcv
+lowerLevel: 5
+upperLevel: 5
+pressure: 0
+totalResistance: 5
+pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
+valveFlowSetting: 35
+=d=
+
 ### Pump Sizing in the Real World
 
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions caused by stormwater expectations, varying reservoir levels, 
-piping conditions over time, or the use of pressurized tanks. Further discussion on this topic can be found in <a href="/pump-fundamentals/other-considerations.html" target="_blank">Other Considerations</a>.
+piping conditions over time, or the use of pressurized tanks. The below is an example of a system curve envelope which dictates all the conditions seen. It is up to the system designer to specify
+the important points the selected pumps need to hit.
+
+![](A-C-1.png "")
+
+For many situations, the use of pumps in parallel or pumps in series can be used to define minimum and maximum conditions considering the use of a Variable Speed Controller in order to cover the
+points below the pump curves. Below is an example of 3 identical pumps in parallel being sized to cover a system curve with varying head conditions.
+
+![](A-C-2.png "")
+
+
+When selecting the appropriate pump in a situation like this, the use of a Variable Speed Controller is expected which means it is possible to reach duty conditions
+that exist within the curve envelope.  Using affinity rules will allow the engineer to calibrate the Variable Speed Controller to cause the pumps to hit any desired
+duty condition within the curve envelope.  It is important to remember that at any given time, the only point to dictate pump performance is where the present system
+curve will intersect the pump curve.
+
+### Undersized or Oversized Pumps
+
+It is important to note that as the flow increases, the pump head produced will decrease as the system flow losses increases. Oversized or undersized pumps will have curves that do not
+intersect at the required flow rate or will not cross at all. This will show that a different pump should be selected.
 
 ### Parallel and Series System Implications
 
@@ -124,9 +162,24 @@ flow. A static dominated system will be the opposite, there will be a significan
 
 ![](./pumps-series.png "")
 
-### Educational Demonstration (Parallel Pumps)
+### Educational Demonstration 
 
-Content will be added soon.
+=d=
+title: Parallel Pumps and System Curve
+kind: pump-curve
+pumpType: parallel
+lowerLevel: 5
+upperLevel: 5
+pressure: 0
+totalResistance: 5
+pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
+pumpCount: 3
+pumpCountMax: 5
+maxVelocities: 30
+=d=
+
 
 ### Worked Example (U.S. Customary Units Only)
 
@@ -146,6 +199,7 @@ we select some data points from the pump curve which are shown in the following 
 =|=
 title: Pump Curve Data
 data: qdH-us.csv
+scrolling: false
 =|=
 
 Using a second-order polynomial curve fit, we get the following pump curve equation:
