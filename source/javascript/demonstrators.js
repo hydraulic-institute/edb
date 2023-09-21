@@ -98,11 +98,11 @@
     if (pump_type == "parallel") {
       const Q=calcQValue(1,totalResistance,speed,staticHead,coefA,coefB,coefC);
       const pumpHead=calcPumpHead(Q,speed,coefA,coefB,coefC);
-      console.log("Pump1: Q:"+Q+" H:"+pumpHead);
+      //console.log("Pump1: Q:"+Q+" H:"+pumpHead);
       //Get info for which_pump
       const Qprime=calcQValue(which_pump,totalResistance,speed,staticHead,coefA,coefB,coefC);
       const pumpHeadprime=calcPumpHead(Qprime,speed,coefs['coefA'],coefs['coefB'],coefs['coefC']);
-      console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
+      //console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
       values['headIncrease']=parseInt(Math.ceil(((pumpHeadprime-pumpHead)/pumpHead)*100));
       values['flowIncrease']=parseInt(Math.ceil(((Qprime-Q)/Q)*100));
       values['series_x']=[Q,Qprime];
@@ -221,16 +221,22 @@ Vue.component("demo-tank", {
     },
     data: function() {
         return {
-            levelValue: 2, 
+            levelValue: null, 
             settings: null,
             tank: null,
-            levelYSpacing: 1
+            Min: 0,
+            Max: 10
         }
     },
     mounted: function() {
-        this.levelYSpacing = this.maxHeight / (this.levelMax - this.levelMin);
+        //console.log(this.title);
+        //Set the Max based off of 0 min
+        this.Max=this.levelMax-this.levelMin;
+        const levelYSpacing = this.maxHeight / this.Max;
+        //console.log("levelYSpacing: "+levelYSpacing);
         const tickWidth = this.knobRadius + 6;
-        const levelTickValues = _.range(this.levelMin, this.levelMax + 1);
+        const levelTickValues = _.range(this.Min, this.Max+1);
+        //console.log("tick values:"+levelTickValues);
         const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
         const stageNormalWidth = ((this.placement == "upper") ? calc_stageNormalWidth+20 : calc_stageNormalWidth);
         const calc_stageNormalHeight = this.maxHeight + (this.knobRadius * 2) + 2;
@@ -362,9 +368,9 @@ Vue.component("demo-tank", {
             }),
 
             ticks: levelTickValues.map(v => new Konva.Rect({
-                name: (this.levelMax - v),
+                name: (this.Max - v),
                 x: this.knobRadius,
-                y: this.knobRadius + (v * this.levelYSpacing) - 1,
+                y: this.knobRadius + (v * levelYSpacing) - 1,
                 width: tickWidth,
                 height: 1,
                 fill: "black",
@@ -434,6 +440,9 @@ Vue.component("demo-tank", {
             if (tick) {
                 this.levelValue = parseInt(tick.name());
             }
+            else {
+              console.log("Could not find tick:"+knobRect);
+            }
             setKnobFocusFill();
         });
 
@@ -454,7 +463,7 @@ Vue.component("demo-tank", {
 
         tank.layer.on("click", () => {
             const curYPos = this.tank.tank.getRelativePointerPosition().y;
-            const level = this.levelMax - Math.round(curYPos / this.levelYSpacing);
+            const level = this.Max - Math.round(curYPos / levelYSpacing);
 
             this.levelValue = level;
         });
@@ -480,19 +489,19 @@ Vue.component("demo-tank", {
             }
 
             const level = this.levelValue + increment;
-            this.levelValue = Math.min(this.levelMax, Math.max(this.levelMin, level));
+            this.levelValue = Math.min(this.Max, Math.max(this.Min, level));
         })
-
-        this.levelValue = this.value;
+        //Need to set the level based off of 0 min, so subtract the levelMin passed in
+        this.levelValue = this.value - this.levelMin;
         this.renderTankLevel(this.levelValue);
     },
     methods: {
         calculateLevelPos: function(level) {
-            const newHeight = level > 0 ? (level - this.levelMin) * this.levelYSpacing : 0;
+            const newHeight = level > 0 ? this.maxHeight * (level / this.Max) : 0;
             let position = { x: this.tank.waterLevel.x(), y: this.maxHeight - newHeight + this.knobRadius };
             position = this.tank.transform.point(position);
             const levelPosition = { x: position.x, y: position.y, newHeight: newHeight };
-
+            //console.log(this.title+" Level: "+levelPosition);
             return levelPosition;
         },
         renderTankLevel: function(level) {
@@ -510,15 +519,17 @@ Vue.component("demo-tank", {
     },
     watch: {
         levelValue: function(newValue, oldValue) {
+          //console.log("New Level for "+this.title+": "+newValue);
             this.renderTankLevel(newValue);
-
-            this.$emit("input", newValue);
+            //Since we base everything off of 0 min, lets add the levelMin back in for emitting
+            let emitValue=newValue+this.levelMin;
+            this.$emit("input", emitValue);
         }
     },
     computed: {
         yPositionRange: function() {
-            const minPos = this.calculateLevelPos(this.levelMax);
-            const maxPos = this.calculateLevelPos(this.levelMin);
+            const minPos = this.calculateLevelPos(this.Max);
+            const maxPos = this.calculateLevelPos(this.Min);
 
             return {
                 min: this.isHorizontal ? maxPos.x : minPos.y,
@@ -1120,10 +1131,10 @@ Vue.component('demo-pump-curve', {
 
     calculations: function() {
       this.errorMessage="";
-      console.log("=====================================");
-      console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
-      console.log("pumpType: "+this.pumpType+" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax+" valveSetting: "+this.valveFlowSetting);
-      console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
+      //console.log("=====================================");
+      //console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
+      //console.log("pumpType: "+this.pumpType+" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax+" valveSetting: "+this.valveFlowSetting);
+      //console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
       const sys_values = CurveCalculators.calcSystemCurveValues(
         this.velocities, 
         this.upperPressure, 
@@ -1131,9 +1142,9 @@ Vue.component('demo-pump-curve', {
         this.lowerLevel, 
         this.elevation,
         this.totalResistance);
-      console.log("StaticHead: "+sys_values['staticHead']);
-      console.log("FrictionHead: "+sys_values['frictionHead']);
-      console.log("TotalHead: "+sys_values['totalHead']);
+      //console.log("StaticHead: "+sys_values['staticHead']);
+      //console.log("FrictionHead: "+sys_values['frictionHead']);
+      //console.log("TotalHead: "+sys_values['totalHead']);
 
 
       const pumps=[];  
@@ -1147,12 +1158,12 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
-        console.log("Pump["+(i+1)+"]");
-        console.log("PumpHead: "+values['pumpHead']);
-        if (i==0) {
-          console.log("PumpHeadFullSpeed: "+values['pumpHeadFullSpeed']);
-          console.log("PumpHeadMaxSpeed: "+values['pumpHeadMaxSpeed']);
-        }
+        //console.log("Pump["+(i+1)+"]");
+        //console.log("PumpHead: "+values['pumpHead']);
+        //if (i==0) {
+          //console.log("PumpHeadFullSpeed: "+values['pumpHeadFullSpeed']);
+          //console.log("PumpHeadMaxSpeed: "+values['pumpHeadMaxSpeed']);
+        //}
         values['qValue'] = CurveCalculators.calcQValue(
           i+1,
           this.totalResistance,
@@ -1162,7 +1173,7 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
-        console.log("QVal: "+values['qValue']);
+        //console.log("QVal: "+values['qValue']);
         pumps.push(values);
       }
 
@@ -1194,10 +1205,10 @@ Vue.component('demo-pump-curve', {
           if (this.pumpType == "parallel") {
             this.headIncrease=values['data']['headIncrease'];
             this.flowIncrease=values['data']['flowIncrease'];
-            console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
+            //console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
           }
         }
-        console.log("Operating Point - PH[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPH[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TH["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
+        //console.log("Operating Point - PH[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPH[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TH["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
         values['data']['opPoint_x']=[];
         values['data']['opPoint_y']=[];
         if (!isNaN(pumps[this.pumpCount-1].qValue)) {
@@ -1210,7 +1221,7 @@ Vue.component('demo-pump-curve', {
 
           if (this.pumpType != "fcv") {        
             var xval=isNaN(pumps[this.pumpCount-1].qValue)?0:pumps[this.pumpCount-1].qValue;
-            console.log("QVal:"+pumps[this.pumpCount-1].qValue);
+            //console.log("QVal:"+pumps[this.pumpCount-1].qValue);
             xval=Math.min(xval,this.maxVelocities);
             if (xval >= 0) {
               values['data']['opPoint_x']=[xval,xval];
@@ -1222,7 +1233,7 @@ Vue.component('demo-pump-curve', {
             //FCV handling
             const fcv_Q=parseFloat((this.valveFlowSetting/10).toFixed(1));
             values['data']['opPoint_x']=[fcv_Q,fcv_Q];
-            console.log("Operating Point - Q: "+fcv_Q+" Op_PointX: "+values['data']['opPoint_x']+" Op_PointY: "+values['data']['opPoint_y']);
+            //console.log("Operating Point - Q: "+fcv_Q+" Op_PointX: "+values['data']['opPoint_x']+" Op_PointY: "+values['data']['opPoint_y']);
 
             //FCV Line (Series chart)
             values['data']['series_x']=[fcv_Q,fcv_Q];
@@ -1230,8 +1241,8 @@ Vue.component('demo-pump-curve', {
             const phQ=CurveCalculators.calcPumpHead(fcv_Q, this.pumpSpeed/100,this.coefA,this.coefB,this.coefC);
             const fhQ=CurveCalculators.calcFrictionHead(fcv_Q,this.totalResistance);
             const fcv = phQ - fhQ - sys_values['staticHead'][0];
-            console.log("FCV Line - FCV: "+fcv)
-            console.log("PH-Q: "+phQ+" FH-Q: "+fhQ+" SH[0]: "+sys_values['staticHead'][0]);
+            //console.log("FCV Line - FCV: "+fcv)
+            //console.log("PH-Q: "+phQ+" FH-Q: "+fhQ+" SH[0]: "+sys_values['staticHead'][0]);
             if (fcv < 0) { this.errorMessage="Control Valve Failed"; }
             const y0=(fcv>0?phQ:0);
             const y1=(fcv>0?(fhQ+sys_values['staticHead'][0]):0);
@@ -1239,8 +1250,8 @@ Vue.component('demo-pump-curve', {
           }
         }
         
-        console.log("Operating Point - X:"+values['data']['opPoint_x']+" Y:"+values['data']['opPoint_y']);
-        if ('series_x' in values['data']) { console.log("Series_X:"+values['data']['series_x']+" Series_Y:"+values['data']['series_y']); }
+        //console.log("Operating Point - X:"+values['data']['opPoint_x']+" Y:"+values['data']['opPoint_y']);
+        //if ('series_x' in values['data']) { console.log("Series_X:"+values['data']['series_x']+" Series_Y:"+values['data']['series_y']); }
       }
       return values;
     },
