@@ -35,21 +35,6 @@ and the dynamic head, which is the frictional losses at varying flow rates. The 
 
 ![](./reading-1.png "")
 
-### Educational Demonstration
-
-=d=
-title: Pump and System Curve
-kind: pump-curve
-pumpType: plot
-lowerLevel: 5
-upperLevel: 5
-pressure: 0
-totalResistance: 5
-pumpSpeed: 75
-pumpSpeedMin: 50
-pumpSpeedMax: 110
-=d=
-
 ### Flow Rate Change Using Manual Throttling Valve
 
 As a manual (or passive) valve is changed (opening or closing) it will change the system curve by affecting the K value. Closing a valve will add resistance to
@@ -74,6 +59,21 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
+
+### Educational Demonstration
+
+=d=
+title: Pump and System Curve
+kind: pump-curve
+pumpType: plot
+lowerLevel: 5
+upperLevel: 5
+pressure: 0
+totalResistance: 5
+pumpSpeed: 75
+pumpSpeedMin: 50
+pumpSpeedMax: 110
+=d=
 
 ### Active Control Valves
 

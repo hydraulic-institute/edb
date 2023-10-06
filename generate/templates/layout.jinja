@@ -342,20 +342,9 @@
                                 <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
                                 <span>&nbsp;</span>
                             </div>
-                            <div class='field'>
-                                <label class='label'>
-                                    <span>Bearing Spacing</span>
-                                </label>
-                                <div class='control'>
-                                    <label class='radio'>
-                                        <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
-                                        ${value_bearing_spacing(10)} ${units_measure_ft_m}
-                                    </label>
-                                    <label class='radio'>
-                                        <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
-                                        ${value_bearing_spacing(5)} ${units_measure_ft_m}
-                                    </label>
-                                </div>
+                            <div>
+                                <label class="label" for='bearing_toggle'>Enclosed shaft with flooded tube</label>
+                                <input type="checkbox" id='bearing_toggle' v-model='bearing_spacing_5'/>
                             </div>
                         </div>
                     </div>

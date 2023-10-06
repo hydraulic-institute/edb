@@ -916,7 +916,7 @@ Vue.component('demo-pump-curve', {
         "Pump Curve (base)": {"type":"line", "color": "#85929E","stroke": 2, "opacity": 1, "markers": 0},
         "3 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1, "markers": 0},
         "Series": {"type":"line", "color": "#90FF33","stroke": 4, "opacity": 1, "markers": 4, 
-                    "label": {"parallel":"Head/Flow Difference","fcv":"Control Valve Flow"}}
+                    "label": {"parallel":"Head/Flow Difference","fcv":"Control Valve Head"}}
       },
       series_opacity: [],
       series_stroke: [],
