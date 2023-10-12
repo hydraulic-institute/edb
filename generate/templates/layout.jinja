@@ -116,7 +116,7 @@
                     <p class="panel-heading" style='margin-bottom:0px'>Measures </p>
                     <a :class='{isActive: u == unit}' v-for='u in units' class='panel-block' @click='unit = u'>
                         <span class='panel-icon'>
-                            <img :src='"/images/"+u.image'/>
+                            <img :src='"./images/"+u.image'/>
                         </span>
                         <span>${u.measure}</span>
                     </a>
@@ -366,7 +366,7 @@
                     </div> 
                 </div>    
                 <div class='column' align='center'>
-                    <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
+                    <img alt='Hydraulic Institute' src="./images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
                 </div>
             </div>
         </form>
@@ -503,7 +503,7 @@
                     <div class="row mt-4">
                     </div>
                 </div>
-                <div class="col-4"><img :src='image_str' @error="image_str='/images/image_not_available.png'"/></div>
+                <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
             </div>
         </div>
         <div class="row mt-4">
@@ -544,8 +544,8 @@
                     <div class="col-3">
                         <b>${item.type}</b>
                     </div>
-                    <div class="col-3 mt-2"><img :src="'/images/'+item.image"/></div>
-                    <div class="col"><img :src="'/images/'+item.equation"/></div>
+                    <div class="col-3 mt-2"><img :src="'./images/'+item.image"/></div>
+                    <div class="col"><img :src="'./images/'+item.equation"/></div>
                 </div>
             </div>
         </div>

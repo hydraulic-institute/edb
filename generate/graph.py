@@ -28,6 +28,8 @@ def build_content_graph(specials):
             graph.append(meta)
 
             for sub in subdirList:
+                if len([special for special in specials if sub.endswith(special)]) > 0:
+                    continue
                 print("---------------------")
                 print("Sub directory = [" + sub + "] in " + dirName)
                 smeta = make_directory_node(sub, dirName, meta)
