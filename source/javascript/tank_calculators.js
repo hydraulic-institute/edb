@@ -9,13 +9,14 @@ Vue.component('tank-demo', {
     },
     data: function () {
       return {
-          volume_data: {'bottomhead': {'desc': 'Volume in Bottom Head', 'type': 'Bottom Type', 'value': null, 'converted_value': null, 'varname': 'bottom_type'},
-                        'endhead': {'desc': 'Volume in Ends', 'type': 'End Type', 'value': null,  'converted_value': null, 'varname': 'end_type'},
-                        'cylindrical': {'desc': 'Volume in Cylinder', 'type': '', 'value': null, 'converted_value': null},
-                        'tophead': {'desc': 'Volume in Top Head', 'type': 'Top Type', 'value': null,  'converted_value': null, 'varname': 'top_type'},
-                        'total_liquid': {'desc': 'Total Liquid Volume', 'type': '', 'value': null, 'converted_value': null },
-                        'total_tank': {'desc': 'Total Tank Volume', 'type': '', 'value': null, 'converted_value': null}
+          volume_data_cleared: {'bottomhead': {'desc': 'Volume in Bottom Head', 'type': 'Bottom Type', 'value': '', 'converted_value': '', 'varname': 'bottom_type'},
+                        'endhead': {'desc': 'Volume in Ends', 'type': 'End Type', 'value': '',  'converted_value': '', 'varname': 'end_type'},
+                        'cylindrical': {'desc': 'Volume in Cylinder', 'type': '', 'value': '', 'converted_value': ''},
+                        'tophead': {'desc': 'Volume in Top Head', 'type': 'Top Type', 'value': '',  'converted_value': '', 'varname': 'top_type'},
+                        'total_liquid': {'desc': 'Total Liquid Volume', 'type': '', 'value': '', 'converted_value': null },
+                        'total_tank': {'desc': 'Total Tank Volume', 'type': '', 'value': '', 'converted_value': ''}
                       },
+          volume_data: [],
           volume_strings: [],
           volume_array: [],
           tank_types: ['Vertical','Horizontal','Spherical'],
@@ -57,10 +58,16 @@ Vue.component('tank-demo', {
                                       {'type': '2:1 Elliptical Top', 'image':'2-1_elliptical_top.jpg','equation':'equation_2-1_elliptical_top.jpg'}
                                       ],
                                 'st': [{'type':'Sphere', 'image':'st.jpg','equation':'equation_sphere.jpg'}],
+                                'total_liquid': {'value': '', 'converted_value': ''},
+                                'total_tank': {'value': '', 'converted_value': ''}
                                 },
       }
     },
     template: '#tank-demo-template',
+    created: function () {
+      const v = this;
+      v.volume_data = v.clear_volume_data();
+    },
     mounted: function() {
       const v = this; 
       v.vol_conversions = {};
@@ -206,7 +213,7 @@ Vue.component('tank-demo', {
             }
           }
         };
-        this.image_str='/images/'+out_image_str+'.jpg';
+        this.image_str='./images/'+out_image_str+'.jpg';
         
         //create volume strings and calculate based on values for the results section
         let str_array=this.tank_data['tank_volumes'][this.tank_key];
@@ -215,6 +222,9 @@ Vue.component('tank-demo', {
         for(var i=0;i<str_array.length;i++) {
           this.volume_strings.push(this.volume_data[str_array[i]]);
         }
+      },
+      clear_volume_data: function() {
+        return {...this.volume_data_cleared};
       },
       convert_val: function(in_val) {
         var from_unit = this.conversion_mapper[this.length_unit];
