@@ -2,12 +2,13 @@ from generate import graph
 from generate import output
 import os
 
-SPECIAL_DIRS = ['javascript', 'images']
+SPECIAL_DIRS = ['javascript', 'images', 'table-data']
+IGNORE_DIRS = ['table-data']
 
 
 def generate(production):
     content_graph = graph.build_content_graph(SPECIAL_DIRS)
-    output.html(content_graph, SPECIAL_DIRS, production)
+    output.html(content_graph, SPECIAL_DIRS, IGNORE_DIRS, production)
     print("EDB generated successfully.")
 
 

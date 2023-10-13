@@ -38,12 +38,12 @@ is the dynamic viscosity. The foregoing may be expressed
 by the equations
 
 =+=
-<span class= equation-label >(2.C.1)</span>
+<span class= equation-label >(Eq. 2.C.1)</span>
 $$ τ = {F \over A} = μ{v \over d} $$
 =+=
 
 =+=
-<span class= equation-label >(2.C.2)</span>
+<span class= equation-label >(Eq. 2.C.2)</span>
 $$ μ = {τ \over {v/d}} $$
 =+=
 
@@ -63,7 +63,8 @@ gram per centimeter-second. It usually is more
 convenient to express numerical values in centipoise
 such that 100 centipoise equal one poise."/>
 
-![](IIC-1_Fig-1.png "")
+![](./images/IIC-1_Fig-1.png "")
+<div class="figure-label">(Fig. 2.C.1)</div>
 
 The kinematic viscosity (𝜈) may be obtained by dividing
 the dynamic viscosity (μ) by the mass density
@@ -72,7 +73,7 @@ divided by the acceleration of gravity (g). These
 relationships may be expressed by the equation
 
 =+=
-<span class= equation-label >(2.C.3)</span>
+<span class= equation-label >(Eq. 2.C.3)</span>
 $$ ν = {μ \over {w/g}} = {μ \over ρ} $$
 =+=
 
@@ -225,7 +226,8 @@ hide_price: true
 
 ### Figure 1 – Viscosity Blending Chart [1]
    
-![](IIC-2.png "")
+![](./images/IIC-2.png "")
+<div class="figure-label">(Fig. 2.C.2)</div>
 
 
 ### Viscosity Conversion Tables
