@@ -95,7 +95,7 @@ It also shows that the flow in the system is less than the flow in the system wi
 The plot also is useful in determining the margin available on the control valve. Having sufficient, but not excessive, pressure drop across most control valves is required so the valve can properly control 
 to the setpoint.
 
-![](./images/reading-4v3.png "")
+![](./images/iC-4-Pump-and-system-Curve-with-Valve-head.png "")
 <div class="figure-label">(Fig. 1.C.4)</div>
 
 ### Changing the Setpoint on an Active Control Valve
