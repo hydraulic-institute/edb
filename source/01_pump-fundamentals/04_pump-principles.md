@@ -52,7 +52,7 @@ differences in methods used throughout industry and in related textbooks and lit
 
 Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
 
-![](./images/specific-speed-charts.PNG "")
+![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png "")
 <div class="figure-label">(Fig. 1.D.1)</div>
 
 =^=

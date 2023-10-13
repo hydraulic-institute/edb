@@ -81,14 +81,14 @@ and plotting them on a common set of axes.
 
 In some systems the frictional losses will be the majority of overall head loss. These systems will have a steeper system curve.
 
-![](./images/friction-dom.png "")
+![](./images/iA-1-Friction-Dominated-System-Curve.png "")
 ![](./images/elev-changes.png "")
 <div class="figure-label">(Fig. 1.A.1)</div>
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
-![](./images/static-dom.png "")
+![](./images/iA-2-Static-Dominated-System-Curve.png "")
 ![](./images/large-elev.png "")
 <div class="figure-label">(Fig. 1.A.2)</div>
 
