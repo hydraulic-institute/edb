@@ -37,6 +37,8 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
 STATICS_DIR = os.path.join(BASE_DIR, "./static")
 SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
+TABLE_DATA_DIR = 'table-data'
+SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
@@ -80,7 +82,7 @@ def replace_latex_block(latex):
         return "<p class='formula'>" + latex + "</p>"
 
 def definitions_table_data(table, path, filename, in_sections):    
-    file = os.path.join(SOURCE_DIR, path, filename)
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the table {table.title} refers to {file} which does not exist")
@@ -194,7 +196,7 @@ def definition_create_section_link(sections, in_section):
     return ""
 
 def table_data(units, table, path, filename):
-    file = os.path.join(SOURCE_DIR, path, filename)
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the table {table.title} refers to {file} which does not exist")
@@ -285,7 +287,7 @@ def replace_table_block_pdf(dir, table_text):
 
 
 def chart_data(units, chart, path, filename):
-    file = os.path.join(SOURCE_DIR, path, filename)
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the chart {chart.title} refers to {file} which does not exist")
@@ -623,14 +625,22 @@ def statics():
         f.write(css)
 
 
-def make_specials(specials):
+def make_specials(specials, ignores):
     for special in specials:
+        if special in ignores:
+            continue
         src = os.path.join(SOURCE_DIR, special)
         dst = os.path.join(OUTPUT_DIR, special)
         print(f'Copying {src} to {dst}.')
         copytree(src,
                  dst)
 
+def make_source_specials(source, dest):
+    for special in SOURCE_SPECIAL_DIRS:
+        src = os.path.join(source, special)
+        dst = os.path.join(dest, special)
+        print(f'Creating special subdir {src} to {dst}')
+        copytree(src,dst)
 
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
@@ -720,6 +730,8 @@ def make_section(graph, section, parent=None):
     directory = os.path.join(OUTPUT_DIR, slug)
     print("makedirs for " + directory)
     os.makedirs(directory)
+    #KK
+    make_source_specials(section['path'], directory)
     for topic in section['children']:
         if topic['directory']:
             print("Sub directories are currently unsupported.")
@@ -875,7 +887,7 @@ def pdf(graph):
         md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='./generate/static/edb.pdf')
 
 
-def html(graph, specials, production=False):
+def html(graph, specials, ignores, production=False):
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)
@@ -885,7 +897,7 @@ def html(graph, specials, production=False):
     if production:
         options.minified = ".min"
     clean()
-    make_specials(specials)
+    make_specials(specials, ignores)
     os.makedirs(os.path.join(OUTPUT_DIR, "charts"))
 
     make_root(graph)

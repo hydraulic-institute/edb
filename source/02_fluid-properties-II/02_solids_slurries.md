@@ -12,7 +12,7 @@ description: Properties of solid mixtures and slurries. Determining specific gra
 mixture or slurry, S<sub>m</sub> is:
 
 =+=
-<span class= equation-label >(2.B.1)</span>
+<span class= equation-label >(Eq. 2.B.1)</span>
 $$ S_{m} = {{S_{s} * S_{1}} \over {S_{s} + C_{w}(S_{1} - S{s})}} $$
 =+=
 
@@ -36,7 +36,8 @@ $$ S_{m} = {{2.2 * 1.2} \over {2.2 + .35(1.2 - 2.2)}} = 1.43 $$
 specific gravities of solid liquid mixtures are shown
 below.
 
-![](CSG.png "")
+![](./images/CSG.png "")
+<div class="figure-label">(Fig. 2.B.1)</div>
 
 Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
 This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
@@ -48,12 +49,12 @@ of the mixture components is required in order to select
 the correct type of pump and materials of construction.
 
 =+=
-<span class= equation-label >(2.B.2)</span>
+<span class= equation-label >(Eq. 2.B.2)</span>
 $$ C_{w} = {weight\, of\, dry\, solids \over { weight\, of\, dry\, solids\, + weight\, of\, liquid\, phase }} $$
 =+=
 
 =+=
-<span class= equation-label >(2.B.3)</span>
+<span class= equation-label >(Eq. 2.B.3)</span>
 $$ C_{v} = {volume\, of\, dry\, solids \over { volume\, of\, dry\, solids\, + volume\, of\, liquid\, phase }} $$
 =+=
 
@@ -65,13 +66,13 @@ Figure 2.
 the expression:
 
 =+=
-<span class= equation-label >(2.B.4)</span>
+<span class= equation-label >(Eq. 2.B.4)</span>
 [units = us]
 $$ Q_{m} = {{4 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
 =+=
 
 =+=
-<span class= equation-label >(2.B.4)</span>
+<span class= equation-label >(Eq. 2.B.4)</span>
 
 [units = metric]
 $$ Q_{m} = {{0.9085 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
@@ -149,15 +150,18 @@ shown in Figure 3.
 
 ### Figure 1 – Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
 
-![](IIB-4.png "")
+![](./images/IIB-4.png "")
+<div class="figure-label">(Fig. 2.B.2)</div>
 
 ### Figure 2 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
 
-![](IIB-5.png "")
+![](./images/IIB-5.png "")
+<div class="figure-label">(Fig. 2.B.3)</div>
 
 ### Figure 3 – Classification of Pumps According to Solid Size [3]
 
-![](IIB-6-new.jpg "")
+![](./images/IIB-6-new.jpg "")
+<div class="figure-label">(Fig. 2.B.4)</div>
 
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIB-4.

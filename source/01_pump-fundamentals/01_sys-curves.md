@@ -15,7 +15,7 @@ and minor head losses (component losses). Each of these is described in further 
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
 =+=
-<span class= equation-label >(1.A.1)</span>
+<span class= equation-label >(Eq. 1.A.1)</span>
 $$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
@@ -70,7 +70,7 @@ Based on these concepts, the total head losses at any given flow rate is the sum
 be represented using the following equation:
 
 =+=
-<span class= equation-label >(1.A.2)</span>
+<span class= equation-label >(Eq. 1.A.2)</span>
 $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{supply}) \over \rho g} + {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
@@ -81,14 +81,16 @@ and plotting them on a common set of axes.
 
 In some systems the frictional losses will be the majority of overall head loss. These systems will have a steeper system curve.
 
-![](friction-dom.png "")
-![](elev-changes.png "")
+![](./images/iA-1-Friction-Dominated-System-Curve.png "")
+![](./images/elev-changes.png "")
+<div class="figure-label">(Fig. 1.A.1)</div>
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
-![](static-dom.png "")
-![](large-elev.png "")
+![](./images/iA-2-Static-Dominated-System-Curve.png "")
+![](./images/large-elev.png "")
+<div class="figure-label">(Fig. 1.A.2)</div>
 
 It is important to accurately characterize the system curve to select the correct pump for various operating conditions as the operating point of your system will be dependent
 on the intersection between the system curve and the pump curve.
@@ -123,7 +125,8 @@ totalResistance: 5
 ### Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
-![](we-system.png "")
+![](./images/we-system.png "")
+<div class="figure-label">(Fig. 1.A.3)</div>
 
 **Determine the Static Head**
 

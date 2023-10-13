@@ -11,12 +11,13 @@ Submergence (S) is defined as the height of liquid level over the suction bell o
 
 In addition to contributing to the available Net Positive Suction Head (NPSH), a minimum submergence is also needed to prevent strong air core vortices from entering the pump or piping, such as illustrated below. 
 
-![](./submergence1.png "")
+![](./images/submergence1.png "")
+<div class="figure-label">(Fig. 1.E.1)</div>
 
 The minimum submergence required to prevent strong air core vortices is based in part on a dimensionless flow parameter, the Froud number, defined as:
 
 =+=
-<span class= equation-label >(1.E.1)</span>
+<span class= equation-label >(Eq. 1.E.1)</span>
 $$ F_{D} = {{V} \over {(g * D)^{0.5}}} $$
 =+=
 
@@ -30,10 +31,11 @@ where:
 Consistent units must be used for V, D, and g so that FD is dimensionless. The minimum submergence (S) shall be calculated from (Hecker, G.E., 1987), where the units are those used for D. Section 9.8.6 of ANSI/HI 9.8 provides further information on the background and development of this relationship. The minimum submergence (S) is demonstrated in the following examples respectively for a vertical pump with a suction bell, and a pipe outlet with flared opening.
 
 =+=
-<span class= equation-label >(1.E.2)</span>
+<span class= equation-label >(Eq. 1.E.2)</span>
 $$ S = D * (1 + 2.3 * F_{D}) $$
 =+=
 
-![](./submergence_combined.png "") 
+![](./images/submergence_combined.png "")
+<div class="figure-label">(Fig. 1.E.2)</div> 
 
 Note that the minimum submergence may need to be increased to satisfy the NPSH requirements of the pump. Refer to sections 1 B Pump Curves and 1 D Pump Principles. For more information on NPSH requirements. 
