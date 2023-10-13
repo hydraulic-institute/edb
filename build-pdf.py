@@ -2,8 +2,8 @@ from generate import graph
 from generate import output
 import os
 
-SPECIAL_DIRS = ['javascript', 'images','csvfiles']
-IGNORE_DIRS = ['csvfiles']
+SPECIAL_DIRS = ['javascript', 'images','table-data']
+IGNORE_DIRS = ['table-data']
 
 
 def generate(production):
