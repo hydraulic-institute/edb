@@ -273,7 +273,7 @@ $$ \Delta h_f = { {fL \over D} * v^2  \over 2g}$$
 
 The block will compile and be typset as the following:
 
-<img src='docs/equation.png'/>
+<img src='./images/equation.png'/>
 
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
@@ -345,7 +345,7 @@ The first column of every row in the CSV file should always contain the followin
 
 #### Example
 Consider the following CSV file, created in Excel.
-![CSV](csv.png "CSV")
+![CSV](./images/csv.png "CSV")
 
 When properly saved, it would appear as a plain text file in a coding editor:
 
@@ -410,7 +410,7 @@ For an image that is saved in the same directory as the text content you are dev
 By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
 
 ```
-<img src='images/system-curves-001.png' width='50' height='200'/>
+<img src='./images/system-curves-001.png' width='50' height='200'/>
 ```
 
 For images that are going to appear on many pages, in different sections, a good option is to store the image in the `/images` directory, rather than in a section directory (or multiple section directories).  You can place any image in the `/image` directory, and reference it from any page like this:

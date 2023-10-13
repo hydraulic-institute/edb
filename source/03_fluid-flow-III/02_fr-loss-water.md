@@ -9,8 +9,10 @@ description: Frictional loss information for water. Resistance coefficients.
 ### Figure 1 – Typical Resistance Coefficients for Valves and Fittings [1],[2]
 
 ![](./images/table-32a.png "")
+<div class="figure-label">(Fig. 3.B.1)</div>
 
 ![](./images/table-32b.png "")
+<div class="figure-label">(Fig. 3.B.2)</div>
 
 =^=
 title: Rotodynamic Pumps for Pump Piping
@@ -32,6 +34,7 @@ data: K-variation.csv
 ### Figure 2 – Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup> [3]
 
 ![](./images/miter-bends.png "")
+<div class="figure-label">(Fig. 3.B.3)</div>
 
 K<sub>s</sub> = RESISTANCE COEFFICIENT FOR SMOOTH SURFACE
 
@@ -40,10 +43,12 @@ K<sub>r</sub> = RESISTANCE COEFFICIENT FOR ROUGH SURFACE, ε/D = 0.0022
 ### Figure 3 – Resistance Coefficients for 90 Degree Bends of Uniform Diameter [4]
 
 ![](./images/IIIB-5A.png "")
+<div class="figure-label">(Fig. 3.B.4)</div>
 
 ### Figure 4 – Resistance Coefficients for 90 Degree Bends of Uniform Diameter and Smooth Surface at Reynolds Number ≈ 2.25 x 10<sup>5</sup> [5]
 
 ![](./images/IIIB-5B.png "")
+<div class="figure-label">(Fig. 3.B.5)</div>
 
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Table 32a.

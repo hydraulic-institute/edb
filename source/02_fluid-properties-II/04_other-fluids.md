@@ -12,7 +12,7 @@ hide_units: true
 The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
 
 =+=
-<span class= equation-label >(2.D.1)</span>
+<span class= equation-label >(Eq. 2.D.1)</span>
 $$ {Degrees\,A.P.I. = {141.5 \over g} - 131.5} $$
 =+=
 
@@ -26,7 +26,7 @@ and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828
 To determine the resulting specific gravity by mixing oils of different specific gravities:
 
 =+=
-<span class= equation-label >(2.D.2)</span>
+<span class= equation-label >(Eq. 2.D.2)</span>
 $$ {D = {{md_{1} + nd_{2}} \over {m+n}}} $$
 =+=
 
@@ -60,6 +60,7 @@ hide_price: true
 ### Temperature-Volume Relation for Oil
 
 ![](./images/temp-vol-oil.png "")
+<div class="figure-label">(Fig. 2.D.1)</div>
 
 ### Specific Gravities vs. Degrees Baumé
 
@@ -117,16 +118,22 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value and it is inversely proportional to the temperature.
 
 ![](./images/Brix1.png "")
+<div class="figure-label">(Fig. 2.D.2)</div>
 
 ![](./images/Brix2.png "")
+<div class="figure-label">(Fig. 2.D.3)</div>
 
 ![](./images/Brix3.png "")
+<div class="figure-label">(Fig. 2.D.4)</div>
 
 ![](./images/Brix4.png "")
+<div class="figure-label">(Fig. 2.D.5)</div>
 
 ![](./images/Brix5.png "")
+<div class="figure-label">(Fig. 2.D.6)</div>
 
 ![](./images/Brix6.png "")
+<div class="figure-label">(Fig. 2.D.7)</div>
 
 =^=
 title: Sealless Rotodynamic Pumps for Nomenclature, Definitions, Application, Operation, and Test

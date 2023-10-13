@@ -11,7 +11,7 @@ description: General overview of fluid flow. Pipe roughness, friction factors, R
 The resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from the equation:
 
 =+=
-<span class= equation-label >(3.A.1)</span>
+<span class= equation-label >(Eq. 3.A.1)</span>
 $$ h_f = f * {L \over D} * {v^2 \over 2g} $$ 
 =+=
 
@@ -27,7 +27,7 @@ where:
 The Colebrook Equation (portrayed below) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation (3.1).
 
 =+=
-<span class= equation-label >(3.A.2)</span>
+<span class= equation-label >(Eq. 3.A.2)</span>
 $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \sqrt f}]) $$
 =+=
 
@@ -39,7 +39,7 @@ where:
 Another common form, which can be solved without iteration, is shown below.
 
 =+=
-<span class= equation-label >(3.A.3)</span>
+<span class= equation-label >(Eq. 3.A.3)</span>
 $$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
@@ -49,7 +49,7 @@ fluid properties, and flow conditions. It is used as the basis for the Moody Dia
 The Reynolds number is defined as: 
 
 =+=
-<span class= equation-label >(3.A.4)</span>
+<span class= equation-label >(Eq. 3.A.4)</span>
 $$ Re = {ρvD \over μ} = {vD \over 𝜈} = {QD \over {𝜈A}} $$
 =+=
 
@@ -86,7 +86,7 @@ it is recommended that 15 percent be added to the values shown above.
 The resistance to flow (head loss) caused by a valve or fitting may be computed from the equation:
 
 =+=
-<span class= equation-label >(3.A.5)</span>
+<span class= equation-label >(Eq. 3.A.5)</span>
 $$ h_f = K*{v^2 \over 2g} $$
 =+=
 
@@ -104,11 +104,12 @@ and fittings. The available data are inconclusive. As indicated in the above ref
 The resistance coefficients decrease with the increasing size of most valves and fittings.
 
 ![](./images/friction-factors.png "")
+<div class="figure-label">(Fig. 3.A.1)</div>
 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 
 =+=
-<span class= equation-label >(3.A.6)</span>
+<span class= equation-label >(Eq. 3.A.6)</span>
 $$ h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
@@ -141,7 +142,7 @@ elbow is usually identical with that of an elbow of the same straight size as th
 The resistance to flow (head loss) caused by a sudden enlargement may be computed from the equation:
 
 =+=
-<span class= equation-label >(3.A.7)</span>
+<span class= equation-label >(Eq. 3.A.7)</span>
 $$h_{f} = K{{(v_1 - v_2)^2} \over {2g}}$$
 =+=
 =+=
@@ -169,7 +170,7 @@ Values of (K) for conical increasers based on data reported by Gibson<sup>(g)</s
 Fig. 5 or may be computed by the equation:
 
 =+=
-<span class= equation-label >(3.A.8)</span>
+<span class= equation-label >(Eq. 3.A.8)</span>
 $$K = 3.50{(\tan(\theta/2)})^{1.22}$$
 =+=
 
@@ -204,7 +205,7 @@ in stokes or centistokes may be converted to v in sq ft/sec by the formula:
 
 
 =+=
-<span class= equation-label >(3.A.9)</span>
+<span class= equation-label >(Eq. 3.A.9)</span>
 $$v = 0.00107639 * stokes$$
 $$= 0.0000107639 * centistokes$$
 =+=
@@ -216,7 +217,7 @@ flow is laminar and the friction factor for any fluid
 in any pipe is given by the equation:
 
 =+=
-<span class= equation-label >(3.A.10)</span>
+<span class= equation-label >(Eq. 3.A.10)</span>
 $$ f = {64 \over Re}$$
 =+=
 
@@ -227,6 +228,7 @@ The range Re = 2000–4000 is called the critical zone in which the flow may be 
 ### Moody Diagram [1]
 
 ![](./images/moody-diagram-2.png "")
+<div class="figure-label">(Fig. 3.A.2)</div>
 
 =^=
 title: Pump System Optimization Guidebook (PSO)
