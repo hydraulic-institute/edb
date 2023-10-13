@@ -59,7 +59,7 @@ hide_price: true
 
 ### Temperature-Volume Relation for Oil
 
-![](temp-vol-oil.png "")
+![](./images/temp-vol-oil.png "")
 
 ### Specific Gravities vs. Degrees Baumé
 
@@ -116,17 +116,17 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	The below graphs represents the exponentially decreasing nature.
 -	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value and it is inversely proportional to the temperature.
 
-![](Brix1.png "")
+![](./images/Brix1.png "")
 
-![](Brix2.png "")
+![](./images/Brix2.png "")
 
-![](Brix3.png "")
+![](./images/Brix3.png "")
 
-![](Brix4.png "")
+![](./images/Brix4.png "")
 
-![](Brix5.png "")
+![](./images/Brix5.png "")
 
-![](Brix6.png "")
+![](./images/Brix6.png "")
 
 =^=
 title: Sealless Rotodynamic Pumps for Nomenclature, Definitions, Application, Operation, and Test

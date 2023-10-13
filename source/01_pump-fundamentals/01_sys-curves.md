@@ -81,14 +81,14 @@ and plotting them on a common set of axes.
 
 In some systems the frictional losses will be the majority of overall head loss. These systems will have a steeper system curve.
 
-![](friction-dom.png "")
-![](elev-changes.png "")
+![](./images/friction-dom.png "")
+![](./images/elev-changes.png "")
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
-![](static-dom.png "")
-![](large-elev.png "")
+![](./images/static-dom.png "")
+![](./images/large-elev.png "")
 
 It is important to accurately characterize the system curve to select the correct pump for various operating conditions as the operating point of your system will be dependent
 on the intersection between the system curve and the pump curve.
@@ -123,7 +123,7 @@ totalResistance: 5
 ### Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
-![](we-system.png "")
+![](./images/we-system.png "")
 
 **Determine the Static Head**
 

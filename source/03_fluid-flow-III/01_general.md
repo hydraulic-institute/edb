@@ -103,7 +103,7 @@ below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losse
 and fittings. The available data are inconclusive. As indicated in the above references section, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and fittings.
 The resistance coefficients decrease with the increasing size of most valves and fittings.
 
-![](friction-factors.png "")
+![](./images/friction-factors.png "")
 
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 
@@ -226,7 +226,7 @@ The range Re = 2000–4000 is called the critical zone in which the flow may be 
 
 ### Moody Diagram [1]
 
-![](moody-diagram-2.png "")
+![](./images/moody-diagram-2.png "")
 
 =^=
 title: Pump System Optimization Guidebook (PSO)

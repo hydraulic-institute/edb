@@ -36,7 +36,7 @@ $$ S_{m} = {{2.2 * 1.2} \over {2.2 + .35(1.2 - 2.2)}} = 1.43 $$
 specific gravities of solid liquid mixtures are shown
 below.
 
-![](CSG.png "")
+![](./images/CSG.png "")
 
 Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
 This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
@@ -149,15 +149,15 @@ shown in Figure 3.
 
 ### Figure 1 – Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
 
-![](IIB-4.png "")
+![](./images/IIB-4.png "")
 
 ### Figure 2 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
 
-![](IIB-5.png "")
+![](./images/IIB-5.png "")
 
 ### Figure 3 – Classification of Pumps According to Solid Size [3]
 
-![](IIB-6-new.jpg "")
+![](./images/IIB-6-new.jpg "")
 
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIB-4.

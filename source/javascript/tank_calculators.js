@@ -206,7 +206,7 @@ Vue.component('tank-demo', {
             }
           }
         };
-        this.image_str='/images/'+out_image_str+'.jpg';
+        this.image_str='./images/'+out_image_str+'.jpg';
         
         //create volume strings and calculate based on values for the results section
         let str_array=this.tank_data['tank_volumes'][this.tank_key];

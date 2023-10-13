@@ -39,12 +39,12 @@ Figure 1 and Figure 2 show typical frictional loss curves for two different
 consistencies (C<sub>2</sub> > C<sub>1</sub>) of chemical pulp and mechanical
 pulp, respectively.
 
-![](fig1_2.png "")
+![](./images/fig1_2.png "")
 
 The frictional loss curve for chemical pulp can be conveniently divided
 into three regions, as illustrated by the shaded areas of Figure 3.
 
-![](fig3_4.png "")
+![](./images/fig3_4.png "")
 
 Regions shown in Fig. 3 may be described as follows:
 
