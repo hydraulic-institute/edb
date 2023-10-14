@@ -1,6 +1,6 @@
 -----
-title: A) System Curves 
-date: May 26th, 2020
+title: A) System Curves
+date: Oct 14th, 2023
 description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
 
@@ -14,8 +14,8 @@ and minor head losses (component losses). Each of these is described in further 
 ### Static Head
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using the following equation:
 
+<div  class="equation-label"><a id="eq1a1"></a>Eq. 1.A.1</div >
 =+=
-<span class= equation-label >(Eq. 1.A.1)</span>
 $$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(P_{destination} - P_{supply}) \over \rho g} $$
 =+=
 
@@ -69,8 +69,8 @@ hide_price: true
 Based on these concepts, the total head losses at any given flow rate is the sum of the static head, frictional head losses, and the minor head losses of the system. It, therefore, can
 be represented using the following equation:
 
+<div  class="equation-label"><a id="eq1a2"></a>Eq. 1.A.2</div >
 =+=
-<span class= equation-label >(Eq. 1.A.2)</span>
 $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(P_{destination}-P_{supply}) \over \rho g} + {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
 =+=
 
@@ -83,14 +83,14 @@ In some systems the frictional losses will be the majority of overall head loss.
 
 ![](./images/iA-1-Friction-Dominated-System-Curve.png "")
 ![](./images/elev-changes.png "")
-<div class="figure-label">(Fig. 1.A.1)</div>
+<div class="figure-label">Fig. 1.A.1</div>
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
 ![](./images/iA-2-Static-Dominated-System-Curve.png "")
 ![](./images/large-elev.png "")
-<div class="figure-label">(Fig. 1.A.2)</div>
+<div class="figure-label">Fig. 1.A.2</div>
 
 It is important to accurately characterize the system curve to select the correct pump for various operating conditions as the operating point of your system will be dependent
 on the intersection between the system curve and the pump curve.
@@ -126,21 +126,22 @@ totalResistance: 5
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
 ![](./images/we-system.png "")
-<div class="figure-label">(Fig. 1.A.3)</div>
+<div class="figure-label">Fig. 1.A.3</div>
 
 **Determine the Static Head**
 
-Since both tanks have the same surface pressure, the static head is only dependent on the difference in surface elevation.
+Using the static head calculation in [Eq. 1.A.1](#eq1a1), and since both tanks have the same surface pressure, the static head is only dependent on the difference in surface elevation.
 
+<div class="calculation-label">Calc. 1.A.1(a)</div >
 =+=
 $$\Delta h_{stat} = (z_{destination}-z_{supply})$$
 =+=
 
+<div class="calculation-label">Calc. 1.A.1(b)</div >
 =+=
 [units = us]
 $$ \Delta h_{stat} = (289\,{ft}-24\,{ft}) = 265\,{ft} $$
 =+=
-
 =+=
 [units = metric]
 $$ \Delta h_{stat} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
@@ -163,27 +164,28 @@ The losses for the components can be found in tables. In this example we have th
 
 This gives a total K factor equal to 3.79
 
-Using the combined frictional loss equation above, we can determine the head loss (in feet) as a function of velocity <units us = "(in ft/s^2^)" metric = "(in m/s^2^)"/>
+Using the combined frictional loss equation in [Eq. 1.A.2](#eq1a2), we can determine the head loss (in feet) as a function of velocity <units us = "(in ft/s^2^)" metric = "(in m/s^2^)"/>
 
+<div class="calculation-label">Calc. 1.A.2(a)</div >
 =+=
 $$ \Delta h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}}$$
 =+=
 
+<div class="calculation-label">Calc. 1.A.2(b)</div >
 =+=
 [units = us]
 $$ \Delta h_f = {({0.02 * 1255ft \over 0.3355ft} + 3.79) * {v^2 \over 2 * 32.17 {ft/sec^2}}} $$
 =+=
-
 =+=
 [units = metric]
 $$ \Delta h_f = {({0.02 * 382.52m \over 0.10226m} + 3.79) * {v^2 \over 2 * 9.81 {m/sec^2}}} $$
 =+=
 
+<div class="calculation-label">Calc. 1.A.2(c)</div >
 =+=
 [units = us]
 $$ \Delta h_f = 1.22v^2 $$
 =+=
-
 =+=
 [units = metric]
 $$ \Delta h_f = 4.01v^2 $$
@@ -194,15 +196,17 @@ $$ \Delta h_f = 4.01v^2 $$
 The system curve can be calculated by varying the flow rate (velocity) using the above values. Combining the static and dynamic (pipe friction and minor losses)
 we have the following as a function of velocity.
 
+
+<div class="equation-label">Eq. 1.A.3</div >
 =+=
 $$ \Delta h_{system} = \Delta h_{stat} + \Delta h_{f} $$
 =+=
 
+<div class="calculation-label">Calc. 1.A.3(a)</div >
 =+=
 [units = us]
 $$\Delta h_{system} = 265{ft} + 1.22v^2$$
 =+=
-
 =+=
 [units = metric]
 $$\Delta h_{system} = 80.77{m} + 4.01v^2$$
@@ -212,11 +216,11 @@ $$\Delta h_{system} = 80.77{m} + 4.01v^2$$
 <units us = "The following can be used to convert a flow rate in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches)."
 metric = "The following can be used to convert a flow rate in m3/h (cubic meters per hour) to a velocity in m/sec (with the pipe diameter D in meters)."/>
 
+<div class="calculation-label">Calc. 1.A.3(b)</div >
 =+=
 [units us]
 $$ v = 0.320833*Q*({4 \over \pi D^2}) $$
 =+=
-
 =+=
 [units metric]
 $$ v = 0.000278*Q*({4 \over \pi D^2}) $$
@@ -225,11 +229,11 @@ $$ v = 0.000278*Q*({4 \over \pi D^2}) $$
 Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 0.10226 m)"/> we can get the following as the system curve equation as a function
 of flow rate in gpm.
 
+<div class="calculation-label"><a id="calc1a3c"></a>Calc. 1.A.3(c)</div >
 =+=
 [units us]
 $$ \Delta h_{system} = 265{ft} + {{(7.75E{-04})}{Q^2}} $$
 =+=
-
 =+=
 [units metric]
 $$ \Delta h_{system} = 80.77{m} + {({4.59E{-03})}{Q^2}} $$
@@ -245,7 +249,7 @@ x: 1
 series: 3, 2
 series_title_index: 0
 =/=
-
+<div class="figure-label">Fig. 1.A.4</div>
 
 =|=
 title: Data 
