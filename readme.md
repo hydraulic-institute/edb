@@ -289,11 +289,11 @@ You may find the following links instructive - however remember that there is a 
 - [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
 
 #### Numbered Equations
-Often within text content you will want to embed references to equations.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<span>` element with class `equation-label` in the first line within the equation block:
+Often within text content you will want to embed references to equations, figures, calculations, tables, demonstrators etc.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<div>` element with class `figure-label`, `equation-label`, `calculation-label`, `demo-label` before, afer or in the first line within the block.  These classes are defined in ```style.less```:
 
 ```
+<div class='equation-label'>Eq. 1</div>
 =+= 
-<span class='equation-label'>Eq. 1</span>
 $$ \sqrt {x + 9} $$
 =+= 
 ```
