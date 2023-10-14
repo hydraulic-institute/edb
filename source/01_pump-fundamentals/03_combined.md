@@ -1,6 +1,6 @@
 -----
 title: C) Combined Pump & System Curves 
-date: May 26th, 2020
+date: Oct 14th, 2023
 description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
 hide_units: true
 -----
@@ -34,7 +34,7 @@ As the name implies, a **pump and system curve plot** consists of at least two c
 and the dynamic head, which is the frictional losses at varying flow rates. The operating point is generally where the two curves intersect.
 
 ![](./images/iC-1-Pump-and-system-Curve.png "")
-<div class="figure-label">(Fig. 1.C.1)</div>
+<div class="figure-label">Fig. 1.C.1</div>
 
 ### Flow Rate Change Using Manual Throttling Valve
 
@@ -43,7 +43,7 @@ the system over the entire range of flows (an opening will reduce resistance). T
 Note the static head at zero flow will still be the same. Using the revised pump system plot, a new operating point can be determined.
 
 ![](./images/iC-2-Pump-and-system-Curve-valve-closed.png "")
-<div class="figure-label">(Fig. 1.C.2)</div>
+<div class="figure-label">Fig. 1.C.2</div>
 
 ### Changes in Pump Speed
 
@@ -55,7 +55,7 @@ shown in the pump system plot – the system flow and the pump head generated. S
 produced and reduce the system flow. Note the static head at zero flow will still be the same.
 
 ![](./images/iC-3-Pump-and-system-Curve-valve-closed-reduced-speed.png "")
-<div class="figure-label">(Fig. 1.C.3)</div>
+<div class="figure-label">Fig. 1.C.3</div>
 
 ### Changes in Impeller Size
 
@@ -77,6 +77,7 @@ pumpSpeed: 75
 pumpSpeedMin: 50
 pumpSpeedMax: 110
 =d=
+<div class="demo-label">Demo. 1.C.1</div>
 
 ### Active Control Valves
 
@@ -95,8 +96,8 @@ It also shows that the flow in the system is less than the flow in the system wi
 The plot also is useful in determining the margin available on the control valve. Having sufficient, but not excessive, pressure drop across most control valves is required so the valve can properly control 
 to the setpoint.
 
-![](./images/reading-4v3.png "")
-<div class="figure-label">(Fig. 1.C.4)</div>
+![](./images/iC-4-Pump-and-system-Curve-with-Valve-head.png "")
+<div class="figure-label">Fig. 1.C.4</div>
 
 ### Changing the Setpoint on an Active Control Valve
 
@@ -105,7 +106,7 @@ control valve, and the head required on the pump. In the example here, the setpo
 required for the pump will increase.
 
 ![](./images/iC-5-Pump-and-system-Curve-with-Valve-head-2.png "")
-<div class="figure-label">(Fig. 1.C.5)</div>
+<div class="figure-label">Fig. 1.C.5</div>
 
 ### Changing the Pump Speed with an Active Control Valve
 
@@ -113,7 +114,7 @@ When the pump speed is changed and there is an active control valve in the syste
 loss across the control valve, since the system flow rate has not changed.
 
 ![](./images/iC-6-Pump-and-system-Curves-variable-speed-valve-head-loss.png "")
-<div class="figure-label">(Fig. 1.C.6)</div>
+<div class="figure-label">Fig. 1.C.6</div>
 
 ### Educational Demonstration
 
@@ -130,6 +131,7 @@ pumpSpeedMin: 50
 pumpSpeedMax: 110
 valveFlowSetting: 35
 =d=
+<div class="demo-label">Demo. 1.C.2</div>
 
 ### Pump Sizing in the Real World
 
@@ -138,13 +140,13 @@ piping conditions over time, or the use of pressurized tanks. The below is an ex
 the important points the selected pumps need to hit.
 
 ![](./images/iC-7-System-Curves-for-Varying-Conditions.png "")
-<div class="figure-label">(Fig. 1.C.7)</div>
+<div class="figure-label">Fig. 1.C.7</div>
 
 For many situations, the use of pumps in parallel or pumps in series can be used to define minimum and maximum conditions considering the use of a Variable Speed Controller in order to cover the
 points below the pump curves. Below is an example of 3 identical pumps in parallel being sized to cover a system curve with varying head conditions.
 
 ![](./images/iC-8-Pump-System-Curves-for-1-to-3-pumps-with-two-levels.png "")
-<div class="figure-label">(Fig. 1.C.8)</div>
+<div class="figure-label">Fig. 1.C.8</div>
 
 
 When selecting the appropriate pump in a situation like this, the use of a Variable Speed Controller is expected which means it is possible to reach duty conditions
@@ -164,13 +166,13 @@ bringing additional parallel pumps online may not change the operating point (mo
 by static head (flatter system curve) will have a greater effect on the operating point.
 
 ![](./images/iC-9-Pump-Curves-Parallel-with-Steep-and-Flat-System-Curves.png "")
-<div class="figure-label">(Fig. 1.C.9)</div>
+<div class="figure-label">Fig. 1.C.9</div>
 
 Since the head is additive for series pumps, the effect would also be different. Using more pumps on a friction dominated system will have a significant increase in head with a lesser increase in
 flow. A static dominated system will be the opposite, there will be a significant increase in flow with a lesser increase in head.
 
 ![](./images/iC-10-Pump-Curves-Series-with-Steep-and-Flat-System-Curves.png "")
-<div class="figure-label">(Fig. 1.C.10)</div>
+<div class="figure-label">Fig. 1.C.10</div>
 
 ### Educational Demonstration 
 
@@ -189,17 +191,20 @@ pumpCount: 3
 pumpCountMax: 5
 maxVelocities: 30
 =d=
+<div class="demo-label">Demo. 1.C.3</div>
 
 
 ### Worked Example (U.S. Customary Units Only)
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
+[Calc. 1.A.3(c)](./sys-curves.html#calc1a3c)
 =+=
 $$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2} $$
 =+=
 
 ![](./images/we-system.png "")
+<div class="figure-label">Fig. 1.C.11</div>
 
 **Verifying the Pump Curve with the System**
 
@@ -214,6 +219,7 @@ scrolling: false
 
 Using a second-order polynomial curve fit, we get the following pump curve equation:
 
+<div class="equation-label">Eq. 1.C.12</div>
 =+=
 $$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
 =+=
@@ -221,7 +227,7 @@ $$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
 We can combine the system curve with the pump curve to get an overall understanding of how the system will operate.
 
 ![](./images/iC-11-Pump-and-System-Curve.png "")
-<div class="figure-label">(Fig. 1.C.11)</div>
+<div class="figure-label">Fig. 1.C.12</div>
 
 Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at <units us = "200 gpm and 296 feet." metric = "0.01262 m3/s and 90.22 m."/>
 
@@ -234,14 +240,17 @@ For example, let’s examine what happens with the tank level changes. With all 
 The pump would also change its operating point in response. Since the operating point will be where the pump and system curves intersect, we can set the two equations
 equal and solve for flow rate.
 
+<div class="equation-label">Eq. 1.C.13</div>
 =+=
 $$ \Delta h_{system} = \Delta h_{pump} $$
 =+=
 
+<div class="calculation-label">Calc. 1.C.13(a)</div>
 =+=
 $$ \Delta h_{static} + {7.75e^{-4}}{Q^2} = 380 - {0.06Q} - {0.0018Q^2} $$
 =+=
 
+<div class="calculation-label">Calc. 1.C.13(b)</div>
 =+=
 $$ (\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0 $$
 =+=
@@ -249,6 +258,7 @@ $$ (\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0 $$
 
 We can solve this equation using the quadratic formula: 
 
+<div class="calculation-label">Calc. 1.C.13(c)</div>
 =+=
 $$ Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}} $$
 =+=

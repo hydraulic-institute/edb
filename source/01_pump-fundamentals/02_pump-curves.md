@@ -1,6 +1,6 @@
 -----
-title: B) Pump Curves 
-date:  May 26th, 2020
+title: B) Pump Curves
+date: Oct 14th, 2023
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 
@@ -18,14 +18,12 @@ x-axis is the flow rate, typically in units of gallons per minute (GPM). Head ca
 across a range of flow rates. On the y-axis is the pressure developed, typically converted to head in units of meters (m). On the
 x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). Head can be determined from the following equation:"/>
 
+<div class="equation-label">Eq. 1.B.1</div>
 =+=
-<span class= equation-label >(Eq. 1.B.1)</span>
 [units = us]
 $$ H =  {{2.31 * p} \over s} $$
 =+=
-
 =+=
-<span class= equation-label >(Eq. 1.B.1)</span>
 [units = metric]
 $$ H =  {{0.102 * p} \over s} $$
 =+=
@@ -38,8 +36,8 @@ where:
 
 Specific gravity can be found by using the following equation:
 
+<div class="equation-label">Eq. 1.B.2</div>
 =+=
-<span class= equation-label >(Eq. 1.B.2)</span>
 $$ s = {ρ_{pumped fluid} \over ρ_{water}}  $$
 =+=
 
@@ -58,13 +56,14 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.1</div>
 
 ### Efficiency Curve
 
 **Pump efficiency** is shown as a percentage on most pump curves. Pump efficiency is defined by the equation below:
 
+<div class="equation-label">Eq. 1.B.3</div>
 =+=
-<span class= equation-label >(Eq. 1.B.3)</span>
 $$ η_{p} = {P_{w} \over P_{p}}  $$
 =+=
 
@@ -84,20 +83,19 @@ x: 1
 series: 3
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.2</div>
 
 ### Pump Input Power Curve
 
 The **pump input power curve** shows the amount of input power required for different flow rates. P<sub>p</sub> can be determined by the following equation 
 where Q is flow in <units us = "GPM:" metric = "m^3^/h:"/>
 
+<div class="equation-label">Eq. 1.B.4</div>
 =+=
-<span class= equation-label >(Eq. 1.B.4)</span>
 [units = us]
 $$ P_p = {{Q * H * s} \over {3960 * η_{p}}} $$
 =+=
-
 =+=
-<span class= equation-label >(Eq. 1.B.4)</span>
 [units = metric]
 $$ P_p = {{Q * H * s} \over {366.6 * η_{p}}} $$
 =+=
@@ -112,8 +110,8 @@ where:
 
 Pump input power can also be determined if the amount of power absorbed by the fluid and efficiency are known by rearranging the equation shown for the efficiency curve:
 
+<div class="equation-label">Eq. 1.B.5</div>
 =+=
-<span class= equation-label >(Eq. 1.B.5)</span>
 $$ P_p = {P_{w} \over η_{p}}  $$
 =+=
 
@@ -127,6 +125,7 @@ x: 1
 series: 4
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.3</div>
 
 ### Net Positive Suction Head Required (NPSHr) Curve
 
@@ -141,11 +140,12 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.4</div>
 
 ### Operating Regions and Points
 
 ![](./images/iB-5-Relative-Life-expectancy-Operating-Region-and-points.png "")
-<div class="figure-label">(Fig. 1.B.5)</div>
+<div class="figure-label">Fig. 1.B.5</div>
 
 **Best Efficiency Point (BEP):**
 
@@ -195,16 +195,16 @@ charactereistics (speed and impeller size) or a change in impeller size while ma
 
 As seen below flow (Q), head (H), and power (P) are all proportional to the rotational speed (n):
 
+<div class="equation-label"><a id="eq1b6a"></a>Eq. 1.B.6a</div>
 =+=
-<span class= equation-label >(Eq. 1.B.6a)</span>
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 =+=
+<div class="equation-label"><a id="eq1b6b"></a>Eq. 1.B.6b</div>
 =+=
-<span class= equation-label >(Eq. 1.B.6b)</span>
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
 =+=
+<div class="equation-label">Eq. 1.B.6c</div>
 =+=
-<span class= equation-label >(Eq. 1.B.6c)</span>
 $$ {P_2 \over P_1} = ({n_2 \over n_1})^3  $$
 =+=
 
@@ -212,16 +212,16 @@ $$ {P_2 \over P_1} = ({n_2 \over n_1})^3  $$
 
 As seen below flow (Q), head (H), and power (P) are all proportional to the impeller Size (D):
 
+<div class="equation-label"><a id="eq1b7a"></a>Eq. 1.B.7a</div>
 =+=
-<span class= equation-label >(Eq. 1.B.7a)</span>
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 =+=
+<div class="equation-label"><a id="eq1b7b"></a>Eq. 1.B.7b</div>
 =+=
-<span class= equation-label >(Eq. 1.B.7b)</span>
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2  $$
 =+=
+<div class="equation-label">Eq. 1.B.7c</div>
 =+=
-<span class= equation-label >(Eq. 1.B.7c)</span>
 $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 =+=
 
@@ -252,13 +252,13 @@ Pumps operating in parallel allow the pumping system to deliver greater flows th
 of two or more pumps operating in parallel, at each head value, the flowrate of each pump must be added together to obtain the composite flowrate.
 
 ![](./images/iB-6-Pump-curves-in-parallel.png "")
-<div class="figure-label">(Fig. 1.B.6)</div>
+<div class="figure-label">Fig. 1.B.6</div>
 
 The amount of increased flow that occurs within the system depends on both the shape of the system curve and shape of the pump curves.  The **composite pump curve** intersects the 
 system curve at different operating points yielding different flowrates. As more pumps are called to operate, the flow will increase accordingly:
 
 ![](./images/iB-7-Pump-curves-in-parallel-with-System-Curve.png "")
-<div class="figure-label">(Fig. 1.B.7)</div>
+<div class="figure-label">Fig. 1.B.7</div>
 
 It should be noted, however, that unless the system curve is completely flat (which means friction and other dynamic losses are negligible), bringing a second 
 pump on-line does not double the flow rate. The increased flow will be something less than double. How much less depends on the steepness of the system curve.
@@ -271,7 +271,7 @@ A composite pump curve representing pumps in series can be generated by adding t
 composite pump curve for the group of pumps.  Figure 3 shows a composite pump curve for two and three identically sized pumps operating in series:
 
 ![](./images/iB-8-Pump-Curves-in-Series.png "")
-<div class="figure-label">(Fig. 1.B.8)</div>
+<div class="figure-label">Fig. 1.B.8</div>
 
 Pumps operating in series allow the pumping system to deliver greater heads than is possible with just one such pump.  This allows a pump station to be designed to satisfy systems that
 require large discharge pressures that may not be practical with one pump.  Where certain applications require, it may also allow a pump station to address a wide variation in system pressures
@@ -279,7 +279,7 @@ by staging the number of operating pumps.  Figure 4 shows how applying a configu
 requirements so long as inter-stage discharge piping is configured to permit so.
 
 ![](./images/iB-9-Pump-curves-in-series-with-System-Curve.png "")
-<div class="figure-label">(Fig. 1.B.9)</div>
+<div class="figure-label">Fig. 1.B.9</div>
 
 ### Educational Demonstration (Pumps in Series)
 
@@ -314,6 +314,7 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.10</div>
 
 **Determine the Reduced Speed**
 
@@ -327,23 +328,23 @@ $$ n_2= 1566\,RPM $$
 
 **Calculate New Flow Values**
 
-Using Equation (1.B.6a), calculate the new values (repeat until you convert all points under the flow column):
+Using Equation [Eq. 1.B.6a](#eq1b6a), calculate the new values (repeat until you convert all points under the flow column):
 
+<div class="calculation-label">Calc. 1.B.6a(1)</div>
 =+= 
-<span class= equation-label >(A)</span>
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
 $$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2 \over 0} = {1566 \over 1740} $$
 $$ \,\,\,\,\,\,\,\,\,\,Q_2 = 0\,GPM $$
 =+=
 
+<div class="calculation-label">Calc. 1.B.6a(2)</div>
 =+= 
-<span class= equation-label >(B)</span>
 $$ {Q_2 \over 200} = {1566 \over 1740} $$
 $$ \,\,\,\,\,\,\,\,Q_2 = 180\,GPM $$
 =+=
 
+<div class="calculation-label">Calc. 1.B.6a(3)</div>
 =+= 
-<span class= equation-label >(C)</span>
 $$ {Q_2 \over 400} = {1566 \over 1740} $$
 $$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
 =+=
@@ -351,23 +352,23 @@ $$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
 
 **Calculate New Total Head Values**
 
-Using Equation (1.B.6b), calculate the new values (repeat until you convert all points under the Total Head column):
+Using Equation [Eq. 1.B.6b](#eq1b6b), calculate the new values (repeat until you convert all points under the Total Head column):
 
+<div class="calculation-label">Calc. 1.B.6b(1)</div>
 =+=
-<span class= equation-label >(A)</span>
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
 $$ \,\,\,\,\,\,\,\,\,\,{H_2 \over 173} = ({1566 \over 1740})^2 $$
 $$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 173\,ft. $$
 =+=
 
+<div class="calculation-label">Calc. 1.B.6b(2)</div>
 =+=
-<span class= equation-label >(B)</span>
 $$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
 $$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 167\,ft. $$
 =+=
 
+<div class="calculation-label">Calc. 1.B.6b(3)</div>
 =+=
-<span class= equation-label >(C)</span>
 $$ {H_2 \over 198} = ({1566 \over 1740})^2 $$
 $$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 160\,ft. $$
 =+=
@@ -387,11 +388,12 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
+<div class="figure-label">Fig. 1.B.11</div>
 
 **Comparison of normal flow and low flow conditions:**
 
 ![](./images/iB-12-Pump-curves-base-speed-and-reduced-speed.png "")
-<div class="figure-label">(Fig. 1.B.12)</div>
+<div class="figure-label">Fig. 1.B.12</div>
 
 
 ### Example 2 (U.S. & Metric Units)
@@ -403,6 +405,9 @@ Instead of designing a new pump the manufacturer recommends trimming the impelle
 
 **Calculate the New Impeller Diameter**
 
+Using Equation [Eq. 1.B.7b](#eq1b7b), calculate the new values:
+
+<div class="calculation-label">Calc. 1.B.7b(1)</div>
 =+=
 [units = us]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
@@ -411,7 +416,6 @@ $$ {\sqrt {67 \over 80}} = \sqrt(({D_2 \over 10.625})^2) $$
 $$ 0.915 = {D_2 \over 10.625} $$
 $$ D_2 = 9.72\,in. \approx 9.75\,in. $$
 =+=
-
 =+=
 [units = metric]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
@@ -423,13 +427,15 @@ $$ D_2 = 247\,mm $$
 
 **Calculate the New Flow**
 
+Using Equation [Eq. 1.B.7a](#eq1b7a), calculate the new values:
+
+<div class="calculation-label">Calc. 1.B.7a(1)</div>
 =+=
 [units = us]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
 $$ {Q_2 \over 2000} = {9.75 \over 10.625} $$
 $$ Q_2 = 1835\,GPM $$
 =+=
-
 =+=
 [units = metric]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
