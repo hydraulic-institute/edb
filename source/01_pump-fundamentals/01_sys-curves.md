@@ -121,6 +121,7 @@ upperLevel: 5
 upperPressure: 10
 totalResistance: 5
 =d=
+<div class="demo-label">Demo. 1.A.1</div>
 
 ### Worked Example (U.S. & Metric Units)
 <units us = "Consider the system below and develop a system curve for the flows from 0 to 300 GPM." metric = "Consider the system below and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>

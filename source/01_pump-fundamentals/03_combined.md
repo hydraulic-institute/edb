@@ -77,6 +77,7 @@ pumpSpeed: 75
 pumpSpeedMin: 50
 pumpSpeedMax: 110
 =d=
+<div class="demo-label">Demo. 1.C.1</div>
 
 ### Active Control Valves
 
@@ -130,6 +131,7 @@ pumpSpeedMin: 50
 pumpSpeedMax: 110
 valveFlowSetting: 35
 =d=
+<div class="demo-label">Demo. 1.C.2</div>
 
 ### Pump Sizing in the Real World
 
@@ -189,6 +191,7 @@ pumpCount: 3
 pumpCountMax: 5
 maxVelocities: 30
 =d=
+<div class="demo-label">Demo. 1.C.3</div>
 
 
 ### Worked Example (U.S. Customary Units Only)
