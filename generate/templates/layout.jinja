@@ -116,7 +116,7 @@
                     <p class="panel-heading" style='margin-bottom:0px'>Measures </p>
                     <a :class='{isActive: u == unit}' v-for='u in units' class='panel-block' @click='unit = u'>
                         <span class='panel-icon'>
-                            <img :src='"/images/"+u.image'/>
+                            <img :src='"./images/"+u.image'/>
                         </span>
                         <span>${u.measure}</span>
                     </a>
@@ -342,20 +342,9 @@
                                 <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
                                 <span>&nbsp;</span>
                             </div>
-                            <div class='field'>
-                                <label class='label'>
-                                    <span>Bearing Spacing</span>
-                                </label>
-                                <div class='control'>
-                                    <label class='radio'>
-                                        <input type='radio' name = 'bearing_spacing' value='10' v-model='bearing_spacing'/>
-                                        ${value_bearing_spacing(10)} ${units_measure_ft_m}
-                                    </label>
-                                    <label class='radio'>
-                                        <input type='radio' name = 'bearing_spacing' value='5' v-model='bearing_spacing'/>
-                                        ${value_bearing_spacing(5)} ${units_measure_ft_m}
-                                    </label>
-                                </div>
+                            <div>
+                                <label class="label" for='bearing_toggle'>Enclosed shaft with flooded tube</label>
+                                <input type="checkbox" id='bearing_toggle' v-model='bearing_spacing_5'/>
                             </div>
                         </div>
                     </div>
@@ -377,7 +366,7 @@
                     </div> 
                 </div>    
                 <div class='column' align='center'>
-                    <img alt='Hydraulic Institute' src="/images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
+                    <img alt='Hydraulic Institute' src="./images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
                 </div>
             </div>
         </form>
@@ -404,13 +393,13 @@
             </div>
             <table class="table is-narrow border border-secondary-subtle" :key="entry">
                 <thead class="fixed-thead">
-                    <th style="width:40%;">Units</th>
+                    <th style="width:40%; ">Units</th>
                     <th style="width:20%;">At Elevation</th>
                     <th style="width:20%;">At Sea Level (std)</th>
                     <th style="width:20%;">Delta</th>
                 </thead>
                 <tbody>
-                    <tr v-for='d in calc_data'>
+                    <tr class="hi_no_input" v-for='d in calc_data'>
                         <td><b>${d.desc}</b></td>
                         <td>${d.val}</td>
                         <td>${d.sea_level}</td>
@@ -424,7 +413,7 @@
 
 <script type="text/x-template" id="tank-demo-template"> 
     <div class="wrap">  
-        <div class="row">
+        <div class="row mb-4">
             <div class="columns">
                 <div class="col-8">
                     <div class="row mt-2">
@@ -458,12 +447,10 @@
                                 <b>Tank Diameter: [D]</b>  
                             </div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px'
                             type='number' 
-                            @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown='no_negative_no_comma'
+                            @keydown.enter='calculate_volumes' 
                             v-model='d_diameter'/></div>
                             <div class="col-2" style="text-align:left">
                             ${length_unit}
@@ -472,12 +459,10 @@
                         <div class="row align-items-center" v-if='tank_key != "st"'>
                             <div class="col-4"><b>Length of Cylinder: [A]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px'
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown.enter='calculate_volumes'
                             v-model='a_length'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -487,12 +472,10 @@
                         <div class="row align-items-center">
                             <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px' 
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes()"
-                            @keydown.tab="calculate_volumes()"
-                            @click="calculate_volumes()"
+                            @keydown.enter='calculate_volumes'
                             v-model='h_filldepth'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -501,26 +484,29 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-4"><i>Percent full</i></div>
-                            <div class="col-4">${percent_full}%</div>
+                            <div class="col-3">${percent_full}%</div>
+                            <div class="col-4"><span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-4">Check Depth</div>
+                            <div class="col-3">
+                                <span v-if='check_depth != "OK"' style="color:red"><i>${check_depth}</i></span>
+                                <span v-else><i>${check_depth}</i></span>
+                            </div>
                             <div class="col-4">
-                                <span v-if='check_depth == 1'><i>OK</i></span>
-                                <span v-else style="color:red"><i>Too Full</i></span></div>
+                                <button type='button' class='button is-link is-light' @click='calculate_volumes()'>Calculate</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                    </div>
                 </div>
-                <div class="col-4"><img :src='image_str' @error="image_str='/images/image_not_available.png'"/></div>
-            </div>
+        </div>
+        <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
+        </div>
         </div>
         <div class="row mt-4">
             <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
                 <thead>
-                    <tr>
+                    <tr class='fixed-thead'>
                         <th scope="col" style="width: 30%; vertical-align:bottom;text-align:left;">Location</th>
                         <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
                         <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
@@ -534,7 +520,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for='c in volume_strings'>
+                    <tr class='hi_no_input' v-for='c in volume_strings'>
                         <td  style="text-align: left">${c.desc}</td>
                         <td style="text-align: right">
                             ${c.value} Cubic ${length_unit}
@@ -555,8 +541,8 @@
                     <div class="col-3">
                         <b>${item.type}</b>
                     </div>
-                    <div class="col-3 mt-2"><img :src="'/images/'+item.image"/></div>
-                    <div class="col"><img :src="'/images/'+item.equation"/></div>
+                    <div class="col-3 mt-2"><img :src="'./images/'+item.image"/></div>
+                    <div class="col"><img :src="'./images/'+item.equation"/></div>
                 </div>
             </div>
         </div>
@@ -618,12 +604,16 @@
                         </button>
                     </div>
                     <div class="dropdown-menu is-dark" id="dropdown-menu4" role="menu">
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" style="box-shadow:none;">
                          <a href="/tools/unit-conversions.html" class="dropdown-item">Unit Conversions</a>
                          <a href="/tools/viscosity.html" class="dropdown-item">Kinematic and Dynamic Viscosity Conversion</a>
-                         <a href="/tools/frictional-losses.html" class="dropdown-item">Frictional Loss Calculator</a>
-                         <!--a href="/useful-info-V/mechanical-friction-loss.html" class="dropdown-item">Mechanical Friction Loss Calculator</a-->
-                         <a href="/tools/table-of-definitions.html" class="dropdown-item">Table of Definitions</a>
+                         <a href="/tools/frictional-losses.html" class="dropdown-item">Pipe Friction Loss Calculator</a>
+                         <a href="/tools/mechanical-friction-loss.html" class="dropdown-item">Line Shaft Bearing Loss Calculator</a>
+                         <a href="/tools/horizontal-tank-vol-calc.html" class="dropdown-item">Horizontal Tank Volume Calculator</a>
+                         <a href="/tools/vertical-tank-vol-calc.html" class="dropdown-item">Vertical Tank Volume Calculator</a>
+                         <a href="/tools/spherical-tank-vol-calc.html" class="dropdown-item">Spherical Tank Volume Calculator</a>
+                         <a href="/tools/atmospheric-pressure-calc.html" class="dropdown-item">Atmospheric Pressure Calculator</a>
+                         <a href="/tools/motor-frame-dimension-ref-tool.html" class="dropdown-item">Motor Dimensions</a>
                         </div>
                     </div>
                 </div>

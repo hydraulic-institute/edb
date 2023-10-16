@@ -8,15 +8,15 @@ hide_units: true
 <h3>Motor Frame Size and Dimension Reference Tool</h3>
 
 <div class="row" style="margin-top:50px">
-    <div class="col-6 d-flex justify-content-center"><img src="./HorizontalMotor.png" style="max-width:75%;height:auto"></div>
-    <div class="col-6 d-flex justify-content-center"><img src="./VerticalMotor.png" style="max-width:75%;height:auto"></div>
+    <div class="col-6 d-flex justify-content-center"><img src="./images/HorizontalMotor.png" style="max-width:75%;height:auto"></div>
+    <div class="col-6 d-flex justify-content-center"><img src="./images/VerticalMotor.png" style="max-width:75%;height:auto"></div>
 </div>
 <div class="row">
     <div class="col-6 d-flex justify-content-center"><h5>Horizontal Electric Motor</h5></div>
     <div class="col-6 d-flex justify-content-center"><h5>Vertical Electric Motor</h5></div>
 </div>
 <div class="row" style="margin-top:50px">
-    <div class="col-12"><img src="./NEMALogo-s.jpg" style="height:76px"></div>
+    <div class="col-12"><img src="./images/NEMALogo-s.jpg" style="height:76px"></div>
 </div>
 
 <div class="accordion" id="accordionPanelsStayOpenExample" style="--bs-accordion-btn-bg:#008080;--bs-accordion-btn-color:white;">
@@ -40,8 +40,8 @@ hide_units: true
                         <div id="panelsStayOpen-collapseOne-1" class="accordion-collapse collapse" aria-labelledby="headingOne-1">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./motor-4.4.1-1.png "></div>
-                                    <div class="col-6"><img src="./motor-4.4.1-2.png "></div>
+                                    <div class="col-6"><img src="./images/motor-4.4.1-1.png "></div>
+                                    <div class="col-6"><img src="./images/motor-4.4.1-2.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
@@ -87,7 +87,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="headingTwo-1">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.4.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.4.png "></div></div>
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
@@ -125,7 +125,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseThree-2" class="accordion-collapse collapse" aria-labelledby="headingThree-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.5.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.5.png "></div></div>
                                 <div style="padding:0">
                                     =|=
                                     data: motor-c-face-4.4.5.csv
@@ -163,7 +163,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseFive-2" class="accordion-collapse collapse" aria-labelledby="headingFive-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-vert-18-28-18-30.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png "></div></div>
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-18-28.csv
@@ -219,7 +219,7 @@ hide_units: true
 </div>
 
 <div class="row" style="margin-top:50px">
-    <div class="col-12"><img src="./IECLogo-s.jpg" style="height:100px"></div>
+    <div class="col-12"><img src="./images/IECLogo-s.jpg" style="height:100px"></div>
 </div>
 <div class="accordion" id="accordionPanelsStayOpenExample-iec" style="--bs-accordion-btn-bg:#0061aa;--bs-accordion-btn-color:white;">
     <div class="accordion-item mt-2">
@@ -242,8 +242,8 @@ hide_units: true
                         <div id="panelsStayOpen-collapseOne-iec-1" class="accordion-collapse collapse" aria-labelledby="headingOne-1">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./motor-4.4.1-1.png "></div>
-                                    <div class="col-6"><img src="./motor-4.4.1-2.png "></div>
+                                    <div class="col-6"><img src="./images/motor-4.4.1-1.png "></div>
+                                    <div class="col-6"><img src="./images/motor-4.4.1-2.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     Put Content here
@@ -261,7 +261,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-iec-1" class="accordion-collapse collapse" aria-labelledby="headingTwo-iec-1">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.4.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.4.png "></div></div>
                                 <div style="padding:0">
                                     Put Content Here
                                 </div>
@@ -278,7 +278,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseThree-iec-2" class="accordion-collapse collapse" aria-labelledby="headingThree-iec-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-4.4.5.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.5.png "></div></div>
                                 <div style="padding:0">
                                     Put Content Here
                                 </div>
@@ -309,7 +309,7 @@ hide_units: true
                         </h2>
                         <div id="panelsStayOpen-collapseFive-iec-2" class="accordion-collapse collapse" aria-labelledby="headingFive-iec-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./motor-vert-18-28-18-30.png "></div></div>
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png "></div></div>
                                 <div style="padding:0">
                                     Put Content Here
                                 </div>

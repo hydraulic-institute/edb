@@ -41,7 +41,7 @@ Download and install Python version 3.7 or above [here](https://www.python.org/d
 
 During installation, make sure you add Python to your path, and check off the following options:
 
-<img src='python.png'/>
+<img src='./images/python.png'/>
 
 After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `edb` directory using the `cd` command (`cd C:\projects\edb`).
 
@@ -86,7 +86,7 @@ This builds the EDB content and launches a web server locally on your machine.  
 
 You should see the web site:
 
-<img src='edb.png'/>
+<img src='./images/edb.png'/>
 
 # Creating Content
 All content is created in the `/source` directory.  The contents of the directory include a top level `index.md` which is the home page of the site, and directories which define the section structure of the EDB.  Each directory will contain additional `.md` files which become HTML pages, along with additional data like images and csv file to support the pages.  **Sub-directories in sections are not supported**.
@@ -273,7 +273,7 @@ $$ \Delta h_f = { {fL \over D} * v^2  \over 2g}$$
 
 The block will compile and be typset as the following:
 
-<img src='docs/equation.png'/>
+<img src='./images/equation.png'/>
 
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
@@ -289,11 +289,11 @@ You may find the following links instructive - however remember that there is a 
 - [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
 
 #### Numbered Equations
-Often within text content you will want to embed references to equations.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<span>` element with class `equation-label` in the first line within the equation block:
+Often within text content you will want to embed references to equations, figures, calculations, tables, demonstrators etc.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<div>` element with class `figure-label`, `equation-label`, `calculation-label`, `demo-label` before, afer or in the first line within the block.  These classes are defined in ```style.less```:
 
 ```
+<div class='equation-label'>Eq. 1</div>
 =+= 
-<span class='equation-label'>Eq. 1</span>
 $$ \sqrt {x + 9} $$
 =+= 
 ```
@@ -345,7 +345,7 @@ The first column of every row in the CSV file should always contain the followin
 
 #### Example
 Consider the following CSV file, created in Excel.
-![CSV](csv.png "CSV")
+![CSV](./images/csv.png "CSV")
 
 When properly saved, it would appear as a plain text file in a coding editor:
 
@@ -404,13 +404,13 @@ Images are supported naturally by Markdown.  Images can be placed in the same di
 For an image that is saved in the same directory as the text content you are developing, you can use the following syntax:
 
 ```
-![System Curve](./system-curves-001.png "System Curve")
+![System Curve](./images/system-curves-001.png "System Curve")
 ```
 
 By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
 
 ```
-<img src='system-curves-001.png' width='50' height='200'/>
+<img src='./images/system-curves-001.png' width='50' height='200'/>
 ```
 
 For images that are going to appear on many pages, in different sections, a good option is to store the image in the `/images` directory, rather than in a section directory (or multiple section directories).  You can place any image in the `/image` directory, and reference it from any page like this:
@@ -612,11 +612,11 @@ Install texlive at:  https://tug.org/texlive/windows.html
 # Creating README PDF using the Markdown PDF Extension
 Install the `Markdown PDF` extension in Visual Studio Code
 
-<img src='MarkdownExt.png'/>
+<img src='./images/MarkdownExt.png'/>
 
 - Open the markdown file in Visual Studio Code
 - Press `F1` and type `export` and you should see `markdown...` options
 
-<img src='f1MarkdownOptions.png'>
+<img src='./images/f1MarkdownOptions.png'>
 
 - Select whatever option you want and it should download the converted file to the same directory as your markdown file

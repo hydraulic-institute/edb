@@ -3,6 +3,7 @@
 @hi_dark: rgb(52, 58, 64);
 @hi_light: #028da8;
 @hi_super_light: #49d4ef;
+@hi_empty_input: #f2f2f2; 
 @er_accent: #ffdd57; //#e6af2e
 @er_super_light: #eceef1;
 @std_pad: 1rem;
@@ -13,6 +14,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: @hi_dark;
+}
+
+html {
+    scroll-padding-top: 8rem;
 }
 
 html,
@@ -222,9 +227,28 @@ caption {
 
 .equation-label {
     float: left;
-    font-weight: bold;
+    font-size: .75em;
+    font-weight: bolder;
     padding-left: 1rem;
     padding-right: 1rem;
+    font-style: italic;
+}
+.calculation-label {
+    font-size: .75em;
+    font-weight: bolder;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-style: italic;
+}
+
+.demo-label,
+.figure-label {
+    text-align: center;
+    max-width: 30%; 
+    margin: 0px auto 10px; 
+    font-size: .75em;
+    font-weight: bolder;
+    font-style: italic;
 }
 
 
@@ -264,6 +288,9 @@ th.numeric {
     font-size: smaller;
 }
 
+tr {
+    scroll-margin-top: 5rem;
+}
 /**************************************
  * Chart Styles
 ***************************************/
@@ -355,3 +382,6 @@ Friction Loss styles
     display: none;
 }
 
+.hi_no_input {
+    background-color: @hi_empty_input;
+}

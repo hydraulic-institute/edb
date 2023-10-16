@@ -1,6 +1,6 @@
 -----
 title: D) Pump Principles
-date: May 26th, 2020
+date: Oct 14th, 2023
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
@@ -13,8 +13,7 @@ description: Overview of specific speed, suction specific speed, other pump prin
 Specific speed, Ns, is used with US customary units and is expressed by the following equation: 
 
 
-<span class= equation-label >(1.D.1)</span>
-
+<div class="equation-label">Eq. 1.D.1</div>
 $$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
 
 where:
@@ -26,8 +25,7 @@ where:
 
 Specific speed, ns, is used with metric customary and is expressed by the following equation:
 
-<span class= equation-label >(1.D.2)</span>
-
+<div class="equation-label">Eq. 1.D.2</div>
 $$ n_s = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$
 
 
@@ -52,7 +50,8 @@ differences in methods used throughout industry and in related textbooks and lit
 
 Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
 
-![](specific-speed-charts.PNG "")
+![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png "")
+<div class="figure-label">Fig. 1.D.1</div>
 
 =^=
 title: Rotodynamic Pump Efficiency Prediction
@@ -66,7 +65,8 @@ hide_price: true
 Below is a graph that shows the maximum practically attainable efficiency for different flow rates. This proves useful in selection of hydraulics for 
 particular applications, based on desired flow and head.
 
-![](specific-speed-eff.png "")
+![](./images/specific-speed-eff.png "")
+<div class="figure-label">Fig. 1.D.2</div>
 
 **Type number** is a variation of impeller specific speed. Type number is a dimensionless quantity calculated at the point of best efficiency. 
 Note, that to obtain a dimensionless value, the specified units of measure for each variable below may be different than the units of measure assigned 
@@ -74,7 +74,7 @@ to that variable in other parts of the Engineering Data Library.  Close attentio
 Type number is  defined by the following formula:
 
 =+=
-<span class= equation-label >(1.D.3)</span>
+<div class="equation-label">Eq. 1.D.3</div>
 $$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} $$
 =+=
 
@@ -105,7 +105,7 @@ rate of flow and rotational speed.
 
 Suction specific speed Nss, is used with US customary units, and is expressed by the following equation:
 
-<span class= equation-label >(1.D.4)</span>
+<div class="equation-label">Eq. 1.D.4</div>
 
 $$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 
@@ -120,7 +120,7 @@ where:
 
 Suction Specific speed, S, is used with metric customary units, and is expressed by the following equation:
 
-<span class= equation-label >(1.D.5)</span>
+<div class="equation-label">Eq. 1.D.5</div>
 
 $$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
 
@@ -141,19 +141,22 @@ comparisons because there are subtle but significant differences in methods used
 For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
 
 
-![](stable-window.png "")
+![](./images/stable-window.png "")
+<div class="figure-label">Fig. 1.D.3</div>
 
 ### Impeller Types
 
 There are many different impeller types (pictured below) based on desired performance characteristics and type of fluid pumped. The main types of impellers are shown below. 
 As the flow increases with respect to the developed head, the larger the waterways become and the smaller the diameter becomes.
 
-![](impeller-types.png "")
+![](./images/impeller-types.png "")
+<div class="figure-label">Fig. 1.D.4</div>
 
 The three configurations (pictured below) for an impeller are open, semi-open, and closed. Open impellers do not have a front or rear shroud. Semi-open impellers only have a
 rear shroud. Closed impellers have a front and rear shroud.
 
-![](impeller-configs.png "")
+![](./images/impeller-configs.png "")
+<div class="figure-label">Fig. 1.D.5</div>
 
 **Centrifugal open impellers** are typically used on smaller pumps, axial flow pumps, and for speciality applications such as non-clog pumps. They are typically cheaper to 
 manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
@@ -185,12 +188,13 @@ the surrounding parts of the pump through cavitation erosion. In addition to dir
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
 showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation."/>
 
-![](bubble-formation.png "")
+![](./images/bubble-formation.png "")
+<div class="figure-label">Fig. 1.D.6</div>
 
 The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
 
 =+=
-<span class= equation-label >(1.D.6)</span>
+<div class="equation-label">Eq. 1.D.6</div>
 $$ NPSH_{a} = {h_{sa}} - {h_{vp}} $$
 =+=
 
@@ -210,5 +214,6 @@ recommended net positive suction head available (NPSHA) above the published NPSH
 Below is a common graph seen when testing a pump for NPSHr. This shows that as NPSHa is reduced, there is a point at which the head starts to drop off. On this test,
 the NPSH3 is approximately 11 feet, as this is when the head drops 3% - in this case from 200 feet to 194 feet.
 
-![](NPSHr-test.png "")
+![](./images/NPSHr-test.png "")
+<div class="figure-label">Fig. 1.D.7</div>
 

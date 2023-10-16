@@ -82,6 +82,7 @@
       const A=coefs['coefC']-totalResistance/Math.pow(4,2);
       const B=speed*coefs['coefB'];
       const C=coefs['coefA']*Math.pow(speed,2)-staticHead;
+      console.log("[A]:"+A+" [B]:"+B+" [C]:"+C);
       const Q=((B*-1) - Math.sqrt(Math.pow(B,2)-(4*C*A)))/(2*A);
       return parseFloat(Q.toFixed(2));
   }
@@ -98,11 +99,11 @@
     if (pump_type == "parallel") {
       const Q=calcQValue(1,totalResistance,speed,staticHead,coefA,coefB,coefC);
       const pumpHead=calcPumpHead(Q,speed,coefA,coefB,coefC);
-      //console.log("Pump1: Q:"+Q+" H:"+pumpHead);
+      console.log("Pump1: Q:"+Q+" H:"+pumpHead);
       //Get info for which_pump
       const Qprime=calcQValue(which_pump,totalResistance,speed,staticHead,coefA,coefB,coefC);
       const pumpHeadprime=calcPumpHead(Qprime,speed,coefs['coefA'],coefs['coefB'],coefs['coefC']);
-      //console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
+      console.log("Pump: Q:"+Qprime+" H:"+pumpHeadprime);
       values['headIncrease']=parseInt(Math.ceil(((pumpHeadprime-pumpHead)/pumpHead)*100));
       values['flowIncrease']=parseInt(Math.ceil(((Qprime-Q)/Q)*100));
       values['series_x']=[Q,Qprime];
@@ -913,9 +914,10 @@ Vue.component('demo-pump-curve', {
         "Operating Point": {"type":"line", "color":"#4A235A","stroke": 3, "opacity": 1, "markers": 0}, 
         "Pump Curve (speed adjusted)": {"type":"line", "color":"#179C52","stroke": 2, "opacity": 1, "markers": 0},
         "Pump Curve (base)": {"type":"line", "color": "#85929E","stroke": 2, "opacity": 1, "markers": 0},
-        "3 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1, "markers": 0},
+        //This is the same as the base but only for parallel pumps
+        "2 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1, "markers": 0},
         "Series": {"type":"line", "color": "#90FF33","stroke": 4, "opacity": 1, "markers": 4, 
-                    "label": {"parallel":"Head/Flow Difference","fcv":"Control Valve Flow"}}
+                    "label": {"parallel":"Head/Flow Difference","fcv":"Control Valve Head"}}
       },
       series_opacity: [],
       series_stroke: [],
@@ -1131,10 +1133,16 @@ Vue.component('demo-pump-curve', {
 
     calculations: function() {
       this.errorMessage="";
-      //console.log("=====================================");
-      //console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
-      //console.log("pumpType: "+this.pumpType+" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax+" valveSetting: "+this.valveFlowSetting);
-      //console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
+      console.log("=====================================");
+      console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
+      console.log("pumpType: "+this.pumpType);
+      if (this.pumpType == "parallel") {
+        console.log(" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax);
+      }
+      if (this.pumpType == "fcv") {
+        console.log(" valveSetting: "+this.valveFlowSetting);
+      }
+      console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
       const sys_values = CurveCalculators.calcSystemCurveValues(
         this.velocities, 
         this.upperPressure, 
@@ -1142,9 +1150,9 @@ Vue.component('demo-pump-curve', {
         this.lowerLevel, 
         this.elevation,
         this.totalResistance);
-      //console.log("StaticHead: "+sys_values['staticHead']);
-      //console.log("FrictionHead: "+sys_values['frictionHead']);
-      //console.log("TotalHead: "+sys_values['totalHead']);
+      console.log("StaticHead: "+sys_values['staticHead']);
+      console.log("FrictionHead: "+sys_values['frictionHead']);
+      console.log("TotalHead: "+sys_values['totalHead']);
 
 
       const pumps=[];  
@@ -1158,12 +1166,14 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
-        //console.log("Pump["+(i+1)+"]");
-        //console.log("PumpHead: "+values['pumpHead']);
-        //if (i==0) {
-          //console.log("PumpHeadFullSpeed: "+values['pumpHeadFullSpeed']);
-          //console.log("PumpHeadMaxSpeed: "+values['pumpHeadMaxSpeed']);
-        //}
+        if (this.pumpCount > 1) {
+          console.log("Pump["+(i+1)+"]");
+        }
+        console.log("PumpHead: "+values['pumpHead']);
+        if (i==0) {
+          console.log("PumpHead @ FullSpeed [100%]: "+values['pumpHeadFullSpeed']);
+          console.log("PumpHead @ MaxSpeed ["+this.pumpSpeedMax+"%]: "+values['pumpHeadMaxSpeed']);
+        }
         values['qValue'] = CurveCalculators.calcQValue(
           i+1,
           this.totalResistance,
@@ -1173,7 +1183,7 @@ Vue.component('demo-pump-curve', {
           this.coefB,
           this.coefC
         );
-        //console.log("QVal: "+values['qValue']);
+    
         pumps.push(values);
       }
 
@@ -1205,10 +1215,10 @@ Vue.component('demo-pump-curve', {
           if (this.pumpType == "parallel") {
             this.headIncrease=values['data']['headIncrease'];
             this.flowIncrease=values['data']['flowIncrease'];
-            //console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
+            console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
           }
         }
-        //console.log("Operating Point - PH[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPH[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TH["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
+        console.log("Operating Point Calculation - PumpHead[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPumpHead[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TotalHead["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
         values['data']['opPoint_x']=[];
         values['data']['opPoint_y']=[];
         if (!isNaN(pumps[this.pumpCount-1].qValue)) {
@@ -1221,7 +1231,7 @@ Vue.component('demo-pump-curve', {
 
           if (this.pumpType != "fcv") {        
             var xval=isNaN(pumps[this.pumpCount-1].qValue)?0:pumps[this.pumpCount-1].qValue;
-            //console.log("QVal:"+pumps[this.pumpCount-1].qValue);
+            console.log("QVal:"+pumps[this.pumpCount-1].qValue);
             xval=Math.min(xval,this.maxVelocities);
             if (xval >= 0) {
               values['data']['opPoint_x']=[xval,xval];
@@ -1233,24 +1243,26 @@ Vue.component('demo-pump-curve', {
             //FCV handling
             const fcv_Q=parseFloat((this.valveFlowSetting/10).toFixed(1));
             values['data']['opPoint_x']=[fcv_Q,fcv_Q];
-            //console.log("Operating Point - Q: "+fcv_Q+" Op_PointX: "+values['data']['opPoint_x']+" Op_PointY: "+values['data']['opPoint_y']);
+            console.log("Operating Point - Q: "+fcv_Q+" Op_PointX: "+values['data']['opPoint_x']+" Op_PointY: "+values['data']['opPoint_y']);
 
             //FCV Line (Series chart)
             values['data']['series_x']=[fcv_Q,fcv_Q];
             //FCV = Pump Head using Q for velocity -FH using Q - SH at 0
             const phQ=CurveCalculators.calcPumpHead(fcv_Q, this.pumpSpeed/100,this.coefA,this.coefB,this.coefC);
             const fhQ=CurveCalculators.calcFrictionHead(fcv_Q,this.totalResistance);
-            const fcv = phQ - fhQ - sys_values['staticHead'][0];
-            //console.log("FCV Line - FCV: "+fcv)
-            //console.log("PH-Q: "+phQ+" FH-Q: "+fhQ+" SH[0]: "+sys_values['staticHead'][0]);
+            let fcv = phQ - fhQ - sys_values['staticHead'][0];
+            console.log("FCV: "+fcv)
+            
+            console.log("PH-Q: "+phQ+" FH-Q: "+fhQ+" SH[0]: "+sys_values['staticHead'][0]);
             if (fcv < 0) { this.errorMessage="Control Valve Failed"; }
             const y0=(fcv>0?phQ:0);
             const y1=(fcv>0?(fhQ+sys_values['staticHead'][0]):0);
             values['data']['series_y']=[y0,y1];
+            console.log("FCV Line - ["+values['data']['series_x'][0]+","+values['data']['series_y'][0]+"]-["+values['data']['series_x'][1]+","+values['data']['series_y'][1]+"]");
           }
         }
         
-        //console.log("Operating Point - X:"+values['data']['opPoint_x']+" Y:"+values['data']['opPoint_y']);
+        console.log("Operating Point - X:"+values['data']['opPoint_x']+" Y:"+values['data']['opPoint_y']);
         //if ('series_x' in values['data']) { console.log("Series_X:"+values['data']['series_x']+" Series_Y:"+values['data']['series_y']); }
       }
       return values;
@@ -1259,7 +1271,7 @@ Vue.component('demo-pump-curve', {
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
       const series = [];
-      const names = {"plot": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','Pump Curve (base)'], "fcv":['Pump Curve (speed adjusted)']}
+      const names = {"plot": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','2 Parallel'], "fcv":['Pump Curve (speed adjusted)']}
 
       series.push({
         name: 'System Curve',
@@ -1270,13 +1282,13 @@ Vue.component('demo-pump-curve', {
       series.push({
         name: 'Static Head',
         type: this.series_data['Static Head']['type'],
-        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v]-1) })) 
+        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v] - 0.3) })) 
       });
 
       series.push({
         name: 'Friction Head',
         type: this.series_data['Friction Head']['type'],
-        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
+        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-0.3), curveData.totalHead[v] ] })) 
       });
 
       if (this.pumpCount) {
@@ -1294,6 +1306,7 @@ Vue.component('demo-pump-curve', {
         for ( var i=0;i<this.pumpCount;i++) {
           let name=names[this.pumpType][i];
           if (!name) {
+            //Only plot the last pump, not all of them
             name=this.pumpCount.toString() + " Parallel";
             i=this.pumpCount-1;
           }
@@ -1312,7 +1325,7 @@ Vue.component('demo-pump-curve', {
           });
         }
 
-        if ((this.pumpType == "parallel") || (this.pumpType == "fcv")) {
+        if (((this.pumpType == "parallel") && (this.pumpCount > 1)) || (this.pumpType == "fcv")) {
           series.push({
             name: this.series_data['Series']['label'][this.pumpType],
             type: this.series_data['Series']['type'],
