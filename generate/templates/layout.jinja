@@ -447,12 +447,10 @@
                                 <b>Tank Diameter: [D]</b>  
                             </div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' v-bind:style="[d_diameter ? {'min-width':'120px'} : {'background-color':'#f2f2f2','min_width':'120px'}] "
                             type='number' 
-                            @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown='no_negative_no_comma'
+                            @keydown.enter='calculate_volumes' 
                             v-model='d_diameter'/></div>
                             <div class="col-2" style="text-align:left">
                             ${length_unit}
@@ -461,12 +459,10 @@
                         <div class="row align-items-center" v-if='tank_key != "st"'>
                             <div class="col-4"><b>Length of Cylinder: [A]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' v-bind:style="[a_length ? {'min-width':'120px'} : {'background-color': '#f2f2f2','min_width':'120px'}]" 
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown.enter='calculate_volumes'
                             v-model='a_length'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -476,12 +472,10 @@
                         <div class="row align-items-center">
                             <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' v-bind:style="[h_filldepth ? {'min-width':'120px'} : {'background-color': '#f2f2f2','min_width':'120px'}]" 
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes()"
-                            @keydown.tab="calculate_volumes()"
-                            @click="calculate_volumes()"
+                            @keydown.enter='calculate_volumes'
                             v-model='h_filldepth'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -494,17 +488,22 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-4">Check Depth</div>
-                            <div class="col-4">
-                                <span v-if='check_depth == 1'><i>OK</i></span>
-                                <span v-else style="color:red"><i>Too Full</i></span></div>
+                            <div class="col-2">
+                                <span v-if='check_depth != "OK"' style="color:red"><i>${check_depth}</i></span>
+                                <span v-else><i>${check_depth}</i></span>
+                            </div>
+                            <div class="col-6">
+                                <button type='button' class='button is-link is-light' style='display:inline' @click='calculate_volumes()'>Calculate</button>
+                                <span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                    </div>
                 </div>
-                <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
+                <div class="row mt-4">
             </div>
+        </div>
+        <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
+        </div>
         </div>
         <div class="row mt-4">
             <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
