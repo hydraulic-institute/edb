@@ -393,13 +393,13 @@
             </div>
             <table class="table is-narrow border border-secondary-subtle" :key="entry">
                 <thead class="fixed-thead">
-                    <th style="width:40%;">Units</th>
+                    <th style="width:40%; ">Units</th>
                     <th style="width:20%;">At Elevation</th>
                     <th style="width:20%;">At Sea Level (std)</th>
                     <th style="width:20%;">Delta</th>
                 </thead>
                 <tbody>
-                    <tr v-for='d in calc_data'>
+                    <tr class="hi_no_input" v-for='d in calc_data'>
                         <td><b>${d.desc}</b></td>
                         <td>${d.val}</td>
                         <td>${d.sea_level}</td>
@@ -447,7 +447,7 @@
                                 <b>Tank Diameter: [D]</b>  
                             </div>
                             <div class="col-4">
-                            <input class='input' v-bind:style="[d_diameter ? {'min-width':'120px'} : {'background-color':'#f2f2f2','min_width':'120px'}] "
+                            <input class='input' style='min_width:120px'
                             type='number' 
                             @keydown='no_negative_no_comma'
                             @keydown.enter='calculate_volumes' 
@@ -459,7 +459,7 @@
                         <div class="row align-items-center" v-if='tank_key != "st"'>
                             <div class="col-4"><b>Length of Cylinder: [A]</b></div>
                             <div class="col-4">
-                            <input class='input' v-bind:style="[a_length ? {'min-width':'120px'} : {'background-color': '#f2f2f2','min_width':'120px'}]" 
+                            <input class='input' style='min_width:120px'
                             type='number' 
                             @keydown='no_negative_no_comma' 
                             @keydown.enter='calculate_volumes'
@@ -472,7 +472,7 @@
                         <div class="row align-items-center">
                             <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
                             <div class="col-4">
-                            <input class='input' v-bind:style="[h_filldepth ? {'min-width':'120px'} : {'background-color': '#f2f2f2','min_width':'120px'}]" 
+                            <input class='input' style='min_width:120px' 
                             type='number' 
                             @keydown='no_negative_no_comma' 
                             @keydown.enter='calculate_volumes'
@@ -522,7 +522,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for='c in volume_strings'>
+                    <tr class='hi_no_input' v-for='c in volume_strings'>
                         <td  style="text-align: left">${c.desc}</td>
                         <td style="text-align: right">
                             ${c.value} Cubic ${length_unit}
