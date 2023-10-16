@@ -484,7 +484,8 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-4"><i>Percent full</i></div>
-                            <div class="col-4">${percent_full}%</div>
+                            <div class="col-3">${percent_full}%</div>
+                            <div class="col-4"><span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-4">Check Depth</div>
@@ -493,8 +494,7 @@
                                 <span v-else><i>${check_depth}</i></span>
                             </div>
                             <div class="col-4">
-                                <button type='button' class='button is-link is-light' style='display:inline' @click='calculate_volumes()'>Calculate</button>
-                                <span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span>
+                                <button type='button' class='button is-link is-light' @click='calculate_volumes()'>Calculate</button>
                             </div>
                         </div>
                     </div>

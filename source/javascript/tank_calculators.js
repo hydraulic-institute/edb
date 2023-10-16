@@ -237,20 +237,16 @@ Vue.component('tank-demo', {
         if (this.tank_key != 'st') {
             do_check = ((do_check && this.a_length)?true:false);
         }
+        let error_val = '';
         if (!do_check ) { 
-          if ( ( this.tank_key != 'st' && !this.d_diameter && !this.h_filldepth && !this.a_length) || (!this.d_diameter && !this.h_filldepth) ) {
-            this.error = '';
-          }
-          else { 
-            this.error = 'Invalid Inputs';
+          //If all fields are empty, no error message.  Otherwise set an error message
+          if ( !(( this.tank_key != 'st' && !this.d_diameter && !this.h_filldepth && !this.a_length) || (!this.d_diameter && !this.h_filldepth))) {
+            error_val = 'Empty Inputs';
           }
           this.clear_volume_data() ;
-          return 0;
         }
-        else { 
-          this.error = '';
-          return 1;
-        }
+        this.error = error_val;
+        return do_check;
       },
       convert_val: function(in_string) {
         if (!in_string.length) return '';
