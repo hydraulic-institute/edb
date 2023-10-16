@@ -393,13 +393,13 @@
             </div>
             <table class="table is-narrow border border-secondary-subtle" :key="entry">
                 <thead class="fixed-thead">
-                    <th style="width:40%;">Units</th>
+                    <th style="width:40%; ">Units</th>
                     <th style="width:20%;">At Elevation</th>
                     <th style="width:20%;">At Sea Level (std)</th>
                     <th style="width:20%;">Delta</th>
                 </thead>
                 <tbody>
-                    <tr v-for='d in calc_data'>
+                    <tr class="hi_no_input" v-for='d in calc_data'>
                         <td><b>${d.desc}</b></td>
                         <td>${d.val}</td>
                         <td>${d.sea_level}</td>
@@ -413,7 +413,7 @@
 
 <script type="text/x-template" id="tank-demo-template"> 
     <div class="wrap">  
-        <div class="row">
+        <div class="row mb-4">
             <div class="columns">
                 <div class="col-8">
                     <div class="row mt-2">
@@ -447,12 +447,10 @@
                                 <b>Tank Diameter: [D]</b>  
                             </div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px'
                             type='number' 
-                            @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown='no_negative_no_comma'
+                            @keydown.enter='calculate_volumes' 
                             v-model='d_diameter'/></div>
                             <div class="col-2" style="text-align:left">
                             ${length_unit}
@@ -461,12 +459,10 @@
                         <div class="row align-items-center" v-if='tank_key != "st"'>
                             <div class="col-4"><b>Length of Cylinder: [A]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px'
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes"
-                            @keydown.tab="calculate_volumes"
-                            @click="calculate_volumes"
+                            @keydown.enter='calculate_volumes'
                             v-model='a_length'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -476,12 +472,10 @@
                         <div class="row align-items-center">
                             <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
                             <div class="col-4">
-                            <input class='input' style="min-width:120px;"
+                            <input class='input' style='min_width:120px' 
                             type='number' 
                             @keydown='no_negative_no_comma' 
-                            @keydown.enter="calculate_volumes()"
-                            @keydown.tab="calculate_volumes()"
-                            @click="calculate_volumes()"
+                            @keydown.enter='calculate_volumes'
                             v-model='h_filldepth'/>
                             </div>
                             <div class="col-2" style="text-align:left">
@@ -490,26 +484,29 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-4"><i>Percent full</i></div>
-                            <div class="col-4">${percent_full}%</div>
+                            <div class="col-3">${percent_full}%</div>
+                            <div class="col-4"><span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-4">Check Depth</div>
+                            <div class="col-3">
+                                <span v-if='check_depth != "OK"' style="color:red"><i>${check_depth}</i></span>
+                                <span v-else><i>${check_depth}</i></span>
+                            </div>
                             <div class="col-4">
-                                <span v-if='check_depth == 1'><i>OK</i></span>
-                                <span v-else style="color:red"><i>Too Full</i></span></div>
+                                <button type='button' class='button is-link is-light' @click='calculate_volumes()'>Calculate</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                    </div>
                 </div>
-                <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
-            </div>
+        </div>
+        <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
+        </div>
         </div>
         <div class="row mt-4">
             <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
                 <thead>
-                    <tr>
+                    <tr class='fixed-thead'>
                         <th scope="col" style="width: 30%; vertical-align:bottom;text-align:left;">Location</th>
                         <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
                         <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
@@ -523,7 +520,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for='c in volume_strings'>
+                    <tr class='hi_no_input' v-for='c in volume_strings'>
                         <td  style="text-align: left">${c.desc}</td>
                         <td style="text-align: right">
                             ${c.value} Cubic ${length_unit}
