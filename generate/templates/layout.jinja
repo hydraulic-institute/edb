@@ -413,7 +413,7 @@
 
 <script type="text/x-template" id="tank-demo-template"> 
     <div class="wrap">  
-        <div class="row">
+        <div class="row mb-4">
             <div class="columns">
                 <div class="col-8">
                     <div class="row mt-2">
@@ -488,19 +488,17 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-4">Check Depth</div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <span v-if='check_depth != "OK"' style="color:red"><i>${check_depth}</i></span>
                                 <span v-else><i>${check_depth}</i></span>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <button type='button' class='button is-link is-light' style='display:inline' @click='calculate_volumes()'>Calculate</button>
                                 <span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-            </div>
         </div>
         <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
         </div>
