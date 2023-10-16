@@ -914,7 +914,8 @@ Vue.component('demo-pump-curve', {
         "Operating Point": {"type":"line", "color":"#4A235A","stroke": 3, "opacity": 1, "markers": 0}, 
         "Pump Curve (speed adjusted)": {"type":"line", "color":"#179C52","stroke": 2, "opacity": 1, "markers": 0},
         "Pump Curve (base)": {"type":"line", "color": "#85929E","stroke": 2, "opacity": 1, "markers": 0},
-        "3 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1, "markers": 0},
+        //This is the same as the base but only for parallel pumps
+        "2 Parallel": {"type":"line", "color": "#B505AA","stroke": 2, "opacity": 1, "markers": 0},
         "Series": {"type":"line", "color": "#90FF33","stroke": 4, "opacity": 1, "markers": 4, 
                     "label": {"parallel":"Head/Flow Difference","fcv":"Control Valve Head"}}
       },
@@ -1270,7 +1271,7 @@ Vue.component('demo-pump-curve', {
     getSeries: function() {
       const curveData = this.pumpSystemCurveData;
       const series = [];
-      const names = {"plot": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','Pump Curve (base)'], "fcv":['Pump Curve (speed adjusted)']}
+      const names = {"plot": ['Pump Curve (speed adjusted)'], "parallel": ['Pump Curve (speed adjusted)','2 Parallel'], "fcv":['Pump Curve (speed adjusted)']}
 
       series.push({
         name: 'System Curve',
@@ -1281,13 +1282,13 @@ Vue.component('demo-pump-curve', {
       series.push({
         name: 'Static Head',
         type: this.series_data['Static Head']['type'],
-        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v]-1) })) 
+        data: this.velocities.map(v => ({ x: v, y: (curveData.staticHead[v] - 0.3) })) 
       });
 
       series.push({
         name: 'Friction Head',
         type: this.series_data['Friction Head']['type'],
-        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-1), curveData.totalHead[v] ] })) 
+        data: this.velocities.map(v => ({ x: v, y: [ (curveData.staticHead[v]-0.3), curveData.totalHead[v] ] })) 
       });
 
       if (this.pumpCount) {
@@ -1305,6 +1306,7 @@ Vue.component('demo-pump-curve', {
         for ( var i=0;i<this.pumpCount;i++) {
           let name=names[this.pumpType][i];
           if (!name) {
+            //Only plot the last pump, not all of them
             name=this.pumpCount.toString() + " Parallel";
             i=this.pumpCount-1;
           }
@@ -1323,7 +1325,7 @@ Vue.component('demo-pump-curve', {
           });
         }
 
-        if ((this.pumpType == "parallel") || (this.pumpType == "fcv")) {
+        if (((this.pumpType == "parallel") && (this.pumpCount > 1)) || (this.pumpType == "fcv")) {
           series.push({
             name: this.series_data['Series']['label'][this.pumpType],
             type: this.series_data['Series']['type'],
