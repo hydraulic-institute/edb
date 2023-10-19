@@ -241,7 +241,7 @@ Vue.component('tank-demo', {
         if (!do_check ) { 
           //If all fields are empty, no error message.  Otherwise set an error message
           if ( !(( this.tank_key != 'st' && !this.d_diameter && !this.h_filldepth && !this.a_length) || (!this.d_diameter && !this.h_filldepth))) {
-            error_val = 'Empty Inputs';
+            error_val = 'Invalid Inputs';
           }
           this.clear_volume_data() ;
         }
