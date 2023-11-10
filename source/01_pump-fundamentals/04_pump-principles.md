@@ -14,37 +14,37 @@ Specific speed, Ns, is used with US customary units and is expressed by the foll
 
 
 <div class="equation-label">Eq. 1.D.1</div>
-$$ Ns = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$ 
+$$ Ns = { {n·Q^{0.5} } \over {H^{0.75} } } $$ 
 
 where:
 
-- Ns = Specific Speed  
+- Ns = Specific Speed (US Customary) 
 - n = Rotational speed, in revolutions per minute 
 - Q = Total Pump flow rate at best efficiency point in gallons per minute
 - H = Head per stage, in feet
 
-Specific speed, ns, is used with metric customary and is expressed by the following equation:
+Specific speed, n<sub>s</sub>, is used with metric customary and is expressed by the following equation:
 
 <div class="equation-label">Eq. 1.D.2</div>
-$$ n_s = { {n(Q)^{0.5} } \over {(H)^{0.75} } } $$
+$$ n_s = { {n·Q^{0.5} } \over {H^{0.75} } } $$
 
 
 where:
 
-- ns = Specific Speed  
+- n<sub>s</sub> = Specific Speed (Metric)  
 - n = Rotational speed, in revolutions per minute 
 - Q = Total Pump flow rate at best efficiency point (BEP) in cubic meters per second 
 - H = Head per stage in meters
 
 
 
-When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (  51.6 x ns  = Ns )
+When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (51.6 · n<sub>s</sub>  = Ns)
 
 An alternate definition for specific speed is also used based on flow rate per impeller eye (Q’) rather than total flow rate.  When applying this alternative method to the 
 double suction impeller pump, the resultant value of specific speed is less by a factor of 0.707 times less.
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant 
 differences in methods used throughout industry and in related textbooks and literature.  For more information on the specific speed definition refer to 
-<a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
+<a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2</a>.
 
 
 
@@ -75,7 +75,7 @@ Type number is  defined by the following formula:
 
 =+=
 <div class="equation-label">Eq. 1.D.3</div>
-$$ K = {{2πnQ'^{0.5}} \over {(gH')^{0.75}}} $$
+$$ K = {{2·π·n·Q'^{0.5}} \over {(g·H')^{0.75}}} $$
 =+=
 
 where in US Units:
@@ -107,7 +107,7 @@ Suction specific speed Nss, is used with US customary units, and is expressed by
 
 <div class="equation-label">Eq. 1.D.4</div>
 
-$$ Nss = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
+$$ Nss = { {n·Q'^{0.5} } \over {NPSH3^{0.75} } } $$
 
 where:
 
@@ -122,7 +122,7 @@ Suction Specific speed, S, is used with metric customary units, and is expressed
 
 <div class="equation-label">Eq. 1.D.5</div>
 
-$$ S = { {n(Q')^{0.5} } \over {(NPSH3)^{0.75} } } $$
+$$ S = { {n·Q'^{0.5} } \over {NPSH3^{0.75} } } $$
 
 
 where:
@@ -138,7 +138,7 @@ When converting suction specific speed values between the US and metric conventi
 
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any 
 comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature. 
-For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2 – Rotodynamic Pumps for Nomenclature and Definitions</a>.
+For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2</a>.
 
 
 ![](./images/stable-window.png "")
@@ -158,7 +158,7 @@ rear shroud. Closed impellers have a front and rear shroud.
 ![](./images/impeller-configs.png "")
 <div class="figure-label">Fig. 1.D.5</div>
 
-**Centrifugal open impellers** are typically used on smaller pumps, axial flow pumps, and for speciality applications such as non-clog pumps. They are typically cheaper to 
+**Open impellers** are typically used on smaller pumps, axial flow pumps, and for speciality applications such as solids handling pumps. They are typically less expensive to 
 manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
 as many types of fluids as open impellers, but they are stronger and experience a much lower decrease in efficiency over the life of the pump. **Semi-open impellers** 
 share some of the advantages and disadvantages of each. The reason for loss of efficiency in an open or semi-open impeller is that the distance between the vanes and 
@@ -176,26 +176,21 @@ hide_price: true
 
 ### Net Positive Suction Head (NPSH)
 
-**NPSH is the net positive suction head** in <units us = "feet (US). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
+**NPSH is the net positive suction head** in <units us = "feet" metric = "meters"/>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
 fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
 below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
 the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
-showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation." metric = "meters (metric). Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
-fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
-below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
-the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
-to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
-showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation."/>
+showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation.
 
 ![](./images/bubble-formation.png "")
 <div class="figure-label">Fig. 1.D.6</div>
 
-The **net positive suction head available (NPSHa)**, which is the NPSH available at the pump site, is defined as:
+The **net positive suction head available (NPSHA)**, which is the NPSH available at the pump site, is defined as:
 
 =+=
 <div class="equation-label">Eq. 1.D.6</div>
-$$ NPSH_{a} = {h_{sa}} - {h_{vp}} $$
+$$ NPSHA = {h_{sa}} - {h_{vp}} $$
 =+=
 
 where:
@@ -205,13 +200,13 @@ where:
 - h<sub>s</sub> = Suction head
 - h<sub>vp</sub> = Vapor pressure of fluid in <units us = "feet of head" metric = "meters of head"/>
 
-A pump’s **net positive suction head required (NPSHr)** is important, as it allows a pump user to determine the amount of NPSHa needed at their pump site to ensure pump
+A pump’s **net positive suction head required (NPSHR)** is important, as it allows a pump user to determine the amount of NPSHA needed at their pump site to ensure pump
 performance is met. The occurrence of visible cavitation, increase of noise and vibration due to cavitation, beginning of head or efficiency drop, and cavitation 
-erosion can occur when margin above NPSHr is present. NPSH3 is the value of NPSHr when the first-stage total head drops by 3% due to cavitation. 
-<a href="https://www.pumps.org/product/ansi-hi-9-6-1-2017-rotodynamic-pumps-guideline-for-npsh-margin/" target="_blank">ANSI/HI 9.6.1 – Rotodynamic Pumps – Guideline for NPSH Margin</a> establishes
-recommended net positive suction head available (NPSHA) above the published NPSH required (NPSHR) that will lead to acceptable pump performance and service life.
+erosion can occur when margin above NPSHR is present. NPSH3 is the value of NPSHR when the first-stage total head drops by 3% due to cavitation. 
+<a href="https://www.pumps.org/product/ansi-hi-9-6-1-2017-rotodynamic-pumps-guideline-for-npsh-margin/" target="_blank">ANSI/HI 9.6.1</a> establishes
+recommended NPSHA above the published NPSHR that will lead to acceptable pump performance and service life.
 
-Below is a common graph seen when testing a pump for NPSHr. This shows that as NPSHa is reduced, there is a point at which the head starts to drop off. On this test,
+Below is a common graph seen when testing a pump for NPSHR. This shows that as NPSHA is reduced, there is a point at which the head starts to drop off. On this test,
 the NPSH3 is approximately 11 feet, as this is when the head drops 3% - in this case from 200 feet to 194 feet.
 
 ![](./images/NPSHr-test.png "")
