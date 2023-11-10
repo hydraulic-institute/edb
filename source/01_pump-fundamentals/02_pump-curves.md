@@ -21,11 +21,11 @@ x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). H
 <div class="equation-label">Eq. 1.B.1</div>
 =+=
 [units = us]
-$$ H =  {{2.31 * p} \over s} $$
+$$ H =  {{2.31 · p} \over s} $$
 =+=
 =+=
 [units = metric]
-$$ H =  {{0.102 * p} \over s} $$
+$$ H =  {{0.102 · p} \over s} $$
 =+=
 
 where:
@@ -93,11 +93,11 @@ where Q is flow in <units us = "GPM:" metric = "m^3^/h:"/>
 <div class="equation-label">Eq. 1.B.4</div>
 =+=
 [units = us]
-$$ P_p = {{Q * H * s} \over {3960 * η_{p}}} $$
+$$ P_p = {{Q · H· s} \over {3960 · η_{p}}} $$
 =+=
 =+=
 [units = metric]
-$$ P_p = {{Q * H * s} \over {366.6 * η_{p}}} $$
+$$ P_p = {{Q · H · s} \over {366.6 · η_{p}}} $$
 =+=
 
 where:
@@ -187,9 +187,11 @@ hide_price: true
 
 ### Affinity Rules
 
+Affinity rules describe the relationship of the pump performance curve (flow, head, and power) relative to pump rotational speed (or frequency) changes and limited changes in impeller diameter. Refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 14.3</a> regarding limitations in using the affinity rules for impeller diameter changes.
+
 Under the assumption that changing speed or impeller diameter of a pump maintains the same efficiencies, 
 the Affinity Rules show the relationships between pump parameters (flow, pressure/head, power) and pump 
-charactereistics (speed and impeller size) or a change in impeller size while maintaining a constant speed.
+characteristics (speed and impeller size) or a change in impeller size while maintaining a constant speed.
 
 **1. Changing Speed / Constant Impeller Size**
 
@@ -227,7 +229,7 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 
 **Speed Reduction and Impeller Trimming**
 
-Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
+Part 1 of the affinity rules is ideal for instances where you have a Variable Speed Drive (VSD). The VSD will reduce or increase the pump speed
 therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pump characteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
@@ -400,7 +402,7 @@ series_title_index: 0
 
 A pump designed with a <units us = "10-5/8” diameter impeller will be operating at 2000 GPM @ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow." 
-metric = "270  mm diameter impeller will be operating at 2000 RPM @ 24.38 m. During installation it was found the total head was 20.42 m. 
+metric = "270  mm diameter impeller will be operating at 454 m^3^/h @ 24.38 m. During installation it was found the total head was 20.42 m. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow."/>
 
 **Calculate the New Impeller Diameter**
