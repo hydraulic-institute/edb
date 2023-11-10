@@ -38,4 +38,4 @@ $$ S = D · (1 + 2.3·F_{D}) $$
 ![](./images/submergence_combined.png "")
 <div class="figure-label">(Fig. 1.E.2)</div> 
 
-Note that the minimum submergence may need to be increased to satisfy the pump NPSHR. Refer to sections <a href="/pump-fundamentals-I/pump-principles.html" target="_blank">Pump Principles, and <a href="/pump-fundamentals-I/pump-curves.html" target="_blank">Pump Curves.
+Note that the minimum submergence may need to be increased to satisfy the pump NPSHR. Refer to sections <a href="/pump-fundamentals/pump-principles.html" target="_blank">Pump Principles</a>, and <a href="/pump-fundamentals/pump-curves.html" target="_blank">Pump Curves</a>.
