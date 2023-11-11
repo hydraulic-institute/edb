@@ -5,32 +5,39 @@ from collections import namedtuple
 import pprint
 import json
 pp = pprint.PrettyPrinter(indent=4)
+
+header_row=3
 df = pd.read_excel(
-    'Section IV - Piping Materials - Revison to EDB.xlsx', sheet_name="Pipe-Tube Data")
+    'kb/friction-loss/Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
+# df = pd.read_excel(
+#     'Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
 
 Entry = namedtuple(
     'Entry', 'type material nominal_size nominal_od schedule id epsilon')
 
-r = 0
+r = header_row+1
 entries = []
-for row in df.itertuples():
     # Piping:
-      # material (F)
-      # nominal size (G)
-      # nominal outside diameter (H)
-      # schedule (N)
-      # inside diameter
-      # (AB) epsilon
-    # Tubing
+      # material (F) - 6
+      # nominal size (G) - 7
+      # nominal outside diameter (H) - 8
+      # schedule (N) - 14
+      # inside diameter (X) - 24
+      # (AC) epsilon - 29
+piping_cols={'material':6,'nom_size':7,'nom_outside_diam':8,'schedule':14,'inside_diameter':24,'epsilon':29}
 
-    if r > 1 and not math.isnan(float(row[28])) and not math.isnan(float(row[23])) and str(row[14]) != "nan":
-        entries.append(Entry('Piping', row[6], row[7], row[8],
-                             row[14], row[23], row[28]))
-    # elif r > 1 and not math.isnan(float(row[28])) and not math.isnan(float(row[23])):
-    #    entries.append(Entry('Tubing', row[6], row[7], row[8],
-    #                         None, row[23], row[28]))
+for row in df.itertuples():
+    r += 1
+    try:
+        if not math.isnan(float(row[piping_cols['epsilon']])) and \
+            not math.isnan(float(row[piping_cols['inside_diameter']])) and \
+            str(row[piping_cols['schedule']]) != "nan":
+            entries.append(Entry('Piping', row[piping_cols['material']], row[piping_cols['nom_size']], row[piping_cols['nom_outside_diam']],
+                                row[piping_cols['schedule']], row[piping_cols['inside_diameter']], row[piping_cols['epsilon']]))
 
-    r = r + 1
+    except:
+            print("ERROR ROW: ",r," - ",row[piping_cols['material']], row[piping_cols['nom_size']], row[piping_cols['nom_outside_diam']],
+                                row[piping_cols['schedule']], row[piping_cols['inside_diameter']], row[piping_cols['epsilon']])
 
 # print(entries)
 materials = dict()
@@ -62,6 +69,7 @@ for material in materials:
 
         del s['entries']
 
-with open('../../generate/static/friction-loss-materials.json', 'w') as fp:
-    json.dump(materials, fp)
+with open('generate/static/friction-loss-materials.json', 'w') as fp:
+#with open('../../generate/static/friction-loss-materials.json', 'w') as fp:
+    json.dump(materials, fp, indent=4)
 
