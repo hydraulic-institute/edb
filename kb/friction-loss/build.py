@@ -1,16 +1,12 @@
 import math
 import pandas as pd
-from pandas import ExcelFile
 from collections import namedtuple
-import pprint
 import json
-pp = pprint.PrettyPrinter(indent=4)
 
 header_row=3
-df = pd.read_excel(
-    'kb/friction-loss/Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
-# df = pd.read_excel(
-#     'Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
+# DEBUG
+# df = pd.read_excel('kb/friction-loss/Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
+df = pd.read_excel('Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data",header=header_row)
 
 Entry = namedtuple(
     'Entry', 'type material nominal_size nominal_od schedule id epsilon')
@@ -69,7 +65,9 @@ for material in materials:
 
         del s['entries']
 
-with open('generate/static/friction-loss-materials.json', 'w') as fp:
-#with open('../../generate/static/friction-loss-materials.json', 'w') as fp:
-    json.dump(materials, fp, indent=4)
+# DEBUG 
+# with open('generate/static/friction-loss-materials.json', 'w') as fp:
+with open('../../generate/static/friction-loss-materials.json', 'w') as fp:
+    output=json.dumps(materials, indent=4)
+    fp.write(output)
 
