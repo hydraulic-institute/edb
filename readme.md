@@ -301,6 +301,8 @@ $$ \sqrt {x + 9} $$
 ### Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
 
+**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the readme.pdf in the `kb/friction-loss` folder.
+
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
 Instead, tables are supported via a *custom extenstion* to markdown sysntax. To include a table, you must define a `=|=` line, followed by 
@@ -445,9 +447,10 @@ Hydraulic Institute offer seminars, courses, books, and resources that deliver a
 =^=
 title: Pump System Assessments - 2 Part Webinar
 description: Pump system assessments and pump system optimization present significant opportunities for operations and maintenance cost savings and for reducing energy consumption. In this course, the user will learn the tasks and knowledge required for pump system assessments, the different levels of assessments, and the steps required to implement a pump system assessment. Also covered are the elements and format of the pump system assessment report, including examples. The user is also presented with case studies and real-world examples of pump system assessments and examples of how to use analysis tools, such as hydraulic modeling, to assist with the assessment.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSA-2Part-Dec-2016.png
-url: https://estore.pumps.org/Pump-System-Assessments-2-Part-Webinar-P2779.aspx
+image: /images/pumpsystemsmatter.png
+url: https://training.pumps.org/products/pump-systems-assessment-e-learning-course
 price: 99.99
+hide_price: true
 =^=
 ```
 
