@@ -7,7 +7,7 @@ hide_units: true
 =^=
 title: Pump Application Guideline for Commercial Building Services
 description: This guideline has been created to provide engineers, trainers, maintenance staff, and plant operators with the knowledge necessary to effectively specify pumps in North America. The material in this publication has been compiled by the Hydraulic Institute (HI) Pump Application Guidelines Committee and is intended to capture the experience and collective knowledge of pump and pumping systems experts for reference by system designers, constructors, and end users.
-image: /images/pumpsystemsmatter.png
+image: /images/logo-big.png
 url: https://www.pumps.org/product/commercial-building-services-guidelines-for-pump-selection-application-and-operation/
 price: 150.00
 hide_price: true
