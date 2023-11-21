@@ -13,7 +13,7 @@ Piping = namedtuple(
 # kdf = pd.read_excel(
 #     'kb/friction-loss/Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data", dtype='str', header=3)
 #
-kdf = pd.read_csv(
+df = pd.read_csv(
     'kb/friction-loss/Section IV - Pipe-Tube Data.csv',dtype='str',header=3)
 
 Category = namedtuple(
@@ -51,11 +51,16 @@ def updateDataForCsv(df):
     df_copy.columns = ALPHA_COL_NAMES[:df_copy.shape[1]]
     return df_copy
 
+# Get rid of all columns that are not to be shown
+# df.stack() collects all rows and columns with data
+# row 0 has the "include" data in it, so drop that
+new_data=df[list(df.stack()[0].index)].drop(0).copy(True)
+
 # Go through each material for each Group and generate the kb/friction-loss/piping-losses/*.csv files
 # Generate the data table files for the source/04_piping-materials-IV/table-data folder
-groups = kdf['Group Name'].unique()
+groups = new_data['Group Name'].unique()
 print('Groups: '+groups)
-ALL_COLUMNS = kdf.columns
+ALL_COLUMNS = new_data.columns
 COL_TYPES = dict()
 for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
@@ -64,7 +69,7 @@ for col in ALL_COLUMNS:
 pipes = []
 for grp in groups:
     print('Working on Group: '+grp)
-    grp_data = kdf.loc[kdf['Group Name'] == grp]
+    grp_data = new_data.loc[new_data['Group Name'] == grp]
     categories = grp_data['Sub-Division Name'].unique() 
     grp_filename = grp_data['Group Name'][grp_data.index[0]].lower().replace('-','')    
     # take first chars of each word
@@ -77,7 +82,7 @@ for grp in groups:
     out_data = None
     for col in categories:
         print('Working on: '+col)
-        data = kdf.loc[kdf['Sub-Division Name'] == col].copy(True)
+        data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
         # Get rid of all columns without data
         #data = data.dropna(axis = 1, how = 'all')
         columns = data.columns
@@ -89,10 +94,8 @@ for grp in groups:
         for idx, part  in enumerate(parts):
             outfilename+=sep_part+part[0:4]
             sep_part='-'
-        ref_col = columns.get_loc('Nominal Composition, Nickel, percent') + 1
         out_data = data.copy(True)
-        out_data.drop(columns=data.columns[ref_col:],axis='columns',inplace=True)
-        out_data.drop(columns=out_data.columns[:6],axis='columns',inplace=True)
+        out_data.drop(columns=out_data.columns[:(ALL_COLUMNS.to_list().index('Sub-Division Name')+1)],axis='columns',inplace=True)
         out_data.dropna(axis = 'columns', how = 'all',inplace=True)
 
         # Table Filename 
