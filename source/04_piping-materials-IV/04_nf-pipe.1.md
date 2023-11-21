@@ -13,99 +13,56 @@ price: 150.00
 hide_price: true
 =^=
 
-## Pipe Dimensions: Aluminum-Alloy Seamless Pipe and Extruded Tube (According to ANSI H35.2)
+## Pipe Dimensions: Aluminum-Alloy Extruded Pipe (According to ANSI H35.2-2017/ASTM B42-20/B43-20/B302-2017)
 
 =|=
-data: seamless-extruded.csv
+data: npat_alum-extr-pipe.csv
 =|=
 
-## Pipe Dimensions: Aluminum-Alloy Pipe Oil and Gas Transmission and Distributing Piping Systems (According to ANSI H35.2)
+## Pipe Dimensions: Copper Capillary Tube, Hard Drawn (According to ASTM B360-20)
 
 =|=
-data: gas-tran.csv
+data: npat_copp-capi-tube-hard.csv
 =|=
 
-## Pipe Dimesnions: Aluminum Coiled Tubing Instrument Lines, Oil Lines, Refrigeration Services (According to ANSI H35.2)
+## Pipe Dimesnions: Seamless Copper-Nickel Pipe and Tube (According to ASTM B466-18)
 
 =|=
-data: alum-coiled.csv
+data: npat_seam-copp--nick-pipe-and-tube.csv
 =|=
 
-## Pipe Dimesnions: Seamless Regular Copper Pipe (According to ASTM B42-15a)
+## Pipe Dimesnions: Seamless Copper Water Tube Plumbing and Fluid Conveyence Tubing (According to ASTM B88-22)
 
 =|=
-data: seamless-reg-cop.csv
+data: npat_seam-copp-wate-tube-plum-and-flui-conv-tubi.csv
 =|=
 
-## Pipe Dimensions: Seamless Extra Strong Copper Pipe (According to ASTM B42-15a)
+## Pipe Dimensions: Seamless Extra Strong Copper Pipe (According to ASTM B42-20)
 
 =|=
-data: xtra-strong-cop.csv
+data: npat_seam-extr-stro-copp-pipe.csv
 =|=
 
-## Pipe Dimensions: Seamless Regular Red Brass Pipe (According to ASTM B43-15)
+## Pipe Dimensions: Seamless Extra Strong Red Brass Pipe (According to ASTM B43-20)
 
 =|=
-data: seamless-red-brs.csv
+data: npat_seam-extr-stro-red-bras-pipe.csv
 =|=
 
-## Pipe Dimensions: Seamless Extra Strong Red Brass Pipe (According to ASTM B43-15)
+## Pipe Dimensions: Seamless Regular Copper Pipe (According to ASTM B42-20)
 
 =|=
-data: xtra-strong-red-brs.csv
+data: npat_seam-regu-copp-pipe.csv
 =|=
 
-## Pipe Dimensions: Threadless Copper Pipe Seamless, Deoxidized For Brazed Joint Assembly (According to ASTM B302-17)
+## Pipe Dimensions: Seamless Regular Red Brass Pipe (According to ASTM B43-20)
 
 =|=
-data: threadless-cop.csv
+data: npat_seam-regu-red-bras-pipe.csv
 =|=
 
-## Pipe Dimensions: Seamless Copper Water Tube Plumbing and Fluid Conveyance Tubing (According to ASTM B88-16)
+## Pipe Dimensions: Threadless Copper Pipe Seamless, Deoxidized for Brazed Joint Assembly (According to ASTM B302-2017)
 
 =|=
-data: seamless-cop-water.csv
-=|=
-
-## Pipe Dimensions: Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
-
-=|=
-data: wrought-seamless-tube2.csv
-=|=
-
-## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
-
-=|=
-data: tolerances-wrought.csv
-=|=
-
-## Pipe Dimensions: Copper Capillary Tube, Hard-Drawn (According to ASTM B360-15)
-
-=|=
-data: copper-cap.csv
-=|=
-
-## Alloy Compositions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: alloys.csv
-scrolling: false
-=|=
-
-## Pipe Dimensions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: seamless-cop-nic.csv
-=|=
-
-## Wall Thickness Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: seamless-cop-nic-tol.csv
-=|=
-
-## Average Diameter Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: diam-tol.csv
+data: npat_thre-copp-pipe-seam-deox-for-braz-join-asse.csv
 =|=

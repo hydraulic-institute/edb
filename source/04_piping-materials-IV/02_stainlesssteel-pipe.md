@@ -14,13 +14,12 @@ price: 59.00
 hide_price: true
 =^=
 
-## Pipe Dimensions: Stainless Steel 
+## Pipe Dimensions: Stainless Steel Pipe (According to ANSI/ASME B36.19M-2018)
 
 =|=
-data: stainlesssteel.csv
+data: ssp_stai-stee-pipe.csv
 =|=
 
-**(According to ASME B36.19M-2018)**
 
 
 

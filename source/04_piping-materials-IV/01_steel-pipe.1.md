@@ -14,10 +14,8 @@ price: 59.00
 hide_price: true
 =^=
 
-## Pipe Dimensions: Wrought Steel 
+## Pipe Dimensions: Welded and Seamless Wrought Steel Pipe (According to ANSI/ASME B36.10M-2018)
 
 =|=
-data: steel.csv
+data: sp_weld-and-seam-wrou-stee-pipe.csv
 =|=
-
-**(According to ASME B36.10M-2015)**

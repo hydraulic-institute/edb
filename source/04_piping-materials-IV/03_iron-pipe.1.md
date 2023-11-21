@@ -5,8 +5,6 @@ description: Dimensions of iron pipes.
 hide_units: true
 -----
 
-## Pipe Dimensions: Ductile Iron Pipe 
-
 =^=
 title: Pump Piping for Rotodynamic Pumps: 2-Part On-Demand Webinar Series
 description: Poor piping design may adversely affect the performance and reliability of a pumping system, and well-designed piping systems are typically more energy efficient than poorly designed systems. This course discusses the ANSI/HI 9.6.6 Pump Piping standard and provides specific instruction on new content in the standard. It also provides examples and case studies to demonstrate the application of the standard and the impact of the revisions.
@@ -16,8 +14,8 @@ price: 99.00
 hide_price: true
 =^=
 
-=|=
-data: duct-iron.csv
-=|=
+## Pipe Dimensions: Ductile Iron Pipe (According to AWWA C151/A21.51-17)
 
-**(According to ANSI/AWWA C151/A21.51)**
+=|=
+data: ip_duct-iron-pipe-dime.csv
+=|=
