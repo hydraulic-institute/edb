@@ -75,3 +75,28 @@ special: height:600px;
 data: npat_thre-copp-pipe-seam-deox-for-braz-join-asse.csv
 special: height:600px;
 =|=
+
+## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
+
+=|=
+data: tolerances-wrought.csv
+=|=
+
+## Alloy Compositions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: alloys.csv
+scrolling: false
+=|=
+
+## Wall Thickness Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: seamless-cop-nic-tol.csv
+=|=
+
+## Average Diameter Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
+
+=|=
+data: diam-tol.csv
+=|=
