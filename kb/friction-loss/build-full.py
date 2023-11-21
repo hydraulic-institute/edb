@@ -38,22 +38,7 @@ def updateDataForCsv(df):
     df_copy = df.copy(True)
     for col in df_copy.columns:
         out_data[col]=COL_TYPES[col]
-        # TODO Try string
-        continue
-        if COL_TYPES[col] == 'numeric':
-            try:
-                round_val = 3
-                if col in ['Internal Area Square Inches', 'Internal Diameter Feet']:
-                    round_val = 4
-                elif col in ['Internal Area Square Feet']:
-                    round_val = 5
-                elif col in ['e/D\nRelative Roughness', 'e\nAbsolute Roughness (ft)']:
-                    round_val = 6
-                df_copy[col] = df_copy[col].astype(float).round(round_val)
-            except Exception as e:
-                print(f"Error col [{col}] wrong type [{COL_TYPES[col]}]")
 
-    #df['Wall Thickness\nin. Nom'] = df['Wall Thickness\nin. Nom'].astype(float).round(3)
     header_array = []
     new_row = pd.DataFrame(getHeader(df_copy),index =[0])
     df_copy = pd.concat([new_row, df_copy]).reset_index(drop = True)
@@ -96,19 +81,6 @@ for grp in groups:
         # Get rid of all columns without data
         #data = data.dropna(axis = 1, how = 'all')
         columns = data.columns
-        # Get indexes for the items
-        sel_indexes=list()
-        for sel in ['Standard\nX-Strong\nXX-Strong', 'Pipe Schedule', 'Wall Thickness\nin. Nom', 'THICKNESS/ PRESSURE CLASS']:
-            if sel in columns:
-                sel_indexes.append(columns.get_loc(sel)+1)
-        calc_indexes=dict()
-        for sel in ['Nominal Size', 'Nominal Outside dia [in]', 'Internal Diameter in. Nom', 'Wall Thickness\nin. Nom', 'e\nAbsolute Roughness (ft)' ]:
-            if sel in columns:
-                name = sel.replace(' ','_',1)
-                name = name.split(' ')[0]
-                name = name.split('\n')[0]
-                name = name.lower()
-                calc_indexes[name]=columns.get_loc(sel)+1
         # Create the file name from the 'Group Name'
         sub_filename = data['Sub-Division Name'][data.index[0]].lower().replace('-','')
         parts = sub_filename.split(' ')
@@ -149,10 +121,17 @@ for grp in groups:
                                 (data['Wall Thickness\nin. Nom'] == 'c')].index, inplace=True)
         
         # Go through the data and generate the data for the json file & Friction Calculator
+        # Get indexes for the items
+        calc_indexes=dict()
+        for sel in ['Nominal Size', 'Nominal Outside dia [in]', 'Internal Diameter in. Nom', 'Wall Thickness\nin. Nom', 'e\nAbsolute Roughness (ft)' ]:
+            if sel in columns:
+                name = sel.replace(' ','_',1)
+                name = name.split(' ')[0]
+                name = name.split('\n')[0]
+                name = name.lower()
+                calc_indexes[name]=columns.get_loc(sel)+1
         for row in data.itertuples():
-            # TODO Try string
-            #internal_diameter = row[calc_indexes['internal_diameter']]  # round(row[calc_indexes['internal_diameter']],3)
-            #wall_thickness = row[calc_indexes['wall_thickness']]  # round(row[calc_indexes['wall_thickness']],3)
+            # Convert fraction to float
             num = row[calc_indexes['nominal_size']].strip().split('/')
             if len(num) > 1:
                 nom = num[0].split()
@@ -170,7 +149,6 @@ for grp in groups:
             selector_desc = ''
             sep = ''
             # Create the selector String and selector description
-            #for sel in sel_indexes:
             for sel_col in ['Standard\nX-Strong\nXX-Strong', 'Pipe Schedule', 'Wall Thickness\nin. Nom', 'THICKNESS/ PRESSURE CLASS']:
                 if data[sel_col].any():
                     index = columns.get_loc(sel_col)+1
@@ -208,7 +186,6 @@ with open('kb/friction-loss/processed.csv', 'w') as out:
     csv_out.writerow(('material', 'nominal_size', 'nominal_od', 'nominal_id',
                       'nominal_thickness', 'epsilon', 'selector_label', 'selector_value'))
     for p in pipes:
-        # TODO Try string
         if len(p.nominal_od):
             #if not math.isnan(p.nominal_od):
             csv_out.writerow((p.material, p.nominal_size, p.nominal_od, p.nominal_id,
