@@ -1,8 +1,7 @@
 Nominal Size,DN,Nominal Outside dia [in],"Standard
 X-Strong
 XX-Strong",Pipe Schedule,"Wall Thickness
-in. Nom",Internal Diameter in. Nom,Internal Area Square Inches,Internal Diameter Feet,Internal Area Square Feet,"e/D
+in. Nom",Internal Diameter in. Nom,Internal Diameter Feet,Internal Area Square Feet,"e/D
 Relative Roughness","e
-Absolute Roughness (ft)","Plain-End Weight
-lb/ft Nom"
- 3/8,10    ,0.675,,30,0.073,0.529,0.2198,0.0441,0.00153,22.687713,1.000150,0.47
+Absolute Roughness (ft)"
+ 3/8,10,0.675,,30,0.073,0.529,0.0441,0.00153,22.687713,1.00015

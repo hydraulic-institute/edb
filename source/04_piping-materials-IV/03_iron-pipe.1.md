@@ -8,8 +8,8 @@ hide_units: true
 =^=
 title: Pump Piping for Rotodynamic Pumps: 2-Part On-Demand Webinar Series
 description: Poor piping design may adversely affect the performance and reliability of a pumping system, and well-designed piping systems are typically more energy efficient than poorly designed systems. This course discusses the ANSI/HI 9.6.6 Pump Piping standard and provides specific instruction on new content in the standard. It also provides examples and case studies to demonstrate the application of the standard and the impact of the revisions.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPump_Piping_Webinar_Image.png
-url: https://estore.pumps.org/Pump-Piping-for-Rotodynamic-Pumps-2-Part-On-Demand-Webinar-Series-P3001.aspx
+image: /images/pumpsystemsmatter.png
+url: https://www.pumps.org/product/ansi-hi-9-6-6-rotodynamic-pumps-for-pump-piping/
 price: 99.00
 hide_price: true
 =^=
@@ -18,4 +18,5 @@ hide_price: true
 
 =|=
 data: ip_duct-iron-pipe-dime.csv
+special: height:600px;
 =|=
