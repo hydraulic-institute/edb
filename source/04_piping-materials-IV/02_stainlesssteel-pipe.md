@@ -14,6 +14,9 @@ price: 59.00
 hide_price: true
 =^=
 
+* Note:  All dimensions are nominal
+* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+
 ## Pipe Dimensions: Stainless Steel Pipe (According to ANSI/ASME B36.19M-2018)
 
 =|=
