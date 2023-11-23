@@ -14,6 +14,9 @@ price: 99.00
 hide_price: true
 =^=
 
+* Note:  All dimensions are nominal
+* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+
 ## Pipe Dimensions: Ductile Iron Pipe (According to AWWA C151/A21.51-17)
 
 =|=

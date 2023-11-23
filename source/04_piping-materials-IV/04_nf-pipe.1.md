@@ -13,7 +13,10 @@ price: 150.00
 hide_price: true
 =^=
 
-## Pipe Dimensions: Aluminum-Alloy Extruded Pipe (According to ANSI H35.2-2017/ASTM B42-20/B43-20/B302-2017)
+* Note:  All dimensions are nominal
+* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+
+## Pipe Dimensions: Aluminum-Alloy Extruded Pipe (According to ANSI H35.2)
 
 =|=
 data: npat_alum-extr-pipe.csv
@@ -27,14 +30,14 @@ data: npat_copp-capi-tube-hard.csv
 special: height:600px;
 =|=
 
-## Pipe Dimesnions: Seamless Copper-Nickel Pipe and Tube (According to ASTM B466-18)
+## Pipe Dimensions: Seamless Copper-Nickel Pipe and Tube (According to ASTM B466-18)
 
 =|=
 data: npat_seam-copp--nick-pipe-and-tube.csv
 special: height:600px;
 =|=
 
-## Pipe Dimesnions: Seamless Copper Water Tube Plumbing and Fluid Conveyence Tubing (According to ASTM B88-22)
+## Pipe Dimensions: Seamless Copper Water Tube Plumbing and Fluid Conveyance Tubing (According to ASTM B88-22)
 
 =|=
 data: npat_seam-copp-wate-tube-plum-and-flui-conv-tubi.csv
@@ -74,29 +77,4 @@ special: height:600px;
 =|=
 data: npat_thre-copp-pipe-seam-deox-for-braz-join-asse.csv
 special: height:600px;
-=|=
-
-## Tolerances for Wrought Seamless Copper and Copper Alloy Tube (According to ASTM B75/B75M-11)
-
-=|=
-data: tolerances-wrought.csv
-=|=
-
-## Alloy Compositions: Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: alloys.csv
-scrolling: false
-=|=
-
-## Wall Thickness Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: seamless-cop-nic-tol.csv
-=|=
-
-## Average Diameter Tolerances for Seamless Copper - Nickel Pipe and Tube (According to ASTM B466/B466M-14)
-
-=|=
-data: diam-tol.csv
 =|=

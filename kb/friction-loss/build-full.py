@@ -64,7 +64,7 @@ ALL_COLUMNS = new_data.columns
 COL_TYPES = dict()
 for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
-    if col in ['EDB Section','Section Name','Group','Group Name','Sub-Division','Sub-Division Name','Standard\nX-Strong\nXX-Strong','Pipe Schedule','Form','Type']:
+    if col in ['EDB Section','Section Name','Average Outside Diameter Tolerance in.','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Pipe schedule','Form','Type']:
         COL_TYPES[col] = 'string'
 pipes = []
 for grp in groups:
@@ -115,22 +115,22 @@ for grp in groups:
             df_copy.to_csv(filename, header=False, index=False)
 
         # Weed out any Wall Thickness that are not values
-        out_data.drop(out_data[(out_data['Wall Thickness\nin. Nom'] == '--') | 
-                               (out_data['Wall Thickness\nin. Nom'] == '-') | 
-                               (out_data['Wall Thickness\nin. Nom'] == 'c')].index, inplace=True)
+        out_data.drop(out_data[(out_data['Wall thickness, inches'] == '--') | 
+                               (out_data['Wall thickness, inches'] == '-') | 
+                               (out_data['Wall thickness, inches'] == 'c')].index, inplace=True)
        
-        data.drop(data[(data['Wall Thickness\nin. Nom'] == '--') | 
-                                (data['Wall Thickness\nin. Nom'] == '-') | 
-                                (data['Wall Thickness\nin. Nom'] == 'c')].index, inplace=True)
+        data.drop(data[(data['Wall thickness, inches'] == '--') | 
+                                (data['Wall thickness, inches'] == '-') | 
+                                (data['Wall thickness, inches'] == 'c')].index, inplace=True)
         
         # Go through the data and generate the data for the json file & Friction Calculator
         # Get indexes for the items
         calc_indexes=dict()
-        for sel in ['Nominal Size', 'Nominal Outside dia [in]', 'Internal Diameter in. Nom', 'Wall Thickness\nin. Nom', 'e\nAbsolute Roughness (ft)' ]:
+        for sel in ['Nominal size', 'Outside diameter, inches', 'Internal diameter, inches', 'Wall thickness, inches', 'e, Absolute roughness, feet' ]:
             if sel in columns:
                 name = sel.replace(' ','_',1)
                 name = name.split(' ')[0]
-                name = name.split('\n')[0]
+                name = name.split(',')[0]
                 name = name.lower()
                 calc_indexes[name]=columns.get_loc(sel)+1
         for row in data.itertuples():
@@ -152,7 +152,7 @@ for grp in groups:
             selector_desc = ''
             sep = ''
             # Create the selector String and selector description
-            for sel_col in ['Standard\nX-Strong\nXX-Strong', 'Pipe Schedule', 'Wall Thickness\nin. Nom', 'THICKNESS/ PRESSURE CLASS']:
+            for sel_col in ['Identification', 'Pipe schedule', 'Wall thickness, inches', 'Pressure class']:
                 if data[sel_col].any():
                     index = columns.get_loc(sel_col)+1
                     if str(row[index]) != 'nan' and len(row[index]):
@@ -161,7 +161,7 @@ for grp in groups:
                         #else:
                         selector+=sep+str(row[index])
                         head, sp, tail = columns[index-1].partition('\n')
-                        selector_desc+=sep+head
+                        selector_desc+=sep+head.split(',')[0]
                         sep = ' / '
             if not len(selector):
                 selector = 'NONE'
@@ -169,7 +169,7 @@ for grp in groups:
             # material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description'
             pipes.append(Piping(col, 
                                 nominal_size,
-                                row[calc_indexes['nominal_outside']],
+                                row[calc_indexes['outside_diameter']],
                                 row[calc_indexes['internal_diameter']],
                                 row[calc_indexes['wall_thickness']],
                                 row[calc_indexes['e']],
@@ -178,10 +178,10 @@ for grp in groups:
 
         # Collect the data for the Material Sub Division Name
         all_data = out_data.copy(True)
-        print ("Writing CATEGORY data to "+table_filename) 
+        print ("Writing CATEGORY ["+col+"] data to "+table_filename) 
         # Insert rows/columns for table data csv
         all_data = updateDataForCsv(all_data)
-        all_data.to_csv(table_filename, mode='w', header=False, index=False)
+        all_data.to_csv(table_filename,header=False, index=False)
         
 # Dump data into processed file
 with open('kb/friction-loss/processed.csv', 'w') as out:

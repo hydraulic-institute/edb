@@ -1,7 +1,4 @@
-Nominal Size,Nominal Outside dia [in],Pipe Schedule,"Wall Thickness
-in. Nom",Internal Diameter in. Nom,Internal Diameter Feet,Internal Area Square Feet,"e/D
-Relative Roughness","e
-Absolute Roughness (ft)"
+Nominal size,"Outside diameter, inches",Pipe schedule,"Wall thickness, inches","Internal diameter, inches","Internal diameter, feet","Internal area, square feet","e/D, Relative roughness","e, Absolute roughness, feet"
 0.125,0.405,5S,--,#VALUE!,#VALUE!,#VALUE!,#VALUE!,0.00005
 0.125,0.405,10S,0.049,0.307,0.025583333,0.000514049,0.001954397,0.00005
 0.125,0.405,40S,0.068,0.269,0.022416667,0.000394668,0.002230483,0.00005
