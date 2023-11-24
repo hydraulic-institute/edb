@@ -22,6 +22,8 @@ from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
+import pandas as pd
+from pandas import ExcelFile
 
 global chart_count
 chart_count = 0
@@ -199,24 +201,50 @@ def table_data(units, table, path, filename):
     file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
-            f"Error - the table {table.title} refers to {file} which does not exist")
+            f"Error - the table {table['title']} refers to {file} which does not exist")
         return None
 
-    with open(file, newline='', encoding='utf-8') as csvfile:
-        csv_data = csv.reader(csvfile)
-        first_row = next(csv_data)
-        columns = first_row[1:]
-        rows = []
-        headings = []
-        for row in csv_data:
-            row_columns = [TableColumn(columns[i], d)
-                           for i, d in enumerate(row[1:])]
-            r = TableRow(row[0], row_columns)
-            if (r.type == 'heading'):
-                headings.append(r)
-            else:
-                rows.append(r)
-        return Table(units, columns, headings, rows)
+    csv_data = pd.read_csv(file, dtype='str')
+    col_types = list(csv_data.columns)
+    # rename types
+    types = []
+    for i,d in enumerate(col_types[1:]):
+        types.append(d.split('.')[0])
+    # Set the header to the first row
+    #csv_data.set_axis(list(csv_data.iloc[0]),axis=1,inplace=True)
+    columns = csv_data.columns
+    rows = []
+    headings = []
+    show_columns_tags = [] if 'columns_tags' not in table else table['columns_tags']
+    data=csv_data.copy(True)
+    if len(show_columns_tags):
+        show_columns_tags = show_columns_tags.split(',')
+        show_columns = [0]
+        tags_list = list(csv_data.iloc[1])
+        for tag in show_columns_tags:
+            show_columns+=[i for i, d in enumerate(tags_list) if tag in d]
+        data =csv_data.iloc[:, show_columns].copy(True)
+        #data=csv_data[show_columns].copy(True)
+        #Update column headings
+        col_types = list(data.columns)
+        # rename types
+        types = []
+        for i,d in enumerate(col_types[1:]):
+            types.append(d.split('.')[0])
+        #data.set_axis(list(data.iloc[0]),axis=1,inplace=True)
+        data.drop(index=1,inplace=True)
+        columns = data.columns
+    # headings = list(data.iloc[0][1:])
+    for row in data.itertuples():
+        row_columns=[]
+        for i, d in enumerate(row[2:]):
+            row_columns.append(TableColumn(types[i], d))
+        r = TableRow(row[1], row_columns)
+        if (row[1] == 'heading'):
+            headings.append(r)
+        else:
+            rows.append(r)
+    return Table(units, columns, headings, rows)
 
 def replace_definitions_block(dir, definitions_text, sections):
     definitions_table = parse_dict(definitions_text.strip().split("\n"))
@@ -241,7 +269,7 @@ def replace_table_block(dir, table_text):
         data_metric = table['data-metric']
     else:
         print(
-            f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
+            f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
     all_tables.append(data_us)
  
@@ -271,7 +299,7 @@ def replace_table_block_pdf(dir, table_text):
         data_metric = table['data-metric']
     else:
         print(
-            f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
+            f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
 
     template = env.get_template('table-pdf.jinja')

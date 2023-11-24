@@ -1,8 +1,7 @@
 -----
 title: E) Flange Dimensions
-date: February 5th, 2020
+date: November 24th, 2023
 description: Dimensions of flanges.
-hide_units: true
 -----
 
 =^=
@@ -14,35 +13,129 @@ price: 59.00
 hide_price: true
 =^=
 
-## Dimensions: Steel Pipe Flanges and Flanged Fittings - 150 to 2500 lb (According to ASME B16.5-2017, ASME B16.47-2017, & AWWA C207-18)
-
-=|=
-data: steel-flang-fit.csv
-special: height:600px;
-=|=
-
-## Dimensions of Facings (According to ASME B16.5-2017)
-
-=|=
-data: facings.csv
-special: height:600px;
-=|=
-
-## Cast Iron Flange Dimensions and Drilling Templates - 25 to 800 lb (According to ANSI B16.1-1975)
-
-=|=
-data: cast-iron-flange.csv
-special: height:600px;
-=|=
-
-**Note 4:** Height of the raised face is either 1/16 in. or 1/4 in.
-
-**Note 5:** Height of the large and small male and tongue is 1/4 in.
-
-**Note 6:** Depth of groove or female is 1/16 in.
-
-**Note 7:** See IVE-2 for thickness and outside diameters of laps.
-
-**Note 9:** For small male and female joints care should be taken in the use of these dimensionsto insure that the inside diameter of fitting or pipr is small enough to permit sufficient bearing surface to prevent the crushing of
-the gasket. This applies particularly on lines where the joint is made on the end of the pipe. Inside diameter of fitting should match inside diameter of pipe as specified by the purchaser. Screwed companion flanges for small male 
-and female joints are furnished with plain face and are threased with USA Standard Locknut Thread (NPSL).
+<div class="accordion" id="accordionPanelsStayOpenExample" style="--bs-accordion-btn-bg:#008080;--bs-accordion-btn-color:white;">
+    <div class="accordion-item mt-2" >
+        <h2 class="accordion-header" id="headingOne" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false">
+            Flanges per AWWA C207 (Class B, D, E, F)
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-c207.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per AWWA C207 (Class B, D, E, F)
+                    data: flange-c207.csv
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                    <li>Refer to ANSI/AWWA C207 for notes, design pressures, and additional minimum design requirements. </li>
+                    <li>Any column with "-" could relate to a note in the Standard or not be covered in the standard.</li>
+                    <li>Data columns from the reference standard may have been omitted</li>
+                    <li>All units are inches</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="accordion-item mt-2" >
+        <h2 class="accordion-header" id="headingOne-2" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-2" aria-expanded="false">
+            Flanges per ASME B16.1 (Class 25, 125, 250)
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.1-25-250-1.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-25-250-2.png "></div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per ASME B16.1 (Class 25, 125, 250)
+                    data-us: flange-16.1-25-250-us.csv
+                    data-metric: flange-16.1-25-250-metric.csv
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                    <li>Refer to ANSI/ASME B16.1 for notes, pressures, and minimum design requirements. </li>
+                    <li>Any column with "-" relate to a note in the standard or may not be covered in the standard.</li>
+                    <li>Data columns from the reference standard may have been omitted.</li>
+                    <li>US units are inches, Metric Units are milimeters.</li>
+                    <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
+                    <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div>  
+    <div class="accordion-item mt-2" >
+        <h2 class="accordion-header" id="headingOne-3" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-3" aria-expanded="false">
+            Flanges per ASME B16.1 (Class 150, 300)
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-3" class="accordion-collapse collapse" aria-labelledby="headingOne-3">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.1-150-300-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-150-300-slipon-welding.png "></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.1-150-300-socket-welded.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-150-300-welding-neck.png "></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.1-150-300-lapped.png "></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <h4>Notes:</h4>
+                <ol type="1">
+                    <li>Refer to ANSI/ASME B16.5 for notes, pressures, and minimum design requirements. </li>
+                    <li>Any column with "-" relate to a note in the standard or is not be covered in the standard.</li>
+                    <li>Data columns from the reference standard may have been omitted.</li>
+                    <li>US units are inches, Metric Units are milimeters.</li>
+                    <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points).</li> 
+                    <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                </ol>
+                <div class="accordion" id="flanges-150-300" style="--bs-accordion-btn-bg:#AAEFD3">
+                    <div class="accordion-item mt-2">
+                        <h2 class="accordion-header" id="flanges-threaded-header" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flanges-threaded" aria-expanded="false">
+                            Threaded
+                        </button>
+                        </h2>
+                        <div id="flanges-threaded" class="accordion-collapse collapse" aria-labelledby="flanges-threaded-header">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-6"><img src="./images/flange-16.1-150-300-threaded.png"></div>
+                                </div>
+                                <div style="padding:0">
+                                    =|=
+                                    data-us: flange-16.1-150-300-us.csv
+                                    data-metric: flange-16.1-150-300-metric.csv
+                                    columns_tags: All,Th
+                                    =|=
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    
+</div>
