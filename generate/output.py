@@ -197,26 +197,27 @@ def definition_create_section_link(sections, in_section):
                 return section_link
     return ""
 
+def getTypesArray(cols):
+    types = []
+    for i,d in enumerate(cols):
+        types.append(d.split('.')[0])
+    return types
+
 def table_data(units, table, path, filename):
     file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the table {table['title']} refers to {file} which does not exist")
         return None
-
     csv_data = pd.read_csv(file, dtype='str')
     col_types = list(csv_data.columns)
-    # rename types
-    types = []
-    for i,d in enumerate(col_types[1:]):
-        types.append(d.split('.')[0])
-    # Set the header to the first row
-    #csv_data.set_axis(list(csv_data.iloc[0]),axis=1,inplace=True)
+    types = getTypesArray(col_types[1:])
     columns = csv_data.columns
     rows = []
     headings = []
     show_columns_tags = [] if 'columns_tags' not in table else table['columns_tags']
     data=csv_data.copy(True)
+    data=data.fillna('')
     if len(show_columns_tags):
         show_columns_tags = show_columns_tags.split(',')
         show_columns = [0]
@@ -224,17 +225,12 @@ def table_data(units, table, path, filename):
         for tag in show_columns_tags:
             show_columns+=[i for i, d in enumerate(tags_list) if tag in d]
         data =csv_data.iloc[:, show_columns].copy(True)
-        #data=csv_data[show_columns].copy(True)
         #Update column headings
         col_types = list(data.columns)
         # rename types
-        types = []
-        for i,d in enumerate(col_types[1:]):
-            types.append(d.split('.')[0])
-        #data.set_axis(list(data.iloc[0]),axis=1,inplace=True)
+        types = getTypesArray(col_types[1:])
         data.drop(index=1,inplace=True)
         columns = data.columns
-    # headings = list(data.iloc[0][1:])
     for row in data.itertuples():
         row_columns=[]
         for i, d in enumerate(row[2:]):
