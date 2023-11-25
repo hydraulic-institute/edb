@@ -72,7 +72,7 @@ hide_price: true
                     <li>Refer to ANSI/ASME B16.1 for notes, pressures, and minimum design requirements. </li>
                     <li>Any column with "-" relate to a note in the standard or may not be covered in the standard.</li>
                     <li>Data columns from the reference standard may have been omitted.</li>
-                    <li>US units are inches, Metric Units are milimeters.</li>
+                    <li>US units are inches, Metric Units are millimeters.</li>
                     <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
                     <li>Hex bolts are measured from under the head to the top of the bolt.</li>
                     </ol>
@@ -231,7 +231,7 @@ hide_price: true
                             <li>Refer to ANSI/ASME B16.5 for notes, pressures, and minimum design requirements. </li>
                             <li>Any column with "-" relate to a note in the standard or is not be covered in the standard.</li>
                             <li>Data columns from the reference standard may have been omitted.</li>
-                            <li>US units are inches, Metric Units are milimeters.</li>
+                            <li>US units are inches, Metric Units are millimeters.</li>
                             <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points).</li>
                             <li>Hex bolts are measured from under the head to the top of the bolt.</li>
                         </ol>
@@ -391,7 +391,7 @@ hide_price: true
                             <li>Refer to ANSI/ASME B16.5 for notes, pressures, and minimum design requirements. </li>
                             <li>Any column with "-" relate to a note in the standard or is not be covered in the standard.</li>
                             <li>Data columns from the reference standard may have been omitted.</li>
-                            <li>US units are inches, Metric Units are milimeters.</li>
+                            <li>US units are inches, Metric Units are millimeters.</li>
                             <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points).</li>
                             <li>Hex bolts are measured from under the head to the top of the bolt.</li>
                         </ol>
