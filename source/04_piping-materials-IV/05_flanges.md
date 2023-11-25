@@ -57,6 +57,7 @@ hide_price: true
                 <div class="row">
                     <div class="col-6"><img src="./images/flange-16.1-25-250-1.png "></div>
                     <div class="col-6"><img src="./images/flange-16.1-25-250-2.png "></div>
+                </div>
                 <div class="row">
                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
                     <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
@@ -398,6 +399,6 @@ hide_price: true
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>  
 </div>
