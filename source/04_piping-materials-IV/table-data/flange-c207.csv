@@ -1,5 +1,6 @@
 ﻿,text,text,text,text,text,text,text,text
 heading,AWWA Class,Nominal Pipe Size (NPS),OD Flange (A) in.,ID Flange (B) in.,Bolt Number,Bolt Circle Diameter (C) in.,Diameter of Bolts in.,Flange Thickness (T)in. 
+tags,,,,,,,,
 data,B,4,9,4.57,8,7.5,0.625,0.625
 data,B,5,10,5.66,8,8.5,0.75,0.625
 data,B,6,11,6.72,8,9.5,0.75,0.688

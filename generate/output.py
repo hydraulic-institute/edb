@@ -209,21 +209,28 @@ def table_data(units, table, path, filename):
         print(
             f"Error - the table {table['title']} refers to {file} which does not exist")
         return None
+    # print('Processing table: '+filename)
     csv_data = pd.read_csv(file, dtype='str')
     col_types = list(csv_data.columns)
     types = getTypesArray(col_types[1:])
     columns = csv_data.columns
     rows = []
     headings = []
-    show_columns_tags = [] if 'columns_tags' not in table else table['columns_tags']
     data=csv_data.copy(True)
     data=data.fillna('')
-    if len(show_columns_tags):
-        show_columns_tags = show_columns_tags.split(',')
-        show_columns = [0]
-        tags_list = list(csv_data.iloc[1])
-        for tag in show_columns_tags:
-            show_columns+=[i for i, d in enumerate(tags_list) if tag in d]
+    tag_row = data[(data == 'tags').any(axis=1)]
+    if len(tag_row):
+        # all blank columns are included
+        show_column_tags = ['All']
+        show_column_tags += [] if 'column_tags' not in table else table['column_tags'].split(',')
+        show_columns = [0] #this is the info column
+        tags_list = list(tag_row.iloc[0])
+        col_index = 0
+        # Build the list of columns to keep based on tags.
+        for tag in tags_list:
+            if not len(tag) or (tag in show_column_tags):
+                show_columns+=[col_index]
+            col_index+=1
         data =csv_data.iloc[:, show_columns].copy(True)
         #Update column headings
         col_types = list(data.columns)

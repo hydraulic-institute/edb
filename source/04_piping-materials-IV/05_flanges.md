@@ -55,8 +55,8 @@ hide_price: true
         <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.1-25-250-1.png "></div>
-                    <div class="col-6"><img src="./images/flange-16.1-25-250-2.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-1.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-2.png "></div>
                 </div>
                 <div class="row">
                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -101,7 +101,7 @@ hide_price: true
                         <div id="flanges-threaded" class="accordion-collapse collapse" aria-labelledby="flanges-threaded-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-threaded.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-threaded.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -110,9 +110,9 @@ hide_price: true
                                 <div>
                                     =|=
                                     title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
-                                    data-us: flange-16.1-150-300-us.csv
-                                    data-metric: flange-16.1-150-300-metric.csv
-                                    columns_tags: All,Th
+                                    data-us: flange-16.5-150-300-us.csv
+                                    data-metric: flange-16.5-150-300-metric.csv
+                                    column_tags: Th
                                     =|=
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ hide_price: true
                         <div id="flanges-slipon" class="accordion-collapse collapse" aria-labelledby="flanges-slipon-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-slipon-welding.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-slipon-welding.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -137,9 +137,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Slip-On Welding Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
-                                    data-us: flange-16.1-150-300-us.csv
-                                    data-metric: flange-16.1-150-300-metric.csv
-                                    columns_tags: All,SO
+                                    data-us: flange-16.5-150-300-us.csv
+                                    data-metric: flange-16.5-150-300-metric.csv
+                                    column_tags: SO
                                     =|=
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ hide_price: true
                         <div id="flanges-socket-weld" class="accordion-collapse collapse" aria-labelledby="flanges-socket-weld-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-socket-welded.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-socket-welded.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -164,9 +164,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Socket Welding (NPS 1/2 to 3 Only) Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
-                                    data-us: flange-16.1-150-300-us.csv
-                                    data-metric: flange-16.1-150-300-metric.csv
-                                    columns_tags: All,SW
+                                    data-us: flange-16.5-150-300-us.csv
+                                    data-metric: flange-16.5-150-300-metric.csv
+                                    column_tags: SW
                                     =|=
                                 </div>
                             </div>
@@ -182,7 +182,7 @@ hide_price: true
                         <div id="flanges-welding-neck" class="accordion-collapse collapse" aria-labelledby="flanges-welding-neck-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-welding-neck.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-welding-neck.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -191,9 +191,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Welding Neck Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
-                                    data-us: flange-16.1-150-300-us.csv
-                                    data-metric: flange-16.1-150-300-metric.csv
-                                    columns_tags: All,WN
+                                    data-us: flange-16.5-150-300-us.csv
+                                    data-metric: flange-16.5-150-300-metric.csv
+                                    column_tags: WN
                                     =|=
                                 </div>
                             </div>
@@ -209,7 +209,7 @@ hide_price: true
                         <div id="flanges-lapped" class="accordion-collapse collapse" aria-labelledby="flanges-lapped-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-lapped.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-lapped.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -218,9 +218,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Lapped Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
-                                    data-us: flange-16.1-150-300-us.csv
-                                    data-metric: flange-16.1-150-300-metric.csv
-                                    columns_tags: All,La
+                                    data-us: flange-16.5-150-300-us.csv
+                                    data-metric: flange-16.5-150-300-metric.csv
+                                    column_tags: La
                                     =|=
                                 </div>
                             </div>
@@ -261,7 +261,7 @@ hide_price: true
                         <div id="flanges-400-threaded" class="accordion-collapse collapse" aria-labelledby="flanges-400-threaded-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-threaded.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-threaded.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -270,9 +270,9 @@ hide_price: true
                                 <div>
                                     =|=
                                     title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
-                                    data-us: flange-16.1-400-2500-us.csv
-                                    data-metric: flange-16.1-400-2500-metric.csv
-                                    columns_tags: All,Th
+                                    data-us: flange-16.5-400-2500-us.csv
+                                    data-metric: flange-16.5-400-2500-metric.csv
+                                    column_tags: Th
                                     =|=
                                 </div>
                             </div>
@@ -288,7 +288,7 @@ hide_price: true
                         <div id="flanges-400-slipon" class="accordion-collapse collapse" aria-labelledby="flanges-400-slipon-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-slipon-welding.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-slipon-welding.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -297,9 +297,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Slip-On Welding Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
-                                    data-us: flange-16.1-400-2500-us.csv
-                                    data-metric: flange-16.1-400-2500-metric.csv
-                                    columns_tags: All,SO
+                                    data-us: flange-16.5-400-2500-us.csv
+                                    data-metric: flange-16.5-400-2500-metric.csv
+                                    column_tags: SO
                                     =|=
                                 </div>
                             </div>
@@ -315,7 +315,7 @@ hide_price: true
                         <div id="flanges-400-socket-weld" class="accordion-collapse collapse" aria-labelledby="flanges-400-socket-weld-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-socket-welded.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-socket-welded.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -324,9 +324,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Socket Welding (NPS 1/2 to 3 Only) Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
-                                    data-us: flange-16.1-400-2500-us.csv
-                                    data-metric: flange-16.1-400-2500-metric.csv
-                                    columns_tags: All,SW
+                                    data-us: flange-16.5-400-2500-us.csv
+                                    data-metric: flange-16.5-400-2500-metric.csv
+                                    column_tags: SW
                                     =|=
                                 </div>
                             </div>
@@ -342,7 +342,7 @@ hide_price: true
                         <div id="flanges-400-welding-neck" class="accordion-collapse collapse" aria-labelledby="flanges-400-welding-neck-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-welding-neck.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-welding-neck.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -351,9 +351,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Welding Neck Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
-                                    data-us: flange-16.1-400-2500-us.csv
-                                    data-metric: flange-16.1-400-2500-metric.csv
-                                    columns_tags: All,WN
+                                    data-us: flange-16.5-400-2500-us.csv
+                                    data-metric: flange-16.5-400-2500-metric.csv
+                                    column_tags: WN
                                     =|=
                                 </div>
                             </div>
@@ -369,7 +369,7 @@ hide_price: true
                         <div id="flanges-400-lapped" class="accordion-collapse collapse" aria-labelledby="flanges-400-lapped-header">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.1-150-300-lapped.png" style="max-height:150px"></div>
+                                    <div class="col-6"><img src="./images/flange-16.5-lapped.png" style="max-height:150px"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -378,9 +378,9 @@ hide_price: true
                                 <div style="padding:0">
                                     =|=
                                     title: Lapped Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
-                                    data-us: flange-16.1-400-2500-us.csv
-                                    data-metric: flange-16.1-400-2500-metric.csv
-                                    columns_tags: All,La
+                                    data-us: flange-16.5-400-2500-us.csv
+                                    data-metric: flange-16.5-400-2500-metric.csv
+                                    column_tags: La
                                     =|=
                                 </div>
                             </div>

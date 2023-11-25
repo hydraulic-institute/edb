@@ -40,7 +40,8 @@ def build_content_graph(specials):
 
         for fname in fileList:
             print("Compiling " + fname + ", " + dirName)
-
+            if fname.startswith("readme"):
+                continue
             if fname.endswith(".md") and fname != 'index.md':
                 print(" - Markdown (non-index)")
                 node = make_page_node(dirName, fname)
