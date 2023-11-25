@@ -1,9 +1,11 @@
 @primary-color: red;
 @hi_blue: #465b79;
-@hi_dark: rgb(52, 58, 64);
+@hi_dark: #343a40;
 @hi_light: #028da8;
 @hi_super_light: #49d4ef;
 @hi_empty_input: #f2f2f2; 
+@hi_green: rgb(42, 140, 101);
+@hi_light_green: #AAEFD3;
 @er_accent: #ffdd57; //#e6af2e
 @er_super_light: #eceef1;
 @std_pad: 1rem;
@@ -384,4 +386,23 @@ Friction Loss styles
 
 .hi_no_input {
     background-color: @hi_empty_input;
+}
+
+/***** accordion ***/
+.blue-accordion {
+    --bs-accordion-btn-bg: #5d7ba3;
+    --bs-accordion-btn-color:white;
+    --bs-accordion-active-bg: @hi_light;
+    --bs-accordion-active-color: white;
+}
+
+.green-accordion {
+    --bs-accordion-btn-bg: @hi_light_green;
+    --bs-accordion-btn-color:black;
+    --bs-accordion-active-bg: @hi_green;
+    --bs-accordion-active-color: white;
+}
+.accordion-button::after {
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
 }
