@@ -15,7 +15,6 @@ hide_price: true
 
 ## Steel Pipe Flange Dimensions
 
-### Types
 <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item mt-2 blue-accordion" >
         <h2 class="accordion-header" id="headingOne" style="margin-bottom:0">
@@ -520,7 +519,8 @@ hide_price: true
                 </div>
             </div>
         </div> 
-    </div> <div class="accordion-item mt-2 blue-accordion" >
+    </div> 
+    <div class="accordion-item mt-2 blue-accordion" >
         <h2 class="accordion-header" id="headingOne-8" style="margin-bottom:0">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseOne-8" aria-expanded="false">
