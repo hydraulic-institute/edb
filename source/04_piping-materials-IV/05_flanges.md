@@ -33,7 +33,7 @@ hide_price: true
                     =|=
                     title: Flanges per AWWA C207 (Class B, D, E, F)
                     data: flange-c207.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -68,7 +68,7 @@ hide_price: true
                     title: Flanges per ASME B16.1 (Class 25, 125, 250)
                     data-us: flange-16.1-25-250-us.csv
                     data-metric: flange-16.1-25-250-metric.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -115,7 +115,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: Th
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -143,7 +143,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: SO
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: SW
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -199,7 +199,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: WN
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -227,7 +227,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: La
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -280,7 +280,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: Th
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -308,7 +308,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: SO
-                                    special: height:500px;  
+                                    special: height:600px;  
                                     =|=
                                 </div>
                             </div>
@@ -336,7 +336,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: SW
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -364,7 +364,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: WN
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -392,7 +392,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: La
-                                    special: height:500px;
+                                    special: height:600px;
                                     =|=
                                 </div>
                             </div>
@@ -434,7 +434,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series A Class 150-300
                     data-us: flange-16.47-A-150-300-us.csv
                     data-metric: flange-16.47-A-150-300-metric.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -470,7 +470,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series A Class 400-900
                     data-us: flange-16.47-A-400-900-us.csv
                     data-metric: flange-16.47-A-400-900-metric.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -506,7 +506,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series B Class 75-300
                     data-us: flange-16.47-B-75-300-us.csv
                     data-metric: flange-16.47-B-75-300-us.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -541,7 +541,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series B Class 400-900
                     data-us: flange-16.47-B-400-900-us.csv
                     data-metric: flange-16.47-B-400-900-us.csv
-                    special: height:500px;
+                    special: height:600px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
