@@ -64,8 +64,8 @@ ALL_COLUMNS = new_data.columns
 COL_TYPES = dict()
 for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
-    if col in ['EDB Section','Section Name','Average Outside Diameter Tolerance in.','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Pipe schedule','Form','Type']:
-        COL_TYPES[col] = 'string'
+    if col in ['EDB Section','Section Name','Average Outside Diameter Tolerance in.','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
+        COL_TYPES[col] = 'text'
 pipes = []
 for grp in groups:
     print('Working on Group: '+grp)
@@ -112,6 +112,7 @@ for grp in groups:
             new_row = pd.DataFrame(getHeader(df_copy),index=[0])
             df_copy = pd.concat([new_row, df_copy]).reset_index(drop = True)
             print ("writing Sub Division Data to "+filename) 
+            df_copy = df_copy.fillna('')
             df_copy.to_csv(filename, header=False, index=False)
 
         # Weed out any Wall Thickness that are not values
@@ -181,6 +182,7 @@ for grp in groups:
         print ("Writing CATEGORY ["+col+"] data to "+table_filename) 
         # Insert rows/columns for table data csv
         all_data = updateDataForCsv(all_data)
+        all_data = all_data.fillna('')
         all_data.to_csv(table_filename,header=False, index=False)
         
 # Dump data into processed file

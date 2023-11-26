@@ -1,4 +1,4 @@
-,numeric,numeric,string,numeric,numeric,numeric,numeric,numeric,numeric
+,numeric,numeric,text,numeric,numeric,numeric,numeric,numeric,numeric
 heading,Nominal size,"Outside diameter, inches",Average Outside Diameter Tolerance in.,"Wall thickness, inches","Internal diameter, inches","Internal diameter, feet","Internal area, square feet","e/D, Relative roughness","e, Absolute roughness, feet"
 data,0.25,0.375,0.002,0.035,0.305,0.025416667,0.000507373,0.078688525,0.002000
 data,0.375,0.5,0.0025,0.049,0.402,0.0335,0.000881413,0.059701493,0.002000

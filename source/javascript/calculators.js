@@ -212,6 +212,10 @@ Vue.component('friction-loss-calculator', {
               console.log("No viscosity");
               return [];
           }
+          if (!this.length) {
+            console.log("No Pipe length")
+            return [];
+          }
 
           const D = this.inner_diameter / 12;
           const A = Math.PI * (D * D) / 4;
@@ -221,7 +225,7 @@ Vue.component('friction-loss-calculator', {
               // converting to ft3/sec
               const flow = this.input_flowrate_gpm * factor * 0.1336806 / 60;
               const velocity = flow / A;
-
+              console.log('STEP ['+ factor+']');
               // kinematic viscosity is entered as cSt (mm2/sec), needs to 
               // be converted to ft2/second for the Re c alculation.
               const kv_ft_sec = this.kinematic_viscosity / 92903.04;
@@ -255,13 +259,17 @@ Vue.component('friction-loss-calculator', {
                   let f2 = f2calc(f);
                   let diff = f1 - f2
 
+                  let kcount=0;
                   while (diff > 1 / 1000) {
                       f = f + fi
                       f1 = f1calc(f);
                       f2 = f2calc(f);
                       diff = f1 - f2;
+                      kcount++;
+                      if (!(kcount %  1000) )
+                        console.log(kcount+" ITERATIONS - "+ diff);
                   }
-
+                  console.log(kcount+" FINAL ITERATIONS");
                   sample.friction_loss = f;
                   sample.laminar = false;
               }

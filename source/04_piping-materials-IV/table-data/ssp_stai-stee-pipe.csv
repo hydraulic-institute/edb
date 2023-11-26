@@ -1,4 +1,4 @@
-,numeric,numeric,string,numeric,numeric,numeric,numeric,numeric,numeric
+,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
 heading,Nominal size,"Outside diameter, inches",Pipe schedule,"Wall thickness, inches","Internal diameter, inches","Internal diameter, feet","Internal area, square feet","e/D, Relative roughness","e, Absolute roughness, feet"
 data,0.125,0.405,10S,0.049,0.307,0.025583333,0.000514049,0.001954397,0.00005
 data,0.125,0.405,40S,0.068,0.269,0.022416667,0.000394668,0.002230483,0.00005
