@@ -27,12 +27,13 @@ hide_price: true
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col-6"><img src="./images/flange-c207.png "></div>
+                    <div class="col-6"><img src="./images/flange-c207.png " style="max-height:150px"></div>
                 </div>
                 <div style="padding:0">
                     =|=
                     title: Flanges per AWWA C207 (Class B, D, E, F)
                     data: flange-c207.csv
+                    special: height:500px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -55,8 +56,8 @@ hide_price: true
         <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
             <div class="accordion-body">
                 <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.1-1.png "></div>
-                    <div class="col-6"><img src="./images/flange-16.1-2.png "></div>
+                    <div class="col-6"><img src="./images/flange-16.1-1.png " style="max-height:150px"></div>
+                    <div class="col-6"><img src="./images/flange-16.1-2.png " style="max-height:150px"></div>
                 </div>
                 <div class="row">
                     <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
@@ -67,6 +68,7 @@ hide_price: true
                     title: Flanges per ASME B16.1 (Class 25, 125, 250)
                     data-us: flange-16.1-25-250-us.csv
                     data-metric: flange-16.1-25-250-metric.csv
+                    special: height:500px;
                     =|=
                     <h4>Notes:</h4>
                     <ol type="1">
@@ -113,6 +115,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: Th
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -140,6 +143,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: SO
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -167,6 +171,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: SW
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -194,6 +199,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: WN
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -221,6 +227,7 @@ hide_price: true
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
                                     column_tags: La
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -273,6 +280,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: Th
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -300,6 +308,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: SO
+                                    special: height:500px;  
                                     =|=
                                 </div>
                             </div>
@@ -327,6 +336,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: SW
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -354,6 +364,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: WN
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -381,6 +392,7 @@ hide_price: true
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     column_tags: La
+                                    special: height:500px;
                                     =|=
                                 </div>
                             </div>
@@ -401,4 +413,147 @@ hide_price: true
             </div>
         </div>
     </div>  
+    <div class="accordion-item mt-2 blue-accordion" >
+        <h2 class="accordion-header" id="headingOne-5" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-5" aria-expanded="false">
+            Flanges per ASME B16.47 Series A Class 150-300
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-5" class="accordion-collapse collapse" aria-labelledby="headingOne-5">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-16.png " style="max-height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per ASME B16.47 Series A Class 150-300
+                    data-us: flange-16.47-A-150-300-us.csv
+                    data-metric: flange-16.47-A-150-300-metric.csv
+                    special: height:500px;
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                        <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
+                        <li>Any column with "-" is relateto a note in the reference standard or may not be covered in the standard.</li>
+                        <li>Data columns from the reference standard may have been omitted.</li>
+                        <li>US units are inches, Metric Units are milimeters.</li>
+                        <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
+                        <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="accordion-item mt-2 blue-accordion" >
+        <h2 class="accordion-header" id="headingOne-6" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-6" aria-expanded="false">
+            Flanges per ASME B16.47 Series A Class 400-900
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-6" class="accordion-collapse collapse" aria-labelledby="headingOne-6">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-4.png" style="max-height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per ASME B16.47 Series A Class 400-900
+                    data-us: flange-16.47-A-400-900-us.csv
+                    data-metric: flange-16.47-A-400-900-metric.csv
+                    special: height:500px;
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                        <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
+                        <li>Any column with "-" is relateto a note in the reference standard or may not be covered in the standard.</li>
+                        <li>Data columns from the reference standard may have been omitted.</li>
+                        <li>US units are inches, Metric Units are milimeters.</li>
+                        <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
+                        <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="accordion-item mt-2 blue-accordion" >
+        <h2 class="accordion-header" id="headingOne-7" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-7" aria-expanded="false">
+            Flanges per ASME B16.47 Series B Class 75-300
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-7" class="accordion-collapse collapse" aria-labelledby="headingOne-7">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-16.png " style="max-height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per ASME B16.47 Series B Class 75-300
+                    data-us: flange-16.47-B-75-300-us.csv
+                    data-metric: flange-16.47-B-75-300-us.csv
+                    special: height:500px;
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                        <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
+                        <li>Any column with "-" is relateto a note in the reference standard or may not be covered in the standard.</li>
+                        <li>Data columns from the reference standard may have been omitted.</li>
+                        <li>US units are inches, Metric Units are milimeters.</li>
+                        <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
+                        <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div> <div class="accordion-item mt-2 blue-accordion" >
+        <h2 class="accordion-header" id="headingOne-8" style="margin-bottom:0">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne-8" aria-expanded="false">
+            Flanges per ASME B16.47 Series B Class 400-900
+        </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne-8" class="accordion-collapse collapse" aria-labelledby="headingOne-8">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-4.png " style="max-height:200px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                </div>
+                <div style="padding:0">
+                    =|=
+                    title: Flanges per ASME B16.47 Series B Class 400-900
+                    data-us: flange-16.47-B-400-900-us.csv
+                    data-metric: flange-16.47-B-400-900-us.csv
+                    special: height:500px;
+                    =|=
+                    <h4>Notes:</h4>
+                    <ol type="1">
+                        <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
+                        <li>Any column with "-" is relateto a note in the reference standard or may not be covered in the standard.</li>
+                        <li>Data columns from the reference standard may have been omitted.</li>
+                        <li>US units are inches, Metric Units are milimeters.</li>
+                        <li>Studs are measured parallel to the axis (L) from the first to the thread without the chamfers (points). </li>
+                        <li>Hex bolts are measured from under the head to the top of the bolt.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> 
+    </div> 
 </div>
