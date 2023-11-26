@@ -1,6 +1,6 @@
 -----
 title: C) Pipe Friction Loss Calculator
-date: May 6th, 2020
+date: November 26th, 2023
 description: Frictional loss calculator for piping constructed of various materials.
 -----
 ## Calculator: Frictional Losses in Pipes
