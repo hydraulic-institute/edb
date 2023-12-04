@@ -1,6 +1,6 @@
 -----
 title:  D) Losses in Nozzles
-date: February 7th, 2020
+date: December 3rd, 2023
 description: Calculation of frictional losses of nozzles. 
 -----
 
@@ -29,7 +29,7 @@ The following amounts of water are recommended to move 1 cubic foot:
 
 =+= 
 <span class='equation-label'>(Eq. 3.D.1)</span>
-$$  Q = 19.636*C*{d_1}^2*\sqrt {h} $$
+$$  Q = 19.636·C·{d_1}^2·\sqrt {h} $$
 =+= 
 
 Where:

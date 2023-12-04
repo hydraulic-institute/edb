@@ -1,6 +1,6 @@
 -----
 title: D) Pump Principles
-date: Oct 14th, 2023
+date: December 3rd, 2023
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
@@ -20,7 +20,7 @@ where:
 
 - Ns = Specific Speed (US Customary) 
 - n = Rotational speed, in revolutions per minute 
-- Q = Total Pump flow rate at best efficiency point in gallons per minute
+- Q = Total Pump flow rate at best efficiency point (BEP) in gallons per minute
 - H = Head per stage, in feet
 
 Specific speed, n<sub>s</sub>, is used with metric customary and is expressed by the following equation:
@@ -71,6 +71,7 @@ particular applications, based on desired flow and head.
 **Type number** is a variation of impeller specific speed. Type number is a dimensionless quantity calculated at the point of best efficiency. 
 Note, that to obtain a dimensionless value, the specified units of measure for each variable below may be different than the units of measure assigned 
 to that variable in other parts of the Engineering Data Library.  Close attention to the units of measure for the variables in any calculation is advised.  
+
 Type number is  defined by the following formula:
 
 =+=
@@ -81,16 +82,16 @@ $$ K = {{2·π·n·Q'^{0.5}} \over {(g·H')^{0.75}}} $$
 where in US Units:
 
 - K = type number
-- Q’ = flowrate per impeller eye in cubic feet per second
-- H’ = head of first stage in feet
+- Q’ = best efficiency point flow rate per impeller eye in cubic feet per second
+- H’ = best efficiency point head of first stage in feet
 - n = rotational speed, in revolutions per second
 - g = gravitational acceleration in feet per second squared
 
 where in Metric Units:
 
 - K = type number
-- Q’ = flowrate per impeller eye in cubic meters per second
-- H’ = head of first stage in meters
+- Q’ = best efficiency point flow rate per impeller eye in cubic meters per second
+- H’ = best efficiency point head of first stage in meters
 - n = rotational speed, in revolutions per second
 - g = gravitational acceleration in meters per second squared
 
@@ -113,7 +114,7 @@ where:
 
 - Nss = Suction Specific Speed
 - n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye in US gallons per minute 
+- Q' = best efficiency point flow rate per impeller eye in US gallons per minute 
     - =total flow rate for single suction impellers
     - =one half total flow rate for double suction impellers, 
 - NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
@@ -129,7 +130,7 @@ where:
 
 - S = Suction Specific Speed
 - n = Rotational speed, in revolutions per minute
-- Q' = flow rate per impeller eye in cubic meters per second 
+- Q' = best efficiency point flow rate per impeller eye in cubic meters per second 
     - =total flow rate for single suction impellers
     - =one half total flow rate for double suction impellers, 
 - NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%

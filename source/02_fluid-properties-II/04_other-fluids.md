@@ -1,6 +1,6 @@
 -----
 title: D) Other Fluids
-date: May 12th, 2020
+date: December 3rd, 2023
 description: Properties of other fluids.
 hide_units: true
 -----
@@ -177,8 +177,6 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
-
-*(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
 
 ### References
 1. J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).

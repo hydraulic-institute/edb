@@ -1,6 +1,6 @@
 -----
 title: C) Viscosity
-date: May 12th, 2020
+date: December 3rd, 2023
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -24,7 +24,7 @@ target="_blank">ANSI/HI 9.6.7</a> acts as a guideline that explains these effect
 There are two basic viscosity parameters:
 **dynamic (*or absolute*) viscosity** and **kinematic viscosity**.
  (See the <a href="/tools/viscosity.html" target="_blank">Kinematic and Dynamic Viscosity Conversion Tool</a> to perform viscosity conversions.)
-The dynamic viscosity may be defined with the aid of Fig. 1 which 
+The dynamic viscosity may be defined with the aid of Fig. 2.C.1 which 
 shows two parallel plane surfaces of area (A) separated a distance
 (d) and the space between completely filled
 with fluid. A force (F) is applied to and in the plane
@@ -39,7 +39,7 @@ by the equations
 
 =+=
 <span class= equation-label >(Eq. 2.C.1)</span>
-$$ τ = {F \over A} = μ{v \over d} $$
+$$ τ = {F \over A} = μ · {v \over d} $$
 =+=
 
 =+=
@@ -51,7 +51,7 @@ Therefore, the dimensions of the dynamic viscosity
 are
 
 =+=
-$$ force{time \over {length^2}} $$
+$$ force · {time \over {length^2}} $$
 =+=
 
 <units us = "The unit of dynamic viscosity in English measure
@@ -269,7 +269,7 @@ For values of 70 centistokes and above, use the
 following conversion:
 
 =+=
-$$ SSU = centistokes * 4.635 $$
+$$ SSU = centistokes ·  4.635 $$
 =+=
 
 Above the range of this table and within the range
