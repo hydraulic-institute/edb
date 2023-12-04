@@ -2,7 +2,6 @@
 title: D) Other Fluids
 date: December 3rd, 2023
 description: Properties of other fluids.
-hide_units: true
 -----
 
 ## Properties of Other Fluids 

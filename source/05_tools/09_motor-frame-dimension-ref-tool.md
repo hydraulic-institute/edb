@@ -7,6 +7,7 @@ hide_units: true
 
 <h3>Motor Frame Size and Dimension Reference Tool</h3>
 
+<div id="nema-section">
 <div class="row" style="margin-top:50px">
     <div class="col-6 d-flex justify-content-center"><img src="./images/HorizontalMotor.png" style="max-width:75%;height:auto"></div>
     <div class="col-6 d-flex justify-content-center"><img src="./images/VerticalMotor.png" style="max-width:75%;height:auto"></div>
@@ -212,13 +213,58 @@ hide_units: true
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item mt-2">
+                        <h2 class="accordion-header" id="headingFour-3" style="margin-bottom:0">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour-3" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour-3">
+                            Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour-3" class="accordion-collapse collapse" aria-labelledby="headingFour-3">
+                            <div class="accordion-body">
+                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-1.png "></div></div>
+                                <div class="row mt-2"><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-2.png "></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-3.png "></div></div>
+                                <div style="padding:0">
+                                    =|=
+                                    data: motor-table-1-JM-JP-18.33-18.34.csv
+                                    =|=
+                                    <br>
+                                    =|=
+                                    data: motor-table-2-JM-JP-18.33-18.34.csv
+                                    =|=
+                                    All dimensions in inches.
+                                    <br>
+                                    For the meaning of the letter dimensions, see Figures
+                                    <br>
+                                    *AH, EQ, and ET dimensions measured with the shaft pulled by hand away from the motor to the limit of endplay.
+                                    <br>
+                                    **AJ dimension—centerline of bolt holes is within 0.015 inch of true location for frames 154 to 256 JM and JP, inclusive, and within 0.025 inch of true location for frames 284 to 365 JM and JP, inclusive. True location is determined as angular and diametrical location with reference to the centerline of the AK dimension.
+                                    <br>
+                                    Face runout—
+                                    143JM/JP to 256JM/JP frames, inclusive, 0.004 inch indicator reading
+                                    284JM/JP to 326JM/JP frames, inclusive, 0.006 inch indicator reading
+                                    <br>
+                                    Permissible eccentricity of mounting rabbet—
+                                    143JM/JP to 256JM/JP frames, inclusive, 0.004 inch indicator reading
+                                    284JM/JP to 326JM/JP frames, inclusive, 0.006 inch indicator reading
+                                    <br>
+                                    Permissible shaft runout—
+                                    143JM/JP to 256JM/JP frames, inclusive, 0.002 inch indicator reading
+                                    284JM/JP to 326JM/JP frames, inclusive, 0.003 inch indicator reading
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
 
-<div class="row" style="margin-top:50px">
+<div id="iec-section" style="display:none;">
+<div class="row" style="margin-top:50px;">
     <div class="col-12"><img src="./images/IECLogo-s.jpg" style="height:100px"></div>
 </div>
 <div class="accordion" id="accordionPanelsStayOpenExample-iec" style="--bs-accordion-btn-bg:#0061aa;--bs-accordion-btn-color:white;">
@@ -337,4 +383,5 @@ hide_units: true
             </div>
         </div>
     </div>
+</div>
 </div>

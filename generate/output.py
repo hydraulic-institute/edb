@@ -44,7 +44,7 @@ SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data')
-TableColumn = namedtuple('TableColumn', 'type data')
+TableColumn = namedtuple('TableColumn', 'type data colspan')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
 DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
@@ -250,12 +250,33 @@ def table_data(units, table, path, filename):
     for row in data.itertuples():
         row_columns=[]
         for i, d in enumerate(row[2:]):
-            row_columns.append(TableColumn(types[i], d))
+            if row[1] == 'heading':
+                row_columns.append(TableColumn('center', d, 1))
+            else:
+                row_columns.append(TableColumn(types[i], d, 1))
         r = TableRow(row[1], row_columns)
         if (row[1] == 'heading'):
             headings.append(r)
         else:
             rows.append(r)
+    # Determine multiple headings and spans
+    for hidx, header in enumerate(headings):
+        colcount=1
+        remove_col=[]
+        header_len = len(header[1])
+        for idx, col in enumerate(reversed(header[1])):
+            if not col.data.strip():
+                colcount+=1
+                remove_col.append(header_len-idx-1)
+            elif colcount > 1:
+                headings[hidx][1][header_len-idx-1]=headings[hidx][1][header_len-idx-1]._replace(colspan=colcount)
+                #currtype = headings[hidx][1][header_len-idx-1].type
+                #headings[hidx][1][header_len-idx-1]=headings[hidx][1][header_len-idx-1]._replace(type=f'{currtype} spanned')
+                colcount=1
+        # Now remove the columns that are useless
+        for index in sorted(remove_col, reverse=True):
+            del headings[hidx][1][index]
+
     return Table(units, columns, headings, rows)
 
 def replace_definitions_block(dir, definitions_text, sections):
@@ -338,8 +359,9 @@ def chart_data(units, chart, path, filename):
         columns = first_row[1:]
         rows = []
         headings = []
+        # print ('Processing chart: '+filename)
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d)
+            row_columns = [TableColumn(columns[i], d, 1)
                            for i, d in enumerate(row[1:])]
             r = TableRow(row[0], row_columns)
             if (r.type == 'heading'):
