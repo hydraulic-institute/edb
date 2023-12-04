@@ -1,6 +1,6 @@
 -----
 title: A) System Curves
-date: Oct 14th, 2023
+date: December 3rd, 2023
 description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
 
@@ -23,7 +23,7 @@ where:
 
 - z is elevation, in <units us = "feet" metric = "meters"/>
 - P is pressure, in <units us = "psi" metric = "kPa"/>
-- ρ is fluid density, in <units us = "lbm / ft^3" metric = "kg/m^3"/>
+- ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
 - g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
 
 
@@ -227,17 +227,17 @@ $$ v = 0.320833·Q·({4 \over \pi ·D^2}) $$
 $$ v = 0.000278·Q·({4 \over \pi ·D^2}) $$
 =+=
 
-Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches)" metric ="(ID = 0.10226 m)"/> we get the following as the system curve equation as a function
-of flow rate in gpm.
+Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches) we get the following as the system curve equation as a function
+of flow rate in gpm." metric ="(ID = 0.10226 m) we get the following as the system curve equation as a function of flow rate in gpm."/> 
 
 <div class="calculation-label"><a id="calc1a3c"></a>Calc. 1.A.3(c)</div >
 =+=
 [units us]
-$$ \Delta h_{system} = 265{ft} + {{(7.75E{-04})}·{Q^2}} $$
+$$ \Delta h_{system} = 265{ft} + {{{7.75e^{-4}}}·{Q^2}} $$
 =+=
 =+=
 [units metric]
-$$ \Delta h_{system} = 80.77{m} + {({4.59E{-03})}·{Q^2}} $$
+$$ \Delta h_{system} = 80.77{m} + {({4.59e^{-03})}·{Q^2}} $$
 =+=
 
 This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "265 feet compared to little loss in piping and components)." metric = "77.72 meters compared to little loss in piping and components)."/> 

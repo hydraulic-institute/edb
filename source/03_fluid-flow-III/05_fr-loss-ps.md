@@ -1,6 +1,6 @@
 -----
 title:  E) Losses With Paper Stock
-date: June 28th, 2019
+date: December 3rd, 2023
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
@@ -35,7 +35,7 @@ methods previously issued.
 
 ### II. Background
 
-Figure 1 and Figure 2 show typical frictional loss curves for two different 
+Figure 3.E.1 shows typical frictional loss curves for two different 
 consistencies (C<sub>2</sub> > C<sub>1</sub>) of chemical pulp and mechanical
 pulp, respectively.
 
@@ -48,7 +48,7 @@ into three regions, as illustrated by the shaded areas of Figure 3.
 ![](./images/fig3_4.png "")
 <div class="figure-label">(Fig. 3.E.2)</div>
 
-Regions shown in Fig. 3 may be described as follows:
+Regions shown in Fig. 3.E.2 (left) may be described as follows:
 
 **Region 1**:
 (Curve AB) is a linear region where frictional
@@ -81,7 +81,7 @@ curve for water, which is a straight line with a slope
 approximately equal to 2.
 
 The frictional loss curve for mechanical pulp, as illustrated
-in Figure 4, is divided into only two regions:
+in Figure 3.E.2 (right), is divided into only two regions:
 Regions 1 and 3. For this pulp type, the frictional loss
 curve crosses the water curve v<sub>w</sub> and there is no true
 v<sub>max</sub>·
@@ -155,13 +155,13 @@ of v<sub>max</sub> is determined using Equation
 =+=
 <span class= equation-label >(Eq. 3.E.1)</span>
 [units = us]
-$$ v_{max} = {K'C^{σ}} (ft/s) $$
+$$ v_{max} = {K'·C^{σ}} (ft/s) $$
 =+=
 
 =+=
 <span class= equation-label >(Eq. 3.E.1)</span>
 [units = metric]
-$$ v_{max} = 0.3048{K'C^{σ}} (m/s) $$
+$$ v_{max} = 0.3048·{K'·C^{σ}} (m/s) $$
 =+=
 
 where:
@@ -194,13 +194,13 @@ and the appendices.
 =+=
 <span class= equation-label >(Eq. 3.E.2)</span>
 [units = us]
-$$ Δh/L = FKv^{α}C^{β}D^{γ}\, (ft/100\, ft) $$
+$$ Δh/L = F·K·v^{α}·C^{β}·D^{γ}\, (ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(Eq. 3.E.2)</span>
 [units = metric]
-$$ Δh/L = 0.3048FKv^{α}C^{β}D^{γ}\, (m/100\, m) $$
+$$ Δh/L = 0.3048·F·K·v^{α}·C^{β}·D^{γ}\, (m/100\, m) $$
 =+=
 
 where:
@@ -226,13 +226,13 @@ using Equation (3.E.3).
 =+=
 <span class= equation-label >(Eq. 3.E.3)</span>
 [units = us]
-$$ v_{w} = 4.00C^{1.40} (ft/s) $$
+$$ v_{w} = 4.00·C^{1.40} (ft/s) $$
 =+=
 
 =+=
 <span class= equation-label >(Eq. 3.E.3)</span>
 [units = metric]
-$$ v_{w} = 1.2192C^{1.40} (m/s) $$
+$$ v_{w} = 1.2192·C^{1.40} (m/s) $$
 =+=
 
 where:
@@ -256,13 +256,13 @@ the Blasius equation).
 =+=
 <span class= equation-label >(Eq. 3.E.4)</span>
 [units = us]
-$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(ft/100\, ft) $$
+$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\,(ft/100\, ft) $$
 =+=
 
 =+=
 <span class= equation-label >(Eq. 3.E.4)</span>
 [units = metric]
-$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\,(m/100\, m) $$
+$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\,(m/100\, m) $$
 =+=
 
 where:
@@ -335,13 +335,13 @@ The following gives supplemental information to that provided in the main text.
 =+=
 [units = us]
 <span class= equation-label >(Eq. 3.E.5)</span>
-$$ Q = {{16.65(T.P.D.)}\over C} \, (gpm) $$
+$$ Q = {{16.65·(T.P.D.)}\over C} \, (gpm) $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(Eq. 3.E.5)</span>
-$$ Q = {{3.782(T.P.D.)}\over C} \, (m^{3}/h) $$
+$$ Q = {{3.782·(T.P.D.)}\over C} \, (m^{3}/h) $$
 =+=
 
 where:
@@ -358,25 +358,25 @@ and
 =+=
 [units = us]
 <span class= equation-label >(Eq. 3.E.6)</span>
-$$ v = {{0.321Q}\over A}\, (ft/s),\, or $$
+$$ v = {{0.321·Q}\over A}\, (ft/s),\, or $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(Eq. 3.E.6)</span>
-$$ v = {{278Q}\over A}\, (m/s),\, or $$
+$$ v = {{278·Q}\over A}\, (m/s),\, or $$
 =+=
 
 =+=
 [units = us]
 <span class= equation-label >(Eq. 3.E.7)</span>
-$$ v = {{0.4085Q}\over D^2}\, (ft/s) $$
+$$ v = {{0.4085·Q}\over D^2}\, (ft/s) $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(Eq. 3.E.7)</span>
-$$ v = {{354Q}\over D^2}\, (m/s) $$
+$$ v = {{354·Q}\over D^2}\, (m/s) $$
 =+=
 
 where:
@@ -389,7 +389,7 @@ where:
 
 =+=
 <span class= equation-label >(Eq. 3.E.8)</span>
-$$ F = {F_1}*{F_2}*{F_3}*{F_4}*{F_5,} $$
+$$ F = {F_1}·{F_2}·{F_3}·{F_4}·{F_5,} $$
 =+=
 
 where:
@@ -400,13 +400,13 @@ decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This 
 =+=
 [units = us]
 <span class= equation-label >(Eq. 3.E.9)</span>
-$$ F_1 = 1.526 - 0.00556T $$
+$$ F_1 = 1.526 - 0.00556·T $$
 =+=
 
 =+=
 [units = metric]
 <span class= equation-label >(Eq. 3.E.9)</span>
-$$ F_1 = 1.34808 - 0.010008T $$
+$$ F_1 = 1.34808 - 0.010008·T $$
 =+=
 
 - F<sub>2</sub> = correction factor for pipe roughness. This
@@ -459,22 +459,22 @@ a) The bulk velocity is:
 
 =+=
 [units = us]
-$$ v = {{0.4085Q}\over{D^2}} $$
+$$ v = {{0.4085·Q}\over{D^2}} $$
 =+=
 
 =+=
 [units = metric]
-$$ v = {{354Q}\over{D^2}} $$
+$$ v = {{354·Q}\over{D^2}} $$
 =+=
 
 =+=
 [units = us]
-$$ = {{0.4085(1100)}\over{6.065^2}} = 12.22 ft/s  $$
+$$ = {{0.4085×1100}\over{6.065^2}} = 12.22 ft/s  $$
 =+=
 
 =+=
 [units = metric]
-$$ = {{354(249.84)}\over{154.051^2}} = 3.72 m/s  $$
+$$ = {{354×249.84}\over{154.051^2}} = 3.72 m/s  $$
 =+=
 
 b) It must be determined in which region (1, 2 or 3)
@@ -483,12 +483,12 @@ determine V<sub>max</sub>.
 
 =+=
 [units = us]
-$$ v_{max} = K'C^{σ}, $$
+$$ v_{max} = K'·C^{σ}, $$
 =+=
 
 =+=
 [units = metric]
-$$ v_{max} = 0.3048*K'C^{σ}, $$
+$$ v_{max} = 0.3048·K'·C^{σ}, $$
 =+=
 
 and
@@ -498,12 +498,12 @@ and
 
 =+=
 [units = us]
-$$ v_{max} = 0.59(2.0^{1.45}) = 1.61 ft/s. $$
+$$ v_{max} = 0.59×2.0^{1.45} = 1.61 ft/s. $$
 =+=
 
 =+=
 [units = metric]
-$$ v_{max} = 0.3048*0.59(2.0^{1.45}) = 0.49 m/s. $$
+$$ v_{max} = 0.3048×0.59×2.0^{1.45} = 0.49 m/s. $$
 =+=
 
 c) Since v exceeds v<sub>max</sub>, Region 1 (the linear region) is eliminated. To determine whether v lies in Region 2 or 3, the velocity at the onset
@@ -511,22 +511,22 @@ of drag reduction, v<sub>W</sub>, must be calculated.
 
 =+=
 [units = us]
-$$ v_{w} = 4.00C^{1.40}, $$
+$$ v_{w} = 4.00·C^{1.40}, $$
 =+=
 
 =+=
 [units = metric]
-$$ v_{w} = 1.2192C^{1.40}, $$
+$$ v_{w} = 1.2192·C^{1.40}, $$
 =+=
 
 =+=
 [units = us]
-$$ v_{w} = 4.00(2.0^{1.40}) = 10.56 ft/s. $$
+$$ v_{w} = 4.00·(2.0^{1.40}) = 10.56 ft/s. $$
 =+=
 
 =+=
 [units = metric]
-$$ v_{w} = 1.2192(2.0^{1.40}) = 3.22 m/s. $$
+$$ v_{w} = 1.2192·(2.0^{1.40}) = 3.22 m/s. $$
 =+=
 
 d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional loss is calculated as that of water flowing at
@@ -534,22 +534,22 @@ the same velocity.
 
 =+=
 [units = us]
-$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
+$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\, $$
 =+=
 
 =+=
 [units = metric]
-$$ (Δh/L)_{w} = 0.58v^{1.75}D^{-1.25}\, $$
+$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\, $$
 =+=
 
 =+=
 [units = us]
-$$ = 0.58(12.22^{1.75})(6.065^{-1.25}) = 4.85\,ft\,head\,loss/100\,ft\,of\,pipe $$
+$$ = 0.58×12.22^{1.75}×6.065^{-1.25} = 4.85\,ft\,head\,loss/100\,ft\,of\,pipe $$
 =+=
 
 =+=
 [units = metric]
-$$ = 0.58(12.22^{1.75})(6.065^{-1.25}) = 4.85\,m\,head\,loss/100\,m\,of\,pipe $$
+$$ = 0.58×12.22^{1.75}×6.065^{-1.25} = 4.85\,m\,head\,loss/100\,m\,of\,pipe $$
 =+=
 
 This will be a conservative estimate, as the actual
