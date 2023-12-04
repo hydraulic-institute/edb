@@ -101,17 +101,22 @@ def definitions_table_data(table, path, filename, in_sections):
         comment_idx=1
         section_idx=-1
         section=""
-        index = {'sections': [], 'height': 200}
+        use_style=""
+        if "special" in table:
+            use_style = table['special']
+        index = {'sections': [], 'index_style': 'height:200px', 'style': use_style}
         orig_col_obj={'url': None, 'ref': None, 'type': None}
+        csv_data = [[c.replace('\ufeff', '') for c in row] for row in csv_data]
         for row in csv_data:
             if len(row[0]):
                 section_idx=None
                 section = row[0].split(" (")[0]
                 columns = [row[i] for i,x in enumerate(row) if i != 0]
-                try:
-                    comment_idx = columns.index("Comment")
-                except:
-                    comment_idx = columns.index("")
+                comment_idx = len(columns)
+                for item in ['Comment','Search','']:
+                    if item in columns:
+                        comment_idx = columns.index(item)
+                        break
                 columns = columns[0:comment_idx]
                 #Are there any columns that involve links
                 col_link_data=[]
@@ -162,13 +167,17 @@ def definitions_table_data(table, path, filename, in_sections):
                     # Go through each section_link_data array item, create a link if necessary
                     for i in range(num_columns):
                         if col_link_data[i]['url'] and len(datarow[columns.index(col_link_data[i]['type'])]):
-                            # Create a link if there's data
-                            # https://www.pumps.org/what-we-do/standards/?pumps-search-product=ANSI%2FHI+14.1-14.2&hi-order=asc&hi-order-by=name 
-                            # Replace slashes with %2F, replace spaces with + and add &hi-order=asc&hi-order-by=name
-                            search_str='+'.join(datarow[columns.index(col_link_data[i]['type'])].split())
-                            search_str=search_str.replace('/','%2F')
-                            search_str+='&hi-order=asc&hi-order-by=name'
-                            source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",search_str))
+                            if 'REF' in col_link_data[i]['url']:
+                                # Create a link if there's data
+                                # https://www.pumps.org/what-we-do/standards/?pumps-search-product=ANSI%2FHI+14.1-14.2&hi-order=asc&hi-order-by=name 
+                                # Replace slashes with %2F, replace spaces with + and add &hi-order=asc&hi-order-by=name
+                                search_str='+'.join(datarow[columns.index(col_link_data[i]['type'])].split())
+                                search_str=search_str.replace('/','%2F')
+                                search_str+='&hi-order=asc&hi-order-by=name'
+                                source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",search_str))
+                            elif 'SITE' in col_link_data[i]['url']:
+                                link_str=datarow[columns.index(col_link_data[i]['type'])]
+                                source_links[i]=(col_link_data[i]['url'].replace("{{SITE}}",link_str))
                         else:
                             # Replace all new lines with br
                             datarow[i]=datarow[i].replace('\n','<br>')    
@@ -176,7 +185,7 @@ def definitions_table_data(table, path, filename, in_sections):
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
-        index['height']=len(index['sections'])*45
+        index['index_style']='height:'+str(len(index['sections'])*45)+'px'
         return index, page_sections
     
 def definition_create_section_link(sections, in_section):

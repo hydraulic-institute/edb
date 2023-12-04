@@ -1,3 +1,3 @@
 -----
-title: Introduction, Definitions & References
+title: Introduction, Definitions, References & Resources
 -----

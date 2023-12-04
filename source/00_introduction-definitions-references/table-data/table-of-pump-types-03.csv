@@ -1,0 +1,75 @@
+﻿Pump Types - Rotodynamic Overhung,Acronym,Pump Description,Category,Reference:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}}
+,OH0,Overhung impeller - flexibly  coupled - horizontal - frame mounted - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH0c,Overhung impeller - flexibly  coupled - horizontal - axial flow - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH0d,Overhung - flexibly coupled - horizontal - frame mounted - pitot tube pump,Rotodynamic,ANSI/HI 14.1-14.2
+,OH1,Overhung impeller - flexibly  coupled - horizontal - foot mounted - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH1h,Overhung impeller - flexibly  coupled - horizontal - foot mounted - self-priming - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH1i,Overhung impeller - flexibly  coupled - horizontal - foot mounted - sealless - single stage,Rotodynamic,ANSI/HI 5.1-5.6
+,OH1j,Overhung impeller - flexibly  coupled - horizontal - foot mounted -multi-stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH2,Overhung impeller - flexibly  coupled - horizontal - centerline mounted - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH3,Overhung impeller - flexibly  coupled - vertical - in-line - integral bearing frame - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH3g,Overhung impeller - flexibly  coupled - vertical - end suction - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH4,Overhung impeller - rigidly coupled - vertical - in-line - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH5,Overhung impeller -close-coupled - vertical - in-line - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH5g,Overhung impeller -close-coupled - vertical - end suction - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH5i,Overhung impeller -close-coupled - vertical - in-line - sealless - single stage,Rotodynamic,ANSI/HI 5.1-5.6
+,OH6,Overhung impeller - close-coupled - vertical - in-line - high-speed integral gear - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH7,Overhung impeller - close-coupled - horizontal - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH7j,Overhung impeller - close-coupled - horizontal - multi-stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH7i,Overhung impeller - close-coupled - horizontal - sealless - single stage,Rotodynamic,ANSI/HI 5.1-5.6
+,OH8,Overhung impeller - close-coupled - submersible - diffuser - end suction - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH8b,Overhung impeller - close-coupled - submersible - volute - end suction - single stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH13j,Overhung impeller - rigidly coupled - horizontal - foot mounted - multi-stage,Rotodynamic,ANSI/HI 14.1-14.2
+,OH13i,Overhung impeller - rigidly coupled - horizontal - foot mounted - sealless - single stage,Rotodynamic,ANSI/HI 5.1-5.6
+,CP1,Circulator pump - close-coupled - sealless - horizontal - in-line,Rotodynamic,ANSI/HI 14.1-14.2
+,CP2,Circulator pump - close-coupled - horizontal - in-line,Rotodynamic,ANSI/HI 14.1-14.2
+,CP3,Circulator pump - flexibly coupled - horizontal - in-line,Rotodynamic,ANSI/HI 14.1-14.2
+,RT1,Regenerative turbine - overhung - side channel,Rotodynamic,ANSI/HI 14.1-14.2
+,RT2,Regenerative turbine - overhung - peripheral,Rotodynamic,ANSI/HI 14.1-14.2
+Pump Types - Rotodynamic Between Bearing,Acronym,Pump Description,Reference:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}},
+,BB1,Between bearing impeller - 1 or 2 stage - axially split,Rotodynamic,ANSI/HI 14.1-14.2
+,BB2,Between bearing impeller - 1 or 2 stage - radially split,Rotodynamic,ANSI/HI 14.1-14.2
+,BB3,Between bearing impeller - multi-stage - axially split,Rotodynamic,ANSI/HI 14.1-14.2
+,BB4,Between bearing impeller - multi-stage - radially split - single casing,Rotodynamic,ANSI/HI 14.1-14.2
+,BB5,Between bearing impeller - multi-stage - radially split -double casing,Rotodynamic,ANSI/HI 14.1-14.2
+,RT3,Regenerative turbine - between bearings - side channel,Rotodynamic,ANSI/HI 14.1-14.2
+,RT4,Regenerative turbine - between bearings - peripheral,Rotodynamic,ANSI/HI 14.1-14.2
+Pump Types - Rotodynamic Vertically Suspended,Acronym,Pump Description,Reference:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}},
+,VS0,Vertically suspended - single casing - discharge through column - submersible,Rotodynamic,ANSI/HI 14.1-14.2
+,VS1,Vertically suspended - single casing - discharge through column - diffuser,Rotodynamic,ANSI/HI 14.1-14.2
+,VS2,Vertically suspended - single casing - discharge through column - volute,Rotodynamic,ANSI/HI 14.1-14.2
+,VS3,Vertically suspended - single casing - discharge through column - axial flow,Rotodynamic,ANSI/HI 14.1-14.2
+,VS4,Vertically suspended - single casing - separate discharge - line shaft,Rotodynamic,ANSI/HI 14.1-14.2
+,VS5,Vertically suspended - single casing - separate discharge - cantilever,Rotodynamic,ANSI/HI 14.1-14.2
+,VS6,Vertically suspended - double casing - diffuser,Rotodynamic,ANSI/HI 14.1-14.2
+,VS7,Vertically suspended - double casing - volute,Rotodynamic,ANSI/HI 14.1-14.2
+,VS7j,Vertically suspended - double casing - volute - multi-stage,Rotodynamic,ANSI/HI 14.1-14.2
+,VS8,Vertically suspended - in-line casing - diffuser,Rotodynamic,ANSI/HI 14.1-14.2
+Pump Types  - Rotary Positive Displacement,Acronym,Pump Description,Category,Reference:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}}
+,,Sliding vane,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Vane type - sealless,Rotary Positive Displacement,ANSI/HI 4.1-4.6
+,,axial piston,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Flexible vane,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Flexible tube (peristaltic),Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Single-lobe,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Three-lobe,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,External gear,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Internal gear with crescent,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Internal gear without crescent,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Gear type - sealless,Rotary Positive Displacement,ANSI/HI 4.1-4.6
+,,Circumferential piston,Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Single-screw (progressing cavity),Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Two-screw (timed),Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Three-screw (untimed),Rotary Positive Displacement,ANSI/HI 3.1-3.5
+,,Screw type - Sealless,Rotary Positive Displacement,ANSI/HI 4.1-4.6
+Pump Types - Reciprocating Positive Displacement,Acronym,Pump Description,Category,Reference:: https://www.pumps.org/what-we-do/standards/?pumps-search-product={{REF}}
+,,Piston - single or double acting - simplex or multiplex,Reciprocating Positive Displacement,HI 6.1-6.5
+,,Plunger- single or double acting - simplex or multiplex,Reciprocating Positive Displacement,HI 6.1-6.5
+,CVMP,Controlled volume metering - diaphragm,Reciprocating Positive Displacement,ANSI/HI 7.1-7.5
+,CVMP,Controlled volume metering - piston,Reciprocating Positive Displacement,ANSI/HI 7.1-7.5
+,,Direct acting - piston - single or double acting - simplex or duplex,Reciprocating Positive Displacement,HI 8.1-8.5
+,,Direct acting - plunger - single or double acting - simplex or duplex,Reciprocating Positive Displacement,HI 8.1-8.5
+,AOD,Air-operated - Diaphragm - simplex or duplex,Reciprocating Positive Displacement,ANSI/HI 10.1-10.5
+,AOD,Air-operated - Bellows - simplex or duplex,Reciprocating Positive Displacement,ANSI/HI 10.1-10.6
+,,Air-operated - piston,Reciprocating Positive Displacement,
+,,Air-operated - plunger,Reciprocating Positive Displacement,
