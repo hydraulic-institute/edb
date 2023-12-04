@@ -185,8 +185,6 @@ caption {
     padding-right: @std_pad;
 }
 
-
-
 #main-nav {
     background-color: @hi_dark  !important;
     box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
@@ -201,9 +199,6 @@ caption {
         color: @er_super_light  !important;
     }
 }
-
-
-
 
 .topic-source {
     text-align: right;
@@ -277,6 +272,11 @@ caption {
     overflow: unset;
 }
 /* Table column types */
+/* Keep content from wrapping */
+table td{
+    white-space: nowrap;
+}
+
 td.numeric {
     font-family: monospace;
     text-align: right !important;
