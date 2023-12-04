@@ -1,10 +1,12 @@
 # Process for Updated Unit Conversion Data
 
+*Note: All python commands are run from the edb root directory*
+
 ## Background
 1. Spreadsheets with Unit Conversion data are in `kb/unit-converter` folder.
 2. When any of these files change, the `generate/static/unit-conversions.json` file needs to be rebuilt.
 	- Run the build file in the `kb/unit-converter` folder
-		- `python build.py`
+		- `python kb/unit-converter/build.py`
 		- This will parse all of the `xlsx` files and build the `unit-conversions.json` file.  
 			- This file is used by the *Unit Conversion Tool*
 

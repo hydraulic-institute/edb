@@ -2,10 +2,7 @@ import os
 from openpyxl import load_workbook
 import json
 
-root_dir = '../..'
-dir_path = '.'
-# DEBUG
-# dir_path = f'{dir_path}/kb/unit-converter'
+dir_path = 'kb/unit-converter'
 unit_files = [f for f in os.listdir(dir_path) if f.endswith(".xlsx")]
 units = []
 for unit_file in unit_files:
@@ -36,6 +33,6 @@ for unit_file in unit_files:
         factor = sheet.cell(row=row, column=2).value
     units.append(unit)
 
-with open(f'{root_dir}/generate/static/unit-conversions.json', 'w') as fp:
+with open('generate/static/unit-conversions.json', 'w') as fp:
     output=json.dumps(units, indent=4)
     fp.write(output)

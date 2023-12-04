@@ -9,9 +9,8 @@ pp = pprint.PrettyPrinter(indent=4)
 
 Piping = namedtuple(
     'Piping', 'material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description')
-# DEBUG
-# df = pd.read_csv( 'kb/friction-loss/Section IV - Pipe-Tube Data.csv',dtype='str',header=3)
-df = pd.read_csv('Section IV - Pipe-Tube Data.csv', dtype='str',header=3)
+
+df = pd.read_csv( 'kb/friction-loss/Section IV - Pipe-Tube Data.csv',dtype='str',header=3)
 
 Category = namedtuple(
     'Category', 'div grp_name sub_div sub_div_name')
@@ -211,8 +210,6 @@ for pipe in pipes:
         entry['selector'] = pipe.selector
     m[pipe.material]['nominal_sizes'][pipe.nominal_size].append(entry)
 
-# DEBUG
-# with open('generate/static/friction-loss-materials-full.json', 'w') as fp:
-with open('../../generate/static/friction-loss-materials-full.json', 'w') as fp:
+with open('generate/static/friction-loss-materials-full.json', 'w') as fp:
     output=json.dumps(m, indent=4)
     fp.write(output)

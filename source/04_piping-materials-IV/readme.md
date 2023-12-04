@@ -1,6 +1,8 @@
 # Process for Updated PIPE MATERIALS Data
 *"Section IV - Pipe Materials.xlsx"*
 
+*Note: All python commands are run from the edb root directory*
+
 ## Prep the Data
 1. Download the new Pipe Materials spreadsheet to your Downloads folder.
 2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
@@ -12,15 +14,15 @@
     -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
 
 ## Build the tables and json file for the Friction Calculator
-1.  Run the build file in the `edl/kb/friction-loss` folder:
-	-  `python build-full.py`
-	-  This will generate the data tables in `edl/source/04_piping-materials-IV/table-data`
+1.  Run the friction-loss build file:
+	-  `python kb/friction-loss/build-full.py`
+	-  This will generate the data tables in `source/04_piping-materials-IV/table-data`
 		- The file names are auto-created based on the **Group Name** and then the **Sub-Division Name**:  <br/>
         `<Group Name Initials>_<First 4 letters of each of the words in the Sub-Division Name followed by '-'>.csv`
 		- Ex:  **Group:** Steel Pipe <br/>
 			**Sub-Division Name:** Welded and Seamless Wrought Steel Pipe <br/>
 			Filename generated:  `sp_weld-and-seam-wrou-stee-pipe.csv` <br/>
-	-  These tables are referenced in the *.md files in `edl/source/04_piping-materials-IV`
+	-  These tables are referenced in the *.md files in `source/04_piping-materials-IV`
     -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
         - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
 
