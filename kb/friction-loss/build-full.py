@@ -10,11 +10,7 @@ pp = pprint.PrettyPrinter(indent=4)
 Piping = namedtuple(
     'Piping', 'material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description')
 
-# kdf = pd.read_excel(
-#     'kb/friction-loss/Section IV - Piping Materials.xlsx', sheet_name="Pipe-Tube Data", dtype='str', header=3)
-#
-df = pd.read_csv(
-    'kb/friction-loss/Section IV - Pipe-Tube Data.csv',dtype='str',header=3)
+df = pd.read_csv( 'kb/friction-loss/Section IV - Pipe-Tube Data.csv',dtype='str',header=3)
 
 Category = namedtuple(
     'Category', 'div grp_name sub_div sub_div_name')
@@ -157,9 +153,6 @@ for grp in groups:
                 if data[sel_col].any():
                     index = columns.get_loc(sel_col)+1
                     if str(row[index]) != 'nan' and len(row[index]):
-                        #if "Wall Thickness" in columns[sel-1]:
-                        #    selector+=sep+str(wall_thickness)
-                        #else:
                         selector+=sep+str(row[index])
                         head, sp, tail = columns[index-1].partition('\n')
                         selector_desc+=sep+head.split(',')[0]
