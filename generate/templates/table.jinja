@@ -5,7 +5,7 @@
             {% for heading in table.headings %} 
                 <tr>
                     {%for header in heading.data %}
-                        <th class="fixed-header {{header.type}}" scope="col"> {{header.data}}</th>
+                        <th class="fixed-header {{header.type}}" scope="col" colspan={{header.colspan}}> {{header.data}}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}

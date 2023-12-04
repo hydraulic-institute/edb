@@ -213,29 +213,15 @@ hide_units: true
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item mt-2">
-        <h2 class="accordion-header" id="headingOne-3" style="margin-bottom:0">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne-3" aria-expanded="false">
-                JM and JP Face Mounting Close-Coupled Pump Motors
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne-3" class="accordion-collapse collapse" aria-labelledby="headingOne-3">
-            <div class="accordion-body">
-                <div class="accordion" id="accordionPanelsStayOpenExample-3" style="--bs-accordion-btn-bg:#AAEFD3">
                     <div class="accordion-item mt-2">
-                        <h2 class="accordion-header" id="headingSix-3" style="margin-bottom:0">
+                        <h2 class="accordion-header" id="headingFour-3" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseSix-3" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseSix-3">
+                            data-bs-target="#panelsStayOpen-collapseFour-3" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour-3">
                             Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
                         </button>
                         </h2>
-                        <div id="panelsStayOpen-collapseSix-3" class="accordion-collapse collapse" aria-labelledby="headingSix-3">
+                        <div id="panelsStayOpen-collapseFour-3" class="accordion-collapse collapse" aria-labelledby="headingFour-3">
                             <div class="accordion-body">
                                 <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-1.png "></div></div>
                                 <div class="row mt-2"><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-2.png "></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-3.png "></div></div>
