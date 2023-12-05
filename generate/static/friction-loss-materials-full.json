@@ -3835,7 +3835,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Identification / Schedule / Wall Thickness"
     },
     "Stainless Steel Pipe": {
         "nominal_sizes": {
@@ -4541,7 +4541,7 @@
                 }
             ]
         },
-        "selector": "Pipe schedule / Wall thickness"
+        "selector": "Pipe schedule / Wall Thickness"
     },
     "DUCTILE IRON PIPE DIMENSIONS": {
         "nominal_sizes": {
@@ -4981,7 +4981,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness / Pressure class"
+        "selector": "Wall Thickness / Pressure class"
     },
     "ALUMINUM-ALLOY EXTRUDED PIPE": {
         "nominal_sizes": {
@@ -5673,7 +5673,7 @@
                 }
             ]
         },
-        "selector": "Pipe schedule / Wall thickness"
+        "selector": "Pipe schedule / Wall Thickness"
     },
     "SEAMLESS REGULAR COPPER PIPE": {
         "nominal_sizes": {
@@ -5840,7 +5840,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "SEAMLESS EXTRA STRONG COPPER PIPE": {
         "nominal_sizes": {
@@ -5998,7 +5998,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "SEAMLESS REGULAR RED BRASS PIPE": {
         "nominal_sizes": {
@@ -6165,7 +6165,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "SEAMLESS EXTRA STRONG RED BRASS PIPE": {
         "nominal_sizes": {
@@ -6323,7 +6323,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "THREADLESS COPPER PIPE SEAMLESS, DEOXIDIZED FOR BRAZED JOINT ASSEMBLY": {
         "nominal_sizes": {
@@ -6481,7 +6481,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "SEAMLESS COPPER WATER TUBE PLUMBING AND FLUID CONVEYANCE TUBING": {
         "nominal_sizes": {
@@ -7250,7 +7250,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "COPPER CAPILLARY TUBE, HARD-DRAWN": {
         "nominal_sizes": {
@@ -7453,7 +7453,7 @@
                 }
             ]
         },
-        "selector": "Wall thickness"
+        "selector": "Wall Thickness"
     },
     "SEAMLESS COPPER - NICKEL PIPE AND TUBE": {
         "nominal_sizes": {
@@ -8076,6 +8076,6 @@
                 }
             ]
         },
-        "selector": "Wall thickness / Pressure class"
+        "selector": "Wall Thickness / Pressure class"
     }
 }

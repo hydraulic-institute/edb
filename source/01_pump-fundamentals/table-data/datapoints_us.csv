@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric
-heading,Flow Rate (gpm),Velocity (ft/sec) / Head (ft),System Head (feet)
+heading,Flow Rate (gpm),Velocity (ft/sec),System Head (feet)
 data,0,0,265
 data,20,0.504,265
 data,40,1.008,266

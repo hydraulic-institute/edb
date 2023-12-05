@@ -283,10 +283,6 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 ![](./images/iB-9-Pump-curves-in-series-with-System-Curve.png "")
 <div class="figure-label">Fig. 1.B.9</div>
 
-### Educational Demonstration (Pumps in Series)
-
-Content will be added soon.
-
 =^=
 title: Factory Performance Testing: Hydraulic, Mechanical, and Hydrostatic: 1-Part On-Demand Webinar
 -description: This webinar will provide a summary of all HI laboratory test standards for rotodynamic pumps. The presenter will cover test procedures, setups, and arrangements along with data acquisition, acceptance grades, and instrumentation. Learn the basics of factory performance testing in this 1-part on-demand webinar
@@ -323,9 +319,7 @@ series_title_index: 0
 During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
-$$ n_2= n_1 (1-.10) $$
-$$ n_2= 1740(1-.10) $$
-$$ n_2= 1566\,RPM $$
+$$ n_2= n_1 · (1-0.10)= 1740 · (1-0.10)= 1566\,RPM $$
 =+=
 
 **Calculate New Flow Values**
@@ -335,20 +329,17 @@ Using Equation [Eq. 1.B.6a](#eq1b6a), calculate the new values (repeat until you
 <div class="calculation-label">Calc. 1.B.6a(1)</div>
 =+= 
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2 \over 0} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,\,\,Q_2 = 0\,GPM $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2} = (Q_1=0) · ({1566 \over 1740})= 0\,GPM $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6a(2)</div>
 =+= 
-$$ {Q_2 \over 200} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,Q_2 = 180\,GPM $$
+$$ {Q_2} = (Q_1=200) · ({1566 \over 1740})= 180\,GPM $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6a(3)</div>
 =+= 
-$$ {Q_2 \over 400} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
+$$ {Q_2} = (Q_1=400) · ({1566 \over 1740})= 360\,GPM $$
 =+=
 
 
@@ -359,27 +350,24 @@ Using Equation [Eq. 1.B.6b](#eq1b6b), calculate the new values (repeat until you
 <div class="calculation-label">Calc. 1.B.6b(1)</div>
 =+=
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,{H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 173\,ft. $$
+$$ \,\,\,\,\,\,\,\,\,\,{H_2} = (H_1=213)·({1566 \over 1740})^2= 173\,ft $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6b(2)</div>
 =+=
-$$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 167\,ft. $$
+$$ {H_2} = (H_1=206)·({1566 \over 1740})^2= 167\,ft  $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6b(3)</div>
 =+=
-$$ {H_2 \over 198} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 160\,ft. $$
+$$ {H_2} = (H_1=198)·({1566 \over 1740})^2= 160\,ft  $$
 =+=
 
 
-**Plot Pump Curve for low flow conditions**
+**Plot Pump Curve for low flow (reduced speed) conditions**
 
 =|=
-title: Data (Low Flow Conditions)
+title: Data Low Flow (reduced speed) Conditions
 data: total-head-feet-2.csv
 =|=
 
@@ -392,7 +380,7 @@ series_title_index: 0
 =/=
 <div class="figure-label">Fig. 1.B.11</div>
 
-**Comparison of normal flow and low flow conditions:**
+**Comparison of normal flow (base speed) and low flow (reduced speed) conditions:**
 
 ![](./images/iB-12-Pump-curves-base-speed-and-reduced-speed.png "")
 <div class="figure-label">Fig. 1.B.12</div>
