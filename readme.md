@@ -305,7 +305,7 @@ All pages can contain blocks for tabular data.  Tabular data is entered into the
 
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
-Instead, tables are supported via a *custom extenstion* to markdown sysntax. To include a table, you must define a `=|=` line, followed by 
+Instead, tables are supported via a *custom extenstion* to markdown syntax. To include a table, you must define a `=|=` line, followed by 
 meta data describing the table, and finally end the block with an other line containing only `=|=`.
 
 For example:
@@ -327,7 +327,24 @@ Setting to "false" will generate a static table vs. a scrolling table, otherwise
 - **special: style: value;** -
 Special allows you to set special styles for your table just as you would in html.  Use the same format:  
 Ex:  special: height:600px;width:100%;
+- **column_tags: tag** -
+This allows you to select specific columns you've "tagged" in a csv file to display in a data table.  See **Row Meta Data** below
 
+#### Using TAGS for tables
+
+1. Here is an example of using *tags* to select specific columns to display from a csv file.  This way, a csv file can be used for multiple tables as shown in section 04 - Piping Materials.
+
+	```
+	=|=
+	title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
+	data-us: flange-16.5-150-300-us.csv
+	data-metric: flange-16.5-150-300-metric.csv
+	column_tags: Th
+	=|=
+	```
+	In this example, the columns that will be included will be the ones tagged with 'Th' on the *tags* row in the CSV files.
+	The CSV file(s) can be used for multiple flanges.
+  
 **Remember, CSV files are not Excel files - which end in a .xlsx extension**.  While it is convenient to edit CSV files in Excel, you must always remember to save as CSV (which have a .csv extension).  When opening a CSV in VSCode or whatever Markdown editor you are using, you will clearly see that CSV means "comman separated values".  CSV files are just straight text files, with rows on each line, columns separated by commas.
 
 The CSV files do contain additional meta data to provide the platform information about how to format the table (or chart, see below).  This metadata appears in the first row and first column.
@@ -335,14 +352,18 @@ The CSV files do contain additional meta data to provide the platform informatio
 **Always leave the first column of the first row empty.**
 
 #### Column Meta Data - First row
-The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following:
-- **text** - the column data will be formatted as standard text
-- **numeric** - the column data will be formatted as a number.  *Note, the application does not handle specifying decimal places - whatever is written in the CSV file is displayed to the user.*
+The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following (these are strictly for formatting, not for processing.):
+- **text** - the column data will be formatted as standard text.  Left justified.
+- **numeric** - the column data will be formatted as a number (Right justified).  *Note, the application does not handle specifying decimal places - whatever is written in the CSV file is displayed to the user.*
 
 #### Row Meta Data - First column of every (other) row
 The first column of every row in the CSV file should always contain the following:
 
 - **heading** - The row contains headings.  Multiple heading rows are permitted, and will appear in the order they are specified.
+	- More than one row can contain the **heading** meta data.  The font size of the 2nd and following heading rows will be reduced by 1/4 to `.75rem`. 
+	- To have a header span multiple columns, just leave any number of following columns blank that you want the header to span.  This can be seen in Section 3 - Losses in Nozzles.
+		- One thing to note is to make sure the CSV file does NOT have extra empty columns at the end.
+- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in ever table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
 - **data** - The row is interpreted as standard data - not a heading.  
 
 #### Example
@@ -352,31 +373,50 @@ Consider the following CSV file, created in Excel.
 When properly saved, it would appear as a plain text file in a coding editor:
 
 ```
-,text,Number-0,Number-3,Number-0
-heading,Example,"Flow Rate
-gpm","Velocity
-ft/sec","Head Loss
-feet"
-data,ABC,0,0,265
-data,DEF,20,0.504,265
-data,GHI,40,1.008,266
-data,JKL,60,1.512,268
-data,MNO,80,2.016,270
-data,PQR,100,2.52,273
-data,STU,120,3.024,276
-data,VWX,140,3.528,280
-data,YZZ,160,4.032,285
-data,,180,4.536,290
-data,,200,5.04,296
-data,,220,5.545,303
-data,,240,6.049,310
-data,,260,6.553,317
-data,,280,7.057,326
-data,,300,7.561,335
+,text,numeric,numeric,numeric,numeric
+heading,TYPE,Flange Class,Min Thickness Flange (tf),Min Thickness Lap Joint (tf),Bore- Min Lapped (B2)
+tags,None,All,"Th, SO, SW, WN",La,La
+data,ASME 16.5,150,0.38,0.44,0.9
+data,ASME 16.5,150,0.44,0.5,1.11
+data,ASME 16.5,150,0.5,0.56,1.38
+data,ASME 16.5,150,0.56,0.62,1.72
+data,ASME 16.5,150,0.62,0.69,1.97
+data,ASME 16.5,150,0.69,0.75,2.46
+data,ASME 16.5,150,0.81,0.88,2.97
+data,ASME 16.5,150,0.88,0.94,3.6
+data,ASME 16.5,150,0.88,0.94,4.1
+data,ASME 16.5,150,0.88,0.94,4.6
+data,ASME 16.5,150,0.88,0.94,5.69
+data,ASME 16.5,150,0.94,1,6.75
+data,ASME 16.5,150,1.06,1.12,8.75
+data,ASME 16.5,150,1.12,1.19,10.92
+data,ASME 16.5,150,1.19,1.25,12.92
+data,ASME 16.5,150,1.31,1.38,14.18
+data,ASME 16.5,150,1.38,1.44,16.19
+data,ASME 16.5,150,1.5,1.56,18.2
+data,ASME 16.5,150,1.62,1.69,20.25
+data,ASME 16.5,150,1.75,1.81,22.25
+data,ASME 16.5,150,1.81,1.88,24.25
 ```
 Notice the leading comma - this is because the first column on the first row is blank.  In this case, the first row defines the first column as text data, and the other three as numeric data - which is displayed differently in the HTML.
 
 Each subsequent row is either a heading or data.
+  
+### Definitions Tables
+
+Like tables, Definition tables are supported via a *custom extenstion* to markdown syntax. To include a definiton table, you must define a `=defs=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=defs=`.
+Definition Tables are generated and have their own template.  They will fill 100% of the screen and will word-wrap automatically.
+
+### Superscripting, Subscripting and special characters
+
+1. The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
+2. To use the special characters in the unit-converter or other tables/areas
+		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
+		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
+
+#### Helpful links:
+- https://www.freeformatter.com/html-entities.html
+- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
 
 ### Charts
 Charts - currently only simply line/curve charts - are supported using the same type of CSV files you create tables with.  In many cases, the same CSV file you build a table out of may also be used for curves - and can be referenced that way.
@@ -456,6 +496,74 @@ hide_price: true
 
 ### Interactive Demonstrators
 Some pages within the EDB will be interactive applications - allowing users to get a better understanding of a particular topic.  These interactive application pages will be created by software developers using JavaScript.
+
+---
+
+## Process for Updated UNIT CONVERSION Data
+
+*Note: All python commands are run from the edb root directory*
+
+### Background
+1. Spreadsheets with Unit Conversion data are in `kb/unit-converter` folder.
+2. When any of these files change, the `generate/static/unit-conversions.json` file needs to be rebuilt.
+	- Run the build file in the `kb/unit-converter` folder
+		- `python kb/unit-converter/build.py`
+		- This will parse all of the `xlsx` files and build the `unit-conversions.json` file.  
+			- This file is used by the *Unit Conversion Tool*
+
+---
+
+## Process for Updated PIPE MATERIALS Data
+*"Section IV - Pipe Materials.xlsx"*
+
+*Note: All python commands are run from the edb root directory*
+
+### Prep the Data
+1. Download the new Pipe Materials spreadsheet to your Downloads folder.
+2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
+3. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF8-encoded) as: *"Section IV - Pipe-Tube Data.csv"*
+4. Replace the existing files in the `edl/kb/friction-loss` folder with these 2 files.
+5. Open the `edl/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
+	-  Add a new row under the header row (which is/should be at row 4)
+	-  On that new row, put the word *"include"* in every column that you want displayed on the tables in **Section IV** on the EDL website.
+    -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
+
+### Build the tables and json file for the Friction Calculator
+1.  Run the friction-loss build file:
+	-  `python kb/friction-loss/build-full.py`
+	-  This will generate the data tables in `source/04_piping-materials-IV/table-data`
+		- The file names are auto-created based on the **Group Name** and then the **Sub-Division Name**:  <br/>
+        `<Group Name Initials>_<First 4 letters of each of the words in the Sub-Division Name followed by '-'>.csv`
+		- Ex:  **Group:** Steel Pipe <br/>
+			**Sub-Division Name:** Welded and Seamless Wrought Steel Pipe <br/>
+			Filename generated:  `sp_weld-and-seam-wrou-stee-pipe.csv` <br/>
+	-  These tables are referenced in the *.md files in `source/04_piping-materials-IV`
+    -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
+        - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
+
+---
+
+## Process for Updated FLANGE Data 
+*"Section IV - Flange Data.xlsx"* 
+
+### Prep the Data	
+1. Download the new Flange Data spreadsheet to your Downloads folder.
+2. Rename the new file to *"Section IV - Flange Data.xlsx"*.
+3. Replace the existing file in the `source/04_piping-materials-IV/table-data` folder.
+4. For each tab in the spreadsheet:
+	-  There exists a CSV file for each tab in the spreadsheet in this same folder.
+	-  Copy JUST the data (US or Metric) and replace the data in the existing CSV file.
+	-  There is a row under the *header* row called *tags*.  This row is for tagging the columns you want to who on the table.
+		- If you leave a column blank or tag it 'All', it WILL be included.
+		- If you tag the column 'None', it will NOT be included
+		- For the files with multiple types of flanges, the appropriate *"Section IV - Flange Data.xlsx"* tab/sheet will have a row of *tags* that can be copy/pasted into the appropriate CSV file in the *tags* row.
+	-  Save the file.
+
+### Build the tables
+1.  The tables will automatically be built in the `output.py` file in the `table_data()` function when you build the system:
+	- `python serve.py`
+
+---
 
 ## Auto-Generated Content
 There are several features of the EDB web site that are created automatically.  These features will continue to be developed - however these enhancements will not require any content changes.

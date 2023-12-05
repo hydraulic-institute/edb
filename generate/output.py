@@ -43,8 +43,8 @@ TABLE_DATA_DIR = 'table-data'
 SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
-TableRow = namedtuple('TableRow', 'type data')
-TableColumn = namedtuple('TableColumn', 'type data colspan')
+TableRow = namedtuple('TableRow', 'type data style')
+TableColumn = namedtuple('TableColumn', 'type data colspan style')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
 DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
@@ -54,6 +54,8 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
+DefaultStyle=''
+DefaultColspan=1
 
 class RenderOptions:
     def __init__(self):
@@ -251,10 +253,10 @@ def table_data(units, table, path, filename):
         row_columns=[]
         for i, d in enumerate(row[2:]):
             if row[1] == 'heading':
-                row_columns.append(TableColumn('center', d, 1))
+                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
             else:
-                row_columns.append(TableColumn(types[i], d, 1))
-        r = TableRow(row[1], row_columns)
+                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
+        r = TableRow(row[1], row_columns, DefaultStyle)
         if (row[1] == 'heading'):
             headings.append(r)
         else:
@@ -270,9 +272,10 @@ def table_data(units, table, path, filename):
                 remove_col.append(header_len-idx-1)
             elif colcount > 1:
                 headings[hidx][1][header_len-idx-1]=headings[hidx][1][header_len-idx-1]._replace(colspan=colcount)
-                #currtype = headings[hidx][1][header_len-idx-1].type
-                #headings[hidx][1][header_len-idx-1]=headings[hidx][1][header_len-idx-1]._replace(type=f'{currtype} spanned')
                 colcount=1
+        if hidx > 0:
+            # Reduce the font for the row
+            headings[hidx]=headings[hidx]._replace(style="font-size:.75rem;")
         # Now remove the columns that are useless
         for index in sorted(remove_col, reverse=True):
             del headings[hidx][1][index]
@@ -361,9 +364,9 @@ def chart_data(units, chart, path, filename):
         headings = []
         # print ('Processing chart: '+filename)
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d, 1)
+            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle)
                            for i, d in enumerate(row[1:])]
-            r = TableRow(row[0], row_columns)
+            r = TableRow(row[0], row_columns, DefaultStyle)
             if (r.type == 'heading'):
                 headings.append(r)
             else:

@@ -188,7 +188,7 @@
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size (${units_length_long})</label>
+                    <label class='label'>Select Nominal Size (in)</label>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
                         <option :value='m' v-for='m in sizes'>${m}</option>
