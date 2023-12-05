@@ -2,6 +2,7 @@
 title:  D) Losses in Nozzles
 date: December 3rd, 2023
 description: Calculation of frictional losses of nozzles. 
+hide_units: true
 -----
 
 ## Losses in Nozzles
@@ -51,8 +52,7 @@ on account of the friction loss in the hose faucets.
 
 =|=
 title: 
-data-us: Nozzle Diameter - English Units.csv
-data-metric: Nozzle Diameter - Metric Units.csv
+data: Nozzle Diameter - English Units.csv
 =|=
 
 
