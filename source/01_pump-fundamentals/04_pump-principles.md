@@ -184,7 +184,7 @@ the surrounding parts of the pump through cavitation erosion. In addition to dir
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
 showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation.
 
-![](./images/bubble-formation.png "")
+![](./images/npsh-pic.png "")
 <div class="figure-label">Fig. 1.D.6</div>
 
 The **net positive suction head available (NPSHA)**, which is the NPSH available at the pump site, is defined as:

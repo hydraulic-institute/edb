@@ -1,6 +1,6 @@
 -----
 title:  A) General
-date: December 3rd, 2023
+date: May 12th, 2020
 description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance.
 -----
 
@@ -21,19 +21,19 @@ where:
 - L = Length of pipe in <units us = "feet" metric = "meters"/>
 - D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
 - v = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
-- g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
+- g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.2 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - *f* = Friction factor
 
 The Colebrook Equation (portrayed below) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation (3.1).
 
 =+=
 <span class= equation-label >(Eq. 3.A.2)</span>
-$$ {1 \over \sqrt f} = -2 × \log_{10}({\epsilon \over (3.7·D)} + [{2.51 \over Re · \sqrt f}]) $$
+$$ {1 \over \sqrt f} = -2 × \log_{10}({\epsilon \over {3.7·D}} + {2.51 \over Re · \sqrt f}) $$
 =+=
 
 where:
 
-- ε = absolute roughness, feet <units us = "inches" metric = "mm"/>
+- ε = absolute roughness, <units us = "ft" metric = "mm"/>
 - Re = Reynolds number for fluid flow
 
 Another common form, which can be solved without iteration, is shown below.
@@ -58,7 +58,7 @@ where, for cylindrical pipes:
 - ρ is fluid density in <units us = "lbm/ft^3 " metric = "kg/m^3"/>
 - v is fluid velocity in <units us = "ft/s" metric = "m/s"/>
 - D is pipe inner diameter in <units us = "feet" metric = "meters"/>
-- μ is dynamic viscosity in <units us = "lbf*s/ft^2" metric = "kg/(m*s)"/>
+- μ is dynamic viscosity in <units us = "lbf·s/ft^2" metric = "kg/(m·s)"/>
 - 𝜈 is kinematic viscosity in <units us = "ft^2^/s" metric = "m^2^/s"/>
 - Q is volumetric flow rate in <units us = "ft^3^/s" metric = "m^3^/s"/>
 - A is pipe cross-sectional area in <units us = "ft^2 " metric = "m^2"/>
@@ -171,7 +171,7 @@ Fig. 5 or may be computed by the equation:
 
 =+=
 <span class= equation-label >(Eq. 3.A.8)</span>
-$$K = 3.50·{(\tan(\theta /over 2)})^{1.22}$$
+$$K = 3.50·({\tan({\theta \over 2})})^{1.22}$$
 =+=
 
 where:

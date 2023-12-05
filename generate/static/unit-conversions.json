@@ -254,19 +254,19 @@
             },
             {
                 "label": "ft",
-                "factor": "=1/0.3048006"
+                "factor": 3.280833436679587
             },
             {
                 "label": "in",
-                "factor": "=1/0.0254"
+                "factor": 39.37007874015748
             },
             {
                 "label": "mi",
-                "factor": "=1/1609.344"
+                "factor": 0.0006213711922373339
             },
             {
                 "label": "yd",
-                "factor": "=1/0.9144"
+                "factor": 1.0936132983377078
             },
             {
                 "label": "km",
@@ -274,27 +274,27 @@
             },
             {
                 "label": "mil",
-                "factor": "=1/0.0000254"
+                "factor": 39370.07874015748
             },
             {
                 "label": "microinch",
-                "factor": "=1/0.0000000254"
-            },
-            {
-                "label": "mi (US survey)",
-                "factor": "=1/1609.347"
-            },
-            {
-                "label": "ft (US survey)",
-                "factor": "=1/0.3048006"
+                "factor": 39370078.740157485
             },
             {
                 "label": "micron",
-                "factor": "=1/0.000001"
+                "factor": 1000000
             },
             {
                 "label": "&#181m",
-                "factor": "=1/0.000001"
+                "factor": 1000000
+            },
+            {
+                "label": "mi (US survey)",
+                "factor": 0.0006213700339330175
+            },
+            {
+                "label": "ft (US survey)",
+                "factor": 3.280833436679587
             }
         ]
     },
@@ -339,6 +339,26 @@
                 "factor": 1.01325
             },
             {
+                "label": "psi",
+                "factor": 14.6959
+            },
+            {
+                "label": "ksi",
+                "factor": 0.0146959
+            },
+            {
+                "label": "Pa",
+                "factor": 101325
+            },
+            {
+                "label": "kPa",
+                "factor": 101.325
+            },
+            {
+                "label": "MPa",
+                "factor": 0.101325
+            },
+            {
                 "label": "ftH2O 39.2&degF (4&degC)",
                 "factor": 33.899524252420555
             },
@@ -347,8 +367,20 @@
                 "factor": 33.959632854853496
             },
             {
+                "label": "mH2O 39.2&degF (4&degC)",
+                "factor": 10.332595330843233
+            },
+            {
+                "label": "mH2O 68&degF (20&degC)",
+                "factor": 10.350916468928165
+            },
+            {
                 "label": "inHg 32&degF (0&degC)",
                 "factor": 29.9213319237652
+            },
+            {
+                "label": "mmHg 32&degF (0&degC)",
+                "factor": 760.0018308636361
             },
             {
                 "label": "kg/cm&sup2",
@@ -367,32 +399,8 @@
                 "factor": 101.325
             },
             {
-                "label": "kPa",
-                "factor": 101.325
-            },
-            {
-                "label": "ksi",
-                "factor": 0.0146959
-            },
-            {
-                "label": "mmHg 32&degF (0&degC)",
-                "factor": 760.0018308636361
-            },
-            {
-                "label": "MPa",
-                "factor": 0.101325
-            },
-            {
                 "label": "N/m&sup2",
                 "factor": 101325
-            },
-            {
-                "label": "Pa",
-                "factor": 101325
-            },
-            {
-                "label": "psi",
-                "factor": 14.6959
             }
         ]
     },
@@ -434,7 +442,7 @@
             },
             {
                 "label": "ft/min",
-                "factor": "=1/0.00508"
+                "factor": 196.85039370078738
             },
             {
                 "label": "m/min",
@@ -450,15 +458,15 @@
             },
             {
                 "label": "in/s",
-                "factor": "=1/0.0254"
+                "factor": 39.37007874015748
             },
             {
                 "label": "mph",
-                "factor": "=1/0.44704"
+                "factor": 2.2369362920544025
             },
             {
                 "label": "km/h",
-                "factor": "=1/0.2777778"
+                "factor": 3.599999712000023
             }
         ]
     },

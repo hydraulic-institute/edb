@@ -169,17 +169,17 @@ Using the combined frictional loss equation in [Eq. 1.A.2](#eq1a2), we can deter
 
 <div class="calculation-label">Calc. 1.A.2(a)</div >
 =+=
-$$ \Delta h_f = {({fL \over D} + ΣK) · {v^2 \over 2g}}$$
+$$ \Delta h_f = {({fL \over D} + ΣK) · ({v^2 \over 2·g})}$$
 =+=
 
 <div class="calculation-label">Calc. 1.A.2(b)</div >
 =+=
 [units = us]
-$$ \Delta h_f = {({0.02 × 1255ft \over 0.3355ft} + 3.79) · {v^2 \over 2 × 32.17 {ft/sec^2}}} $$
+$$ \Delta h_f = {({0.02 × 1255ft \over 0.3355ft} + 3.79) · ({v^2 \over 2 × 32.17 {ft/sec^2}})} $$
 =+=
 =+=
 [units = metric]
-$$ \Delta h_f = {({0.02 × 382.52m \over 0.10226m} + 3.79) · {v^2 \over 2 × 9.81 {m/sec^2}}} $$
+$$ \Delta h_f = {({0.02 × 382.52m \over 0.10226m} + 3.79) · ({v^2 \over 2 × 9.81 {m/sec^2}})} $$
 =+=
 
 <div class="calculation-label">Calc. 1.A.2(c)</div >
@@ -243,7 +243,7 @@ $$ \Delta h_{system} = 80.77{m} + {({4.59e^{-03})}·{Q^2}} $$
 This, then, gives the following system curve data. This is a system that is dominated by the static head (there is a lift of <units us = "265 feet compared to little loss in piping and components)." metric = "77.72 meters compared to little loss in piping and components)."/> 
 
 =/=
-title: System Curve 
+title: Velocity 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
@@ -253,7 +253,7 @@ series_title_index: 0
 <div class="figure-label">Fig. 1.A.4</div>
 
 =/=
-title: Velocity 
+title: System Curve 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1

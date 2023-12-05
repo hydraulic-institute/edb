@@ -75,7 +75,7 @@ hide_price: true
 H = <units us = "19771.296 Btu/lb-mole at 80.3 °F and 0.15 psia" metric="2551.014 kJ/kg at 26.9 °C and 0.010 bar"></units>
 
 **Entropy**
-S = <units us = "39.198 Btu/lb-mole*R at 80.3 °F and 0.15 psia" metric = "9.104 J/g*K at 26.9 °C and 0.010 bar"></units>
+S = <units us = "39.198 Btu/lb-mole·R at 80.3 °F and 0.15 psia" metric = "9.104 J/g·K at 26.9 °C and 0.010 bar"></units>
 
 
 =|=

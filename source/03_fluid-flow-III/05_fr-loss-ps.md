@@ -1,6 +1,6 @@
 -----
 title:  E) Losses With Paper Stock
-date: December 3rd, 2023
+date: June 28th, 2019
 description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
 -----
 
@@ -521,12 +521,12 @@ $$ v_{w} = 1.2192·C^{1.40}, $$
 
 =+=
 [units = us]
-$$ v_{w} = 4.00·(2.0^{1.40}) = 10.56 ft/s. $$
+$$ v_{w} = 4.00×(2.0^{1.40}) = 10.56 ft/s. $$
 =+=
 
 =+=
 [units = metric]
-$$ v_{w} = 1.2192·(2.0^{1.40}) = 3.22 m/s. $$
+$$ v_{w} = 1.2192×(2.0^{1.40}) = 3.22 m/s. $$
 =+=
 
 d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional loss is calculated as that of water flowing at

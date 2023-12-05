@@ -590,25 +590,25 @@ Vue.component('atmospheric-pressure-calculator', {
     data: function() {
         return {
             data_table: {
-                'Pb': {'metric': {'val':101325, 'units': 'Pa'}, 'us': {'val':29.92126, 'units': 'inHg'}, 'desc': 'Reference pressure'},
+                'Pb': {'metric': {'val':101325, 'units': 'Pa'}, 'us': {'val':29.9213, 'units': 'inHg'}, 'desc': 'Reference pressure'},
                 'Tb': {'metric': {'val':288.15, 'units': 'K'}, 'us': {'val':288.15, 'units': 'K'}, 'desc': 'Reference temperature'},
                 'Lb': {'metric': {'val':-0.0065, 'units': 'K/m'}, 'us': {'val':-0.00198, 'units': 'K/ft'}, 'desc': 'Temperature lapse rate'},
                 'hb': {'metric': {'val':0, 'units': 'm'}, 'us': {'val':0, 'units': 'ft'}, 'desc': 'Height of reference pressure'},
                 'R*': {'metric': {'val':8.3144598, 'units': 'J/(mol-K)'}, 'us': {'val':89494.6, 'units': 'lg-ft^2/(lb_mol-K-s^2)'}, 'desc': 'Universal gas constant'},
-                'g0': {'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.17405, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
+                'g0': {'metric': {'val':9.80665, 'units': 'm/s^2'}, 'us': {'val':32.1741, 'units': 'ft/s^2'}, 'desc': 'Acceleration due to gravity'},
                 'M': {'metric': {'val':0.0289644, 'units': 'kg/mol'}, 'us': {'val':28.9644, 'units': 'lg/lg_mol'}, 'desc': "Molar mass of earth's air"}
             },
             table_data: [],
             elevation_data: {
                 'us': {
-                    'mercury': {"desc": "Inches of mercury (inHg)*","sea_level":"29.92"},
-                    'pressure': {"desc": "Pounds per square inch (psi)*","sea_level":"14.70",},
-                    'height': {"desc": "feet of water*","sea_level":"33.90"}
+                    'mercury': {"desc": "Inches of mercury (inHg)*","sea_level":"29.9"},
+                    'pressure': {"desc": "Pounds per square inch (psi)*","sea_level":"14.7",},
+                    'height': {"desc": "Feet of water (ft)*","sea_level":"33.9"}
                 },
                 'metric': {
-                    'mercury': {"desc": "Millimeters of mercury (mmHg)*","sea_level":"761.8"},
+                    'mercury': {"desc": "Millimeters of mercury (mmHg)*","sea_level":"760.0"},
                     'pressure': {"desc": "Kilopascals (kPa)*","sea_level":"101.3"},
-                    'height': {"desc": "meters of water*","sea_level":"10.33"}
+                    'height': {"desc": "Meters of water (m)*","sea_level":"10.3"}
                 },
             },
             calc_data: [],
@@ -677,7 +677,7 @@ Vue.component('atmospheric-pressure-calculator', {
         },
 
         fixed_str: function(in_val) {
-            return (Math.round(parseFloat(in_val) * 100) / 100).toFixed(2);
+            return (Math.round(parseFloat(in_val) * 100) / 100).toFixed(1);
         },
 
         getConstantsForPage: function() {
@@ -698,14 +698,14 @@ Vue.component('atmospheric-pressure-calculator', {
             let power_val=(-this.constants['g0']*this.constants['M'])/(this.constants['R*']*this.constants['Lb']);
             let calculation=this.constants['Pb']*Math.pow(((this.constants['Tb']+(this.elevation - this.constants['hb'])*this.constants['Lb'])/this.constants['Tb']),power_val);
             if (this.page_units == "us") {
-                out_obj['mercury']['val']=this.fixed(calculation);
-                out_obj['pressure']['val']=this.fixed(out_obj['mercury']['val']*0.491154);
-                out_obj['height']['val']=this.fixed(out_obj['mercury']['val']/0.88267094956417);
+                out_obj['mercury']['val']=calculation;
+                out_obj['pressure']['val']=this.fixed(out_obj['mercury']['val']*0.4911541264);
+                out_obj['height']['val']=this.fixed(out_obj['mercury']['val']/0.882647547);
             }
             else {
-                out_obj['pressure']['val']=this.fixed(calculation/1000);
-                out_obj['mercury']['val']=this.fixed(out_obj['pressure']['val']/0.133);
-                out_obj['height']['val']=this.fixed(out_obj['pressure']['val']*0.10197442889221);
+                out_obj['pressure']['val']=calculation/1000;
+                out_obj['mercury']['val']=this.fixed(out_obj['pressure']['val']/0.133322047);
+                out_obj['height']['val']=this.fixed(out_obj['pressure']['val']*0.101974787);
             }
             for (var key in out_obj) {
                 if (key == 'error') continue;
