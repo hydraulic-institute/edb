@@ -3,18 +3,18 @@
     <table class="data-table table is-bordered is-striped is-fullwidth">
         <thead class="fixed-thead">
             {% for heading in table.headings %} 
-                <tr>
+                <tr style={{heading.style}}>
                     {%for header in heading.data %}
-                        <th class="fixed-header {{header.type}}" scope="col" colspan={{header.colspan}}> {{header.data}}</th>
+                        <th class="fixed-header {{header.type}}" scope="col" colspan={{header.colspan}} style={{header.style}}> {{header.data}}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </thead>
         <tbody>
             {% for row in table.rows %} 
-                <tr>
+                <tr style={{row.style}}>
                     {%for column in row.data %}
-                        <td class="{{column.type}}"> {{column.data}}</td>
+                        <td class="{{column.type}}" colspan={{column.colspan}} style={{column.style}}> {{column.data}}</td>
                     {% endfor %}
                 </tr>
             {% endfor %}

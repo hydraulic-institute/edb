@@ -305,7 +305,7 @@ All pages can contain blocks for tabular data.  Tabular data is entered into the
 
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
-Instead, tables are supported via a *custom extenstion* to markdown sysntax. To include a table, you must define a `=|=` line, followed by 
+Instead, tables are supported via a *custom extenstion* to markdown syntax. To include a table, you must define a `=|=` line, followed by 
 meta data describing the table, and finally end the block with an other line containing only `=|=`.
 
 For example:
@@ -360,6 +360,9 @@ The first row contains meta data to describe the column data.  Each column, exce
 The first column of every row in the CSV file should always contain the following:
 
 - **heading** - The row contains headings.  Multiple heading rows are permitted, and will appear in the order they are specified.
+	- More than one row can contain the **heading** meta data.  The font size of the 2nd and following heading rows will be reduced by 1/4 to `.75rem`. 
+	- To have a header span multiple columns, just leave any number of following columns blank that you want the header to span.  This can be seen in Section 3 - Losses in Nozzles.
+		- One thing to note is to make sure the CSV file does NOT have extra empty columns at the end.
 - **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in ever table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
 - **data** - The row is interpreted as standard data - not a heading.  
 
@@ -399,6 +402,11 @@ Notice the leading comma - this is because the first column on the first row is 
 
 Each subsequent row is either a heading or data.
   
+### Definitions Tables
+
+Like tables, Definition tables are supported via a *custom extenstion* to markdown syntax. To include a definiton table, you must define a `=defs=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=defs=`.
+Definition Tables are generated and have their own template.  They will fill 100% of the screen and will word-wrap automatically.
+
 ### Superscripting, Subscripting and special characters
 
 1. The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
