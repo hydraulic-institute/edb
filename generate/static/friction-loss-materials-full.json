@@ -101,35 +101,35 @@
                     "od": "0.675",
                     "id": "0.529",
                     "thickness": "0.073",
-                    "epsilon": "1.00015",
+                    "epsilon": "0.00015",
                     "selector": "- / 30 / 0.073"
                 },
                 {
                     "od": "0.675",
                     "id": "0.493",
                     "thickness": "0.091",
-                    "epsilon": "2.00015",
+                    "epsilon": "0.00015",
                     "selector": "STD / 40 / 0.091"
                 },
                 {
                     "od": "0.675",
                     "id": "0.423",
                     "thickness": "0.126",
-                    "epsilon": "3.00015",
+                    "epsilon": "0.00015",
                     "selector": "XS / 80 / 0.126"
                 },
                 {
                     "od": "0.675",
                     "id": "0.359",
                     "thickness": "0.158",
-                    "epsilon": "4.00015",
+                    "epsilon": "0.00015",
                     "selector": "- / 160 / 0.158"
                 },
                 {
                     "od": "0.675",
                     "id": "0.171",
                     "thickness": "0.252",
-                    "epsilon": "5.00015",
+                    "epsilon": "0.00015",
                     "selector": "XXS / - / 0.252"
                 }
             ],
@@ -152,7 +152,7 @@
                     "od": "0.84",
                     "id": "0.65",
                     "thickness": "0.095",
-                    "epsilon": "1.00015",
+                    "epsilon": "0.00015",
                     "selector": "- / 30 / 0.095"
                 },
                 {
