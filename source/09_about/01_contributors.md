@@ -1,47 +1,74 @@
 -----
 title: Members and Contributors
-date:  September 20th, 2023
+date:  December 6th, 2023
 description: Meet the EDL Committee
 -----
-<div>
-<h1>Committee Leadership</h1>
-<ul>
-<li><b>Chair</b> – Trygve Dahl, <i>Intelliquip, Inc.</i></li>
-<li><b>Vice-chair</b> – Christopher Felix, <i>Xylem Inc. – Applied Water Systems</i></li>
-</ul>
-</div>
-<div>
-<h1 style='margin-top:1em;'>Members</h1>
-<ul>
-<li>Clint Zentic, <i>SULZER</i></li>
-<li>Daniel Boldt, <i>Trillium Flow Technologies</i></li>
-<li>Michael Mueller, <i>Flowserve Corporation</i></li>
-<li>Scott Wild, <i>Leistritz Advanced Technologies Corp.</i></li>
-<li>Sunil Deshpande, <i>SPP Pumps, Inc.</i></li>
-<li>Ravindra Birajdar, <i>Kirloskar Brothers Ltd.</i></li>
-<li>Jeff Olsen, <i>Applied Flow Technology</i></li>
-<li>James Dawley, <i>ITT – Industrial Process</i></li>
-<li>Camden DiMicco, <i>Hayward Tyler, Inc.</i></li>
-<li>Albert Rodriguez, <i>HDR, Inc.</i></li>
-<li>Maria Elena Rodriguez, <i>INDAR Maquinas Hidraulicas</i></li>
-<li>Matthew Rutkowski, <i>KSB, Inc.</i></li>
-</ul>
-</div>
-<div>
-<h1 style='margin-top:1em;'>Alternates</h1>
-<ul>
-<li>Lucian Dobrot, <i>Xylem Inc. – Applied Water Systems</i></li>
-<li>Randy Bennett, <i>Leistritz Advanced Technologies Corp.</i></li>
-</ul>
-</div>
-<div>
-<h1 style='margin-top:1em;'>Special Acknowledgements</h1>
-<ul>
-<li>Scott Frees, Web Developer, <i>Frees Consulting and Development LLC.</i></li>
-<li>Tim Knight & Kristin Dahl Knight, Web Developers, <i>GladeTech Technologies</i></li>
-<li>Peter Gaydon, Technical Director, <i>Hydraulic Institute</i></li>
-<li>Susie De Bel, Committee Manager, <i>Hydraulic Institute</i></li>
-<li>Matt Siino, Technical Intern, <i>Hydraulic Institute</i></li>
-<li>Jason McClure, Technical Intern, <i>Hydraulic Institute</i></li>
-</ul>
-</div>
+
+## Engineering Data Library - Phase 2 Release
+
+The Engineering Data Library is continually maintained by a Hydraulic Institute Committee. The initial release occurred in 2021 and is currently on the second release (2024). In the second release primary updates include: 
+
+1.  Added preface section covering definitions, pump types, references, and resources. 
+2. In *Section I*, added educational demonstrators, updated equation formatting, updated most figures, and added a section on submergence. 
+3. In *Section II*, minor formatting updates. 
+4. In *Section III*, minor formatting updates. 
+5. In *Section IV*, added subsections A – E covering pipe and flange dimensions. 
+6. In *Section V*, additional unit conversions, and added subsections D – I covering line shaft bearing losses, tank volume calculators, altitude effect on atmospheric pressure, and NEMA motor dimensions.  
+
+### Contributors to 2024 Release 
+
+#### Committee Leadership 
+* Chair - Jeff Olsen, *Applied Flow Technology* 
+* Vice-chair – Michael Mueller, *Flowserve Corporation* 
+* Member, Past Chair – Trygve Dahl, *Revalize Software* 
+
+#### Members 
+* James Dawley, *ITT – Industrial Process* 
+* Camden DiMicco, *Hayward Tyler, Inc.* 
+* Isaac Holowell, CDM Smith – Water Services Group* 
+* Christen Mancini, *Hydro Inc.* 
+* Christopher Michalos, *Brown and Caldwell* 
+* Leo Perry, *GIW Industries, Inc. (A KSB Company)* 
+* Jimmy Scroggins, *National Pump Company* 
+* Mike Pasche, *Pentair*
+* Scott Wild, *Leistritz Advanced Technologies Corp.* 
+* Clint Zentic, *SULZER*
+
+#### Special Acknowledgements 
+* Tim Knight & Kristin Dahl Knight, Web Developers, *GladeTech Technologies* 
+* Peter Gaydon, *Deputy Executive Director, *Hydraulic Institute* 
+* Athena Amato, Technical Admin, *Hydraulic Institute* 
+
+ 
+
+### Contributors to 2021 Release 
+
+#### Committee Leadership 
+* Chair – Trygve Dahl, *Intelliquip, Inc.* 
+* Vice-chair – Christopher Felix, *Xylem Inc. – Applied Water Systems* 
+
+#### Members 
+* Clint Zentic, *SULZER* 
+* Daniel Boldt, *Trillium Flow Technologies* 
+* Michael Mueller, *Flowserve Corporation* 
+* Scott Wild, *Leistritz Advanced Technologies Corp.* 
+* Sunil Deshpande, *SPP Pumps, Inc.* 
+* Ravindra Birajdar, *Kirloskar Brothers Ltd.*
+* Jeff Olsen, *Applied Flow Technology* 
+* James Dawley, *ITT – Industrial Process* 
+* Camden DiMicco, *Hayward Tyler, Inc.* 
+* Albert Rodriguez, *HDR, Inc.*
+* Maria Elena Rodriguez, *INDAR Maquinas Hidraulicas* 
+* Matthew Rutkowski, *KSB, Inc.*
+
+#### Alternates 
+* Lucian Dobrot, *Xylem Inc. – Applied Water Systems* 
+* Randy Bennett, *Leistritz Advanced Technologies Corp.* 
+
+#### Special Acknowledgements 
+* Scott Frees, Web Developer, *Frees Consulting and Development LLC.* 
+* Tim Knight & Kristin Dahl Knight, Web Developers, *GladeTech Technologies* 
+* Peter Gaydon, Technical Director, *Hydraulic Institute* 
+* Susie De Bel, Committee Manager, *Hydraulic Institute* 
+* Matt Siino, Technical Intern, *Hydraulic Institute* 
+* Jason McClure, Technical Intern, *Hydraulic Institute* 
