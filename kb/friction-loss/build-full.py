@@ -112,18 +112,18 @@ for grp in groups:
             df_copy.to_csv(filename, header=False, index=False)
 
         # Weed out any Wall Thickness that are not values
-        out_data.drop(out_data[(out_data['Wall thickness, inches'] == '--') | 
-                               (out_data['Wall thickness, inches'] == '-') | 
-                               (out_data['Wall thickness, inches'] == 'c')].index, inplace=True)
+        out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
+                               (out_data['Wall Thickness, inches'] == '-') | 
+                               (out_data['Wall Thickness, inches'] == 'c')].index, inplace=True)
        
-        data.drop(data[(data['Wall thickness, inches'] == '--') | 
-                                (data['Wall thickness, inches'] == '-') | 
-                                (data['Wall thickness, inches'] == 'c')].index, inplace=True)
+        data.drop(data[(data['Wall Thickness, inches'] == '--') | 
+                                (data['Wall Thickness, inches'] == '-') | 
+                                (data['Wall Thickness, inches'] == 'c')].index, inplace=True)
         
         # Go through the data and generate the data for the json file & Friction Calculator
         # Get indexes for the items
         calc_indexes=dict()
-        for sel in ['Nominal size', 'Outside diameter, inches', 'Internal diameter, inches', 'Wall thickness, inches', 'e, Absolute roughness, feet' ]:
+        for sel in ['Nominal Size', 'Outside Diameter, inches', 'Internal Diameter, inches', 'Wall Thickness, inches', 'e, Absolute Roughness, feet' ]:
             if sel in columns:
                 name = sel.replace(' ','_',1)
                 name = name.split(' ')[0]
@@ -149,14 +149,17 @@ for grp in groups:
             selector_desc = ''
             sep = ''
             # Create the selector String and selector description
-            for sel_col in ['Identification', 'Pipe schedule', 'Wall thickness, inches', 'Pressure class']:
+            for sel_col in ['Identification', 'Pipe Schedule', 'Wall Thickness, inches', 'Pressure Class']:
                 if data[sel_col].any():
                     index = columns.get_loc(sel_col)+1
                     if str(row[index]) != 'nan' and len(row[index]):
-                        selector+=sep+str(row[index])
-                        head, sp, tail = columns[index-1].partition('\n')
-                        selector_desc+=sep+head.split(',')[0]
-                        sep = ' / '
+                        row_str = str(row[index])
+                    else:
+                        row_str = '-'
+                    selector+=sep+row_str
+                    head, sp, tail = columns[index-1].partition('\n')
+                    selector_desc+=sep+head.split(',')[0]
+                    sep = ' / '
             if not len(selector):
                 selector = 'NONE'
                 selector_desc = 'NONE'
@@ -197,6 +200,7 @@ for pipe in pipes:
     if pipe.material not in m:
         m[pipe.material] = dict()
         m[pipe.material]['nominal_sizes'] = dict()
+        m[pipe.material]['selector'] = ''
     if pipe.nominal_size not in m[pipe.material]['nominal_sizes']:
         m[pipe.material]['nominal_sizes'][pipe.nominal_size] = list()
     if pipe.selector != 'NONE': 

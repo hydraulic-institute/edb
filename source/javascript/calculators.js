@@ -200,22 +200,8 @@ Vue.component('friction-loss-calculator', {
           return this.entry != null && (this.selector == null || (this.selector != null && this.selection != null));
       },
       results_revision: function () {
-          if (!this.entry) {
-              console.log("No entry");
-              return [];
-          }
-          if (!this.flow) {
-              console.log("No flow");
-              return [];
-          }
-          if (!this.viscosity) {
-              console.log("No viscosity");
-              return [];
-          }
-          if (!this.length) {
-            console.log("No Pipe length")
+          if (!(this.entry && this.flow && this.viscosity && this.length && (this.selector == null || (this.selector != null && this.selection != null))))
             return [];
-          }
 
           const D = this.inner_diameter / 12;
           const A = Math.PI * (D * D) / 4;
