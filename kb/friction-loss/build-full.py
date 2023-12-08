@@ -60,38 +60,47 @@ ALL_COLUMNS = new_data.columns
 COL_TYPES = dict()
 for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
-    if col in ['EDB Section','Section Name','Average Outside Diameter Tolerance in.','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
+    if col in ['EDB Section','Section Name','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
         COL_TYPES[col] = 'text'
 pipes = []
 for grp in groups:
     print('Working on Group: '+grp)
     grp_data = new_data.loc[new_data['Group Name'] == grp]
     categories = grp_data['Sub-Division Name'].unique() 
-    grp_filename = grp_data['Group Name'][grp_data.index[0]].lower().replace('-','')    
+    # Get the group filename - clean out dashes and clean up spaces
+    grp_filename = ' '.join(grp_data['Group Name'][grp_data.index[0]].lower().replace('-','').split()).strip()
     # take first chars of each word
     parts = grp_filename.split(' ')
     base_filename=''
     sep_part=''
-    for idx, part  in enumerate(parts):
+    for idx, part in enumerate(parts):
         base_filename+=sep_part+part[0:1]
     print('Categories: '+categories)
     out_data = None
     for col in categories:
-        print('Working on: '+col)
+        # Clean up many spaces
+        col_cleaned = " ".join(col.split()).strip()
+        print('Working on: '+col_cleaned)
+        col_name = col_cleaned + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+        col_name=' '.join(col_name.split())
+        #col_name = col_name.replace("(","")
         data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
         # Get rid of all columns without data
         #data = data.dropna(axis = 1, how = 'all')
         columns = data.columns
-        # Create the file name from the 'Group Name'
-        sub_filename = data['Sub-Division Name'][data.index[0]].lower().replace('-','')
+        # Create the file name from the 'Sub-Division Name'
+        sub_filename = ' '.join(data['Sub-Division Name'][data.index[0]].lower().replace('-','').split()).strip()
         parts = sub_filename.split(' ')
-        outfilename=base_filename+'_'
+        outfilename=base_filename+'-'
         sep_part=''
-        for idx, part  in enumerate(parts):
-            outfilename+=sep_part+part[0:4]
-            sep_part='-'
+        for idx, part in enumerate(parts):
+            if len(part.strip()):
+                outfilename+=sep_part+part[0:4]
+            sep_part='_'
+        outfilename=outfilename.replace('(','').replace(')','')
         out_data = data.copy(True)
         out_data.drop(columns=out_data.columns[:(ALL_COLUMNS.to_list().index('Sub-Division Name')+1)],axis='columns',inplace=True)
+        out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
         out_data.dropna(axis = 'columns', how = 'all',inplace=True)
 
         # Table Filename 
@@ -112,18 +121,18 @@ for grp in groups:
             df_copy.to_csv(filename, header=False, index=False)
 
         # Weed out any Wall Thickness that are not values
-        out_data.drop(out_data[(out_data['Wall thickness, inches'] == '--') | 
-                               (out_data['Wall thickness, inches'] == '-') | 
-                               (out_data['Wall thickness, inches'] == 'c')].index, inplace=True)
+        out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
+                               (out_data['Wall Thickness, inches'] == '-') | 
+                               (out_data['Wall Thickness, inches'] == 'c')].index, inplace=True)
        
-        data.drop(data[(data['Wall thickness, inches'] == '--') | 
-                                (data['Wall thickness, inches'] == '-') | 
-                                (data['Wall thickness, inches'] == 'c')].index, inplace=True)
+        data.drop(data[(data['Wall Thickness, inches'] == '--') | 
+                                (data['Wall Thickness, inches'] == '-') | 
+                                (data['Wall Thickness, inches'] == 'c')].index, inplace=True)
         
         # Go through the data and generate the data for the json file & Friction Calculator
         # Get indexes for the items
         calc_indexes=dict()
-        for sel in ['Nominal size', 'Outside diameter, inches', 'Internal diameter, inches', 'Wall thickness, inches', 'e, Absolute roughness, feet' ]:
+        for sel in ['Nominal Size', 'Outside Diameter, inches', 'Internal Diameter, inches', 'Wall Thickness, inches', 'e, Absolute Roughness, feet' ]:
             if sel in columns:
                 name = sel.replace(' ','_',1)
                 name = name.split(' ')[0]
@@ -149,19 +158,22 @@ for grp in groups:
             selector_desc = ''
             sep = ''
             # Create the selector String and selector description
-            for sel_col in ['Identification', 'Pipe schedule', 'Wall thickness, inches', 'Pressure class']:
+            for sel_col in ['Identification', 'Pipe Schedule', 'Wall Thickness, inches', 'Pressure Class']:
                 if data[sel_col].any():
                     index = columns.get_loc(sel_col)+1
                     if str(row[index]) != 'nan' and len(row[index]):
-                        selector+=sep+str(row[index])
-                        head, sp, tail = columns[index-1].partition('\n')
-                        selector_desc+=sep+head.split(',')[0]
-                        sep = ' / '
+                        row_str = str(row[index])
+                    else:
+                        row_str = '-'
+                    selector+=sep+row_str
+                    head, sp, tail = columns[index-1].partition('\n')
+                    selector_desc+=sep+head.split(',')[0]
+                    sep = ' / '
             if not len(selector):
                 selector = 'NONE'
                 selector_desc = 'NONE'
             # material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description'
-            pipes.append(Piping(col, 
+            pipes.append(Piping(col_name, 
                                 nominal_size,
                                 row[calc_indexes['outside_diameter']],
                                 row[calc_indexes['internal_diameter']],
@@ -197,6 +209,7 @@ for pipe in pipes:
     if pipe.material not in m:
         m[pipe.material] = dict()
         m[pipe.material]['nominal_sizes'] = dict()
+        m[pipe.material]['selector'] = ''
     if pipe.nominal_size not in m[pipe.material]['nominal_sizes']:
         m[pipe.material]['nominal_sizes'][pipe.nominal_size] = list()
     if pipe.selector != 'NONE': 
@@ -208,7 +221,9 @@ for pipe in pipes:
     entry['epsilon'] = pipe.epsilon
     if pipe.selector != 'NONE':
         entry['selector'] = pipe.selector
-    m[pipe.material]['nominal_sizes'][pipe.nominal_size].append(entry)
+    # Avoid duplicate entries for a nominal size
+    if entry not in m[pipe.material]['nominal_sizes'][pipe.nominal_size]:
+        m[pipe.material]['nominal_sizes'][pipe.nominal_size].append(entry)
 
 with open('generate/static/friction-loss-materials-full.json', 'w') as fp:
     output=json.dumps(m, indent=4)
