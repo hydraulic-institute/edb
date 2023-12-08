@@ -1,7 +1,7 @@
 -----
 title: A) Unit Conversions
-date: September 13th, 2019
-author: Scott Frees
+date: December 6th, 2023
+hide_units: true
 -----
 
 ## Unit Conversions
