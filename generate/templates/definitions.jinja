@@ -1,10 +1,10 @@
 
 <div class='table-container'>
     <h3>Index</h3>
-    <div class="fixed-container" style="height: {{index.height}}px">
+    <div class="fixed-container" style={{index.index_style}}>
     <table class="data-table table is-striped is-hoverable">
     {% for section in index.sections %}
-        <tr><td>
+        <tr><td style="white-space:wrap;">
         <a href="#{{section}}">{{section}}</a>
         </td>
         </tr>
@@ -14,7 +14,7 @@
     <br>
     {% for section in table %}
         <span id="{{section.section}}"><h3>{{section.section}}</h3></span>
-        <div class="fixed-container">
+        <div class="fixed-container" style={{index.style}}>
         <table class="{{units}}-units data-table table is-striped is-hoverable is-fullwidth">
         <thead class="fixed-thead">
         <tr>
@@ -32,13 +32,13 @@
             {% endif %}
             {%for column in row.data %}
                 {% if 'Acronym' in section.section and column.type == "Term" %}
-                    <td><a href="#{{column.data}}">{{column.data}}</a></td>
+                    <td style="white-space:wrap;"><a href="#{{column.data}}">{{column.data}}</a></td>
                 {% elif 'Section' in column.type and row.ref_link %}
-                    <td><a href="{{row.ref_link}}">{{column.data}}</a></td>
+                    <td style="white-space:wrap;"><a href="{{row.ref_link}}">{{column.data}}</a></td>
                 {% elif column.links %}
-                    <td><a href="{{column.links}}" target="_blank">{{column.data}}</a></td>
+                    <td style="white-space:wrap;"><a href="{{column.links}}" target="_blank">{{column.data}}</a></td>
                 {% else %}
-                    <td>{{column.data}}</td>
+                    <td style="white-space:wrap;">{{column.data}}</td>
                 {% endif %}
             {% endfor %}
             </tr>

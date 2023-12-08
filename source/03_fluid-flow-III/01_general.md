@@ -12,7 +12,7 @@ The resistance to the incompressible flow of any fluid (head loss) in any pipe m
 
 =+=
 <span class= equation-label >(Eq. 3.A.1)</span>
-$$ h_f = f * {L \over D} * {v^2 \over 2g} $$ 
+$$ h_f = f · {L \over D} · {v^2 \over 2·g} $$ 
 =+=
 
 where:
@@ -21,26 +21,26 @@ where:
 - L = Length of pipe in <units us = "feet" metric = "meters"/>
 - D = Average internal diameter of pipe in <units us = "feet" metric = "meters"/>
 - v = Average velocity in pipe in <units us = "feet/second" metric = "meters/second"/>
-- g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.17 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
+- g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.2 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - *f* = Friction factor
 
 The Colebrook Equation (portrayed below) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation (3.1).
 
 =+=
 <span class= equation-label >(Eq. 3.A.2)</span>
-$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon \over (3.7*D)} + [{2.51 \over Re \sqrt f}]) $$
+$$ {1 \over \sqrt f} = -2 × \log_{10}({\epsilon \over {3.7·D}} + {2.51 \over Re · \sqrt f}) $$
 =+=
 
 where:
 
-- ε = absolute roughness, feet <units us = "inches" metric = "mm"/>
+- ε = absolute roughness, <units us = "ft" metric = "mm"/>
 - Re = Reynolds number for fluid flow
 
 Another common form, which can be solved without iteration, is shown below.
 
 =+=
 <span class= equation-label >(Eq. 3.A.3)</span>
-$$ {1 \over \sqrt f} = -2 \log_{10}({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
+$$ {1 \over \sqrt f} = -2 × \log_{10}({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
 The **Reynolds number** (Re) is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
@@ -50,7 +50,7 @@ The Reynolds number is defined as:
 
 =+=
 <span class= equation-label >(Eq. 3.A.4)</span>
-$$ Re = {ρvD \over μ} = {vD \over 𝜈} = {QD \over {𝜈A}} $$
+$$ Re = {ρ·v·D \over μ} = {v·D \over 𝜈} = {Q·D \over {𝜈·A}} $$
 =+=
 
 where, for cylindrical pipes:
@@ -58,7 +58,7 @@ where, for cylindrical pipes:
 - ρ is fluid density in <units us = "lbm/ft^3 " metric = "kg/m^3"/>
 - v is fluid velocity in <units us = "ft/s" metric = "m/s"/>
 - D is pipe inner diameter in <units us = "feet" metric = "meters"/>
-- μ is dynamic viscosity in <units us = "lbf*s/ft^2" metric = "kg/(m*s)"/>
+- μ is dynamic viscosity in <units us = "lbf·s/ft^2" metric = "kg/(m·s)"/>
 - 𝜈 is kinematic viscosity in <units us = "ft^2^/s" metric = "m^2^/s"/>
 - Q is volumetric flow rate in <units us = "ft^3^/s" metric = "m^3^/s"/>
 - A is pipe cross-sectional area in <units us = "ft^2 " metric = "m^2"/>
@@ -87,7 +87,7 @@ The resistance to flow (head loss) caused by a valve or fitting may be computed 
 
 =+=
 <span class= equation-label >(Eq. 3.A.5)</span>
-$$ h_f = K*{v^2 \over 2g} $$
+$$ h_f = K·{v^2 \over 2·g} $$
 =+=
 
 where:
@@ -110,7 +110,7 @@ Component (minor) losses can be summed together with the pipe losses to determin
 
 =+=
 <span class= equation-label >(Eq. 3.A.6)</span>
-$$ h_f = {({fL \over D} + ΣK) * {v^2 \over 2g}} $$
+$$ h_f = {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
 =+=
 
 where:
@@ -143,16 +143,16 @@ The resistance to flow (head loss) caused by a sudden enlargement may be compute
 
 =+=
 <span class= equation-label >(Eq. 3.A.7)</span>
-$$h_{f} = K{{(v_1 - v_2)^2} \over {2g}}$$
+$$h_{f} = K·{{(v_1 - v_2)^2} \over {2·g}}$$
 =+=
 =+=
-$$ = K(1 - {A_1 \over A_2})^2 {v_1^2 \over 2g}$$
+$$ = K·(1 - {A_1 \over A_2})^2 · {v_1^2 \over 2·g}$$
 =+=
 =+=
-$$ = K[1 - ({D_1 \over D_2})^2]^2{v_1^2 \over 2g}$$
+$$ = K·[1 - ({D_1 \over D_2})^2]^2 · {v_1^2 \over 2·g}$$
 =+=
 =+=
-$$ = K[{({D_2 \over D_1})^2 - 1 }]^2{v_2^2 \over 2g}$$
+$$ = K·[{({D_2 \over D_1})^2 - 1 }]^2 · {v_2^2 \over 2·g}$$
 =+=
 
 where:
@@ -171,7 +171,7 @@ Fig. 5 or may be computed by the equation:
 
 =+=
 <span class= equation-label >(Eq. 3.A.8)</span>
-$$K = 3.50{(\tan(\theta/2)})^{1.22}$$
+$$K = 3.50·({\tan({\theta \over 2})})^{1.22}$$
 =+=
 
 where:
@@ -190,7 +190,7 @@ values for conical increasers.
 As previously stated, the resistance to the incompressible flow of any fluid (head loss) in any pipe may be computed from equation (3.1)
 
 =+=
-$$h_f = f * {L \over D} * {v^2 \over 2g}$$ 
+$$h_f = f · {L \over D} · {v^2 \over 2·g}$$ 
 =+=
 
 Values of (*f*) may be obtained directly from Fig. 3.A.2 based on Reynolds Number (Re) and Relative Roughness (ε/D) of the pipe.
@@ -206,8 +206,8 @@ in stokes or centistokes may be converted to v in sq ft/sec by the formula:
 
 =+=
 <span class= equation-label >(Eq. 3.A.9)</span>
-$$v = 0.00107639 * stokes$$
-$$= 0.0000107639 * centistokes$$
+$$v = 0.00107639 · stokes$$
+$$= 0.0000107639 · centistokes$$
 =+=
 
 Further information on viscosity can be found <a href="/fluid-properties-II/viscosity.html" target="_blank">here</a>.

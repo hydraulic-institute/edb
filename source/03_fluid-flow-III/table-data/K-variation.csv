@@ -1,30 +1,30 @@
-,numeric,numeric,numeric,,,,,,,,
-heading,Fitting,Fitting Type,Range of Variation,,,,,,,,
-data,90 Deg. Elbow,Regular Screwed,± 20 percent above 2 inch size,,,,,,,,
-data,,Regular Screwed,± 40 percent above 2 inch size,,,,,,,,
-data,,"Long Radius, Screwed",± 25 percent,,,,,,,,
-data,,Regular Flanged,± 35 percent,,,,,,,,
-data,,"Long Radius, Flanged",± 30percent,,,,,,,,
-data,45 Deg. Elbow,Regular Screwed,± 10 percent,,,,,,,,
-data,,"Long Radius, Flanged",± 10 percent,,,,,,,,
-data,180 Deg. Bend,Regular Screwed,± 25percent,,,,,,,,
-data,,Regular Flanged,± 35 percent,,,,,,,,
-data,,"Long Radius, Flanged",± 30 percent,,,,,,,,
-data,Tee,"Screwed, Line or Branch Flow",± 25percent,,,,,,,,
-data,,"Flanged, Line or Branch Flow",± 35percent,,,,,,,,
-data,Globe Valve,Screwed,± 25percent,,,,,,,,
-data,,Flanged,± 25percent,,,,,,,,
-data,Gate Valve,Screwed,± 25percent,,,,,,,,
-data,,Flanged,± 50 percent,,,,,,,,
-data,Check Valve,Screwed,± 30 percent,,,,,,,,
-data,,Flanged,"+ 200 percent, - 80 percent",,,,,,,,
-data,Sleeve Check Valve,,Multiply flanged values by 0.2 to 0.5,,,,,,,,
-data,Tilting Check Valve,,Multiply flanged values by 0.13 to 0.19,,,,,,,,
-data,Drainage Gate Check,,Multiply flanged values by 0.03 to 0.07,,,,,,,,
-data,Angle Valve,Screwed,± 20 percent,,,,,,,,
-data,,Flanged,± 50 percent,,,,,,,,
-data,Basket Strainer,,± 50 percent,,,,,,,,
-data,Foot Valve,,± 50 percent,,,,,,,,
-data,Couplings,,± 50 percent,,,,,,,,
-data,Unions,,± 50 percent,,,,,,,,
-data,Reducers,,± 50 percent,,,,,,,,
+,numeric,numeric,numeric
+heading,Fitting,Fitting Type,Range of Variation
+data,90 Deg. Elbow,Regular Screwed,± 20 percent above 2 inch size
+data,,Regular Screwed,± 40 percent above 2 inch size
+data,,"Long Radius, Screwed",± 25 percent
+data,,Regular Flanged,± 35 percent
+data,,"Long Radius, Flanged",± 30percent
+data,45 Deg. Elbow,Regular Screwed,± 10 percent
+data,,"Long Radius, Flanged",± 10 percent
+data,180 Deg. Bend,Regular Screwed,± 25percent
+data,,Regular Flanged,± 35 percent
+data,,"Long Radius, Flanged",± 30 percent
+data,Tee,"Screwed, Line or Branch Flow",± 25percent
+data,,"Flanged, Line or Branch Flow",± 35percent
+data,Globe Valve,Screwed,± 25percent
+data,,Flanged,± 25percent
+data,Gate Valve,Screwed,± 25percent
+data,,Flanged,± 50 percent
+data,Check Valve,Screwed,± 30 percent
+data,,Flanged,"+ 200 percent, - 80 percent"
+data,Sleeve Check Valve,,Multiply flanged values by 0.2 to 0.5
+data,Tilting Check Valve,,Multiply flanged values by 0.13 to 0.19
+data,Drainage Gate Check,,Multiply flanged values by 0.03 to 0.07
+data,Angle Valve,Screwed,± 20 percent
+data,,Flanged,± 50 percent
+data,Basket Strainer,,± 50 percent
+data,Foot Valve,,± 50 percent
+data,Couplings,,± 50 percent
+data,Unions,,± 50 percent
+data,Reducers,,± 50 percent

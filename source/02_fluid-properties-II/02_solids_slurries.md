@@ -1,6 +1,6 @@
 -----
 title: B) Solids and Slurries
-date: May 12th, 2020
+date: December 3rd, 2023
 description: Properties of solid mixtures and slurries. Determining specific gravity of mixture or slurry.
 -----
 
@@ -13,7 +13,7 @@ mixture or slurry, S<sub>m</sub> is:
 
 =+=
 <span class= equation-label >(Eq. 2.B.1)</span>
-$$ S_{m} = {{S_{s} * S_{1}} \over {S_{s} + C_{w}(S_{1} - S{s})}} $$
+$$ S_{m} = {{S_{s} · S_{1}} \over {S_{s} + C_{w}·(S_{1} - S{s})}} $$
 =+=
 
 Where:
@@ -29,7 +29,7 @@ and the concentration of solids by weight is 35% with
 the solids having a specific gravity of 2.2 then:
 
 =+=
-$$ S_{m} = {{2.2 * 1.2} \over {2.2 + .35(1.2 - 2.2)}} = 1.43 $$
+$$ S_{m} = {{2.2 × 1.2} \over {2.2 + 0.35 × (1.2 - 2.2)}} = 1.43 $$
 =+=
 
 **b)** Basic relationships among concentration and
@@ -68,14 +68,14 @@ the expression:
 =+=
 <span class= equation-label >(Eq. 2.B.4)</span>
 [units = us]
-$$ Q_{m} = {{4 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
+$$ Q_{m} = {{4 · [dry\, solids\, (in\, tons\, per\, hour)]} \over {C_{w} · S_{m}}} $$
 =+=
 
 =+=
 <span class= equation-label >(Eq. 2.B.4)</span>
 
 [units = metric]
-$$ Q_{m} = {{0.9085 * dry\, solids\, (in\, tons\, per\, hour)} \over {C_{w} * S_{m}}} $$
+$$ Q_{m} = {{0.9085 · [dry\, solids\, (in\, tons\, per\, hour)]} \over {C_{w} · S_{m}}} $$
 =+=
 
 Where:
@@ -89,17 +89,17 @@ concentration of solids by weight is 30% with the
 solids having a specific gravity of 2.7 then:
 
 =+=
-$$ S_{m} = {{2.7 * 1.0} \over {2.7 + .3(1 - 2.7)}} = 1.23 $$
+$$ S_{m} = {{2.7 × 1.0} \over {2.7 + 0.3 × (1 - 2.7)}} = 1.23 $$
 =+=
 
 =+=
 [units = us]
-$$ Q_{m} = {{4 * 100} \over {.3 * 1.23}} = 1,084\,GPM $$
+$$ Q_{m} = {{4 × 100} \over {0.3 × 1.23}} = 1,084\,GPM $$
 =+=
 
 =+=
 [units = metric]
-$$ Q_{m} = {{.9085 * 100} \over {.3 * 1.23}} = 246\,m^{3}/h $$
+$$ Q_{m} = {{0.9085 × 100} \over {0.3 × 1.23}} = 246\,m^{3}/h $$
 =+=
 
 =^=

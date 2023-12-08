@@ -9,34 +9,34 @@ hide_units: true
 
 ### Degrees A.P.I. vs. Specific Gravity for Oil          
 
-The relation of Degrees A.P.I. to Specific Gravity (g) is expressed by the following formula:
+The relation of Degrees A.P.I. to Specific Gravity (sg) is expressed by the following formula:
 
 =+=
 <span class= equation-label >(Eq. 2.D.1)</span>
-$$ {Degrees\,A.P.I. = {141.5 \over g} - 131.5} $$
+$$ {Degrees\,A.P.I. = {141.5 \over sg} - 131.5} $$
 =+=
 
 =+=
-$$ {g = {141.5 \over {131.5 + Degrees\,A.P.I.}}} $$
+$$ {sg = {141.5 \over {131.5 + Degrees\,A.P.I.}}} $$
 =+=
 
-The following tables are based on the weight of 1 gallon (U.S.) of oil with a volume of 231 cubic inches at 60°F in air at 760 mm pressure 
+The following tables are based on the weight of 1 gallon (U.S.) of oil with a volume of 231 cubic inches at 60°F in air at 760 mmHg pressure 
 and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828 pounds.
 
 To determine the resulting specific gravity by mixing oils of different specific gravities:
 
 =+=
 <span class= equation-label >(Eq. 2.D.2)</span>
-$$ {D = {{md_{1} + nd_{2}} \over {m+n}}} $$
+$$ {ρ = {{mρ_{1} + nρ_{2}} \over {m+n}}} $$
 =+=
 
 where:
 
-- D = density or specific gravity of mixture
-- m = proportion of oil of d<sub>1</sub> density
-- n = proportion of oil of d<sub>2</sub> density
-- d<sub>1</sub> = specific gravity of m oil
-- d<sub>2</sub> = specific gravity of n oil
+- ρ = density or specific gravity of mixture
+- m = proportion of oil of ρ<sub>1</sub> density
+- n = proportion of oil of ρ<sub>2</sub> density
+- ρ<sub>1</sub> = specific gravity of m oil
+- ρ<sub>2</sub> = specific gravity of n oil
 
 
 =|=
@@ -177,8 +177,6 @@ x: 1
 series: 2
 series_title_index: 0
 =/=
-
-*(Based on water having 1.00 specific gravity at 68°F., corresponding to a weight of 62.344 lb./cu. ft., and 1 psi equalling 2.310 feet.)*
 
 ### References
 1. J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).

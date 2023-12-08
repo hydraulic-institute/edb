@@ -11,10 +11,10 @@ hide_units: true
 
 It is important to understand how the pump will interact with the system it is used in over a range of operating conditions. Combining the pump performance curve with the system curve will help 
 show where the system will operate. In general, the system flow rate will be where the pump curve intersects the system curve. Pump and system curve interaction is covered
-in <a href="https://www.pumps.org/product/ansi-hi-9-6-1-2017-rotodynamic-pumps-guideline-for-npsh-margin/" target="_blank">ANSI/HI 14.3 – Rotodynamic Pumps for Design and Application</a>.
+in <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 14.3</a>.
 
 Knowing the shape of the system curve will help illustrate the pump operating conditions as the system conditions vary due to changes in valve position, parts of the system coming
-on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determinine if the pump is sized correctly to overcome the static and dynamic head of the system.
+on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determine if the pump is sized correctly to overcome the static head and frictional head losses of the system.
 
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
@@ -31,7 +31,7 @@ price: $225.00
 ### Reading a Pump and System Curve Plot
 
 As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
-and the dynamic head, which is the frictional losses at varying flow rates. The operating point is generally where the two curves intersect.
+and the frictional head losses that vary with the rate of flow. The operating point is where the two curves intersect.
 
 ![](./images/iC-1-Pump-and-system-Curve.png "")
 <div class="figure-label">Fig. 1.C.1</div>
@@ -63,10 +63,10 @@ In selecting the appropriate curve for a pump application to fit the desired sys
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
-### Educational Demonstration
+### Educational Demonstration: Pump and System Curve
 
 =d=
-title: Pump and System Curve
+title:
 kind: pump-curve
 pumpType: plot
 lowerLevel: 5
@@ -116,10 +116,10 @@ loss across the control valve, since the system flow rate has not changed.
 ![](./images/iC-6-Pump-and-system-Curves-variable-speed-valve-head-loss.png "")
 <div class="figure-label">Fig. 1.C.6</div>
 
-### Educational Demonstration
+### Educational Demonstration: Pump and System Curve with Control Valve
 
 =d=
-title: Pump and System Curve with Control Valve
+title:
 kind: pump-curve
 pumpType: fcv
 lowerLevel: 5
@@ -174,10 +174,10 @@ flow. A static dominated system will be the opposite, there will be a significan
 ![](./images/iC-10-Pump-Curves-Series-with-Steep-and-Flat-System-Curves.png "")
 <div class="figure-label">Fig. 1.C.10</div>
 
-### Educational Demonstration 
+### Educational Demonstration: Parallel Pumps and System Curve 
 
 =d=
-title: Parallel Pumps and System Curve
+title:
 kind: pump-curve
 pumpType: parallel
 lowerLevel: 5
@@ -200,7 +200,7 @@ Previously we developed a system curve for the system shown below for flows from
 
 [Calc. 1.A.3(c)](./sys-curves.html#calc1a3c)
 =+=
-$$\Delta h_{system} = 265{feet} + (7.75{E{-04})}{Q^2} $$
+$$\Delta h_{system} = 265{feet} + ({7.75e^{-4}}·Q^2) $$
 =+=
 
 ![](./images/we-system.png "")
@@ -221,7 +221,7 @@ Using a second-order polynomial curve fit, we get the following pump curve equat
 
 <div class="equation-label">Eq. 1.C.12</div>
 =+=
-$$ \Delta h_{pump} = 380 - {0.06Q}-{0.0018Q^2} $$
+$$ \Delta h_{pump} = 380 - (0.06·Q)-(0.0018·Q^2) $$
 =+=
 
 We can combine the system curve with the pump curve to get an overall understanding of how the system will operate.
@@ -229,7 +229,7 @@ We can combine the system curve with the pump curve to get an overall understand
 ![](./images/iC-11-Pump-and-System-Curve.png "")
 <div class="figure-label">Fig. 1.C.12</div>
 
-Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at <units us = "200 gpm and 296 feet." metric = "0.01262 m3/s and 90.22 m."/>
+Since this system does not have active control devices, the system will operate where the pump and system curves intersect, which is at 200 gpm and 296 feet.
 
 **System Deviations**
 
@@ -247,12 +247,12 @@ $$ \Delta h_{system} = \Delta h_{pump} $$
 
 <div class="calculation-label">Calc. 1.C.13(a)</div>
 =+=
-$$ \Delta h_{static} + {7.75e^{-4}}{Q^2} = 380 - {0.06Q} - {0.0018Q^2} $$
+$$ \Delta h_{static} + ({7.75e^{-4}}·{Q^2}) = 380 - (0.06·Q) - (0.0018·Q^2) $$
 =+=
 
 <div class="calculation-label">Calc. 1.C.13(b)</div>
 =+=
-$$ (\Delta h_{static} - 380) + {0.06Q} + ({{7.75e^{-4}} + 0.0018})Q^2 = 0 $$
+$$ (\Delta h_{static} - 380) + (0.06·Q) + ({{7.75e^{-4}} + 0.0018})·Q^2 = 0 $$
 =+=
 
 
@@ -260,7 +260,7 @@ We can solve this equation using the quadratic formula:
 
 <div class="calculation-label">Calc. 1.C.13(c)</div>
 =+=
-$$ Q = {{-b \pm \sqrt {b^2 - 4ac} } \over{2a}} $$
+$$ Q = {{-b \pm \sqrt {b^2 - 4·a·c} } \over{2·a}} $$
 =+=
 
 where:

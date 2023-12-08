@@ -1,1 +1,552 @@
-[{"measure": "Density", "decimals": 2, "image": "density.png", "units": [{"label": "kg/dm<sup>3</sup>", "factor": 1}, {"label": "g/cm<sup>3</sup>", "factor": 1}, {"label": "kg/m<sup>3</sup>", "factor": 1000}, {"label": "lb/ft<sup>3</sup>", "factor": 62.427}, {"label": "lb/Imp.gal", "factor": 10.02241925}, {"label": "lb/in<sup>3</sup>", "factor": 0.03613}, {"label": "lb/US.gal", "factor": 8.345404376}, {"label": "SG", "factor": 1.00144965}]}, {"measure": "Velocity", "decimals": 2, "image": "velocity.png", "units": [{"label": "m/s", "factor": 1}, {"label": "ft/s", "factor": 3.28083989501312}, {"label": "ft/min", "factor": 196.850393700787}, {"label": "m/min", "factor": 59.9999880000024}, {"label": "yd/min", "factor": 65.6167979002625}, {"label": "yd/s", "factor": 1.09361329833771}]}, {"measure": "Force", "decimals": 2, "image": "force.png", "units": [{"label": "kgf", "factor": 1}, {"label": "N", "factor": 9.80665}, {"label": "lbf", "factor": 2.20462247603796}]}, {"measure": "Temperature", "decimals": 2, "image": "temperature.png", "units": [{"label": "Celsius", "factor": "C"}, {"label": "Fahrenheit", "factor": "F"}, {"label": "Kelvin", "factor": "K"}, {"label": "Rankine", "factor": "R"}]}, {"measure": "Flow, Volumetric", "decimals": 2, "image": "flow-volumetric.png", "units": [{"label": "m3/h", "factor": 1}, {"label": "CFM", "factor": 0.588577754940963}, {"label": "ft3/min", "factor": 0.588577754940963}, {"label": "ft3/s", "factor": 0.00980962924901604}, {"label": "USgpm", "factor": 4.40286764029913}, {"label": "l/min", "factor": 16.6666646666671}, {"label": "l/s", "factor": 0.2777778}, {"label": "m3/min", "factor": 0.0166666667}, {"label": "m3/s", "factor": 0.0002777778}, {"label": "dm3/min", "factor": 16.6666646666671}, {"label": "Igpm", "factor": 3.66615185100033}, {"label": "m3/day", "factor": 24}, {"label": "UKgpm", "factor": 3.66615185100033}, {"label": "USbl/day", "factor": 150.955448280584}, {"label": "USbl/min", "factor": 0.104830197736574}, {"label": "bblpd (oil)", "factor": 150.9703}]}, {"measure": "Length", "decimals": 2, "image": "length.png", "units": [{"label": "Meters", "factor": 1}, {"label": "Millimeters", "factor": 1000}, {"label": "Feet", "factor": 3.28083989501312}, {"label": "Inches", "factor": 39.3701}]}, {"measure": "Area", "decimals": 2, "image": "area.png", "units": [{"label": "Square Meters", "factor": 1}, {"label": "Square Millimeters", "factor": 1000000}, {"label": "Square Feet", "factor": 10.7639104167097}, {"label": "Square Inches", "factor": 1550.00477401}]}, {"measure": "Power", "decimals": 2, "image": "power.png", "units": [{"label": "kW", "factor": 1}, {"label": "hp", "factor": 1.3410218586563}]}, {"measure": "Pressure", "decimals": 2, "image": "Pressure.png", "units": [{"label": "atmospheres", "factor": 1}, {"label": "bar", "factor": 1.01325}, {"label": "kilopascal", "factor": 101.325}, {"label": "kilopounds per square inch", "factor": 0.0146959}, {"label": "megapascal", "factor": 0.101325}, {"label": "pascal", "factor": 101325}, {"label": "pounds per square inch", "factor": 14.6959}]}, {"measure": "Volume", "decimals": 2, "image": "volume.png", "units": [{"label": "m3", "factor": 1}, {"label": "mm3", "factor": 1000000000}, {"label": "ft3", "factor": 35.3146667214885}, {"label": "in3", "factor": 61023.8429532511}, {"label": "USgallons", "factor": 264.17}, {"label": "barrels (oil)", "factor": 6.289703}, {"label": "liter", "factor": 1000}]}]
+[
+    {
+        "measure": "Area",
+        "decimals": 2,
+        "image": "area.png",
+        "units": [
+            {
+                "label": "m&sup2",
+                "factor": 1
+            },
+            {
+                "label": "mm&sup2",
+                "factor": 1000000
+            },
+            {
+                "label": "ft&sup2",
+                "factor": 10.7639104167097
+            },
+            {
+                "label": "in&sup2",
+                "factor": 1550.00477401
+            },
+            {
+                "label": "cm&sup2",
+                "factor": 10000
+            },
+            {
+                "label": "mi&sup2",
+                "factor": 3.8610217499077216e-07
+            },
+            {
+                "label": "mi&sup2 (survey foot)",
+                "factor": 3.861006842476326e-07
+            },
+            {
+                "label": "km&sup2",
+                "factor": 1e-06
+            },
+            {
+                "label": "yd&sup2",
+                "factor": 1.1959899890853953
+            },
+            {
+                "label": "Acre (survey foot)",
+                "factor": 0.00024710436922532533
+            }
+        ]
+    },
+    {
+        "measure": "Density",
+        "decimals": 2,
+        "image": "density.png",
+        "units": [
+            {
+                "label": "kg/dm&sup3",
+                "factor": 1
+            },
+            {
+                "label": "g/cm&sup3",
+                "factor": 1
+            },
+            {
+                "label": "kg/m&sup3",
+                "factor": 1000
+            },
+            {
+                "label": "lbm/ft&sup3",
+                "factor": 62.427
+            },
+            {
+                "label": "lbm/gal (Imp)",
+                "factor": 10.02241925
+            },
+            {
+                "label": "lbm/in&sup3",
+                "factor": 0.03613
+            },
+            {
+                "label": "lbm/gal (US)",
+                "factor": 8.345404376
+            },
+            {
+                "label": "Specific Gravity 68&degF (20&degC)",
+                "factor": 1.00184339
+            },
+            {
+                "label": "Specific Gravity 39.2&degF (4&degC)",
+                "factor": 1.0001605257643853
+            }
+        ]
+    },
+    {
+        "measure": "Flow, Volumetric",
+        "decimals": 2,
+        "image": "flow-volumetric.png",
+        "units": [
+            {
+                "label": "m&sup3/h",
+                "factor": 1
+            },
+            {
+                "label": "bpd (Petroleum)",
+                "factor": 150.95545367460167
+            },
+            {
+                "label": "bpd (US)",
+                "factor": 201.2739446544
+            },
+            {
+                "label": "bpd (Imp.)",
+                "factor": 146.64616554
+            },
+            {
+                "label": "bpm (US)",
+                "factor": 0.13977357295621382
+            },
+            {
+                "label": "bpm (Petroleum)",
+                "factor": 0.10483017637257817
+            },
+            {
+                "label": "bpm (Imp)",
+                "factor": 0.10183761516200857
+            },
+            {
+                "label": "ft&sup3/min",
+                "factor": 0.588577754940963
+            },
+            {
+                "label": "ft&sup3/s",
+                "factor": 0.00980962924901604
+            },
+            {
+                "label": "gal/h (US)",
+                "factor": 264.17205841794777
+            },
+            {
+                "label": "gal/day (US)",
+                "factor": 6340.129241241796
+            },
+            {
+                "label": "gal/min (Imp)",
+                "factor": 3.6661541456504376
+            },
+            {
+                "label": "gal/min (US)",
+                "factor": 4.40286764029913
+            },
+            {
+                "label": "L/min",
+                "factor": 16.666666666666668
+            },
+            {
+                "label": "L/s",
+                "factor": 0.2777777777777778
+            },
+            {
+                "label": "L/h",
+                "factor": 1000
+            },
+            {
+                "label": "L/day",
+                "factor": 24000
+            },
+            {
+                "label": "mL/h",
+                "factor": 1000000000
+            },
+            {
+                "label": "cm&sup3/h",
+                "factor": 1000000000
+            },
+            {
+                "label": "cc/h",
+                "factor": 1000000000
+            },
+            {
+                "label": "mm&sup3/h",
+                "factor": 1000000000000
+            },
+            {
+                "label": "Million L/day",
+                "factor": 0.024
+            },
+            {
+                "label": "m&sup3/day",
+                "factor": 24
+            },
+            {
+                "label": "m&sup3/min",
+                "factor": 0.0166666667
+            },
+            {
+                "label": "m&sup3/s",
+                "factor": 0.0002777778
+            },
+            {
+                "label": "Million gal/day (Imp)",
+                "factor": 0.0052792619593
+            },
+            {
+                "label": "Million gal/day (US)",
+                "factor": 0.0063401292299
+            }
+        ]
+    },
+    {
+        "measure": "Force",
+        "decimals": 2,
+        "image": "force.png",
+        "units": [
+            {
+                "label": "kgf",
+                "factor": 1
+            },
+            {
+                "label": "N",
+                "factor": 9.80665
+            },
+            {
+                "label": "lbf",
+                "factor": 2.2046224311646316
+            },
+            {
+                "label": "Kip",
+                "factor": 0.0022046224311646316
+            },
+            {
+                "label": "Dyne",
+                "factor": 980664.9999999998
+            },
+            {
+                "label": "Ton (metric)",
+                "factor": 0.001
+            },
+            {
+                "label": "Ton (lbf)",
+                "factor": 0.0011023113394870287
+            }
+        ]
+    },
+    {
+        "measure": "Length",
+        "decimals": 2,
+        "image": "length.png",
+        "units": [
+            {
+                "label": "m",
+                "factor": 1
+            },
+            {
+                "label": "mm",
+                "factor": 1000
+            },
+            {
+                "label": "ft",
+                "factor": 3.280839895
+            },
+            {
+                "label": "in",
+                "factor": 39.37007874
+            },
+            {
+                "label": "mi",
+                "factor": 0.000621371
+            },
+            {
+                "label": "yd",
+                "factor": 1.093613298
+            },
+            {
+                "label": "km",
+                "factor": 0.001
+            },
+            {
+                "label": "mil",
+                "factor": 39370.07874
+            },
+            {
+                "label": "microinch",
+                "factor": 39370078.74
+            },
+            {
+                "label": "micron",
+                "factor": 1000000
+            },
+            {
+                "label": "&#181m",
+                "factor": 1000000
+            },
+            {
+                "label": "mi (US survey)",
+                "factor": 0.00062137
+            },
+            {
+                "label": "ft (US survey)",
+                "factor": 3.280833437
+            }
+        ]
+    },
+    {
+        "measure": "Power",
+        "decimals": 2,
+        "image": "power.png",
+        "units": [
+            {
+                "label": "kW",
+                "factor": 1
+            },
+            {
+                "label": "hp (550 ft-lbf/s)",
+                "factor": 1.341022038490283
+            },
+            {
+                "label": "W",
+                "factor": 1000
+            },
+            {
+                "label": "ft-lbf/min",
+                "factor": 44253.7207422057
+            },
+            {
+                "label": "ft-lbf/s",
+                "factor": 737.5621211696556
+            }
+        ]
+    },
+    {
+        "measure": "Pressure",
+        "decimals": 2,
+        "image": "Pressure.png",
+        "units": [
+            {
+                "label": "atm",
+                "factor": 1
+            },
+            {
+                "label": "bar",
+                "factor": 1.01325
+            },
+            {
+                "label": "psi",
+                "factor": 14.6959
+            },
+            {
+                "label": "ksi",
+                "factor": 0.0146959
+            },
+            {
+                "label": "Pa",
+                "factor": 101325
+            },
+            {
+                "label": "kPa",
+                "factor": 101.325
+            },
+            {
+                "label": "MPa",
+                "factor": 0.101325
+            },
+            {
+                "label": "ftH2O 39.2&degF (4&degC)",
+                "factor": 33.899524252420555
+            },
+            {
+                "label": "ftH2O 68&degF (20&degC)",
+                "factor": 33.959632854853496
+            },
+            {
+                "label": "mH2O 39.2&degF (4&degC)",
+                "factor": 10.332595330843233
+            },
+            {
+                "label": "mH2O 68&degF (20&degC)",
+                "factor": 10.350916468928165
+            },
+            {
+                "label": "inHg 32&degF (0&degC)",
+                "factor": 29.9213319237652
+            },
+            {
+                "label": "mmHg 32&degF (0&degC)",
+                "factor": 760.0018308636361
+            },
+            {
+                "label": "kg/cm&sup2",
+                "factor": 1.0332274527998857
+            },
+            {
+                "label": "kg/m&sup2",
+                "factor": 10332.27452799886
+            },
+            {
+                "label": "kg/mm&sup2",
+                "factor": 0.010332274527998859
+            },
+            {
+                "label": "kN/m&sup2",
+                "factor": 101.325
+            },
+            {
+                "label": "N/m&sup2",
+                "factor": 101325
+            }
+        ]
+    },
+    {
+        "measure": "Temperature",
+        "decimals": 2,
+        "image": "temperature.png",
+        "units": [
+            {
+                "label": "&degC",
+                "factor": "C"
+            },
+            {
+                "label": "&degF",
+                "factor": "F"
+            },
+            {
+                "label": "&degK",
+                "factor": "K"
+            },
+            {
+                "label": "&degR",
+                "factor": "R"
+            }
+        ]
+    },
+    {
+        "measure": "Velocity",
+        "decimals": 2,
+        "image": "velocity.png",
+        "units": [
+            {
+                "label": "m/s",
+                "factor": 1
+            },
+            {
+                "label": "ft/s",
+                "factor": 3.28083989501312
+            },
+            {
+                "label": "ft/min",
+                "factor": 196.85039370078738
+            },
+            {
+                "label": "m/min",
+                "factor": 59.9999880000024
+            },
+            {
+                "label": "yd/min",
+                "factor": 65.6167979002625
+            },
+            {
+                "label": "yd/s",
+                "factor": 1.09361329833771
+            },
+            {
+                "label": "in/s",
+                "factor": 39.37007874015748
+            },
+            {
+                "label": "mph",
+                "factor": 2.2369362920544025
+            },
+            {
+                "label": "km/h",
+                "factor": 3.599999712000023
+            }
+        ]
+    },
+    {
+        "measure": "Volume",
+        "decimals": 2,
+        "image": "volume.png",
+        "units": [
+            {
+                "label": "m&sup3",
+                "factor": 1
+            },
+            {
+                "label": "Barrels (Imp.)",
+                "factor": 6.1102568975
+            },
+            {
+                "label": "Barrels (petroleum)",
+                "factor": 6.28981056977507
+            },
+            {
+                "label": "Barrels (US)",
+                "factor": 8.3864143606
+            },
+            {
+                "label": "cc",
+                "factor": 1000000
+            },
+            {
+                "label": "cm&sup3",
+                "factor": 1000000
+            },
+            {
+                "label": "fl oz (Imp)",
+                "factor": 35195.079728
+            },
+            {
+                "label": "fl oz (US)",
+                "factor": 33814.0222016107
+            },
+            {
+                "label": "ft&sup3",
+                "factor": 35.3146667214885
+            },
+            {
+                "label": "gallon (Imp)",
+                "factor": 219.96924829908778
+            },
+            {
+                "label": "gallon (US)",
+                "factor": 264.1720372841846
+            },
+            {
+                "label": "in&sup3",
+                "factor": 61023.8429532511
+            },
+            {
+                "label": "Liter (L)",
+                "factor": 1000
+            },
+            {
+                "label": "mi&sup3",
+                "factor": 2.39912748531614e-10
+            },
+            {
+                "label": "mL",
+                "factor": 1000000
+            },
+            {
+                "label": "mm&sup3",
+                "factor": 1000000000
+            },
+            {
+                "label": "quart (US)",
+                "factor": 1056.6882094
+            },
+            {
+                "label": "yd&sup3",
+                "factor": 1.307950547436162
+            }
+        ]
+    }
+]

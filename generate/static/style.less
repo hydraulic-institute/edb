@@ -1,9 +1,11 @@
 @primary-color: red;
 @hi_blue: #465b79;
-@hi_dark: rgb(52, 58, 64);
+@hi_dark: #343a40;
 @hi_light: #028da8;
 @hi_super_light: #49d4ef;
 @hi_empty_input: #f2f2f2; 
+@hi_green: rgb(42, 140, 101);
+@hi_light_green: #AAEFD3;
 @er_accent: #ffdd57; //#e6af2e
 @er_super_light: #eceef1;
 @std_pad: 1rem;
@@ -183,8 +185,6 @@ caption {
     padding-right: @std_pad;
 }
 
-
-
 #main-nav {
     background-color: @hi_dark  !important;
     box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
@@ -199,9 +199,6 @@ caption {
         color: @er_super_light  !important;
     }
 }
-
-
-
 
 .topic-source {
     text-align: right;
@@ -275,6 +272,11 @@ caption {
     overflow: unset;
 }
 /* Table column types */
+/* Keep content from wrapping */
+table td {
+    white-space: nowrap;
+}
+
 td.numeric {
     font-family: monospace;
     text-align: right !important;
@@ -282,6 +284,14 @@ td.numeric {
 
 th.numeric {
     text-align: right !important;
+}
+
+th.spanned {
+    text-align: left !important;
+}
+
+th.center {
+    text-align: center !important;
 }
 
 .small-heading {
@@ -336,7 +346,7 @@ tr {
 
 
 .go img {
-    min-width: 200px;
+    max-width: 200px;
 
 }
 
@@ -384,4 +394,23 @@ Friction Loss styles
 
 .hi_no_input {
     background-color: @hi_empty_input;
+}
+
+/***** accordion ***/
+.blue-accordion {
+    --bs-accordion-btn-bg: #5d7ba3;
+    --bs-accordion-btn-color:white;
+    --bs-accordion-active-bg: @hi_light;
+    --bs-accordion-active-color: white;
+}
+
+.green-accordion {
+    --bs-accordion-btn-bg: @hi_light_green;
+    --bs-accordion-btn-color:black;
+    --bs-accordion-active-bg: @hi_green;
+    --bs-accordion-active-color: white;
+}
+.accordion-button::after {
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
 }

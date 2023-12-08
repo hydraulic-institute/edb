@@ -21,11 +21,11 @@ x-axis is the flow rate, typically in units of cubic meters per hour (m^3^/h). H
 <div class="equation-label">Eq. 1.B.1</div>
 =+=
 [units = us]
-$$ H =  {{2.31 * p} \over s} $$
+$$ H =  {{2.31 · p} \over s} $$
 =+=
 =+=
 [units = metric]
-$$ H =  {{0.102 * p} \over s} $$
+$$ H =  {{0.102 · p} \over s} $$
 =+=
 
 where:
@@ -93,11 +93,11 @@ where Q is flow in <units us = "GPM:" metric = "m^3^/h:"/>
 <div class="equation-label">Eq. 1.B.4</div>
 =+=
 [units = us]
-$$ P_p = {{Q * H * s} \over {3960 * η_{p}}} $$
+$$ P_p = {{Q · H· s} \over {3960 · η_{p}}} $$
 =+=
 =+=
 [units = metric]
-$$ P_p = {{Q * H * s} \over {366.6 * η_{p}}} $$
+$$ P_p = {{Q · H · s} \over {366.6 · η_{p}}} $$
 =+=
 
 where:
@@ -187,9 +187,11 @@ hide_price: true
 
 ### Affinity Rules
 
+Affinity rules describe the relationship of the pump performance curve (flow, head, and power) relative to pump rotational speed (or frequency) changes and limited changes in impeller diameter. Refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 14.3</a> regarding limitations in using the affinity rules for impeller diameter changes.
+
 Under the assumption that changing speed or impeller diameter of a pump maintains the same efficiencies, 
 the Affinity Rules show the relationships between pump parameters (flow, pressure/head, power) and pump 
-charactereistics (speed and impeller size) or a change in impeller size while maintaining a constant speed.
+characteristics (speed and impeller size) or a change in impeller size while maintaining a constant speed.
 
 **1. Changing Speed / Constant Impeller Size**
 
@@ -227,7 +229,7 @@ $$ {P_2 \over P_1} = ({D_2 \over D_1})^3  $$
 
 **Speed Reduction and Impeller Trimming**
 
-Part 1 of the affinity rules is ideal for instances where you have a Variable Frequency Drive attached to a pump motor. The VFD will reduce or increase the pump speed
+Part 1 of the affinity rules is ideal for instances where you have a Variable Speed Drive (VSD). The VSD will reduce or increase the pump speed
 therefore allowing it to operate at a multitude of operating conditions. Part 2 is essential in calculating the new pump characteristics after impeller trimming 
 which is the reduction of the impeller diameter.
 
@@ -281,10 +283,6 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 ![](./images/iB-9-Pump-curves-in-series-with-System-Curve.png "")
 <div class="figure-label">Fig. 1.B.9</div>
 
-### Educational Demonstration (Pumps in Series)
-
-Content will be added soon.
-
 =^=
 title: Factory Performance Testing: Hydraulic, Mechanical, and Hydrostatic: 1-Part On-Demand Webinar
 -description: This webinar will provide a summary of all HI laboratory test standards for rotodynamic pumps. The presenter will cover test procedures, setups, and arrangements along with data acquisition, acceptance grades, and instrumentation. Learn the basics of factory performance testing in this 1-part on-demand webinar
@@ -321,9 +319,7 @@ series_title_index: 0
 During low flow conditions the speed of the pump is reduced by 10%.
 
 =+=
-$$ n_2= n_1 (1-.10) $$
-$$ n_2= 1740(1-.10) $$
-$$ n_2= 1566\,RPM $$
+$$ n_2= n_1 · (1-0.10)= 1740 · (1-0.10)= 1566\,RPM $$
 =+=
 
 **Calculate New Flow Values**
@@ -333,20 +329,17 @@ Using Equation [Eq. 1.B.6a](#eq1b6a), calculate the new values (repeat until you
 <div class="calculation-label">Calc. 1.B.6a(1)</div>
 =+= 
 $$ {Q_2 \over Q_1} = {n_2 \over n_1} $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2 \over 0} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,\,\,Q_2 = 0\,GPM $$
+$$ \,\,\,\,\,\,\,\,\,\,\,\,{Q_2} = (Q_1=0) · ({1566 \over 1740})= 0\,GPM $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6a(2)</div>
 =+= 
-$$ {Q_2 \over 200} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,Q_2 = 180\,GPM $$
+$$ {Q_2} = (Q_1=200) · ({1566 \over 1740})= 180\,GPM $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6a(3)</div>
 =+= 
-$$ {Q_2 \over 400} = {1566 \over 1740} $$
-$$ \,\,\,\,\,\,\,\,Q_2 = 360\,GPM $$
+$$ {Q_2} = (Q_1=400) · ({1566 \over 1740})= 360\,GPM $$
 =+=
 
 
@@ -357,27 +350,24 @@ Using Equation [Eq. 1.B.6b](#eq1b6b), calculate the new values (repeat until you
 <div class="calculation-label">Calc. 1.B.6b(1)</div>
 =+=
 $$ {H_2 \over H_1} = ({n_2 \over n_1})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,{H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 173\,ft. $$
+$$ \,\,\,\,\,\,\,\,\,\,{H_2} = (H_1=213)·({1566 \over 1740})^2= 173\,ft $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6b(2)</div>
 =+=
-$$ {H_2 \over 173} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 167\,ft. $$
+$$ {H_2} = (H_1=206)·({1566 \over 1740})^2= 167\,ft  $$
 =+=
 
 <div class="calculation-label">Calc. 1.B.6b(3)</div>
 =+=
-$$ {H_2 \over 198} = ({1566 \over 1740})^2 $$
-$$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,H_2 = 160\,ft. $$
+$$ {H_2} = (H_1=198)·({1566 \over 1740})^2= 160\,ft  $$
 =+=
 
 
-**Plot Pump Curve for low flow conditions**
+**Plot Pump Curve for low flow (reduced speed) conditions**
 
 =|=
-title: Data (Low Flow Conditions)
+title: Data Low Flow (reduced speed) Conditions
 data: total-head-feet-2.csv
 =|=
 
@@ -390,7 +380,7 @@ series_title_index: 0
 =/=
 <div class="figure-label">Fig. 1.B.11</div>
 
-**Comparison of normal flow and low flow conditions:**
+**Comparison of normal flow (base speed) and low flow (reduced speed) conditions:**
 
 ![](./images/iB-12-Pump-curves-base-speed-and-reduced-speed.png "")
 <div class="figure-label">Fig. 1.B.12</div>
@@ -400,7 +390,7 @@ series_title_index: 0
 
 A pump designed with a <units us = "10-5/8” diameter impeller will be operating at 2000 GPM @ 80 ft. During installation it was found the total head was 67 ft. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow." 
-metric = "270  mm diameter impeller will be operating at 2000 RPM @ 24.38 m. During installation it was found the total head was 20.42 m. 
+metric = "270  mm diameter impeller will be operating at 454 m^3^/h @ 24.38 m. During installation it was found the total head was 20.42 m. 
 Instead of designing a new pump the manufacturer recommends trimming the impeller. Using the affinity rules, determine the new impeller diameter and operating flow."/>
 
 **Calculate the New Impeller Diameter**

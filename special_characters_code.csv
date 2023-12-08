@@ -1,0 +1,2033 @@
+﻿"These hex codes can be used in csv/xlsx files and markup files.  Append a ';' at the end of the hex code in your data. Ex:  ""Show me the &#x0024;&#x0024;&@#x0021;"" ==> ""Show me the $$!""",,
+key,hex,name
+!,&#x0021,exclamation mark
+"""",&#x0022,quotation mark
+#,&#x0023,number sign
+$,&#x0024,dollar sign
+%,&#x0025,percent sign
+&,&#x0026,ampersand
+',&#x0027,apostrophe
+(,&#x0028,left parenthesis
+),&#x0029,right parenthesis
+*,&#x002A,asterisk
++,&#x002B,plus sign
+",",&#x002C,comma
+-,&#x002D,hyphen-minus
+.,&#x002E,"full stop (period, dot, decimal point)"
+/,&#x002F,"solidus (slash, virgule)"
+0,&#x0030,digit zero
+1,&#x0031,digit one
+2,&#x0032,digit two
+3,&#x0033,digit three
+4,&#x0034,digit four
+5,&#x0035,digit five
+6,&#x0036,digit six
+7,&#x0037,digit seven
+8,&#x0038,digit eight
+9,&#x0039,digit nine
+:,&#x003A,colon
+;,&#x003B,semicolon
+<,&#x003C,less-than sign
+>,&#x003E,greater-than sign
+?,&#x003F,question mark
+@,&#x0040,commercial at (at sign)
+A,&#x0041,latin capital letter a
+B,&#x0042,latin capital letter b
+C,&#x0043,latin capital letter c
+D,&#x0044,latin capital letter d
+E,&#x0045,latin capital letter e
+F,&#x0046,latin capital letter f
+G,&#x0047,latin capital letter g
+H,&#x0048,latin capital letter h
+I,&#x0049,latin capital letter i
+J,&#x004A,latin capital letter j
+K,&#x004B,latin capital letter k
+L,&#x004C,latin capital letter l
+M,&#x004D,latin capital letter m
+N,&#x004E,latin capital letter n
+O,&#x004F,latin capital letter o
+P,&#x0050,latin capital letter p
+Q,&#x0051,latin capital letter q
+R,&#x0052,latin capital letter r
+S,&#x0053,latin capital letter s
+T,&#x0054,latin capital letter t
+U,&#x0055,latin capital letter u
+V,&#x0056,latin capital letter v
+W,&#x0057,latin capital letter w
+X,&#x0058,latin capital letter x
+Y,&#x0059,latin capital letter y
+Z,&#x005A,latin capital letter z
+[,&#x005B,left square bracket
+\,&#x005C,reverse solidus
+],&#x005D,right square bracket
+^,&#x005E,circumflex accent
+_,&#x005F,low line (spacing underscore)
+`,&#x0060,grave accent
+a,&#x0061,latin small letter a
+b,&#x0062,latin small letter b
+c,&#x0063,latin small letter c
+d,&#x0064,latin small letter d
+e,&#x0065,latin small letter e
+f,&#x0066,latin small letter f
+g,&#x0067,latin small letter g
+h,&#x0068,latin small letter h
+i,&#x0069,latin small letter i
+j,&#x006A,latin small letter j
+k,&#x006B,latin small letter k
+l,&#x006C,latin small letter l
+m,&#x006D,latin small letter m
+n,&#x006E,latin small letter n
+o,&#x006F,latin small letter o
+p,&#x0070,latin small letter p
+q,&#x0071,latin small letter q
+r,&#x0072,latin small letter r
+s,&#x0073,latin small letter s
+t,&#x0074,latin small letter t
+u,&#x0075,latin small letter u
+v,&#x0076,latin small letter v
+w,&#x0077,latin small letter w
+x,&#x0078,latin small letter x
+y,&#x0079,latin small letter y
+z,&#x007A,latin small letter z
+{,&#x007B,left curly bracket
+|,&#x007C,vertical line
+},&#x007D,right curly bracket
+~,&#x007E,tilde
+&#x007f,&#x007F,<control>
+&#x00a1,&#x00A1,"inverted exclamation mark (spanish, asturian, galician)"
+&#x00a2,&#x00A2,cent sign
+&#x00a3,&#x00A3,"pound sign (pound sterling, irish punt, italian lira, turkish lira, etc.)"
+&#x00a4,&#x00A4,currency sign
+&#x00a5,&#x00A5,yen sign
+&#x00a6,&#x00A6,broken bar
+&#x00a7,&#x00A7,section sign
+&#x00a8,&#x00A8,diaeresis
+&#x00a9,&#x00A9,copyright sign
+&#x00aa,&#x00AA,"feminine ordinal indicator (windows ""alt 166"")"
+&#x00ab,&#x00AB,left-pointing double angle quotation mark
+&#x00ac,&#x00AC,not sign
+,&#x00AD,soft hyphen
+&#x00ae,&#x00AE,registered sign
+&#x00af,&#x00AF,macron
+&#x00b0,&#x00B0,degree sign
+&#x00b1,&#x00B1,plus-minus sign
+&#x00b2,&#x00B2,superscript two
+&#x00b3,&#x00B3,superscript three
+&#x00b4,&#x00B4,acute accent
+&#x00b5,&#x00B5,micro sign
+&#x00b6,&#x00B6,pilcrow sign
+&#x00b7,&#x00B7,middle dot
+&#x00b8,&#x00B8,cedilla
+&#x00b9,&#x00B9,superscript one
+&#x00ba,&#x00BA,"masculine ordinal indicator (windows ""alt 167"")"
+&#x00bb,&#x00BB,right-pointing double angle quotation mark
+&#x00bc,&#x00BC,vulgar fraction one quarter
+&#x00bd,&#x00BD,vulgar fraction one half
+&#x00be,&#x00BE,vulgar fraction three quarters
+&#x00bf,&#x00BF,inverted question mark
+&#x00c0,&#x00C0,latin capital letter a with grave
+&#x00c1,&#x00C1,latin capital letter a with acute
+&#x00c2,&#x00C2,latin capital letter a with circumflex
+&#x00c3,&#x00C3,latin capital letter a with tilde
+&#x00c4,&#x00C4,latin capital letter a with diaeresis
+&#x00c5,&#x00C5,latin capital letter a with ring above
+&#x00c6,&#x00C6,latin capital letter ae
+&#x00c7,&#x00C7,latin capital letter c with cedilla
+&#x00c8,&#x00C8,latin capital letter e with grave
+&#x00c9,&#x00C9,latin capital letter e with acute
+&#x00ca,&#x00CA,latin capital letter e with circumflex
+&#x00cb,&#x00CB,latin capital letter e with diaeresis
+&#x00cc,&#x00CC,latin capital letter i with grave
+&#x00cd,&#x00CD,latin capital letter i with acute
+&#x00ce,&#x00CE,latin capital letter i with circumflex
+&#x00cf,&#x00CF,latin capital letter i with diaeresis
+&#x00d0,&#x00D0,latin capital letter eth
+&#x00d1,&#x00D1,latin capital letter n with tilde
+&#x00d2,&#x00D2,latin capital letter o with grave
+&#x00d3,&#x00D3,latin capital letter o with acute
+&#x00d4,&#x00D4,latin capital letter o with circumflex
+&#x00d5,&#x00D5,latin capital letter o with tilde
+&#x00d6,&#x00D6,latin capital letter o with diaeresis
+&#x00d7,&#x00D7,multiplication sign
+&#x00d8,&#x00D8,latin capital letter o with stroke
+&#x00d9,&#x00D9,latin capital letter u with grave
+&#x00da,&#x00DA,latin capital letter u with acute
+&#x00db,&#x00DB,latin capital letter u with circumflex
+&#x00dc,&#x00DC,latin capital letter u with diaeresis
+&#x00dd,&#x00DD,latin capital letter y with acute
+&#x00de,&#x00DE,latin capital letter thorn
+&#x00df,&#x00DF,latin small letter sharp s
+&#x00e0,&#x00E0,latin small letter a with grave
+&#x00e1,&#x00E1,latin small letter a with acute
+&#x00e2,&#x00E2,latin small letter a with circumflex
+&#x00e3,&#x00E3,latin small letter a with tilde
+&#x00e4,&#x00E4,latin small letter a with diaeresis
+&#x00e5,&#x00E5,latin small letter a with ring above
+&#x00e6,&#x00E6,latin small letter ae
+&#x00e7,&#x00E7,latin small letter c with cedilla
+&#x00e8,&#x00E8,latin small letter e with grave
+&#x00e9,&#x00E9,latin small letter e with acute
+&#x00ea,&#x00EA,latin small letter e with circumflex
+&#x00eb,&#x00EB,latin small letter e with diaeresis
+&#x00ec,&#x00EC,latin small letter i with grave
+&#x00ed,&#x00ED,latin small letter i with acute
+&#x00ee,&#x00EE,latin small letter i with circumflex
+&#x00ef,&#x00EF,latin small letter i with diaeresis
+&#x00f0,&#x00F0,latin small letter eth
+&#x00f1,&#x00F1,latin small letter n with tilde
+&#x00f2,&#x00F2,latin small letter o with grave
+&#x00f3,&#x00F3,latin small letter o with acute
+&#x00f4,&#x00F4,latin small letter o with circumflex
+&#x00f5,&#x00F5,latin small letter o with tilde
+&#x00f6,&#x00F6,latin small letter o with diaeresis
+&#x00f7,&#x00F7,division sign
+&#x00f8,&#x00F8,latin small letter o with stroke
+&#x00f9,&#x00F9,latin small letter u with grave
+&#x00fa,&#x00FA,latin small letter u with acute
+&#x00fb,&#x00FB,latin small letter u with circumflex
+&#x00fc,&#x00FC,latin small letter u with diaeresis
+&#x00fd,&#x00FD,latin small letter y with acute
+&#x00fe,&#x00FE,latin small letter thorn
+&#x00ff,&#x00FF,latin small letter y with diaeresis
+&#x0141,&#x0141,latin capital letter l with stroke
+&#x0142,&#x0142,latin small letter l with stroke
+&#x0143,&#x0143,latin capital letter n with acute
+&#x0144,&#x0144,latin small letter n with acute
+&#x0145,&#x0145,latin capital letter n with cedilla
+&#x0146,&#x0146,latin small letter n with cedilla
+&#x0147,&#x0147,latin capital letter n with caron
+&#x0148,&#x0148,latin small letter n with caron
+&#x014a,&#x014A,latin capital letter eng
+&#x014b,&#x014B,latin small letter eng
+&#x014c,&#x014C,latin capital letter o with macron
+&#x014d,&#x014D,latin small letter o with macron
+&#x014e,&#x014E,latin capital letter o with breve
+&#x014f,&#x014F,latin small letter o with breve
+&#x0150,&#x0150,latin capital letter o with double acute
+&#x0151,&#x0151,latin small letter o with double acute
+&#x0152,&#x0152,latin capital ligature oe
+&#x0153,&#x0153,latin small ligature oe
+&#x0154,&#x0154,latin capital letter r with acute
+&#x0155,&#x0155,latin small letter r with acute
+&#x0156,&#x0156,latin capital letter r with cedilla
+&#x0157,&#x0157,latin small letter r with cedilla
+&#x0158,&#x0158,latin capital letter r with caron
+&#x0159,&#x0159,latin small letter r with caron
+&#x015a,&#x015A,latin capital letter s with acute
+&#x015b,&#x015B,latin small letter s with acute
+&#x015c,&#x015C,latin capital letter s with circumflex
+&#x015d,&#x015D,latin small letter s with circumflex
+&#x015e,&#x015E,latin capital letter s with cedilla
+&#x015f,&#x015F,latin small letter s with cedilla
+&#x0160,&#x0160,latin capital letter s with caron
+&#x0161,&#x0161,latin small letter s with caron
+&#x0162,&#x0162,latin capital letter t with cedilla
+&#x0163,&#x0163,latin small letter t with cedilla
+&#x0164,&#x0164,latin capital letter t with caron
+&#x0165,&#x0165,latin small letter t with caron
+&#x0166,&#x0166,latin capital letter t with stroke
+&#x0167,&#x0167,latin small letter t with stroke
+&#x0168,&#x0168,latin capital letter u with tilde
+&#x0169,&#x0169,latin small letter u with tilde
+&#x016a,&#x016A,latin capital letter u with macron
+&#x016b,&#x016B,latin small letter u with macron
+&#x016c,&#x016C,latin capital letter u with breve
+&#x016d,&#x016D,latin small letter u with breve
+&#x016e,&#x016E,latin capital letter u with ring above
+&#x016f,&#x016F,latin small letter u with ring above
+&#x0170,&#x0170,latin capital letter u with double acute
+&#x0171,&#x0171,latin small letter u with double acute
+&#x0174,&#x0174,latin capital letter w with circumflex
+&#x0175,&#x0175,latin small letter w with circumflex
+&#x0176,&#x0176,latin capital letter y with circumflex
+&#x0177,&#x0177,latin small letter y with circumflex
+&#x0178,&#x0178,latin capital letter y with diaeresis
+&#x0179,&#x0179,latin capital letter z with acute
+&#x017a,&#x017A,latin small letter z with acute
+&#x017b,&#x017B,latin capital letter z with dot above
+&#x017c,&#x017C,latin small letter z with dot above
+&#x017d,&#x017D,latin capital letter z with caron
+&#x017e,&#x017E,latin small letter z with caron
+&#x017f,&#x017F,latin small letter long s
+&#x0186,&#x0186,latin capital letter open o
+&#x018e,&#x018E,latin capital letter reversed e
+&#x019c,&#x019C,latin capital letter turned m
+&#x0250,&#x0250,latin small letter turned a
+&#x0251,&#x0251,latin small letter alpha
+&#x0252,&#x0252,latin small letter turned alpha
+&#x0254,&#x0254,latin small letter open o
+&#x0258,&#x0258,latin small letter reversed e
+&#x0259,&#x0259,latin small letter schwa
+&#x025b,&#x025B,latin small letter open e
+&#x025c,&#x025C,latin small letter reversed open e
+&#x025e,&#x025E,latin small letter closed reversed open e
+&#x025f,&#x025F,latin small letter dotless j with stroke
+&#x0261,&#x0261,latin small letter script g
+&#x0262,&#x0262,latin letter small capital g
+&#x0263,&#x0263,latin small letter gamma
+&#x0264,&#x0264,latin small letter rams horn
+&#x0265,&#x0265,latin small letter turned h
+&#x0268,&#x0268,latin small letter i with stroke
+&#x026a,&#x026A,latin letter small capital i
+&#x026c,&#x026C,latin small letter l with belt
+&#x026e,&#x026E,latin small letter lezh
+&#x026f,&#x026F,latin small letter turned m
+&#x0270,&#x0270,latin small letter turned m with long leg
+&#x0274,&#x0274,latin letter small capital n
+&#x0275,&#x0275,latin small letter barred o
+&#x0276,&#x0276,latin letter small capital oe
+&#x0277,&#x0277,latin small letter closed omega
+&#x0278,&#x0278,latin small letter phi
+&#x0279,&#x0279,latin small letter turned r
+&#x0281,&#x0281,latin letter small capital inverted r
+&#x0287,&#x0287,latin small letter turned t
+&#x028c,&#x028C,latin small letter turned v
+&#x028d,&#x028D,latin small letter turned w
+&#x028e,&#x028E,latin small letter turned y
+&#x029e,&#x029E,latin small letter turned k
+&#x0391,&#x0391,greek capital letter alpha
+&#x0392,&#x0392,greek capital letter beta
+&#x0393,&#x0393,greek capital letter gamma
+&#x0394,&#x0394,greek capital letter delta
+&#x0395,&#x0395,greek capital letter epsilon
+&#x0396,&#x0396,greek capital letter zeta
+&#x0397,&#x0397,greek capital letter eta
+&#x0398,&#x0398,greek capital letter theta
+&#x0399,&#x0399,greek capital letter iota
+&#x039a,&#x039A,greek capital letter kappa
+&#x039b,&#x039B,greek capital letter lamda
+&#x039c,&#x039C,greek capital letter mu
+&#x039d,&#x039D,greek capital letter nu
+&#x039e,&#x039E,greek capital letter xi
+&#x039f,&#x039F,greek capital letter omicron
+&#x03a0,&#x03A0,greek capital letter pi
+&#x03a1,&#x03A1,greek capital letter rho
+&#x03a3,&#x03A3,greek capital letter sigma
+&#x03a4,&#x03A4,greek capital letter tau
+&#x03a5,&#x03A5,greek capital letter upsilon
+&#x03a6,&#x03A6,greek capital letter phi
+&#x03a7,&#x03A7,greek capital letter chi
+&#x03a8,&#x03A8,greek capital letter psi
+&#x03a9,&#x03A9,greek capital letter omega
+&#x03b1,&#x03B1,greek small letter alpha
+&#x03b2,&#x03B2,greek small letter beta
+&#x03b3,&#x03B3,greek small letter gamma
+&#x03b4,&#x03B4,greek small letter delta
+&#x03b5,&#x03B5,greek small letter epsilon
+&#x03b6,&#x03B6,greek small letter zeta
+&#x03b7,&#x03B7,greek small letter eta
+&#x03b8,&#x03B8,greek small letter theta
+&#x03b9,&#x03B9,greek small letter iota
+&#x03ba,&#x03BA,greek small letter kappa
+&#x03bb,&#x03BB,greek small letter lamda
+&#x03bc,&#x03BC,greek small letter mu
+&#x03bd,&#x03BD,greek small letter nu
+&#x03be,&#x03BE,greek small letter xi
+&#x03bf,&#x03BF,greek small letter omicron
+&#x03c0,&#x03C0,greek small letter pi
+&#x03c1,&#x03C1,greek small letter rho
+&#x03c2,&#x03C2,greek small letter final sigma
+&#x03c3,&#x03C3,greek small letter sigma
+&#x03c4,&#x03C4,greek small letter tau
+&#x03c5,&#x03C5,greek small letter upsilon
+&#x03c6,&#x03C6,greek small letter phi
+&#x03c7,&#x03C7,greek small letter chi
+&#x03c8,&#x03C8,greek small letter psi
+&#x03c9,&#x03C9,greek small letter omega
+&#x0410,&#x0410,cyrillic capital letter a
+&#x0411,&#x0411,cyrillic capital letter be
+&#x0412,&#x0412,cyrillic capital letter ve
+&#x0413,&#x0413,cyrillic capital letter ghe
+&#x0414,&#x0414,cyrillic capital letter de
+&#x0415,&#x0415,cyrillic capital letter ie
+&#x0416,&#x0416,cyrillic capital letter zhe
+&#x0417,&#x0417,cyrillic capital letter ze
+&#x0418,&#x0418,cyrillic capital letter i
+&#x0419,&#x0419,cyrillic capital letter short i
+&#x041a,&#x041A,cyrillic capital letter ka
+&#x041b,&#x041B,cyrillic capital letter el
+&#x041c,&#x041C,cyrillic capital letter em
+&#x041d,&#x041D,cyrillic capital letter en
+&#x041e,&#x041E,cyrillic capital letter o
+&#x041f,&#x041F,cyrillic capital letter pe
+&#x0420,&#x0420,cyrillic capital letter er
+&#x0421,&#x0421,cyrillic capital letter es
+&#x0422,&#x0422,cyrillic capital letter te
+&#x0423,&#x0423,cyrillic capital letter u
+&#x0424,&#x0424,cyrillic capital letter ef
+&#x0425,&#x0425,cyrillic capital letter ha
+&#x0426,&#x0426,cyrillic capital letter tse
+&#x0427,&#x0427,cyrillic capital letter che
+&#x0428,&#x0428,cyrillic capital letter sha
+&#x0429,&#x0429,cyrillic capital letter shcha
+&#x042a,&#x042A,cyrillic capital letter hard sign
+&#x042b,&#x042B,cyrillic capital letter yeru
+&#x042c,&#x042C,cyrillic capital letter soft sign
+&#x042d,&#x042D,cyrillic capital letter e
+&#x042e,&#x042E,cyrillic capital letter yu
+&#x042f,&#x042F,cyrillic capital letter ya
+&#x0430,&#x0430,cyrillic small letter a
+&#x0431,&#x0431,cyrillic small letter be
+&#x0432,&#x0432,cyrillic small letter ve
+&#x0433,&#x0433,cyrillic small letter ghe
+&#x0434,&#x0434,cyrillic small letter de
+&#x0435,&#x0435,cyrillic small letter ie
+&#x0436,&#x0436,cyrillic small letter zhe
+&#x0437,&#x0437,cyrillic small letter ze
+&#x0438,&#x0438,cyrillic small letter i
+&#x0439,&#x0439,cyrillic small letter short i
+&#x043a,&#x043A,cyrillic small letter ka
+&#x043b,&#x043B,cyrillic small letter el
+&#x043c,&#x043C,cyrillic small letter em
+&#x043d,&#x043D,cyrillic small letter en
+&#x043e,&#x043E,cyrillic small letter o
+&#x043f,&#x043F,cyrillic small letter pe
+&#x0440,&#x0440,cyrillic small letter er
+&#x0441,&#x0441,cyrillic small letter es
+&#x0442,&#x0442,cyrillic small letter te
+&#x0443,&#x0443,cyrillic small letter u
+&#x0444,&#x0444,cyrillic small letter ef
+&#x0445,&#x0445,cyrillic small letter ha
+&#x0446,&#x0446,cyrillic small letter tse
+&#x0447,&#x0447,cyrillic small letter che
+&#x0448,&#x0448,cyrillic small letter sha
+&#x0449,&#x0449,cyrillic small letter shcha
+&#x044a,&#x044A,cyrillic small letter hard sign
+&#x044b,&#x044B,cyrillic small letter yeru
+&#x044c,&#x044C,cyrillic small letter soft sign
+&#x044d,&#x044D,cyrillic small letter e
+&#x044e,&#x044E,cyrillic small letter yu
+&#x044f,&#x044F,cyrillic small letter ya
+&#x1d00,&#x1D00,latin letter small capital a
+&#x1d01,&#x1D01,latin letter small capital ae
+&#x1d02,&#x1D02,latin small letter turned ae
+&#x1d03,&#x1D03,latin letter small capital barred b
+&#x1d04,&#x1D04,latin letter small capital c
+&#x1d05,&#x1D05,latin letter small capital d
+&#x1d06,&#x1D06,latin letter small capital eth
+&#x1d07,&#x1D07,latin letter small capital e
+&#x1d08,&#x1D08,latin small letter turned open e
+&#x1d09,&#x1D09,latin small letter turned i
+&#x1d0a,&#x1D0A,latin letter small capital j
+&#x1d0b,&#x1D0B,latin letter small capital k
+&#x1d0c,&#x1D0C,latin letter small capital l with stroke
+&#x1d0d,&#x1D0D,latin letter small capital m
+&#x1d0e,&#x1D0E,latin letter small capital reversed n
+&#x1d0f,&#x1D0F,latin letter small capital o
+&#x1d10,&#x1D10,latin letter small capital open o
+&#x1d11,&#x1D11,latin small letter sideways o
+&#x1d12,&#x1D12,latin small letter sideways open o
+&#x1d13,&#x1D13,latin small letter sideways o with stroke
+&#x1d14,&#x1D14,latin small letter turned oe
+&#x1d15,&#x1D15,latin letter small capital ou
+&#x1d16,&#x1D16,latin small letter top half o
+&#x1d17,&#x1D17,latin small letter bottom half o
+&#x1d18,&#x1D18,latin letter small capital p
+&#x1d19,&#x1D19,latin letter small capital reversed r
+&#x1d1a,&#x1D1A,latin letter small capital turned r
+&#x1d1b,&#x1D1B,latin letter small capital t
+&#x1d1c,&#x1D1C,latin letter small capital u
+&#x1d1d,&#x1D1D,latin small letter sideways u
+&#x1d1e,&#x1D1E,latin small letter sideways diaeresized u
+&#x1d1f,&#x1D1F,latin small letter sideways turned m
+&#x1d20,&#x1D20,latin letter small capital v
+&#x1d21,&#x1D21,latin letter small capital w
+&#x1d22,&#x1D22,latin letter small capital z
+&#x1d23,&#x1D23,latin letter small capital ezh
+&#x1d24,&#x1D24,latin letter voiced laryngeal spirant
+&#x1d25,&#x1D25,latin letter ain
+&#x1d26,&#x1D26,greek letter small capital gamma
+&#x1d27,&#x1D27,greek letter small capital lamda
+&#x1d28,&#x1D28,greek letter small capital pi
+&#x1d29,&#x1D29,greek letter small capital rho
+&#x1d2a,&#x1D2A,greek letter small capital psi
+&#x1e9e,&#x1E9E,latin capital letter sharp s
+&#x1ef2,&#x1EF2,latin capital letter y with grave
+&#x1ef3,&#x1EF3,latin small letter y with grave
+&#x1ef4,&#x1EF4,latin capital letter y with dot below
+&#x1ef5,&#x1EF5,latin small letter y with dot below
+&#x1ef8,&#x1EF8,latin capital letter y with tilde
+&#x1ef9,&#x1EF9,latin small letter y with tilde
+&#x2010,&#x2010,hyphen
+&#x2011,&#x2011,non-breaking hyphen
+&#x2012,&#x2012,figure dash
+&#x2013,&#x2013,en dash
+&#x2014,&#x2014,em dash
+&#x2015,&#x2015,horizontal bar
+&#x2016,&#x2016,double vertical line
+&#x2017,&#x2017,double low line
+&#x2018,&#x2018,left single quotation mark
+&#x2019,&#x2019,right single quotation mark
+&#x201a,&#x201A,single low-9 quotation mark
+&#x201b,&#x201B,single high-reversed-9 quotation mark
+&#x201c,&#x201C,left double quotation mark
+&#x201d,&#x201D,right double quotation mark
+&#x201e,&#x201E,double low-9 quotation mark
+&#x201f,&#x201F,double high-reversed-9 quotation mark
+&#x2020,&#x2020,dagger
+&#x2021,&#x2021,double dagger
+&#x2022,&#x2022,bullet
+&#x2023,&#x2023,triangular bullet
+&#x2024,&#x2024,one dot leader
+&#x2025,&#x2025,two dot leader
+&#x2026,&#x2026,horizontal ellipsis
+&#x2027,&#x2027,hyphenation point
+&#x2030,&#x2030,per mille sign
+&#x2031,&#x2031,per ten thousand sign
+&#x2032,&#x2032,prime
+&#x2033,&#x2033,double prime
+&#x2034,&#x2034,triple prime
+&#x2035,&#x2035,reversed prime
+&#x2036,&#x2036,reversed double prime
+&#x2037,&#x2037,reversed triple prime
+&#x2038,&#x2038,caret
+&#x2039,&#x2039,single left-pointing angle quotation mark
+&#x203a,&#x203A,single right-pointing angle quotation mark
+&#x203b,&#x203B,reference mark
+&#x203c,&#x203C,double exclamation mark
+&#x203d,&#x203D,interrobang
+&#x203e,&#x203E,overline
+&#x203f,&#x203F,undertie
+&#x2040,&#x2040,character tie
+&#x2041,&#x2041,caret insertion point
+&#x2042,&#x2042,asterism
+&#x2043,&#x2043,hyphen bullet
+&#x2044,&#x2044,fraction slash
+&#x2045,&#x2045,left square bracket with quill
+&#x2046,&#x2046,right square bracket with quill
+&#x2047,&#x2047,double question mark
+&#x2048,&#x2048,question exclamation mark
+&#x2049,&#x2049,exclamation question mark
+&#x204a,&#x204A,tironian sign et
+&#x204b,&#x204B,reversed pilcrow sign
+&#x204c,&#x204C,black leftwards bullet
+&#x204d,&#x204D,black rightwards bullet
+&#x204e,&#x204E,low asterisk
+&#x204f,&#x204F,reversed semicolon
+&#x2050,&#x2050,close up
+&#x2051,&#x2051,two asterisks aligned vertically
+&#x2052,&#x2052,commercial minus sign
+&#x2053,&#x2053,swung dash
+&#x2054,&#x2054,inverted undertie
+&#x2055,&#x2055,flower punctuation mark
+&#x2057,&#x2057,quadruple prime
+&#x2070,&#x2070,superscript zero
+&#x2071,&#x2071,superscript latin small letter i
+&#x2074,&#x2074,superscript four
+&#x2075,&#x2075,superscript five
+&#x2076,&#x2076,superscript six
+&#x2077,&#x2077,superscript seven
+&#x2078,&#x2078,superscript eight
+&#x2079,&#x2079,superscript nine
+&#x207a,&#x207A,superscript plus sign
+&#x207b,&#x207B,superscript minus
+&#x207c,&#x207C,superscript equals sign
+&#x207d,&#x207D,superscript left parenthesis
+&#x207e,&#x207E,superscript right parenthesis
+&#x207f,&#x207F,superscript latin small letter n
+&#x2080,&#x2080,subscript zero
+&#x2081,&#x2081,subscript one
+&#x2082,&#x2082,subscript two
+&#x2083,&#x2083,subscript three
+&#x2084,&#x2084,subscript four
+&#x2085,&#x2085,subscript five
+&#x2086,&#x2086,subscript six
+&#x2087,&#x2087,subscript seven
+&#x2088,&#x2088,subscript eight
+&#x2089,&#x2089,subscript nine
+&#x208a,&#x208A,subscript plus sign
+&#x208b,&#x208B,subscript minus
+&#x208c,&#x208C,subscript equals sign
+&#x208d,&#x208D,subscript left parenthesis
+&#x208e,&#x208E,subscript right parenthesis
+&#x20a0,&#x20A0,euro-currency sign
+&#x20a1,&#x20A1,colon sign
+&#x20a2,&#x20A2,cruzeiro sign
+&#x20a3,&#x20A3,french franc sign
+&#x20a4,&#x20A4,lira sign
+&#x20a5,&#x20A5,mill sign
+&#x20a6,&#x20A6,naira sign
+&#x20a7,&#x20A7,peseta sign
+&#x20a8,&#x20A8,rupee sign
+&#x20a9,&#x20A9,won sign
+&#x20aa,&#x20AA,new sheqel sign
+&#x20ab,&#x20AB,dong sign
+&#x20ac,&#x20AC,euro sign
+&#x20ad,&#x20AD,kip sign
+&#x20ae,&#x20AE,tugrik sign
+&#x20af,&#x20AF,drachma sign
+&#x20b0,&#x20B0,german penny sign
+&#x20b1,&#x20B1,peso sign
+&#x20b2,&#x20B2,guarani sign
+&#x20b3,&#x20B3,austral sign
+&#x20b4,&#x20B4,hryvnia sign
+&#x20b5,&#x20B5,cedi sign
+&#x20b6,&#x20B6,livre tournois sign
+&#x20b7,&#x20B7,spesmilo sign
+&#x20b8,&#x20B8,tenge sign
+&#x20b9,&#x20B9,indian rupee sign
+&#x2100,&#x2100,account of
+&#x2101,&#x2101,addressed to the subject
+&#x2102,&#x2102,double-struck capital c
+&#x2103,&#x2103,degree celsius
+&#x2104,&#x2104,centre line symbol
+&#x2105,&#x2105,care of
+&#x2106,&#x2106,cada una
+&#x2107,&#x2107,euler constant
+&#x2108,&#x2108,scruple
+&#x2109,&#x2109,degree fahrenheit
+&#x210a,&#x210A,script small g
+&#x210b,&#x210B,script capital h
+&#x210c,&#x210C,black-letter capital h
+&#x210d,&#x210D,double-struck capital h
+&#x210e,&#x210E,planck constant
+&#x210f,&#x210F,planck constant over two pi
+&#x2110,&#x2110,script capital i
+&#x2111,&#x2111,black-letter capital i
+&#x2112,&#x2112,script capital l
+&#x2113,&#x2113,script small l
+&#x2114,&#x2114,l b bar symbol
+&#x2115,&#x2115,double-struck capital n
+&#x2116,&#x2116,numero sign
+&#x2117,&#x2117,sound recording copyright
+&#x2118,&#x2118,script capital p
+&#x2119,&#x2119,double-struck capital p
+&#x211a,&#x211A,double-struck capital q
+&#x211b,&#x211B,script capital r
+&#x211c,&#x211C,black-letter capital r
+&#x211d,&#x211D,double-struck capital r
+&#x211e,&#x211E,prescription take
+&#x211f,&#x211F,response
+&#x2120,&#x2120,service mark
+&#x2121,&#x2121,telephone sign
+&#x2122,&#x2122,trade mark sign
+&#x2123,&#x2123,versicle
+&#x2124,&#x2124,double-struck capital z
+&#x2125,&#x2125,ounce sign
+&#x2126,&#x2126,ohm sign
+&#x2127,&#x2127,inverted ohm sign
+&#x2128,&#x2128,black-letter capital z
+&#x2129,&#x2129,turned greek small letter iota
+&#x212a,&#x212A,kelvin sign
+&#x212b,&#x212B,angstrom sign
+&#x212c,&#x212C,script capital b
+&#x212d,&#x212D,black-letter capital c
+&#x212e,&#x212E,estimated symbol
+&#x212f,&#x212F,script small e
+&#x2130,&#x2130,script capital e
+&#x2131,&#x2131,script capital f
+&#x2132,&#x2132,turned capital f
+&#x2133,&#x2133,script capital m
+&#x2134,&#x2134,script small o
+&#x2135,&#x2135,alef symbol
+&#x2136,&#x2136,bet symbol
+&#x2137,&#x2137,gimel symbol
+&#x2138,&#x2138,dalet symbol
+&#x2141,&#x2141,turned sans-serif capital g
+&#x2142,&#x2142,turned sans-serif capital l
+&#x2143,&#x2143,reversed sans-serif capital l
+&#x2144,&#x2144,turned sans-serif capital y
+&#x2145,&#x2145,double-struck italic capital d
+&#x2146,&#x2146,double-struck italic small d
+&#x2147,&#x2147,double-struck italic small e
+&#x2148,&#x2148,double-struck italic small i
+&#x2149,&#x2149,double-struck italic small j
+&#x214b,&#x214B,turned ampersand
+&#x214e,&#x214E,turned small f
+&#x2150,&#x2150,vulgar fraction one seventh
+&#x2151,&#x2151,vulgar fraction one ninth
+&#x2152,&#x2152,vulgar fraction one tenth
+&#x2153,&#x2153,vulgar fraction one third
+&#x2154,&#x2154,vulgar fraction two thirds
+&#x2155,&#x2155,vulgar fraction one fifth
+&#x2156,&#x2156,vulgar fraction two fifths
+&#x2157,&#x2157,vulgar fraction three fifths
+&#x2158,&#x2158,vulgar fraction four fifths
+&#x2159,&#x2159,vulgar fraction one sixth
+&#x215a,&#x215A,vulgar fraction five sixths
+&#x215b,&#x215B,vulgar fraction one eighth
+&#x215c,&#x215C,vulgar fraction three eighths
+&#x215d,&#x215D,vulgar fraction five eighths
+&#x215e,&#x215E,vulgar fraction seven eighths
+&#x215f,&#x215F,fraction numerator one
+&#x2160,&#x2160,roman numeral one
+&#x2161,&#x2161,roman numeral two
+&#x2162,&#x2162,roman numeral three
+&#x2163,&#x2163,roman numeral four
+&#x2164,&#x2164,roman numeral five
+&#x2165,&#x2165,roman numeral six
+&#x2166,&#x2166,roman numeral seven
+&#x2167,&#x2167,roman numeral eight
+&#x2168,&#x2168,roman numeral nine
+&#x2169,&#x2169,roman numeral ten
+&#x216a,&#x216A,roman numeral eleven
+&#x216b,&#x216B,roman numeral twelve
+&#x216c,&#x216C,roman numeral fifty
+&#x216d,&#x216D,roman numeral one hundred
+&#x216e,&#x216E,roman numeral five hundred
+&#x216f,&#x216F,roman numeral one thousand
+&#x2170,&#x2170,small roman numeral one
+&#x2171,&#x2171,small roman numeral two
+&#x2172,&#x2172,small roman numeral three
+&#x2173,&#x2173,small roman numeral four
+&#x2174,&#x2174,small roman numeral five
+&#x2175,&#x2175,small roman numeral six
+&#x2176,&#x2176,small roman numeral seven
+&#x2177,&#x2177,small roman numeral eight
+&#x2178,&#x2178,small roman numeral nine
+&#x2179,&#x2179,small roman numeral ten
+&#x217a,&#x217A,small roman numeral eleven
+&#x217b,&#x217B,small roman numeral twelve
+&#x217c,&#x217C,small roman numeral fifty
+&#x217d,&#x217D,small roman numeral one hundred
+&#x217e,&#x217E,small roman numeral five hundred
+&#x217f,&#x217F,small roman numeral one thousand
+&#x2184,&#x2184,latin small letter reversed c
+&#x2190,&#x2190,leftwards arrow
+&#x2191,&#x2191,upwards arrow
+&#x2192,&#x2192,rightwards arrow
+&#x2193,&#x2193,downwards arrow
+&#x2194,&#x2194,left right arrow
+&#x2195,&#x2195,up down arrow
+&#x2196,&#x2196,north west arrow
+&#x2197,&#x2197,north east arrow
+&#x2198,&#x2198,south east arrow
+&#x2199,&#x2199,south west arrow
+&#x219a,&#x219A,leftwards arrow with stroke
+&#x219b,&#x219B,rightwards arrow with stroke
+&#x219c,&#x219C,leftwards wave arrow
+&#x219d,&#x219D,rightwards wave arrow
+&#x219e,&#x219E,leftwards two headed arrow
+&#x219f,&#x219F,upwards two headed arrow
+&#x21a0,&#x21A0,rightwards two headed arrow
+&#x21a1,&#x21A1,downwards two headed arrow
+&#x21a2,&#x21A2,leftwards arrow with tail
+&#x21a3,&#x21A3,rightwards arrow with tail
+&#x21a4,&#x21A4,leftwards arrow from bar
+&#x21a5,&#x21A5,upwards arrow from bar
+&#x21a6,&#x21A6,rightwards arrow from bar
+&#x21a7,&#x21A7,downwards arrow from bar
+&#x21a8,&#x21A8,up down arrow with base
+&#x21a9,&#x21A9,leftwards arrow with hook
+&#x21aa,&#x21AA,rightwards arrow with hook
+&#x21ab,&#x21AB,leftwards arrow with loop
+&#x21ac,&#x21AC,rightwards arrow with loop
+&#x21ad,&#x21AD,left right wave arrow
+&#x21ae,&#x21AE,left right arrow with stroke
+&#x21af,&#x21AF,downwards zigzag arrow
+&#x21b0,&#x21B0,upwards arrow with tip leftwards
+&#x21b1,&#x21B1,upwards arrow with tip rightwards
+&#x21b2,&#x21B2,downwards arrow with tip leftwards
+&#x21b3,&#x21B3,downwards arrow with tip rightwards
+&#x21b4,&#x21B4,rightwards arrow with corner downwards
+&#x21b5,&#x21B5,downwards arrow with corner leftwards
+&#x21b6,&#x21B6,anticlockwise top semicircle arrow
+&#x21b7,&#x21B7,clockwise top semicircle arrow
+&#x21b8,&#x21B8,north west arrow to long bar
+&#x21b9,&#x21B9,leftwards arrow to bar over rightwards arrow to bar
+&#x21ba,&#x21BA,anticlockwise open circle arrow
+&#x21bb,&#x21BB,clockwise open circle arrow
+&#x21bc,&#x21BC,leftwards harpoon with barb upwards
+&#x21bd,&#x21BD,leftwards harpoon with barb downwards
+&#x21be,&#x21BE,upwards harpoon with barb rightwards
+&#x21bf,&#x21BF,upwards harpoon with barb leftwards
+&#x21c0,&#x21C0,rightwards harpoon with barb upwards
+&#x21c1,&#x21C1,rightwards harpoon with barb downwards
+&#x21c2,&#x21C2,downwards harpoon with barb rightwards
+&#x21c3,&#x21C3,downwards harpoon with barb leftwards
+&#x21c4,&#x21C4,rightwards arrow over leftwards arrow
+&#x21c5,&#x21C5,upwards arrow leftwards of downwards arrow
+&#x21c6,&#x21C6,leftwards arrow over rightwards arrow
+&#x21c7,&#x21C7,leftwards paired arrows
+&#x21c8,&#x21C8,upwards paired arrows
+&#x21c9,&#x21C9,rightwards paired arrows
+&#x21ca,&#x21CA,downwards paired arrows
+&#x21cb,&#x21CB,leftwards harpoon over rightwards harpoon
+&#x21cc,&#x21CC,rightwards harpoon over leftwards harpoon
+&#x21cd,&#x21CD,leftwards double arrow with stroke
+&#x21ce,&#x21CE,left right double arrow with stroke
+&#x21cf,&#x21CF,rightwards double arrow with stroke
+&#x21d0,&#x21D0,leftwards double arrow
+&#x21d1,&#x21D1,upwards double arrow
+&#x21d2,&#x21D2,rightwards double arrow
+&#x21d3,&#x21D3,downwards double arrow
+&#x21d4,&#x21D4,left right double arrow
+&#x21d5,&#x21D5,up down double arrow
+&#x21d6,&#x21D6,north west double arrow
+&#x21d7,&#x21D7,north east double arrow
+&#x21d8,&#x21D8,south east double arrow
+&#x21d9,&#x21D9,south west double arrow
+&#x21da,&#x21DA,leftwards triple arrow
+&#x21db,&#x21DB,rightwards triple arrow
+&#x21dc,&#x21DC,leftwards squiggle arrow
+&#x21dd,&#x21DD,rightwards squiggle arrow
+&#x21de,&#x21DE,upwards arrow with double stroke
+&#x21df,&#x21DF,downwards arrow with double stroke
+&#x21e0,&#x21E0,leftwards dashed arrow
+&#x21e1,&#x21E1,upwards dashed arrow
+&#x21e2,&#x21E2,rightwards dashed arrow
+&#x21e3,&#x21E3,downwards dashed arrow
+&#x21e4,&#x21E4,leftwards arrow to bar
+&#x21e5,&#x21E5,rightwards arrow to bar
+&#x21e6,&#x21E6,leftwards white arrow
+&#x21e7,&#x21E7,upwards white arrow
+&#x21e8,&#x21E8,rightwards white arrow
+&#x21e9,&#x21E9,downwards white arrow
+&#x21ea,&#x21EA,upwards white arrow from bar
+&#x21eb,&#x21EB,upwards white arrow on pedestal
+&#x21ec,&#x21EC,upwards white arrow on pedestal with horizontal bar
+&#x21ed,&#x21ED,upwards white arrow on pedestal with vertical bar
+&#x21ee,&#x21EE,upwards white double arrow
+&#x21ef,&#x21EF,upwards white double arrow on pedestal
+&#x21f0,&#x21F0,rightwards white arrow from wall
+&#x21f1,&#x21F1,north west arrow to corner
+&#x21f2,&#x21F2,south east arrow to corner
+&#x21f3,&#x21F3,up down white arrow
+&#x21f4,&#x21F4,right arrow with small circle
+&#x21f5,&#x21F5,downwards arrow leftwards of upwards arrow
+&#x21f6,&#x21F6,three rightwards arrows
+&#x21f7,&#x21F7,leftwards arrow with vertical stroke
+&#x21f8,&#x21F8,rightwards arrow with vertical stroke
+&#x21f9,&#x21F9,left right arrow with vertical stroke
+&#x21fa,&#x21FA,leftwards arrow with double vertical stroke
+&#x21fb,&#x21FB,rightwards arrow with double vertical stroke
+&#x21fc,&#x21FC,left right arrow with double vertical stroke
+&#x21fd,&#x21FD,leftwards open-headed arrow
+&#x21fe,&#x21FE,rightwards open-headed arrow
+&#x21ff,&#x21FF,left right open-headed arrow
+&#x2200,&#x2200,for all
+&#x2201,&#x2201,complement
+&#x2202,&#x2202,partial differential
+&#x2203,&#x2203,there exists
+&#x2204,&#x2204,there does not exist
+&#x2205,&#x2205,empty set
+&#x2206,&#x2206,increment
+&#x2207,&#x2207,nabla
+&#x2208,&#x2208,element of
+&#x2209,&#x2209,not an element of
+&#x220a,&#x220A,small element of
+&#x220b,&#x220B,contains as member
+&#x220c,&#x220C,does not contain as member
+&#x220d,&#x220D,small contains as member
+&#x220e,&#x220E,end of proof
+&#x220f,&#x220F,n-ary product
+&#x2210,&#x2210,n-ary coproduct
+&#x2211,&#x2211,n-ary summation
+&#x2212,&#x2212,minus sign
+&#x2213,&#x2213,minus-or-plus sign
+&#x2214,&#x2214,dot plus
+&#x2215,&#x2215,division slash
+&#x2216,&#x2216,set minus
+&#x2217,&#x2217,asterisk operator
+&#x2218,&#x2218,ring operator
+&#x2219,&#x2219,bullet operator
+&#x221a,&#x221A,square root
+&#x221b,&#x221B,cube root
+&#x221c,&#x221C,fourth root
+&#x221d,&#x221D,proportional to
+&#x221e,&#x221E,infinity
+&#x221f,&#x221F,right angle
+&#x2220,&#x2220,angle
+&#x2221,&#x2221,measured angle
+&#x2222,&#x2222,spherical angle
+&#x2223,&#x2223,divides
+&#x2224,&#x2224,does not divide
+&#x2225,&#x2225,parallel to
+&#x2226,&#x2226,not parallel to
+&#x2227,&#x2227,logical and
+&#x2228,&#x2228,logical or
+&#x2229,&#x2229,intersection
+&#x222a,&#x222A,union
+&#x222b,&#x222B,integral
+&#x222c,&#x222C,double integral
+&#x222d,&#x222D,triple integral
+&#x222e,&#x222E,contour integral
+&#x222f,&#x222F,surface integral
+&#x2230,&#x2230,volume integral
+&#x2231,&#x2231,clockwise integral
+&#x2232,&#x2232,clockwise contour integral
+&#x2233,&#x2233,anticlockwise contour integral
+&#x2234,&#x2234,therefore (freemason symbol - three dots - 3 points symbol). this 3 dos can also be &there4; in html.
+&#x2235,&#x2235,because
+&#x2236,&#x2236,ratio
+&#x2237,&#x2237,proportion
+&#x2238,&#x2238,dot minus
+&#x2239,&#x2239,excess
+&#x223a,&#x223A,geometric proportion
+&#x223b,&#x223B,homothetic
+&#x223c,&#x223C,tilde operator
+&#x223d,&#x223D,reversed tilde
+&#x223e,&#x223E,inverted lazy s
+&#x223f,&#x223F,sine wave
+&#x2240,&#x2240,wreath product
+&#x2241,&#x2241,not tilde
+&#x2242,&#x2242,minus tilde
+&#x2243,&#x2243,asymptotically equal to
+&#x2244,&#x2244,not asymptotically equal to
+&#x2245,&#x2245,approximately equal to
+&#x2246,&#x2246,approximately but not actually equal to
+&#x2247,&#x2247,neither approximately nor actually equal to
+&#x2248,&#x2248,almost equal to
+&#x2249,&#x2249,not almost equal to
+&#x224a,&#x224A,almost equal or equal to
+&#x224b,&#x224B,triple tilde
+&#x224c,&#x224C,all equal to
+&#x224d,&#x224D,equivalent to
+&#x224e,&#x224E,geometrically equivalent to
+&#x224f,&#x224F,difference between
+&#x2250,&#x2250,approaches the limit
+&#x2251,&#x2251,geometrically equal to
+&#x2252,&#x2252,approximately equal to or the image of
+&#x2253,&#x2253,image of or approximately equal to
+&#x2254,&#x2254,colon equals
+&#x2255,&#x2255,equals colon
+&#x2256,&#x2256,ring in equal to
+&#x2257,&#x2257,ring equal to
+&#x2258,&#x2258,corresponds to
+&#x2259,&#x2259,estimates
+&#x225a,&#x225A,equiangular to
+&#x225b,&#x225B,star equals
+&#x225c,&#x225C,delta equal to
+&#x225d,&#x225D,equal to by definition
+&#x225e,&#x225E,measured by
+&#x225f,&#x225F,questioned equal to
+&#x2260,&#x2260,not equal to
+&#x2261,&#x2261,identical to
+&#x2262,&#x2262,not identical to
+&#x2263,&#x2263,strictly equivalent to
+&#x2264,&#x2264,less-than or equal to
+&#x2265,&#x2265,greater-than or equal to
+&#x2266,&#x2266,less-than over equal to
+&#x2267,&#x2267,greater-than over equal to
+&#x2268,&#x2268,less-than but not equal to
+&#x2269,&#x2269,greater-than but not equal to
+&#x226a,&#x226A,much less-than
+&#x226b,&#x226B,much greater-than
+&#x226c,&#x226C,between
+&#x226d,&#x226D,not equivalent to
+&#x226e,&#x226E,not less-than
+&#x226f,&#x226F,not greater-than
+&#x2270,&#x2270,neither less-than nor equal to
+&#x2271,&#x2271,neither greater-than nor equal to
+&#x2272,&#x2272,less-than or equivalent to
+&#x2273,&#x2273,greater-than or equivalent to
+&#x2274,&#x2274,neither less-than nor equivalent to
+&#x2275,&#x2275,neither greater-than nor equivalent to
+&#x2276,&#x2276,less-than or greater-than
+&#x2277,&#x2277,greater-than or less-than
+&#x2278,&#x2278,neither less-than nor greater-than
+&#x2279,&#x2279,neither greater-than nor less-than
+&#x227a,&#x227A,precedes
+&#x227b,&#x227B,succeeds
+&#x227c,&#x227C,precedes or equal to
+&#x227d,&#x227D,succeeds or equal to
+&#x227e,&#x227E,precedes or equivalent to
+&#x227f,&#x227F,succeeds or equivalent to
+&#x2280,&#x2280,does not precede
+&#x2281,&#x2281,does not succeed
+&#x2282,&#x2282,subset of
+&#x2283,&#x2283,superset of
+&#x2284,&#x2284,not a subset of
+&#x2285,&#x2285,not a superset of
+&#x2286,&#x2286,subset of or equal to
+&#x2287,&#x2287,superset of or equal to
+&#x2288,&#x2288,neither a subset of nor equal to
+&#x2289,&#x2289,neither a superset of nor equal to
+&#x228a,&#x228A,subset of with not equal to
+&#x228b,&#x228B,superset of with not equal to
+&#x228c,&#x228C,multiset
+&#x228d,&#x228D,multiset multiplication
+&#x228e,&#x228E,multiset union
+&#x228f,&#x228F,square image of
+&#x2290,&#x2290,square original of
+&#x2291,&#x2291,square image of or equal to
+&#x2292,&#x2292,square original of or equal to
+&#x2293,&#x2293,square cap
+&#x2294,&#x2294,square cup
+&#x2295,&#x2295,circled plus
+&#x2296,&#x2296,circled minus
+&#x2297,&#x2297,circled times
+&#x2298,&#x2298,circled division slash
+&#x2299,&#x2299,circled dot operator
+&#x229a,&#x229A,circled ring operator
+&#x229b,&#x229B,circled asterisk operator
+&#x229c,&#x229C,circled equals
+&#x229d,&#x229D,circled dash
+&#x229e,&#x229E,squared plus
+&#x229f,&#x229F,squared minus
+&#x22a0,&#x22A0,squared times
+&#x22a1,&#x22A1,squared dot operator
+&#x22a2,&#x22A2,right tack
+&#x22a3,&#x22A3,left tack
+&#x22a4,&#x22A4,down tack
+&#x22a5,&#x22A5,up tack
+&#x22a6,&#x22A6,assertion
+&#x22a7,&#x22A7,models
+&#x22a8,&#x22A8,TRUE
+&#x22a9,&#x22A9,forces
+&#x22aa,&#x22AA,triple vertical bar right turnstile
+&#x22ab,&#x22AB,double vertical bar double right turnstile
+&#x22ac,&#x22AC,does not prove
+&#x22ad,&#x22AD,not true
+&#x22ae,&#x22AE,does not force
+&#x22af,&#x22AF,negated double vertical bar double right turnstile
+&#x22b0,&#x22B0,precedes under relation
+&#x22b1,&#x22B1,succeeds under relation
+&#x22b2,&#x22B2,normal subgroup of
+&#x22b3,&#x22B3,contains as normal subgroup
+&#x22b4,&#x22B4,normal subgroup of or equal to
+&#x22b5,&#x22B5,contains as normal subgroup or equal to
+&#x22b6,&#x22B6,original of
+&#x22b7,&#x22B7,image of
+&#x22b8,&#x22B8,multimap
+&#x22b9,&#x22B9,hermitian conjugate matrix
+&#x22ba,&#x22BA,intercalate
+&#x22bb,&#x22BB,xor
+&#x22bc,&#x22BC,nand
+&#x22bd,&#x22BD,nor
+&#x22be,&#x22BE,right angle with arc
+&#x22bf,&#x22BF,right triangle
+&#x22c0,&#x22C0,n-ary logical and
+&#x22c1,&#x22C1,n-ary logical or
+&#x22c2,&#x22C2,n-ary intersection
+&#x22c3,&#x22C3,n-ary union
+&#x22c4,&#x22C4,diamond operator
+&#x22c5,&#x22C5,dot operator
+&#x22c6,&#x22C6,star operator
+&#x22c7,&#x22C7,division times
+&#x22c8,&#x22C8,bowtie
+&#x22c9,&#x22C9,left normal factor semidirect product
+&#x22ca,&#x22CA,right normal factor semidirect product
+&#x22cb,&#x22CB,left semidirect product
+&#x22cc,&#x22CC,right semidirect product
+&#x22cd,&#x22CD,reversed tilde equals
+&#x22ce,&#x22CE,curly logical or
+&#x22cf,&#x22CF,curly logical and
+&#x22d0,&#x22D0,double subset
+&#x22d1,&#x22D1,double superset
+&#x22d2,&#x22D2,double intersection
+&#x22d3,&#x22D3,double union
+&#x22d4,&#x22D4,pitchfork
+&#x22d5,&#x22D5,equal and parallel to
+&#x22d6,&#x22D6,less-than with dot
+&#x22d7,&#x22D7,greater-than with dot
+&#x22d8,&#x22D8,very much less-than
+&#x22d9,&#x22D9,very much greater-than
+&#x22da,&#x22DA,less-than equal to or greater-than
+&#x22db,&#x22DB,greater-than equal to or less-than
+&#x22dc,&#x22DC,equal to or less-than
+&#x22dd,&#x22DD,equal to or greater-than
+&#x22de,&#x22DE,equal to or precedes
+&#x22df,&#x22DF,equal to or succeeds
+&#x22e0,&#x22E0,does not precede or equal
+&#x22e1,&#x22E1,does not succeed or equal
+&#x22e2,&#x22E2,not square image of or equal to
+&#x22e3,&#x22E3,not square original of or equal to
+&#x22e4,&#x22E4,square image of or not equal to
+&#x22e5,&#x22E5,square original of or not equal to
+&#x22e6,&#x22E6,less-than but not equivalent to
+&#x22e7,&#x22E7,greater-than but not equivalent to
+&#x22e8,&#x22E8,precedes but not equivalent to
+&#x22e9,&#x22E9,succeeds but not equivalent to
+&#x22ea,&#x22EA,not normal subgroup of
+&#x22eb,&#x22EB,does not contain as normal subgroup
+&#x22ec,&#x22EC,not normal subgroup of or equal to
+&#x22ed,&#x22ED,does not contain as normal subgroup or equal
+&#x22ee,&#x22EE,vertical ellipsis
+&#x22ef,&#x22EF,midline horizontal ellipsis
+&#x22f0,&#x22F0,up right diagonal ellipsis
+&#x22f1,&#x22F1,down right diagonal ellipsis
+&#x2300,&#x2300,diameter sign
+&#x2301,&#x2301,electric arrow
+&#x2302,&#x2302,house
+&#x2303,&#x2303,up arrowhead
+&#x2304,&#x2304,down arrowhead
+&#x2305,&#x2305,projective
+&#x2306,&#x2306,perspective
+&#x2307,&#x2307,wavy line
+&#x2308,&#x2308,left ceiling
+&#x2309,&#x2309,right ceiling
+&#x230a,&#x230A,left floor
+&#x230b,&#x230B,right floor
+&#x2310,&#x2310,reversed not sign
+&#x2311,&#x2311,square lozenge
+&#x2312,&#x2312,arc
+&#x2313,&#x2313,segment
+&#x2314,&#x2314,sector
+&#x2315,&#x2315,telephone recorder
+&#x2316,&#x2316,position indicator
+&#x2317,&#x2317,viewdata square
+&#x2318,&#x2318,place of interest sign
+&#x2319,&#x2319,turned not sign
+&#x231a,&#x231A,watch
+&#x231b,&#x231B,hourglass
+&#x2320,&#x2320,top half integral
+&#x2321,&#x2321,bottom half integral
+&#x2322,&#x2322,frown
+&#x2323,&#x2323,smile
+&#x2324,&#x2324,up arrowhead between two horizontal bars
+&#x2325,&#x2325,option key
+&#x2326,&#x2326,erase to the right
+&#x2327,&#x2327,x in a rectangle box
+&#x2328,&#x2328,keyboard
+&#x232b,&#x232B,erase to the left
+&#x232c,&#x232C,benzene ring
+&#x239b,&#x239B,left parenthesis upper hook
+&#x239c,&#x239C,left parenthesis extension
+&#x239d,&#x239D,left parenthesis lower hook
+&#x239e,&#x239E,right parenthesis upper hook
+&#x239f,&#x239F,right parenthesis extension
+&#x23a0,&#x23A0,right parenthesis lower hook
+&#x23a1,&#x23A1,left square bracket upper corner
+&#x23a2,&#x23A2,left square bracket extension
+&#x23a3,&#x23A3,left square bracket lower corner
+&#x23a4,&#x23A4,right square bracket upper corner
+&#x23a5,&#x23A5,right square bracket extension
+&#x23a6,&#x23A6,right square bracket lower corner
+&#x23a7,&#x23A7,left curly bracket upper hook
+&#x23a8,&#x23A8,left curly bracket middle piece
+&#x23a9,&#x23A9,left curly bracket lower hook
+&#x23aa,&#x23AA,curly bracket extension
+&#x23ab,&#x23AB,right curly bracket upper hook
+&#x23ac,&#x23AC,right curly bracket middle piece
+&#x23ad,&#x23AD,right curly bracket lower hook
+&#x23ce,&#x23CE,return symbol
+&#x23cf,&#x23CF,eject symbol
+&#x23da,&#x23DA,earth ground
+&#x23db,&#x23DB,fuse
+&#x23f0,&#x23F0,alarm clock
+&#x23f1,&#x23F1,stopwatch
+&#x23f2,&#x23F2,timer clock
+&#x23f3,&#x23F3,hourglass with flowing sand
+&#x2422,&#x2422,blank symbol
+&#x2423,&#x2423,open box
+&#x2500,&#x2500,box drawings light horizontal
+&#x2501,&#x2501,box drawings heavy horizontal
+&#x2502,&#x2502,box drawings light vertical
+&#x2503,&#x2503,box drawings heavy vertical
+&#x2504,&#x2504,box drawings light triple dash horizontal
+&#x2505,&#x2505,box drawings heavy triple dash horizontal
+&#x2506,&#x2506,box drawings light triple dash vertical
+&#x2507,&#x2507,box drawings heavy triple dash vertical
+&#x2508,&#x2508,box drawings light quadruple dash horizontal
+&#x2509,&#x2509,box drawings heavy quadruple dash horizontal
+&#x250a,&#x250A,box drawings light quadruple dash vertical
+&#x250b,&#x250B,box drawings heavy quadruple dash vertical
+&#x250c,&#x250C,box drawings light down and right
+&#x250d,&#x250D,box drawings down light and right heavy
+&#x250e,&#x250E,box drawings down heavy and right light
+&#x250f,&#x250F,box drawings heavy down and right
+&#x2510,&#x2510,box drawings light down and left
+&#x2511,&#x2511,box drawings down light and left heavy
+&#x2512,&#x2512,box drawings down heavy and left light
+&#x2513,&#x2513,box drawings heavy down and left
+&#x2514,&#x2514,box drawings light up and right
+&#x2515,&#x2515,box drawings up light and right heavy
+&#x2516,&#x2516,box drawings up heavy and right light
+&#x2517,&#x2517,box drawings heavy up and right
+&#x2518,&#x2518,box drawings light up and left
+&#x2519,&#x2519,box drawings up light and left heavy
+&#x251a,&#x251A,box drawings up heavy and left light
+&#x251b,&#x251B,box drawings heavy up and left
+&#x251c,&#x251C,box drawings light vertical and right
+&#x251d,&#x251D,box drawings vertical light and right heavy
+&#x251e,&#x251E,box drawings up heavy and right down light
+&#x251f,&#x251F,box drawings down heavy and right up light
+&#x2520,&#x2520,box drawings vertical heavy and right light
+&#x2521,&#x2521,box drawings down light and right up heavy
+&#x2522,&#x2522,box drawings up light and right down heavy
+&#x2523,&#x2523,box drawings heavy vertical and right
+&#x2524,&#x2524,box drawings light vertical and left
+&#x2525,&#x2525,box drawings vertical light and left heavy
+&#x2526,&#x2526,box drawings up heavy and left down light
+&#x2527,&#x2527,box drawings down heavy and left up light
+&#x2528,&#x2528,box drawings vertical heavy and left light
+&#x2529,&#x2529,box drawings down light and left up heavy
+&#x252a,&#x252A,box drawings up light and left down heavy
+&#x252b,&#x252B,box drawings heavy vertical and left
+&#x252c,&#x252C,box drawings light down and horizontal
+&#x252d,&#x252D,box drawings left heavy and right down light
+&#x252e,&#x252E,box drawings right heavy and left down light
+&#x252f,&#x252F,box drawings down light and horizontal heavy
+&#x2530,&#x2530,box drawings down heavy and horizontal light
+&#x2531,&#x2531,box drawings right light and left down heavy
+&#x2532,&#x2532,box drawings left light and right down heavy
+&#x2533,&#x2533,box drawings heavy down and horizontal
+&#x2534,&#x2534,box drawings light up and horizontal
+&#x2535,&#x2535,box drawings left heavy and right up light
+&#x2536,&#x2536,box drawings right heavy and left up light
+&#x2537,&#x2537,box drawings up light and horizontal heavy
+&#x2538,&#x2538,box drawings up heavy and horizontal light
+&#x2539,&#x2539,box drawings right light and left up heavy
+&#x253a,&#x253A,box drawings left light and right up heavy
+&#x253b,&#x253B,box drawings heavy up and horizontal
+&#x253c,&#x253C,box drawings light vertical and horizontal
+&#x253d,&#x253D,box drawings left heavy and right vertical light
+&#x253e,&#x253E,box drawings right heavy and left vertical light
+&#x253f,&#x253F,box drawings vertical light and horizontal heavy
+&#x2540,&#x2540,box drawings up heavy and down horizontal light
+&#x2541,&#x2541,box drawings down heavy and up horizontal light
+&#x2542,&#x2542,box drawings vertical heavy and horizontal light
+&#x2543,&#x2543,box drawings left up heavy and right down light
+&#x2544,&#x2544,box drawings right up heavy and left down light
+&#x2545,&#x2545,box drawings left down heavy and right up light
+&#x2546,&#x2546,box drawings right down heavy and left up light
+&#x2547,&#x2547,box drawings down light and up horizontal heavy
+&#x2548,&#x2548,box drawings up light and down horizontal heavy
+&#x2549,&#x2549,box drawings right light and left vertical heavy
+&#x254a,&#x254A,box drawings left light and right vertical heavy
+&#x254b,&#x254B,box drawings heavy vertical and horizontal
+&#x254c,&#x254C,box drawings light double dash horizontal
+&#x254d,&#x254D,box drawings heavy double dash horizontal
+&#x254e,&#x254E,box drawings light double dash vertical
+&#x254f,&#x254F,box drawings heavy double dash vertical
+&#x2550,&#x2550,box drawings double horizontal
+&#x2551,&#x2551,box drawings double vertical
+&#x2552,&#x2552,box drawings down single and right double
+&#x2553,&#x2553,box drawings down double and right single
+&#x2554,&#x2554,box drawings double down and right
+&#x2555,&#x2555,box drawings down single and left double
+&#x2556,&#x2556,box drawings down double and left single
+&#x2557,&#x2557,box drawings double down and left
+&#x2558,&#x2558,box drawings up single and right double
+&#x2559,&#x2559,box drawings up double and right single
+&#x255a,&#x255A,box drawings double up and right
+&#x255b,&#x255B,box drawings up single and left double
+&#x255c,&#x255C,box drawings up double and left single
+&#x255d,&#x255D,box drawings double up and left
+&#x255e,&#x255E,box drawings vertical single and right double
+&#x255f,&#x255F,box drawings vertical double and right single
+&#x2560,&#x2560,box drawings double vertical and right
+&#x2561,&#x2561,box drawings vertical single and left double
+&#x2562,&#x2562,box drawings vertical double and left single
+&#x2563,&#x2563,box drawings double vertical and left
+&#x2564,&#x2564,box drawings down single and horizontal double
+&#x2565,&#x2565,box drawings down double and horizontal single
+&#x2566,&#x2566,box drawings double down and horizontal
+&#x2567,&#x2567,box drawings up single and horizontal double
+&#x2568,&#x2568,box drawings up double and horizontal single
+&#x2569,&#x2569,box drawings double up and horizontal
+&#x256a,&#x256A,box drawings vertical single and horizontal double
+&#x256b,&#x256B,box drawings vertical double and horizontal single
+&#x256c,&#x256C,box drawings double vertical and horizontal
+&#x256d,&#x256D,box drawings light arc down and right
+&#x256e,&#x256E,box drawings light arc down and left
+&#x256f,&#x256F,box drawings light arc up and left
+&#x2570,&#x2570,box drawings light arc up and right
+&#x2571,&#x2571,box drawings light diagonal upper right to lower left
+&#x2572,&#x2572,box drawings light diagonal upper left to lower right
+&#x2573,&#x2573,box drawings light diagonal cross
+&#x2574,&#x2574,box drawings light left
+&#x2575,&#x2575,box drawings light up
+&#x2576,&#x2576,box drawings light right
+&#x2577,&#x2577,box drawings light down
+&#x2578,&#x2578,box drawings heavy left
+&#x2579,&#x2579,box drawings heavy up
+&#x257a,&#x257A,box drawings heavy right
+&#x257b,&#x257B,box drawings heavy down
+&#x257c,&#x257C,box drawings light left and heavy right
+&#x257d,&#x257D,box drawings light up and heavy down
+&#x257e,&#x257E,box drawings heavy left and light right
+&#x257f,&#x257F,box drawings heavy up and light down
+&#x2580,&#x2580,upper half block
+&#x2581,&#x2581,lower one eighth block
+&#x2582,&#x2582,lower one quarter block
+&#x2583,&#x2583,lower three eighths block
+&#x2584,&#x2584,lower half block
+&#x2585,&#x2585,lower five eighths block
+&#x2586,&#x2586,lower three quarters block
+&#x2587,&#x2587,lower seven eighths block
+&#x2588,&#x2588,full block
+&#x2589,&#x2589,left seven eighths block
+&#x258a,&#x258A,left three quarters block
+&#x258b,&#x258B,left five eighths block
+&#x258c,&#x258C,left half block
+&#x258d,&#x258D,left three eighths block
+&#x258e,&#x258E,left one quarter block
+&#x258f,&#x258F,left one eighth block
+&#x2590,&#x2590,right half block
+&#x2591,&#x2591,light shade
+&#x2592,&#x2592,medium shade
+&#x2593,&#x2593,dark shade
+&#x2594,&#x2594,upper one eighth block
+&#x2595,&#x2595,right one eighth block
+&#x2596,&#x2596,quadrant lower left
+&#x2597,&#x2597,quadrant lower right
+&#x2598,&#x2598,quadrant upper left
+&#x2599,&#x2599,quadrant upper left and lower left and lower right
+&#x259a,&#x259A,quadrant upper left and lower right
+&#x259b,&#x259B,quadrant upper left and upper right and lower left
+&#x259c,&#x259C,quadrant upper left and upper right and lower right
+&#x259d,&#x259D,quadrant upper right
+&#x259e,&#x259E,quadrant upper right and lower left
+&#x259f,&#x259F,quadrant upper right and lower left and lower right
+&#x25a0,&#x25A0,black square
+&#x25a1,&#x25A1,white square
+&#x25a2,&#x25A2,white square with rounded corners
+&#x25a3,&#x25A3,white square containing black small square
+&#x25a4,&#x25A4,square with horizontal fill
+&#x25a5,&#x25A5,square with vertical fill
+&#x25a6,&#x25A6,square with orthogonal crosshatch fill
+&#x25a7,&#x25A7,square with upper left to lower right fill
+&#x25a8,&#x25A8,square with upper right to lower left fill
+&#x25a9,&#x25A9,square with diagonal crosshatch fill
+&#x25aa,&#x25AA,black small square
+&#x25ab,&#x25AB,white small square
+&#x25ac,&#x25AC,black rectangle
+&#x25ad,&#x25AD,white rectangle
+&#x25ae,&#x25AE,black vertical rectangle
+&#x25af,&#x25AF,white vertical rectangle
+&#x25b0,&#x25B0,black parallelogram
+&#x25b1,&#x25B1,white parallelogram
+&#x25b2,&#x25B2,black up-pointing triangle
+&#x25b3,&#x25B3,white up-pointing triangle
+&#x25b4,&#x25B4,black up-pointing small triangle
+&#x25b5,&#x25B5,white up-pointing small triangle
+&#x25b6,&#x25B6,black right-pointing triangle
+&#x25b7,&#x25B7,white right-pointing triangle
+&#x25b8,&#x25B8,black right-pointing small triangle
+&#x25b9,&#x25B9,white right-pointing small triangle
+&#x25ba,&#x25BA,black right-pointing pointer
+&#x25bb,&#x25BB,white right-pointing pointer
+&#x25bc,&#x25BC,black down-pointing triangle
+&#x25bd,&#x25BD,white down-pointing triangle
+&#x25be,&#x25BE,black down-pointing small triangle
+&#x25bf,&#x25BF,white down-pointing small triangle
+&#x25c0,&#x25C0,black left-pointing triangle
+&#x25c1,&#x25C1,white left-pointing triangle
+&#x25c2,&#x25C2,black left-pointing small triangle
+&#x25c3,&#x25C3,white left-pointing small triangle
+&#x25c4,&#x25C4,black left-pointing pointer
+&#x25c5,&#x25C5,white left-pointing pointer
+&#x25c6,&#x25C6,black diamond
+&#x25c7,&#x25C7,white diamond
+&#x25c8,&#x25C8,white diamond containing black small diamond
+&#x25c9,&#x25C9,fisheye
+&#x25ca,&#x25CA,lozenge
+&#x25cb,&#x25CB,white circle
+&#x25cc,&#x25CC,dotted circle
+&#x25cd,&#x25CD,circle with vertical fill
+&#x25ce,&#x25CE,bullseye
+&#x25cf,&#x25CF,black circle
+&#x25d0,&#x25D0,circle with left half black
+&#x25d1,&#x25D1,circle with right half black
+&#x25d2,&#x25D2,circle with lower half black
+&#x25d3,&#x25D3,circle with upper half black
+&#x25d4,&#x25D4,circle with upper right quadrant black
+&#x25d5,&#x25D5,circle with all but upper left quadrant black
+&#x25d6,&#x25D6,left half black circle
+&#x25d7,&#x25D7,right half black circle
+&#x25d8,&#x25D8,inverse bullet
+&#x25d9,&#x25D9,inverse white circle
+&#x25da,&#x25DA,upper half inverse white circle
+&#x25db,&#x25DB,lower half inverse white circle
+&#x25dc,&#x25DC,upper left quadrant circular arc
+&#x25dd,&#x25DD,upper right quadrant circular arc
+&#x25de,&#x25DE,lower right quadrant circular arc
+&#x25df,&#x25DF,lower left quadrant circular arc
+&#x25e0,&#x25E0,upper half circle
+&#x25e1,&#x25E1,lower half circle
+&#x25e2,&#x25E2,black lower right triangle
+&#x25e3,&#x25E3,black lower left triangle
+&#x25e4,&#x25E4,black upper left triangle
+&#x25e5,&#x25E5,black upper right triangle
+&#x25e6,&#x25E6,white bullet
+&#x25e7,&#x25E7,square with left half black
+&#x25e8,&#x25E8,square with right half black
+&#x25e9,&#x25E9,square with upper left diagonal half black
+&#x25ea,&#x25EA,square with lower right diagonal half black
+&#x25eb,&#x25EB,white square with vertical bisecting line
+&#x25ec,&#x25EC,white up-pointing triangle with dot
+&#x25ed,&#x25ED,up-pointing triangle with left half black
+&#x25ee,&#x25EE,up-pointing triangle with right half black
+&#x25ef,&#x25EF,large circle
+&#x25f0,&#x25F0,white square with upper left quadrant
+&#x25f1,&#x25F1,white square with lower left quadrant
+&#x25f2,&#x25F2,white square with lower right quadrant
+&#x25f3,&#x25F3,white square with upper right quadrant
+&#x25f4,&#x25F4,white circle with upper left quadrant
+&#x25f5,&#x25F5,white circle with lower left quadrant
+&#x25f6,&#x25F6,white circle with lower right quadrant
+&#x25f7,&#x25F7,white circle with upper right quadrant
+&#x25f8,&#x25F8,upper left triangle
+&#x25f9,&#x25F9,upper right triangle
+&#x25fa,&#x25FA,lower left triangle
+&#x25fb,&#x25FB,white medium square
+&#x25fc,&#x25FC,black medium square
+&#x25fd,&#x25FD,white medium small square
+&#x25fe,&#x25FE,black medium small square
+&#x25ff,&#x25FF,lower right triangle
+&#x2600,&#x2600,black sun with rays
+&#x2601,&#x2601,cloud
+&#x2602,&#x2602,umbrella
+&#x2603,&#x2603,snowman
+&#x2604,&#x2604,comet
+&#x2605,&#x2605,black star
+&#x2606,&#x2606,white star
+&#x2607,&#x2607,lightning
+&#x2608,&#x2608,thunderstorm
+&#x2609,&#x2609,sun
+&#x260a,&#x260A,ascending node
+&#x260b,&#x260B,descending node
+&#x260c,&#x260C,conjunction
+&#x260d,&#x260D,opposition
+&#x260e,&#x260E,black telephone
+&#x260f,&#x260F,white telephone
+&#x2610,&#x2610,ballot box
+&#x2611,&#x2611,ballot box with check
+&#x2612,&#x2612,ballot box with x
+&#x2613,&#x2613,saltire
+&#x2614,&#x2614,umbrella with rain drops
+&#x2615,&#x2615,hot beverage
+&#x2616,&#x2616,white shogi piece
+&#x2617,&#x2617,black shogi piece
+&#x2618,&#x2618,shamrock
+&#x2619,&#x2619,reversed rotated floral heart bullet
+&#x261a,&#x261A,black left pointing index
+&#x261b,&#x261B,black right pointing index
+&#x261c,&#x261C,white left pointing index
+&#x261d,&#x261D,white up pointing index
+&#x261e,&#x261E,white right pointing index
+&#x261f,&#x261F,white down pointing index
+&#x2620,&#x2620,skull and crossbones (poison)
+&#x2621,&#x2621,caution sign
+&#x2622,&#x2622,radioactive sign
+&#x2623,&#x2623,biohazard sign
+&#x2624,&#x2624,caduceus
+&#x2625,&#x2625,ankh
+&#x2626,&#x2626,orthodox cross
+&#x2627,&#x2627,chi rho
+&#x2628,&#x2628,cross of lorraine
+&#x2629,&#x2629,cross of jerusalem
+&#x262a,&#x262A,star and crescent
+&#x262b,&#x262B,farsi symbol
+&#x262c,&#x262C,adi shakti
+&#x262d,&#x262D,hammer and sickle
+&#x262e,&#x262E,peace symbol
+&#x262f,&#x262F,yin yang
+&#x2630,&#x2630,trigram for heaven
+&#x2631,&#x2631,trigram for lake
+&#x2632,&#x2632,trigram for fire
+&#x2633,&#x2633,trigram for thunder
+&#x2634,&#x2634,trigram for wind
+&#x2635,&#x2635,trigram for water
+&#x2636,&#x2636,trigram for mountain
+&#x2637,&#x2637,trigram for earth
+&#x2638,&#x2638,wheel of dharma
+&#x2639,&#x2639,white frowning face
+&#x263a,&#x263A,white smiling face
+&#x263b,&#x263B,black smiling face
+&#x263c,&#x263C,white sun with rays
+&#x263d,&#x263D,first quarter moon
+&#x263e,&#x263E,last quarter moon
+&#x263f,&#x263F,mercury
+&#x2640,&#x2640,female sign
+&#x2641,&#x2641,earth
+&#x2642,&#x2642,male sign
+&#x2643,&#x2643,jupiter
+&#x2644,&#x2644,saturn
+&#x2645,&#x2645,uranus
+&#x2646,&#x2646,neptune
+&#x2647,&#x2647,pluto
+&#x2648,&#x2648,aries
+&#x2649,&#x2649,taurus
+&#x264a,&#x264A,gemini
+&#x264b,&#x264B,cancer
+&#x264c,&#x264C,leo
+&#x264d,&#x264D,virgo
+&#x264e,&#x264E,libra
+&#x264f,&#x264F,scorpius
+&#x2650,&#x2650,sagittarius
+&#x2651,&#x2651,capricorn
+&#x2652,&#x2652,aquarius
+&#x2653,&#x2653,pisces
+&#x2654,&#x2654,white chess king
+&#x2655,&#x2655,white chess queen
+&#x2656,&#x2656,white chess rook
+&#x2657,&#x2657,white chess bishop
+&#x2658,&#x2658,white chess knight
+&#x2659,&#x2659,white chess pawn
+&#x265a,&#x265A,black chess king
+&#x265b,&#x265B,black chess queen
+&#x265c,&#x265C,black chess rook
+&#x265d,&#x265D,black chess bishop
+&#x265e,&#x265E,black chess knight
+&#x265f,&#x265F,black chess pawn
+&#x2660,&#x2660,black spade suit
+&#x2661,&#x2661,white heart suit
+&#x2662,&#x2662,white diamond suit
+&#x2663,&#x2663,black club suit
+&#x2664,&#x2664,white spade suit
+&#x2665,&#x2665,black heart suit
+&#x2666,&#x2666,black diamond suit
+&#x2667,&#x2667,white club suit
+&#x2668,&#x2668,hot springs
+&#x2669,&#x2669,quarter note
+&#x266a,&#x266A,eighth note
+&#x266b,&#x266B,beamed eighth notes
+&#x266c,&#x266C,beamed sixteenth notes
+&#x266d,&#x266D,music flat sign
+&#x266e,&#x266E,music natural sign
+&#x266f,&#x266F,music sharp sign
+&#x2672,&#x2672,universal recycling symbol
+&#x2673,&#x2673,recycling symbol for type-1 plastics
+&#x2674,&#x2674,recycling symbol for type-2 plastics
+&#x2675,&#x2675,recycling symbol for type-3 plastics
+&#x2676,&#x2676,recycling symbol for type-4 plastics
+&#x2677,&#x2677,recycling symbol for type-5 plastics
+&#x2678,&#x2678,recycling symbol for type-6 plastics
+&#x2679,&#x2679,recycling symbol for type-7 plastics
+&#x267a,&#x267A,recycling symbol for generic materials
+&#x267b,&#x267B,black universal recycling symbol
+&#x267c,&#x267C,recycled paper symbol
+&#x267d,&#x267D,partially-recycled paper symbol
+&#x267e,&#x267E,permanent paper sign
+&#x267f,&#x267F,wheelchair symbol
+&#x2680,&#x2680,die face-1
+&#x2681,&#x2681,die face-2
+&#x2682,&#x2682,die face-3
+&#x2683,&#x2683,die face-4
+&#x2684,&#x2684,die face-5
+&#x2685,&#x2685,die face-6
+&#x2690,&#x2690,white flag
+&#x2691,&#x2691,black flag
+&#x2692,&#x2692,hammer and pick
+&#x2693,&#x2693,anchor
+&#x2694,&#x2694,crossed swords
+&#x2695,&#x2695,staff of aesculapius
+&#x2696,&#x2696,scales
+&#x2697,&#x2697,alembic
+&#x2698,&#x2698,flower
+&#x2699,&#x2699,gear
+&#x269a,&#x269A,staff of hermes
+&#x269b,&#x269B,atom symbol
+&#x269c,&#x269C,fleur-de-lis
+&#x269d,&#x269D,outlined white star
+&#x269e,&#x269E,three lines converging right
+&#x269f,&#x269F,three lines converging left
+&#x26a0,&#x26A0,warning sign
+&#x26a1,&#x26A1,high voltage sign
+&#x26a2,&#x26A2,doubled female sign
+&#x26a3,&#x26A3,doubled male sign
+&#x26a4,&#x26A4,interlocked female and male sign
+&#x26a5,&#x26A5,male and female sign
+&#x26a6,&#x26A6,male with stroke sign
+&#x26a7,&#x26A7,male with stroke and male and female sign
+&#x26a8,&#x26A8,vertical male with stroke sign
+&#x26a9,&#x26A9,horizontal male with stroke sign
+&#x26aa,&#x26AA,medium white circle
+&#x26ab,&#x26AB,medium black circle
+&#x26ac,&#x26AC,medium small white circle
+&#x26ad,&#x26AD,marriage symbol
+&#x26ae,&#x26AE,divorce symbol
+&#x26af,&#x26AF,unmarried partnership symbol
+&#x26b0,&#x26B0,coffin
+&#x26b1,&#x26B1,funeral urn
+&#x26b2,&#x26B2,neuter
+&#x26b3,&#x26B3,ceres
+&#x26b4,&#x26B4,pallas
+&#x26b5,&#x26B5,juno
+&#x26b6,&#x26B6,vesta
+&#x26b7,&#x26B7,chiron
+&#x26b8,&#x26B8,black moon lilith
+&#x26b9,&#x26B9,sextile
+&#x26ba,&#x26BA,semisextile
+&#x26bb,&#x26BB,quincunx
+&#x26bc,&#x26BC,sesquiquadrate
+&#x26c0,&#x26C0,white draughts man
+&#x26c1,&#x26C1,white draughts king
+&#x26c2,&#x26C2,black draughts man
+&#x26c3,&#x26C3,black draughts king
+&#x26e2,&#x26E2,astronomical symbol for uranus
+&#x26e4,&#x26E4,pentagram
+&#x26e5,&#x26E5,right-handed interlaced pentagram
+&#x26e6,&#x26E6,left-handed interlaced pentagram
+&#x26e7,&#x26E7,inverted pentagram
+&#x26e8,&#x26E8,black cross on shield
+&#x26e9,&#x26E9,shinto shrine
+&#x26ea,&#x26EA,church
+&#x26eb,&#x26EB,castle
+&#x26ec,&#x26EC,historic site
+&#x26ed,&#x26ED,gear without hub
+&#x26ee,&#x26EE,gear with handles
+&#x26ef,&#x26EF,map symbol for lighthouse
+&#x26f0,&#x26F0,mountain
+&#x26f1,&#x26F1,umbrella on ground
+&#x26f2,&#x26F2,fountain
+&#x26f3,&#x26F3,flag in hole
+&#x26f4,&#x26F4,ferry
+&#x26f5,&#x26F5,sailboat
+&#x26f6,&#x26F6,square four corners
+&#x26f7,&#x26F7,skier
+&#x26f8,&#x26F8,ice skate
+&#x26f9,&#x26F9,person with ball
+&#x26fa,&#x26FA,tent
+&#x26fb,&#x26FB,japanese bank symbol
+&#x26fc,&#x26FC,headstone graveyard symbol
+&#x26fd,&#x26FD,fuel pump
+&#x26fe,&#x26FE,cup on black square
+&#x26ff,&#x26FF,white flag with horizontal middle black stripe
+&#x2701,&#x2701,upper blade scissors
+&#x2702,&#x2702,black scissors
+&#x2703,&#x2703,lower blade scissors
+&#x2704,&#x2704,white scissors
+&#x2705,&#x2705,white heavy check mark - ok symbol (accepted mark)
+&#x2706,&#x2706,telephone location sign
+&#x2707,&#x2707,tape drive
+&#x2708,&#x2708,airplane
+&#x2709,&#x2709,envelope
+&#x270a,&#x270A,raised fist
+&#x270b,&#x270B,raised hand
+&#x270c,&#x270C,victory hand
+&#x270d,&#x270D,writing hand
+&#x270e,&#x270E,lower right pencil
+&#x270f,&#x270F,pencil
+&#x2710,&#x2710,upper right pencil
+&#x2711,&#x2711,white nib
+&#x2712,&#x2712,black nib
+&#x2713,&#x2713,check mark
+&#x2714,&#x2714,heavy check mark
+&#x2715,&#x2715,multiplication x
+&#x2716,&#x2716,heavy multiplication x
+&#x2717,&#x2717,ballot x
+&#x2718,&#x2718,heavy ballot x
+&#x2719,&#x2719,outlined greek cross
+&#x271a,&#x271A,heavy greek cross
+&#x271b,&#x271B,open centre cross
+&#x271c,&#x271C,heavy open centre cross
+&#x271d,&#x271D,latin cross
+&#x271e,&#x271E,shadowed white latin cross
+&#x271f,&#x271F,outlined latin cross
+&#x2720,&#x2720,maltese cross
+&#x2721,&#x2721,star of david
+&#x2722,&#x2722,four teardrop-spoked asterisk
+&#x2723,&#x2723,four balloon-spoked asterisk
+&#x2724,&#x2724,heavy four balloon-spoked asterisk
+&#x2725,&#x2725,four club-spoked asterisk
+&#x2726,&#x2726,black four pointed star
+&#x2727,&#x2727,white four pointed star
+&#x2728,&#x2728,sparkles
+&#x2729,&#x2729,stress outlined white star
+&#x272a,&#x272A,circled white star
+&#x272b,&#x272B,open centre black star
+&#x272c,&#x272C,black centre white star
+&#x272d,&#x272D,outlined black star
+&#x272e,&#x272E,heavy outlined black star
+&#x272f,&#x272F,pinwheel star
+&#x2730,&#x2730,shadowed white star
+&#x2731,&#x2731,heavy asterisk
+&#x2732,&#x2732,open centre asterisk
+&#x2733,&#x2733,eight spoked asterisk
+&#x2734,&#x2734,eight pointed black star
+&#x2735,&#x2735,eight pointed pinwheel star
+&#x2736,&#x2736,six pointed black star
+&#x2737,&#x2737,eight pointed rectilinear black star
+&#x2738,&#x2738,heavy eight pointed rectilinear black star
+&#x2739,&#x2739,twelve pointed black star
+&#x273a,&#x273A,sixteen pointed asterisk
+&#x273b,&#x273B,teardrop-spoked asterisk
+&#x273c,&#x273C,open centre teardrop-spoked asterisk
+&#x273d,&#x273D,heavy teardrop-spoked asterisk
+&#x273e,&#x273E,six petalled black and white florette
+&#x273f,&#x273F,black florette
+&#x2740,&#x2740,white florette
+&#x2741,&#x2741,eight petalled outlined black florette
+&#x2742,&#x2742,circled open centre eight pointed star
+&#x2743,&#x2743,heavy teardrop-spoked pinwheel asterisk
+&#x2744,&#x2744,snowflake
+&#x2745,&#x2745,tight trifoliate snowflake
+&#x2746,&#x2746,heavy chevron snowflake
+&#x2747,&#x2747,sparkle
+&#x2748,&#x2748,heavy sparkle
+&#x2749,&#x2749,balloon-spoked asterisk
+&#x274a,&#x274A,eight teardrop-spoked propeller asterisk
+&#x274b,&#x274B,heavy eight teardrop-spoked propeller asterisk
+&#x274c,&#x274C,cross mark
+&#x274d,&#x274D,shadowed white circle
+&#x274e,&#x274E,negative squared cross mark
+&#x274f,&#x274F,lower right drop-shadowed white square
+&#x2750,&#x2750,upper right drop-shadowed white square
+&#x2751,&#x2751,lower right shadowed white square
+&#x2752,&#x2752,upper right shadowed white square
+&#x2753,&#x2753,black question mark ornament
+&#x2754,&#x2754,white question mark ornament
+&#x2755,&#x2755,white exclamation mark ornament
+&#x2756,&#x2756,black diamond minus white x
+&#x2757,&#x2757,heavy exclamation mark symbol
+&#x2758,&#x2758,light vertical bar
+&#x2759,&#x2759,medium vertical bar
+&#x275a,&#x275A,heavy vertical bar
+&#x275b,&#x275B,heavy single turned comma quotation mark ornament
+&#x275c,&#x275C,heavy single comma quotation mark ornament
+&#x275d,&#x275D,heavy double turned comma quotation mark ornament
+&#x275e,&#x275E,heavy double comma quotation mark ornament
+&#x275f,&#x275F,heavy low single comma quotation mark ornament
+&#x2760,&#x2760,heavy low double comma quotation mark ornament
+&#x2761,&#x2761,curved stem paragraph sign ornament
+&#x2762,&#x2762,heavy exclamation mark ornament
+&#x2763,&#x2763,heavy heart exclamation mark ornament
+&#x2764,&#x2764,heavy black heart
+&#x2765,&#x2765,rotated heavy black heart bullet
+&#x2766,&#x2766,floral heart
+&#x2767,&#x2767,rotated floral heart bullet
+&#x2794,&#x2794,heavy wide-headed rightwards arrow
+&#x2798,&#x2798,heavy south east arrow
+&#x2799,&#x2799,heavy rightwards arrow
+&#x279a,&#x279A,heavy north east arrow
+&#x279b,&#x279B,drafting point rightwards arrow
+&#x279c,&#x279C,heavy round-tipped rightwards arrow
+&#x279d,&#x279D,triangle-headed rightwards arrow
+&#x279e,&#x279E,heavy triangle-headed rightwards arrow
+&#x279f,&#x279F,dashed triangle-headed rightwards arrow
+&#x27a0,&#x27A0,heavy dashed triangle-headed rightwards arrow
+&#x27a1,&#x27A1,black rightwards arrow
+&#x27a2,&#x27A2,three-d top-lighted rightwards arrowhead
+&#x27a3,&#x27A3,three-d bottom-lighted rightwards arrowhead
+&#x27a4,&#x27A4,black rightwards arrowhead
+&#x27a5,&#x27A5,heavy black curved downwards and rightwards arrow
+&#x27a6,&#x27A6,heavy black curved upwards and rightwards arrow
+&#x27a7,&#x27A7,squat black rightwards arrow
+&#x27a8,&#x27A8,heavy concave-pointed black rightwards arrow
+&#x27a9,&#x27A9,right-shaded white rightwards arrow
+&#x27aa,&#x27AA,left-shaded white rightwards arrow
+&#x27ab,&#x27AB,back-tilted shadowed white rightwards arrow
+&#x27ac,&#x27AC,front-tilted shadowed white rightwards arrow
+&#x27ad,&#x27AD,heavy lower right-shadowed white rightwards arrow
+&#x27ae,&#x27AE,heavy upper right-shadowed white rightwards arrow
+&#x27af,&#x27AF,notched lower right-shadowed white rightwards arrow
+&#x27b1,&#x27B1,notched upper right-shadowed white rightwards arrow
+&#x27b2,&#x27B2,circled heavy white rightwards arrow
+&#x27b3,&#x27B3,white-feathered rightwards arrow
+&#x27b4,&#x27B4,black-feathered south east arrow
+&#x27b5,&#x27B5,black-feathered rightwards arrow
+&#x27b6,&#x27B6,black-feathered north east arrow
+&#x27b7,&#x27B7,heavy black-feathered south east arrow
+&#x27b8,&#x27B8,heavy black-feathered rightwards arrow
+&#x27b9,&#x27B9,heavy black-feathered north east arrow
+&#x27ba,&#x27BA,teardrop-barbed rightwards arrow
+&#x27bb,&#x27BB,heavy teardrop-shanked rightwards arrow
+&#x27bc,&#x27BC,wedge-tailed rightwards arrow
+&#x27bd,&#x27BD,heavy wedge-tailed rightwards arrow
+&#x27be,&#x27BE,open-outlined rightwards arrow
+&#x27f0,&#x27F0,upwards quadruple arrow
+&#x27f1,&#x27F1,downwards quadruple arrow
+&#x27f2,&#x27F2,anticlockwise gapped circle arrow
+&#x27f3,&#x27F3,clockwise gapped circle arrow
+&#x27f4,&#x27F4,right arrow with circled plus
+&#x27f5,&#x27F5,long leftwards arrow
+&#x27f6,&#x27F6,long rightwards arrow
+&#x27f7,&#x27F7,long left right arrow
+&#x27f8,&#x27F8,long leftwards double arrow
+&#x27f9,&#x27F9,long rightwards double arrow
+&#x27fa,&#x27FA,long left right double arrow
+&#x27fb,&#x27FB,long leftwards arrow from bar
+&#x27fc,&#x27FC,long rightwards arrow from bar
+&#x27fd,&#x27FD,long leftwards double arrow from bar
+&#x27fe,&#x27FE,long rightwards double arrow from bar
+&#x27ff,&#x27FF,long rightwards squiggle arrow
+&#x2900,&#x2900,rightwards two-headed arrow with vertical stroke
+&#x2901,&#x2901,rightwards two-headed arrow with double vertical stroke
+&#x2902,&#x2902,leftwards double arrow with vertical stroke
+&#x2903,&#x2903,rightwards double arrow with vertical stroke
+&#x2904,&#x2904,left right double arrow with vertical stroke
+&#x2905,&#x2905,rightwards two-headed arrow from bar
+&#x2906,&#x2906,leftwards double arrow from bar
+&#x2907,&#x2907,rightwards double arrow from bar
+&#x2908,&#x2908,downwards arrow with horizontal stroke
+&#x2909,&#x2909,upwards arrow with horizontal stroke
+&#x290a,&#x290A,upwards triple arrow
+&#x290b,&#x290B,downwards triple arrow
+&#x290c,&#x290C,leftwards double dash arrow
+&#x290d,&#x290D,rightwards double dash arrow
+&#x290e,&#x290E,leftwards triple dash arrow
+&#x290f,&#x290F,rightwards triple dash arrow
+&#x2910,&#x2910,rightwards two-headed triple dash arrow
+&#x2911,&#x2911,rightwards arrow with dotted stem
+&#x2912,&#x2912,upwards arrow to bar
+&#x2913,&#x2913,downwards arrow to bar
+&#x2914,&#x2914,rightwards arrow with tail with vertical stroke
+&#x2915,&#x2915,rightwards arrow with tail with double vertical stroke
+&#x2916,&#x2916,rightwards two-headed arrow with tail
+&#x2917,&#x2917,rightwards two-headed arrow with tail with vertical stroke
+&#x2918,&#x2918,rightwards two-headed arrow with tail with double vertical stroke
+&#x2919,&#x2919,leftwards arrow-tail
+&#x291a,&#x291A,rightwards arrow-tail
+&#x291b,&#x291B,leftwards double arrow-tail
+&#x291c,&#x291C,rightwards double arrow-tail
+&#x291d,&#x291D,leftwards arrow to black diamond
+&#x291e,&#x291E,rightwards arrow to black diamond
+&#x291f,&#x291F,leftwards arrow from bar to black diamond
+&#x2920,&#x2920,rightwards arrow from bar to black diamond
+&#x2921,&#x2921,north west and south east arrow
+&#x2922,&#x2922,north east and south west arrow
+&#x2923,&#x2923,north west arrow with hook
+&#x2924,&#x2924,north east arrow with hook
+&#x2925,&#x2925,south east arrow with hook
+&#x2926,&#x2926,south west arrow with hook
+&#x2927,&#x2927,north west arrow and north east arrow
+&#x2928,&#x2928,north east arrow and south east arrow
+&#x2929,&#x2929,south east arrow and south west arrow
+&#x292a,&#x292A,south west arrow and north west arrow
+&#x292b,&#x292B,rising diagonal crossing falling diagonal
+&#x292c,&#x292C,falling diagonal crossing rising diagonal
+&#x292d,&#x292D,south east arrow crossing north east arrow
+&#x292e,&#x292E,north east arrow crossing south east arrow
+&#x292f,&#x292F,falling diagonal crossing north east arrow
+&#x2930,&#x2930,rising diagonal crossing south east arrow
+&#x2931,&#x2931,north east arrow crossing north west arrow
+&#x2932,&#x2932,north west arrow crossing north east arrow
+&#x2933,&#x2933,wave arrow pointing directly right
+&#x2934,&#x2934,arrow pointing rightwards then curving upwards
+&#x2935,&#x2935,arrow pointing rightwards then curving downwards
+&#x2936,&#x2936,arrow pointing downwards then curving leftwards
+&#x2937,&#x2937,arrow pointing downwards then curving rightwards
+&#x2938,&#x2938,right-side arc clockwise arrow
+&#x2939,&#x2939,left-side arc anticlockwise arrow
+&#x293a,&#x293A,top arc anticlockwise arrow
+&#x293b,&#x293B,bottom arc anticlockwise arrow
+&#x293c,&#x293C,top arc clockwise arrow with minus
+&#x293d,&#x293D,top arc anticlockwise arrow with plus
+&#x293e,&#x293E,lower right semicircular clockwise arrow
+&#x293f,&#x293F,lower left semicircular anticlockwise arrow
+&#x2940,&#x2940,anticlockwise closed circle arrow
+&#x2941,&#x2941,clockwise closed circle arrow
+&#x2942,&#x2942,rightwards arrow above short leftwards arrow
+&#x2943,&#x2943,leftwards arrow above short rightwards arrow
+&#x2944,&#x2944,short rightwards arrow above leftwards arrow
+&#x2945,&#x2945,rightwards arrow with plus below
+&#x2946,&#x2946,leftwards arrow with plus below
+&#x2947,&#x2947,rightwards arrow through x
+&#x2948,&#x2948,left right arrow through small circle
+&#x2949,&#x2949,upwards two-headed arrow from small circle
+&#x294a,&#x294A,left barb up right barb down harpoon
+&#x294b,&#x294B,left barb down right barb up harpoon
+&#x294c,&#x294C,up barb right down barb left harpoon
+&#x294d,&#x294D,up barb left down barb right harpoon
+&#x294e,&#x294E,left barb up right barb up harpoon
+&#x294f,&#x294F,up barb right down barb right harpoon
+&#x2950,&#x2950,left barb down right barb down harpoon
+&#x2951,&#x2951,up barb left down barb left harpoon
+&#x2b00,&#x2B00,north east white arrow
+&#x2b01,&#x2B01,north west white arrow
+&#x2b02,&#x2B02,south east white arrow
+&#x2b03,&#x2B03,south west white arrow
+&#x2b04,&#x2B04,left right white arrow
+&#x2b05,&#x2B05,leftwards black arrow
+&#x2b06,&#x2B06,upwards black arrow
+&#x2b07,&#x2B07,downwards black arrow
+&#x2b08,&#x2B08,north east black arrow
+&#x2b09,&#x2B09,north west black arrow
+&#x2b0a,&#x2B0A,south east black arrow
+&#x2b0b,&#x2B0B,south west black arrow
+&#x2b0c,&#x2B0C,left right black arrow
+&#x2b0d,&#x2B0D,up down black arrow
+&#x2b0e,&#x2B0E,rightwards arrow with tip downwards
+&#x2b0f,&#x2B0F,rightwards arrow with tip upwards
+&#x2b10,&#x2B10,leftwards arrow with tip downwards
+&#x2b11,&#x2B11,leftwards arrow with tip upwards
+&#x2b12,&#x2B12,square with top half black
+&#x2b13,&#x2B13,square with bottom half black
+&#x2b14,&#x2B14,square with upper right diagonal half black
+&#x2b15,&#x2B15,square with lower left diagonal half black
+&#x2b16,&#x2B16,diamond with left half black
+&#x2b17,&#x2B17,diamond with right half black
+&#x2b18,&#x2B18,diamond with top half black
+&#x2b19,&#x2B19,diamond with bottom half black
+&#x2b1a,&#x2B1A,dotted square
+&#x2c60,&#x2C60,latin capital letter l with double bar
+&#x2c61,&#x2C61,latin small letter l with double bar
+&#x2c63,&#x2C63,latin capital letter p with stroke
+&#x2c65,&#x2C65,latin small letter a with stroke
+&#x2c66,&#x2C66,latin small letter t with diagonal stroke
+&#x2c6d,&#x2C6D,latin capital letter alpha
+&#x2c6f,&#x2C6F,latin capital letter turned a
+&#x2c70,&#x2C70,latin capital letter turned alpha
+&#x2e22,&#x2E22,top left half bracket
+&#x2e23,&#x2E23,top right half bracket
+&#x2e24,&#x2E24,bottom left half bracket
+&#x2e25,&#x2E25,bottom right half bracket
+&#x2e2e,&#x2E2E,reversed question mark
+&#x3003,&#x3003,ditto mark
+&#x3004,&#x3004,japanese industrial standard symbol
+&#xfb00,&#xFB00,latin small ligature ff
+&#xfb01,&#xFB01,latin small ligature fi
+&#xfb02,&#xFB02,latin small ligature fl
+&#xfb03,&#xFB03,latin small ligature ffi
+&#xfb04,&#xFB04,latin small ligature ffl
+&#xfb05,&#xFB05,latin small ligature long s t
+&#xfb06,&#xFB06,latin small ligature st
+&#xfd3e,&#xFD3E,ornate left parenthesis
+&#xfd3f,&#xFD3F,ornate right parenthesis
+&#xfdfc,&#xFDFC,rial sign
+&#xfe10,&#xFE10,presentation form for vertical comma
+&#xfe11,&#xFE11,presentation form for vertical ideographic comma
+&#xfe12,&#xFE12,presentation form for vertical ideographic full stop
+&#xfe13,&#xFE13,presentation form for vertical colon
+&#xfe14,&#xFE14,presentation form for vertical semicolon
+&#xfe15,&#xFE15,presentation form for vertical exclamation mark
+&#xfe16,&#xFE16,presentation form for vertical question mark
+&#xfe17,&#xFE17,presentation form for vertical left white lenticular bracket
+&#xfe18,&#xFE18,presentation form for vertical right white lenticular brakcet
+&#xfe19,&#xFE19,presentation form for vertical horizontal ellipsis
+&#xfe30,&#xFE30,presentation form for vertical two dot leader
+&#xfe31,&#xFE31,presentation form for vertical em dash
+&#xfe32,&#xFE32,presentation form for vertical en dash
+&#xfe33,&#xFE33,presentation form for vertical low line
+&#xfe34,&#xFE34,presentation form for vertical wavy low line
+&#xfe35,&#xFE35,presentation form for vertical left parenthesis
+&#xfe36,&#xFE36,presentation form for vertical right parenthesis
+&#xfe37,&#xFE37,presentation form for vertical left curly bracket
+&#xfe38,&#xFE38,presentation form for vertical right curly bracket
+&#xfe39,&#xFE39,presentation form for vertical left tortoise shell bracket
+&#xfe3a,&#xFE3A,presentation form for vertical right tortoise shell bracket
+&#xfe3b,&#xFE3B,presentation form for vertical left black lenticular bracket
+&#xfe3c,&#xFE3C,presentation form for vertical right black lenticular bracket
+&#xfe3d,&#xFE3D,presentation form for vertical left double angle bracket
+&#xfe3e,&#xFE3E,presentation form for vertical right double angle bracket
+&#xfe3f,&#xFE3F,presentation form for vertical left angle bracket
+&#xfe40,&#xFE40,presentation form for vertical right angle bracket
+&#xfe41,&#xFE41,presentation form for vertical left corner bracket
+&#xfe42,&#xFE42,presentation form for vertical right corner bracket
+&#xfe43,&#xFE43,presentation form for vertical left white corner bracket
+&#xfe44,&#xFE44,presentation form for vertical right white corner bracket
+&#xfe45,&#xFE45,sesame dot
+&#xfe46,&#xFE46,white sesame dot
+&#xfe49,&#xFE49,dashed overline
+&#xfe4a,&#xFE4A,centreline overline
+&#xfe4b,&#xFE4B,wavy overline
+&#xfe4c,&#xFE4C,double wavy overline
+&#xfe4d,&#xFE4D,dashed low line
+&#xfe4e,&#xFE4E,centreline low line
+&#xfe4f,&#xFE4F,wavy low line
+&#xfe50,&#xFE50,small comma
+&#xfe51,&#xFE51,small ideographic comma
+&#xfe52,&#xFE52,small full stop
+&#xfe54,&#xFE54,small semicolon
+&#xfe55,&#xFE55,small colon
+&#xfe56,&#xFE56,small question mark
+&#xfe57,&#xFE57,small exclamation mark
+&#xfe58,&#xFE58,small em dash
+&#xfe59,&#xFE59,small left parenthesis
+&#xfe5a,&#xFE5A,small right parenthesis
+&#xfe5b,&#xFE5B,small left curly bracket
+&#xfe5c,&#xFE5C,small right curly bracket
+&#xfe5d,&#xFE5D,small left tortoise shell bracket
+&#xfe5e,&#xFE5E,small right tortoise shell bracket
+&#xfe5f,&#xFE5F,small number sign
+&#xfe60,&#xFE60,small ampersand
+&#xfe61,&#xFE61,small asterisk
+&#xfe62,&#xFE62,small plus sign
+&#xfe63,&#xFE63,small hyphen-minus
+&#xfe64,&#xFE64,small less-than sign
+&#xfe65,&#xFE65,small greater-than sign
+&#xfe66,&#xFE66,small equals sign
+&#xfe68,&#xFE68,small reverse solidus
+&#xfe69,&#xFE69,small dollar sign
+&#xfe6a,&#xFE6A,small percent sign
+&#xfe6b,&#xFE6B,small commercial at
+&#xfeff,&#xFEFF,zero width no-break space
+&#xff01,&#xFF01,fullwidth exclamation mark
+&#xff02,&#xFF02,fullwidth quotation mark
+&#xff03,&#xFF03,fullwidth number sign
+&#xff04,&#xFF04,fullwidth dollar sign
+&#xff05,&#xFF05,fullwidth percent sign
+&#xff06,&#xFF06,fullwidth ampersand
+&#xff07,&#xFF07,fullwidth apostrophe
+&#xff08,&#xFF08,fullwidth left parenthesis
+&#xff09,&#xFF09,fullwidth right parenthesis
+&#xff0a,&#xFF0A,fullwidth asterisk
+&#xff0b,&#xFF0B,fullwidth plus sign
+&#xff0c,&#xFF0C,fullwidth comma
+&#xff0d,&#xFF0D,fullwidth hyphen-minus
+&#xff0e,&#xFF0E,fullwidth full stop
+&#xff0f,&#xFF0F,fullwidth solidus
+&#xff10,&#xFF10,fullwidth digit zero
+&#xff11,&#xFF11,fullwidth digit one
+&#xff12,&#xFF12,fullwidth digit two
+&#xff13,&#xFF13,fullwidth digit three
+&#xff14,&#xFF14,fullwidth digit four
+&#xff15,&#xFF15,fullwidth digit five
+&#xff16,&#xFF16,fullwidth digit six
+&#xff17,&#xFF17,fullwidth digit seven
+&#xff18,&#xFF18,fullwidth digit eight
+&#xff19,&#xFF19,fullwidth digit nine
+&#xff1a,&#xFF1A,fullwidth colon
+&#xff1b,&#xFF1B,fullwidth semicolon
+&#xff1c,&#xFF1C,fullwidth less-than sign
+&#xff1d,&#xFF1D,fullwidth equals sign
+&#xff1e,&#xFF1E,fullwidth greater-than sign
+&#xff1f,&#xFF1F,fullwidth question mark
+&#xff20,&#xFF20,fullwidth commercial at
+&#xff21,&#xFF21,fullwidth latin capital letter a
+&#xff22,&#xFF22,fullwidth latin capital letter b
+&#xff23,&#xFF23,fullwidth latin capital letter c
+&#xff24,&#xFF24,fullwidth latin capital letter d
+&#xff25,&#xFF25,fullwidth latin capital letter e
+&#xff26,&#xFF26,fullwidth latin capital letter f
+&#xff27,&#xFF27,fullwidth latin capital letter g
+&#xff28,&#xFF28,fullwidth latin capital letter h
+&#xff29,&#xFF29,fullwidth latin capital letter i
+&#xff2a,&#xFF2A,fullwidth latin capital letter j
+&#xff2b,&#xFF2B,fullwidth latin capital letter k
+&#xff2c,&#xFF2C,fullwidth latin capital letter l
+&#xff2d,&#xFF2D,fullwidth latin capital letter m
+&#xff2e,&#xFF2E,fullwidth latin capital letter n
+&#xff2f,&#xFF2F,fullwidth latin capital letter o
+&#xff30,&#xFF30,fullwidth latin capital letter p
+&#xff31,&#xFF31,fullwidth latin capital letter q
+&#xff32,&#xFF32,fullwidth latin capital letter r
+&#xff33,&#xFF33,fullwidth latin capital letter s
+&#xff34,&#xFF34,fullwidth latin capital letter t
+&#xff35,&#xFF35,fullwidth latin capital letter u
+&#xff36,&#xFF36,fullwidth latin capital letter v
+&#xff37,&#xFF37,fullwidth latin capital letter w
+&#xff38,&#xFF38,fullwidth latin capital letter x
+&#xff39,&#xFF39,fullwidth latin capital letter y
+&#xff3a,&#xFF3A,fullwidth latin capital letter z
+&#xff3b,&#xFF3B,fullwidth left square bracket
+&#xff3c,&#xFF3C,fullwidth reverse solidus
+&#xff3d,&#xFF3D,fullwidth right square bracket
+&#xff3e,&#xFF3E,fullwidth circumflex accent
+&#xff3f,&#xFF3F,fullwidth low line
+&#xff40,&#xFF40,fullwidth grave accent
+&#xff41,&#xFF41,fullwidth latin small letter a
+&#xff42,&#xFF42,fullwidth latin small letter b
+&#xff43,&#xFF43,fullwidth latin small letter c
+&#xff44,&#xFF44,fullwidth latin small letter d
+&#xff45,&#xFF45,fullwidth latin small letter e
+&#xff46,&#xFF46,fullwidth latin small letter f
+&#xff47,&#xFF47,fullwidth latin small letter g
+&#xff48,&#xFF48,fullwidth latin small letter h
+&#xff49,&#xFF49,fullwidth latin small letter i
+&#xff4a,&#xFF4A,fullwidth latin small letter j
+&#xff4b,&#xFF4B,fullwidth latin small letter k
+&#xff4c,&#xFF4C,fullwidth latin small letter l
+&#xff4d,&#xFF4D,fullwidth latin small letter m
+&#xff4e,&#xFF4E,fullwidth latin small letter n
+&#xff4f,&#xFF4F,fullwidth latin small letter o
+&#xff50,&#xFF50,fullwidth latin small letter p
+&#xff51,&#xFF51,fullwidth latin small letter q
+&#xff52,&#xFF52,fullwidth latin small letter r
+&#xff53,&#xFF53,fullwidth latin small letter s
+&#xff54,&#xFF54,fullwidth latin small letter t
+&#xff55,&#xFF55,fullwidth latin small letter u
+&#xff56,&#xFF56,fullwidth latin small letter v
+&#xff57,&#xFF57,fullwidth latin small letter w
+&#xff58,&#xFF58,fullwidth latin small letter x
+&#xff59,&#xFF59,fullwidth latin small letter y
+&#xff5a,&#xFF5A,fullwidth latin small letter z
+&#xff5b,&#xFF5B,fullwidth left curly bracket
+&#xff5c,&#xFF5C,fullwidth vertical line
+&#xff5d,&#xFF5D,fullwidth right curly bracket
+&#xff5e,&#xFF5E,fullwidth tilde
+&#xff5f,&#xFF5F,fullwidth left white parenthesis
+&#xff60,&#xFF60,fullwidth right white parenthesis
+&#xffe0,&#xFFE0,fullwidth cent sign
+&#xffe1,&#xFFE1,fullwidth pound sign
+&#xffe2,&#xFFE2,fullwidth not sign
+&#xffe3,&#xFFE3,fullwidth macron
+&#xffe4,&#xFFE4,fullwidth broken bar
+&#xffe5,&#xFFE5,fullwidth yen sign
+&#xffe6,&#xFFE6,fullwidth won sign
+&#xfffc,&#xFFFC,object replacement character
+&#xfffd,&#xFFFD,replacement character
