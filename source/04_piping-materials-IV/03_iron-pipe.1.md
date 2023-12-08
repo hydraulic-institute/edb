@@ -17,9 +17,9 @@ hide_price: true
 * Note:  All dimensions are nominal
 * Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
 
-## Pipe Dimensions: Ductile Iron Pipe (According to AWWA C151/A21.51-17)
+## Pipe Dimensions: Iron (Ductile) pipe per AWWA C151/A21.51-17
 
 =|=
-data: ip_duct-iron-pipe-dime.csv
+data: ip_iron-duc-pipe.csv
 special: height:600px;
 =|=

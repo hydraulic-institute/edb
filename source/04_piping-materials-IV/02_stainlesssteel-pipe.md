@@ -17,10 +17,10 @@ hide_price: true
 * Note:  All dimensions are nominal
 * Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
 
-## Pipe Dimensions: Stainless Steel Pipe (According to ANSI/ASME B36.19M-2018)
+## Pipe Dimensions: Stainless steel pipe - welded and seamless per ANSI/ASME B36.19M-2018
 
 =|=
-data: ssp_stai-stee-pipe.csv
+data: ssp_stai-stee-pipe--weld-and-seam.csv
 special: height:600px;
 =|=
 

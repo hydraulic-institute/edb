@@ -17,9 +17,9 @@ hide_price: true
 * Note:  All dimensions are nominal
 * Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
 
-## Pipe Dimensions: Welded and Seamless Wrought Steel Pipe (According to ANSI/ASME B36.10M-2018)
+## Pipe Dimensions: Steel pipe - welded and seamless wrought per ANSI/ASME B36.10M-2018
 
 =|=
-data: sp_weld-and-seam-wrou-stee-pipe.csv
+data: sp_stee-pipe--weld-and-seam-wrou.csv
 special: height:600px;
 =|=

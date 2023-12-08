@@ -4,17 +4,6 @@ date:  December 6th, 2023
 description: Meet the EDL Committee
 -----
 
-## Engineering Data Library - Phase 2 Release
-
-The Engineering Data Library is continually maintained by a Hydraulic Institute Committee. The initial release occurred in 2021 and is currently on the second release (2024). In the second release primary updates include: 
-
-1.  Added preface section covering definitions, pump types, references, and resources. 
-2. In *Section I*, added educational demonstrators, updated equation formatting, updated most figures, and added a section on submergence. 
-3. In *Section II*, minor formatting updates. 
-4. In *Section III*, minor formatting updates. 
-5. In *Section IV*, added subsections A – E covering pipe and flange dimensions. 
-6. In *Section V*, additional unit conversions, and added subsections D – I covering line shaft bearing losses, tank volume calculators, altitude effect on atmospheric pressure, and NEMA motor dimensions.  
-
 ### Contributors to 2024 Release 
 
 #### Committee Leadership 

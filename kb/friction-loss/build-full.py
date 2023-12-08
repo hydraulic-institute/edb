@@ -78,6 +78,9 @@ for grp in groups:
     out_data = None
     for col in categories:
         print('Working on: '+col)
+        col_name = col.strip() + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+        col_name=' '.join(col_name.split(' '))
+        #col_name = col_name.replace("(","")
         data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
         # Get rid of all columns without data
         #data = data.dropna(axis = 1, how = 'all')
@@ -85,13 +88,17 @@ for grp in groups:
         # Create the file name from the 'Group Name'
         sub_filename = data['Sub-Division Name'][data.index[0]].lower().replace('-','')
         parts = sub_filename.split(' ')
-        outfilename=base_filename+'_'
+        outfilename=base_filename+'-'
         sep_part=''
         for idx, part  in enumerate(parts):
-            outfilename+=sep_part+part[0:4]
-            sep_part='-'
+            if len(part.strip()):
+                outfilename+=sep_part+part[0:4]
+            sep_part='_'
+        outfilename=outfilename.replace('(','').replace(')','')
+        #outfilename='-'.join(outfilename.split('-'))
         out_data = data.copy(True)
         out_data.drop(columns=out_data.columns[:(ALL_COLUMNS.to_list().index('Sub-Division Name')+1)],axis='columns',inplace=True)
+        out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
         out_data.dropna(axis = 'columns', how = 'all',inplace=True)
 
         # Table Filename 
@@ -164,7 +171,7 @@ for grp in groups:
                 selector = 'NONE'
                 selector_desc = 'NONE'
             # material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description'
-            pipes.append(Piping(col, 
+            pipes.append(Piping(col_name, 
                                 nominal_size,
                                 row[calc_indexes['outside_diameter']],
                                 row[calc_indexes['internal_diameter']],
