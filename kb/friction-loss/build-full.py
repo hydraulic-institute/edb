@@ -67,35 +67,37 @@ for grp in groups:
     print('Working on Group: '+grp)
     grp_data = new_data.loc[new_data['Group Name'] == grp]
     categories = grp_data['Sub-Division Name'].unique() 
-    grp_filename = grp_data['Group Name'][grp_data.index[0]].lower().replace('-','')    
+    # Get the group filename - clean out dashes and clean up spaces
+    grp_filename = ' '.join(grp_data['Group Name'][grp_data.index[0]].lower().replace('-','').split()).strip()
     # take first chars of each word
     parts = grp_filename.split(' ')
     base_filename=''
     sep_part=''
-    for idx, part  in enumerate(parts):
+    for idx, part in enumerate(parts):
         base_filename+=sep_part+part[0:1]
     print('Categories: '+categories)
     out_data = None
     for col in categories:
-        print('Working on: '+col)
-        col_name = col.strip() + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
-        col_name=' '.join(col_name.split(' '))
+        # Clean up many spaces
+        col_cleaned = " ".join(col.split()).strip()
+        print('Working on: '+col_cleaned)
+        col_name = col_cleaned + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+        col_name=' '.join(col_name.split())
         #col_name = col_name.replace("(","")
         data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
         # Get rid of all columns without data
         #data = data.dropna(axis = 1, how = 'all')
         columns = data.columns
-        # Create the file name from the 'Group Name'
-        sub_filename = data['Sub-Division Name'][data.index[0]].lower().replace('-','')
+        # Create the file name from the 'Sub-Division Name'
+        sub_filename = ' '.join(data['Sub-Division Name'][data.index[0]].lower().replace('-','').split()).strip()
         parts = sub_filename.split(' ')
         outfilename=base_filename+'-'
         sep_part=''
-        for idx, part  in enumerate(parts):
+        for idx, part in enumerate(parts):
             if len(part.strip()):
                 outfilename+=sep_part+part[0:4]
             sep_part='_'
         outfilename=outfilename.replace('(','').replace(')','')
-        #outfilename='-'.join(outfilename.split('-'))
         out_data = data.copy(True)
         out_data.drop(columns=out_data.columns[:(ALL_COLUMNS.to_list().index('Sub-Division Name')+1)],axis='columns',inplace=True)
         out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)

@@ -20,7 +20,7 @@ hide_price: true
 ## Pipe Dimensions: Stainless steel pipe - welded and seamless per ANSI/ASME B36.19M-2018
 
 =|=
-data: ssp_stai-stee-pipe--weld-and-seam.csv
+data: ssp-stai_stee_pipe_weld_and_seam.csv
 special: height:600px;
 =|=
 

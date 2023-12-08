@@ -1466,7 +1466,7 @@
         },
         "selector": "Wall Thickness / Pressure Class"
     },
-    "Copper pipe - threadless - seamless -deoxidized for brazed joint assembly per ANSI H35.2-2017": {
+    "Copper pipe - threadless - seamless - deoxidized for brazed joint assembly per ANSI H35.2-2017": {
         "nominal_sizes": {
             "0.25": [
                 {
@@ -1624,7 +1624,7 @@
         },
         "selector": "Wall Thickness"
     },
-    "Copper water tube - seamless -  plumbing and fluid conveyance tubing per ANSI H35.2-2017": {
+    "Copper water tube - seamless - plumbing and fluid conveyance tubing per ANSI H35.2-2017": {
         "nominal_sizes": {
             "0.25": [
                 {

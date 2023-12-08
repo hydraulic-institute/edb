@@ -20,6 +20,6 @@ hide_price: true
 ## Pipe Dimensions: Steel pipe - welded and seamless wrought per ANSI/ASME B36.10M-2018
 
 =|=
-data: sp_stee-pipe--weld-and-seam-wrou.csv
+data: sp-stee_pipe_weld_and_seam_wrou.csv
 special: height:600px;
 =|=

@@ -20,6 +20,6 @@ hide_price: true
 ## Pipe Dimensions: Iron (Ductile) pipe per AWWA C151/A21.51-17
 
 =|=
-data: ip_iron-duc-pipe.csv
+data: ip-iron_duc_pipe.csv
 special: height:600px;
 =|=
