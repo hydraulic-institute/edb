@@ -60,7 +60,7 @@ ALL_COLUMNS = new_data.columns
 COL_TYPES = dict()
 for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
-    if col in ['EDB Section','Section Name','Average Outside Diameter Tolerance in.','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
+    if col in ['EDB Section','Section Name','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
         COL_TYPES[col] = 'text'
 pipes = []
 for grp in groups:
@@ -221,7 +221,9 @@ for pipe in pipes:
     entry['epsilon'] = pipe.epsilon
     if pipe.selector != 'NONE':
         entry['selector'] = pipe.selector
-    m[pipe.material]['nominal_sizes'][pipe.nominal_size].append(entry)
+    # Avoid duplicate entries for a nominal size
+    if entry not in m[pipe.material]['nominal_sizes'][pipe.nominal_size]:
+        m[pipe.material]['nominal_sizes'][pipe.nominal_size].append(entry)
 
 with open('generate/static/friction-loss-materials-full.json', 'w') as fp:
     output=json.dumps(m, indent=4)
