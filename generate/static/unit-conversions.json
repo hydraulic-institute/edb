@@ -254,19 +254,19 @@
             },
             {
                 "label": "ft",
-                "factor": 3.280833436679587
+                "factor": 3.280839895
             },
             {
                 "label": "in",
-                "factor": 39.37007874015748
+                "factor": 39.37007874
             },
             {
                 "label": "mi",
-                "factor": 0.0006213711922373339
+                "factor": 0.000621371
             },
             {
                 "label": "yd",
-                "factor": 1.0936132983377078
+                "factor": 1.093613298
             },
             {
                 "label": "km",
@@ -274,11 +274,11 @@
             },
             {
                 "label": "mil",
-                "factor": 39370.07874015748
+                "factor": 39370.07874
             },
             {
                 "label": "microinch",
-                "factor": 39370078.740157485
+                "factor": 39370078.74
             },
             {
                 "label": "micron",
@@ -290,11 +290,11 @@
             },
             {
                 "label": "mi (US survey)",
-                "factor": 0.0006213700339330175
+                "factor": 0.00062137
             },
             {
                 "label": "ft (US survey)",
-                "factor": 3.280833436679587
+                "factor": 3.280833437
             }
         ]
     },
@@ -410,19 +410,19 @@
         "image": "temperature.png",
         "units": [
             {
-                "label": "C",
+                "label": "&degC",
                 "factor": "C"
             },
             {
-                "label": "F",
+                "label": "&degF",
                 "factor": "F"
             },
             {
-                "label": "K",
+                "label": "&degK",
                 "factor": "K"
             },
             {
-                "label": "R",
+                "label": "&degR",
                 "factor": "R"
             }
         ]

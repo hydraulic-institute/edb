@@ -3,6 +3,14 @@ title: Members and Contributors
 date:  December 6th, 2023
 description: Meet the EDL Committee
 -----
+<!-- Display on tablet and up> -->
+<section class="is-hidden-mobile" style='text-align:center;'>
+    <img alt='Hydraulic Institute' src='/images/banner-1170.jpg' style='min-width:100%'/>
+</section>
+<!-- Display on mobile only -->
+<section class='is-hidden-tablet' style='text-align:center;'>
+    <img alt='Hydraulic Institute' src='/images/banner-300.jpg' style='min-width:100%'/>
+</section>
 
 ### Contributors to 2024 Release 
 
