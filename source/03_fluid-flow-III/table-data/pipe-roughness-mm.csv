@@ -9,7 +9,7 @@ data,Concrete,0.305 - 3.05
 data,Riveted steel,0.914 - 9.14
 data,Wood stave,0.18 - 0.91
 data,Brass or copper (tubing),0.0015
-data,"Aluminum, Lead",N/A
+data,"Aluminum, Lead",0.0015
 data,Fiberglass,0.005
 data,Stainless steel,0.015
 data,"Rubber, smoothed",0.01
