@@ -51,9 +51,9 @@
     <div>
     <form>
         <div class='field'>
-            <label class='label'>
+            <span class='label'>
                 <span>Convert from</span>
-            </label>
+            </span>
             <div class='columns'>
                 <div class='column'>
                     <input class='input' v-model='from_value'/>
@@ -66,9 +66,9 @@
             </div>
         </div>
         <div class='field'>  
-            <label class='label'>
+            <span class='label'>
                 <span>To</span>
-            </label>
+            </span>
             <div class='columns'>
                 <div class='column'>
                     <select  class="input" v-model='to_unit'>
@@ -78,9 +78,9 @@
                 <div class='column'    v-if='show_sg'>
                     <div class="columns">
                         <div class='column'>
-                            <label class='label'>
+                            <span class='label'>
                                 <span>w/ SG</span>
-                            </label>
+                            </span>
                         </div>
                         <div class='column'>
                             <input class='input' v-model='sg'/>
@@ -134,10 +134,10 @@
                         
                         <div class='field'>
                         
-                           <label class='label'>
+                           <span class='label'>
                                 <span>From</span>
                                 
-                            </label>
+                            </span>
                             <div class='columns'>
                                 <div class='column'>
                                     <input class='input' v-model='from'/>
@@ -152,10 +152,10 @@
                       </div>
                     <div class='panel-block'>
                         <div class='field'>
-                            <label class='label'>
+                            <span class='label'>
                                 <span>To</span>
                                 
-                            </label>
+                            </span>
                             <div class='columns'>
                                 <div class='column'>
                                     <input class='input' v-model='to' readonly disabled/>
@@ -177,7 +177,7 @@
 <script type="text/x-template" id="friction-loss-calculator-template">
 	<form>
         <div class='field'>
-                    <label class='label'>Select Material</label>
+                    <span class='label'>Select Material</span>
                     <select  class="input" v-model='material'>
                         <option value=''></option>
                         <option :value='m' v-for='m in materials'>${m}</option>
@@ -188,14 +188,14 @@
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size (in)</label>
+                    <span class='label'>Select Nominal Size (in)</span>
                     <select class='input'v-model='nominal_size'>
                         <option value=''></option>
                         <option :value='m' v-for='m in sizes'>${m}</option>
                     </select>
                 </div>
                 <div class='field' v-if='selector'>
-                    <label class='label'>Select ${selector}</label>
+                    <span class='label'>Select ${selector}</span>
                     <select class='input' v-model='selection'>
                         <option value=''></option>
                         <option :value='m' v-for='m in selectors'>${m}</option>
@@ -204,19 +204,19 @@
                 <hr/>
                 <div v-if='specified'>
                     <div class='field'>
-                        <label class='label'>Nominal Outside Diameter (${units_length_short})</label>
+                        <span class='label'>Nominal Outside Diameter (${units_length_short})</span>
                         <span> ${value_length_short(outer_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diameter (${units_length_short})</label>
+                        <span class='label'>Inside Diameter (${units_length_short})</span>
                         <span> ${value_length_short(inner_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Absolute roughness (epsilon)</label>
+                        <span class='label'>Absolute roughness (epsilon)</span>
                         <span> ${value_length_ft_mm(epsilon, 7)} ${units_length_ftmm}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Relative roughness (epsilon/D)</label>
+                        <span class='label'>Relative roughness (epsilon/D)</span>
                         <span> ${(epsilon/(inner_diameter/12)).toFixed(5)}</span>
                     </div>
                 </div>
@@ -225,40 +225,40 @@
             <div class='column'>
             <div v-if='entry'>
                 <div class='field'>
-                    <label class='label' >Flow Rate (${units_flowrate})</label>
+                    <span class='label' >Flow Rate (${units_flowrate})</span>
                     <input class='input' type='number' @keydown='no_negative' min="0" step='0.01' v-model='flow'/>
                 </div>
                 <div class='field'>
-                    <label class='label' >Pipe Length (${units_length_long})</label>
+                    <span class='label' >Pipe Length (${units_length_long})</span>
                     <input class='input' type='number' @keydown='no_negative' min="0" step='0.01' v-model='length'/>
                 </div>
                 <hr/>
                 <div class='field'>
-                    <label class='label' >Viscosity</label>
+                    <span class='label' >Viscosity</span>
                     <div class='control'>
                         
-                        <label class='radio'>
+                        <span class='radio'>
                             <input type='radio' name = 'viscosity_mode' @keydown='no_negative' min="0" value='kinematic' v-model='vka'/>
                             Kinematic
-                        </label>
-                        <label class='radio'>
+                        </span>
+                        <span class='radio'>
                             <input type='radio' name = 'viscosity_mode' value='absolute' v-model='vka'/>
                             Dynamic (absolute)
-                        </label>
+                        </span>
                     </div>
                 </div>
                 <div class='field'>
-                    <label class='label'>Kinematic Viscosity (cSt)</label>
+                    <span class='label'>Kinematic Viscosity (cSt)</span>
                     <input class='input' :disabled="vka == 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='input_kinematic_v'/>
                 </div>
                 
                 <div class='field'>
-                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
+                    <span class='label'>Dynamic (absolute) Viscosity (cP)</span>
                     <input class='input' :disabled="vka != 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='input_dynamic_v'/>
                 </div>
                 
                 <div class='field'>
-                    <label class='label'>Specific Gravity</label>
+                    <span class='label'>Specific Gravity</span>
                     <input class='input' :disabled="vka != 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='sg'/>
                 </div>
            </div>
@@ -319,9 +319,9 @@
                     <div class='columns'>
                         <div class='column'>
                             <div class='field'>
-                                <label class='label'>
+                                <span class='label'>
                                     <span>Shaft Diameter [D] (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
-                                </label>
+                                </span>
                                 <div>
                                     <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
                                     <span v-if='msg.shaft' style="color:red; font-size:smaller"><i>${msg.shaft}</i></span>
@@ -329,9 +329,9 @@
                                 </div>
                             </div>
                             <div class='field'>
-                                <label class='label'>
+                                <span class='label'>
                                     <span>Speed (${rpm_min}-${rpm_max} RPM)</span>
-                                </label>
+                                </span>
                                 <div>
                                     <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
                                     <span v-if='msg.rpm' style="color:red; font-size:smaller"><i>${msg.rpm}</i></span>
@@ -341,12 +341,12 @@
                         </div>
                         <div class='column'>
                             <div class='field'>
-                                <label class='label' >Pump Setting Length [L] (${units_measure_ft_m})</label>
+                                <span class='label' >Pump Setting Length [L] (${units_measure_ft_m})</span>
                                 <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
                                 <span>&nbsp;</span>
                             </div>
                             <div>
-                                <label class="label" for='bearing_toggle'>Enclosed shaft with flooded tube</label>
+                                <span class="label" for='bearing_toggle'>Enclosed shaft with flooded tube</span>
                                 <input type="checkbox" id='bearing_toggle' v-model='bearing_spacing_5'/>
                             </div>
                         </div>
@@ -648,7 +648,7 @@
                             <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
-                                        <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                                        <input id="search" v-model='needle' class="input" type="text" placeholder="Search"/>
                                     </div>
                                     <div v-if='needle' class='control'>
                                         <a class='button is-info' @click='needle=""'> &times; </a>
@@ -683,7 +683,7 @@
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
-                                        <label class="menu-label">{{section['metadata']['title']}}</label>
+                                        <span class="menu-label">{{section['metadata']['title']}}</span>
                                         <ul>
                                             {% for topic in section['children']|sort(attribute='sort') %}
                                                 {% if topic['metadata']['title']%}
@@ -706,7 +706,7 @@
                     <div class='sticky_search'>
                         <div class='field has-addons'>
                             <div class='control'>
-                                <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                                <input id="nav-search" v-model='needle' class="input" type="text" placeholder="Search"/>
                             </div>
                             <div v-if='needle' class='control'>
                                 <a class='button is-info' @click='needle=""'> &times; </a>
@@ -738,12 +738,12 @@
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         {% for section in sections|sort(attribute='sort') %} 
                             <li>
-                                <label class="menu-label">{{section['metadata']['title']}}</label>
+                                <span class="menu-label">{{section['metadata']['title']}}</span>
                                 <ul>
                                     {% for topic in section['children']|sort(attribute='sort') %}
                                         {% if topic['directory']%}
                                             <li class="menu-list">
-                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</label>
+                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</span>
                                                 <ul>
                                                     {% for stopic in topic['children']|sort(attribute='sort') %}
                                                     <li style="padding-left:1em" class="menu-list">

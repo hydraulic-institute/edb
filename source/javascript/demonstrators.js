@@ -870,7 +870,7 @@ Vue.component("demo-input-slider", {
   props: ['value', 'label', 'min', 'max'],
   template: `
   <div class="row">
-    <label class="col-sm-1">{{ label }}</label>
+    <span class="col-sm-1">{{ label }}</span>
     <div class="col-sm-3">
       <input type="range" class="form-range" v-bind:value="value" v-bind:min="min" v-bind:max="max" v-on:input="$emit('update:value', parseInt($event.target.value))"></input>
     </div>
