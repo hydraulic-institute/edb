@@ -510,7 +510,10 @@ Some pages within the EDB will be interactive applications - allowing users to g
 		- `python kb/unit-converter/build.py`
 		- This will parse all of the `xlsx` files and build the `unit-conversions.json` file.  
 			- This file is used by the *Unit Conversion Tool*
-
+3. If any of the labels have changed in `kb/unit-converter/volume.xlsx`, you MUST modify `source/javascript/tank_calculators.js`
+	- The `tank-demo` vue component has a mapping dictionary, `conversion_mapper`.
+		- Update the value of the key/value pair to match the label from the `volume.xlsx` file.
+		- If any of the mapping is in error, you will see `<map-error>` in the conversion table on the tank calculator webpage.
 ---
 
 ## Process for Updated PIPE MATERIALS Data

@@ -43,7 +43,7 @@ Vue.component('tank-demo', {
           conversion_unit: 'Cubic Feet',
           conversion_types: ['Cubic Millimeters', 'Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons', 'Barrels (Oil)', 'Liters'],
           swap_conv: false,
-          conversion_mapper: {'Millimeters': 'mm3', 'Inches': 'in3', 'Feet': 'ft3', 'Meters': 'm3', 'Gallons': 'USgallons', 'Barrels (Oil)': 'barrels (oil)', 'Liters': 'liter'},
+          conversion_mapper: {'Millimeters': 'mm&sup3', 'Inches': 'in&sup3', 'Feet': 'ft&sup3', 'Meters': 'm&sup3', 'Gallons': 'gallon (US)', 'Barrels (Oil)': 'Barrels (petroleum)', 'Liters': 'Liter (L)'},
           
           image_str: '',
           error: '',
@@ -255,6 +255,9 @@ Vue.component('tank-demo', {
         if ( to_unit == from_unit) { return in_string; }
         const standard = 1 / this.vol_conversions[from_unit];
         const conv_factor = (standard * this.vol_conversions[to_unit]);
+        if ((standard.toString() == "NaN") || (conv_factor.toString() == "NaN")) {
+          return "<map-error>";
+        }
         var out_val = this.str_to_float(in_string) * conv_factor;
         return this.float_to_str(out_val);
       },
