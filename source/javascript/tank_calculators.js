@@ -255,10 +255,6 @@ Vue.component('tank-demo', {
         }
         let error_val = '';
         if (!do_check ) { 
-          //If all fields are empty, no error message.  Otherwise set an error message
-          if ( !(( this.tank_key != 'st' && !this.d_diameter && !this.h_filldepth && !this.a_length) || (!this.d_diameter && !this.h_filldepth))) {
-            error_val = 'Invalid Inputs';
-          }
           this.clear_volume_data() ;
         }
         this.error = error_val;
@@ -356,7 +352,7 @@ Vue.component('tank-demo', {
       },
       get_H_value: function(in_type,in_depth,in_length,z_bot,cyl_H_val,is_top=false) {
         if (in_type == "flat") {return 0;}
-        if (is_top && cyl_H_val) {
+        if (is_top) {
           //Use Cylindrical H value
           if (cyl_H_val < in_length) {return 0;}
           return (in_depth-in_length-z_bot);
