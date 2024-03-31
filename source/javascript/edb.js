@@ -344,7 +344,7 @@ Vue.component('viscosity-converter', {
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
             const centistoke = (centipoise / parseFloat(this.sg)).toPrecision(this.output_sig_fig);
-            this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centisoke`);
+            this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centistoke`);
 
             //-----------------------------------
             // Set precision with significant figures
@@ -404,7 +404,7 @@ Vue.component('viscosity-converter', {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
             const centipoise = (input * parseFloat(this.sg)).toPrecision(this.output_sig_fig);
-            this.steps.push(`${input} Centisokes * ${this.sg} = ${centipoise} Centipoise`);
+            this.steps.push(`${input} Centistokes * ${this.sg} = ${centipoise} Centipoise`);
             const output = (centipoise / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);

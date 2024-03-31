@@ -91,9 +91,9 @@
         </div>
         <div class="field" v-if='to_unit'>
             <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} ${from_unit.label}</span>
+                <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} <span v-html='from_unit.label' /></span>
                 <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
-                <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} ${to_unit.label}</span>
+                <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} <span v-html='to_unit.label' /></span>
                 <p v-if='kinematic_warning' class='has-text-danger'>${kinematic_warning}</p>
             </div>
         </div>
