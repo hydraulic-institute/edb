@@ -1,5 +1,5 @@
 -----
-title: H) Atmospheric Pressure Demonstrator
+title: H) Atmospheric Pressure Calculator
 date: Sept 11th, 2023
 description: Demo Atmospheric Pressure
 -----
