@@ -37,13 +37,13 @@ Vue.component('tank-demo', {
           top_type: null,
           bottom_type: null,
           end_type: null,
-          length_unit: 'Feet',
-          length_types: ['Inches','Feet','Meters','Millimeters'],
+          length_unit: 'ft',
+          length_types: ['in','ft','m','mm'],
           length_multiplier: [1,0.083333,0.0254,25.4],
-          conversion_unit: 'Cubic Feet',
-          conversion_types: ['Cubic Millimeters', 'Cubic Inches', 'Cubic Feet', 'Cubic Meters', 'Gallons', 'Barrels (Oil)', 'Liters'],
+          conversion_unit: 'ft<sup>3</sup>',
+          conversion_types: ['mm<sup>3</sup>', 'in<sup>3</sup>', 'ft<sup>3</sup>', 'm<sup>3</sup>', 'Gallons', 'Barrels (Oil)', 'Liters'],
           swap_conv: false,
-          conversion_mapper: {'Millimeters': 'mm&sup3', 'Inches': 'in&sup3', 'Feet': 'ft&sup3', 'Meters': 'm&sup3', 'Gallons': 'gallon (US)', 'Barrels (Oil)': 'Barrels (petroleum)', 'Liters': 'Liter (L)'},
+          conversion_mapper: {'mm': 'mm&sup3', 'in': 'in&sup3', 'ft': 'ft&sup3', 'm': 'm&sup3', 'Gallons': 'gallon (US)', 'Barrels (Oil)': 'Barrels (petroleum)', 'Liters': 'Liter (L)'},
           
           image_str: '',
           error: '',
@@ -263,7 +263,7 @@ Vue.component('tank-demo', {
       convert_val: function(in_string) {
         if (!in_string.length) return '';
         var from_unit = this.conversion_mapper[this.length_unit];
-        var to_unit = this.conversion_mapper[this.conversion_unit.replace('Cubic ','')];
+        var to_unit = this.conversion_mapper[this.conversion_unit.replace('<sup>3</sup>','')];
         if ( to_unit == from_unit) { return in_string; }
         const standard = 1 / this.vol_conversions[from_unit];
         const conv_factor = (standard * this.vol_conversions[to_unit]);

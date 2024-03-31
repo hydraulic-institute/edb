@@ -521,7 +521,7 @@
                             <div>
                             <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
                                 <select class="input" style="width:150px;" v-model='conversion_unit'>
-                                    <option :value='c' v-for='c in conversion_types'>${c}</option>
+                                    <option :value='c' v-for='c in conversion_types' v-html='c'></option>
                                 </select>
                             </div>
                         </th>
@@ -531,10 +531,10 @@
                     <tr class='hi_no_input' v-for='c in volume_strings'>
                         <td  style="text-align: left">${c.desc}</td>
                         <td style="text-align: right">
-                            ${c.value} Cubic ${length_unit}
+                            ${c.value} ${length_unit}<sup>3</sup>
                         </td>
                         <td colspan="2" style="text-align: right">
-                            ${c.converted_value} ${conversion_unit}
+                            ${c.converted_value} <span v-html='conversion_unit'></span>
                         </td>
                     </tr>
                 </tbody>
