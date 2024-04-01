@@ -49,64 +49,69 @@
 
 <script type="text/x-template" id="viscosity-converter-template">
     <div>
-    <form>
-        <div class='field'>
-            <span class='label'>
-                <span>Convert from</span>
-            </span>
-            <div class='columns'>
-                <div class='column'>
-                    <input class='input' v-model='from_value'/>
-                </div>
-                <div class='column'>
-                    <select  class="input" v-model='from_unit'>
-                        <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
-                    </select>
-                </div>
+        <div class="row">
+            <div class="col align-right">
+                <button type="button" class="button is-small is-link" style="float:right" @click='swap()'>Swap</button> 
             </div>
         </div>
-        <div class='field'>  
-            <span class='label'>
-                <span>To</span>
-            </span>
-            <div class='columns'>
-                <div class='column'>
-                    <select  class="input" v-model='to_unit'>
-                        <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
-                    </select>                   
+        <div class="row"> 
+        <form>
+            <div class='field'>
+                <span class='label'>
+                    <span>Convert from</span>
+                </span>
+                <div class='columns'>
+                    <div class='column'>
+                        <input class='input' v-model='from_value'/>
+                    </div>
+                    <div class='column'>
+                        <select  class="input" v-model='from_unit'>
+                            <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
+                        </select>
+                    </div>
                 </div>
-                <div class='column'    v-if='show_sg'>
-                    <div class="columns">
-                        <div class='column'>
-                            <span class='label'>
-                                <span>w/ SG</span>
-                            </span>
-                        </div>
-                        <div class='column'>
-                            <input class='input' v-model='sg'/>
+            </div>
+            <div class='field'>  
+                <span class='label'>
+                    <span>To</span>
+                </span>
+                <div class='columns'>
+                    <div class='column'>
+                        <select  class="input" v-model='to_unit'>
+                            <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                        </select>                   
+                    </div>
+                    <div class='column'    v-if='show_sg'>
+                        <div class="columns">
+                            <div class='column'>
+                                <span class='label'>
+                                    <span>w/ SG</span>
+                                </span>
+                            </div>
+                            <div class='column'>
+                                <input class='input' v-model='sg'/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="field" v-if='to_unit'>
+                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                    <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} <span v-html='from_unit.label' /></span>
+                    <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
+                    <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} <span v-html='to_unit.label' /></span>
+                    <p v-if='kinematic_warning' class='has-text-danger'>${kinematic_warning}</p>
+                </div>
+            </div>
+        </form>
         </div>
-        <div class="field" v-if='to_unit'>
-            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} <span v-html='from_unit.label' /></span>
-                <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
-                <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} <span v-html='to_unit.label' /></span>
-                <p v-if='kinematic_warning' class='has-text-danger'>${kinematic_warning}</p>
+        <div v-if='steps.length'>
+            <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
+            <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
+            <div style='padding-top:1rem;' v-if='show_steps'>
+                <pre v-for="step in steps" v-html='step' />
             </div>
         </div>
-    </form>
-    <div v-if='steps.length'>
-        <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
-        <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
-        <button type='button' class='button is-small' @click='swap()'>Swap from/to units</button>
-        <div style='padding-top:1rem;' v-if='show_steps'>
-            <pre v-for="step in steps" v-html='step' />
-        </div>
-    </div>
-    
     </div>
 </script>
 
