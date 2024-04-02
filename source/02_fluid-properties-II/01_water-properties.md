@@ -18,6 +18,7 @@ The values for specific gravity of water based on these common reference tempera
 title: Water Properties at Various Temperatures
 data-us: SpecificGravity-US.csv
 data-metric: SpecificGravity-Metric.csv
+fixed-columns: 1
 =|=
 
 
@@ -25,6 +26,7 @@ data-metric: SpecificGravity-Metric.csv
 title: Specific Gravity vs. Temperature for Water
 data-us: SpecificGravity-US.csv
 data-metric: SpecificGravity-Metric.csv
+fixed-columns: 1
 x: 1
 series: 6
 series_title_index: 0
@@ -41,18 +43,21 @@ series_title_index: 0
 title: Sat. Properties for Water (Liquid)
 data-us: liquid-water-US.csv
 data-metric: liquid-water-metric.csv
+fixed-columns: 1
 =|=
 
 =|=
 title: Sat. Properties for Water (Vapor)
 data-us: vapor-water-US.csv
 data-metric: vapor-water-metric.csv
+fixed-columns: 1
 =|=
 
 =/=
 title: Water Vapor Saturation Curve  
 data-us: vapor-water-US.csv
 data-metric: vapor-water-metric.csv
+fixed-columns: 1
 x: 1
 series: 2
 series_title_index: 0

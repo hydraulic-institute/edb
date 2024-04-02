@@ -32,6 +32,7 @@ hide_price: true
                     =|=
                     title: Aluminum alloy pipe - extruded per ANSI H35.2-2017
                     data: npat-alum_allo_pipe_extr.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -51,6 +52,7 @@ hide_price: true
                     =|=
                     title: Brass (red brass) pipe - seamless per ANSI H35.2-2017
                     data: npat-bras_red_bras_pipe_seam.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -70,6 +72,7 @@ hide_price: true
                     =|=
                     title: Copper capillary tube - hard drawn per ANSI H35.2-2017
                     data: npat-copp_capi_tube_hard_draw.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -89,6 +92,7 @@ hide_price: true
                     =|=
                     title: Copper pipe - seamless per ANSI H35.2-2017
                     data: npat-copp_pipe_seam.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -108,6 +112,7 @@ hide_price: true
                     =|=
                     title: Copper pipe - threadless - seamless - deoxidized for brazed joint assembly per ANSI H35.2-2017
                     data: npat-copp_pipe_thre_seam_deox_for_braz_join_asse.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -127,6 +132,7 @@ hide_price: true
                     =|=
                     title: Copper water tube - seamless - plumbing and fluid conveyance tubing per ANSI H35.2-2017
                     data: npat-copp_wate_tube_seam_plum_and_flui_conv_tubi.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>
@@ -146,6 +152,7 @@ hide_price: true
                     =|=
                     title: Copper-Nickel pipe and tube - seamless per ANSI H35.2-2017
                     data: npat-copp_pipe_seam.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                 </div>

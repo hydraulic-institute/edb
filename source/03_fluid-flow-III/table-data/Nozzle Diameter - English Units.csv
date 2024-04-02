@@ -1,5 +1,6 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Head,,Nozzle velocity, Nozzle Diameter (inches),,,,,,,, , , , , , , , , , , , ,,,,,,
+heading,Head,,Nozzle velocity,GPM,,,,,,,, , , , , , , , , , , , ,,,,,,
+heading,,,,Nozzle Diameter (inches),,,,,,,,,,,,,,,,,,,,,,,,,
 heading,(psi),(ft),(ft/s),1/16,1/8,3/16,1/4,3/8,1/2,5/8,3/4,7/8,1,1 1/8,1 1/4,1 3/8,1 1/2,1 3/4,2,2 1/4,2 1/2,2 3/4,3,3 1/2,4,4 1/2,5,5 1/2,6
 data,10,23.1,38.6,0.37,1.48,3.32,5.91,13.3,23.6,36.9,53,72,94,119,147,178,212,289,378,478,590,714,849,1156,1510,1911,2359,2855,3398
 data,15,34.7,47.2,0.45,1.81,4.06,7.24,16.3,28.9,45.2,65,88,116,146,181,219,260,354,462,585,722,874,1040,1416,1849,2341,2890,3496,4161

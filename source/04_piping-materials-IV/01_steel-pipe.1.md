@@ -21,5 +21,5 @@ hide_price: true
 
 =|=
 data: sp-stee_pipe_weld_and_seam_wrou.csv
-special: height:600px;
+fixed-columns: 2
 =|=

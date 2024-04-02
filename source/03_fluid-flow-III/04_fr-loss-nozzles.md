@@ -27,6 +27,7 @@ Where:
 =|=
 title: 
 data: Nozzle Diameter - English Units.csv
+fixed-columns: 3
 =|=
 
 For hydraulic sluicing the following pressures at base of nozzles are recommended:

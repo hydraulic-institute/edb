@@ -21,7 +21,7 @@ hide_price: true
 
 =|=
 data: ssp-stai_stee_pipe_weld_and_seam.csv
-special: height:600px;
+fixed-columns: 2
 =|=
 
 

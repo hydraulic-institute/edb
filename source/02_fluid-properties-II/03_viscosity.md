@@ -239,11 +239,13 @@ Saybolt Universal column.
 =|=
 title: Conversions
 data: visc-conv-1.csv
+fixed-columns: 2
 =|=
 
 
 =|=
 data: visc-conv-2.csv
+fixed-columns: 2
 =|=
 
 

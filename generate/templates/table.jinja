@@ -1,16 +1,20 @@
+<div>
 <div class='table-container {{table.units}}-units' v-if="{{table.units}}_visible">
+{% if meta.datatable %}
+<span id="dt-data-{{ meta.dt_id }}" data-config="{{ meta.dt_config }}" data-id="{{ meta.dt_id }}">
+{% endif %}
  <div class='fixed-container {{meta.scrolling}}' style={{meta.special}}>
-    <table class="data-table table is-bordered is-striped is-fullwidth">
+    <table class="table is-bordered is-striped" width="100%" id="datatable-{{meta.dt_id}}">
         <thead class="fixed-thead">
             {% for heading in table.headings %} 
                 <tr style={{heading.style}}>
                     {%for header in heading.data %}
-                        <th class="fixed-header {{header.type}}" scope="col" colspan={{header.colspan}} style={{header.style}}> {{header.data}}</th>
+                        <th class=" fixed-header {{header.type}}" scope="col" colspan={{header.colspan}} style={{header.style}}> {{header.data}}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </thead>
-        <tbody>
+        <tbody class="nowrap">
             {% for row in table.rows %} 
                 <tr style={{row.style}}>
                     {%for column in row.data %}
@@ -21,4 +25,5 @@
         </tbody>
     </table>
  </div>
+</div>
 </div>

@@ -21,5 +21,5 @@ hide_price: true
 
 =|=
 data: ip-iron_duc_pipe.csv
-special: height:600px;
+fixed-columns: 2
 =|=

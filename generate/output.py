@@ -220,7 +220,8 @@ def table_data(units, table, path, filename):
         print(
             f"Error - the table {table['title']} refers to {file} which does not exist")
         return None
-    # print('Processing table: '+filename)
+    if "Nozzle" in filename:    
+        print('Processing table: '+filename)
     csv_data = pd.read_csv(file, dtype='str')
     col_types = list(csv_data.columns)
     types = getTypesArray(col_types[1:])
@@ -252,7 +253,7 @@ def table_data(units, table, path, filename):
     for row in data.itertuples():
         row_columns=[]
         for i, d in enumerate(row[2:]):
-            if row[1] == 'heading':
+            if "heading" in row[1]:
                 row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
             else:
                 row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
@@ -276,7 +277,16 @@ def table_data(units, table, path, filename):
         if hidx > 0:
             # Reduce the font for the row
             headings[hidx]=headings[hidx]._replace(style="font-size:.75rem;")
-        # Now remove the columns that are useless
+         # Remove any columns 0- in succession
+        ignore_slice = 0
+        for idx, index in enumerate(sorted(remove_col)):
+            if idx == index:
+                ignore_slice += 1
+            else:
+                break
+        if ignore_slice:
+            remove_col = remove_col[:-ignore_slice]
+        # Remove the columns     
         for index in sorted(remove_col, reverse=True):
             del headings[hidx][1][index]
 
@@ -289,7 +299,7 @@ def replace_definitions_block(dir, definitions_text, sections):
     def_html = template.render(meta=definitions_table, table=defs, units='us', index=index)
     return def_html
 
-def replace_table_block(dir, table_text):
+def replace_table_block(dir, table_text, table_count):
     table = parse_dict(table_text.strip().split("\n"))
 
     data_us = ""
@@ -307,6 +317,13 @@ def replace_table_block(dir, table_text):
         print(
             f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
+    
+    if 'fixed-columns' in table:
+        table['datatable']=True
+        table['dt_id']=table_count
+        table['dt_config']='fixedColumns:'+table['fixed-columns']+';'
+        table['scrolling']='not-scrolling'
+        
     all_tables.append(data_us)
  
     template = env.get_template('table.jinja')
@@ -558,13 +575,15 @@ def process_definitions_block(dir, markdown, sections):
 def process_table_blocks(dir, markdown):
     delim = "=|="
     start = markdown.find(delim)
+    count = 0
     while (start >= 0):
+        count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
         after = markdown[end+3:]
         markdown = before + \
-            replace_table_block(dir, within) + after
+            replace_table_block(dir, within, count) + after
         start = markdown.find(delim)
 
     return markdown
@@ -572,8 +591,10 @@ def process_table_blocks(dir, markdown):
 
 def process_table_blocks_pdf(dir, markdown):
     delim = "=|="
+    count = 0
     start = markdown.find(delim)
     while (start >= 0):
+        count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]

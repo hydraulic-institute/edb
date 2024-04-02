@@ -32,6 +32,7 @@ hide_price: true
                     =|=
                     title: Flanges per AWWA C207 (Class B, D, E, F)
                     data: flange-c207.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>
@@ -67,6 +68,7 @@ hide_price: true
                     title: Flanges per ASME B16.1 (Class 25, 125, 250)
                     data-us: flange-16.1-25-250-us.csv
                     data-metric: flange-16.1-25-250-metric.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>
@@ -113,6 +115,7 @@ hide_price: true
                                     title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
+                                    fixed-columns: 2
                                     column_tags: Th
                                     special: height:600px;
                                     =|=
@@ -141,6 +144,7 @@ hide_price: true
                                     title: Slip-On Welding Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
+                                    fixed-columns: 2
                                     column_tags: SO
                                     special: height:600px;
                                     =|=
@@ -169,6 +173,7 @@ hide_price: true
                                     title: Socket Welding (NPS 1/2 to 3 Only) Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
+                                    fixed-columns: 2
                                     column_tags: SW
                                     special: height:600px;
                                     =|=
@@ -197,6 +202,7 @@ hide_price: true
                                     title: Welding Neck Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
+                                    fixed-columns: 2
                                     column_tags: WN
                                     special: height:600px;
                                     =|=
@@ -225,6 +231,7 @@ hide_price: true
                                     title: Lapped Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
                                     data-us: flange-16.5-150-300-us.csv
                                     data-metric: flange-16.5-150-300-metric.csv
+                                    fixed-columns: 2
                                     column_tags: La
                                     special: height:600px;
                                     =|=
@@ -278,6 +285,7 @@ hide_price: true
                                     title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
+                                    fixed-columns: 2
                                     column_tags: Th
                                     special: height:600px;
                                     =|=
@@ -306,6 +314,7 @@ hide_price: true
                                     title: Slip-On Welding Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
+                                    fixed-columns: 2
                                     column_tags: SO
                                     special: height:600px;  
                                     =|=
@@ -334,6 +343,7 @@ hide_price: true
                                     title: Socket Welding (NPS 1/2 to 3 Only) Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
+                                    fixed-columns: 2
                                     column_tags: SW
                                     special: height:600px;
                                     =|=
@@ -362,6 +372,7 @@ hide_price: true
                                     title: Welding Neck Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
+                                    fixed-columns: 2
                                     column_tags: WN
                                     special: height:600px;
                                     =|=
@@ -390,6 +401,7 @@ hide_price: true
                                     title: Lapped Steel Pipe Flanges per ASME B16.5 (Class 400-2500)
                                     data-us: flange-16.5-400-2500-us.csv
                                     data-metric: flange-16.5-400-2500-metric.csv
+                                    fixed-columns: 2
                                     column_tags: La
                                     special: height:600px;
                                     =|=
@@ -433,6 +445,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series A Class 150-300
                     data-us: flange-16.47-A-150-300-us.csv
                     data-metric: flange-16.47-A-150-300-metric.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>
@@ -469,6 +482,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series A Class 400-900
                     data-us: flange-16.47-A-400-900-us.csv
                     data-metric: flange-16.47-A-400-900-metric.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>
@@ -505,6 +519,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series B Class 75-300
                     data-us: flange-16.47-B-75-300-us.csv
                     data-metric: flange-16.47-B-75-300-us.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>
@@ -541,6 +556,7 @@ hide_price: true
                     title: Flanges per ASME B16.47 Series B Class 400-900
                     data-us: flange-16.47-B-400-900-us.csv
                     data-metric: flange-16.47-B-400-900-us.csv
+                    fixed-columns: 2
                     special: height:600px;
                     =|=
                     <h4>Notes:</h4>

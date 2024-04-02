@@ -48,6 +48,7 @@ hide_units: true
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
                                     data: motor-horizontal-4.4.1.csv
+                                    fixed-columns: 1
                                     =|=
                                     *The tolerances on the D dimension for rigid base motors shall be +0.00 inch, −0.06 inch. No tolerance has been established for the D dimension of resilient mounted motors.<br>
                                     <br>
@@ -93,6 +94,7 @@ hide_units: true
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
                                     data: motor-c-face-4.4.4.csv
+                                    fixed-columns: 1
                                     =|=
                                     All dimensions in inches.<br>
                                     <br>
@@ -130,6 +132,7 @@ hide_units: true
                                 <div style="padding:0">
                                     =|=
                                     data: motor-c-face-4.4.5.csv
+                                    fixed-columns: 1
                                     =|=
                                     *The tolerance on this FBB dimension shall be +0.00, −0.06 inch.<br>
                                     <br>
@@ -168,6 +171,7 @@ hide_units: true
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-18-28.csv
+                                    fixed-columns: 1
                                     =|=
                                     The tolerance for the permissible shaft runout shall be 0.002 inch indicator reading (see 4.11).<br>
                                     <br>
@@ -199,6 +203,7 @@ hide_units: true
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-hollow-shaft-18-30.csv
+                                    fixed-columns: 1
                                     =|=
                                     All dimensions in inches.<br>
                                     <br>
@@ -242,10 +247,12 @@ hide_units: true
                                 <div style="padding:0">
                                     =|=
                                     data: motor-table-1-JM-JP-18.33-18.34.csv
+                                    fixed-columns: 1
                                     =|=
                                     <br>
                                     =|=
                                     data: motor-table-2-JM-JP-18.33-18.34.csv
+                                    fixed-columns: 1
                                     =|=
                                     All dimensions in inches.<br>
                                     <br>
