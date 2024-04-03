@@ -47,7 +47,7 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ### Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/pump-fundamentals/pump-curves.html" target="_blank">Pump Curves</a>). 
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/pump-fundamentals/pump-curves.html">Pump Curves</a>). 
 As the pump is slowed the pump curve will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
@@ -59,7 +59,7 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ### Changes in Impeller Size
 
-In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
+In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html">different sized impellers</a> to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 

@@ -187,7 +187,7 @@ def definitions_table_data(table, path, filename, in_sections):
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
-        index['index_style']='height:'+str(len(index['sections'])*45)+'px'
+        index['index_style']='height:'+str(len(index['sections'])*50)+'px'
         return index, page_sections
     
 def definition_create_section_link(sections, in_section):

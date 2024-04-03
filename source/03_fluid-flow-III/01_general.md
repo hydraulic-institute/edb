@@ -99,7 +99,7 @@ where:
  
 
 Values of (K) for valves and fittings may be referenced
-below, and in <a href="/fluid-flow-III/fr-loss-water.html" target="_blank">Losses in Valves, Fittings, and Bends</a>.  Wide differences are found in the published values of (K) for all types of valves
+below, and in <a href="/fluid-flow-III/fr-loss-water.html">Losses in Valves, Fittings, and Bends</a>.  Wide differences are found in the published values of (K) for all types of valves
 and fittings. The available data are inconclusive. As indicated in the above references section, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and fittings.
 The resistance coefficients decrease with the increasing size of most valves and fittings.
 
@@ -210,7 +210,7 @@ $$v = 0.00107639 · stokes$$
 $$= 0.0000107639 · centistokes$$
 =+=
 
-Further information on viscosity can be found <a href="/fluid-properties-II/viscosity.html" target="_blank">here</a>.
+Further information on viscosity can be found <a href="/fluid-properties-II/viscosity.html">here</a>.
 
 If the Reynolds Number is less than 2000, the
 flow is laminar and the friction factor for any fluid
@@ -240,7 +240,7 @@ hide_price: true
 =^=
 
 
-A <a href="/tools/frictional-losses.html" target="_blank">Frictional Loss Calculator</a> is available to determine the pipe friction according to this methodology.
+A <a href="/tools/frictional-losses.html">Frictional Loss Calculator</a> is available to determine the pipe friction according to this methodology.
 
 
 ### References

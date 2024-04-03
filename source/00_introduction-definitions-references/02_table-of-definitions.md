@@ -10,5 +10,6 @@ hide_units: true
 =defs=
 title: Definitions
 data: table-of-acronyms-definitions-02.csv
+scrolling: false
 =defs=
 

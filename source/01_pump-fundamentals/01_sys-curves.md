@@ -36,7 +36,7 @@ The **head loss due to friction** will vary based on flow rate (velocity) and ca
 ### Major Losses
 
 Frictional head losses in pipes can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation
-(defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>).
+(defined in <a href="/fluid-flow-III/general.html">Fluid Flow – General</a>).
 
 These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
 pipe diameter (D<sub>h</sub>), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
@@ -45,7 +45,7 @@ such as age, fouling, and coatings will also affect the pipe roughness.
 The Hazen-Williams equation is another method to 
 determine pipe losses. These values are only valid for water and do not account for temperature or viscosity. 
 These values are a function of pipe material only and are not dependent on Reynolds Number. A table of typical values 
-for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe.html" target="_blank">here</a>.
+for various pipe materials can be found <a href="/piping-materials-IV/steel-pipe.html">here</a>.
 
 ### Minor Losses
 
@@ -54,7 +54,7 @@ direction or pressure of the flow can be considered a minor loss. These are cate
 dominant system loss. 
 
 The loss created by the component is often characterized by a constant, K, and tabulated for several types of components. Head loss is determined by the
-equation defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>
+equation defined in <a href="/fluid-flow-III/general.html">Fluid Flow – General</a>
 (K values are also tabulated here).
 
 =^=
