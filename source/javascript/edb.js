@@ -466,6 +466,7 @@ var appView = new Vue({
     delimiters: ['${', '}'],
     data: {
         unit_set: 'us',
+        isChecked: false,
         // This will be loaded async
         needle: null,
         haystack: null,
@@ -534,8 +535,10 @@ var appView = new Vue({
             const stored = localStorage.getItem("unit-set");
             if (stored === 'us') {
                 this.unit_set = 'us';
+                this.isChecked = false;
             } else if (stored === 'metric') {
                 this.unit_set = 'metric';
+                this.isChecked = true;
             }
             else {
                 this.unit_set = 'us';
@@ -599,6 +602,14 @@ var appView = new Vue({
     },
 
     methods: {
+        handle_unit_toggle() {
+            console.log("Got ToggleChecked:", this.isChecked);
+            if (this.isChecked) {
+                this.to_metric();
+            } else {
+                this.to_us();
+            }   
+        },
         to_us() {
             this.unit_set = 'us';
             localStorage.setItem("unit-set", this.unit_set);

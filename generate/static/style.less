@@ -1,5 +1,5 @@
 @primary-color: red;
-@hi_blue: #465b79;
+@hi_blue: rgb(70, 91, 121);
 @hi_dark: #343a40;
 @hi_light: #028da8;
 @hi_super_light: #49d4ef;
@@ -75,7 +75,6 @@ aside {
 
 .sidebar {
     min-height: 100vh;
-    padding-top: 50px;
     overflow: auto;
     box-shadow: rgb(68, 68, 68) 1px 1px 2px 0px;
 
@@ -99,6 +98,9 @@ aside {
     }
 }
 
+.desktop_only {
+    display: none;
+}
 
 
 
@@ -113,7 +115,7 @@ aside {
         overflow-y: scroll;
         top: 0;
         bottom: 0;
-
+        padding-top: 50px;
     }
 
     .sticky_search {
@@ -129,10 +131,43 @@ aside {
         background-color: @hi_blue
     }
 
+    .desktop_only {
+        display: block;
+    }
 }
-
-
-
+/***TOGGLE***/
+.my-switch {
+    padding-top: 6px;
+  }
+  .my-switch .form-switch {
+    margin: 3px 0px 0 5px;
+  }
+  .form-switch.form-switch-lg .form-check-input { 
+    height: 2rem;
+    width: 3.75rem;
+    border-radius: 4rem;
+    background-color: white;
+    border-color: #c0bfc0;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(70, 91, 121,1)'/></svg>");
+  }
+  .form-switch.form-switch-lg .form-check-input:focus {
+    background-color: white;
+    border-color: #c0bfc0;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(70, 91, 121,1)'/></svg>");
+  }
+  .form-switch.form-switch-lg .form-check-input:checked {
+    background-color: white;
+    border-color: #c0bfc0;
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(70, 91, 121,1)'/></svg>");
+  }
+  .form-switch.form-switch-lg.form-check-inline {
+    display: inline-block;
+    margin-right: -.75rem !important;
+  }
+/*************/
 
 h1 {
     font-size: 3rem !important;
@@ -154,7 +189,7 @@ ul {
     font-size: 0.75rem !important;
 }
 
-a.is-active {
+.menu-list a.is-active {
     background-color: @er_accent  !important;
     color: @hi_dark  !important;
 }
@@ -181,7 +216,7 @@ caption {
 }
 
 .pad-horizontal {
-    padding-left: @std_pad;
+    padding-left: 1.5rem;
     padding-right: @std_pad;
 }
 
@@ -198,6 +233,10 @@ caption {
     .navbar-burger {
         color: @er_super_light  !important;
     }
+}
+
+.navbar-menu.is-active {
+    background-color: @hi_dark  !important;
 }
 
 .topic-source {

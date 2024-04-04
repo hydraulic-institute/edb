@@ -609,16 +609,16 @@
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
                 
-                    <div class="dropdown is-hoverable">
+                    <div class="dropdown is-hoverable desktop_only">
                     <div class="dropdown-trigger">
-                        <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu5">
                         <h2> Tools<span class="margin-left:2rem">
                             &#x25BC;
                         </span></h2>
                         </button>
                         </button>
                     </div>
-                    <div class="dropdown-menu is-dark" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-menu is-dark" id="dropdown-menu5" role="menu">
                         <div class="dropdown-content" style="box-shadow:none;">
                          <a href="/tools/unit-conversions.html" class="dropdown-item">Unit Conversions</a>
                          <a href="/tools/viscosity.html" class="dropdown-item">Kinematic and Dynamic Viscosity Conversion</a>
@@ -636,18 +636,18 @@
 
                 <div class="navbar-end">
                     <div class="columns">
-                        <!--
-                         <div class="navbar-item pad-horizontal">
-                          <div class='buttons'>
-                            <a class='button is-info' title='Download PDF' target='_blank' href='./statics/edb.pdf'>PDF</a>
-                          </div>
-                        </div>
-                        -->
                         <div class="navbar-item pad-horizontal">
                             {% if not node or not node['metadata']['hide_units'] %} 
-                            <div id="units-toggle" class="buttons">
-                                <button v-if='unit_set=="us"' class='button is-warning is-outlined' title='Click to change to metric units' @click='to_metric'>US</button>
-                                <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
+                            <div id="units-toggle" class="d-flex my-switch" style="display:flex;align-items:center;">
+                                <div class="form-text" id="us" v-if='unit_set=="us"' style='color:#ffdd57;font-weight:bold;'>US</div>
+                                <div class="form-text" id="us" v-else style='color:white;font-weight:normal;'>US</div>
+                                <div class="form-check form-switch form-switch-lg form-check-inline ">
+                                  <input id="unit-checkbox" role="switch" class="form-check-input form-check-inline" type="checkbox" v-model="isChecked" @change='handle_unit_toggle'>
+                                </div>
+                                <div class="form-text" id="metric" v-if='unit_set!="us"' style='color:#ffdd57;font-weight:bold;'>Metric</div>
+                                <div class="form-text" id="metric" v-else style='color:white;font-weight:normal;'>Metric</div>                                
+                                <!--button v-if='unit_set=="us"' class='button is-warning is-outlined' title='Click to change to metric units' @click='to_metric'>US</button>
+                                <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button-->
                             </div>                                
                             {%endif%}
                         </div>
@@ -663,7 +663,8 @@
                                 </div>
                             </div>
                         </div>
-                        <aside class='sidebar navbar-item column is-hidden-desktop'>
+                        <div class='sidebar navbar-item column is-hidden-desktop'>
+                        <aside>
                             <div v-if='marks && marks.length'>
                                 <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
                                 <div class='buttons'>
@@ -704,6 +705,7 @@
                                 {% endfor %}
                             </ul>
                         </aside>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -711,7 +713,7 @@
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div class='sticky_search'>
-                        <div class='field has-addons'>
+                        <div class='field has-addons mt-3'>
                             <div class='control'>
                                 <input id="nav-search" v-model='needle' class="input" type="text" placeholder="Search"/>
                             </div>
