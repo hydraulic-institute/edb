@@ -518,7 +518,7 @@ hide_price: true
                     =|=
                     title: Flanges per ASME B16.47 Series B Class 75-300
                     data-us: flange-16.47-B-75-300-us.csv
-                    data-metric: flange-16.47-B-75-300-us.csv
+                    data-metric: flange-16.47-B-75-300-metric.csv
                     fixed-columns: 2
                     special: height:600px;
                     =|=
@@ -555,7 +555,7 @@ hide_price: true
                     =|=
                     title: Flanges per ASME B16.47 Series B Class 400-900
                     data-us: flange-16.47-B-400-900-us.csv
-                    data-metric: flange-16.47-B-400-900-us.csv
+                    data-metric: flange-16.47-B-400-900-metric.csv
                     fixed-columns: 2
                     special: height:600px;
                     =|=
