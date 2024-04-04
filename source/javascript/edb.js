@@ -611,11 +611,13 @@ var appView = new Vue({
             }   
         },
         to_us() {
+            this.isChecked = false;
             this.unit_set = 'us';
             localStorage.setItem("unit-set", this.unit_set);
             this.$root.$emit('unit-change', 'us');
         },
         to_metric() {
+            this.isChecked = true;
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
             this.$root.$emit('unit-change', 'metric');
