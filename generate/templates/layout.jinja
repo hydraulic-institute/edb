@@ -654,7 +654,7 @@
                             </div>                                
                                
                         </div>
-                        <div class="navbar-item pad-horizontal is-hidden-desktop">
+                        <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop" style="display:none;">
                             <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
@@ -712,7 +712,7 @@
                 </div>
             </div>
         </nav>
-        <div class="page columns is-fullheight">
+        <div id="fullpage-menu" class="page columns is-fullheight" style="display:none;">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div class='sticky_search'>
@@ -799,6 +799,8 @@
     <script>
         $(document).ready(function() {
             $('#unit-menu').show();
+            $('#mobile-menu').show();
+            $('#fullpage-menu').show();
         });
 
         MathJax.Hub.Queue(
