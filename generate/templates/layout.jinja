@@ -643,7 +643,7 @@
                                 <button v-if='unit_set=="us"' class='button is-info' title='Click to change to metric units' @click='to_metric'>US</button>
                                 <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
                             </div>
-                            <div id="units-toggle" class="d-flex my-switch" style="display:flex;align-items:center;">
+                            <!--div id="units-toggle" class="d-flex my-switch" style="display:flex;align-items:center;">
                                 <div class="form-text" id="us" v-if='unit_set=="us"' style='color:#ffdd57;font-weight:bold;'>US</div>
                                 <div class="form-text" id="us" v-else style='color:white;font-weight:normal;'>US</div>
                                 <div class="form-check form-switch form-switch-lg form-check-inline ">
@@ -651,7 +651,7 @@
                                 </div>
                                 <div class="form-text" id="metric" v-if='unit_set!="us"' style='color:#ffdd57;font-weight:bold;'>Metric</div>
                                 <div class="form-text" id="metric" v-else style='color:white;font-weight:normal;'>Metric</div>                                
-                            </div>                                
+                            </div-->                                
                                
                         </div>
                         <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop" style="display:none;">
@@ -712,7 +712,7 @@
                 </div>
             </div>
         </nav>
-        <div id="fullpage-menu" class="page columns is-fullheight" style="display:none;">
+        <div id="fullpage-menu" class="page columns is-fullheight">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div class='sticky_search'>

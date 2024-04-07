@@ -783,7 +783,7 @@ def write_content(graph, node, slug_override=None, path="."):
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
         f.write(htmlmin.minify(
             html, remove_comments=True, remove_empty_space=True))
-        # f.write(html.encode('utf-8'))
+        # f.write(html)
 
 
 def make_root(graph):
@@ -1008,7 +1008,8 @@ def html(graph, specials, ignores, production=False):
                 f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content'], section['metadata']['title']))
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
-        json.dump([t._asdict() for t in haystack], outfile)
+        output = json.dumps([t._asdict() for t in haystack], indent=4)
+        outfile.write(output)
 
     sitemap = list()
     for section in [dir for dir in graph if dir['directory'] == True]:

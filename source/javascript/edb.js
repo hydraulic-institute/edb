@@ -489,6 +489,7 @@ var appView = new Vue({
             id: 'path'
         },
         fuse: null,
+        paths: [],
         search_results: undefined,
         marks: [],
         mark_index: 0
@@ -520,6 +521,7 @@ var appView = new Vue({
 
             } else if (this.haystack) {
                 // Scroll to top of screen to ensure the search results appear where they should.
+                //console.log('needle ' + this.needle);
                 this.search_results = this.fuse.search(this.needle);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
@@ -554,8 +556,14 @@ var appView = new Vue({
             .then(function (response) {
                 v.haystack = response.data;
                 v.fuse = new Fuse(v.haystack, v.search_options);
+                v.paths = v.haystack.map(function (g) {
+                    //console.log('path '+g.path);
+                    return g.path;
+                });
+                //console.log("new fuse search");
                 if (typeof (Storage) !== "undefined") {
                     v.needle = localStorage.getItem("needle")
+                    //console.log('needle '+v.needle);
                 }
             }).catch(function (err) {
                 console.error('Search is disabled, could not load topic list');
@@ -564,6 +572,7 @@ var appView = new Vue({
 
         // Scroll selected topic into view
         const active = document.getElementsByClassName("active_topic");
+        //console.log('active '+active.length);
         for (const element of active) {
             element.scrollIntoView({
                 block: "center"
@@ -574,18 +583,17 @@ var appView = new Vue({
 
     computed: {
         search_display() {
+            //console.log('search_display '+this.search_results !== undefined);
             return this.search_results !== undefined;
         },
         results_for_display() {
             const v = this;
             if (this.search_display) {
+                //console.log('results_for_display');
                 return this.search_results.map(function (r) {
-                    const paths = v.haystack.map(function (g) {
-                        return g.path;
-                    });
-                    const h = paths.indexOf(r.item);
+                    const h = v.paths.indexOf(r.item);
                     const hit = v.haystack[h];
-
+                    //console.log('hit path ['+hit.path+' ] title ['+hit.title+'] slug ['+hit.slug+']');
                     return hit;
                 });
 
@@ -628,9 +636,14 @@ var appView = new Vue({
                 e.classList.remove("current_mark");
             });
             if (this.marks[this.mark_index]) {
-                this.marks[this.mark_index].scrollIntoView();
-                window.scrollBy(0, -100)
+                //window.scrollBy(0, -100)
                 this.marks[this.mark_index].classList.add("current_mark");
+                var parent = this.marks[this.mark_index].closest('table');
+                if (parent) {
+                    $('html').scrollTop(parent.offsetTop)
+                }
+                this.marks[this.mark_index].scrollIntoView({block: "center"});  
+                //console.log('jump to mark ' + this.mark_index);
             }
         },
         mark_jump_back() {
@@ -648,11 +661,13 @@ var appView = new Vue({
             v.mark_index = 0;
             markInstance.unmark({
                 done: function () {
+                    //console.log('mark_search');
                     if (v.search_display) {
                         markInstance.mark(v.needle, {
                             separateWordSearch: true,
                             done: function () {
                                 v.marks = document.querySelectorAll("mark");
+                                //console.log('mark_search done');
                                 v.jump_to_mark();
                             }
                         });
