@@ -31,6 +31,9 @@ chart_count = 0
 global pprinter
 pprinter = pprint.PrettyPrinter(indent=2)
 
+global table_count
+table_count = 0
+
 global all_tables
 all_tables=[]
 
@@ -293,10 +296,10 @@ def table_data(units, table, path, filename):
     return Table(units, columns, headings, rows)
 
 def replace_definitions_block(dir, definitions_text, sections):
-    definitions_table = parse_dict(definitions_text.strip().split("\n"))
+    table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    index, defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
-    def_html = template.render(meta=definitions_table, table=defs, units='us', index=index)
+    index, defs = definitions_table_data(table, dir, table['data'], sections)
+    def_html = template.render(meta=table, table=defs, units='us', index=index)
     return def_html
 
 def replace_table_block(dir, table_text, table_count):
@@ -573,17 +576,17 @@ def process_definitions_block(dir, markdown, sections):
     return markdown
 
 def process_table_blocks(dir, markdown):
+    global table_count
     delim = "=|="
     start = markdown.find(delim)
-    count = 0
     while (start >= 0):
-        count += 1
+        table_count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
         after = markdown[end+3:]
         markdown = before + \
-            replace_table_block(dir, within, count) + after
+            replace_table_block(dir, within, table_count) + after
         start = markdown.find(delim)
 
     return markdown

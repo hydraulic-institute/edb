@@ -250,7 +250,7 @@ fixed-columns: 2
 
 
 =+=
-<span class= equation-label >*</span>
+<span class= equation-label >(Eq. 2.C.4)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
 =+=
 
@@ -261,6 +261,7 @@ expression can be used which will be sufficiently
 accurate for most calculations:
 
 =+=
+<span class= equation-label >(Eq. 2.C.5)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Specific\,Gravity} $$
 =+=
 
@@ -271,6 +272,7 @@ For values of 70 centistokes and above, use the
 following conversion:
 
 =+=
+<span class= equation-label >(Eq. 2.C.6)</span>
 $$ SSU = centistokes ·  4.635 $$
 =+=
 
