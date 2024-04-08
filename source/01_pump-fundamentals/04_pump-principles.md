@@ -65,7 +65,7 @@ hide_price: true
 Below is a graph that shows the maximum practically attainable efficiency for different flow rates. This proves useful in selection of hydraulics for 
 particular applications, based on desired flow and head.
 
-![](./images/specific-speed-eff.png "")
+![](./images/specific-speed-eff.png#center "")
 <div class="figure-label">Fig. 1.D.2</div>
 
 **Type number** is a variation of impeller specific speed. Type number is a dimensionless quantity calculated at the point of best efficiency. 
@@ -142,7 +142,7 @@ comparisons because there are subtle but significant differences in methods used
 For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/product/ansi-hi-14-1-14-2-2019-rotodynamic-pumps-for-nomenclature-definitions/" target="_blank">ANSI/HI 14.1-14.2</a>.
 
 
-![](./images/stable-window.png "")
+![](./images/stable-window.png#center "")
 <div class="figure-label">Fig. 1.D.3</div>
 
 ### Impeller Types
@@ -184,7 +184,7 @@ the surrounding parts of the pump through cavitation erosion. In addition to dir
 to other parts as the pump such as seals and bearings. Below is a simplified graph showing the pressure of a fluid as it moves through a pump, with the bottom graph
 showing the fluid reaching a pressure below that of its vapor pressure, causing cavitation.
 
-![](./images/npsh-pic.png "")
+![](./images/npsh-pic.png#center "")
 <div class="figure-label">Fig. 1.D.6</div>
 
 The **net positive suction head available (NPSHA)**, which is the NPSH available at the pump site, is defined as:
@@ -210,6 +210,6 @@ recommended NPSHA above the published NPSHR that will lead to acceptable pump pe
 Below is a common graph seen when testing a pump for NPSHR. This shows that as NPSHA is reduced, there is a point at which the head starts to drop off. On this test,
 the NPSH3 is approximately 11 feet, as this is when the head drops 3% - in this case from 200 feet to 194 feet.
 
-![](./images/NPSHr-test.png "")
+![](./images/NPSHr-test.png#center "")
 <div class="figure-label">Fig. 1.D.7</div>
 

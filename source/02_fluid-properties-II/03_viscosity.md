@@ -63,7 +63,7 @@ gram per centimeter-second. It usually is more
 convenient to express numerical values in centipoise
 such that 100 centipoise equal one poise."/>
 
-![](./images/IIC-1_Fig-1.png "")
+![](./images/IIC-1_Fig-1.png#center "")
 <div class="figure-label">(Fig. 2.C.1)</div>
 
 The kinematic viscosity (𝜈) may be obtained by dividing
@@ -226,7 +226,7 @@ hide_price: true
 
 ### Figure 1 – Viscosity Blending Chart [1]
    
-![](./images/IIC-2.png "")
+![](./images/IIC-2.png#center "")
 <div class="figure-label">(Fig. 2.C.2)</div>
 
 

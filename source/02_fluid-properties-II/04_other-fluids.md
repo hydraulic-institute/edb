@@ -17,6 +17,7 @@ $$ {Degrees\,A.P.I. = {141.5 \over sg} - 131.5} $$
 =+=
 
 =+=
+<span class= equation-label >(Eq. 2.D.2)</span>
 $$ {sg = {141.5 \over {131.5 + Degrees\,A.P.I.}}} $$
 =+=
 
@@ -26,7 +27,7 @@ and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828
 To determine the resulting specific gravity by mixing oils of different specific gravities:
 
 =+=
-<span class= equation-label >(Eq. 2.D.2)</span>
+<span class= equation-label >(Eq. 2.D.3)</span>
 $$ {ρ = {{mρ_{1} + nρ_{2}} \over {m+n}}} $$
 =+=
 
