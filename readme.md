@@ -301,7 +301,7 @@ $$ \sqrt {x + 9} $$
 ### Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
 
-**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the readme.pdf in the `kb/friction-loss` folder.
+**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the `Process for Updated PIPE MATERIALS Data` below
 
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
@@ -324,6 +324,8 @@ The block above would create a table in the page titled "Data Points".  The `dat
 Including **hide_units** in the markdown will HIDE the units block on the horizontal nav bar otherwise, the Units block will be VISIBLE.
 - **scrolling: false** - 
 Setting to "false" will generate a static table vs. a scrolling table, otherwise tables WILL be scrolling.
+- **fixed-columns: columns** -
+Enter the number of columns on the left side of the table to fix.  
 - **special: style: value;** -
 Special allows you to set special styles for your table just as you would in html.  Use the same format:  
 Ex:  special: height:600px;width:100%;
@@ -449,6 +451,11 @@ For an image that is saved in the same directory as the text content you are dev
 ![System Curve](./images/system-curves-001.png "System Curve")
 ```
 
+To center the image on the page, add the `#center` element to the image:
+```
+![System Curve](./images/system-curves-001.png#center "System Curve")
+```
+
 By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
 
 ```
@@ -525,8 +532,8 @@ Some pages within the EDB will be interactive applications - allowing users to g
 1. Download the new Pipe Materials spreadsheet to your Downloads folder.
 2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
 3. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF8-encoded) as: *"Section IV - Pipe-Tube Data.csv"*
-4. Replace the existing files in the `edl/kb/friction-loss` folder with these 2 files.
-5. Open the `edl/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
+4. Replace the existing files in the `edb/kb/friction-loss` folder with these 2 files.
+5. Open the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
 	-  Add a new row under the header row (which is/should be at row 4)
 	-  On that new row, put the word *"include"* in every column that you want displayed on the tables in **Section IV** on the EDL website.
     -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
@@ -726,11 +733,21 @@ Install texlive at:  https://tug.org/texlive/windows.html
 # Creating README PDF using the Markdown PDF Extension
 Install the `Markdown PDF` extension in Visual Studio Code
 
-<img src='./images/MarkdownExt.png'/>
+<img src='./images/MarkdownExt.png'/><br><br>
 
-- Open the markdown file in Visual Studio Code
-- Press `F1` and type `export` and you should see `markdown...` options
+Open the markdown file in Visual Studio Code
 
-<img src='./images/f1MarkdownOptions.png'>
+**Either:**
+- Click in the searchbar at the top of VSC and select
+`Show and Run Commands`<br><br>
+
+<img src='./images/f1MarkdownInfo.jpg'><br><br>
+**OR**
+- Press `F1`<br><br>
+
+**Finally:**
+- Type `export` and you should see `markdown...` options
+
+<img src='./images/f1MarkdownOptions.png'><br><br>
 
 - Select whatever option you want and it should download the converted file to the same directory as your markdown file
