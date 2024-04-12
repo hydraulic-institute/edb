@@ -783,11 +783,12 @@ def write_content(graph, node, slug_override=None, path="."):
                            related=related, options=options)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
+    html_minified = htmlmin.minify(
+            html, remove_comments=True, remove_empty_space=True)
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
-        f.write(htmlmin.minify(
-            html, remove_comments=True, remove_empty_space=True))
+        f.write(html_minified)
         # f.write(html)
-
+    return html_minified
 
 def make_root(graph):
     statics()
@@ -819,7 +820,6 @@ def make_section(graph, section, parent=None):
     directory = os.path.join(OUTPUT_DIR, slug)
     print("makedirs for " + directory)
     os.makedirs(directory)
-    #KK
     make_source_specials(section['path'], directory)
     for topic in section['children']:
         if topic['directory']:
@@ -829,7 +829,10 @@ def make_section(graph, section, parent=None):
             print("Writing sub-contents",
                   topic['name'], "of", section['slug'])
 
-            write_content(graph, topic, None, directory)
+            html_content = write_content(graph, topic, None, directory)
+            if "=defs=" in topic['content']:
+                content_start = html_content.find("<div class=topic-content>")
+                topic['haystack_content'] = html_content[content_start:]
 
 
 def rewrite_image_urls(content, path="."):
@@ -1007,8 +1010,10 @@ def html(graph, specials, ignores, production=False):
 
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
+            print("Processing topic", topic['name'], "of", section['slug'])
+            use_content = topic['haystack_content'] if 'haystack_content' in topic else topic['content']
             haystack.append(Topic(
-                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content'], section['metadata']['title']))
+                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], use_content, section['metadata']['title']))
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
         output = json.dumps([t._asdict() for t in haystack], indent=4)
@@ -1024,13 +1029,13 @@ def html(graph, specials, ignores, production=False):
             url['priority'] = '0.8'
             sitemap.append(url)
 
-    base_url = 'https://edb.pumps.org'
+    base_url = 'https://edl.pumps.org'
     xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     for s in sitemap:
         xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"
     xml += "</urlset>"
 
-    robots = 'Sitemap: https://edb.pumps.org/sitemap.xml '
+    robots = 'Sitemap: https://edl.pumps.org/sitemap.xml '
 
     with io.open(os.path.join(OUTPUT_DIR, 'sitemap.xml'), 'w', encoding='utf8') as f:
         f.write(xml)
@@ -1039,3 +1044,11 @@ def html(graph, specials, ignores, production=False):
         # f.write(html.encode('utf-8'))
     table_str="\n".join(all_tables)
     #print(f"TABLES: {table_str}")
+    
+    
+def read_html_content(file):
+    with io.open(file, 'r', encoding='utf8') as content_file:
+        data = content_file.readlines()
+        # Find the start of the content
+        index = [idx for idx, s in enumerate(data) if '<body ' in s][0]
+        return data[index]
