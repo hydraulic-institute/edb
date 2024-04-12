@@ -230,19 +230,22 @@ Vue.component("demo-tank", {
         }
     },
     mounted: function() {
-        //console.log(this.title);
+        console.log(this.title);
         //Set the Max based off of 0 min
         this.Max=this.levelMax-this.levelMin;
         const levelYSpacing = this.maxHeight / this.Max;
         //console.log("levelYSpacing: "+levelYSpacing);
-        const tickWidth = this.knobRadius + 6;
+        const tickWidth = this.maxWidth + this.knobRadius;
         const levelTickValues = _.range(this.Min, this.Max+1);
         //console.log("tick values:"+levelTickValues);
         const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
         const stageNormalWidth = ((this.placement == "upper") ? calc_stageNormalWidth+20 : calc_stageNormalWidth);
         const calc_stageNormalHeight = this.maxHeight + (this.knobRadius * 2) + 2;
         const stageNormalHeight = ((this.placement == "upper") ? (2*calc_stageNormalHeight)-(this.knobRadius*2) : calc_stageNormalHeight);
-    
+        console.log("Stage Width: "+stageNormalWidth+" Stage Height: "+stageNormalHeight);
+        var knobStart = (((this.orientation == "horizontal") || (this.placement == "upper")) ? this.maxWidth/2 : -(this.maxWidth/2));
+        var knobDirection = (((this.orientation == "horizontal") || (this.placement == "upper"))  ? 1 : -1);
+        
         const tank = {
             stage: new Konva.Stage({
                 container: this.$el,
@@ -314,9 +317,16 @@ Vue.component("demo-tank", {
               strokeWidth: 1,
               opacity: this.rightOpacity
             }),
-            knob: new Konva.Circle({
+            knob: new Konva.Line({
                 fill: "red",
-                radius: this.knobRadius,
+                x:0,
+                y:0,
+                points: [
+                  knobStart, 0,
+                  knobDirection * (this.knobRadius+Math.abs(knobStart)),this.knobRadius,
+                  knobDirection * (this.knobRadius+Math.abs(knobStart)),-(this.knobRadius*2)
+                ],
+                closed: true,
                 draggable: true,
                 opacity: 1,
                 dragBoundFunc: (pos) => {
@@ -370,8 +380,8 @@ Vue.component("demo-tank", {
 
             ticks: levelTickValues.map(v => new Konva.Rect({
                 name: (this.Max - v),
-                x: this.knobRadius,
-                y: this.knobRadius + (v * levelYSpacing) - 1,
+                x: 0,
+                y: (v * levelYSpacing) - 1,
                 width: tickWidth,
                 height: 1,
                 fill: "black",
@@ -419,12 +429,17 @@ Vue.component("demo-tank", {
         this.tank = tank;
 
         const rectsIntersect = (r1, r2) => {
-            return !(
+          let intersects =  !(
                 r2.x > r1.x + r1.width ||
                 r2.x + r2.width < r1.x ||
                 r2.y > r1.y + r1.height ||
                 r2.y + r2.height < r1.y
               );
+          console.log('Rect1: '+JSON.stringify(r1));
+          console.log('Rect2: '+JSON.stringify(r2));
+          console.log('Intersects: '+intersects);
+  
+          return intersects;
         }
 
         const knobOpacity = tank.knob.opacity();
@@ -462,11 +477,19 @@ Vue.component("demo-tank", {
             this.tank.stage.container().style.cursor = defaultCursor;
         });
 
-        tank.layer.on("click", () => {
-            const curYPos = this.tank.tank.getRelativePointerPosition().y;
+        tank.layer.on("click", (event) => {
+          let curYPos;
+          try {
+            curYPos = this.tank.tank.getRelativePointerPosition().y;
+          } catch (e) {
+            console.log('Click Use Event');
+            curYPos = event.evt.offsetY - this.knobRadius;
+          }
+          console.log("Click Cur Y Pos: "+curYPos);
             const level = this.Max - Math.round(curYPos / levelYSpacing);
 
             this.levelValue = level;
+            console.log("Click Level: "+level);
         });
 
         tank.container.addEventListener("keydown", (e) => {
@@ -502,14 +525,14 @@ Vue.component("demo-tank", {
             let position = { x: this.tank.waterLevel.x(), y: this.maxHeight - newHeight + this.knobRadius };
             position = this.tank.transform.point(position);
             const levelPosition = { x: position.x, y: position.y, newHeight: newHeight };
-            //console.log(this.title+" Level: "+levelPosition);
+            console.log(this.title+" Level: "+JSON.stringify(levelPosition));
             return levelPosition;
         },
         renderTankLevel: function(level) {
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
             let x_level=levelPosition.x
             if (!this.isHorizontal) {
               x_level=levelPosition.x+(this.tank.tank.width()/2);
@@ -520,7 +543,7 @@ Vue.component("demo-tank", {
     },
     watch: {
         levelValue: function(newValue, oldValue) {
-          //console.log("New Level for "+this.title+": "+newValue);
+          console.log("New Level for "+this.title+": "+newValue);
             this.renderTankLevel(newValue);
             //Since we base everything off of 0 min, lets add the levelMin back in for emitting
             let emitValue=newValue+this.levelMin;
@@ -1134,15 +1157,15 @@ Vue.component('demo-pump-curve', {
     calculations: function() {
       this.errorMessage="";
       console.log("=====================================");
-      console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
-      console.log("pumpType: "+this.pumpType);
+      //console.log("upperLevel: "+this.upperLevel+" lowerLevel: "+this.lowerLevel+" Resistance: "+this.totalResistance+" Speed: "+this.pumpSpeed, " upperPressure: "+this.upperPressure);
+      //console.log("pumpType: "+this.pumpType);
       if (this.pumpType == "parallel") {
         console.log(" pumpCount: "+this.pumpCount+" pumpCountMax: "+this.pumpCountMax);
       }
       if (this.pumpType == "fcv") {
         console.log(" valveSetting: "+this.valveFlowSetting);
       }
-      console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
+      //console.log("pumpSpeedMin: "+this.pumpSpeedMin+" pumpSpeedMax: "+this.pumpSpeedMax);
       const sys_values = CurveCalculators.calcSystemCurveValues(
         this.velocities, 
         this.upperPressure, 
@@ -1150,9 +1173,9 @@ Vue.component('demo-pump-curve', {
         this.lowerLevel, 
         this.elevation,
         this.totalResistance);
-      console.log("StaticHead: "+sys_values['staticHead']);
-      console.log("FrictionHead: "+sys_values['frictionHead']);
-      console.log("TotalHead: "+sys_values['totalHead']);
+      //console.log("StaticHead: "+sys_values['staticHead']);
+      //console.log("FrictionHead: "+sys_values['frictionHead']);
+      //console.log("TotalHead: "+sys_values['totalHead']);
 
 
       const pumps=[];  
