@@ -226,34 +226,23 @@ Vue.component("demo-tank", {
             settings: null,
             tank: null,
             Min: 0,
-            Max: 10,
-            knobWidth: 10,
-            knobHeight: 5,
-            knobStart: 0,
-            knobSize: 0
+            Max: 10
         }
     },
     mounted: function() {
-        console.log(this.title);
+        //console.log(this.title);
         //Set the Max based off of 0 min
         this.Max=this.levelMax-this.levelMin;
         const levelYSpacing = this.maxHeight / this.Max;
         //console.log("levelYSpacing: "+levelYSpacing);
-        this.knobWidth = this.maxWidth/2;
-        const tickWidth = ((this.orientation == "horizontal")? this.maxWidth + this.knobWidth : this.maxWidth + this.knobHeight);
+        const tickWidth = this.knobRadius + this.maxWidth;
         const levelTickValues = _.range(this.Min, this.Max+1);
-        console.log("tick values:"+levelTickValues);
-        const calc_stageNormalWidth = this.maxWidth + this.knobWidth + 2;
+        //console.log("tick values:"+levelTickValues);
+        const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
         const stageNormalWidth = ((this.placement == "upper") ? calc_stageNormalWidth+20 : calc_stageNormalWidth);
         const calc_stageNormalHeight = this.maxHeight + (this.knobRadius * 2) + 2;
-        const stageNormalHeight = ((this.placement == "upper") ? (2*calc_stageNormalHeight)-(this.knobHeight*2) : calc_stageNormalHeight);
-        console.log("Stage Width: "+stageNormalWidth+" Stage Height: "+stageNormalHeight);
-
-        this.knobStart = (this.orientation == "horizontal")? -this.knobWidth : this.knobWidth/2;
-        this.knobSize = (this.orientation == "horizontal")? this.knobWidth*2 : this.knobWidth*1.25;
-        this.knobSide = (this.placement == "upper") ? 1 : -1;
-
-        console.log("Knob Start: "+this.knobStart+" Knob Size: "+this.knobSize+" knobWidth: "+this.knobWidth+" knobHeight: "+this.knobHeight+" knobSide: "+this.knobSide);
+        const stageNormalHeight = ((this.placement == "upper") ? (2*calc_stageNormalHeight)-(this.knobRadius*2) : calc_stageNormalHeight);
+    
         const tank = {
             stage: new Konva.Stage({
                 container: this.$el,
@@ -266,13 +255,13 @@ Vue.component("demo-tank", {
             }),
             waterLevel: new Konva.Rect({
                 fill: this.levelColor,
-                x: this.knobWidth, 
-                opacity: 1,
+                x: this.knobRadius,
+                opacity: 1.0,
                 cornerRadius: [0,0,this.tankCornerRadius,this.tankCornerRadius]
             }),
             tank: new Konva.Rect({
-                x: this.knobWidth,
-                y: this.knobHeight,
+                x: this.knobRadius,
+                y: this.knobRadius,
                 width: this.maxWidth,
                 height: this.maxHeight,
                 fill: this.fillColor,
@@ -282,11 +271,9 @@ Vue.component("demo-tank", {
                 strokeWidth: this.tankStroke
             }),
             bottom: new Konva.Line({
-              points: [ 
-                this.knobWidth, this.maxHeight+this.knobHeight, 
-                this.knobWidth+this.maxWidth, 
-                this.knobHeight+this.maxHeight 
-              ],
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.maxHeight, this.knobRadius+this.maxWidth, this.maxHeight ],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: this.bottomColor,
@@ -295,10 +282,9 @@ Vue.component("demo-tank", {
               opacity: this.bottomOpacity
             }),
             top: new Konva.Line({
-              points: [ 
-                this.knobWidth, this.knobHeight,
-                this.knobWidth+this.maxWidth, this.knobHeight 
-              ],
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.knobRadius, this.knobRadius+this.maxWidth, this.knobRadius ],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: this.topColor,
@@ -307,10 +293,9 @@ Vue.component("demo-tank", {
               opacity: this.topOpacity
             }),
             leftside: new Konva.Line({
-              points: [ 
-                this.knobWidth, this.knobHeight, 
-                this.knobWidth, this.knobHeight + this.maxHeight 
-              ],
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius, this.knobRadius, this.knobRadius, this.knobRadius+this.maxHeight ],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: this.leftColor,
@@ -319,10 +304,9 @@ Vue.component("demo-tank", {
               opacity: this.leftOpacity
             }),
             rightside: new Konva.Line({
-              points: [ 
-                this.knobWidth+this.maxWidth, this.knobHeight, 
-                this.knobWidth + this.maxWidth, this.knobHeight+this.maxHeight 
-              ],
+              y: 0,
+              x: 0,
+              points: [ this.knobRadius + this.maxWidth, this.knobRadius, this.knobRadius + this.maxWidth, this.knobRadius+this.maxHeight ],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: this.rightColor,
@@ -330,75 +314,33 @@ Vue.component("demo-tank", {
               strokeWidth: 1,
               opacity: this.rightOpacity
             }),
-            horizontal_knob: new Konva.RegularPolygon({
+            knob: new Konva.Circle({
                 fill: "red",
-                x:this.knobStart,
-                y:this.knobHeight,
-                radius: 7,
-                sides: 3,
-                rotation: -30,
+                radius: this.knobRadius,
                 draggable: true,
                 opacity: 1,
                 dragBoundFunc: (pos) => {
                     const maxVal = Math.max(
                         this.yPositionRange.min, 
-                        Math.min(this.yPositionRange.max,  pos.x))
+                        Math.min(this.yPositionRange.max, this.isHorizontal ? pos.x : pos.y))
                     //const yVal = pos.y;
                     let newPos = {
                         y: maxVal,
-                        x: this.tank.horizontal_knob.absolutePosition().x
+                        x: this.tank.knob.absolutePosition().x
                     };
 
-                    newPos.y = this.tank.horizontal_knob.absolutePosition().y;
-                    newPos.x = maxVal;
-
+                    if (this.isHorizontal) {
+                        newPos.y = this.tank.knob.absolutePosition().y;
+                        newPos.x = maxVal;
+                    }
+                    console.log("Knob: "+ JSON.stringify(newPos));
                     return newPos;
                 }
-            }),
-            knob: new Konva.Shape({
-              width: this.knobSize * this.knobSide,
-              height: this.knobHeight,
-              title: this.title,
-              start: this.knobStart * this.knobSide,
-              sceneFunc: (context, shape) => {
-                const attrs = shape.getAttrs();
-                var counterclockwise = false;
-                if (attrs.width < 0) {
-                  counterclockwise = true;
-                }
-                console.log("title: "+attrs.title+" Width: "+attrs.width+" Height: "+attrs.height+" Start: "+attrs.start);
-                context.beginPath();
-                context.moveTo(attrs.start, 0);
-                context.lineTo(attrs.width, -10);
-                context.arc(attrs.width, 0, 10, 1.5 * Math.PI, 0.5 * Math.PI, counterclockwise);
-                context.closePath();
-                // (!) Konva specific method, it is very important
-                context.fillStrokeShape(shape);
-              },
-              fill: 'red',
-              opacity: 1,
-              draggable: true,
-              dragBoundFunc: (pos) => {
-                const maxVal = Math.max(
-                    this.yPositionRange.min, 
-                    Math.min(this.yPositionRange.max, pos.y))
-                //const yVal = pos.y;
-                let newPos = {
-                    y: maxVal,
-                    x: this.tank.knob.absolutePosition().x
-                };
-
-
-                return newPos;
-              }
             }),
             width_line: new Konva.Line({
               x: 0,
               y: 0,
-              points: [
-                this.knobWidth, this.knobHeight+(this.maxHeight*2),
-                this.knobWidth+this.maxWidth, this.knobHeight+(this.maxHeight*2)
-              ],
+              points: [this.knobRadius, this.knobRadius+(this.maxHeight*2),this.knobRadius+this.maxWidth, this.knobRadius+(this.maxHeight*2)],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: "blue",
@@ -408,10 +350,7 @@ Vue.component("demo-tank", {
             height_line: new Konva.Arrow({
               x: 0,
               y: 0,
-              points: [
-                this.knobWidth+(this.maxWidth/2), this.knobHeight+(this.maxHeight*2),
-                this.knobWidth+(this.maxWidth/2), this.knobHeight+this.maxHeight
-              ],
+              points: [this.knobRadius+(this.maxWidth/2), this.knobRadius+(this.maxHeight*2),this.knobRadius+(this.maxWidth/2), this.knobRadius+this.maxHeight],
               pointerLength: this.pointerWidth,
               pointerWidth: this.pointerWidth,
               fill: "blue",
@@ -419,8 +358,8 @@ Vue.component("demo-tank", {
               strokeWidth: 1
             }),
             height_text: new Konva.Text({
-              x: (this.knobWidth+(this.maxWidth/2)+3),
-              y: (this.knobHeight+(this.maxHeight*2))*(3/4),
+              x: (this.knobRadius+(this.maxWidth/2)+3),
+              y: (this.knobRadius+(this.maxHeight*2))*(3/4),
               fontSize: 10,
               fontFamily: 'Verdana',
               fill: 'black',
@@ -431,8 +370,8 @@ Vue.component("demo-tank", {
 
             ticks: levelTickValues.map(v => new Konva.Rect({
                 name: (this.Max - v),
-                x: this.knobWidth,
-                y: (v * levelYSpacing) - 1,
+                x: this.knobRadius,
+                y: this.knobRadius + (v * levelYSpacing) - 1,
                 width: tickWidth,
                 height: 1,
                 fill: "black",
@@ -459,13 +398,7 @@ Vue.component("demo-tank", {
         }
 
         tank.group.add(tank.waterLevel);
-        if (this.isHorizontal) {
-          tank.group.add(tank.horizontal_knob);
-        }
-        else {
-          tank.group.add(tank.knob);
-        }
-       
+        tank.group.add(tank.knob);
         tank.ticks.forEach(t => tank.group.add(t));
         
         tank.layer.add(tank.group);
@@ -486,22 +419,14 @@ Vue.component("demo-tank", {
         this.tank = tank;
 
         const rectsIntersect = (r1, r2) => {
-          let intersects =  !(
+            return !(
                 r2.x > r1.x + r1.width ||
                 r2.x + r2.width < r1.x ||
                 r2.y > r1.y + r1.height ||
                 r2.y + r2.height < r1.y
               );
-          //console.log('Rect1: '+JSON.stringify(r1));
-          //console.log('Rect2: '+JSON.stringify(r2));
-          //console.log('Intersects: '+intersects);
-  
-          return intersects;
         }
 
-        const defaultCursor = this.tank.stage.container().style.cursor;
-
-        // Vertical Tank
         const knobOpacity = tank.knob.opacity();
         const setKnobFocusFill = () => {
             tank.knob.opacity(1)
@@ -519,13 +444,15 @@ Vue.component("demo-tank", {
             else {
               console.log("Could not find tick:"+knobRect);
             }
-            //setKnobFocusFill();
+            setKnobFocusFill();
         });
 
         tank.knob.on("dragend", (e) => {
             this.renderTankLevel(this.levelValue);
-            //setKnobDefaultFill();
+            setKnobDefaultFill();
         });
+
+        const defaultCursor = this.tank.stage.container().style.cursor;
 
         tank.knob.on("mouseenter", () => {
             this.tank.stage.container().style.cursor = "pointer";
@@ -535,55 +462,11 @@ Vue.component("demo-tank", {
             this.tank.stage.container().style.cursor = defaultCursor;
         });
 
-        ///////////////////////////////////////
-        // Horizontal Tank
-        const HknobOpacity = tank.horizontal_knob.opacity();
-        const setHKnobFocusFill = () => {
-            tank.horizontal_knob.opacity(1)
-        }
-        const setHKnobDefaultFill = () => {
-            tank.horizontal_knob.opacity(knobOpacity);
-        }
-
-        tank.horizontal_knob.on("dragmove", (e) => {
-            const knobRect = this.tank.horizontal_knob.getClientRect();
-            const tick = this.tank.ticks.find(t => rectsIntersect(t.getClientRect(), knobRect));
-            if (tick) {
-                this.levelValue = parseInt(tick.name());
-            }
-            else {
-              console.log("Could not find tick:"+knobRect);
-            }
-            //setHKnobFocusFill();
-        });
-
-        tank.horizontal_knob.on("dragend", (e) => {
-            this.renderTankLevel(this.levelValue);
-            //setHKnobDefaultFill();
-        });
-
-        tank.horizontal_knob.on("mouseenter", () => {
-            this.tank.stage.container().style.cursor = "pointer";
-        });
-
-        tank.horizontal_knob.on("mouseleave", () => {
-            this.tank.stage.container().style.cursor = defaultCursor;
-        });
-        //////////////////////////////////
-
-        tank.layer.on("click", (event) => {
-          let curYPos;
-          try {
-            curYPos = this.tank.tank.getRelativePointerPosition().y;
-          } catch (e) {
-            //console.log('Click Use Event');
-            curYPos = event.evt.offsetY - this.knobHeight;
-          }
-          //console.log("Click Cur Y Pos: "+curYPos);
+        tank.layer.on("click", () => {
+            const curYPos = this.tank.tank.getRelativePointerPosition().y;
             const level = this.Max - Math.round(curYPos / levelYSpacing);
 
             this.levelValue = level;
-            console.log("Click Level: "+level);
         });
 
         tank.container.addEventListener("keydown", (e) => {
@@ -611,33 +494,30 @@ Vue.component("demo-tank", {
         })
         //Need to set the level based off of 0 min, so subtract the levelMin passed in
         this.levelValue = this.value - this.levelMin;
-        console.log('Level Value: '+this.levelValue);
         this.renderTankLevel(this.levelValue);
     },
     methods: {
         calculateLevelPos: function(level) {
-            const newHeight = level > 0 ? Math.min(this.maxHeight * (level / this.Max) + (this.knobHeight/2),this.maxHeight) : 0;
-            let position = { x: this.tank.waterLevel.x(), y: this.maxHeight - newHeight + this.knobHeight };
+            const newHeight = level > 0 ? this.maxHeight * (level / this.Max) : 0;
+            let position = { x: this.tank.waterLevel.x(), y: this.maxHeight - newHeight + this.knobRadius };
             position = this.tank.transform.point(position);
             const levelPosition = { x: position.x, y: position.y, newHeight: newHeight };
-            console.log(this.title+" Level: "+JSON.stringify(levelPosition));
+            //console.log(this.title+" Level: "+levelPosition);
             return levelPosition;
         },
         renderTankLevel: function(level) {
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            console.log("rendertank - placement "+this.title+" - "+this.placement+ JSON.stringify(levelPosition));
             let x_level=levelPosition.x
             if (!this.isHorizontal) {
-              x_level=levelPosition.x+(this.tank.tank.width()/2);
+              //Puts it in the middle
+              let push_x= this.placement == "upper" ? 1 : 0;
+              x_level=levelPosition.x+(this.maxWidth*push_x);
             }
-            if (this.isHorizontal) {
-              this.tank.horizontal_knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
-            }
-            else {
-              this.tank.knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
-            }
+            console.log("X-Level: "+x_level+" Y-Level: "+levelPosition.y+" Height: "+levelPosition.newHeight)
+            this.tank.knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
             this.tank.waterLevel.size({ width: this.maxWidth, height: levelPosition.newHeight});
         }
     },
@@ -805,26 +685,26 @@ Vue.component("demo-flow-line", {
 
 Vue.component("demo-pump-inputs", {
   template: `
-  <div class="wrap"> 
-  <p><i>Use the red knobs to adjust settings</i></p> 
+  <div class="wrap">  
+  <p style="color:red;font-size:smaller"><i>Use the red knobs to adjust the system parameters</i></p>
   <div class="row mb-2">
     <div v-if='pumpType === "plot"' class="col-8"></div>
     <div v-else-if='pumpType === "system"' class="col-12" align="right" id="upper-tank-pressure-id" style="padding: 0px;">
       <div class="upper_tank_pressure">      
         <p class="mb-0 mt-2" style="font-size: smaller">Upper Tank Pressure</p>
-        <demo-tank v-model="upperPressureValue" :title="'upper tank pressure'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="upperPressureValue" :title="'upper tank pressure'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-max="25" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-else-if='pumpType === "parallel"' class="col-6" id="parallel-pumps-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller"># Parallel Pumps  (<strong><span v-text="pumpCount"></span></strong>)</p>
-        <demo-tank v-model="pumpCountValue" :title="'parallel pumps'" :level-min="1" :level-max="pumpCountMax" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false"  :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpCountValue" :title="'parallel pumps'" :level-min="1" :level-max="pumpCountMax" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-else-if='pumpType === "fcv"' class="col-12" id="flow-valve-setting-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Valve Flow Setting (<strong><span v-text="valveFlowSetting"></span>)</strong></p>
-        <demo-tank v-model="valveFlowSettingValue" :title="'valve flow setting'" :levelMax="100" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="valveFlowSettingValue" :title="'valve flow setting'" :levelMax="100" :orientation="'horizontal'" :max-width="10" :max-height="100" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
     <div v-if='pumpType === "parallel"' class="col" align="left">
@@ -851,7 +731,7 @@ Vue.component("demo-pump-inputs", {
     <div class="col" align="center" id="pump-speed-id">
       <div class="">      
         <p class="mb-0" style="font-size: smaller">Pump Speed (<strong><span v-text="pumpSpeed"></span>%</strong>)</p>
-        <demo-tank v-model="pumpSpeedValue" :title="'pump speed'" :level-min="pumpSpeedMin" :level-max="pumpSpeedMax" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="pumpSpeedValue" :title="'pump speed'" :level-min="pumpSpeedMin" :level-max="pumpSpeedMax" :orientation="'horizontal'" :max-width="10" :max-height="200" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -860,7 +740,7 @@ Vue.component("demo-pump-inputs", {
       <div class="resistance">
         <p class="mb-0" style="font-size: smaller">Friction Losses</p>
         <p class="mb-0" style="font-size: x-small">(Major + Minor Losses)</p>
-        <demo-tank v-model="resistanceValue" :title="'friction losses'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :level-color="rangeInputColor"></demo-tank>
+        <demo-tank v-model="resistanceValue" :title="'friction losses'" :orientation="'horizontal'" :max-width="10" :show-ticks="false" :knob-radius="7" :level-color="rangeInputColor"></demo-tank>
       </div>
     </div>
   </div>
@@ -1339,7 +1219,7 @@ Vue.component('demo-pump-curve', {
           if (this.pumpType == "parallel") {
             this.headIncrease=values['data']['headIncrease'];
             this.flowIncrease=values['data']['flowIncrease'];
-            //console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
+            console.log("headIncrease:"+this.headIncrease+" flowIncrease:"+this.flowIncrease);
           }
         }
         console.log("Operating Point Calculation - PumpHead[0]: "+pumps[0]['pumpHead'][0]+" FullSpdPumpHead[0]: "+pumps[0]['pumpHeadFullSpeed'][0]+" TotalHead["+this.maxVelocities+"]: "+sys_values['totalHead'][this.maxVelocities]);
