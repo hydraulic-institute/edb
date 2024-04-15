@@ -27,6 +27,7 @@ hide_price: true
 title: Approximate Range of Variation for K
 data: K-variation.csv
 =|=
+<div class="table-label">Tbl. 3.B.1</div>
 
 1. The value of D given in the charts is nominal IPS (Iron Pipe Size).
 2. <units us = "For velocities below 15 feet per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts." metric = "For velocities below 4.6 meters per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts."/>

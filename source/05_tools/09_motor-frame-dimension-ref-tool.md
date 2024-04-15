@@ -50,6 +50,7 @@ hide_units: true
                                     data: motor-horizontal-4.4.1.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.1</div>
                                     *The tolerances on the D dimension for rigid base motors shall be +0.00 inch, −0.06 inch. No tolerance has been established for the D dimension of resilient mounted motors.<br>
                                     <br>
                                     †Frames 42 to 56H, inclusive—The tolerance for the 2F dimension shall be ±0.03 inch and for the H dimension (width of slot) shall be +0.02 inch, −0.00 inch.<br>
@@ -96,6 +97,7 @@ hide_units: true
                                     data: motor-c-face-4.4.4.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.2</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     *For frames 42C to 445TSC, see 4.4.1, for dimensions A, D, E, 2F, and H.<br>
@@ -134,6 +136,7 @@ hide_units: true
                                     data: motor-c-face-4.4.5.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.3</div>
                                     *The tolerance on this FBB dimension shall be +0.00, −0.06 inch.<br>
                                     <br>
                                     †This BD dimension is a nominal dimension.<br>
@@ -173,6 +176,7 @@ hide_units: true
                                     data: motor-vertical-18-28.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.4</div>
                                     The tolerance for the permissible shaft runout shall be 0.002 inch indicator reading (see 4.11).<br>
                                     <br>
                                     For the meaning of the letter dimensions, see 4.1 and Figure 18-22.<br>
@@ -205,6 +209,7 @@ hide_units: true
                                     data: motor-vertical-hollow-shaft-18-30.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.5</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     *See Table 18-31 for the coupling dimensions of the motors covered in items 1 through 16.<br>
@@ -249,11 +254,13 @@ hide_units: true
                                     data: motor-table-1-JM-JP-18.33-18.34.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.6</div>
                                     <br>
                                     =|=
                                     data: motor-table-2-JM-JP-18.33-18.34.csv
                                     fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.E.7</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     For the meaning of the letter dimensions, see Figures<br>

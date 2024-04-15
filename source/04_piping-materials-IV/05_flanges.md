@@ -33,8 +33,8 @@ hide_price: true
                     title: Flanges per AWWA C207 (Class B, D, E, F)
                     data: flange-c207.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.1</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                     <li>Refer to ANSI/AWWA C207 for notes, design pressures, and additional minimum design requirements. </li>
@@ -69,8 +69,8 @@ hide_price: true
                     data-us: flange-16.1-25-250-us.csv
                     data-metric: flange-16.1-25-250-metric.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.2</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                     <li>Refer to ANSI/ASME B16.1 for notes, pressures, and minimum design requirements. </li>
@@ -117,8 +117,8 @@ hide_price: true
                                     data-metric: flange-16.5-150-300-metric.csv
                                     fixed-columns: 2
                                     column_tags: Th
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.3</div>
                                 </div>
                             </div>
                         </div>
@@ -146,8 +146,8 @@ hide_price: true
                                     data-metric: flange-16.5-150-300-metric.csv
                                     fixed-columns: 2
                                     column_tags: SO
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.4</div>
                                 </div>
                             </div>
                         </div>
@@ -175,8 +175,8 @@ hide_price: true
                                     data-metric: flange-16.5-150-300-metric.csv
                                     fixed-columns: 2
                                     column_tags: SW
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.5</div>
                                 </div>
                             </div>
                         </div>
@@ -204,8 +204,8 @@ hide_price: true
                                     data-metric: flange-16.5-150-300-metric.csv
                                     fixed-columns: 2
                                     column_tags: WN
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.6</div>
                                 </div>
                             </div>
                         </div>
@@ -233,8 +233,8 @@ hide_price: true
                                     data-metric: flange-16.5-150-300-metric.csv
                                     fixed-columns: 2
                                     column_tags: La
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.7</div>
                                 </div>
                             </div>
                         </div>
@@ -287,8 +287,8 @@ hide_price: true
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     fixed-columns: 2
                                     column_tags: Th
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.8</div>
                                 </div>
                             </div>
                         </div>
@@ -316,8 +316,8 @@ hide_price: true
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     fixed-columns: 2
                                     column_tags: SO
-                                    special: height:600px;  
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.9</div>
                                 </div>
                             </div>
                         </div>
@@ -345,8 +345,8 @@ hide_price: true
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     fixed-columns: 2
                                     column_tags: SW
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.10</div>
                                 </div>
                             </div>
                         </div>
@@ -374,8 +374,8 @@ hide_price: true
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     fixed-columns: 2
                                     column_tags: WN
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.11</div>
                                 </div>
                             </div>
                         </div>
@@ -403,8 +403,8 @@ hide_price: true
                                     data-metric: flange-16.5-400-2500-metric.csv
                                     fixed-columns: 2
                                     column_tags: La
-                                    special: height:600px;
                                     =|=
+                                    <div class="table-label">Tbl. 4.E.12</div>
                                 </div>
                             </div>
                         </div>
@@ -446,8 +446,8 @@ hide_price: true
                     data-us: flange-16.47-A-150-300-us.csv
                     data-metric: flange-16.47-A-150-300-metric.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.13</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -483,8 +483,8 @@ hide_price: true
                     data-us: flange-16.47-A-400-900-us.csv
                     data-metric: flange-16.47-A-400-900-metric.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.14</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -520,8 +520,8 @@ hide_price: true
                     data-us: flange-16.47-B-75-300-us.csv
                     data-metric: flange-16.47-B-75-300-metric.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.15</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -557,8 +557,8 @@ hide_price: true
                     data-us: flange-16.47-B-400-900-us.csv
                     data-metric: flange-16.47-B-400-900-metric.csv
                     fixed-columns: 2
-                    special: height:600px;
                     =|=
+                    <div class="table-label">Tbl. 4.E.16</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>

@@ -23,3 +23,4 @@ hide_price: true
 data: sp-stee_pipe_weld_and_seam_wrou.csv
 fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 4.A.1</div>

@@ -23,7 +23,7 @@ hide_price: true
 data: ssp-stai_stee_pipe_weld_and_seam.csv
 fixed-columns: 2
 =|=
-
+<div class="table-label">Tbl. 4.B.1</div>
 
 
 

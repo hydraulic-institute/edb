@@ -20,6 +20,7 @@ data-us: SpecificGravity-US.csv
 data-metric: SpecificGravity-Metric.csv
 fixed-columns: 1
 =|=
+<div class="table-label">Tbl. 2.A.1</div>
 
 
 =/=
@@ -45,6 +46,7 @@ data-us: liquid-water-US.csv
 data-metric: liquid-water-metric.csv
 fixed-columns: 1
 =|=
+<div class="table-label">Tbl. 2.A.2</div>
 
 =|=
 title: Sat. Properties for Water (Vapor)
@@ -52,6 +54,7 @@ data-us: vapor-water-US.csv
 data-metric: vapor-water-metric.csv
 fixed-columns: 1
 =|=
+<div class="table-label">Tbl. 2.A.3</div>
 
 =/=
 title: Water Vapor Saturation Curve  
@@ -89,6 +92,7 @@ data-us: auxiliary-us.csv
 data-metric: auxiliary-metric.csv
 scrolling: false
 =|=
+<div class="table-label">Tbl. 2.A.4</div>
 
 
 ### Equation of State

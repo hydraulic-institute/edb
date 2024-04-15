@@ -76,6 +76,7 @@ data-us: pipe-roughness-ft.csv
 data-metric: pipe-roughness-mm.csv
 scrolling: false
 =|=
+<div class="table-label">Tbl. 3.A.1</div>
 
 Determining the frictional roughness for old pipe is beyond this tutorial. Deterioration of pipes with age depends on the particular chemical properties of the fluid
 and the metal with which it is in contact. It is recommended that prior experience or testing be used to determine an accurate value. For commercial installations, 

@@ -216,6 +216,7 @@ title: Pump Curve Data
 data: qdH-us.csv
 scrolling: false
 =|=
+<div class="table-label">Tbl. 1.C.1</div>
 
 Using a second-order polynomial curve fit, we get the following pump curve equation:
 

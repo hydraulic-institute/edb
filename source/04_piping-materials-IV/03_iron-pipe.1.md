@@ -23,3 +23,4 @@ hide_price: true
 data: ip-iron_duc_pipe.csv
 fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 4.C.1</div>

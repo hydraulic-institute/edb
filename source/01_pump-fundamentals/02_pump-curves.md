@@ -304,6 +304,7 @@ flow conditions and the new pumping conditions.
 title: Data (Normal Conditions)
 data: total-head-feet.csv
 =|=
+<div class="table-label">Tbl. 1.B.1</div>
 
 =/=
 title: 
@@ -370,6 +371,7 @@ $$ {H_2} = (H_1=198)·({1566 \over 1740})^2= 160\,ft  $$
 title: Data Low Flow (reduced speed) Conditions
 data: total-head-feet-2.csv
 =|=
+<div class="table-label">Tbl. 1.B.2</div>
 
 =/=
 title: 

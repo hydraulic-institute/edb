@@ -44,10 +44,12 @@ where:
 title: Degrees A.P.I. vs. Specific Gravity
 data: IIB1-1.csv
 =|=
+<div class="table-label">Tbl. 2.D.1</div>
 
 =|=
 data: IIB1-2.csv
 =|=
+<div class="table-label">Tbl. 2.D.2</div>
 
 =^=
 title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
@@ -71,6 +73,7 @@ hide_price: true
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Lighter than Water
 data: IIB2-1.csv
 =|=
+<div class="table-label">Tbl. 2.D.3</div>
 
 *Calculated from the formula, specific gravity 60°/60° F = 145 / (145 - Deg. Bé)*
 
@@ -78,6 +81,7 @@ data: IIB2-1.csv
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Heavier than Water
 data: IIB2-2.csv
 =|=
+<div class="table-label">Tbl. 2.D.5</div>
 
 ### Brix Viscosities of Sucrose Solutions at Various Temperatures
 
@@ -152,6 +156,7 @@ title: Data Points
 data-us: VP-H2.csv
 data-metric: VP-H2-met.csv
 =|=
+<div class="table-label">Tbl. 2.D.6</div>
 
 =/=
 title: Liquid Hydrogen Vapor Pressure Plot 
@@ -169,6 +174,7 @@ title: Data Points
 data-us: VP-helium.csv
 data-metric: VP-helium-met.csv
 =|=
+<div class="table-label">Tbl. 2.D.7</div>
 
 =/=
 title: Helium Vapor Pressure Plot 

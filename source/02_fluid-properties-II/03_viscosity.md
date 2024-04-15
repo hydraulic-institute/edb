@@ -241,12 +241,14 @@ title: Conversions
 data: visc-conv-1.csv
 fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 2.C.1</div>
 
 
 =|=
 data: visc-conv-2.csv
 fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 2.C.2</div>
 
 
 =+=
@@ -286,6 +288,7 @@ title: Conversion Factors
 data:SSU-conv.csv
 scrolling: false
 =|=
+<div class="table-label">Tbl. 2.C.3</div>
 
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIC-2.

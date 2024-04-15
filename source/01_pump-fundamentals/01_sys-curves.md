@@ -267,3 +267,4 @@ title: System Curve Data
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
+<div class="table-label">Tbl. 1.A.1</div>

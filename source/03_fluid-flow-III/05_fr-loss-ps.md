@@ -176,6 +176,7 @@ The following is data for use with Equation (3.E.1) to determine velocity limit,
 title: Table I
 data: Table1CSV.csv
 =|=
+<div class="table-label">Tbl. 3.E.1</div>
 
 NOTES:
 
@@ -317,6 +318,7 @@ The following is data for use with Equation (3.E.2) to determine head loss, ΔH/
 title: Table II
 data: Table2CSV.csv
 =|=
+<div class="table-label">Tbl. 3.E.2</div>
 
 NOTES:
 
