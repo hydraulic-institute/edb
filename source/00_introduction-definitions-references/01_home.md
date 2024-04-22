@@ -18,9 +18,9 @@ HI and other reputable sources. The data library is reviewed by a committee and 
 
 To search for specific words or topics, use the search bar on the upper left corner of each page. 
 
-To toggle between U.S. and metric units, use the toggle button on the upper right corner of each page **(Note: If a page does not contain a unit button, the page only deals with one set of units).**
+To toggle between *U.S.* and *Metric* units, use the toggle button on the upper right corner of each page **(Note: If a page does not contain a unit button, the page only deals with one set of units).**
 
-<units us = "This page is currently set to U.S. customary units." metric = "This page is currently set to metric units."/>
+<units us = "This page is currently set to U.S. customary units." metric = "This page is currently set to Metric units."/>
 
 # About HI
 Since 1917, the **Hydraulic Institute (HI)** - the largest association of pump industry manufacturers - has served member companies and pump users by
