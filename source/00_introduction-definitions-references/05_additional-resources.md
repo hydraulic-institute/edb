@@ -31,6 +31,10 @@ If you are entering the workforce, changing jobs, or are simply curious, Pump PR
 
 Stay up to speed on the pump and fluid handling industry with news covering tools, resources, energy efficiency, case studies, workforce development, training, and much more. Click <a href="https://www.pumps.org/resources/blog/" target="_blank">here</a> to explore.  
 
+### Hydraulic Institute Case Studies
+
+Reference industry case studies. Click <a href=" https://www.pumps.org/category/blogs/case-studies/" target="_blank">here</a> to explore.
+
 ### Training
 
 Whether you need and introduction or are you ready to take the next step to learn the fundamentals, the Hydraulic Institute and Pump Systems Matter have training to support your development. Click <a href="https://training.pumps.org/" target="_blank">here</a> to visit the training  site to take advantage of the vast training opportunities from introductory to advanced levels.  

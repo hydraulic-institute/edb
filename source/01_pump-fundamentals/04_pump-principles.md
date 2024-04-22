@@ -1,14 +1,14 @@
 -----
 title: D) Pump Principles
-date: December 3rd, 2023
+date: April 19th, 2024
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
 ## Pump Principles
 
-### Impeller Specific Speed 
+### Specific Speed 
 
-**Impeller specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
+**Specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
 
 Specific speed, Ns, is used with US customary units and is expressed by the following equation: 
 
@@ -48,7 +48,7 @@ differences in methods used throughout industry and in related textbooks and lit
 
 
 
-Below is the approximate shape of performance curves based on the impeller specific speed with metric and (US) units:
+Fig. 1.D.1 illustrates the approximate shape of performance curves based on the specific speed in metric and (US) units.
 
 ![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png "")
 <div class="figure-label">Fig. 1.D.1</div>
@@ -153,17 +153,17 @@ As the flow increases with respect to the developed head, the larger the waterwa
 ![](./images/impeller-types.png "")
 <div class="figure-label">Fig. 1.D.4</div>
 
-The three configurations (pictured below) for an impeller are open, semi-open, and closed. Open impellers do not have a front or rear shroud. Semi-open impellers only have a
-rear shroud. Closed impellers have a front and rear shroud.
+The three configurations (Fig 1.D.5) for an impeller are open, semi-open, and enclosed. Open impellers do not have a front or rear shroud. Semi-open impellers only have a
+rear shroud. Enclosed impellers have a front and rear shroud.
 
 ![](./images/impeller-configs.png "")
 <div class="figure-label">Fig. 1.D.5</div>
 
-**Open impellers** are typically used on smaller pumps, axial flow pumps, and for speciality applications such as solids handling pumps. They are typically less expensive to 
-manufacture and easier to clean, but become inefficient as the pump wears. **Closed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
+**Open impellers** are typically used on smaller pumps, axial flow pumps, and for specialty applications such as solids handling pumps. They are typically less expensive to 
+manufacture and easier to clean, but become inefficient as the pump wears. **enclosed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
 as many types of fluids as open impellers, but they are stronger and experience a much lower decrease in efficiency over the life of the pump. **Semi-open impellers** 
 share some of the advantages and disadvantages of each. The reason for loss of efficiency in an open or semi-open impeller is that the distance between the vanes and 
-the pump case surface increases over time due to wear. This allows for leakage back to suction, reducing efficiency. Another benefit of closed impellers is that 
+the pump case surface increases over time due to wear. This allows for leakage back to suction, reducing efficiency. Another benefit of enclosed impellers is that 
 setting axial distance doesn’t need to be as precise for this same reason.
 
 =^=
@@ -177,7 +177,7 @@ hide_price: true
 
 ### Net Positive Suction Head (NPSH)
 
-**NPSH is the net positive suction head** in <units us = "feet" metric = "meters"/>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
+**NPSH** is the net positive suction head in <units us = "feet" metric = "meters"/>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
 fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
 below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
 the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 
@@ -191,15 +191,15 @@ The **net positive suction head available (NPSHA)**, which is the NPSH available
 
 =+=
 <div class="equation-label">Eq. 1.D.6</div>
-$$ NPSHA = {h_{sa}} - {h_{vp}} $$
+$$ NPSHA = {h_{sa}} - {h_{vp}}={h_{atm}+h_{s}-h_{vp}} $$
 =+=
 
 where:
 
-- h<sub>sa</sub> = Total suction head absolute in <units us = "feet = h_atm_ + h_s_" metric = "meters =  h_atm_ + h_s_"/>
+- h<sub>sa</sub> = Total suction head absolute in <units us = "feet" metric = "meters"/>
 - h<sub>atm</sub> = Atmospheric pressure in head in <units us = "feet" metric = "meters"/>
-- h<sub>s</sub> = Suction head
-- h<sub>vp</sub> = Vapor pressure of fluid in <units us = "feet of head" metric = "meters of head"/>
+- h<sub>s</sub> = Total suction head in <units us = "feet" metric = "meters"/>
+- h<sub>vp</sub> = Absolute vapor pressure of fluid in head in <units us = "feet" metric = "meters"/>
 
 A pump’s **net positive suction head required (NPSHR)** is important, as it allows a pump user to determine the amount of NPSHA needed at their pump site to ensure pump
 performance is met. The occurrence of visible cavitation, increase of noise and vibration due to cavitation, beginning of head or efficiency drop, and cavitation 
