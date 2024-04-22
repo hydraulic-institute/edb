@@ -3,7 +3,6 @@ title: A) System Curves
 date: April 19th, 2024
 description: Contains a system curves tutorial, demonstration, and worked examples.
 -----
-
 # System Curves 
 
 ### Tutorial
@@ -11,8 +10,8 @@ description: Contains a system curves tutorial, demonstration, and worked exampl
 The total head at any given flow rate consists of two parts: **static head** and **frictional head**. The frictional head loss consists of major losses (piping) and minor head losses (component losses). 
 Each of these is described in further detail below. A **system curve** shows the total system head required over a range of flow rates.
 
-### Pressure and Head relationship
-Head is the expression of the energy content of a liquid in reference to any arbitrary datum. It is expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"/> of liquid.
+### Pressure and Head Relationship
+Head is the expression of the energy content of a liquid in reference to any arbitrary datum. It is expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"></units> of liquid.
 
 Pressure and head have a liquid have a physical relationship as outlined in equation 1.A.1. These equations utilize a conversion constant and specific gravity (s), which is defined in equation 1.A.2. It is common to use head because the performance of the pump can be shown independent of the specific gravity or density of the fluid pumped.
 
@@ -28,8 +27,8 @@ $$ H =  {{0.102 · p} \over s} $$
 
 where:
 
-- H = head in <units us = "feet" metric = "meters"/>
-- P = pressure in <units us = "pounds per quare inch (psi)" metric = "kilopascals (kPa)"/>
+- H = head in <units us = "feet (ft)" metric = "meters (m)"/>
+- p = pressure in <units us = "pounds per quare inch (psi)" metric = "kilopascals (kPa)"/>
 - s = specific gravity (unitless), see equation 1.A.2
 
 Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in section II.
@@ -44,7 +43,7 @@ where:
 - ρ = density, typically in <units us = "lbm/ft^3" metric = "kg/m^3"/>
 
 ### Static Head
-**Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This, typically, does not depend on velocity and is therefore constant for the system curve. This can be calculated using equation 1.A.3.
+**Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This typically does not depend on velocity and is therefore constant for the system curve. This can be calculated using equation 1.A.3.
 
 <div  class="equation-label"><a id="eq1a3"></a>Eq. 1.A.3</div >
 =+=
@@ -52,9 +51,9 @@ $$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{sup
 =+=
 
 where:
-
-- &Delta{h_stat} is differential static head, <units us = "feet" metric = "meters"/>
-- z is elevation, in <units us = "feet" metric = "meters"/>
+<!-- Delta special character is &#x0394; -->
+- &#x0394;h<sub>stat</sub> is differential static head, <units us = "feet" metric = "meters"/>
+- z is elevation, in <units us = "feet (ft)" metric = "meters"/>
 - p is pressure, in <units us = "psi" metric = "kPa"/>
 - ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
 - g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
@@ -63,27 +62,27 @@ This equation is based on the supply and destination being tanks or where the ve
 
 <div  class="equation-label">Eq. 1.A.4</div >
 =+=
-$$ \p = p_{gauge} + 0.5 · rho · v^2 = p_{gauge} + {rho · Q^2 /over 2 · A^2} $$
+$$ p = p_{gauge} + 0.5 · rho · v^2 = {p_{gauge} + rho · Q^2 \over 2 · A^2} $$
 =+=
 
 where:
 
-- p_gauge is pressure measurement at the gage, in <units us = "psi" metric = "kPa"/>
+- p<sub>gauge</sub> is pressure measurement at the gage, in <units us = "psi" metric = "kPa"/>
 - ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
 - v is fluid velocity, in <units us = "ft/s" metric = "m/s"/>
-- Q is volumetric flow rate, in <units us = "ft^/s" metric = "m^3/s"/>
+- Q is volumetric flow rate, in <units us = "ft^3^/s" metric = "m^3^/s"/>
 - A is pipe cross sectional area, in <units us = "ft^2" metric = "m^2"/>
 
 Since the velocity can be different between the two gage measurements, each of the pressures should be converted separately based on the conditions at the gage before using them in equation 1.A.3. Therefore, the pressure at the supply and destination can be defined as detailed in equations 1.A.5 and 1.A.6.
 
 <div  class="equation-label">Eq. 1.A.5</div >
 =+=
-$$ \p_{supply} = (p_{supply,gauge} + {{rho · Q_{supply}^2} /over {(2 · A_{supply}^2)}} $$
+$$ p_{supply} = {p_{supply,gauge} + rho · Q_{supply}^2\over 2 · A_{supply}^2} $$
 =+=
 
 <div  class="equation-label">Eq. 1.A.6</div >
 =+=
-$$ \p_{destination} = (p_{destination,gauge} + {{rho · Q_{destination}^2} /over {(2 · A_{destination}^2)}} $$
+$$ p_{destination} = {p_{destination,gauge} + rho · Q_{destination}^2 \over 2 · A_{destination}^2} $$
 =+=
 
 Note that if the supply and destination are at the same pressure, as is the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
@@ -129,15 +128,15 @@ hide_price: true
 
 ### System Curve
 
-Based on these concepts, the total system head at any given flow rate is the sum of the static head and frictional head losses in the system. It, therefore, can be represented using the equation 1.A.7 (where the velocity at the supply and destination is negligible, e.g. they are tanks):
+Based on these concepts, the total system head at any given flow rate is the sum of the static head and frictional head losses in the system. It, therefore, can be represented using the euation 1.A.7 (where the velocity at the supply and destination is negligible, e.g. they are tanks):
 
-<div  class="equation-label"><a id=eq1a7></a>Eq. 1.A.7</div >
+<div  class="equation-label"><a id="eq1a7"></a>Eq. 1.A.7</div >
 =+=
 $$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(p_{destination}-p_{supply}) \over \rho ·g} + {({fL \over D} + ΣK) · {v^2 \over 2·g}} $$
 =+=
 where:
-
-- &Delta{h_system} is system head, <units us = "feet" metric = "meters"/>
+<!-- Delta special character is &#x0394; -->
+- &#x0394;h<sub>system</sub> is system head, <units us = "feet" metric = "meters"/>
 - z is elevation, in <units us = "feet" metric = "meters"/>
 - p is pressure, in <units us = "psi" metric = "kPa"/>
 - ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
@@ -152,15 +151,19 @@ A system curve is a graphical representation of the relationship between flow ra
 
 In some systems the frictional losses will be the majority of overall head loss. These systems will have a steeper system curve.
 
+<center>
 ![](./images/iA-1-Friction-Dominated-System-Curve.png "")
 ![](./images/elev-changes.png "")
+</center>
 <div class="figure-label">Fig. 1.A.1</div>
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher
 value at zero flow and will tend to be flatter.
 
+<center>
 ![](./images/iA-2-Static-Dominated-System-Curve.png "")
 ![](./images/large-elev.png "")
+</center>
 <div class="figure-label">Fig. 1.A.2</div>
 
 It is important to accurately characterize the system curve to select the correct pump for various operating conditions as the operating point of your system will be dependent
@@ -199,7 +202,7 @@ totalResistance: 5
 
 <units us = "Consider the system in Fig. 1.A.3 and develop a system curve for the flows from 0 to 300 GPM." metric = "Metric values in the worked example are converted from US units in Fig. 1.A.3. Consider the system in Fig. 1.A.3 and develop a system curve for the flows from 0 to 68.14 m^3^/h"/>
 
-![](./images/we-system.png "")
+![](./images/we-system.png#center "")
 <div class="figure-label">Fig. 1.A.3</div>
 
 **Determine the Static Head**
@@ -299,8 +302,7 @@ $$ v = 0.320833·Q·({4 \over \pi ·D^2}) $$
 $$ v = 0.000278·Q·({4 \over \pi ·D^2}) $$
 =+=
 
-Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches) we get the following as the system curve equation as a function
-of flow rate in gpm." metric ="(ID = 0.10226 m) we get the following as the system curve equation as a function of flow rate in m^3/h."/> 
+Substituting this in for velocity and using the 4-inch pipe <units us ="(ID = 4.026 inches) we get the following as the system curve equation as a function of flow rate in gpm." metric ="(ID = 0.10226 m) we get the following as the system curve equation as a function of flow rate in m^3/h."/> 
 
 <div class="calculation-label"><a id="calc1a3c"></a>Calc. 1.A.3(c)</div >
 =+=
@@ -339,4 +341,3 @@ title: System Curve Data
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
-<div class="table-label">Tbl. 1.A.1</div>

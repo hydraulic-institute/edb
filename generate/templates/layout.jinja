@@ -642,6 +642,7 @@
                 <div class="navbar-end">
                     <div class="columns">
                         <div id="unit-menu" class="navbar-item pad-horizontal" style="display:none;">
+                            {% if not node or not node['metadata']['hide_units'] %} 
                             <div id="units-toggle" class="btn-group btn-group-xs">
                                 <button type='button' class='btn btn-sm' v-bind:class="(unit_set=='us')?'btn-primary':'btn-dark'" title="Show all values in standard US units" @click='to_us'>US</button>
                                 <button type='button' class='btn btn-sm' v-bind:class="(unit_set=='metric')?'btn-primary':'btn-dark'" title="Show all values in standard metric units" @click='to_metric'>Metric</button>
@@ -659,9 +660,9 @@
                                 </div>
                                 <div class="form-text" id="metric" v-if='unit_set!="us"' style='color:#ffdd57;font-weight:bold;'>Metric</div>
                                 <div class="form-text" id="metric" v-else style='color:white;font-weight:normal;'>Metric</div>                                
-                            </div-->                                
+                            </div-->   
+                            {% endif %}                             
                                
-                        </div>
                         <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop" style="display:none;">
                             <div class='sticky_search'>
                                 <div class='field has-addons'>

@@ -8,7 +8,7 @@ description: Properties of water (liquid and vapor); saturation properties, dens
 
 **Specific gravity**, also referred to as **relative density**, is the ratio of the densities of one fluid at a known temperature and pressure to a reference fluid at a specific
 temperature and pressure. In most cases, the reference fluid is water at atmospheric pressure. The most common reference temperatures in the standards and literature are
-<units us = "39.2 °F at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering
+<units us = "39.2 °F" metric = "4 °C at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering
 and petroleum applications use 60 °F." metric = "4 °C at which water is the most dense, 15.56 °C, and 20 °C. Generally, scientific research and common fluids use 4 °C  while engineering
 and petroleum applications use 15.56 °C."/>
 
@@ -80,10 +80,12 @@ hide_price: true
 ### Reference States, Default for Fluid
 
 **Enthalpy**
-H = <units us = "19771.296 Btu/lb-mole at 80.3 °F and 0.15 psia" metric="2551.014 kJ/kg at 26.9 °C and 0.010 bar"></units>
+
+H = <units us = "19771.296 Btu/lb-mole at 80.3 °F and 0.15 psia" metric="2551.014 kJ/kg at 26.9 °C and 0.010 bar"/>
 
 **Entropy**
-S = <units us = "39.198 Btu/lb-mole·R at 80.3 °F and 0.15 psia" metric = "9.104 J/g·K at 26.9 °C and 0.010 bar"></units>
+
+S = <units us = "39.198 Btu/lb-mole·R at 80.3 °F and 0.15 psia" metric = "9.104 J/g·K at 26.9 °C and 0.010 bar"/>
 
 
 =|=
@@ -97,10 +99,7 @@ scrolling: false
 
 ### Equation of State
 The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, 
-and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R. 
-In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but 
-are generally less than 0.1% in density except at extreme conditions."
-metric = "10 MPa  and temperatures to 423 K. In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but are generally less than 0.1% in density except at extreme conditions."/>
+and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R." metric = "10 MPa  and temperatures to 423 K."></units> In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but are generally less than 0.1% in density except at extreme conditions.
 
 The uncertainty in pressure in the critical region is 0.1%. 
 

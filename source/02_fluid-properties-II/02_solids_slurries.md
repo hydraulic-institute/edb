@@ -150,7 +150,7 @@ shown in Figure 3.
 
 ### Figure 1 – Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
 
-![](./images/IIB-4.png "")
+![](./images/IIB-4.png#center "")
 <div class="figure-label">(Fig. 2.B.2)</div>
 
 ### Figure 2 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
@@ -160,7 +160,7 @@ shown in Figure 3.
 
 ### Figure 3 – Classification of Pumps According to Solid Size [3]
 
-![](./images/IIB-6-new.jpg "")
+![](./images/IIB-6-new.jpg#center "")
 <div class="figure-label">(Fig. 2.B.4)</div>
 
 ### References

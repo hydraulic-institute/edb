@@ -247,8 +247,11 @@ There are situations where you will be placing quantity data within text itself,
 **Example**
 The Fluid Property section has an Auxiliary Data page, which displays Enthalpy reference state.  You can see this implemented using the `units` element, embedded right into the markdown text.
 
+If there is no text following the tag, you can end it with `/>`.  Otherwise, you need the ending `</units>` tag.
 ```
 H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."/>
+
+H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."></units> followed by more text.
 ```
 
 Note that no actual unit conversion are ever being done by the app - you are responsible for adding the text for both unit sets.

@@ -12,8 +12,8 @@ description: The Hydraulic Institute (HI) is the global authority on pumps and p
 </section>
 
 # Hydraulic Institute Engineering Data Library
-The HI Engineering Data Library is a comprehensive guide for pump users, manufacturers and engineers in need of references for pump and system principles, 
-calculations and unit conversions. It covers topics like Net Positive Suction Head, pump and system curves, and frictional losses, utilizing standards developed by
+The HI Engineering Data Library is a comprehensive guide for pump users, manufacturers, and engineers in need of references for pump and system principles, 
+calculations and unit conversions. It covers topics like net positive suction head, pump and system curves, and frictional losses, utilizing standards developed by
 HI and other reputable sources. The data library is reviewed by a committee and updated periodically with new information.
 
 To search for specific words or topics, use the search bar on the upper left corner of each page. 
@@ -32,10 +32,10 @@ specific statistical data and economic reports, promotional opportunities, educa
 # HI's Mission:
 Drive all pump system stakeholders toward a sustainable future by:
 
-(a) Advancing solutions for pump system performance and efficiency
+- Advancing solutions for pump system performance and efficiency
 
-(b) Developing standards and technical resources
+- Developing standards and technical resources
 
-(c) Educating the global marketplace
+- Educating the global marketplace
 
-(d) Advocating for the industry
+- Advocating for the industry

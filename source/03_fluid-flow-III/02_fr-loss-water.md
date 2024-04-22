@@ -17,24 +17,24 @@ $$ h_f = K·{v^2 \over 2·g} $$
 
 where:
 
-- h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet" metric = "meters"/> of fluid 
-- v = Average velocity in <units us = "feet/second" metric = "meters/second"/> in a pipe of corresponding diameter 
+- h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet" metric = "meters"></units> of fluid 
+- v = Average velocity in <units us = "feet/second" metric = "meters/second"></units> in a pipe of corresponding diameter 
 - g = Acceleration due to gravity, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
 - K = Resistance coefficient for valve or fitting
 
 Values of (K) for valves, fittings and bends may be referenced in Figures. 3.B.1a, 3.B.1b, and 3.B.1c. As indicated in Figures. 3.B.1a and 3.B.1b, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
 ### Typical Resistance Coefficients for Fittings [2]
-![](./images/table-32a.png "")
+![](./images/table-32a.png#center "")
 <div class="figure-label">(Fig. 3.B.1a)</div>
 ### Typical Resistance Coefficients for Fittings [3]
-![](./images/table-32b.png "")
+![](./images/table-32b.png#center "")
 <div class="figure-label">(Fig. 3.B.1b)</div>
 
 1. The value of D given in the Figures 3.B.1a and 3.B.1b is nominal IPS (Iron Pipe Size).
-2. <units us = "For velocities below 15 feet per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts." metric = "For velocities below 4.6 meters per second, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts."/>
+2. For velocities below <units us="15 feet per second" metric = "4.6 meters per second"></units>, check valves and foot valves will be only partially open and will exhibit higher values of K than that shown in the charts.
 ### Resistance Coefficients for Miter Bends at Reynolds Number ≈ 2.25 x 10<sup>5</sup> [4]
-![](./images/miter-bends.png "")
+![](./images/miter-bends.png#center "")
 <div class="figure-label">(Fig. 3.B.3)</div>
 
 K<sub>s</sub> = Resistance coefficient for smooth surface
@@ -71,18 +71,18 @@ where:
 - D = pipe inside diameter in <units us = "feet" metric = "meters"/>
 - ΣK = sum of the minor losses, which includes losses across valves
 
-Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends. Values of the resistance coefficient (K) may be taken from Fig. 3.B.2. The solid line curves Fig. 3.B.2 are given by Reference 6 with the range of scatter of the test points as indicated. The broken line curves may be used as a guide to probable resistance coefficients for intermediate values of the relative roughness factor ε/D. A value of <units us = "ε = 0.00085 feet" metric = "ε = 0.259 mm"/>  will be satisfactory for uncoated cast iron and cast steel elbows.
+Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends. Values of the resistance coefficient (K) may be taken from Fig. 3.B.2. The solid line curves Fig. 3.B.2 are given by Reference 6 with the range of scatter of the test points as indicated. The broken line curves may be used as a guide to probable resistance coefficients for intermediate values of the relative roughness factor ε/D. A value of <units us = "ε = 0.00085 feet" metric = "ε = 0.259 mm"></units>  will be satisfactory for uncoated cast iron and cast steel elbows.
 
 ### Resistance Coefficients for 90 Degree Bends of Uniform Diameter [6]
 
-![](./images/IIIB-5A.png "")
+![](./images/IIIB-5A.png#center "")
 <div class="figure-label">(Fig. 3.B.2)</div>
 
 Resistance coefficients for pipe bends with less than 90-degree deflection angles as reported by Wasielewski [5] are shown Fig. 3.B.3. The curves shown are for smooth surfaces but may be used as a guide to approximate the resistance coefficients for surfaces of moderate roughness such as clean steel and cast iron. Figs. 3.B.2 and 3.B.3 are not reliable below R/D = 1, where R is the radius of the elbow in feet. The approximate radius of a flanged elbow may be obtained by subtracting the flange thickness from the center-to-face dimension. The center-to-face dimension for a reducing elbow is usually identical to that of an elbow of the same straight size as the larger end.
 
 ### Resistance Coefficients for 90 Degree Bends of Uniform Diameter and Smooth Surface at Reynolds Number ≈ 2.25 x 10<sup>5</sup> [7]
 
-![](./images/IIIB-5B.png "")
+![](./images/IIIB-5B.png#center "")
 <div class="figure-label">(Fig. 3.B.3)</div>
 
 The resistance to flow (head loss) caused by a sudden enlargement may be computed from eauation 3.B.3a when velocities are known, equation 3.B.3b when areas are known, 3.B.3c when diameters are known, and 3.B.3d when downstream velocity is known.
@@ -106,7 +106,7 @@ $$ h_{f} = K·[{({D_2 \over D_1})^2 - 1 }]^2 · {v_2^2 \over 2·g}$$
 where:
 
 - h = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/> 
-- v<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"/> in the smaller (upstream) pipe 
+- v<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"></units> in the smaller (upstream) pipe 
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>
 - v<sub>2</sub>, A<sub>2</sub>, D<sub>2</sub> = Corresponding values for the larger (downstream pipe)
@@ -127,7 +127,7 @@ where:
 Equation (3.B.4) applies only to values of θ between 7.5 and 35 degrees. Noteworthy is the fact that above 50 degrees a sudden enlargement will be as good or better than a conical increaser. Values of (K) for conical diffusers as reported by Russell [9] are shown in Fig. 3.B.4. The values shown include the entrance mouthpiece which accounts in part for the increase over Gibson's values for conical increasers.
 
 ### Resistance Coefficients for Increasers and Diffusers [8][9]
-![](./images/Resistance-Coefficients-Increasers-Diffusers.png "")
+![](./images/Resistance-Coefficients-Increasers-Diffusers.png#center "")
 <div class="figure-label">(Fig. 3.B.4)</div>
 
 ### References

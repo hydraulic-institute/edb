@@ -132,7 +132,7 @@ def definitions_table_data(table, path, filename, in_sections):
                     else:
                         # Push empty data
                         col_link_data.append(col_obj) 
-                    if col_data[0] == "Section":
+                    if "Section" in col_data[0]:
                         section_idx = i 
                 headings = columns.copy()
                 page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
@@ -818,6 +818,8 @@ def make_section(graph, section, parent=None):
     os.makedirs(directory)
     make_source_specials(section['path'], directory)
     for topic in section['children']:
+        if topic['name'] == '.DS_Store':
+            continue
         if topic['directory']:
             print("Sub directories are currently unsupported.")
             make_section(graph, topic, section)

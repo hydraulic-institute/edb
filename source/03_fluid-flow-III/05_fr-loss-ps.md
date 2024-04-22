@@ -39,19 +39,19 @@ Figures 3.E.1 (chemical pulp) and 3.E.2 (mechanical pulp) show typical frictiona
 consistencies (C<sub>2</sub> > C<sub>1</sub>).
 
 **Friction loss curve for chemical pulp C<sub>2</sub> > C<sub>1</sub>** 
-![](./images/fig3_E_1.png "")
+![](./images/fig3_E_1.png#center "")
 <div class="figure-label">(Fig. 3.E.1)</div>
 **Friction loss curve for mechanical pulp C<sub>2</sub> > C<sub>1</sub>** 
-![](./images/fig3_E_2.png "")
+![](./images/fig3_E_2.png#center "")
 <div class="figure-label">(Fig. 3.E.1)</div>
 
 The frictional loss curve for chemical pulp can be conveniently divided into three regions, as illustrated by the shaded areas of Figures 3.E.3 and 3.E.4.
 
 **Friction loss curve for chemical pump, shaded to show individual regions**
-![](./images/fig3_E.3.png "")
+![](./images/fig3_E_3.png#center "")
 <div class="figure-label">(Fig. 3.E.3)</div>
 **Friction loss curve for mechanical pump, shaded to show individual regions**
-![](./images/fig3_E.3.png "")
+![](./images/fig3_E_3.png#center "")
 <div class="figure-label">(Fig. 3.E.4)</div>
 
 Regions shown in Fig. 3.E.3 may be described as follows:
@@ -173,7 +173,6 @@ The following is data for use with Equation (3.E.1) to determine velocity limit,
 title: Table I
 data: Table1CSV.csv
 =|=
-<div class="table-label">Tbl. 3.E.1</div>
 
 NOTES:
 
@@ -294,7 +293,6 @@ The following is data for use with Equation (3.E.2) to determine head loss, ΔH/
 title: Table II
 data: Table2CSV.csv
 =|=
-<div class="table-label">Tbl. 3.E.2</div>
 
 NOTES:
 

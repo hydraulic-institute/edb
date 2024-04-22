@@ -50,7 +50,7 @@ differences in methods used throughout industry and in related textbooks and lit
 
 Fig. 1.D.1 illustrates the approximate shape of performance curves based on the specific speed in metric and (US) units.
 
-![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png "")
+![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png#center "")
 <div class="figure-label">Fig. 1.D.1</div>
 
 =^=
@@ -150,13 +150,13 @@ For more information on the suction specific speed definition refer to <a href="
 There are many different impeller types (pictured below) based on desired performance characteristics and type of fluid pumped. The main types of impellers are shown below. 
 As the flow increases with respect to the developed head, the larger the waterways become and the smaller the diameter becomes.
 
-![](./images/impeller-types.png "")
+![](./images/impeller-types.png#center "")
 <div class="figure-label">Fig. 1.D.4</div>
 
 The three configurations (Fig 1.D.5) for an impeller are open, semi-open, and enclosed. Open impellers do not have a front or rear shroud. Semi-open impellers only have a
 rear shroud. Enclosed impellers have a front and rear shroud.
 
-![](./images/impeller-configs.png "")
+![](./images/impeller-configs.png#center "")
 <div class="figure-label">Fig. 1.D.5</div>
 
 **Open impellers** are typically used on smaller pumps, axial flow pumps, and for specialty applications such as solids handling pumps. They are typically less expensive to 
@@ -177,7 +177,7 @@ hide_price: true
 
 ### Net Positive Suction Head (NPSH)
 
-**NPSH** is the net positive suction head in <units us = "feet" metric = "meters"/>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
+**NPSH** is the net positive suction head in <units us = "feet" metric = "meters"></units>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped
 fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops 
 below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to
 the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage 

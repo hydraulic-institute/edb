@@ -99,7 +99,7 @@ $$ f = {64 \over Re}$$
 ### Moody Diagram [1]
 If the Reynolds Number is above 4000, the flow will usually be turbulent and the **Moody Diagram** pictured below can be used to determine the friction factor. The range Re = 2000–4000 is called the critical zone in which the flow may be highly unstable and the friction factor indeterminate.
 
-![](./images/moody-diagram-2.png "")
+![](./images/moody-diagram-2.png#center "")
 <div class="figure-label">(Fig. 3.A.1)</div>
 
 ### Kinematic Viscosity
@@ -113,7 +113,7 @@ $$v(ft^2/s) = 0.00107639 · stokes = 0.0000107639 · centistokes$$
 
 Additional information on viscosity can be found <a href="/fluid-properties-II/viscosity.html" target="_blank">here</a>.
 
-![](./images/Kinematic-Viscosity-Fluids.png "")
+![](./images/Kinematic-Viscosity-Fluids.png#center "")
 <div class="figure-label">(Fig. 3.A.2)</div>
 =^=
 title: Pump System Optimization Guidebook (PSO)
