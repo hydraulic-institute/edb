@@ -1,5 +1,5 @@
 -----
-title: B) Acronymns & Definitions
+title: B) Acronyms & Definitions
 date: April 19th, 2024
 description: Table of Definitions 
 hide_units: true

@@ -149,7 +149,7 @@ def definitions_table_data(table, path, filename, in_sections):
                 source_links=['' for k in range(num_columns)]
                 row_columns=[DefinitionColumn(d, datarow[i], '')
                               for i, d in enumerate(columns)]
-                # Acronymn Link
+                # Acronym Link
                 if "acronym" in section.lower():
                     acronym.append(datarow[1].lower())
                     acronym_ids.append(datarow[0])

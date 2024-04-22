@@ -21,7 +21,7 @@ description: Updates to EDL
 - *Section II* - minor formatting updates. 
 - *Section III* - minor formatting updates. 
 - *Section IV* - added subsections A – E covering pipe and flange dimensions. 
-- *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, and added subsections D – I covering line shaft bearing losses, tank volume calculators, altitude effect on atmospheric pressure, and NEMA motor dimensions.  
+- *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator and added subsections D – I covering line shaft bearing losses, tank volume calculators, altitude effect on atmospheric pressure, and NEMA motor dimensions.  
 
 #### 2021
 

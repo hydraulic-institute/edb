@@ -21,7 +21,7 @@ This curve can be affected by many factors.
 
 The following analytical method for determining
 pipe frictional losses is based on the recently published
-TAPPI Technical Information Sheet (TIS) 408-4 [1], 
+TAPPI Technical Information Sheet (TIS) 408-4 [1] 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)
@@ -67,7 +67,7 @@ v<sub>max</sub>.
 **Region 2**:
 (Curve BCD) shows an initial decrease
 in frictional losses (to Point C) after which
-the frictional losses again increases. The
+the frictional losses again increase. The
 intersection of the pulp frictional loss
 curve and the water frictional loss curve
 (Point D) is termed the onset of drag
@@ -202,7 +202,7 @@ where:
 - D = pipe inside diameter (in), and
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
-For mechancial pulps, there is no true v<sub>max</sub>· The
+For mechanical pulps, there is no true v<sub>max</sub>· The
 upper limit of the correlation equation (Equation (3.E.2))
 is also given by Equation (3.E.1) in this case, the upper
 velocity is actually v<sub>w</sub>·
@@ -220,7 +220,7 @@ $$ v_{w} = 4.00·C^{1.40} (ft/s) $$
 
 where:
 
-- C = consistency (oven-dried,expressed as a percentage, not decimally).
+- C = consistency (oven-dried, expressed as a percentage, not decimally).
 
 If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (3.E.2) may be
 used to determine ΔH/L at the maximum point
@@ -374,7 +374,7 @@ The following is an example that illustrates the method for determining pipe fri
 
 ### Example
 
-Determine the frictional loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
+Determine the frictional loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurried, through
 6 inch schedule 40 stainless steel pipe (inside diameter = 6.065 in). The pulp temperature is 90°F, the flow rate 1100 U.S. GPM.
 
 **Solution:**

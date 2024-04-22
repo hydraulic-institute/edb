@@ -85,7 +85,7 @@ Resistance coefficients for pipe bends with less than 90-degree deflection angle
 ![](./images/IIIB-5B.png#center "")
 <div class="figure-label">(Fig. 3.B.3)</div>
 
-The resistance to flow (head loss) caused by a sudden enlargement may be computed from eauation 3.B.3a when velocities are known, equation 3.B.3b when areas are known, 3.B.3c when diameters are known, and 3.B.3d when downstream velocity is known.
+The resistance to flow (head loss) caused by a sudden enlargement may be computed from equation 3.B.3a when velocities are known, equation 3.B.3b when areas are known, 3.B.3c when diameters are known, and 3.B.3d when downstream velocity is known.
 =+=
 <span class= equation-label >(Eq. 3.B.3a)</span>
 $$h_{f} = K·{{(v_1 - v_2)^2} \over {2·g}}$$
