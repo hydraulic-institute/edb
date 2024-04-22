@@ -28,7 +28,7 @@ $$ H =  {{0.102 · p} \over s} $$
 where:
 
 - H = head in <units us = "feet (ft)" metric = "meters (m)"/>
-- p = pressure in <units us = "pounds per quare inch (psi)" metric = "kilopascals (kPa)"/>
+- p = pressure in <units us = "pounds per square inch (psi)" metric = "kilopascals (kPa)"/>
 - s = specific gravity (unitless), see equation 1.A.2
 
 Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in section II.

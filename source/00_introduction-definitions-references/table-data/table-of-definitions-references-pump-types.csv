@@ -42,7 +42,7 @@ Definitions,Term,Description,Source:: https://www.pumps.org/what-we-do/standards
 ,Series operation,"Series pumping, sometimes referred to as staging, is when the discharge of one pump is routed into the inlet of the next pump.",ANSI/HI 14.3,Pump Curves,
 ,Shut-off head,"The pump head at the condition of zero flow where no liquid is flowing through the pump, but the pump is primed and running.",ANSI/HI 14.1-14.2,Pump Curves,
 ,Slurry,"Slurry is a mixture of solids (specific gravity typically greater than 1) in a liquid carrier, usually water. ",ANSI/HI 12.1-12.6,Solids and Slurries,
-,Specific gravity of liquid,Specific Gravity is the ratio of density of a liquid relative to the density of water. The reference density for liquid used in Hydraulic Institute standards is based on water at 20 °C (68 °F) which is 998.2 kg/m3 (62.31 lb/ft3),ANSI/HI 14.1-14.2,Solids and Slurries,
+,Specific gravity of liquid,Specific Gravity is the ratio of density of a liquid relative to the density of water. The reference density for liquid used in Hydraulic Institute standards is based on water at 20 °C (68 °F) which is 998.2 kg/m3 (62.31 lbm/ft3),ANSI/HI 14.1-14.2,Solids and Slurries,
 ,Specific gravity of slurry (or mixture),The relative density of the slurry (mixture) to that of water at the same temperature.,ANSI/HI 12.1-12.6,Solids and Slurries,
 ,Specific gravity of solids,The relative density of solids with respect to water at standard temperature of 4 °C (39.2 °F).,ANSI/HI 12.1-12.6,Solids and Slurries,
 ,Specific speed,"An index of pump performance at the pump's best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. ",ANSI/HI 14.1-14.2,Pump Principles,
