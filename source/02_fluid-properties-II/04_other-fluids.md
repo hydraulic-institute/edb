@@ -119,8 +119,8 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	The following charts represent the value of viscosity of sucrose solution in centipoise (cP) at various temperature for various Brix values.
 -	[1] All the values are taken from National Bureau of Standards Circular 440 issued on July 31, 1958 United States Department of Commerce by considering viscosity of water at 20°C is 0.010020 poise.
 -	On the X-axis temperature is plotted in °C whereas on Y-axis viscosity of sucrose in aqueous solution is plotted in centipoise (cP) and the graph is plotted for various degree Brix values ranging from 20° Brix to 75° Brix.
--	The below graphs represents the exponentially decreasing nature.
--	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value and it is inversely proportional to the temperature.
+-	The below graphs represent the exponentially decreasing nature.
+-	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value, and it is inversely proportional to the temperature.
 
 ![](./images/Brix1.png#center "")
 <div class="figure-label">(Fig. 2.D.2)</div>

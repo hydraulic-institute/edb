@@ -185,7 +185,7 @@ NOTES:
 
 If the proposed design velocity (v) is less than v<sub>max</sub>,
 the value of flow resistance (Δh/L) may be calculated
-using Equation (3.E.2) and data given in Table II
+using equation 3.E.2 and data given in Table II
 and the appendices.
 
 =+=
@@ -211,7 +211,7 @@ velocity is actually v<sub>w</sub>·
 (Point B) is v<sub>max</sub> and the upper limit
 (Point 0) is v<sub>w</sub>. The velocity of the stock
 at the onset of drag reduction is determined
-using Equation (3.E.3).
+using equation 3.E.3.
 
 =+=
 <span class= equation-label >(Eq. 3.E.3)</span>

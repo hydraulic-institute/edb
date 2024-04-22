@@ -39,7 +39,7 @@ below.
 ![](./images/CSG.png#center "")
 <div class="figure-label">(Fig. 2.B.1)</div>
 
-Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
+Where pumps are to be applied to mixtures which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
 This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
 <a href="https://www.pumps.org/product/12-1-12-6-2022/" target="_blank">ANSI/HI 12.1-12.6 – Rotodynamic Centrifugal Slurry Pumps</a> contains more information regarding the operation 
 and applications of slurry pumps.
@@ -131,7 +131,7 @@ by choosing the correct materials of construction.
 Sharp angular particles cause about twice the wear
 of rounded particles.
 
-Austinetic maganese steel is used when pumping
+Austenitic manganese steel is used when pumping
 large dense solids where the impact is high.
 
 Hard irons are used to resist erosion and to a lesser

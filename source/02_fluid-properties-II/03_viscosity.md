@@ -35,7 +35,7 @@ velocity distribution will be linear over the distance
 will be directly proportional to the unit shearing force (*τ* = F/A) 
 for all "true" or "Newtonian" fluids. The proportionality factor (μ)
 is the dynamic viscosity. The foregoing may be expressed
-by the equations
+by the equations:
 
 =+=
 <span class= equation-label >(Eq. 2.C.1)</span>
@@ -132,7 +132,7 @@ in pressure usually is negligible.
 The viscosities of fluids, such as mineral oil and
 water, are unaffected by the magnitude and kind
 of motion to which they may be subjected as long
-as the temperature remains constant. Thus the
+as the temperature remains constant. Thus, the
 ratio of shear stress to shear rate is a constant for
 all shear rates, is independent of time, and zero
 shear rate exists only at zero shear stress; such a
@@ -140,7 +140,7 @@ fluid is said to be **Newtonian.**
 
 When the ratio of shear stress to shear rate increases
 as the shear rate increases, reversibly and
-independent of time, a fluid is said to be **dilatent.**
+independent of time, a fluid is said to be **dilatant.**
 
 When the shear stress to shear rate ratio is constant
 for shear rates above zero, is independent of
@@ -158,7 +158,7 @@ When the ratio of shear stress to shear rate decreases
 as shear rate increases and is time dependent
 in that this ratio increases back to its "rest"
 value gradually with lapse of time at zero shear
-rate and stress, and decreases to a limit value
+rate and stress and decreases to a limit value
 gradually with lapse of time at constant shear rate,
 a fluid is said to be **thixotropic.**
 

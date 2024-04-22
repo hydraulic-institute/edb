@@ -128,7 +128,7 @@ hide_price: true
 
 ### System Curve
 
-Based on these concepts, the total system head at any given flow rate is the sum of the static head and frictional head losses in the system. It, therefore, can be represented using the euation 1.A.7 (where the velocity at the supply and destination is negligible, e.g. they are tanks):
+Based on these concepts, the total system head at any given flow rate is the sum of the static head and frictional head losses in the system. It, therefore, can be represented using the equation 1.A.7 (where the velocity at the supply and destination is negligible, e.g. they are tanks):
 
 <div  class="equation-label"><a id="eq1a7"></a>Eq. 1.A.7</div >
 =+=

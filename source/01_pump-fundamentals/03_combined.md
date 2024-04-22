@@ -14,7 +14,7 @@ show where the system will operate. In general, the system flow rate will be whe
 in <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 14.3</a>.
 
 Knowing the shape of the system curve will help illustrate the pump operating conditions as the system conditions vary due to changes in valve position, parts of the system coming
-on and off line, and upset conditions. Additionally, by overlaying the pump curves, it will help determine if the pump is sized correctly to overcome the static head and frictional head losses of the system.
+on and offline, and upset conditions. Additionally, by overlaying the pump curves, it will help determine if the pump is sized correctly to overcome the static head and frictional head losses of the system.
 
 
 Using a pump and system curve will also help evaluate pump speed and impeller trimming. Both of which will change the pump curve and, therefore, where the system will operate. 
@@ -117,7 +117,7 @@ loss across the control valve, since the system flow rate has not changed.
 <div class="figure-label">Fig. 1.C.6</div>
 
 ### Educational Demonstration: Pump and System Curve with Control Valve
-Demo 1.C.2 shows qualitatively how various parameters affect the pump curve, system curve, control valve head and operating point. Slide the toggle to change the pump speed, control valve postion and system parameters to see how the pump curve, system curve, conrol valve head and resulting operating point vary.
+Demo 1.C.2 shows qualitatively how various parameters affect the pump curve, system curve, control valve head and operating point. Slide the toggle to change the pump speed, control valve position and system parameters to see how the pump curve, system curve, control valve head and resulting operating point vary.
 
 =d=
 title:
@@ -237,7 +237,7 @@ Since this system does not have active control devices, the system will operate 
 **System Deviations**
 
 Both the pump and the system can deviate from this ideal design case. For example, the pump performance can degrade, or the system losses can increase with fouling
-over time. If we combine the pump and system curves we can evaluate what will happen in various cases.
+over time. If we combine the pump and system curves, we can evaluate what will happen in various cases.
 
 For example, let’s examine what happens with the tank level changes. With all other factors being held constant, this would change the static head of the system. 
 The pump would also change its operating point in response. Since the operating point will be where the pump and system curves intersect, we can set the two equations

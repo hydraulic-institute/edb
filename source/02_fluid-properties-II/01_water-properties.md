@@ -99,11 +99,11 @@ scrolling: false
 
 ### Equation of State
 The uncertainty in density of the equation of state is 0.0001% at 1 atm in the liquid phase, 
-and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R." metric = "10 MPa  and temperatures to 423 K."></units> In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures, but are generally less than 0.1% in density except at extreme conditions.
+and 0.001% at other liquid states at pressures up to <units us = "1450 psi and temperatures to 761.4 R." metric = "10 MPa  and temperatures to 423 K."></units> In the vapor phase, the uncertainty is 0.05% or less. The uncertainties rise at higher temperatures and/or pressures but are generally less than 0.1% in density except at extreme conditions.
 
 The uncertainty in pressure in the critical region is 0.1%. 
 
-The uncertainty of the speed of sound is 0.15% in the vapor and 0.1% or less in the liquid, and increases near the critical region and at high temperatures and pressures. 
+The uncertainty of the speed of sound is 0.15% in the vapor and 0.1% or less in the liquid and increases near the critical region and at high temperatures and pressures. 
 
 The uncertainty in isobaric heat capacity is 0.2% in the vapor and 0.1% in the liquid, with increasing values in the critical region and at high pressures. 
 
