@@ -62,7 +62,7 @@ This equation is based on the supply and destination being tanks or where the ve
 
 <div  class="equation-label">Eq. 1.A.4</div >
 =+=
-$$ p = p_{gauge} + 0.5 · rho · v^2 = {p_{gauge} + rho · Q^2 \over 2 · A^2} $$
+$$ p = p_{gauge} + 0.5 · \rho · v^2 = {p_{gauge} + \rho · Q^2 \over 2 · A^2} $$
 =+=
 
 where:
@@ -77,12 +77,12 @@ Since the velocity can be different between the two gage measurements, each of t
 
 <div  class="equation-label">Eq. 1.A.5</div >
 =+=
-$$ p_{supply} = {p_{supply,gauge} + rho · Q_{supply}^2\over 2 · A_{supply}^2} $$
+$$ p_{supply} = {p_{supply,gauge} + \rho · Q_{supply}^2\over 2 · A_{supply}^2} $$
 =+=
 
 <div  class="equation-label">Eq. 1.A.6</div >
 =+=
-$$ p_{destination} = {p_{destination,gauge} + rho · Q_{destination}^2 \over 2 · A_{destination}^2} $$
+$$ p_{destination} = {p_{destination,gauge} + \rho · Q_{destination}^2 \over 2 · A_{destination}^2} $$
 =+=
 
 Note that if the supply and destination are at the same pressure, as is the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
