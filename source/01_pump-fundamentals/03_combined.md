@@ -1,6 +1,6 @@
 -----
 title: C) Combined Pump & System Curves 
-date: Oct 14th, 2023
+date: April 19th, 2024
 description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
 hide_units: true
 -----
@@ -30,8 +30,7 @@ price: $225.00
 
 ### Reading a Pump and System Curve Plot
 
-As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system (the head required to overcome gravity at zero flow) 
-and the frictional head losses that vary with the rate of flow. The operating point is where the two curves intersect.
+As the name implies, a **pump and system curve plot** consists of at least two curves. The system curve will show the static head of the system and the frictional head losses that vary with the rate of flow. The operating point is where the two curves intersect.
 
 ![](./images/iC-1-Pump-and-system-Curve.png "")
 <div class="figure-label">Fig. 1.C.1</div>
@@ -47,7 +46,7 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ### Changes in Pump Speed
 
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/pump-fundamentals/pump-curves.html">Pump Curves</a>). 
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see <a href="/pump-fundamentals/pump-curves.html" target="_blank">Pump Curves</a>). 
 As the pump is slowed the pump curve will be shifted down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve (active control valves are discussed later), changing the pump speed will change two things as
@@ -59,11 +58,12 @@ produced and reduce the system flow. Note the static head at zero flow will stil
 
 ### Changes in Impeller Size
 
-In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html">different sized impellers</a> to shift the pump curve.
+In selecting the appropriate curve for a pump application to fit the desired system conditions, many centrifugal pumps can use <a href="/pump-fundamentals/pump-curves.html" target="_blank">different sized impellers</a> to shift the pump curve.
 Trimming the impeller down in size will move the pump curve down much in the same way as reducing the speed of rotation.  The same can be said for selecting a larger impeller; the curve will shift up.  When sizing a pump for an application in which the pump is not hooked up to a variable speed controller, it is more appropriate
 to size the impeller to your desired duty conditions.
 
 ### Educational Demonstration: Pump and System Curve
+Demo 1.C.1 shows qualitatively how various parameters affect the pump curve, system curve and operating point. Slide the toggle to change the pump speed and system parameters to see how the pump curve, system curve and resulting operating point vary.
 
 =d=
 title:
@@ -117,6 +117,7 @@ loss across the control valve, since the system flow rate has not changed.
 <div class="figure-label">Fig. 1.C.6</div>
 
 ### Educational Demonstration: Pump and System Curve with Control Valve
+Demo 1.C.2 shows qualitatively how various parameters affect the pump curve, system curve, control valve head and operating point. Slide the toggle to change the pump speed, control valve postion and system parameters to see how the pump curve, system curve, conrol valve head and resulting operating point vary.
 
 =d=
 title:
@@ -175,6 +176,7 @@ flow. A static dominated system will be the opposite, there will be a significan
 <div class="figure-label">Fig. 1.C.10</div>
 
 ### Educational Demonstration: Parallel Pumps and System Curve 
+Demo 1.C.3 shows qualitatively how various parameters affect the parallel pump curve, system curve and operating point. Slide the toggle to change the number of **identical** pumps operating in parallel, pump speed and system parameters to see how the pump curve, system curve and resulting operating point vary.
 
 =d=
 title:
