@@ -34,6 +34,8 @@ Once installed, you can open the `edb` directory.  **Important** - to develop co
 
 Visual Studio Code allows you to open a folder - `edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
 
+<div style="page-break-after: always;"></div>
+
 ## Python Setup
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
 
@@ -50,22 +52,35 @@ Next, execute the following commands one by one. There are dependencies for the 
 *Note, depending on how Python was installed, particularly on Windows, you may need to type `python`, and not `python3` on the command line.  Same with `pip` / `pip3`.*
 
 ```
-pip3 install virtualenv
-python3 -m venv env
+#Install the Virtual Environment
+$> pip3 install virtualenv
+$> python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
-source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
+#Activate the Virtual Environment
+$> env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+$> source env/bin/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
-pip3 install Jinja2   
-pip3 install lesscpy
-pip3 install Markdown
-pip3 install watchdog
-pip3 install htmlmin
-pip3 install awscli --upgrade 
-pip3 install s3-deploy-website --upgrade
-pip3 install pypandoc
-pip3 install selenium
+#Either install requirements.txt file:
+$> pip3 install -r requirements.txt
+
+#OR Install each library separately:
+$> pip3 install Jinja2   
+$> pip3 install lesscpy
+$> pip3 install Markdown
+$> pip3 install watchdog
+$> pip3 install htmlmin
+$> pip3 install pypandoc
+$> pip3 install selenium
+$> pip3 install six
+$> pip3 install pandas
 ```
+
+Select the Python Interpreter:
+- Press **Ctrl + Shift + P (or Cmd + Shift + P on macOS)** to open the Command Palette.
+- Type **Python select interpreter** and press Enter.
+- In the list of available interpreters, you should see the Python interpreter from your virtual environment. It will have the python virtual environment (env) that you created above in the path.
+- Select the desired Python interpreter from the list
+
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
 To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.

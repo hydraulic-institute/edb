@@ -2,7 +2,6 @@ import shutil
 import os
 import lesscpy
 import markdown
-import glob
 import io
 import htmlmin
 import copy
@@ -15,15 +14,11 @@ from selenium import webdriver
 from datetime import date
 
 from .common import parse_dict
-from six import StringIO
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from markdown.preprocessors import Preprocessor
-from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
 import pandas as pd
-from pandas import ExcelFile
 
 global chart_count
 chart_count = 0
@@ -729,7 +724,8 @@ def make_source_specials(source, dest):
         src = os.path.join(source, special)
         dst = os.path.join(dest, special)
         print(f'Creating special subdir {src} to {dst}')
-        copytree(src,dst)
+        if os.path.isdir(src):
+            copytree(src, dst)
 
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
