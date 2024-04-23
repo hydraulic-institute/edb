@@ -60,7 +60,7 @@ $$ C_{v} = {volume\, of\, dry\, solids \over { volume\, of\, dry\, solids\, + vo
 
 A nomograph for the relationship of concentration
 to specific gravity of dry solids in water is shown in
-Figure 2.
+Figure 2.B.3.
 
 **c)** Slurry flow requirements can be determined from
 the expression:
@@ -122,7 +122,7 @@ unless it can be made to exceed that of the particles.
 The effective abrasion resistance of any metal will
 depend on its position on the mohs or knoop
 hardness scale. The relationships of various common
-ore minerals and metals is shown in Figure 1.
+ore minerals and metals is shown in Figure 2.B.2.
 
 Wear increases rapidly when the particle size increases.
 The life of the pump parts can be extended
@@ -146,19 +146,19 @@ to cutting erosion but impeller tip velocities
 are usually restricted to <units us = "100 ft/s." metric = "30 m/s."/> 
 
 Classification of pumps according to particle size is
-shown in Figure 3.
+shown in Figure 2.B.4.
 
-### Figure 1 – Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
+### Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
 
 ![](./images/IIB-4.png#center "")
 <div class="figure-label">(Fig. 2.B.2)</div>
 
-### Figure 2 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
+### Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
 
 ![](./images/IIB-5.png#center "")
 <div class="figure-label">(Fig. 2.B.3)</div>
 
-### Figure 3 – Classification of Pumps According to Solid Size [3]
+### Classification of Pumps According to Solid Size [3]
 
 ![](./images/IIB-6-new.jpg#center "")
 <div class="figure-label">(Fig. 2.B.4)</div>

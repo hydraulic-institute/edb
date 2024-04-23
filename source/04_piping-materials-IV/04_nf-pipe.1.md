@@ -15,8 +15,7 @@ hide_price: true
 
 ## Pipe Dimensions of Non-Ferrous Pipes and Tubes
 
-* Note:  All dimensions are nominal
-* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+**Note: Internal diameter and area are calculated based on nominal values**
 
 <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item mt-2 blue-accordion" >

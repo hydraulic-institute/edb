@@ -15,8 +15,7 @@ hide_price: true
 
 ## Pipe Dimensions of Plastic PVC Pipes
 
-* Note:  All dimensions are nominal
-* Note: Internal diameter and area are calculated based on nominal outside diameter and minimum thickness multiplied by 1.03.
+***Note: Internal diameter and area are calculated based on nominal outside diameter and minimum thickness multiplied by 1.03.***
 
 <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item mt-2 blue-accordion" >

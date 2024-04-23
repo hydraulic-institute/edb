@@ -14,8 +14,7 @@ price: 59.00
 hide_price: true
 =^=
 
-* Note:  All dimensions are nominal
-* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+**Note: Internal diameter and area are calculated based on nominal values**
 
 ## Pipe Dimensions: Steel pipe - welded and seamless wrought per ANSI/ASME B36.10M-2018
 
