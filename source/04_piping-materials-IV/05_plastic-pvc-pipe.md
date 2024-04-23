@@ -32,6 +32,7 @@ hide_price: true
                     =|=
                     title: Plastic Irrigation Pipe (PIP) per ASTM D2241
                     data: PVC-Pipe_PIP.csv
+                    fixed-columns: 2
                     =|=
                     <div class="table-label">Tbl. 4.E.1</div>
                 </div>
@@ -51,6 +52,7 @@ hide_price: true
                     =|=
                     title: Plastic (Iron Pipe Size, IPS) per ASTM D2241
                     data: PVC-Pipe_IPS.csv
+                    fixed-columns: 2
                     =|=
                     <div class="table-label">Tbl. 4.E.2</div>
                 </div>
@@ -70,6 +72,7 @@ hide_price: true
                     =|=
                     title: Plastic (Cast Iron Outside Diameter, CIOD) per AWWA C900
                     data: PVC-Pipe_CIOD.csv
+                    fixed-columns: 2
                     =|=
                     <div class="table-label">Tbl. 4.E.3</div>
                 </div>
@@ -89,6 +92,7 @@ hide_price: true
                     =|=
                     title: Plastic (Schedule) pipe per ASTM D1785
                     data: PVC-Pipe_SCH.csv
+                    fixed-columns: 2
                     =|=
                     <div class="table-label">Tbl. 4.E.4</div>
                 </div>
