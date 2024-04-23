@@ -12,7 +12,7 @@ Frictional Resistance for incompressible viscous liquids, including water, in a 
 
 This Frictional Loss Calculator utilizes this methodology by generating a table with the following parameters:
 
--	Flowrate:  At, above, and below the users input flow
+-	Flow Rate:  At, above, and below the users input flow
 -	Fluid Velocity: The average fluid velocity inside the pipe
 -	Velocity Head: Based on V<sup>2</sup>/2g
 -	Reynolds Number
