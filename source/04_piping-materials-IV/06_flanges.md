@@ -1,5 +1,5 @@
 -----
-title: E) Flange Dimensions
+title: F) Flange Dimensions
 date: November 26th, 2023
 description: Dimensions of flanges.
 -----
@@ -34,7 +34,7 @@ hide_price: true
                     data: flange-c207.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.1</div>
+                    <div class="table-label">Tbl. 4.F.1</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                     <li>Refer to ANSI/AWWA C207 for notes, design pressures, and additional minimum design requirements. </li>
@@ -70,7 +70,7 @@ hide_price: true
                     data-metric: flange-16.1-25-250-metric.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.2</div>
+                    <div class="table-label">Tbl. 4.F.2</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                     <li>Refer to ANSI/ASME B16.1 for notes, pressures, and minimum design requirements. </li>
@@ -118,7 +118,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: Th
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.3</div>
+                                    <div class="table-label">Tbl. 4.F.3</div>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: SO
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.4</div>
+                                    <div class="table-label">Tbl. 4.F.4</div>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: SW
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.5</div>
+                                    <div class="table-label">Tbl. 4.F.5</div>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +205,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: WN
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.6</div>
+                                    <div class="table-label">Tbl. 4.F.6</div>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: La
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.7</div>
+                                    <div class="table-label">Tbl. 4.F.7</div>
                                 </div>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: Th
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.8</div>
+                                    <div class="table-label">Tbl. 4.F.8</div>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: SO
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.9</div>
+                                    <div class="table-label">Tbl. 4.F.9</div>
                                 </div>
                             </div>
                         </div>
@@ -346,7 +346,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: SW
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.10</div>
+                                    <div class="table-label">Tbl. 4.F.10</div>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +375,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: WN
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.11</div>
+                                    <div class="table-label">Tbl. 4.F.11</div>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +404,7 @@ hide_price: true
                                     fixed-columns: 2
                                     column_tags: La
                                     =|=
-                                    <div class="table-label">Tbl. 4.E.12</div>
+                                    <div class="table-label">Tbl. 4.F.12</div>
                                 </div>
                             </div>
                         </div>
@@ -447,7 +447,7 @@ hide_price: true
                     data-metric: flange-16.47-A-150-300-metric.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.13</div>
+                    <div class="table-label">Tbl. 4.F.13</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -484,7 +484,7 @@ hide_price: true
                     data-metric: flange-16.47-A-400-900-metric.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.14</div>
+                    <div class="table-label">Tbl. 4.F.14</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -521,7 +521,7 @@ hide_price: true
                     data-metric: flange-16.47-B-75-300-metric.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.15</div>
+                    <div class="table-label">Tbl. 4.F.15</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>
@@ -558,7 +558,7 @@ hide_price: true
                     data-metric: flange-16.47-B-400-900-metric.csv
                     fixed-columns: 2
                     =|=
-                    <div class="table-label">Tbl. 4.E.16</div>
+                    <div class="table-label">Tbl. 4.F.16</div>
                     <h4>Notes:</h4>
                     <ol type="1">
                         <li>Refer to ANSI/ASME B16.47 for notes, pressures, and minimum design requirements. </li>

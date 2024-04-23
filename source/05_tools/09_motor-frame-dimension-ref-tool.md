@@ -35,15 +35,12 @@ hide_units: true
                         <h2 class="accordion-header" id="headingOne-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseOne-1" aria-expanded="false">
-                            4.4.1 Dimensions for Alternating-Current Foot-Mounted Machines with Single Straight Shaft Extension
+                            NEMA MG1 4.4.1 Dimensions for Alternating-Current Foot-Mounted Machines with Single Straight Shaft Extension
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseOne-1" class="accordion-collapse collapse" aria-labelledby="headingOne-1">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/motor-4.4.1-1.png "></div>
-                                    <div class="col-6"><img src="./images/motor-4.4.1-2.png "></div>
-                                </div>
+                                <img src="./images/motor-4.4.1.png ">
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
@@ -85,12 +82,12 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseTwo-1">
-                            4.4.4 Dimensions for Type C Face Mounting Foot or Footless Alternating-Current Motors
+                            NEMA MG1 4.4.4 Dimensions for Type C Face Mounting Foot or Footless Alternating-Current Motors
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="headingTwo-1">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.4.png "></div></div>
+                                <img src="./images/motor-4.4.4.png ">
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
@@ -126,11 +123,11 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseThree-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseThree-2">
-                            4.4.5 Dimensions for Type FC Face Mounting for Accessories on End Opposite Drive End of Alternating-Current Motors</button>
+                            NEMA MG1 4.4.5 Dimensions for Type FC Face Mounting for Accessories on End Opposite Drive End of Alternating-Current Motors</button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree-2" class="accordion-collapse collapse" aria-labelledby="headingThree-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.5.png "></div></div>
+                                <img src="./images/motor-4.4.5.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-c-face-4.4.5.csv
@@ -165,12 +162,12 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFive-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseFive-2">
-                            Table 18-28 - Dimensions for Type VP Vertical Solid Shaft, Single-Phase and Polyphase, Direct-Connected Squirrel-Cage Induction Motors for Vertical Turbine Pump Applications
+                            NEMA MG1 Table 18-28 - Dimensions for Type VP Vertical Solid Shaft, Single-Phase and Polyphase, Direct-Connected Squirrel-Cage Induction Motors for Vertical Turbine Pump Applications
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseFive-2" class="accordion-collapse collapse" aria-labelledby="headingFive-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png "></div></div>
+                                <img src="./images/motor-vert-18-28.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-18-28.csv
@@ -199,11 +196,11 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFour-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseFour-2">
-                            Table 18-30 - Base Dimensions of Type P and PH Alternating-Current Squirrel-Cage Vertical Hollow Shaft Motors for Vertical Turbine Pump Applications</button>
+                            NEMA MG1 Table 18-30 - Base Dimensions of Type P and PH Alternating-Current Squirrel-Cage Vertical Hollow Shaft Motors for Vertical Turbine Pump Applications</button>
                         </h2>
                         <div id="panelsStayOpen-collapseFour-2" class="accordion-collapse collapse" aria-labelledby="headingFour-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png"></div></div>
+                                <img src="./images/motor-vert-18-30.png">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-hollow-shaft-18-30.csv
@@ -242,13 +239,12 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-3" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseTwo-3">
-                            Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
+                            NEMA MG 1 Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-3" class="accordion-collapse collapse" aria-labelledby="headingTwo-3">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-1.png "></div></div>
-                                <div class="row mt-2"><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-2.png "></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-3.png "></div></div>
+                                <img src="./images/motor-JM-JP-18.33-18.34.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-table-1-JM-JP-18.33-18.34.csv
