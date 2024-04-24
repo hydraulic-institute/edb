@@ -604,6 +604,9 @@ Some pages within the EDB will be interactive applications - allowing users to g
     -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
         - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
 
+### Note
+There is a special case for *Plastic Pipes* in the `build-full.py` file.  Instead of *Wall Thickness, inches* heading and selector, *Plastic Pipes* has *Minimum Thickness, inches* for the heading and selector.
+
 ---
 
 ## Process for Updated FLANGE Data 
