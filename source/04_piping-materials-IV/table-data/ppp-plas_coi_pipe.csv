@@ -1,5 +1,5 @@
 ,numeric,numeric,text,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Nominal Size,"Outside Diameter, inches",Identification,"Wall Thickness, inches",Pressure Class,"Internal Diameter, inches","Internal Diameter, feet","Internal Area, square feet","e/D, Relative Roughness","e, Absolute Roughness, feet"
+heading,Nominal Size,"Outside Diameter, inches",Identification,"Minimum Thickness, inches",Pressure Class,"Internal Diameter, inches","Internal Diameter, feet","Internal Area, square feet","e/D, Relative Roughness","e, Absolute Roughness, feet"
 data,4,4.8,DR27.5,0.175,150 psi,4.44,0.37,0.1075421,0.0000189,0.000007
 data,4,4.8,DR25,0.192,165 psi,4.404,0.367,0.1058076,0.0000191,0.000007
 data,4,4.8,DR21,0.229,200 psi,4.329,0.3608,0.1022189,0.0000194,0.000007

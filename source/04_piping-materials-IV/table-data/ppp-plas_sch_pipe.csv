@@ -1,5 +1,5 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Nominal Size,"Outside Diameter, inches",Pipe Schedule,"Wall Thickness, inches","Internal Diameter, inches","Internal Diameter, feet","Internal Area, square feet","e/D, Relative Roughness","e, Absolute Roughness, feet"
+heading,Nominal Size,"Outside Diameter, inches",Pipe Schedule,"Minimum Thickness, inches","Internal Diameter, inches","Internal Diameter, feet","Internal Area, square feet","e/D, Relative Roughness","e, Absolute Roughness, feet"
 data, 1/2,0.84,40,0.109,0.615,0.0513,0.002066,0.0001365,0.000007
 data, 1/2,0.84,80,0.147,0.537,0.0448,0.0015739,0.0001564,0.000007
 data, 3/4,1.05,40,0.113,0.817,0.0681,0.0036425,0.0001028,0.000007
