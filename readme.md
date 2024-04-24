@@ -268,7 +268,22 @@ Here is some sample Markdown text with subscript:
 ```
 The US customary symbol N<sub>SS</sub> is sometimes used to designate suction specific speed.
 ```
+#### Special Characters
 
+The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
+
+To use the special characters in the unit-converter or other tables/areas
+		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
+		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
+
+Here is some sample Markdown text with subscript:
+```
+The following is a rho character: <span>&#x03A1;</span>
+```
+
+#### Helpful links:
+- https://www.freeformatter.com/html-entities.html
+- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
 Note - any HTML element can be used within Markdown - if you are not familiar with HTML, you might want to read up on some of the elements.
 
 [https://www.w3schools.com/tags/](https://www.w3schools.com/tags/)
@@ -457,17 +472,6 @@ Like tables, Definition/Reference tables are supported via a *custom extenstion*
 
 Refer to the ***Infroduction, Definitions, References & Resources** Section and the table_of_acronyms-definitions.csv file.
 
-### Superscripting, Subscripting and special characters
-
-1. The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
-2. To use the special characters in the unit-converter or other tables/areas
-		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
-		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
-
-#### Helpful links:
-- https://www.freeformatter.com/html-entities.html
-- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
-
 ### Charts
 Charts - currently only simply line/curve charts - are supported using the same type of CSV files you create tables with.  In many cases, the same CSV file you build a table out of may also be used for curves - and can be referenced that way.
 
@@ -579,9 +583,10 @@ Some pages within the EDB will be interactive applications - allowing users to g
 ### Prep the Data
 1. Download the new Pipe Materials spreadsheet to your Downloads folder.
 2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
-3. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF8-encoded) as: *"Section IV - Pipe-Tube Data.csv"*
-4. Replace the existing files in the `edb/kb/friction-loss` folder with these 2 files.
-5. Open the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
+3. Open the file and select all rows/columns and clear all highlighting.
+4. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF-8 encoded) as: *"Section IV - Pipe-Tube Data.csv"*
+5. Replace the existing files in the `edb/kb/friction-loss` folder with these 2 files.
+6. Open the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
 	-  Add a new row under the header row (which is/should be at row 4)
 	-  On that new row, put the word *"include"* in every column that you want displayed on the tables in **Section IV** on the EDL website.
     -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
