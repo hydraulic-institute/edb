@@ -38,7 +38,7 @@
 ,HI 41.5,Program Guideline for Circulator Pump Energy Rating Program,,
 Hydraulic Institute Reference Guidebooks,Title:: https://www.pumps.org/what-we-do/guidebooks-papers/?pumps-search-product={{REF}},,,
 ,Pump Life Cycle Cost: A Guide to LCC Analysis for Pumping Systems ,,,
-,Engineering Data Book ,,,
+,"Engineering Data Book, Second Edition",,,
 ,Mechanical Seals for Pumps: Application Guidelines ,,,
 ,"Pump Systems Optimization: A Guide for Improved Energy Efficiency, Reliability, and Profitability",,,
 ,Power Plant Pumps: Guidelines for Application & Operation,,,
@@ -59,8 +59,9 @@ Other Standards Organization References,Designation,Title,Site::https://{{SITE}}
 ,ANSI/ASME B16.47 ,Large Diameter Steel Flanges,www.asme.org,
 ,ANSI/ASME B16.5,Pipe Flanges and Flanged Fittings,www.asme.org,
 ,ANSI/AWWA C151/A21.51,"Ductile Iron Pipe, Centrifugally Cast",www.awwa.org,https://www.awwa.org/search/results?s=ANSI/AWWA%20E103
-,ANSI/AWWA E103,Horizontal Centrifugal and Vertical Line Shaft Pumps,www.awwa.org,
 ,ANSI/AWWA C207,Steel Pipe Flanges for Waterworks Service,www.awwa.org,
+,ANSI/AWWA C900,Polyvinyl Chloride (PVC) Pressure Pipe and Fabricated Fittings,www.awwa.org,
+,ANSI/AWWA E103,Horizontal Centrifugal and Vertical Line Shaft Pumps,www.awwa.org,
 ,ANSI H35.2,Dimensional Tolerances for Aluminum Mill Products,www.aluminum.org,https://www.aluminum.org/search?search_api_fulltext=ANSI+H35.2
 ,ASTM B42,"Standard Specification for Seamless Copper Pipe, Standard Sizes",www.astm.org,https://www.astm.org/catalogsearch/result/?q=ASTM+B42
 ,ASTM B43,"Standard Specification for Seamless Red Brass Pipe, Standard Sizes",www.astm.org,
@@ -68,6 +69,8 @@ Other Standards Organization References,Designation,Title,Site::https://{{SITE}}
 ,ASTM B88,Standard Specification for Seamless Copper Water Tube,www.astm.org,
 ,ASTM B360,Standard Specification for Hard Drawn Copper Capillary Tube for Restrictor Applications,www.astm.org,
 ,ASTM B466,Standard Specification for Seamless Copper Copper-Nickel Pipe and Tube,www.astm.org,
+,ASTM D1785,"Standard Specification for Poly Vinyl Chloride (PVC) Plastic Pipe, Schedules 40, 80, and 120",www.astm.org,
+,ASTM D2241,Standard Specification for Poly Vinyl Chloride (PVC) Pressure-Rated Pipe,www.astm.org,
 ,NIST Chemistry WebBook,Chemistry WebBook: Saturation Properties for Water,www.nist.gov,https://www.nist.gov/search?s=NIST+Chemistry+WebBook&index=all-meta-engine
 ,NIST ,Guide for use of International system of units,www.nist.gov,
 ,TAPPI (TIS) 408-4,Friction of paper stock in suspension,www.tappi.org,https://www.tappi.org/Search/?srchtext=TAPPI+%28TIS%29+408-4
