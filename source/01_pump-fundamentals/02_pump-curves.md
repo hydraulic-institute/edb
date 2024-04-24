@@ -12,7 +12,7 @@ A **pump performance curve** is a graphical representation of the head generated
 
 ### Head and Flow Curve
 
-The **head and flow curve** <units us = "is the most commonly used curve to describe pump performance. Pump total head (H) is plotted on the y-axis in <units us = "feet (ft)" metric = "meters (m)"></units>. This is the measure of energy increase per unit weight of the liquid, imparted to the liquid by the pump, and is the difference between the total discharge head and the total suction head. On the x-axis is the flow rate, typically in <units us = "gallons per minute (GPM)" metric = "cubic meters per hour (m^3/h)"/>.
+The **head and flow curve** is the most commonly used curve to describe pump performance. Pump total head (H) is plotted on the y-axis in <units us = "feet (ft)" metric = "meters (m)"></units>. This is the measure of energy increase per unit weight of the liquid, imparted to the liquid by the pump, and is the difference between the total discharge head and the total suction head. On the x-axis is the flow rate, typically in <units us = "gallons per minute (GPM)" metric = "cubic meters per hour (m^3^/h)"/>.
 
 Using head, the performance of the pump can be shown independent of the density of the fluid pumped. 
 
@@ -115,34 +115,17 @@ series_title_index: 0
 ![](./images/iB-5-Relative-Life-expectancy-Operating-Region-and-points.png#center "")
 <div class="figure-label">Fig. 1.B.5</div>
 
-**Best Efficiency Point (BEP):**
-
-A pump’s best efficiency point is defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
+**Best Efficiency Point (BEP):** A pump’s best efficiency point is defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
 of the impeller vanes at entry.
 
-**Preferred Operating Region (POR):**
+**Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region.Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
-The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic
-efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. 
-Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
-
-**Allowable Operating Region (AOR):**
-
-The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate,
-as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life.
-The pump manufacturer should be consulted to define this region. Typically, operating 
-intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions and the types of 
+**Allowable Operating Region (AOR):** The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate, as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life. The pump manufacturer should be consulted to define this region. Typically, operating intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions and the types of 
 issues that can occur when operating outside of the POR and AOR.
 
-**Shut-off Head and Pump Runout:**
-
-These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve.
-Shut-off is the condition of zero flow rate where no liquid is flowing through the pump, but the pump is primed and running. 
-Operating at this point for more than a few seconds can cause serious mechanical issues. Pump Runout is the point at which
-flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when
-operating pumps.
+**Shut-off Head and Pump Runout:** These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve. Shut-off is the condition of zero flow rate where no liquid is flowing through the pump, but the pump is primed and running. Operating at this point for more than a few seconds can cause serious mechanical issues. Pump Runout is the point at which flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when operating pumps.
 
 =^=
 title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Webinar
@@ -371,18 +354,14 @@ Using equation [Eq. 1.B.7b](#eq1b7b), calculate the new values:
 =+=
 [units = us]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
-$$ {67 \over 80} = ({D_2 \over 10.625})^2 $$
-$$ {\sqrt {67 \over 80}} = \sqrt(({D_2 \over 10.625})^2) $$
-$$ 0.915 = {D_2 \over 10.625} $$
-$$ D_2 = 9.72\,in. \approx 9.75\,in. $$
+$$ D_2 = {\sqrt {H_2 \over H_1}} · D_1 $$
+$$ D_2 = {\sqrt {67 \over 80}} · 10.625 = 9.72\,in. \approx 9.75\,in $$
 =+=
 =+=
 [units = metric]
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
-$$ {20.42 \over 24.38} = ({D_2 \over 270})^2 $$
-$$ {\sqrt {20.42 \over 24.38}} = \sqrt(({D_2 \over 270})^2) $$
-$$ 0.915 = {D_2 \over 270} $$
-$$ D_2 = 247\,mm $$
+$$ D_2 = {\sqrt {H_2 \over H_1}} · D_1 $$
+$$ D_2 = {\sqrt {20.42 \over 24.38}} · 270 = 247\,mm $$
 =+=
 
 **Calculate the New Flow**
@@ -393,12 +372,12 @@ Using equation [Eq. 1.B.7a](#eq1b7a), calculate the new values:
 =+=
 [units = us]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
-$$ {Q_2 \over 2000} = {9.75 \over 10.625} $$
-$$ Q_2 = 1835\,GPM $$
+$$ Q_2 = {D_2 \over D_1} · Q_1 $$
+$$ Q_2 = {9.75 \over 10.625} · 2000 = 1835\,GPM $$
 =+=
 =+=
 [units = metric]
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
-$$ {Q_2 \over 454.2} = {247 \over 270} $$
-$$ Q_2 = 416.8\,{m^3}/h $$
+$$ Q_2 = {D_2 \over D_1} · Q_1 $$
+$$ Q_2 = {247 \over 270} · 454.2 = 416.8\,{m^3}/h $$
 =+=

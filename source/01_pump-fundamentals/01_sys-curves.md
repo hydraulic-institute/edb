@@ -209,19 +209,14 @@ totalResistance: 5
 
 Using the static head calculation in [Eq. 1.A.3](#eq1a3), and since both tanks have the same surface pressure, the static head is only dependent on the difference in surface elevation.
 
-<div class="calculation-label">Calc. 1.A.1(a)</div >
-=+=
-$$\Delta h_{stat} = (z_{destination}-z_{supply})$$
-=+=
-
-<div class="calculation-label">Calc. 1.A.1(b)</div >
+<div class="calculation-label">Calc. 1.A.1</div >
 =+=
 [units = us]
-$$ \Delta h_{stat} = (289\,{ft}-24\,{ft}) = 265\,{ft} $$
+$$\Delta h_{stat} = (z_{destination}-z_{supply}) = (289\,{ft}-24\,{ft}) = 265\,{ft}$$
 =+=
 =+=
 [units = metric]
-$$ \Delta h_{stat} = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
+$$ \Delta h_{stat} = (z_{destination}-z_{supply}) = (88.09\,{m}-7.315\,{m}) = 80.77\,{m} $$
 =+=
 
 **Determine the Pipe Friction and Properties**
@@ -243,36 +238,19 @@ This gives a total K factor equal to 3.79
 
 Using the combined frictional loss equation in [Eq. 1.A.7](#eq1a7), we can determine the head loss in <units us = "(feet)" metric = "(meters)"/> as a function of velocity in <units us = "(ft/s)" metric = "(m/s)"/>
 
-<div class="calculation-label">Calc. 1.A.2(a)</div >
-=+=
-$$ \Delta h_f = {({fL \over D} + ΣK) · ({v^2 \over 2·g})}$$
-=+=
-
-<div class="calculation-label">Calc. 1.A.2(b)</div >
+<div class="calculation-label">Calc. 1.A.2</div >
 =+=
 [units = us]
-$$ \Delta h_f = {({0.02 × 1255ft \over 0.3355ft} + 3.79) · ({v^2 \over 2 × 32.17 {ft/sec^2}})} $$
+$$ \Delta h_f = {({fL \over D} + ΣK) · ({v^2 \over 2·g})} = {({0.02 × 1255ft \over 0.3355ft} + 3.79) · ({v^2 \over 2 × 32.2 {ft/s^2}})} = 1.22·v^2$$
 =+=
 =+=
 [units = metric]
-$$ \Delta h_f = {({0.02 × 382.52m \over 0.10226m} + 3.79) · ({v^2 \over 2 × 9.81 {m/sec^2}})} $$
-=+=
-
-<div class="calculation-label">Calc. 1.A.2(c)</div >
-=+=
-[units = us]
-$$ \Delta h_f = 1.22·v^2 $$
-=+=
-=+=
-[units = metric]
-$$ \Delta h_f = 4.01·v^2 $$
+$$ \Delta h_f = {({fL \over D} + ΣK) · ({v^2 \over 2·g})} = {({0.02 × 382.52m \over 0.10226m} + 3.79) · ({v^2 \over 2 × 9.81 {m/s^2}})}= 4.01·v^2 $$
 =+=
 
 **Determine the System Curve**
 
-The system curve can be calculated by varying the flow rate (velocity) using the above values. Combining the static and frictional losses (pipe friction and minor losses)
-we have the following as a function of velocity.
-
+The system curve can be calculated by varying the flow rate (velocity) using the above values. Combining the static and frictional losses (pipe friction and minor losses) we have equation 1.A.8 describing system head as a function of static head and friction head, which the susequent calculations utilize to calculate system head as a function of velocity. 
 
 <div class="equation-label">Eq. 1.A.8</div >
 =+=
@@ -289,8 +267,8 @@ $$\Delta h_{system} = 265{ft} + 1.22·v^2$$
 $$\Delta h_{system} = 80.77{m} + 4.01·v^2$$
 =+=
 
-<units us = "The following can be used to convert a flow rate (Q) in gpm (gallons per minute) to a velocity in ft/sec (with the pipe diameter D in inches)."
-metric = "The following can be used to convert a flow rate (Q) in m^3^/h (cubic meters per hour) to a velocity in m/sec (with the pipe diameter D in meters)."/>
+<units us = "The following can be used to convert a flow rate (Q) in gpm (gallons per minute) to a velocity in ft/s (with the pipe diameter D in inches)."
+metric = "The following can be used to convert a flow rate (Q) in m^3^/h (cubic meters per hour) to a velocity in m/s (with the pipe diameter D in meters)."/>
 
 <div class="calculation-label">Calc. 1.A.3(b)</div >
 =+=
