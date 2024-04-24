@@ -60,6 +60,8 @@ for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
     if col in ['EDB Section','Section Name','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
         COL_TYPES[col] = 'text'
+# Special case for Plastic Pipe
+COL_TYPES['Minimum Thickness, inches'] = 'numeric'
 pipes = []
 for grp in groups:
     print('Working on Group: '+grp)
@@ -174,6 +176,10 @@ for grp in groups:
             if not len(selector):
                 selector = 'NONE'
                 selector_desc = 'NONE'
+            # Special case for Plastic Pipe
+            if 'Plastic' in col_name and "Wall" in selector_desc:
+                selector_desc = selector_desc.replace("Wall","Minimum")
+            
             # material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description'
             pipes.append(Piping(col_name, 
                                 nominal_size,
@@ -184,6 +190,10 @@ for grp in groups:
                                 selector, selector_desc))
 
 
+        # Special case for Plastic Pipe
+        if "Plastic" in col_name and "Wall Thickness, inches" in out_data.columns:
+            out_data.rename(columns={"Wall Thickness, inches":"Minimum Thickness, inches"},inplace=True)
+            
         # Collect the data for the Material Sub Division Name
         all_data = out_data.copy(True)
         print ("Writing CATEGORY ["+col+"] data to "+table_filename) 
