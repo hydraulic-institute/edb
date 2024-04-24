@@ -7895,7 +7895,7 @@
                 }
             ]
         },
-        "selector": "Identification / Wall Thickness / Pressure Class"
+        "selector": "Identification / Minimum Thickness / Pressure Class"
     },
     "Plastic (IPS) Pipe per ASTM D2241": {
         "nominal_sizes": {
@@ -8516,7 +8516,7 @@
                 }
             ]
         },
-        "selector": "Identification / Wall Thickness / Pressure Class"
+        "selector": "Identification / Minimum Thickness / Pressure Class"
     },
     "Plastic (COID) Pipe per ASTM D2241": {
         "nominal_sizes": {
@@ -9316,7 +9316,7 @@
                 }
             ]
         },
-        "selector": "Identification / Wall Thickness / Pressure Class"
+        "selector": "Identification / Minimum Thickness / Pressure Class"
     },
     "Plastic (Schedule) Pipe per ASTM D2241": {
         "nominal_sizes": {
@@ -9593,6 +9593,6 @@
                 }
             ]
         },
-        "selector": "Pipe Schedule / Wall Thickness"
+        "selector": "Pipe Schedule / Minimum Thickness"
     }
 }
