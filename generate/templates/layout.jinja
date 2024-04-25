@@ -432,7 +432,7 @@
 </script>
 
 <script type="text/x-template" id="tank-demo-template"> 
-    <div class="wrap">  
+    <div class="wrap" style="margin-left:1em">  
         <div class="row mb-4">
             <div class="columns">
                 <div class="col-8">
@@ -543,7 +543,7 @@
                     <tr class='hi_no_input' v-for='c in volume_strings'>
                         <td  style="text-align: left">${c.desc}</td>
                         <td style="text-align: right">
-                            ${c.value} ${length_unit}<sup>3</sup>
+                            ${c.value} ${length_unit}&sup3
                         </td>
                         <td colspan="2" style="text-align: right">
                             ${c.converted_value} <span v-html='conversion_unit'></span>

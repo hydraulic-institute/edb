@@ -24,6 +24,22 @@ where:
 
 Values of (K) for valves, fittings and bends may be referenced in Figures. 3.B.1a, 3.B.1b, and 3.B.1c. As indicated in Figures. 3.B.1a and 3.B.1b, flanged valves and fittings usually exhibit lower resistance coefficients than screwed valves and fittings. The resistance coefficients decrease with the increasing size of most valves and fittings.
 
+Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
+
+=+=
+<span class= equation-label >(Eq. 3.A.6)</span>
+$$ h_f = {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
+=+=
+
+where:
+
+- *f* = pipe friction factor
+- L = pipe length in <units us = "feet" metric = "meters"/>
+- D = pipe inside diameter in <units us = "feet" metric = "meters"/>
+- ΣK = sum of the minor losses, which includes losses across valves
+
+Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends. Values of the resistance coefficient (K) may be taken from Fig. 3.B.2. The solid line curves Fig. 3.B.2 are given by Reference 6 with the range of scatter of the test points as indicated. The broken line curves may be used as a guide to probable resistance coefficients for intermediate values of the relative roughness factor ε/D. A value of <units us = "ε = 0.00085 feet" metric = "ε = 0.259 mm"></units>  will be satisfactory for uncoated cast iron and cast steel elbows.
+
 ### Typical Resistance Coefficients for Fittings [2]
 ![](./images/table-32a.png#center "")
 <div class="figure-label">(Fig. 3.B.1a)</div>
@@ -56,22 +72,6 @@ title: Approximate Range of Variation for K [5]
 data: K-variation.csv
 =|=
 <div class="table-label">Tbl. 3.B.1</div>
-
-Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
-
-=+=
-<span class= equation-label >(Eq. 3.A.6)</span>
-$$ h_f = {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
-=+=
-
-where:
-
-- *f* = pipe friction factor
-- L = pipe length in <units us = "feet" metric = "meters"/>
-- D = pipe inside diameter in <units us = "feet" metric = "meters"/>
-- ΣK = sum of the minor losses, which includes losses across valves
-
-Cast iron flanged elbows and drainage-type elbows may be expected to approximate pipe bends. Values of the resistance coefficient (K) may be taken from Fig. 3.B.2. The solid line curves Fig. 3.B.2 are given by Reference 6 with the range of scatter of the test points as indicated. The broken line curves may be used as a guide to probable resistance coefficients for intermediate values of the relative roughness factor ε/D. A value of <units us = "ε = 0.00085 feet" metric = "ε = 0.259 mm"></units>  will be satisfactory for uncoated cast iron and cast steel elbows.
 
 ### Resistance Coefficients for 90 Degree Bends of Uniform Diameter [6]
 

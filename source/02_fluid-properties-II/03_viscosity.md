@@ -35,7 +35,7 @@ velocity distribution will be linear over the distance
 will be directly proportional to the unit shearing force (*τ* = F/A) 
 for all "true" or "Newtonian" fluids. The proportionality factor (μ)
 is the dynamic viscosity. The foregoing may be expressed
-by the equations:
+by the equations
 
 =+=
 <span class= equation-label >(Eq. 2.C.1)</span>
@@ -125,6 +125,15 @@ where:
 level and approximately 45 degrees latitude" 
 metric = "9.81 m/s^2^ at sea level and approximately 45 degrees latitude"/>
 
+=^=
+title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
+description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
+image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL3135CoverFrontBlackBorder107.jpg
+url: https://www.pumps.org/product/ansi-hi-3-1-3-5-2021-rotary-pumps-for-nomenclature-definitions-application-and-operation/
+price: 166.00
+hide_price: true
+=^=
+
 The viscosities of most fluids vary appreciably with
 changes in temperature. The influence of change
 in pressure usually is negligible.
@@ -188,6 +197,7 @@ Universal viscosities and kinematic viscosities in
 centistokes is given in <a href="https://www.astm.org/Standards/D2161.htm" target="_blank">"ASTM Conversion Tables
 for Kinematic and Saybolt Universal Viscosities"</a>
 or by the ASTM Standard, Designation: D446-85a*.
+
 Similar information for Saybolt Furol viscosities
 may be obtained from the ASTM Standard, Designation:
 D2161-87. The respective British counterparts
@@ -198,33 +208,14 @@ on the continent of Europe. Viscosimeters
 such as the Brookfield are particularly useful with
 non-Newtonian fluids. There are many other viscosimeters
 for special purposes, discussion of
-which is beyond the scope of this Manual. Viscosity
-conversion tables for use with the above described
-viscosimeters are shown below. A
-viscosity blending chart for use with oils is also shown
-below. Let oil (A) have the higher viscosity and oil
-(B) the lower viscosity. Mark the viscosity of (A) and
-(B) on the right and left hand scales, respectively,
-and draw a straight line connecting the marks as
-shown. The viscosity of any blend of (A) and (B) will
-be shown by the intersection of the vertical line
-representing the percentage composition and the
-line described above. 
-
+which is beyond the scope of this Manual. 
 
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-=^=
-title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
-description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
-image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL3135CoverFrontBlackBorder107.jpg
-url: https://www.pumps.org/product/ansi-hi-3-1-3-5-2021-rotary-pumps-for-nomenclature-definitions-application-and-operation/
-price: 166.00
-hide_price: true
-=^=
+Viscosity conversion tables for use with the above described viscosimeters are in tables 2.C.1, 2.C.2 and 2.C.3. A viscosity blending chart for use with oils is also provided in Fig. 2.C.2. To use this blending chart let oil (A) have the higher viscosity and oil (B) the lower viscosity. Mark the viscosity of (A) and (B) on the right and left hand scales, respectively,and draw a straight line connecting the marks as shown. The viscosity of any blend of (A) and (B) will be shown by the intersection of the vertical line representing the percentage composition and the line described above. 
 
-### Figure 1 – Viscosity Blending Chart [1]
+### Viscosity Blending Chart [1]
    
 ![](./images/IIC-2.png#center "")
 <div class="figure-label">(Fig. 2.C.2)</div>

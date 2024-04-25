@@ -40,8 +40,8 @@ Vue.component('tank-demo', {
           length_unit: 'ft',
           length_types: ['in','ft','m','mm'],
           length_multiplier: [1,0.083333,0.0254,25.4],
-          conversion_unit: 'ft<sup>3</sup>',
-          conversion_types: ['mm<sup>3</sup>', 'in<sup>3</sup>', 'ft<sup>3</sup>', 'm<sup>3</sup>', 'Gallons', 'Barrels (Oil)', 'Liters'],
+          conversion_unit: 'ft&sup3',
+          conversion_types: ['mm&sup3', 'in&sup3', 'ft&sup3', 'm&sup3', 'Gallons', 'Barrels (Oil)', 'Liters'],
           swap_conv: false,
           conversion_mapper: {'mm': 'mm&sup3', 'in': 'in&sup3', 'ft': 'ft&sup3', 'm': 'm&sup3', 'Gallons': 'gallon (US)', 'Barrels (Oil)': 'Barrels (petroleum)', 'Liters': 'Liter (L)'},
           
@@ -73,6 +73,7 @@ Vue.component('tank-demo', {
               for (var i=0;i<response.data.length;i++) {
                 if (response.data[i].measure.toLowerCase() == "volume") {
                   var data=response.data[i].units;
+                  //Generate the conversion map from the json file
                   for (var j=0;j<data.length;j++) {
                     v.vol_conversions[data[j].label]=data[j].factor;
                   }
@@ -263,8 +264,9 @@ Vue.component('tank-demo', {
       convert_val: function(in_string) {
         if (!in_string.length) return '';
         var from_unit = this.conversion_mapper[this.length_unit];
-        var to_unit = this.conversion_mapper[this.conversion_unit.replace('<sup>3</sup>','')];
+        var to_unit = this.conversion_mapper[this.conversion_unit.replace('&sup3','')];
         if ( to_unit == from_unit) { return in_string; }
+        //Get the conversion constants from the mapping
         const standard = 1 / this.vol_conversions[from_unit];
         const conv_factor = (standard * this.vol_conversions[to_unit]);
         if ((standard.toString() == "NaN") || (conv_factor.toString() == "NaN")) {
