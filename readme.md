@@ -34,6 +34,8 @@ Once installed, you can open the `edb` directory.  **Important** - to develop co
 
 Visual Studio Code allows you to open a folder - `edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
 
+<div style="page-break-after: always;"></div>
+
 ## Python Setup
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
 
@@ -50,22 +52,35 @@ Next, execute the following commands one by one. There are dependencies for the 
 *Note, depending on how Python was installed, particularly on Windows, you may need to type `python`, and not `python3` on the command line.  Same with `pip` / `pip3`.*
 
 ```
-pip3 install virtualenv
-python3 -m venv env
+#Install the Virtual Environment
+$> pip3 install virtualenv
+$> python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
-source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
+#Activate the Virtual Environment
+$> env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+$> source env/bin/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
-pip3 install Jinja2   
-pip3 install lesscpy
-pip3 install Markdown
-pip3 install watchdog
-pip3 install htmlmin
-pip3 install awscli --upgrade 
-pip3 install s3-deploy-website --upgrade
-pip3 install pypandoc
-pip3 install selenium
+#Either install requirements.txt file:
+$> pip3 install -r requirements.txt
+
+#OR Install each library separately:
+$> pip3 install Jinja2   
+$> pip3 install lesscpy
+$> pip3 install Markdown
+$> pip3 install watchdog
+$> pip3 install htmlmin
+$> pip3 install pypandoc
+$> pip3 install selenium
+$> pip3 install six
+$> pip3 install pandas
 ```
+
+Select the Python Interpreter:
+- Press **Ctrl + Shift + P (or Cmd + Shift + P on macOS)** to open the Command Palette.
+- Type **Python select interpreter** and press Enter.
+- In the list of available interpreters, you should see the Python interpreter from your virtual environment. It will have the python virtual environment (env) that you created above in the path.
+- Select the desired Python interpreter from the list
+
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
 To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.
@@ -232,8 +247,11 @@ There are situations where you will be placing quantity data within text itself,
 **Example**
 The Fluid Property section has an Auxiliary Data page, which displays Enthalpy reference state.  You can see this implemented using the `units` element, embedded right into the markdown text.
 
+If there is no text following the tag, you can end it with `/>`.  Otherwise, you need the ending `</units>` tag.
 ```
 H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."/>
+
+H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."></units> followed by more text.
 ```
 
 Note that no actual unit conversion are ever being done by the app - you are responsible for adding the text for both unit sets.
@@ -250,7 +268,22 @@ Here is some sample Markdown text with subscript:
 ```
 The US customary symbol N<sub>SS</sub> is sometimes used to designate suction specific speed.
 ```
+#### Special Characters
 
+The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
+
+To use the special characters in the unit-converter or other tables/areas
+		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
+		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
+
+Here is some sample Markdown text with subscript:
+```
+The following is a rho character: <span>&#x03A1;</span>
+```
+
+#### Helpful links:
+- https://www.freeformatter.com/html-entities.html
+- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
 Note - any HTML element can be used within Markdown - if you are not familiar with HTML, you might want to read up on some of the elements.
 
 [https://www.w3schools.com/tags/](https://www.w3schools.com/tags/)
@@ -301,7 +334,7 @@ $$ \sqrt {x + 9} $$
 ### Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
 
-**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the readme.pdf in the `kb/friction-loss` folder.
+**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the `Process for Updated PIPE MATERIALS Data` below
 
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
@@ -324,6 +357,8 @@ The block above would create a table in the page titled "Data Points".  The `dat
 Including **hide_units** in the markdown will HIDE the units block on the horizontal nav bar otherwise, the Units block will be VISIBLE.
 - **scrolling: false** - 
 Setting to "false" will generate a static table vs. a scrolling table, otherwise tables WILL be scrolling.
+- **fixed-columns: columns** -
+Enter the number of columns on the left side of the table to fix.  
 - **special: style: value;** -
 Special allows you to set special styles for your table just as you would in html.  Use the same format:  
 Ex:  special: height:600px;width:100%;
@@ -402,21 +437,40 @@ Notice the leading comma - this is because the first column on the first row is 
 
 Each subsequent row is either a heading or data.
   
-### Definitions Tables
+### Definitions and References Tables
+*(Section 00-Introduction, Definitions, References & Resources)*
 
-Like tables, Definition tables are supported via a *custom extenstion* to markdown syntax. To include a definiton table, you must define a `=defs=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=defs=`.
-Definition Tables are generated and have their own template.  They will fill 100% of the screen and will word-wrap automatically.
+Like tables, Definition/Reference tables are supported via a *custom extenstion* to markdown syntax. To include a definiton table, you must define a `=defs=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=defs=`.
 
-### Superscripting, Subscripting and special characters
+***Definition and Reference Tables are generated automatically by following these instructions:***
 
-1. The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
-2. To use the special characters in the unit-converter or other tables/areas
-		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
-		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
+1.	All tables should be saved in CSV UTF-8 character set format.  It's easiest to use LibreOffice to open CSV files (this is a free download available at: https://www.libreoffice.org) and save them in the appropriate format. Especially if you use special characters (like Delta, rho, superscripting, etc).
+2. When opening a .CSV file, select the "Unicode - UTF-8" character set. 
 
-#### Helpful links:
-- https://www.freeformatter.com/html-entities.html
-- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
+***Reference & Resource Tables***
+
+1. The first row must contain Section information as noted in the following bullets.  
+   - There can be multiple Sections in a single CSV file. You can see this in any of the subsections under the Intro, Definitions, Resources & References Section on the website.
+2. *Column A* should contain a Section Title (*"Hydraulic Institute Reference Standards and Guidelines",  "Pump Types"*, etc) to separate the sections. The Section name will be displayed on the webpage. Please do not put any other information in *Column A* other than a section title.
+3. Continuing on the same row as the Section Title (*Column A*), *Column B* and on should contain that section's table headers.
+   - Any comments should come after the last column of actual data.  The heading for a comment column can be one of: *Comment, Search, or an empty string*.  The first column that matches any of these strings will be ignored and no more columns will be parsed for that section.
+4. Data should follow the Section/Header row and should be aligned underneath the appropriate header title.
+5. To automatically generate a consistent URL for a column, the header for that column should be followed by "::" and then the URL. Insert *"{{REF}}"* into the URL to designate where the column data should be inserted into the URL.  A link will automatically be generated using the data in the column.
+6. To generate a link to a Section in the EDL navigation sidebar, use the word *"Section"* in the column header title. This will tell the code to generate a link to the specific EDL page.  The data for that column should use the EDL navigation sidebar section name EXACTLY as it appears.  If it's not a unique section name (ex: General), then include the parent name followed by *:* and then the section name. A link will automatically be generated to the specific section.
+
+***Acronyms & Definitions Tables***
+
+1. Acronyms and Definitions tables are unique in that page tags are generated for Acronyms and links are generated in the Definitions table that link back to the tags automatically. All notes above in the *"Resources & References Tables"* section apply to this section.
+2. ACRONYMS - *Column A* of the first row will be the section name as noted above. If the title of the section is *"Acronyms"*, the section will be parsed as Acronyms.
+   - *Column B* will be the first heading and should be *"Term"*.  The data under this heading should be an acronym.  The acronym will be linked to the Definition in the 2nd table (below).
+   - *Column C* should be *"Description"* and the data under this heading should spell out the Acronym in *Column B*	
+   - Any other columns after *Column C* should follow the guidelines in *"Resources & References Tables"*.
+3. DEFINITIONS - *Column A*, the section title, should be *"Definitions"*.
+   - *Column B* will be the first heading and should be *"Term"* (as above). The data should be terms you want to define. If an acronym from th Acronyms section applies to a Term, make sure to include the Acronym after the title in parenthesis.
+   - *Column C* should be *"Description"* as above and should describe the term.
+   - Links will be autogenerated from the Acronym table to the Definitions table.
+
+Refer to the ***Infroduction, Definitions, References & Resources** Section and the table_of_acronyms-definitions.csv file.
 
 ### Charts
 Charts - currently only simply line/curve charts - are supported using the same type of CSV files you create tables with.  In many cases, the same CSV file you build a table out of may also be used for curves - and can be referenced that way.
@@ -447,6 +501,11 @@ For an image that is saved in the same directory as the text content you are dev
 
 ```
 ![System Curve](./images/system-curves-001.png "System Curve")
+```
+
+To center the image on the page, add the `#center` element to the image:
+```
+![System Curve](./images/system-curves-001.png#center "System Curve")
 ```
 
 By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
@@ -524,9 +583,10 @@ Some pages within the EDB will be interactive applications - allowing users to g
 ### Prep the Data
 1. Download the new Pipe Materials spreadsheet to your Downloads folder.
 2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
-3. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF8-encoded) as: *"Section IV - Pipe-Tube Data.csv"*
-4. Replace the existing files in the `edl/kb/friction-loss` folder with these 2 files.
-5. Open the `edl/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
+3. Open the file and select all rows/columns and clear all highlighting.
+4. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF-8 encoded) as: *"Section IV - Pipe-Tube Data.csv"*
+5. Replace the existing files in the `edb/kb/friction-loss` folder with these 2 files.
+6. Open the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
 	-  Add a new row under the header row (which is/should be at row 4)
 	-  On that new row, put the word *"include"* in every column that you want displayed on the tables in **Section IV** on the EDL website.
     -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
@@ -543,6 +603,9 @@ Some pages within the EDB will be interactive applications - allowing users to g
 	-  These tables are referenced in the *.md files in `source/04_piping-materials-IV`
     -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
         - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
+
+### Note
+There is a special case for *Plastic Pipes* in the `build-full.py` file.  Instead of *Wall Thickness, inches* heading and selector, *Plastic Pipes* has *Minimum Thickness, inches* for the heading and selector.
 
 ---
 
@@ -726,11 +789,21 @@ Install texlive at:  https://tug.org/texlive/windows.html
 # Creating README PDF using the Markdown PDF Extension
 Install the `Markdown PDF` extension in Visual Studio Code
 
-<img src='./images/MarkdownExt.png'/>
+<img src='./images/MarkdownExt.png'/><br><br>
 
-- Open the markdown file in Visual Studio Code
-- Press `F1` and type `export` and you should see `markdown...` options
+Open the markdown file in Visual Studio Code
 
-<img src='./images/f1MarkdownOptions.png'>
+**Either:**
+- Click in the searchbar at the top of VSC and select
+`Show and Run Commands`<br><br>
+
+<img src='./images/f1MarkdownInfo.jpg'><br><br>
+**OR**
+- Press `F1`<br><br>
+
+**Finally:**
+- Type `export` and you should see `markdown...` options
+
+<img src='./images/f1MarkdownOptions.png'><br><br>
 
 - Select whatever option you want and it should download the converted file to the same directory as your markdown file

@@ -1,0 +1,9 @@
+echo "Build unit-conversion data"
+python kb/unit-converter/build.py
+echo "DONE"
+echo "Press any key to continue..."
+read ans
+echo ""
+echo "Build friction-loss data"
+python kb/friction-loss/build-full.py
+echo "DONE"

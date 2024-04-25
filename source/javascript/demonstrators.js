@@ -235,7 +235,7 @@ Vue.component("demo-tank", {
         this.Max=this.levelMax-this.levelMin;
         const levelYSpacing = this.maxHeight / this.Max;
         //console.log("levelYSpacing: "+levelYSpacing);
-        const tickWidth = this.knobRadius + 6;
+        const tickWidth = this.knobRadius + this.maxWidth;
         const levelTickValues = _.range(this.Min, this.Max+1);
         //console.log("tick values:"+levelTickValues);
         const calc_stageNormalWidth = this.maxWidth + this.knobRadius + 2;
@@ -333,7 +333,7 @@ Vue.component("demo-tank", {
                         newPos.y = this.tank.knob.absolutePosition().y;
                         newPos.x = maxVal;
                     }
-
+                    console.log("Knob: "+ JSON.stringify(newPos));
                     return newPos;
                 }
             }),
@@ -509,11 +509,14 @@ Vue.component("demo-tank", {
             const levelPosition = this.calculateLevelPos(level);
 
             this.tank.waterLevel.absolutePosition(levelPosition);
-            //console.log("rendertank - placement "+this.placement+ JSON.stringify(levelPosition));
+            console.log("rendertank - placement "+this.title+" - "+this.placement+ JSON.stringify(levelPosition));
             let x_level=levelPosition.x
             if (!this.isHorizontal) {
-              x_level=levelPosition.x+(this.tank.tank.width()/2);
+              //Puts it in the middle
+              let push_x= this.placement == "upper" ? 1 : 0;
+              x_level=levelPosition.x+(this.maxWidth*push_x);
             }
+            console.log("X-Level: "+x_level+" Y-Level: "+levelPosition.y+" Height: "+levelPosition.newHeight)
             this.tank.knob.absolutePosition({x:x_level, y:levelPosition.y, newHeight:levelPosition.newHeight});
             this.tank.waterLevel.size({ width: this.maxWidth, height: levelPosition.newHeight});
         }
@@ -683,6 +686,7 @@ Vue.component("demo-flow-line", {
 Vue.component("demo-pump-inputs", {
   template: `
   <div class="wrap">  
+  <p style="color:red;font-size:smaller"><i>Use the red knobs to adjust the system parameters</i></p>
   <div class="row mb-2">
     <div v-if='pumpType === "plot"' class="col-8"></div>
     <div v-else-if='pumpType === "system"' class="col-12" align="right" id="upper-tank-pressure-id" style="padding: 0px;">
@@ -870,7 +874,7 @@ Vue.component("demo-input-slider", {
   props: ['value', 'label', 'min', 'max'],
   template: `
   <div class="row">
-    <label class="col-sm-1">{{ label }}</label>
+    <span class="col-sm-1">{{ label }}</span>
     <div class="col-sm-3">
       <input type="range" class="form-range" v-bind:value="value" v-bind:min="min" v-bind:max="max" v-on:input="$emit('update:value', parseInt($event.target.value))"></input>
     </div>

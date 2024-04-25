@@ -1,6 +1,6 @@
 -----
 title: C) Viscosity
-date: December 3rd, 2023
+date: April 19th, 2024
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -23,7 +23,7 @@ target="_blank">ANSI/HI 9.6.7</a> acts as a guideline that explains these effect
 
 There are two basic viscosity parameters:
 **dynamic (*or absolute*) viscosity** and **kinematic viscosity**.
- (See the <a href="/tools/viscosity.html" target="_blank">Kinematic and Dynamic Viscosity Conversion Tool</a> to perform viscosity conversions.)
+ (See the <a href="/tools/viscosity.html">Kinematic and Dynamic Viscosity Conversion Tool</a> to perform viscosity conversions.)
 The dynamic viscosity may be defined with the aid of Fig. 2.C.1 which 
 shows two parallel plane surfaces of area (A) separated a distance
 (d) and the space between completely filled
@@ -63,7 +63,7 @@ gram per centimeter-second. It usually is more
 convenient to express numerical values in centipoise
 such that 100 centipoise equal one poise."/>
 
-![](./images/IIC-1_Fig-1.png "")
+![](./images/IIC-1_Fig-1.png#center "")
 <div class="figure-label">(Fig. 2.C.1)</div>
 
 The kinematic viscosity (𝜈) may be obtained by dividing
@@ -125,6 +125,15 @@ where:
 level and approximately 45 degrees latitude" 
 metric = "9.81 m/s^2^ at sea level and approximately 45 degrees latitude"/>
 
+=^=
+title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
+description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
+image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL3135CoverFrontBlackBorder107.jpg
+url: https://www.pumps.org/product/ansi-hi-3-1-3-5-2021-rotary-pumps-for-nomenclature-definitions-application-and-operation/
+price: 166.00
+hide_price: true
+=^=
+
 The viscosities of most fluids vary appreciably with
 changes in temperature. The influence of change
 in pressure usually is negligible.
@@ -132,7 +141,7 @@ in pressure usually is negligible.
 The viscosities of fluids, such as mineral oil and
 water, are unaffected by the magnitude and kind
 of motion to which they may be subjected as long
-as the temperature remains constant. Thus the
+as the temperature remains constant. Thus, the
 ratio of shear stress to shear rate is a constant for
 all shear rates, is independent of time, and zero
 shear rate exists only at zero shear stress; such a
@@ -140,7 +149,7 @@ fluid is said to be **Newtonian.**
 
 When the ratio of shear stress to shear rate increases
 as the shear rate increases, reversibly and
-independent of time, a fluid is said to be **dilatent.**
+independent of time, a fluid is said to be **dilatant.**
 
 When the shear stress to shear rate ratio is constant
 for shear rates above zero, is independent of
@@ -158,7 +167,7 @@ When the ratio of shear stress to shear rate decreases
 as shear rate increases and is time dependent
 in that this ratio increases back to its "rest"
 value gradually with lapse of time at zero shear
-rate and stress, and decreases to a limit value
+rate and stress and decreases to a limit value
 gradually with lapse of time at constant shear rate,
 a fluid is said to be **thixotropic.**
 
@@ -188,6 +197,7 @@ Universal viscosities and kinematic viscosities in
 centistokes is given in <a href="https://www.astm.org/Standards/D2161.htm" target="_blank">"ASTM Conversion Tables
 for Kinematic and Saybolt Universal Viscosities"</a>
 or by the ASTM Standard, Designation: D446-85a*.
+
 Similar information for Saybolt Furol viscosities
 may be obtained from the ASTM Standard, Designation:
 D2161-87. The respective British counterparts
@@ -198,35 +208,16 @@ on the continent of Europe. Viscosimeters
 such as the Brookfield are particularly useful with
 non-Newtonian fluids. There are many other viscosimeters
 for special purposes, discussion of
-which is beyond the scope of this Manual. Viscosity
-conversion tables for use with the above described
-viscosimeters are shown below. A
-viscosity blending chart for use with oils is also shown
-below. Let oil (A) have the higher viscosity and oil
-(B) the lower viscosity. Mark the viscosity of (A) and
-(B) on the right and left hand scales, respectively,
-and draw a straight line connecting the marks as
-shown. The viscosity of any blend of (A) and (B) will
-be shown by the intersection of the vertical line
-representing the percentage composition and the
-line described above. 
-
+which is beyond the scope of this Manual. 
 
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-=^=
-title: Rotary Pumps for Nomenclature, Definitions, Application, and Operation
-description: This standard offers a basic educational overview on rotary pumps, design and application considerations related to the selection of the right rotary pump for a specific industry use as well as the installation, maintenance and operating procedures.
-image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL3135CoverFrontBlackBorder107.jpg
-url: https://www.pumps.org/product/ansi-hi-3-1-3-5-2021-rotary-pumps-for-nomenclature-definitions-application-and-operation/
-price: 166.00
-hide_price: true
-=^=
+Viscosity conversion tables for use with the above described viscosimeters are in tables 2.C.1, 2.C.2 and 2.C.3. A viscosity blending chart for use with oils is also provided in Fig. 2.C.2. To use this blending chart let oil (A) have the higher viscosity and oil (B) the lower viscosity. Mark the viscosity of (A) and (B) on the right and left hand scales, respectively, and draw a straight line connecting the marks as shown. The viscosity of any blend of (A) and (B) will be shown by the intersection of the vertical line representing the percentage composition and the line described above. 
 
-### Figure 1 – Viscosity Blending Chart [1]
+### Viscosity Blending Chart [1]
    
-![](./images/IIC-2.png "")
+![](./images/IIC-2.png#center "")
 <div class="figure-label">(Fig. 2.C.2)</div>
 
 
@@ -239,16 +230,20 @@ Saybolt Universal column.
 =|=
 title: Conversions
 data: visc-conv-1.csv
+fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 2.C.1</div>
 
 
 =|=
 data: visc-conv-2.csv
+fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 2.C.2</div>
 
 
 =+=
-<span class= equation-label >*</span>
+<span class= equation-label >(Eq. 2.C.4)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
 =+=
 
@@ -259,6 +254,7 @@ expression can be used which will be sufficiently
 accurate for most calculations:
 
 =+=
+<span class= equation-label >(Eq. 2.C.5)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Specific\,Gravity} $$
 =+=
 
@@ -269,6 +265,7 @@ For values of 70 centistokes and above, use the
 following conversion:
 
 =+=
+<span class= equation-label >(Eq. 2.C.6)</span>
 $$ SSU = centistokes ·  4.635 $$
 =+=
 
@@ -282,6 +279,7 @@ title: Conversion Factors
 data:SSU-conv.csv
 scrolling: false
 =|=
+<div class="table-label">Tbl. 2.C.3</div>
 
 ### References
 1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIC-2.

@@ -1,6 +1,6 @@
 -----
 title: B) Solids and Slurries
-date: December 3rd, 2023
+date: April 19th, 2024
 description: Properties of solid mixtures and slurries. Determining specific gravity of mixture or slurry.
 -----
 
@@ -36,10 +36,10 @@ $$ S_{m} = {{2.2 × 1.2} \over {2.2 + 0.35 × (1.2 - 2.2)}} = 1.43 $$
 specific gravities of solid liquid mixtures are shown
 below.
 
-![](./images/CSG.png "")
+![](./images/CSG.png#center "")
 <div class="figure-label">(Fig. 2.B.1)</div>
 
-Where pumps are to be applied to mixtues which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
+Where pumps are to be applied to mixtures which are both corrosive and abrasive, the predominant factor causing wear should be identified and the materials of construction selected accordingly. 
 This often results in a compromise and in many cases can only be decided as a result of test or operational experience.
 <a href="https://www.pumps.org/product/12-1-12-6-2022/" target="_blank">ANSI/HI 12.1-12.6 – Rotodynamic Centrifugal Slurry Pumps</a> contains more information regarding the operation 
 and applications of slurry pumps.
@@ -60,7 +60,7 @@ $$ C_{v} = {volume\, of\, dry\, solids \over { volume\, of\, dry\, solids\, + vo
 
 A nomograph for the relationship of concentration
 to specific gravity of dry solids in water is shown in
-Figure 2.
+Figure 2.B.3.
 
 **c)** Slurry flow requirements can be determined from
 the expression:
@@ -122,7 +122,7 @@ unless it can be made to exceed that of the particles.
 The effective abrasion resistance of any metal will
 depend on its position on the mohs or knoop
 hardness scale. The relationships of various common
-ore minerals and metals is shown in Figure 1.
+ore minerals and metals is shown in Figure 2.B.2.
 
 Wear increases rapidly when the particle size increases.
 The life of the pump parts can be extended
@@ -131,7 +131,7 @@ by choosing the correct materials of construction.
 Sharp angular particles cause about twice the wear
 of rounded particles.
 
-Austinetic maganese steel is used when pumping
+Austenitic manganese steel is used when pumping
 large dense solids where the impact is high.
 
 Hard irons are used to resist erosion and to a lesser
@@ -146,21 +146,21 @@ to cutting erosion but impeller tip velocities
 are usually restricted to <units us = "100 ft/s." metric = "30 m/s."/> 
 
 Classification of pumps according to particle size is
-shown in Figure 3.
+shown in Figure 2.B.4.
 
-### Figure 1 – Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
+### Approximate Comparison of Hardness Values of Common Ores and Minerals [1]
 
-![](./images/IIB-4.png "")
+![](./images/IIB-4.png#center "")
 <div class="figure-label">(Fig. 2.B.2)</div>
 
-### Figure 2 – Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
+### Nomograph of the Relationship of Concentration to Specific Gravity in Aqueous Slurries [2]
 
-![](./images/IIB-5.png "")
+![](./images/IIB-5.png#center "")
 <div class="figure-label">(Fig. 2.B.3)</div>
 
-### Figure 3 – Classification of Pumps According to Solid Size [3]
+### Classification of Pumps According to Solid Size [3]
 
-![](./images/IIB-6-new.jpg "")
+![](./images/IIB-6-new.jpg#center "")
 <div class="figure-label">(Fig. 2.B.4)</div>
 
 ### References

@@ -1,6 +1,6 @@
 -----
 title: A) Steel Pipe
-date: November 26th, 2023
+date: April 19th, 2024
 description: Dimensions of wrought steel pipes.
 hide_units: true
 -----
@@ -14,12 +14,12 @@ price: 59.00
 hide_price: true
 =^=
 
-* Note:  All dimensions are nominal
-* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+**Note: Internal diameter and area are calculated based on nominal values**
 
 ## Pipe Dimensions: Steel pipe - welded and seamless wrought per ANSI/ASME B36.10M-2018
 
 =|=
 data: sp-stee_pipe_weld_and_seam_wrou.csv
-special: height:600px;
+fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 4.A.1</div>

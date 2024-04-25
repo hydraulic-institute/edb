@@ -1,6 +1,4 @@
-import math
 import pandas as pd
-from pandas import ExcelFile
 from collections import namedtuple
 import pprint
 import json
@@ -62,6 +60,8 @@ for col in ALL_COLUMNS:
     COL_TYPES[col] = 'numeric'
     if col in ['EDB Section','Section Name','Group','Group Name','Sub-Division','Sub-Division Name','Identification','Form','Type']:
         COL_TYPES[col] = 'text'
+# Special case for Plastic Pipe
+COL_TYPES['Minimum Thickness, inches'] = 'numeric'
 pipes = []
 for grp in groups:
     print('Working on Group: '+grp)
@@ -81,7 +81,10 @@ for grp in groups:
         # Clean up many spaces
         col_cleaned = " ".join(col.split()).strip()
         print('Working on: '+col_cleaned)
-        col_name = col_cleaned + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+        if not isNan(grp_data['STANDARD 1'][grp_data.index[0]]) and len(grp_data['STANDARD 1'][grp_data.index[0]]):
+            col_name = col_cleaned + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+        else:
+            col_name = col_cleaned
         col_name=' '.join(col_name.split())
         #col_name = col_name.replace("(","")
         data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
@@ -121,14 +124,15 @@ for grp in groups:
             df_copy.to_csv(filename, header=False, index=False)
 
         # Weed out any Wall Thickness that are not values
-        out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
-                               (out_data['Wall Thickness, inches'] == '-') | 
-                               (out_data['Wall Thickness, inches'] == 'c')].index, inplace=True)
-       
-        data.drop(data[(data['Wall Thickness, inches'] == '--') | 
-                                (data['Wall Thickness, inches'] == '-') | 
-                                (data['Wall Thickness, inches'] == 'c')].index, inplace=True)
+        if 'Wall Thickness, inches' in out_data.keys():
+            out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
+                                (out_data['Wall Thickness, inches'] == '-') | 
+                                (out_data['Wall Thickness, inches'] == 'c')].index, inplace=True)
         
+            data.drop(data[(data['Wall Thickness, inches'] == '--') | 
+                                    (data['Wall Thickness, inches'] == '-') | 
+                                    (data['Wall Thickness, inches'] == 'c')].index, inplace=True)
+            
         # Go through the data and generate the data for the json file & Friction Calculator
         # Get indexes for the items
         calc_indexes=dict()
@@ -172,6 +176,10 @@ for grp in groups:
             if not len(selector):
                 selector = 'NONE'
                 selector_desc = 'NONE'
+            # Special case for Plastic Pipe
+            if 'Plastic' in col_name and "Wall" in selector_desc:
+                selector_desc = selector_desc.replace("Wall","Minimum")
+            
             # material nominal_size nominal_od nominal_id nominal_thickness epsilon selector selector_description'
             pipes.append(Piping(col_name, 
                                 nominal_size,
@@ -182,6 +190,10 @@ for grp in groups:
                                 selector, selector_desc))
 
 
+        # Special case for Plastic Pipe
+        if "Plastic" in col_name and "Wall Thickness, inches" in out_data.columns:
+            out_data.rename(columns={"Wall Thickness, inches":"Minimum Thickness, inches"},inplace=True)
+            
         # Collect the data for the Material Sub Division Name
         all_data = out_data.copy(True)
         print ("Writing CATEGORY ["+col+"] data to "+table_filename) 
@@ -196,7 +208,7 @@ with open('kb/friction-loss/processed.csv', 'w') as out:
     csv_out.writerow(('material', 'nominal_size', 'nominal_od', 'nominal_id',
                       'nominal_thickness', 'epsilon', 'selector_label', 'selector_value'))
     for p in pipes:
-        if len(p.nominal_od):
+        if not isNan(p.nominal_od) and len(p.nominal_od):
             #if not math.isnan(p.nominal_od):
             csv_out.writerow((p.material, p.nominal_size, p.nominal_od, p.nominal_id,
                               p.nominal_thickness, p.epsilon, p.selector, p.selector_description))

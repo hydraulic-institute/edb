@@ -21,7 +21,7 @@ This curve can be affected by many factors.
 
 The following analytical method for determining
 pipe frictional losses is based on the recently published
-TAPPI Technical Information Sheet (TIS) 408-4 [1], 
+TAPPI Technical Information Sheet (TIS) 408-4 [1] 
 and is applicable to stock consistencies
 (oven-dried) from 2 to 6 percent. Normally,
 stock consistencies of less than 2% (oven-dried)
@@ -35,20 +35,26 @@ methods previously issued.
 
 ### II. Background
 
-Figure 3.E.1 shows typical frictional loss curves for two different 
-consistencies (C<sub>2</sub> > C<sub>1</sub>) of chemical pulp and mechanical
-pulp, respectively.
+Figures 3.E.1 (chemical pulp) and 3.E.2 (mechanical pulp) show typical frictional loss curves for two different 
+consistencies (C<sub>2</sub> > C<sub>1</sub>).
 
-![](./images/fig1_2.png "")
+**Friction loss curve for chemical pulp C<sub>2</sub> > C<sub>1</sub>** 
+![](./images/fig3_E_1.png#center "")
+<div class="figure-label">(Fig. 3.E.1)</div>
+**Friction loss curve for mechanical pulp C<sub>2</sub> > C<sub>1</sub>** 
+![](./images/fig3_E_2.png#center "")
 <div class="figure-label">(Fig. 3.E.1)</div>
 
-The frictional loss curve for chemical pulp can be conveniently divided
-into three regions, as illustrated by the shaded areas of Figure 3.
+The frictional loss curve for chemical pulp can be conveniently divided into three regions, as illustrated by the shaded areas of Figures 3.E.3 and 3.E.4.
 
-![](./images/fig3_4.png "")
-<div class="figure-label">(Fig. 3.E.2)</div>
+**Friction loss curve for chemical pump, shaded to show individual regions**
+![](./images/fig3_E_3.png#center "")
+<div class="figure-label">(Fig. 3.E.3)</div>
+**Friction loss curve for mechanical pump, shaded to show individual regions**
+![](./images/fig3_E_3.png#center "")
+<div class="figure-label">(Fig. 3.E.4)</div>
 
-Regions shown in Fig. 3.E.2 (left) may be described as follows:
+Regions shown in Fig. 3.E.3 may be described as follows:
 
 **Region 1**:
 (Curve AB) is a linear region where frictional
@@ -61,7 +67,7 @@ v<sub>max</sub>.
 **Region 2**:
 (Curve BCD) shows an initial decrease
 in frictional losses (to Point C) after which
-the frictional losses again increases. The
+the frictional losses again increase. The
 intersection of the pulp frictional loss
 curve and the water frictional loss curve
 (Point D) is termed the onset of drag
@@ -80,11 +86,9 @@ Regions 2 and 3 are separated by the frictional loss
 curve for water, which is a straight line with a slope
 approximately equal to 2.
 
-The frictional loss curve for mechanical pulp, as illustrated
-in Figure 3.E.2 (right), is divided into only two regions:
-Regions 1 and 3. For this pulp type, the frictional loss
-curve crosses the water curve v<sub>w</sub> and there is no true
-v<sub>max</sub>·
+The frictional loss curve for mechanical pulp, as illustrated in Figure 3.E.4 (right), is divided into only two regions:
+
+**Regions 1 and 3**: For this pulp type, the frictional loss curve crosses the water curve v<sub>w</sub> and there is no true v<sub>max</sub>·
 
 ### III. Design Parameters
 
@@ -154,14 +158,7 @@ of v<sub>max</sub> is determined using Equation
 
 =+=
 <span class= equation-label >(Eq. 3.E.1)</span>
-[units = us]
 $$ v_{max} = {K'·C^{σ}} (ft/s) $$
-=+=
-
-=+=
-<span class= equation-label >(Eq. 3.E.1)</span>
-[units = metric]
-$$ v_{max} = 0.3048·{K'·C^{σ}} (m/s) $$
 =+=
 
 where:
@@ -188,19 +185,12 @@ NOTES:
 
 If the proposed design velocity (v) is less than v<sub>max</sub>,
 the value of flow resistance (Δh/L) may be calculated
-using Equation (3.E.2) and data given in Table II
+using equation 3.E.2 and data given in Table II
 and the appendices.
 
 =+=
 <span class= equation-label >(Eq. 3.E.2)</span>
-[units = us]
 $$ Δh/L = F·K·v^{α}·C^{β}·D^{γ}\, (ft/100\, ft) $$
-=+=
-
-=+=
-<span class= equation-label >(Eq. 3.E.2)</span>
-[units = metric]
-$$ Δh/L = 0.3048·F·K·v^{α}·C^{β}·D^{γ}\, (m/100\, m) $$
 =+=
 
 where:
@@ -212,7 +202,7 @@ where:
 - D = pipe inside diameter (in), and
 - α,β,γ = exponents (constant for a given pulp), obtained from Table II
 
-For mechancial pulps, there is no true v<sub>max</sub>· The
+For mechanical pulps, there is no true v<sub>max</sub>· The
 upper limit of the correlation equation (Equation (3.E.2))
 is also given by Equation (3.E.1) in this case, the upper
 velocity is actually v<sub>w</sub>·
@@ -221,23 +211,16 @@ velocity is actually v<sub>w</sub>·
 (Point B) is v<sub>max</sub> and the upper limit
 (Point 0) is v<sub>w</sub>. The velocity of the stock
 at the onset of drag reduction is determined
-using Equation (3.E.3).
+using equation 3.E.3.
 
 =+=
 <span class= equation-label >(Eq. 3.E.3)</span>
-[units = us]
 $$ v_{w} = 4.00·C^{1.40} (ft/s) $$
-=+=
-
-=+=
-<span class= equation-label >(Eq. 3.E.3)</span>
-[units = metric]
-$$ v_{w} = 1.2192·C^{1.40} (m/s) $$
 =+=
 
 where:
 
-- C = consistency (oven-dried,expressed as a percentage, not decimally).
+- C = consistency (oven-dried, expressed as a percentage, not decimally).
 
 If v is between v<sub>max</sub> and v<sub>w</sub>, Equation (3.E.2) may be
 used to determine ΔH/L at the maximum point
@@ -255,14 +238,7 @@ the Blasius equation).
 
 =+=
 <span class= equation-label >(Eq. 3.E.4)</span>
-[units = us]
 $$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\,(ft/100\, ft) $$
-=+=
-
-=+=
-<span class= equation-label >(Eq. 3.E.4)</span>
-[units = metric]
-$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\,(m/100\, m) $$
 =+=
 
 where:
@@ -330,18 +306,11 @@ NOTES:
 
 The following gives supplemental information to that provided in the main text.
 
-**1) Rate of flow, Q —**
+**1) Rate of flow, Q**
 
 =+=
-[units = us]
 <span class= equation-label >(Eq. 3.E.5)</span>
 $$ Q = {{16.65·(T.P.D.)}\over C} \, (gpm) $$
-=+=
-
-=+=
-[units = metric]
-<span class= equation-label >(Eq. 3.E.5)</span>
-$$ Q = {{3.782·(T.P.D.)}\over C} \, (m^{3}/h) $$
 =+=
 
 where:
@@ -353,39 +322,25 @@ and
 - C = consistency (oven-dried, expressed as a percentage, *not* decimally).
 
 
-**2) Bulk velocity, v —**
+**2) Bulk velocity, v**
 
 =+=
-[units = us]
 <span class= equation-label >(Eq. 3.E.6)</span>
 $$ v = {{0.321·Q}\over A}\, (ft/s),\, or $$
 =+=
 
 =+=
-[units = metric]
-<span class= equation-label >(Eq. 3.E.6)</span>
-$$ v = {{278·Q}\over A}\, (m/s),\, or $$
-=+=
-
-=+=
-[units = us]
 <span class= equation-label >(Eq. 3.E.7)</span>
 $$ v = {{0.4085·Q}\over D^2}\, (ft/s) $$
 =+=
 
-=+=
-[units = metric]
-<span class= equation-label >(Eq. 3.E.7)</span>
-$$ v = {{354·Q}\over D^2}\, (m/s) $$
-=+=
-
 where:
 
-- Q = rate of flow <units us = "(gpm)," metric = "(m^3^/h)"/>
-- A = inside area of pipe <units us = "(in^2^), and" metric = "(mm^2^)"/>
-- D = inside diameter of pipe <units us = "(in)" metric = "(mm)"/>
+- Q = rate of flow (gpm)
+- A = inside area of pipe (in^2^)
+- D = inside diameter of pipe (in)
 
-**3) Multiplication Factor, F (included in Equation (3.E.2)) —**
+**3) Multiplication Factor, F (included in Equation (3.E.2))**
 
 =+=
 <span class= equation-label >(Eq. 3.E.8)</span>
@@ -394,167 +349,74 @@ $$ F = {F_1}·{F_2}·{F_3}·{F_4}·{F_5,} $$
 
 where:
 
-- F<sub>1</sub> = correction factor for temperature. Friction loss calculations are normally based on a reference pulp temperature of 95°F. The flow resistance may be increased or
-decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This may be expressed as follows (where T = pulp temperature <units us = "(°F)):" metric = "(°C)):"/>:
+- F<sub>1</sub> is the correction factor for temperature. Friction loss calculations are normally based on a reference pulp temperature of 95°F. The flow resistance may be increased or decreased by 1 percent for each 1.8°F below or above 95°F, respectively. This may be expressed as follows (where T = pulp temperature (°F)):
 
 =+=
-[units = us]
 <span class= equation-label >(Eq. 3.E.9)</span>
 $$ F_1 = 1.526 - 0.00556·T $$
 =+=
 
-=+=
-[units = metric]
-<span class= equation-label >(Eq. 3.E.9)</span>
-$$ F_1 = 1.34808 - 0.010008·T $$
-=+=
+- F<sub>2</sub> is the correction factor for pipe roughness. This factor may vary due to manufacturing processes of the piping, surface roughness, age, etc. Typical values for **PVC are F<sub>2</sub>=1.0** and **stainless steel piping are F<sub>2</sub>=1.25** (please note that these are typical values; experience and/or additional data may modify these factors):
 
-- F<sub>2</sub> = correction factor for pipe roughness. This
-factor may vary due to manufacturing processes
-of the piping, surface roughness, age, etc. Typical values for PVC and stainless
-steel piping are listed below (please note that these are typical values; experience and/or additional data may modify the above factors):
+- F<sub>3</sub> is the correction factor for pulp type. Typical values are **1.0 for pulps that have never been dried and reslurried** and **0.8 for pulps that have been dried and reslurried.
 
-=+=
-$$ F_2 = 1.0\,for\,PVC\,piping $$
-$$ F_2 = 1.25\,for\,stainless\,steel\,piping $$
-=+=
+Note: This factor has been incorporated in the numerical coefficient, K, for the pulps listed in Table II. When using Table II, F3 should not be used.
 
-- F<sub>3</sub> = correction factor for pulp type. Typical values are listed below (Note: This factor has been incorporated in
-the numerical coefficient, K, for the pulps listed in Table II. When using Table II, F3 should not be used.):
+- F<sub>4</sub> is the correction factor for beating. Data have shown that progressive beating causes, initially, a
+small decrease in frictional losses, followed by a substantial increase. For a kraft pine pulp initially at 725 CSF and F<sub>4</sub> = 1.0, beating caused the freeness to decrease to 636 CSF and F<sub>4</sub> to decrease to 0.96. Progressive beating decreased the freeness to 300 CSF and increased F<sub>4</sub> to 1.37 (see K values in Table
+II). Some engineering judgement may be required.
 
-=+=
-$$ F_3 = 1.0\,for\,pulps\,that\,have\,never\,been\,dried\,and\,resulurried $$
-$$ F_3 = 0.8\,for\,pulps\,that\,have\,been\,dried\,and\,resulurried $$
-=+=
-
-- F<sub>4</sub> = correction factor for beating. Data have shown
-that progressive beating causes, initially, a
-small decrease in frictional losses, followed by a
-substantial increase. For a kraft pine pulp
-initially at 725 CSF and F<sub>4</sub> = 1.0, beating
-caused the freeness to decrease to 636 CSF
-and F<sub>4</sub> to decrease to 0.96. Progressive beating
-decreased the freeness to 300 CSF and
-increased F<sub>4</sub> to 1.37 (see K values in Table
-II). Some engineering judgement may be
-required.
-- F<sub>5</sub> = design safety factor. This is usually specified
-by company policy with consideration
-given to future requirements.
+- F<sub>5</sub> is the design safety factor. This is usually specified by company policy with consideration given to future requirements.
 
 ### Appendix B
 
-The following is an example that illustrates the method for determining pipe frictional losses in each of the three regions shown in Figure 3.
+The following is an example that illustrates the method for determining pipe frictional losses in each of the three regions shown in Figure 3.E.3.
 
 ### Example
 
-<units us = "Determine the frictional loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
-6 inch schedule 40 stainless steel pipe (inside diameter = 6.065 in). The pulp temperature is 90°F, the flow rate 1100 U.S. GPM."
-metric = "Determine the frictional loss (per 100 m of pipe) for 2% oven-dried bleached kraft pine, dried and reslurred, through
-6 inch schedule 40 stainless steel pipe (inside diameter = 154.051 mm). The pulp temperature is 32.22°C, the flow rate 249.84 m^3^/h."/>
+Determine the frictional loss (per 100 ft of pipe) for 2% oven-dried bleached kraft pine, dried and reslurried, through
+6 inch schedule 40 stainless steel pipe (inside diameter = 6.065 in). The pulp temperature is 90°F, the flow rate 1100 U.S. GPM.
 
 **Solution:**
 
 a) The bulk velocity is:
 
+<div class="calculation-label">Calc. 3.E.1</div >
 =+=
-[units = us]
-$$ v = {{0.4085·Q}\over{D^2}} $$
-=+=
-
-=+=
-[units = metric]
-$$ v = {{354·Q}\over{D^2}} $$
+$$ v = {{0.4085·Q}\over{D^2}} = {{0.4085·Q}\over{D^2}} = 12.22 ft/s $$
 =+=
 
-=+=
-[units = us]
-$$ = {{0.4085×1100}\over{6.065^2}} = 12.22 ft/s  $$
-=+=
-
-=+=
-[units = metric]
-$$ = {{354×249.84}\over{154.051^2}} = 3.72 m/s  $$
-=+=
-
-b) It must be determined in which region (1, 2 or 3)
-this velocity falls. To obtain an initial indication,
+b) It must be determined in which region (1, 2 or 3) this velocity falls. To obtain an initial indication,
 determine V<sub>max</sub>.
 
+<div class="calculation-label">Calc. 3.E.2</div >
 =+=
-[units = us]
-$$ v_{max} = K'·C^{σ}, $$
+$$ v_{max} = K'·C^{σ} = 0.59×2.0^{1.45} = 1.61 ft/s $$
+=+=
+
+Where:
+- K' = 0.59 (from Table 3.E.1),
+- σ = 1.45 (from Table 3.E.1),
+
+c) Since v exceeds v<sub>max</sub>, Region 1 (the linear region) is eliminated. To determine whether v lies in Region 2 or 3, the velocity at the onset of drag reduction, v<sub>W</sub>, must be calculated.
+
+<div class="calculation-label">Calc. 3.E.3</div >
+=+=
+$$ v_{w} = 4.00·C^{1.40} = 4.00×(2.0^{1.40}) = 10.56 ft/s, $$
+=+=
+
+d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional loss is calculated as that of water flowing at the same velocity.
+
+<div class="calculation-label">Calc. 3.E.4</div >
+=+=
+$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\ = 0.58×12.22^{1.75}×6.065^{-1.25} = 4.85\,ft\,head\,loss/100\,ft\,of\,pipe $$
 =+=
 
 =+=
-[units = metric]
-$$ v_{max} = 0.3048·K'·C^{σ}, $$
-=+=
-
-and
-
-- K' = 0.59 (from Table I),
-- σ = 1.45 (from Table I),
-
-=+=
-[units = us]
-$$ v_{max} = 0.59×2.0^{1.45} = 1.61 ft/s. $$
-=+=
-
-=+=
-[units = metric]
-$$ v_{max} = 0.3048×0.59×2.0^{1.45} = 0.49 m/s. $$
-=+=
-
-c) Since v exceeds v<sub>max</sub>, Region 1 (the linear region) is eliminated. To determine whether v lies in Region 2 or 3, the velocity at the onset
-of drag reduction, v<sub>W</sub>, must be calculated.
-
-=+=
-[units = us]
-$$ v_{w} = 4.00·C^{1.40}, $$
-=+=
-
-=+=
-[units = metric]
-$$ v_{w} = 1.2192·C^{1.40}, $$
-=+=
-
-=+=
-[units = us]
-$$ v_{w} = 4.00×(2.0^{1.40}) = 10.56 ft/s. $$
-=+=
-
-=+=
-[units = metric]
-$$ v_{w} = 1.2192×(2.0^{1.40}) = 3.22 m/s. $$
-=+=
-
-d) v exceeds v<sub>w</sub>, indicating that it falls in Region 3. The frictional loss is calculated as that of water flowing at
-the same velocity.
-
-=+=
-[units = us]
-$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\, $$
-=+=
-
-=+=
-[units = metric]
-$$ (Δh/L)_{w} = 0.58·v^{1.75}·D^{-1.25}\, $$
-=+=
-
-=+=
-[units = us]
 $$ = 0.58×12.22^{1.75}×6.065^{-1.25} = 4.85\,ft\,head\,loss/100\,ft\,of\,pipe $$
 =+=
 
-=+=
-[units = metric]
-$$ = 0.58×12.22^{1.75}×6.065^{-1.25} = 4.85\,m\,head\,loss/100\,m\,of\,pipe $$
-=+=
-
-This will be a conservative estimate, as the actual
-frictional loss curve for pulp suspensions under these
-conditions will be below the water curve.
+This will be a conservative estimate, as the actual frictional loss curve for pulp suspensions under these conditions will be below the water curve.
 
 ### References
 1. TAPPI Technical Information Sheet (TIS) 408-4. Technical

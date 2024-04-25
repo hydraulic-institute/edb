@@ -1,6 +1,6 @@
 -----
 title: D) Non-Ferrous Pipe and Tube
-date: November 26th, 2023
+date: April 19th, 2024
 hide_units: true
 -----
 
@@ -15,8 +15,7 @@ hide_price: true
 
 ## Pipe Dimensions of Non-Ferrous Pipes and Tubes
 
-* Note:  All dimensions are nominal
-* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+**Note: Internal diameter and area are calculated based on nominal values**
 
 <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item mt-2 blue-accordion" >
@@ -32,8 +31,9 @@ hide_price: true
                     =|=
                     title: Aluminum alloy pipe - extruded per ANSI H35.2-2017
                     data: npat-alum_allo_pipe_extr.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.1</div>
                 </div>
             </div>
         </div> 
@@ -51,8 +51,9 @@ hide_price: true
                     =|=
                     title: Brass (red brass) pipe - seamless per ANSI H35.2-2017
                     data: npat-bras_red_bras_pipe_seam.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.2</div>
                 </div>
             </div>
         </div> 
@@ -70,8 +71,9 @@ hide_price: true
                     =|=
                     title: Copper capillary tube - hard drawn per ANSI H35.2-2017
                     data: npat-copp_capi_tube_hard_draw.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.3</div>
                 </div>
             </div>
         </div> 
@@ -89,8 +91,9 @@ hide_price: true
                     =|=
                     title: Copper pipe - seamless per ANSI H35.2-2017
                     data: npat-copp_pipe_seam.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.4</div>
                 </div>
             </div>
         </div> 
@@ -108,8 +111,9 @@ hide_price: true
                     =|=
                     title: Copper pipe - threadless - seamless - deoxidized for brazed joint assembly per ANSI H35.2-2017
                     data: npat-copp_pipe_thre_seam_deox_for_braz_join_asse.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.5</div>
                 </div>
             </div>
         </div> 
@@ -127,8 +131,9 @@ hide_price: true
                     =|=
                     title: Copper water tube - seamless - plumbing and fluid conveyance tubing per ANSI H35.2-2017
                     data: npat-copp_wate_tube_seam_plum_and_flui_conv_tubi.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.6</div>
                 </div>
             </div>
         </div> 
@@ -146,8 +151,9 @@ hide_price: true
                     =|=
                     title: Copper-Nickel pipe and tube - seamless per ANSI H35.2-2017
                     data: npat-copp_pipe_seam.csv
-                    special: height:600px;
+                    fixed-columns: 2
                     =|=
+                    <div class="table-label">Tbl. 4.D.7</div>
                 </div>
             </div>
         </div> 

@@ -1,6 +1,6 @@
 ,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric,numeric
-heading,Seconds Saybolt Universal (SSU),Kinematic Viscosity Centistokes*,Seconds Saybolt Furol (SSF),Seconds Redwood (Standard),Seconds Redwood (Admirality),Degrees Engler,Degrees Barbey,Seconds Parlin Cup #7,Seconds Parlin Cup #10,Seconds Parlin Cup #15,Seconds Parlin Cup #20,Seconds Ford Cup #3,Seconds Ford Cup #4
-data,31,1,—,29,—,1,6200,—,—,—,—,—,—
+heading,Seconds Saybolt Universal (SSU),Kinematic Viscosity Centistokes*,Seconds Saybolt Furol (SSF),Seconds Redwood (Standard),Seconds Redwood (Admiralty),Degrees Engler,Degrees Barbey,Seconds Parlin Cup #7,Seconds Parlin Cup #10,Seconds Parlin Cup #15,Seconds Parlin Cup #20,Seconds Ford Cup #3,Seconds Ford Cup #4
+data,31,1.00,—,29,—,1,6200,—,—,—,—,—,—
 data,35,2.56,—,32.1,—,1.16,2420,—,—,—,—,—,—
 data,40,4.3,—,36.2,5.1,1.31,1440,—,—,—,—,—,—
 data,50,7.4,—,44.3,5.83,1.58,838,—,—,—,—,—,—

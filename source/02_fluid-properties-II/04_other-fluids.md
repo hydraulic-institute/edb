@@ -1,6 +1,6 @@
 -----
 title: D) Other Fluids
-date: May 12th, 2020
+date: April 19th, 2024
 description: Properties of other fluids.
 hide_units: true
 -----
@@ -17,6 +17,7 @@ $$ {Degrees\,A.P.I. = {141.5 \over sg} - 131.5} $$
 =+=
 
 =+=
+<span class= equation-label >(Eq. 2.D.2)</span>
 $$ {sg = {141.5 \over {131.5 + Degrees\,A.P.I.}}} $$
 =+=
 
@@ -26,7 +27,7 @@ and 50% humidity. Assumed weight of 1 gallon of water at 60°F in air is 8.32828
 To determine the resulting specific gravity by mixing oils of different specific gravities:
 
 =+=
-<span class= equation-label >(Eq. 2.D.2)</span>
+<span class= equation-label >(Eq. 2.D.3)</span>
 $$ {ρ = {{mρ_{1} + nρ_{2}} \over {m+n}}} $$
 =+=
 
@@ -43,10 +44,12 @@ where:
 title: Degrees A.P.I. vs. Specific Gravity
 data: IIB1-1.csv
 =|=
+<div class="table-label">Tbl. 2.D.1</div>
 
 =|=
 data: IIB1-2.csv
 =|=
+<div class="table-label">Tbl. 2.D.2</div>
 
 =^=
 title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
@@ -59,7 +62,7 @@ hide_price: true
 
 ### Temperature-Volume Relation for Oil
 
-![](./images/temp-vol-oil.png "")
+![](./images/temp-vol-oil.png#center "")
 <div class="figure-label">(Fig. 2.D.1)</div>
 
 ### Specific Gravities vs. Degrees Baumé
@@ -70,6 +73,7 @@ hide_price: true
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Lighter than Water
 data: IIB2-1.csv
 =|=
+<div class="table-label">Tbl. 2.D.3</div>
 
 *Calculated from the formula, specific gravity 60°/60° F = 145 / (145 - Deg. Bé)*
 
@@ -77,6 +81,7 @@ data: IIB2-1.csv
 title: Spec. Gravities at 60°/60° F. Corresp. to Deg. Bé for Liquids Heavier than Water
 data: IIB2-2.csv
 =|=
+<div class="table-label">Tbl. 2.D.5</div>
 
 ### Brix Viscosities of Sucrose Solutions at Various Temperatures
 
@@ -114,25 +119,25 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	The following charts represent the value of viscosity of sucrose solution in centipoise (cP) at various temperature for various Brix values.
 -	[1] All the values are taken from National Bureau of Standards Circular 440 issued on July 31, 1958 United States Department of Commerce by considering viscosity of water at 20°C is 0.010020 poise.
 -	On the X-axis temperature is plotted in °C whereas on Y-axis viscosity of sucrose in aqueous solution is plotted in centipoise (cP) and the graph is plotted for various degree Brix values ranging from 20° Brix to 75° Brix.
--	The below graphs represents the exponentially decreasing nature.
--	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value and it is inversely proportional to the temperature.
+-	The below graphs represent the exponentially decreasing nature.
+-	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value, and it is inversely proportional to the temperature.
 
-![](./images/Brix1.png "")
+![](./images/Brix1.png#center "")
 <div class="figure-label">(Fig. 2.D.2)</div>
 
-![](./images/Brix2.png "")
+![](./images/Brix2.png#center "")
 <div class="figure-label">(Fig. 2.D.3)</div>
 
-![](./images/Brix3.png "")
+![](./images/Brix3.png#center "")
 <div class="figure-label">(Fig. 2.D.4)</div>
 
-![](./images/Brix4.png "")
+![](./images/Brix4.png#center "")
 <div class="figure-label">(Fig. 2.D.5)</div>
 
-![](./images/Brix5.png "")
+![](./images/Brix5.png#center "")
 <div class="figure-label">(Fig. 2.D.6)</div>
 
-![](./images/Brix6.png "")
+![](./images/Brix6.png#center "")
 <div class="figure-label">(Fig. 2.D.7)</div>
 
 =^=
@@ -151,6 +156,7 @@ title: Data Points
 data-us: VP-H2.csv
 data-metric: VP-H2-met.csv
 =|=
+<div class="table-label">Tbl. 2.D.6</div>
 
 =/=
 title: Liquid Hydrogen Vapor Pressure Plot 
@@ -168,6 +174,7 @@ title: Data Points
 data-us: VP-helium.csv
 data-metric: VP-helium-met.csv
 =|=
+<div class="table-label">Tbl. 2.D.7</div>
 
 =/=
 title: Helium Vapor Pressure Plot 

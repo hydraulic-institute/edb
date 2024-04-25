@@ -344,7 +344,7 @@ Vue.component('viscosity-converter', {
             if (this.from_unit.id != 1)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centipoise} Centipoise`);
             const centistoke = (centipoise / parseFloat(this.sg)).toPrecision(this.output_sig_fig);
-            this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centisoke`);
+            this.steps.push(`${centipoise} Centipoise / ${this.sg} = ${centistoke} Centistoke`);
 
             //-----------------------------------
             // Set precision with significant figures
@@ -404,7 +404,7 @@ Vue.component('viscosity-converter', {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
             const centipoise = (input * parseFloat(this.sg)).toPrecision(this.output_sig_fig);
-            this.steps.push(`${input} Centisokes * ${this.sg} = ${centipoise} Centipoise`);
+            this.steps.push(`${input} Centistokes * ${this.sg} = ${centipoise} Centipoise`);
             const output = (centipoise / this.to_unit.toPrime).toPrecision(this.output_sig_fig);
             if (this.to_unit.id != 1)
                 this.steps.push(`${centipoise} Centipoise / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
@@ -466,6 +466,7 @@ var appView = new Vue({
     delimiters: ['${', '}'],
     data: {
         unit_set: 'us',
+        isChecked: false,
         // This will be loaded async
         needle: null,
         haystack: null,
@@ -488,6 +489,7 @@ var appView = new Vue({
             id: 'path'
         },
         fuse: null,
+        paths: [],
         search_results: undefined,
         marks: [],
         mark_index: 0
@@ -519,6 +521,7 @@ var appView = new Vue({
 
             } else if (this.haystack) {
                 // Scroll to top of screen to ensure the search results appear where they should.
+                //console.log('needle ' + this.needle);
                 this.search_results = this.fuse.search(this.needle);
                 if (typeof (Storage) !== "undefined") {
                     localStorage.setItem("needle", this.needle);
@@ -534,8 +537,10 @@ var appView = new Vue({
             const stored = localStorage.getItem("unit-set");
             if (stored === 'us') {
                 this.unit_set = 'us';
+                this.isChecked = false;
             } else if (stored === 'metric') {
                 this.unit_set = 'metric';
+                this.isChecked = true;
             }
             else {
                 this.unit_set = 'us';
@@ -551,8 +556,14 @@ var appView = new Vue({
             .then(function (response) {
                 v.haystack = response.data;
                 v.fuse = new Fuse(v.haystack, v.search_options);
+                v.paths = v.haystack.map(function (g) {
+                    //console.log('path '+g.path);
+                    return g.path;
+                });
+                //console.log("new fuse search");
                 if (typeof (Storage) !== "undefined") {
                     v.needle = localStorage.getItem("needle")
+                    //console.log('needle '+v.needle);
                 }
             }).catch(function (err) {
                 console.error('Search is disabled, could not load topic list');
@@ -561,6 +572,7 @@ var appView = new Vue({
 
         // Scroll selected topic into view
         const active = document.getElementsByClassName("active_topic");
+        //console.log('active '+active.length);
         for (const element of active) {
             element.scrollIntoView({
                 block: "center"
@@ -571,18 +583,17 @@ var appView = new Vue({
 
     computed: {
         search_display() {
+            //console.log('search_display '+this.search_results !== undefined);
             return this.search_results !== undefined;
         },
         results_for_display() {
             const v = this;
             if (this.search_display) {
+                //console.log('results_for_display');
                 return this.search_results.map(function (r) {
-                    const paths = v.haystack.map(function (g) {
-                        return g.path;
-                    });
-                    const h = paths.indexOf(r.item);
+                    const h = v.paths.indexOf(r.item);
                     const hit = v.haystack[h];
-
+                    //console.log('hit path ['+hit.path+' ] title ['+hit.title+'] slug ['+hit.slug+']');
                     return hit;
                 });
 
@@ -599,12 +610,22 @@ var appView = new Vue({
     },
 
     methods: {
+        handle_unit_toggle() {
+            console.log("Got ToggleChecked:", this.isChecked);
+            if (this.isChecked) {
+                this.to_metric();
+            } else {
+                this.to_us();
+            }   
+        },
         to_us() {
+            this.isChecked = false;
             this.unit_set = 'us';
             localStorage.setItem("unit-set", this.unit_set);
             this.$root.$emit('unit-change', 'us');
         },
         to_metric() {
+            this.isChecked = true;
             this.unit_set = 'metric';
             localStorage.setItem("unit-set", this.unit_set);
             this.$root.$emit('unit-change', 'metric');
@@ -615,9 +636,14 @@ var appView = new Vue({
                 e.classList.remove("current_mark");
             });
             if (this.marks[this.mark_index]) {
-                this.marks[this.mark_index].scrollIntoView();
-                window.scrollBy(0, -100)
+                //window.scrollBy(0, -100)
                 this.marks[this.mark_index].classList.add("current_mark");
+                var parent = this.marks[this.mark_index].closest('table');
+                if (parent) {
+                    $('html').scrollTop(parent.offsetTop)
+                }
+                this.marks[this.mark_index].scrollIntoView({block: "center"});  
+                //console.log('jump to mark ' + this.mark_index);
             }
         },
         mark_jump_back() {
@@ -635,11 +661,13 @@ var appView = new Vue({
             v.mark_index = 0;
             markInstance.unmark({
                 done: function () {
+                    //console.log('mark_search');
                     if (v.search_display) {
                         markInstance.mark(v.needle, {
                             separateWordSearch: true,
                             done: function () {
                                 v.marks = document.querySelectorAll("mark");
+                                //console.log('mark_search done');
                                 v.jump_to_mark();
                             }
                         });

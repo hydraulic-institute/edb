@@ -18,7 +18,7 @@
     },
     {
         "category": "D",
-        "label": "d•s/cm2",
+        "label": "d•s/cm&sup2",
         "toPrime": 100,
         "id": 4
     },
@@ -35,7 +35,7 @@
         "id": 6
     }, {
         "category": "K",
-        "label": "cm2/s",
+        "label": "cm&sup2/s",
         "toPrime": 100,
         "id": 7
     },

@@ -2,7 +2,6 @@ import shutil
 import os
 import lesscpy
 import markdown
-import glob
 import io
 import htmlmin
 import copy
@@ -15,21 +14,20 @@ from selenium import webdriver
 from datetime import date
 
 from .common import parse_dict
-from six import StringIO
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from markdown.preprocessors import Preprocessor
-from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
 import pandas as pd
-from pandas import ExcelFile
 
 global chart_count
 chart_count = 0
 
 global pprinter
 pprinter = pprint.PrettyPrinter(indent=2)
+
+global table_count
+table_count = 0
 
 global all_tables
 all_tables=[]
@@ -134,7 +132,7 @@ def definitions_table_data(table, path, filename, in_sections):
                     else:
                         # Push empty data
                         col_link_data.append(col_obj) 
-                    if col_data[0] == "Section":
+                    if "Section" in col_data[0]:
                         section_idx = i 
                 headings = columns.copy()
                 page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
@@ -151,7 +149,7 @@ def definitions_table_data(table, path, filename, in_sections):
                 source_links=['' for k in range(num_columns)]
                 row_columns=[DefinitionColumn(d, datarow[i], '')
                               for i, d in enumerate(columns)]
-                # Acronymn Link
+                # Acronym Link
                 if "acronym" in section.lower():
                     acronym.append(datarow[1].lower())
                     acronym_ids.append(datarow[0])
@@ -187,7 +185,7 @@ def definitions_table_data(table, path, filename, in_sections):
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
-        index['index_style']='height:'+str(len(index['sections'])*45)+'px'
+        index['index_style']='height:'+str(len(index['sections'])*50)+'px'
         return index, page_sections
     
 def definition_create_section_link(sections, in_section):
@@ -220,7 +218,8 @@ def table_data(units, table, path, filename):
         print(
             f"Error - the table {table['title']} refers to {file} which does not exist")
         return None
-    # print('Processing table: '+filename)
+    if "Nozzle" in filename:    
+        print('Processing table: '+filename)
     csv_data = pd.read_csv(file, dtype='str')
     col_types = list(csv_data.columns)
     types = getTypesArray(col_types[1:])
@@ -252,7 +251,7 @@ def table_data(units, table, path, filename):
     for row in data.itertuples():
         row_columns=[]
         for i, d in enumerate(row[2:]):
-            if row[1] == 'heading':
+            if "heading" in row[1]:
                 row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
             else:
                 row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
@@ -276,20 +275,29 @@ def table_data(units, table, path, filename):
         if hidx > 0:
             # Reduce the font for the row
             headings[hidx]=headings[hidx]._replace(style="font-size:.75rem;")
-        # Now remove the columns that are useless
+         # Remove any columns 0- in succession
+        ignore_slice = 0
+        for idx, index in enumerate(sorted(remove_col)):
+            if idx == index:
+                ignore_slice += 1
+            else:
+                break
+        if ignore_slice:
+            remove_col = remove_col[:-ignore_slice]
+        # Remove the columns     
         for index in sorted(remove_col, reverse=True):
             del headings[hidx][1][index]
 
     return Table(units, columns, headings, rows)
 
 def replace_definitions_block(dir, definitions_text, sections):
-    definitions_table = parse_dict(definitions_text.strip().split("\n"))
+    table = parse_dict(definitions_text.strip().split("\n"))
     template = env.get_template('definitions.jinja')
-    index, defs = definitions_table_data(definitions_table, dir, definitions_table['data'], sections)
-    def_html = template.render(meta=definitions_table, table=defs, units='us', index=index)
+    index, defs = definitions_table_data(table, dir, table['data'], sections)
+    def_html = template.render(meta=table, table=defs, units='us', index=index)
     return def_html
 
-def replace_table_block(dir, table_text):
+def replace_table_block(dir, table_text, table_count):
     table = parse_dict(table_text.strip().split("\n"))
 
     data_us = ""
@@ -307,6 +315,13 @@ def replace_table_block(dir, table_text):
         print(
             f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
+    
+    if 'fixed-columns' in table:
+        table['datatable']=True
+        table['dt_id']=table_count
+        table['dt_config']='fixedColumns:'+table['fixed-columns']+';'
+        table['scrolling']='not-scrolling'
+        
     all_tables.append(data_us)
  
     template = env.get_template('table.jinja')
@@ -556,15 +571,17 @@ def process_definitions_block(dir, markdown, sections):
     return markdown
 
 def process_table_blocks(dir, markdown):
+    global table_count
     delim = "=|="
     start = markdown.find(delim)
     while (start >= 0):
+        table_count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
         after = markdown[end+3:]
         markdown = before + \
-            replace_table_block(dir, within) + after
+            replace_table_block(dir, within, table_count) + after
         start = markdown.find(delim)
 
     return markdown
@@ -572,8 +589,10 @@ def process_table_blocks(dir, markdown):
 
 def process_table_blocks_pdf(dir, markdown):
     delim = "=|="
+    count = 0
     start = markdown.find(delim)
     while (start >= 0):
+        count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
@@ -705,7 +724,8 @@ def make_source_specials(source, dest):
         src = os.path.join(source, special)
         dst = os.path.join(dest, special)
         print(f'Creating special subdir {src} to {dst}')
-        copytree(src,dst)
+        if os.path.isdir(src):
+            copytree(src, dst)
 
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
@@ -759,11 +779,12 @@ def write_content(graph, node, slug_override=None, path="."):
                            related=related, options=options)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
+    html_minified = htmlmin.minify(
+            html, remove_comments=True, remove_empty_space=True)
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
-        f.write(htmlmin.minify(
-            html, remove_comments=True, remove_empty_space=True))
-        # f.write(html.encode('utf-8'))
-
+        f.write(html_minified)
+        # f.write(html)
+    return html_minified
 
 def make_root(graph):
     statics()
@@ -795,9 +816,10 @@ def make_section(graph, section, parent=None):
     directory = os.path.join(OUTPUT_DIR, slug)
     print("makedirs for " + directory)
     os.makedirs(directory)
-    #KK
     make_source_specials(section['path'], directory)
     for topic in section['children']:
+        if topic['name'] == '.DS_Store':
+            continue
         if topic['directory']:
             print("Sub directories are currently unsupported.")
             make_section(graph, topic, section)
@@ -805,7 +827,10 @@ def make_section(graph, section, parent=None):
             print("Writing sub-contents",
                   topic['name'], "of", section['slug'])
 
-            write_content(graph, topic, None, directory)
+            html_content = write_content(graph, topic, None, directory)
+            if "=defs=" in topic['content']:
+                content_start = html_content.find("<div class=topic-content>")
+                topic['haystack_content'] = html_content[content_start:]
 
 
 def rewrite_image_urls(content, path="."):
@@ -983,11 +1008,14 @@ def html(graph, specials, ignores, production=False):
 
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
+            print("Processing topic", topic['name'], "of", section['slug'])
+            use_content = topic['haystack_content'] if 'haystack_content' in topic else topic['content']
             haystack.append(Topic(
-                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content'], section['metadata']['title']))
+                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], use_content, section['metadata']['title']))
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
-        json.dump([t._asdict() for t in haystack], outfile)
+        output = json.dumps([t._asdict() for t in haystack], indent=4)
+        outfile.write(output)
 
     sitemap = list()
     for section in [dir for dir in graph if dir['directory'] == True]:
@@ -999,13 +1027,13 @@ def html(graph, specials, ignores, production=False):
             url['priority'] = '0.8'
             sitemap.append(url)
 
-    base_url = 'https://edb.pumps.org'
+    base_url = 'https://edl.pumps.org'
     xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     for s in sitemap:
         xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"
     xml += "</urlset>"
 
-    robots = 'Sitemap: https://edb.pumps.org/sitemap.xml '
+    robots = 'Sitemap: https://edl.pumps.org/sitemap.xml '
 
     with io.open(os.path.join(OUTPUT_DIR, 'sitemap.xml'), 'w', encoding='utf8') as f:
         f.write(xml)
@@ -1014,3 +1042,11 @@ def html(graph, specials, ignores, production=False):
         # f.write(html.encode('utf-8'))
     table_str="\n".join(all_tables)
     #print(f"TABLES: {table_str}")
+    
+    
+def read_html_content(file):
+    with io.open(file, 'r', encoding='utf8') as content_file:
+        data = content_file.readlines()
+        # Find the start of the content
+        index = [idx for idx, s in enumerate(data) if '<body ' in s][0]
+        return data[index]

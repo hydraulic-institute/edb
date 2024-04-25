@@ -1,6 +1,6 @@
 -----
 title:  C) Losses With Other Fluids
-date: May 12th, 2020
+date: April 19th, 2024
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
@@ -11,10 +11,10 @@ description: Frictional loss calculations for other fluids. Includes frictional 
 
 
 The pipe friction for the incompressible flow of viscous fluids, including water, in several sizes of pipe and pipe materials are outlined in the 
-<a href="/tools/frictional-losses.html" target="_blank">Friction Loss Calculator</a>. 
+<a href="/tools/frictional-losses.html">Friction Loss Calculator</a>. 
 Pipe friction is based on the  pipe characteristics and  kinematic viscosity, or dynamic viscosity with Specific Gravity.
-Further information on viscosity and commonly accepted viscosity values for liquids will be found in the <a href="/fluid-properties-II/viscosity.html" target="_blank">viscosity section</a>.
-No allowance has been made for abnormal conditions of interior surface or installation nor for the deterioration with age. (See <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>.)
+Further information on viscosity and commonly accepted viscosity values for liquids will be found in the <a href="/fluid-properties-II/viscosity.html">viscosity section</a>.
+No allowance has been made for abnormal conditions of interior surface or installation nor for the deterioration with age. (See <a href="/fluid-flow-III/general.html">Fluid Flow – General</a>.)
 
 
 

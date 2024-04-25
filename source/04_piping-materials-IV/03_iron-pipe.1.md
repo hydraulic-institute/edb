@@ -1,6 +1,6 @@
 -----
 title: C) Ductile Iron Pipe
-date: November 26th, 2023
+date: April 19th, 2024
 description: Dimensions of iron pipes.
 hide_units: true
 -----
@@ -14,12 +14,12 @@ price: 99.00
 hide_price: true
 =^=
 
-* Note:  All dimensions are nominal
-* Note:  Internal diameters and areas are calculated based on nominals, and are presented unrounded inclusive of all digits
+**Note: Internal diameter and area are calculated based on nominal values**
 
 ## Pipe Dimensions: Iron (Ductile) pipe per AWWA C151/A21.51-17
 
 =|=
 data: ip-iron_duc_pipe.csv
-special: height:600px;
+fixed-columns: 2
 =|=
+<div class="table-label">Tbl. 4.C.1</div>

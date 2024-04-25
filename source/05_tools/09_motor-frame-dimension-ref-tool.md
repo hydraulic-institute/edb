@@ -1,6 +1,6 @@
 -----
 title: I) Motor Dimensions
-date: December 4th, 2023
+date: April 19th, 2024
 description: Frame Size Tool
 hide_units: true
 -----
@@ -35,20 +35,19 @@ hide_units: true
                         <h2 class="accordion-header" id="headingOne-1" style="margin-bottom:0">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseOne-1" aria-expanded="false">
-                            4.4.1 Dimensions for Alternating-Current Foot-Mounted Machines with Single Straight Shaft Extension
+                            NEMA MG1 4.4.1 Dimensions for Alternating-Current Foot-Mounted Machines with Single Straight Shaft Extension
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseOne-1" class="accordion-collapse collapse" aria-labelledby="headingOne-1">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/motor-4.4.1-1.png "></div>
-                                    <div class="col-6"><img src="./images/motor-4.4.1-2.png "></div>
-                                </div>
+                                <img src="./images/motor-4.4.1.png ">
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
                                     data: motor-horizontal-4.4.1.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.1</div>
                                     *The tolerances on the D dimension for rigid base motors shall be +0.00 inch, −0.06 inch. No tolerance has been established for the D dimension of resilient mounted motors.<br>
                                     <br>
                                     †Frames 42 to 56H, inclusive—The tolerance for the 2F dimension shall be ±0.03 inch and for the H dimension (width of slot) shall be +0.02 inch, −0.00 inch.<br>
@@ -83,17 +82,19 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseTwo-1">
-                            4.4.4 Dimensions for Type C Face Mounting Foot or Footless Alternating-Current Motors
+                            NEMA MG1 4.4.4 Dimensions for Type C Face Mounting Foot or Footless Alternating-Current Motors
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="headingTwo-1">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.4.png "></div></div>
+                                <img src="./images/motor-4.4.4.png ">
                                 <div style="padding:0">
                                     Drawings represent standard TEFC general purpose motors and are for example or reference only
                                     =|=
                                     data: motor-c-face-4.4.4.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.2</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     *For frames 42C to 445TSC, see 4.4.1, for dimensions A, D, E, 2F, and H.<br>
@@ -122,15 +123,17 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseThree-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseThree-2">
-                            4.4.5 Dimensions for Type FC Face Mounting for Accessories on End Opposite Drive End of Alternating-Current Motors</button>
+                            NEMA MG1 4.4.5 Dimensions for Type FC Face Mounting for Accessories on End Opposite Drive End of Alternating-Current Motors</button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree-2" class="accordion-collapse collapse" aria-labelledby="headingThree-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-4.4.5.png "></div></div>
+                                <img src="./images/motor-4.4.5.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-c-face-4.4.5.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.3</div>
                                     *The tolerance on this FBB dimension shall be +0.00, −0.06 inch.<br>
                                     <br>
                                     †This BD dimension is a nominal dimension.<br>
@@ -159,16 +162,18 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFive-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseFive-2">
-                            Table 18-28 - Dimensions for Type VP Vertical Solid Shaft, Single-Phase and Polyphase, Direct-Connected Squirrel-Cage Induction Motors for Vertical Turbine Pump Applications
+                            NEMA MG1 Table 18-28 - Dimensions for Type VP Vertical Solid Shaft, Single-Phase and Polyphase, Direct-Connected Squirrel-Cage Induction Motors for Vertical Turbine Pump Applications
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseFive-2" class="accordion-collapse collapse" aria-labelledby="headingFive-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png "></div></div>
+                                <img src="./images/motor-vert-18-28.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-18-28.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.4</div>
                                     The tolerance for the permissible shaft runout shall be 0.002 inch indicator reading (see 4.11).<br>
                                     <br>
                                     For the meaning of the letter dimensions, see 4.1 and Figure 18-22.<br>
@@ -191,15 +196,17 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseFour-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseFour-2">
-                            Table 18-30 - Base Dimensions of Type P and PH Alternating-Current Squirrel-Cage Vertical Hollow Shaft Motors for Vertical Turbine Pump Applications</button>
+                            NEMA MG1 Table 18-30 - Base Dimensions of Type P and PH Alternating-Current Squirrel-Cage Vertical Hollow Shaft Motors for Vertical Turbine Pump Applications</button>
                         </h2>
                         <div id="panelsStayOpen-collapseFour-2" class="accordion-collapse collapse" aria-labelledby="headingFour-2">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-vert-18-28-18-30.png"></div></div>
+                                <img src="./images/motor-vert-18-30.png">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-vertical-hollow-shaft-18-30.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.5</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     *See Table 18-31 for the coupling dimensions of the motors covered in items 1 through 16.<br>
@@ -232,21 +239,24 @@ hide_units: true
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo-3" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseTwo-3">
-                            Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
+                            NEMA MG 1 Tables 18-33 and 18-34 Combined Dimensions for JM and JP Face Mounting Close-Coupled Pump Motors
                         </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo-3" class="accordion-collapse collapse" aria-labelledby="headingTwo-3">
                             <div class="accordion-body">
-                                <div class="row"><div class="col-3"></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-1.png "></div></div>
-                                <div class="row mt-2"><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-2.png "></div><div class="col-6"><img src="./images/motor-JM-JP-18.33-18.34-3.png "></div></div>
+                                <img src="./images/motor-JM-JP-18.33-18.34.png ">
                                 <div style="padding:0">
                                     =|=
                                     data: motor-table-1-JM-JP-18.33-18.34.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.6</div>
                                     <br>
                                     =|=
                                     data: motor-table-2-JM-JP-18.33-18.34.csv
+                                    fixed-columns: 1
                                     =|=
+                                    <div class="table-label">Tbl. 5.I.7</div>
                                     All dimensions in inches.<br>
                                     <br>
                                     For the meaning of the letter dimensions, see Figures<br>
