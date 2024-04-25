@@ -1,6 +1,6 @@
 -----
 title:  A) Pipe Frictional Losses
-date: April, 19, 2024
+date: April 19th, 2024
 description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance, head loss in piping systems.
 -----
 

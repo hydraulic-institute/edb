@@ -1,6 +1,6 @@
 -----
 title:  C) Losses With Other Fluids
-date: May 12th, 2020
+date: April 19th, 2024
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 

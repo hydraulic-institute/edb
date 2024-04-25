@@ -1,6 +1,6 @@
 -----
 title: C) Viscosity
-date: December 3rd, 2023
+date: April 19th, 2024
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -213,7 +213,7 @@ which is beyond the scope of this Manual.
 *American Society for Testing Materials, 1916 Race St., Philadelphia.
 Pa. 19103.
 
-Viscosity conversion tables for use with the above described viscosimeters are in tables 2.C.1, 2.C.2 and 2.C.3. A viscosity blending chart for use with oils is also provided in Fig. 2.C.2. To use this blending chart let oil (A) have the higher viscosity and oil (B) the lower viscosity. Mark the viscosity of (A) and (B) on the right and left hand scales, respectively,and draw a straight line connecting the marks as shown. The viscosity of any blend of (A) and (B) will be shown by the intersection of the vertical line representing the percentage composition and the line described above. 
+Viscosity conversion tables for use with the above described viscosimeters are in tables 2.C.1, 2.C.2 and 2.C.3. A viscosity blending chart for use with oils is also provided in Fig. 2.C.2. To use this blending chart let oil (A) have the higher viscosity and oil (B) the lower viscosity. Mark the viscosity of (A) and (B) on the right and left hand scales, respectively, and draw a straight line connecting the marks as shown. The viscosity of any blend of (A) and (B) will be shown by the intersection of the vertical line representing the percentage composition and the line described above. 
 
 ### Viscosity Blending Chart [1]
    
