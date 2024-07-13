@@ -1,3 +1,3 @@
 -----
-title: Section IV | Characteristics of Piping Materials
+title: Characteristics of Piping Materials
 -----

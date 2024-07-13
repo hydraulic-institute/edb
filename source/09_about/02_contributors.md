@@ -20,9 +20,8 @@ description: Meet the EDL Committee
 * Member, Past Chair – Trygve Dahl, *Revalize Software* 
 
 #### Members 
-* James Dawley, *ITT – Industrial Process* 
-* Camden DiMicco, *Hayward Tyler, Inc.* 
-* Isaac Holowell, CDM Smith – Water Services Group* 
+* James Dawley, *ITT – Industrial Process*
+* Isaac Holowell, *CDM Smith – Water Services Group* 
 * Christen Mancini, *Hydro Inc.* 
 * Christopher Michalos, *Brown and Caldwell* 
 * Leo Perry, *GIW Industries, Inc. (A KSB Company)* 
@@ -33,7 +32,7 @@ description: Meet the EDL Committee
 
 #### Special Acknowledgements 
 * Tim Knight & Kristin Dahl Knight, Web Developers, *GladeTech Technologies* 
-* Peter Gaydon, *Deputy Executive Director, *Hydraulic Institute* 
+* Peter Gaydon, Deputy Executive Director, *Hydraulic Institute* 
 * Athena Amato, Technical Admin, *Hydraulic Institute* 
 
  
