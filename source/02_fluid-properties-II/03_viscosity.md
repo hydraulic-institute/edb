@@ -239,13 +239,8 @@ fixed-columns: 2
 data: visc-conv-2.csv
 fixed-columns: 2
 =|=
-<div class="table-label">Tbl. 2.C.2</div>
-
-
-=+=
-<span class= equation-label >(Eq. 2.C.4)</span>
-$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
-=+=
+<div class="table-label"><a id="tbl2c2">Tbl. 2.C.2</a></div>
+Note: These values of SSU are at 100 °F.
 
 When the Metric System terms centistokes and
 centipoise are used, the density is numerically
@@ -254,20 +249,27 @@ expression can be used which will be sufficiently
 accurate for most calculations:
 
 =+=
-<span class= equation-label >(Eq. 2.C.5)</span>
+<span class= equation-label >(Eq. 2.C.4)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Specific\,Gravity} $$
 =+=
 
 When the English System units are used, the density
 must be used rather than the specific gravity.
 
+=+=
+<span class= equation-label >(Eq. 2.C.5)</span>
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
+=+=
+
 For values of 70 centistokes and above, use the
-following conversion:
+following conversion, otherwise use the table [Tbl 2.C.2](#tbl2c2):
 
 =+=
 <span class= equation-label >(Eq. 2.C.6)</span>
-$$ SSU = centistokes ·  4.635 $$
+$$ SSU = centistokes ·  4.632 $$
 =+=
+
+A programmable, smooth function is provided in <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.7" target="_blank">ANSI/HI 9.6.7</a> to convert centistokes to Seconds Saybolt Universal.
 
 Above the range of this table and within the range
 of the viscosimeter, multiply the particular value
@@ -282,4 +284,4 @@ scrolling: false
 <div class="table-label">Tbl. 2.C.3</div>
 
 ### References
-1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIC-2.
+1. <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular440sup.pdf" target="_blank">J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).</a>

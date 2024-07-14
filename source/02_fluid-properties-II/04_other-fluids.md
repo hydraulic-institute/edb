@@ -9,7 +9,9 @@ hide_units: true
 
 ### Degrees A.P.I. vs. Specific Gravity for Oil          
 
-The relation of Degrees A.P.I. to Specific Gravity (sg) is expressed by the following formula:
+Degrees API is a scale used to measure the relative density of petroleum liquids and oil compared to water, as established by the American Petroleum Institute (API). The scale is calibrated in degrees API, with larger values coresponding to a lower specific gravity. Light crudes generally exceed 38 degrees API and heavy crudes are commonly labeled as all crudes with an API gravity of 22 degrees or below. Intermediate crudes fall in the range of 22 degrees to 38 degrees API gravity.
+
+The relation of Degrees A.P.I. to Specific Gravity (sg) is expressed by the following formula: 
 
 =+=
 <span class= equation-label >(Eq. 2.D.1)</span>
