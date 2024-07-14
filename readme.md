@@ -295,7 +295,9 @@ All pages can contain blocks for equations, which are entered in LaTeX and autom
 
 Mathematical formulas are not very well support by HTML - so we need  an alternative method of defining them such that they are rendered to the screen correctly.  We use [LaTex](https://www.latex-project.org/about/) to do this.
 
-LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well.
+LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well. 
+
+Equations are displayed in italics.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`.
 
 For example:
 ```
@@ -304,9 +306,21 @@ $$ \Delta h_f = { {fL \over D} * v^2  \over 2g}$$
 =+=
 ```
 
-The block will compile and be typset as the following:
+This block will compile and be typset as the following:
 
 <img src='./images/equation.png'/>
+
+Equations are displayed in italics when wrapped with `$$`.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`:
+
+```
+=+=
+$$ \mathrm{\Delta} \mathrm{h}_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{supply}) \over \rho ·g} $$
+=+=
+```
+
+This block will compile and be typset as the following:
+
+<img src='./images/equation2.png'/>
 
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.

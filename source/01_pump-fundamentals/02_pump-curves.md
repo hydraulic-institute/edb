@@ -120,12 +120,15 @@ its duty point, or designed operating point, at BEP. At BEP, a pump will have lo
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
 of the impeller vanes at entry.
 
-**Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region.Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
+**Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. Depending on the specific speed of the pump, which is further defined in the pump principles section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
 **Allowable Operating Region (AOR):** The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate, as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life. The pump manufacturer should be consulted to define this region. Typically, operating intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions and the types of 
 issues that can occur when operating outside of the POR and AOR.
 
 **Shut-off Head and Pump Runout:** These points are important during manufacturer testing to fully define the shape of the pump curve. They are the furthest points to the left and right on the curve. Shut-off is the condition of zero flow rate where no liquid is flowing through the pump, but the pump is primed and running. Operating at this point for more than a few seconds can cause serious mechanical issues. Pump Runout is the point at which flow is at a maximum. Operating at this flow can cause cavitation, vibration and, in some pumps, overloading of the driver. These points are to be avoided when operating pumps.
+
+ <a href="https://www.pumps.org/resources/pump-faqs/#what-is-the-bep-and-what-happens-to-a-pumping-system-when-a-pump-is-not-operated-at-the-bep-" target="_blank">Read more about the BEP, POR and AOR at HI’s Pump FAQs.</a>
+
 
 =^=
 title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Webinar
