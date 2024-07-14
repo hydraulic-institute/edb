@@ -25,7 +25,7 @@ What do Pump Pros Know and why do they know it? This series of articles highligh
 
 ### Pump PROfiles 
 
-If you are entering the workforce, changing jobs, or are simply curious, Pump PROfiles is a series of articles where you can learn about the career in the pump and fluid handling industry, and the skills needed to be successful. There are great opportunities within the industry, so click <a href="https://www.pumps.org/pump-profiles/" target="_blank">here</a> to explore the profile of some of the positions.   
+If you are entering the workforce, changing jobs, or are simply curious, Pump PROfiles is a series of articles where you can learn about the career in the pump and fluid handling industry, and the skills needed to be successful. There are great opportunities within the industry. Click <a href="https://www.pumps.org/pump-profiles/" target="_blank">here</a> to explore the profile of some of the positions.   
 
 ### Training
 
