@@ -2,6 +2,7 @@
 title: F) Flange Dimensions
 date: April 19th, 2024
 description: Dimensions of flanges.
+hide_units: true
 -----
 
 =^=
