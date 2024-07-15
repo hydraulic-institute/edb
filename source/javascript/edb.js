@@ -262,12 +262,8 @@ Vue.component('converter', {
     watch: {
         unit: function () {
             if (this.unit) {
-                this.unit_from = this.unit.units[0];
-                if ('default_to' in this.unit) {
-                    this.unit_to = this.unit.default_to;
-                } else {
-                    this.unit_to = this.unit.units[1];
-                }
+                this.unit_from = this.unit.default_from;
+                this.unit_to = this.unit.default_to;
                 this.recalculate();
             }
         },

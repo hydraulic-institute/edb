@@ -3,7 +3,6 @@
         "measure": "Area",
         "decimals": 2,
         "image": "area.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "m&sup2",
@@ -56,6 +55,11 @@
                 "description": "acre"
             }
         ],
+        "default_from": {
+            "label": "m&sup2",
+            "factor": 1,
+            "description": "square meter"
+        },
         "default_to": {
             "label": "ft&sup2",
             "factor": 10.7639104167097,
@@ -66,7 +70,6 @@
         "measure": "Density",
         "decimals": 2,
         "image": "density.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "kg/dm&sup3",
@@ -113,13 +116,22 @@
                 "factor": 1.0001605257643853,
                 "description": "specific gravity at 39.2&degF or 4&degC"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "g/cm&sup3",
+            "factor": 1,
+            "description": "gram per cubic centimeter"
+        },
+        "default_to": {
+            "label": "lbm/ft&sup3",
+            "factor": 62.427,
+            "description": "pound mass per cubic foot"
+        }
     },
     {
         "measure": "Flow, Volumetric",
         "decimals": 2,
         "image": "flow-volumetric.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "m&sup3/h",
@@ -256,13 +268,22 @@
                 "factor": 0.0063401292299,
                 "description": "million gallons per day (US)"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m&sup3/h",
+            "factor": 1,
+            "description": "cubic meter per hour"
+        },
+        "default_to": {
+            "label": "gal/min (US)",
+            "factor": 4.40286764029913,
+            "description": "gallon per minute (US)"
+        }
     },
     {
         "measure": "Force",
         "decimals": 2,
         "image": "force.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "kgf",
@@ -299,13 +320,22 @@
                 "factor": 0.0011023113394870287,
                 "description": "short ton"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "N",
+            "factor": 9.80665,
+            "description": "newton"
+        },
+        "default_to": {
+            "label": "lbf",
+            "factor": 2.2046224311646316,
+            "description": "pound-force"
+        }
     },
     {
         "measure": "Length",
         "decimals": 2,
         "image": "length.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "m",
@@ -372,13 +402,22 @@
                 "factor": 3.280833437,
                 "description": "survey foot (US)"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m",
+            "factor": 1,
+            "description": "meter"
+        },
+        "default_to": {
+            "label": "ft",
+            "factor": 3.280839895,
+            "description": "foot"
+        }
     },
     {
         "measure": "Power",
         "decimals": 2,
         "image": "power.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "kW",
@@ -405,13 +444,22 @@
                 "factor": 737.5621211696556,
                 "description": "foot-pound force per second"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "kW",
+            "factor": 1,
+            "description": "kilowatt"
+        },
+        "default_to": {
+            "label": "hp (550 ft-lbf/s)",
+            "factor": 1.341022038490283,
+            "description": "horsepower"
+        }
     },
     {
         "measure": "Pressure",
         "decimals": 2,
         "image": "Pressure.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "atm",
@@ -503,13 +551,22 @@
                 "factor": 101325,
                 "description": "newton per square meter"
             }
-        ]
+        ],
+        "default_to": {
+            "label": "psi",
+            "factor": 14.6959,
+            "description": "pound per square inch"
+        },
+        "default_from": {
+            "label": "kPa",
+            "factor": 101.325,
+            "description": "kilopascal"
+        }
     },
     {
         "measure": "Temperature",
         "decimals": 2,
         "image": "temperature.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "&degC",
@@ -531,13 +588,22 @@
                 "factor": "R",
                 "description": "degrees rankine"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "&degC",
+            "factor": "C",
+            "description": "degrees celsius"
+        },
+        "default_to": {
+            "label": "&degF",
+            "factor": "F",
+            "description": "degrees fahrenheit"
+        }
     },
     {
         "measure": "Velocity",
         "decimals": 2,
         "image": "velocity.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "m/s",
@@ -584,13 +650,22 @@
                 "factor": 3.599999712000023,
                 "description": "kilometer per hour"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m/s",
+            "factor": 1,
+            "description": "meter per second"
+        },
+        "default_to": {
+            "label": "ft/s",
+            "factor": 3.28083989501312,
+            "description": "foot per second"
+        }
     },
     {
         "measure": "Volume",
         "decimals": 2,
         "image": "volume.png",
-        "has_descriptions": false,
         "units": [
             {
                 "label": "m&sup3",
@@ -682,6 +757,16 @@
                 "factor": 1.307950547436162,
                 "description": "cubic yard"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m&sup3",
+            "factor": 1,
+            "description": "cubic meter"
+        },
+        "default_to": {
+            "label": "ft&sup3",
+            "factor": 35.3146667214885,
+            "description": "cubic foot"
+        }
     }
 ]
