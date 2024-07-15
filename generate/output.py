@@ -111,7 +111,18 @@ def definitions_table_data(table, path, filename, in_sections):
             if len(row[0]):
                 section_idx=None
                 section = row[0].split(" (")[0]
+                print(section)
                 columns = [row[i] for i,x in enumerate(row) if i != 0]
+                image=''
+                image_size='100%'
+                for item in columns:
+                    if 'Image?' in item:
+                        parts = item.split('?')
+                        image = './images/'+ parts[1].replace(" ","")
+                        if len(parts) > 2:
+                            image_size=parts[2]
+                        columns.remove(item)
+                        break
                 comment_idx = len(columns)
                 for item in ['Comment','Search','']:
                     if item in columns:
@@ -135,7 +146,7 @@ def definitions_table_data(table, path, filename, in_sections):
                     if "Section" in col_data[0]:
                         section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
+                page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'rows':[]}) 
                 index['sections'].append(section)       
                 continue
             datarow=row[1:comment_idx+1]
@@ -782,8 +793,8 @@ def write_content(graph, node, slug_override=None, path="."):
     html_minified = htmlmin.minify(
             html, remove_comments=True, remove_empty_space=True)
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
-        f.write(html_minified)
-        # f.write(html)
+        #f.write(html_minified)
+        f.write(html)
     return html_minified
 
 def make_root(graph):

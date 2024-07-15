@@ -14,6 +14,11 @@
     <br>
     {% for section in table %}
         <span id="{{section.section}}"><h3>{{section.section}}</h3></span>
+        {% if section.image|length %}
+        <div class="image-container" style="text-align:center;">
+            <img src="{{section.image}}" alt="{{section.section}}" width="{{section.image_size}}">
+        </div>
+        {% endif %}
         <div class="fixed-container" style={{index.style}}>
         <table class="{{units}}-units data-table table is-striped is-hoverable is-fullwidth">
         <thead class="fixed-thead">
