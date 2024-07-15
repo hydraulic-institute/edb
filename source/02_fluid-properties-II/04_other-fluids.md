@@ -124,22 +124,22 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	The below graphs represent the exponentially decreasing nature.
 -	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value, and it is inversely proportional to the temperature.
 
-![](./images/Brix1.png#center "")
+![](./images/Brix2.png#center "")
 <div class="figure-label">(Fig. 2.D.2)</div>
 
-![](./images/Brix2.png#center "")
+![](./images/Brix3.png#center "")
 <div class="figure-label">(Fig. 2.D.3)</div>
 
-![](./images/Brix3.png#center "")
+![](./images/Brix4.png#center "")
 <div class="figure-label">(Fig. 2.D.4)</div>
 
-![](./images/Brix4.png#center "")
+![](./images/Brix5.png#center "")
 <div class="figure-label">(Fig. 2.D.5)</div>
 
-![](./images/Brix5.png#center "")
+![](./images/Brix6.png#center "")
 <div class="figure-label">(Fig. 2.D.6)</div>
 
-![](./images/Brix6.png#center "")
+![](./images/Brix7.png#center "")
 <div class="figure-label">(Fig. 2.D.7)</div>
 
 =^=
