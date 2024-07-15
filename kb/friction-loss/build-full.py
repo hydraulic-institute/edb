@@ -79,13 +79,12 @@ for grp in groups:
     out_data = None
     for col in categories:
         # Clean up many spaces
-        col_cleaned = " ".join(col.split()).strip()
-        print('Working on: '+col_cleaned)
+        col_name = " ".join(col.split()).strip()
+        print('Working on: '+col_name)
         if not isNan(grp_data['STANDARD 1'][grp_data.index[0]]) and len(grp_data['STANDARD 1'][grp_data.index[0]]):
-            col_name = col_cleaned + f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
+            standard = f" per {grp_data['STANDARD 1'][grp_data.index[0]].strip()}"
         else:
-            col_name = col_cleaned
-        col_name=' '.join(col_name.split())
+            standard = ''
         #col_name = col_name.replace("(","")
         data = new_data.loc[new_data['Sub-Division Name'] == col].copy(True)
         # Get rid of all columns without data
@@ -103,7 +102,7 @@ for grp in groups:
         outfilename=outfilename.replace('(','').replace(')','')
         out_data = data.copy(True)
         out_data.drop(columns=out_data.columns[:(ALL_COLUMNS.to_list().index('Sub-Division Name')+1)],axis='columns',inplace=True)
-        out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
+        #out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
         out_data.dropna(axis = 'columns', how = 'all',inplace=True)
 
         # Table Filename 
@@ -116,6 +115,7 @@ for grp in groups:
             filename = f'{outfilename}-{div}.csv'
             df_indexes = list(data[data['Sub-Division'] == div].index)
             df_copy = out_data.copy(True)
+            df_copy.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
             df_copy = df_copy[df_copy.index.isin(df_indexes)]
             new_row = pd.DataFrame(getHeader(df_copy),index=[0])
             df_copy = pd.concat([new_row, df_copy]).reset_index(drop = True)
@@ -123,6 +123,11 @@ for grp in groups:
             df_copy = df_copy.fillna('')
             df_copy.to_csv(filename, header=False, index=False)
 
+        if not isNan(out_data['STANDARD 1'][out_data.index[0]]) and len(out_data['STANDARD 1'][out_data.index[0]]):
+            col_name = col_name + f" per {out_data['STANDARD 1'][out_data.index[0]].strip()}"
+        else:
+            col_name = col_name + standard
+            
         # Weed out any Wall Thickness that are not values
         if 'Wall Thickness, inches' in out_data.keys():
             out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
