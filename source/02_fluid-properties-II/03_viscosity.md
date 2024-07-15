@@ -284,4 +284,4 @@ scrolling: false
 <div class="table-label">Tbl. 2.C.3</div>
 
 ### References
-1. <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular440sup.pdf" target="_blank">J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).</a>
+1. Hydraulic Institute, Engineering Data Book, Second Edition, 1990, Figure IIC-2.
