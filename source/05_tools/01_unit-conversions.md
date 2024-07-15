@@ -1,10 +1,13 @@
 -----
 title: A) Unit Conversions
 date: December 8th, 2023
+hide_units: true
 -----
 
 ## Unit Conversions
 Select a dimension or measure, then input a value to convert to the desired unit.
+
+**Note:  Units included are used in practice. Some metric units are not approved SI units.**
 
 <converter/>
 

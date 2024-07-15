@@ -72,9 +72,11 @@
                         <input class='input' v-model='from_value'/>
                     </div>
                     <div class='column'>
-                        <select  class="input" v-model='from_unit'>
-                            <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
-                        </select>
+                        <div class='select'>
+                            <select  class="input" v-model='from_unit'>
+                                <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,9 +86,11 @@
                 </span>
                 <div class='columns'>
                     <div class='column'>
-                        <select  class="input" v-model='to_unit'>
-                            <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
-                        </select>                   
+                        <div class='select'>
+                            <select  class="input" v-model='to_unit'>
+                                <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                            </select>    
+                        </div>               
                     </div>
                     <div class='column'    v-if='show_sg'>
                         <div class="columns">
@@ -155,9 +159,11 @@
                                     <input class='input' v-model='from'/>
                                 </div>
                                 <div class='column'>
-                                    <select  class="input" v-model='unit_from'>
-                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
-                                    </select>
+                                    <div class='select'>
+                                        <select class="input" v-model='unit_from'>
+                                            <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -173,13 +179,29 @@
                                     <input class='input' v-model='to' readonly disabled/>
                                 </div>
                                 <div class='column'>
-                                    <select  class="input" v-model='unit_to'>
-                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
-                                    </select>
+                                    <div class='select'>
+                                        <select  class="input" v-model='unit_to'>
+                                            <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <nav class='panel'>
+                        <p class="panel-heading" style='margin-bottom:0px'>Abbreviation & Unit</p>
+                        <div class="panel-block"  style="height:300px; overflow:auto; display:block;">
+                            <table>
+                                <tbody>
+                                    <tr v-for='u in unit.units'>
+                                        <td v-html="u.label"></td>
+                                        <td v-html="u.description"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </nav>
                 </nav>
             </div>
         </div>
@@ -190,28 +212,33 @@
 	<form>
         <div class='field'>
                     <span class='label'>Select Material</span>
-                    <select  class="input" v-model='material'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in materials'>${m}</option>
-                    </select>
-
+                    <div class='select'>
+                        <select  class="input" v-model='material'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in materials'>${m}</option>
+                        </select>
+                    </div>
                 </div>
         <div class='columns'>
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
                     <span class='label'>Select Nominal Size (in)</span>
-                    <select class='input'v-model='nominal_size'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in sizes'>${m}</option>
-                    </select>
+                    <div class='select'>
+                        <select class='input'v-model='nominal_size'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in sizes'>${m}</option>
+                        </select>
+                    </div>
                 </div>
                 <div class='field' v-if='selector'>
                     <span class='label'>Select ${selector}</span>
-                    <select class='input' v-model='selection'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in selectors'>${m}</option>
-                    </select>
+                    <div class='select'>
+                        <select class='input' v-model='selection'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in selectors'>${m}</option>
+                        </select>
+                    </div>
                 </div>
                 <hr/>
                 <div v-if='specified'>
@@ -448,18 +475,22 @@
                                 <b>${c.type}</b>
                                 </div>
                                 <div class="col-4">
-                                    <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
-                                        <option :value='b' v-for='b in end_types'>${b}</option>
-                                    </select>
+                                    <div class='select'>
+                                        <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
+                                            <option :value='b' v-for='b in end_types'>${b}</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row align-items-center">
                             <div class="col-4"><b>Length Units</b></div>
                             <div class="col-4">
-                                <select  class="input" style="min-width:120px;" v-model='length_unit'>
-                                    <option :value='l' v-for='l in length_types'>${l}</option>
-                                </select>
+                                <div class='select'>
+                                    <select  class="input" style="min-width:120px;" v-model='length_unit'>
+                                        <option :value='l' v-for='l in length_types'>${l}</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -531,10 +562,12 @@
                         <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
                         <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
                             <div>
-                            <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
-                                <select class="input" style="width:150px;" v-model='conversion_unit'>
-                                    <option :value='c' v-for='c in conversion_types' v-html='c'></option>
-                                </select>
+                                <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
+                                <div class='select'>
+                                    <select class="input" style="width:150px;" v-model='conversion_unit'>
+                                        <option :value='c' v-for='c in conversion_types' v-html='c'></option>
+                                    </select>
+                                </div>
                             </div>
                         </th>
                     </tr>
