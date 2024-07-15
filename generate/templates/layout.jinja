@@ -72,8 +72,8 @@
                         <input class='input' v-model='from_value'/>
                     </div>
                     <div class='column'>
-                        <div class='select'>
-                            <select  class="input" v-model='from_unit'>
+                        <div class='select' style='width:100%'>
+                            <select  class="input" style="width:100% !important" v-model='from_unit'>
                                 <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
                             </select>
                         </div>
@@ -86,7 +86,7 @@
                 </span>
                 <div class='columns'>
                     <div class='column'>
-                        <div class='select'>
+                        <div class='select' style='width:100%'>
                             <select  class="input" v-model='to_unit'>
                                 <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
                             </select>    
@@ -111,7 +111,7 @@
                     <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} <span v-html='from_unit.label' /></span>
                     <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
                     <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} <span v-html='to_unit.label' /></span>
-                    <p v-if='kinematic_warning' class='has-text-danger'>${kinematic_warning}</p>
+                    <p v-if='kinematic_warning' class='has-text-primary'>${kinematic_warning}</p>
                 </div>
             </div>
         </form>
@@ -159,7 +159,7 @@
                                     <input class='input' v-model='from'/>
                                 </div>
                                 <div class='column'>
-                                    <div class='select'>
+                                    <div class='select' style='width:100%'>
                                         <select class="input" v-model='unit_from'>
                                             <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
                                         </select>
@@ -179,7 +179,7 @@
                                     <input class='input' v-model='to' readonly disabled/>
                                 </div>
                                 <div class='column'>
-                                    <div class='select'>
+                                    <div class='select' style='width:100%'>
                                         <select  class="input" v-model='unit_to'>
                                             <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
                                         </select>
@@ -212,7 +212,7 @@
 	<form>
         <div class='field'>
                     <span class='label'>Select Material</span>
-                    <div class='select'>
+                    <div class='select' style='width:100%'>
                         <select  class="input" v-model='material'>
                             <option value=''></option>
                             <option :value='m' v-for='m in materials'>${m}</option>
@@ -224,7 +224,7 @@
                 
                 <div class='field' v-if='sizes && sizes.length'>
                     <span class='label'>Select Nominal Size (in)</span>
-                    <div class='select'>
+                    <div class='select' style='width:100%'>
                         <select class='input'v-model='nominal_size'>
                             <option value=''></option>
                             <option :value='m' v-for='m in sizes'>${m}</option>
@@ -233,7 +233,7 @@
                 </div>
                 <div class='field' v-if='selector'>
                     <span class='label'>Select ${selector}</span>
-                    <div class='select'>
+                    <div class='select' style='width:100%'>
                         <select class='input' v-model='selection'>
                             <option value=''></option>
                             <option :value='m' v-for='m in selectors'>${m}</option>
@@ -475,7 +475,7 @@
                                 <b>${c.type}</b>
                                 </div>
                                 <div class="col-4">
-                                    <div class='select'>
+                                    <div class='select' style='width:100%'>
                                         <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
                                             <option :value='b' v-for='b in end_types'>${b}</option>
                                         </select>
@@ -486,7 +486,7 @@
                         <div class="row align-items-center">
                             <div class="col-4"><b>Length Units</b></div>
                             <div class="col-4">
-                                <div class='select'>
+                                <div class='select' style='width:100%'>
                                     <select  class="input" style="min-width:120px;" v-model='length_unit'>
                                         <option :value='l' v-for='l in length_types'>${l}</option>
                                     </select>
@@ -563,7 +563,7 @@
                         <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
                             <div>
                                 <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
-                                <div class='select'>
+                                <div class='select' style='width:100%'>
                                     <select class="input" style="width:150px;" v-model='conversion_unit'>
                                         <option :value='c' v-for='c in conversion_types' v-html='c'></option>
                                     </select>

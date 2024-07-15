@@ -362,11 +362,11 @@ Vue.component('viscosity-converter', {
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
 
-            if (this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
+            if (this.to_unit.hasOwnProperty('cSt_cuttoff') && this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff_max}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
-            if (this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
-                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            if (this.to_unit.hasOwnProperty('cSt_cuttoff_min') && this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is below this limit, consider using a different unit of measure`;
             }
         },
         kk() {
@@ -389,11 +389,11 @@ Vue.component('viscosity-converter', {
                 this.steps.push(`${centistoke} Centistoke / ${this.to_unit.toPrime} = ${output} ${this.to_unit.label}`);
             this.to_value = output;
 
-            if (this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
+            if (this.to_unit.hasOwnProperty('cSt_cuttoff') && this.to_unit.cSt_cuttoff_max && centistoke > this.to_unit.cSt_cuttoff_max) {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff_max}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
-            if (this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
-                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
+            if (this.to_unit.hasOwnProperty('cSt_cuttoff_min') && this.to_unit.cSt_cuttoff_min && centistoke < this.to_unit.cSt_cuttoff_min) {
+                this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke > ${this.to_unit.cSt_cuttoff_min}.  The input you entered (${centistoke}) is below this limit, consider using a different unit of measure`;
             }
         },
         kd() {
@@ -404,7 +404,7 @@ Vue.component('viscosity-converter', {
             if (this.from_unit.id != 5)
                 this.steps.push(`${input} ${this.from_unit.label} x ${this.from_unit.toPrime} = ${centistoke} Centistoke`);
 
-            if (this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
+            if (this.to_unit.hasOwnProperty('cSt_cuttoff') && this.to_unit.cSt_cuttoff && centistoke > this.to_unit.cSt_cuttoff) {
                 this.kinematic_warning = `Warning:  ${this.to_unit.label} is only valid for Centistoke < ${this.to_unit.cSt_cuttoff}.  The input you entered (${centistoke}) is above this limit, consider using a different unit of measure`;
             }
             const centipoise = (input * parseFloat(this.sg)).toPrecision(this.output_sig_fig);
