@@ -3,7 +3,10 @@ $(document).ready(function() {
     setup_menu();
     $('#unit-menu').show();
     $('#mobile-menu').show();
-    $('#fullpage-menu').show();
+});
+
+$(window).on('load',function() {
+    $('#fullpage').show();
 });
 
 // $(window).on('pageshow',function() {
@@ -30,22 +33,40 @@ function setup_menu() {
     //What if search sets active window?
     let active_topic = $(".active_topic");
     let default_topic = $(".default_topic");
+    let current_topic = active_topic;
+    if (!active_topic.length) {
+        current_topic = default_topic;
+    }   
     let storage_active_topic = localStorage.getItem("active_topic");
     if (!storage_active_topic) {
-        if (!active_topic.length) {
-            storage_active_topic = default_topic[0].id;
-        }
-        else {
-            storage_active_topic = active_topic[0].id;
+        storage_active_topic = {'topic':'', 'href':''};
+        storage_active_topic['topic'] = current_topic.attr('id');
+        storage_active_topic['href'] = current_topic.attr('href');
+        localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
+    }
+    else {
+        storage_active_topic = JSON.parse(storage_active_topic);
+        // if (current_topic.attr('id') != storage_active_topic['topic']) {
+        //     storage_active_topic['topic'] = current_topic.attr('id');
+        //     storage_active_topic['href'] = current_topic.attr('href');
+        //     localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
+        //     if (current_topic != default_topic) {
+        //         window.location.href = storage_active_topic['href'];
+        //         return;
+        //     }
+        // }
+        if (storage_active_topic['href'] != window.location.pathname) {
+            window.location.href = storage_active_topic['href'];
+            return;
         }
     }
-    localStorage.setItem("active_topic", storage_active_topic);
-    $("#"+storage_active_topic).addClass("active_topic");
-    $("#"+storage_active_topic).addClass("is-active");
+    $("#"+storage_active_topic['topic']).addClass("active_topic");
+    $("#"+storage_active_topic['topic']).addClass("is-active");
+
     //Set the dropdowns
     let expanded_sections = localStorage.nav_show;
     if (!expanded_sections) {
-        let active_section = "#"+storage_active_topic.split("_")[0];
+        let active_section = "#"+storage_active_topic['topic'].split("_")[0];
         localStorage.setItem("nav_show", JSON.stringify([active_section]));
         $(active_section+"-button").click();
     }
@@ -96,5 +117,6 @@ function menu_topic_click(event) {
     event.stopImmediatePropagation();
     var target = $(this).attr('id');
     console.log('topic:', target);
-    localStorage.setItem("active_topic", target);
+    let active_topic = {"topic":target, "href":$(this).attr('href')};
+    localStorage.setItem("active_topic", JSON.stringify(active_topic));
 }

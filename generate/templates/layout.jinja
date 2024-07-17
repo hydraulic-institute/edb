@@ -750,7 +750,8 @@
                 </div>
             </div>
         </nav>
-        <div id="fullpage-menu" class="page columns is-fullheight">
+        <div id="fullpage" class="page columns is-fullheight" style="display:none;">
+          <div id="desktop-menu">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div class='sticky_search'>
@@ -805,21 +806,21 @@
                                                         {% for stopic in topic['children']|sort(attribute='sort') %}
                                                         <li style="padding-left:1em" class="menu-list">
                                                             {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
-                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
                                                             {% else %}
-                                                                <a id='{{section['slug']}}_{{topic['slug']}}' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
                                                             {% endif %}
                                                         </li>
-                                                            {% endfor %}
+                                                        {% endfor %}
                                                     </ul>
                                                 </li>
                                             {% elif topic['metadata']['title']%}
                                                 <li class="menu-list">
-                                                        {% if topic['slug'] == 'home' %}
-                                                            <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
-                                                        {% else %}
-                                                            <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
-                                                        {% endif %}
+                                                    {% if topic['slug'] == 'home' %}
+                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    {% else %}
+                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    {% endif %}
                                                 </li>
                                             {% endif %}
                                         {% endfor %}
@@ -831,11 +832,10 @@
                     </ul>
                 </aside>
             </div>
-            
-            <div id="content" class="column content">
-               
-                {% block content %}{% endblock %}
-            </div>
+          </div>
+          <div id="content" class="column content">
+            {% block content %}{% endblock %}
+          </div>
         </div>
     </div>
     <script src='/javascript/tank_calculators.js'></script>
