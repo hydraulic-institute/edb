@@ -729,7 +729,6 @@
                                     <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
                                 </li>
                             </ul>
-                            
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for section in sections|sort(attribute='sort') %} 
                                     <li>
@@ -787,39 +786,48 @@
                     </ul>
                     
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
-                        {% for section in sections|sort(attribute='sort') %} 
-                            <li>
-                                <span class="menu-label">{{section['metadata']['title']}}</span>
-                                <ul>
-                                    {% for topic in section['children']|sort(attribute='sort') %}
-                                        {% if topic['directory']%}
-                                            <li class="menu-list">
-                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</span>
-                                                <ul>
-                                                    {% for stopic in topic['children']|sort(attribute='sort') %}
-                                                    <li style="padding-left:1em" class="menu-list">
-                                                        {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
-                                                            <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
-                                                        {% else %}
-                                                            <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
-                                                        {% endif %}
-                                                    </li>
-                                                     {% endfor %}
-                                                </ul>
-                                            </li>
-                                        {% elif topic['metadata']['title']%}
-                                            <li class="menu-list">
-                                                {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                    <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
-                                                {% else %}
-                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
-                                                {% endif %}
-                                            </li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
+                        <div id='nav-accordion'>
+                        {% for section in sections|sort(attribute='sort') %}
+                            <div class="accordion-item mb-2">
+                                <h2 class="accordion-header" id="{{section['slug']}}-header">
+                                    <button id="{{section['slug']}}-button" class="accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#{{section['slug']}}" aria-expanded="false">
+                                        {{section['metadata']['title']}}
+                                    </button>
+                                </h2>
+                                <div id="{{section['slug']}}" class="accordion-collapse collapse" aria-labelledby="{{section['slug']}}-header">
+                                    <div class="accordion-body menu-accordion-body">
+                                        {% for topic in section['children']|sort(attribute='sort') %}
+                                            {% if topic['directory']%}
+                                                <li>
+                                                    <label style="padding-left:1em">{{topic['metadata']['title']}}</span>
+                                                    <ul>
+                                                        {% for stopic in topic['children']|sort(attribute='sort') %}
+                                                        <li style="padding-left:1em" class="menu-list">
+                                                            {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
+                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% else %}
+                                                                <a id='{{section['slug']}}_{{topic['slug']}}' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% endif %}
+                                                        </li>
+                                                            {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% elif topic['metadata']['title']%}
+                                                <li class="menu-list">
+                                                    {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
+                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    {% else %}
+                                                        <a id='{{section['slug']}}_{{topic['slug']}}' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
                         {% endfor %}
+                        </div>
                     </ul>
                 </aside>
             </div>
@@ -837,9 +845,11 @@
     <script type="application/javascript" src='/javascript/dt.js'></script>
     <script>
         $(document).ready(function() {
+            setup_menu();
             $('#unit-menu').show();
             $('#mobile-menu').show();
             $('#fullpage-menu').show();
+            $('.menu-section').bind('click', menu_click);
         });
 
         MathJax.Hub.Queue(
@@ -851,6 +861,58 @@
                 }
             }
         );
+
+        function setup_menu() {      
+            //Update the menu to show the active topic and any uncollapsed parents
+            //Set the active menu
+            let active = localStorage.getItem("active_topic");
+            if (active) {
+                $(active).addClass("active_topic");
+                $(active).addClass("is-active");
+            }
+            //Set the dropdowns
+            let expanded_sections = localStorage.nav_show;
+            if (expanded_sections) {
+                expanded_sections = JSON.parse(expanded_sections);
+                for (let section of expanded_sections) {
+                    $(section+"-button").click();
+                }
+            }
+        }
+
+        function menu_click(event) {
+            //Save open menu items to local storage
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+            var target = $(this).attr('data-bs-target');
+            console.log('target:', target);
+            var is_expanded = ($(this).attr('aria-expanded') == "true")?true:false;
+            console.log('is-expanded:', is_expanded);
+            var show_stored = [];
+            if (localStorage.nav_show) {
+                show_stored = JSON.parse(localStorage.nav_show);
+                console.log('Current: '+show_stored);
+            }
+            var index = show_stored.indexOf(target);
+            if (!is_expanded) {
+                if (index > -1) {
+                    show_stored.splice(index, 1);
+                    console.log("collapse");
+                }
+            }
+            else {
+                if (index == -1) {
+                    show_stored.push(target);
+                    console.log("expand");
+                }
+            }
+            localStorage.setItem('nav_show', JSON.stringify(show_stored));
+            console.log('Now: '+show_stored);
+            //Get the active window
+            let active_topic = $(".menu-accordion-body .menu-list .active_topic")[0].id
+            localStorage.setItem('active_topic', active_topic); 
+            console.log('Topic: '+active_topic);
+        }
     </script>
     </body>
 </html>
