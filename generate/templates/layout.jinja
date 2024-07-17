@@ -815,11 +815,11 @@
                                                 </li>
                                             {% elif topic['metadata']['title']%}
                                                 <li class="menu-list">
-                                                    {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
-                                                    {% else %}
-                                                        <a id='{{section['slug']}}_{{topic['slug']}}' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
-                                                    {% endif %}
+                                                        {% if topic['slug'] == 'home' %}
+                                                            <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                        {% else %}
+                                                            <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                        {% endif %}
                                                 </li>
                                             {% endif %}
                                         {% endfor %}
@@ -843,76 +843,6 @@
     <script src='/javascript/demonstrators.js'></script>
     <script src='/javascript/edb.js'></script>
     <script type="application/javascript" src='/javascript/dt.js'></script>
-    <script>
-        $(document).ready(function() {
-            setup_menu();
-            $('#unit-menu').show();
-            $('#mobile-menu').show();
-            $('#fullpage-menu').show();
-            $('.menu-section').bind('click', menu_click);
-        });
-
-        MathJax.Hub.Queue(
-            function () {
-                var formulas = document.getElementsByClassName('formula');
-                for (var i = 0; i < formulas.length; ++i) {
-                    var item = formulas[i];  
-                    item.style.visibility = 'visible';
-                }
-            }
-        );
-
-        function setup_menu() {      
-            //Update the menu to show the active topic and any uncollapsed parents
-            //Set the active menu
-            let active = localStorage.getItem("active_topic");
-            if (active) {
-                $(active).addClass("active_topic");
-                $(active).addClass("is-active");
-            }
-            //Set the dropdowns
-            let expanded_sections = localStorage.nav_show;
-            if (expanded_sections) {
-                expanded_sections = JSON.parse(expanded_sections);
-                for (let section of expanded_sections) {
-                    $(section+"-button").click();
-                }
-            }
-        }
-
-        function menu_click(event) {
-            //Save open menu items to local storage
-            event.stopPropagation();
-            event.stopImmediatePropagation();
-            var target = $(this).attr('data-bs-target');
-            console.log('target:', target);
-            var is_expanded = ($(this).attr('aria-expanded') == "true")?true:false;
-            console.log('is-expanded:', is_expanded);
-            var show_stored = [];
-            if (localStorage.nav_show) {
-                show_stored = JSON.parse(localStorage.nav_show);
-                console.log('Current: '+show_stored);
-            }
-            var index = show_stored.indexOf(target);
-            if (!is_expanded) {
-                if (index > -1) {
-                    show_stored.splice(index, 1);
-                    console.log("collapse");
-                }
-            }
-            else {
-                if (index == -1) {
-                    show_stored.push(target);
-                    console.log("expand");
-                }
-            }
-            localStorage.setItem('nav_show', JSON.stringify(show_stored));
-            console.log('Now: '+show_stored);
-            //Get the active window
-            let active_topic = $(".menu-accordion-body .menu-list .active_topic")[0].id
-            localStorage.setItem('active_topic', active_topic); 
-            console.log('Topic: '+active_topic);
-        }
-    </script>
+    <script type="application/javascript" src='/javascript/base.js'></script>
     </body>
 </html>

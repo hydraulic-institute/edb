@@ -610,6 +610,56 @@ var appView = new Vue({
     },
 
     methods: {
+        /*
+        scroll_active_into_view() {
+            // Scroll selected topic into view
+            const active = document.getElementsByClassName("active_topic");
+            //console.log('active '+active.length);
+            let active_len = active.length-1;
+            localStorage.setItem('active_topic', active[active_len].id); 
+            active[active_len].scrollIntoView({
+                block: "center"
+            });
+            //Clear out any additional active topics
+            if (active_len) {
+                for (let i=active_len-1;i>=0;i--) {
+                    //Order is important here
+                    active[i].classList.remove("is-active");
+                    active[i].classList.remove("active_topic");
+                }
+            }
+            return active[0].id;
+        },
+        
+        setup_menu(search_result=false) {
+            //Update the menu to show the active topic and any uncollapsed parents
+            //Set the active menu
+            if (search_result) {
+                localStorage.setItem("nav_show", JSON.stringify([]));
+                let active = this.scroll_active_into_view();
+                active = active.split('_')[0];
+                localStorage.setItem("nav_show", JSON.stringify([active]));
+                return;
+            }
+            let active = localStorage.getItem("active_topic");
+            if (active) {
+                document.getElementById(active).classList.add("active_topic");
+                document.getElementById(active).classList.add("is-active");
+            }
+            //Set the dropdowns
+            let expanded_sections = localStorage.nav_show;
+            if (expanded_sections) {
+                expanded_sections = JSON.parse(expanded_sections);
+                for (let section of expanded_sections) {
+                    let el = document.getElementById(section+"-button");
+                    el.setAttribute("aria-expanded","true");
+                    el.classList.remove("collapsed");
+                    document.getElementById(section).classList.add("show");
+                }
+            }
+        },
+        */
+
         handle_unit_toggle() {
             console.log("Got ToggleChecked:", this.isChecked);
             if (this.isChecked) {
