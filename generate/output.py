@@ -107,7 +107,7 @@ def definitions_table_data(table, path, filename, in_sections):
         index = {'sections': [], 'index_style': 'height:200px', 'style': use_style}
         orig_col_obj={'url': None, 'ref': None, 'type': None}
         csv_data = [[c.replace('\ufeff', '') for c in row] for row in csv_data]
-        for row in csv_data:
+        for idx, row in enumerate(csv_data):
             if len(row[0]):
                 section_idx=None
                 section = row[0].split(" (")[0]
@@ -146,7 +146,11 @@ def definitions_table_data(table, path, filename, in_sections):
                     if "Section" in col_data[0]:
                         section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'rows':[]}) 
+                # Apply formatting to the previous section
+                if (len(page_sections)):
+                    if len(page_sections[-1]['rows']) < 8:
+                        page_sections[-1]['style'] = 'height:'+str(50+len(page_sections[-1]['rows'])*50)+'px'
+                page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'style': '', 'rows':[]}) 
                 index['sections'].append(section)       
                 continue
             datarow=row[1:comment_idx+1]
@@ -191,11 +195,16 @@ def definitions_table_data(table, path, filename, in_sections):
                                 source_links[i]=(col_link_data[i]['url'].replace("{{SITE}}",link_str))
                         else:
                             # Replace all new lines with br
-                            datarow[i]=datarow[i].replace('\n','<br>')    
+                            datarow[i]=datarow[i].replace('\n','<br>')
                 row_columns = [DefinitionColumn(columns[i], datarow[i], source_links[i])
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
+        # Apply formatting to the last section
+        if (len(page_sections)):
+            if len(page_sections[-1]['rows']) < 8:
+                page_sections[-1]['style'] = 'height:'+str(50+len(page_sections[-1]['rows'])*50)+'px'
+        # Apply formatting to the index
         index['index_style']='height:'+str(len(index['sections'])*50)+'px'
         return index, page_sections
     

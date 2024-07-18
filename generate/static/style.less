@@ -112,10 +112,6 @@ aside {
         font-size:.75rem;
         background-color: @hi_blue;
     }
-
-    .menu-accordion-body {
-        background-color: @hi_blue;
-    }
 }
 
 .desktop_only {
@@ -127,7 +123,7 @@ aside {
 // sidebar is hidden below touch size (1023
 @media (min-width: 1024px) {
     #content {
-        padding-left: 450px;
+        padding-left: 350px;
     }
 
     .sidebar {
@@ -306,6 +302,7 @@ caption {
     font-size: .75em;
     font-weight: bolder;
     font-style: italic;
+    padding-bottom: 30px;
 }
 
 img[src*='#center'] { 
@@ -503,6 +500,9 @@ Friction Loss styles
     --bs-accordion-btn-color:white;
     --bs-accordion-active-bg: @hi_light;
     --bs-accordion-active-color: white;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+    transition: all 0.5s;
 }
 
 .green-accordion {
@@ -510,10 +510,42 @@ Friction Loss styles
     --bs-accordion-btn-color:black;
     --bs-accordion-active-bg: @hi_green;
     --bs-accordion-active-color: white;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+    transition: all 0.5s;
 }
-.accordion-button::after {
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
+
+// .accordion-button::after {
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+//     transition: all 0.5s;
+//   }
+// .accordion-button:not(.collapsed)::after {
+// background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+// }
+// .accordion-button::after {
+// transition: all 0.5s;
+// }
+
+.nav-accordion-item {
+    border:unset;
+}
+
+.nav-accordion-button {
+    --bs-accordion-border-color: unset !important;
+    --bs-accordion-active-bg: unset !important;
+    --bs-accordion-btn-focus-box-shadow: unset !important;
+    --bs-accordion-border-width: unset !important;
+    box-shadow: unset !important;
+    padding:unset;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffdd57' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffdd57' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+    transition: all 0.5s;
+}
+
+.nav-accordion-body {
+    background-color: @hi_blue;
+    padding:unset;
+    font-size: .9rem;
 }
 
 /***********************/
