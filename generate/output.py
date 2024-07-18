@@ -149,7 +149,7 @@ def definitions_table_data(table, path, filename, in_sections):
                 # Apply formatting to the previous section
                 if (len(page_sections)):
                     if len(page_sections[-1]['rows']) < 8:
-                        page_sections[-1]['style'] = 'height:'+str(50+len(page_sections[-1]['rows'])*50)+'px'
+                        page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
                 page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'style': '', 'rows':[]}) 
                 index['sections'].append(section)       
                 continue
@@ -203,7 +203,7 @@ def definitions_table_data(table, path, filename, in_sections):
         # Apply formatting to the last section
         if (len(page_sections)):
             if len(page_sections[-1]['rows']) < 8:
-                page_sections[-1]['style'] = 'height:'+str(50+len(page_sections[-1]['rows'])*50)+'px'
+                page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
         # Apply formatting to the index
         index['index_style']='height:'+str(len(index['sections'])*50)+'px'
         return index, page_sections
