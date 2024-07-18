@@ -17,15 +17,15 @@ $(window).on('pageshow',function() {
 //     $('#nav-accordion').show();
 // });
 
-// MathJax.Hub.Queue(
-//     function () {
-//         var formulas = document.getElementsByClassName('formula');
-//         for (var i = 0; i < formulas.length; ++i) {
-//             var item = formulas[i];  
-//             item.style.visibility = 'visible';
-//         }
-//     }
-// );
+MathJax.Hub.Queue(
+    function () {
+        var formulas = document.getElementsByClassName('formula');
+        for (var i = 0; i < formulas.length; ++i) {
+            var item = formulas[i];  
+            item.style.visibility = 'visible';
+        }
+    }
+);
 
 function pathToId(path) {
     let parts = path.split("/");
