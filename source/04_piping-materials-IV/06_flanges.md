@@ -26,8 +26,8 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-c207.png " style="max-height:150px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-c207.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=
@@ -56,13 +56,13 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="headingOne-2">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.1-1.png " style="max-height:150px"></div>
-                    <div class="col-6"><img src="./images/flange-16.1-2.png " style="max-height:150px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.1-1.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.1-2.png "></div>
                 </div>
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=
@@ -104,12 +104,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-threaded" class="accordion-collapse collapse" aria-labelledby="flanges-threaded-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-threaded.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-threaded.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div>
                                     =|=
@@ -133,12 +133,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-slipon" class="accordion-collapse collapse" aria-labelledby="flanges-slipon-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-slipon-welding.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-slipon-welding.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -162,12 +162,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-socket-weld" class="accordion-collapse collapse" aria-labelledby="flanges-socket-weld-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-socket-welded.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-socket-welded.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -191,12 +191,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-welding-neck" class="accordion-collapse collapse" aria-labelledby="flanges-welding-neck-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-welding-neck.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-welding-neck.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -220,12 +220,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-lapped" class="accordion-collapse collapse" aria-labelledby="flanges-lapped-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-lapped.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-lapped.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -274,12 +274,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-400-threaded" class="accordion-collapse collapse" aria-labelledby="flanges-400-threaded-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-threaded.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-threaded.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div>
                                     =|=
@@ -303,12 +303,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-400-slipon" class="accordion-collapse collapse" aria-labelledby="flanges-400-slipon-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-slipon-welding.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-slipon-welding.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -332,12 +332,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-400-socket-weld" class="accordion-collapse collapse" aria-labelledby="flanges-400-socket-weld-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-socket-welded.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-socket-welded.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -361,12 +361,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-400-welding-neck" class="accordion-collapse collapse" aria-labelledby="flanges-400-welding-neck-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-welding-neck.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-welding-neck.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -390,12 +390,12 @@ hide_price: true
                         </h2>
                         <div id="flanges-400-lapped" class="accordion-collapse collapse" aria-labelledby="flanges-400-lapped-header">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-16.5-lapped.png" style="max-height:150px"></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-16.5-lapped.png"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                                <div class="row flange-img-row">
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                                 </div>
                                 <div style="padding:0">
                                     =|=
@@ -434,12 +434,12 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne-5" class="accordion-collapse collapse" aria-labelledby="headingOne-5">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-16.png " style="max-height:200px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.47-weld-neck-1-16.png "></div>
                 </div>
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=
@@ -471,12 +471,12 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne-6" class="accordion-collapse collapse" aria-labelledby="headingOne-6">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-4.png" style="max-height:200px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.47-weld-neck-1-4.png"></div>
                 </div>
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=
@@ -508,12 +508,12 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne-7" class="accordion-collapse collapse" aria-labelledby="headingOne-7">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-16.png " style="max-height:200px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.47-weld-neck-1-16.png "></div>
                 </div>
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=
@@ -545,12 +545,12 @@ hide_price: true
         </h2>
         <div id="panelsStayOpen-collapseOne-8" class="accordion-collapse collapse" aria-labelledby="headingOne-8">
             <div class="accordion-body">
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-16.47-weld-neck-1-4.png " style="max-height:200px"></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-16.47-weld-neck-1-4.png "></div>
                 </div>
-                <div class="row">
-                    <div class="col-6"><img src="./images/flange-hexbolt-threaded.png "></div>
-                    <div class="col-6"><img src="./images/flange-stud-threaded.png "></div>
+                <div class="row flange-img-row">
+                    <div class="col-6"><img class="flange-img" src="./images/flange-hexbolt-threaded.png "></div>
+                    <div class="col-6"><img class="flange-img" src="./images/flange-stud-threaded.png "></div>
                 </div>
                 <div style="padding:0">
                     =|=

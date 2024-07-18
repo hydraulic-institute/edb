@@ -139,10 +139,16 @@ function menu_topic_click(event) {
     //Save open menu items to local storage
     //event.stopPropagation();
     //event.stopImmediatePropagation();
-    $('.menu-topic').removeClass("active_topic");
-    $('.menu-topic').removeClass("is-active");
     let target = $(this).attr('id');
     let href = $(this).attr('href');
+    let current_topic = JSON.parse(localStorage.active_topic)['topic'];
+    if (target == current_topic) {
+        event.stopPropagation();
+        event.preventDefault();
+        return;
+    }
+    $('.menu-topic').removeClass("active_topic");
+    $('.menu-topic').removeClass("is-active");
     if (!target) {
         target = pathToId(window.location.pathname);
         href = window.location.pathname;
