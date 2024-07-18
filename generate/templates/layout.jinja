@@ -693,7 +693,7 @@
                             </div-->   
                             {% endif %}                             
                                
-                        <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop" style="display:none;">
+                        <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop">
                             <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
@@ -737,7 +737,11 @@
                                             {% for topic in section['children']|sort(attribute='sort') %}
                                                 {% if topic['metadata']['title']%}
                                                 <li class="menu-list">
-                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                                {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
+                                                    <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                {% else %}
+                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                {% endif %}
                                                 </li>
                                                 {% endif %}
                                             {% endfor %}
@@ -760,7 +764,7 @@
                                 <input id="nav-search" v-model='needle' class="input" type="text" placeholder="Search"/>
                             </div>
                             <div v-if='needle' class='control'>
-                                <a class='button is-info' @click='needle=""'> &times; </a>
+                                <a class='button is-info menu-topic' @click='needle=""'> &times; </a>
                             </div>
                         </div>
                     </div>
@@ -805,7 +809,7 @@
                                                     <ul>
                                                         {% for stopic in topic['children']|sort(attribute='sort') %}
                                                         <li style="padding-left:1em" class="menu-list">
-                                                            {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
+                                                            {% if topic['slug'] == 'home' %}
                                                                 <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
                                                             {% else %}
                                                                 <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
