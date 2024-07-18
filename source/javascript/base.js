@@ -1,10 +1,11 @@
 
 $(document).ready(function() {
+    add_listeners();
     $('#unit-menu').show();
     $('#mobile-menu').show();
 });
 
-$(window).on('load',function() {
+$(window).on('pageshow',function() {
     setup_menu();
     $('#fullpage').show();
 });
@@ -16,15 +17,15 @@ $(window).on('load',function() {
 //     $('#nav-accordion').show();
 // });
 
-MathJax.Hub.Queue(
-    function () {
-        var formulas = document.getElementsByClassName('formula');
-        for (var i = 0; i < formulas.length; ++i) {
-            var item = formulas[i];  
-            item.style.visibility = 'visible';
-        }
-    }
-);
+// MathJax.Hub.Queue(
+//     function () {
+//         var formulas = document.getElementsByClassName('formula');
+//         for (var i = 0; i < formulas.length; ++i) {
+//             var item = formulas[i];  
+//             item.style.visibility = 'visible';
+//         }
+//     }
+// );
 
 function pathToId(path) {
     let parts = path.split("/");
@@ -81,6 +82,7 @@ function setup_menu() {
 
     //Set the dropdowns
     let expanded_sections = localStorage.nav_show;
+    $('.menu-section').unbind('click');
     if (!expanded_sections) {
         let active_section = "#"+storage_active_topic['topic'].split("_")[0];
         localStorage.setItem("nav_show", JSON.stringify([active_section]));
@@ -93,13 +95,19 @@ function setup_menu() {
         }
     }
     $('.menu-section').bind('click', menu_click);
-    $('.menu-topic').bind('click', menu_topic_click);
+}
+
+function add_listeners() {
+    const els = document.querySelectorAll('.menu-section');
+    els.forEach(el => el.addEventListener('click', menu_click));
+    const els2 = document.querySelectorAll('.menu-topic');
+    els2.forEach(el => el.addEventListener('click', menu_topic_click));
 }
 
 function menu_click(event) {
     //Save open menu items to local storage
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    //event.stopPropagation();
+    //event.stopImmediatePropagation();
     var target = $(this).attr('data-bs-target');
     console.log('target:', target);
     //target = target.replace("#", "");
@@ -129,8 +137,8 @@ function menu_click(event) {
 
 function menu_topic_click(event) {
     //Save open menu items to local storage
-    event.stopPropagation();
-    event.stopImmediatePropagation();
+    //event.stopPropagation();
+    //event.stopImmediatePropagation();
     $('.menu-topic').removeClass("active_topic");
     $('.menu-topic').removeClass("is-active");
     let target = $(this).attr('id');
@@ -151,8 +159,8 @@ function menu_topic_click(event) {
             $(section+"-button").click();
         }
         $('.menu-section').bind('click', menu_click);
-        $("#"+target).addClass("active_topic");
     }
     $("#"+target).addClass("is-active");
+    $("#"+target).addClass("active_topic");
     localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href}));
 }
