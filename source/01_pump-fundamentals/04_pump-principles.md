@@ -1,6 +1,6 @@
 -----
 title: D) Pump Principles
-date: April 19th, 2024
+date: July 19th, 2024
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 

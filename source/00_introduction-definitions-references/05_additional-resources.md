@@ -1,6 +1,6 @@
 -----
 title: E) Additional Resources
-date:  April 19th, 2024
+date:  July 19th, 2024
 description: Frequently asked questions regarding pump and system curves; pump systems, and additional resources are included.
 hide_units: true
 -----
