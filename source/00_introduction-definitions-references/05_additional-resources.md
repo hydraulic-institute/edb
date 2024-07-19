@@ -7,7 +7,7 @@ hide_units: true
 
 ## Additional Resources
 
-A collection of external resources (mostly free) provided for users of the Engineering Data Library to learn more about the pump industry, pump and system fundamentals, and careers within the industry.
+A collection of external resources (mostly free) are provided for users of the HI DATA TOOL so they can learn more about the pump industry, pump and system fundamentals, and careers within the industry.
 
 ### Frequently Asked Questions
 

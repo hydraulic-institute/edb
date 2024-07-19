@@ -12,9 +12,9 @@ description: Updates to EDL
     <img alt='Hydraulic Institute' src='/images/banner-300.jpg' style='min-width:100%'/>
 </section>
 
-### Engineering Data Library Releases
+### Hydraulic Institute DATA TOOL Releases
 
-#### 2024
+#### 2024 - Phase 2 release branded as the HI DATA TOOL
 
 -  Added preface section covering definitions, pump types, references, and resources. 
 - *Section I* - added educational demonstrators, updated equation formatting, updated most figures, and added a section on submergence. 
@@ -23,6 +23,6 @@ description: Updates to EDL
 - *Section IV* - added subsections A – F covering pipe and flange dimensions.
 - *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, added PVC pipe to the friction loss calculator, and added subsections D – I covering line shaft bearing losses, tank volume calculators, elevation effect on atmospheric pressure, and NEMA motor dimensions.
 
-#### 2021
+#### 2021 - Phase 1 release branded as the HI Engineering Data Library
 
 - Initial release
