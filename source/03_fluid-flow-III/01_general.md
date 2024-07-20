@@ -1,6 +1,6 @@
 -----
 title:  A) Pipe Frictional Losses
-date: April 19th, 2024
+date: July 19th, 2024
 description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance, head loss in piping systems.
 -----
 
@@ -45,7 +45,7 @@ Another common form, which can be solved without iteration, is shown in Equation
 $$ {1 \over \sqrt f} = -2 × \log_{10}({\epsilon/D \over 3.7} + {5.74 \over Re^{0.9}}) $$
 =+=
 
-###Reynolds Number
+### Reynolds Number
 
 The **Reynolds number** (Re) is a non-dimensional ratio of inertial forces to viscous forces and is used to help scale data over a range of pipe sizes,
 fluid properties, and flow conditions. It is used as the basis for the Moody Diagram to determine friction factors and pressure/head losses.
@@ -72,6 +72,15 @@ At Reynolds numbers less than about 2000, the flow tends to be laminar where it 
 ### Pipe Roughness
 
 **Pipe roughness** (ε) varies with pipe material, age, usage, fluid transport and lining. Table 3.A.1 gives example values for some clean materials.
+
+=^=
+title: Pump Piping – Practices to Improve Reliability and Operation – Recorded Webinar Series 
+description: Learn the requirements for pump piping design per the requirements in ANSI/HI 9.6.6.  Inlet and outlet piping requirements and case studies. Wet well connections, modeling, parallel pump piping, pump station retrofit piping and more. 
+image: /images/recordedwebinar.png
+url: https://training.pumps.org/products/pump-piping-for-rotodynamic-pumps-2-part-recorded-webinar-series
+price: 130.00
+hide_price: true
+=^=
 
 =|=
 title: Roughness Values

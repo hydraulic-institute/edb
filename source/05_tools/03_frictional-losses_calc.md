@@ -1,12 +1,21 @@
 -----
 title: C) Pipe Friction Loss Calculator
-date: April 19th, 2024
+date: July 19th, 2024
 description: Frictional loss calculator for piping constructed of various materials.
 -----
 ## Calculator: Frictional Losses in Pipes
 Instructions: To use this calculator, select the material and complete the subsequent drop down menus.  Further instructions and details are found below the Calculator.
 
 <friction-loss-calculator/>
+
+=^=
+title:  Pump Life Cycle Cost   
+description: Comprehensive and authoritative, HI/Europump’s LCC guide describes essential pumping system components and shows you, step-by-step, the considerations necessary to specify, design and operate the system for minimum life cycle cost.     
+image: https://www.pumps.org/wp-content/uploads/2021/10/FINAL-LCC2ndEd-Cover_Front_Black_Border-2421.jpg
+url: https://www.pumps.org/product/pump-life-cycle-costs-a-guide-to-lcc-analysis-for-pumping-systems-2nd-edition/ 
+price: 99.00
+hide_price: true
+=^=
 
 Frictional Resistance for incompressible viscous liquids, including water, in a pipe is computed as a loss in head.  The method outlined in <a href="/fluid-flow-III/general.html">(See Section IIIA)</a>  describes the fundamental formulas and methodology for calculating pipe friction.
 
@@ -27,12 +36,4 @@ Further information on viscosity and commonly accepted viscosity values for liqu
 
 Typical US or Metric units are both supported by choosing the user preference in banner on the upper right end of the webpage.
 
-<!--=^=
-title: Rotodynamic Pumps: Guideline for NPSH Margin - 1 Part Webinar
-description: The Hydraulic Institute’s Net Positive Suction Head (NPSH) Margin committee has developed this in depth webinar, based on the American National Standard ANSI/HI 9.6.1 Rotodynamic Pumps – Guideline for NPSH Margin, to teach attendees how to calculate the available NPSH to the pump, what the pump requires, and important terminology
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fRotodynamic_Pumps_Guidelines_for_NPSH_Margin.png
-url: https://estore.pumps.org/Rotodynamic-Pumps-Guidelines-for-NPSH-Margin-1-Part-On-Demand-Webinar-P3105.aspx
-price: 59.00
-hide_price: true
-=^=-->
 

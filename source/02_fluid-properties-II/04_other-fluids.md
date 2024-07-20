@@ -1,6 +1,6 @@
 -----
 title: D) Other Fluids
-date: April 19th, 2024
+date: July 19th, 2024
 description: Properties of other fluids.
 hide_units: true
 -----
@@ -54,9 +54,9 @@ data: IIB1-2.csv
 <div class="table-label">Tbl. 2.D.2</div>
 
 =^=
-title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
-description: ANSI/HI 9.6.7-2015 outlines the method for predicting performance of rotodynamic pumps in Newtonian liquids of viscosity greater than water. The standard applies to single and multi-stage rotodynamic pumps having radial impellers n<sub>s</sub> = 60, (N<sub>s</sub> = 3000), handling liquids exhibiting Newtonian behavior, and a kinematic viscosity greater than 1 and less than 4000 centistokes.
-image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-600x776.jpg
+title: ANSI/HI 9.6.7 Rotodynamic Pumps Guideline for Effects of Liquid Viscosity on Performance 
+description: Learn the calculation methods to adjust the tested flow, head, efficiency and power on water to the viscosity the pump will be handling. Additionally, learn how NPSHR will be affected and considerations for starting torque. 
+image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-scaled.jpg
 url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
 price: 130.00
 hide_price: true

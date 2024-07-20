@@ -1,14 +1,14 @@
 -----
 title: F) Flange Dimensions
-date: April 19th, 2024
+date: July 19th, 2024
 description: Dimensions of flanges.
 hide_units: true
 -----
 
 =^=
-title: Fundamentals of Water Hammer and Surge Suppression - 1 Part Webinar
+title: Fundamentals of Water Hammer and Surge Suppression - 1 Part Recorded Webinar
 description: This webinar has been created to provide an overview of water hammer, pulsation dampeners, effects of water hammer on pumps and valves, transient cavitation, surge supression and case studies.
-image: /images/pumpsystemsmatter.png
+image: /images/recordedwebinar.png
 url: https://training.pumps.org/products/fundamentals-of-waterhammer-and-surge-suppression-1-part-recorded-webinar
 price: 59.00
 hide_price: true

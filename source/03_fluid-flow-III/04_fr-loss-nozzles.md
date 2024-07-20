@@ -1,6 +1,6 @@
 -----
 title:  D) Losses in Nozzles
-date: April 19th, 2024
+date: July 19th, 2024
 description: Calculation of frictional losses of nozzles. 
 hide_units: true
 -----
@@ -20,6 +20,15 @@ Where:
 - d<sub>1</sub> = Nozzle Diameter in inches <!--units us = "inches" metric = "inches"/-->
 - h = Head in feet <!--units us = "feet" metric = "meters"/--> 
 - C = Discharge Coefficient = 1
+
+=^=
+title: Live - Pump System Optimization & Assessment Course
+description: Building on Fundamental knowledge this course examines the economics of pumping systems, and methods to assess and optimize pumping systems.  
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_ed93f963a3d079aaabc5737d1bda7511.png
+url: https://training.pumps.org/pump-system-optimization-and-assessment-course
+price: 99.00
+hide_price: true
+=^=
 
 ### Theoretical Discharge of Nozzles in Gallons per Minute <!--units us = "Gallons per Minute" metric = "m^3^/s"/-->
 
@@ -47,11 +56,3 @@ The following amounts of water are recommended to move 1 cubic foot: <!--units u
 
 **For sprinkling golf courses** it is reasonably safe to figure 10 gallons per minute for each Green with 35 PSIA at hose valve outlet and 25 gallons per minute for each Fairway with 35 PSIA at hose valve outlet. The standard conditions are 100 feet of ¾ inch hose for greens sprinklers and 100 feet of 1 inch hose for fairway sprinklers. Use gate valves with a hose nipple at all outlets instead of the customary hose faucets on account of the friction loss in the hose faucets.
 
--=^=
-title: Fundamentals of Variable Speed Pumping: 1-Part On-Demand Webinar
-description: This webinar is an introduction to variable speed pumping and how to use it for more efficient and better controlled pumping. It explains how flow and pressure are controlled with variable speed pumping and when to use each. Also covered are the devices used to achieve variable speed pumping, including variable frequency drives. The attendee will also learn the benefits provided by variable speed pumping, in relation to cost, operation, and energy savings.
-image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_393becd30058bdaf236507781e2c8a19.png
-url: https://training.pumps.org/products/fundamentals-of-variable-speed-pumping-1-part-on-demand-webinar
-price: 99.00
-hide_price: true
-=^=

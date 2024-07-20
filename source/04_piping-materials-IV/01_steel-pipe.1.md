@@ -1,18 +1,18 @@
 -----
 title: A) Steel Pipe
-date: April 19th, 2024
+date: July 19th, 2024
 description: Dimensions of wrought steel pipes.
 hide_units: true
 -----
-
 =^=
-title: Rotodynamic Pumps for Vibration Measurement & Allowable Values – 1 Part Webinar
-description: Webinar viewers will gain in-depth insights into critical measurements made on non-rotating components of rotodynamic pumps, including maximum allowable vibration values and acceptance tests. If your customers use rotodynamic pumps in clear water, this webinar will be useful for factory (vibration) acceptance tests as well as field vibration testing.
-image: /images/pumpsystemsmatter.png
-url: https://training.pumps.org/products/vibration-acceptance-testing-for-rotodynamic-pumps-1-part-on-demand-webinar
+title: Pump Intake Design & Troubleshooting – Recorded Webinar Series 
+description: This webinar series is based on ANSI/HI 9.8, and covers the standard and important design requirements of pump intakes. 
+image: /images/recordedwebinar.png
+url: https://training.pumps.org/products/effective-pump-intake-design-and-troubleshooting-problem-intakes-4-part-recorded-webinar-series 
 price: 59.00
 hide_price: true
 =^=
+
 
 **Note: Internal diameter and area are calculated based on nominal values**
 

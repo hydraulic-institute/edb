@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves
-date: April 19th, 2024
+date: July 19th, 2024
 description: Contains a pump curves tutorial, demonstration, and worked examples.
 -----
 
@@ -131,9 +131,9 @@ issues that can occur when operating outside of the POR and AOR.
 
 
 =^=
-title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Webinar
+title: Preferred and Allowable Operating Regions for Rotodynamic Pumps to Maximize Reliability - 1 Part Recorded Webinar
 description: Learn how the Preferred Operating Region (POR) and Allowable Operating Region (AOR) are defined for centrifugal, mixed and axial flow pumps and their impact on efficiency and reliably.  Curve shape, hydraulic loading, temperature rise, vibration/noise, suction recirculation, priming, NPSH margin and more will be discussed related to a pumps AOR as well as methods to ensure operating in the AOR will be presented.  This webinar is a must for pump end users, application engineers, pump system designers, specifying engineers and pump service providers.
-image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+image: /images/recordedwebinar.png
 url: https://training.pumps.org/products/preferred-and-allowable-operating-regions-for-rotodynamic-pumps-to-maximize-reliability-1-part-on-demand-webinar
 price: 119.00
 hide_price: true
@@ -240,10 +240,10 @@ requirements so long as inter-stage discharge piping is configured to permit so.
 <div class="figure-label">Fig. 1.B.9</div>
 
 =^=
-title: Factory Performance Testing: Hydraulic, Mechanical, and Hydrostatic: 1-Part On-Demand Webinar
--description: This webinar will provide a summary of all HI laboratory test standards for rotodynamic pumps. The presenter will cover test procedures, setups, and arrangements along with data acquisition, acceptance grades, and instrumentation. Learn the basics of factory performance testing in this 1-part on-demand webinar
-image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_393becd30058bdaf236507781e2c8a19.png
-url: https://training.pumps.org/products/factory-performance-testing-hydraulic-mechanical-and-hydrostatic-1-part-on-demand-webinar
+title: Factory Performance Testing: Hydraulic, Mechanical and Hydrostatic – Recorded Webinar 
+description: Learn laboratory test standards for rotodynamic pumps, covering test procedures, setups, and arrangements along with data acquisition, acceptance grades, and instrumentation.  
+image: /images/recordedwebinar.png
+url: https://training.pumps.org/products/factory-performance-testing-hydraulic-mechanical-and-hydrostaticrecorded-webinar
 price: 119.00
 hide_price: true
 =^=

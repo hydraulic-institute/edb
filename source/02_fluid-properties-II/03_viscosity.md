@@ -1,6 +1,6 @@
 -----
 title: C) Viscosity
-date: April 19th, 2024
+date: July 19th, 2024
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -220,6 +220,14 @@ Viscosity conversion tables for use with the above described viscosimeters are i
 ![](./images/IIC-2.png#center "")
 <div class="figure-label">(Fig. 2.C.2)</div>
 
+=^=
+title: ANSI/HI 9.6.7 Rotodynamic Pumps Guideline for Effects of Liquid Viscosity on Performance
+description: Learn the calculation methods to adjust the tested flow, head, efficiency and power on water to the viscosity the pump will be handling. Additionally, learn how NPSHR will be affected and considerations for starting torque. 
+image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-scaled.jpg
+url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
+price: 700.00
+hide_price: true
+=^=
 
 ### Viscosity Conversion Tables
 

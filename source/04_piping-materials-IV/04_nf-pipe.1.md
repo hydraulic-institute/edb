@@ -1,13 +1,13 @@
 -----
 title: D) Non-Ferrous Pipe and Tube
-date: April 19th, 2024
+date: July 19th, 2024
 hide_units: true
 -----
 
 =^=
 title: Pump Application Guideline for Commercial Building Services
 description: This guideline has been created to provide engineers, trainers, maintenance staff, and plant operators with the knowledge necessary to effectively specify pumps in North America. The material in this publication has been compiled by the Hydraulic Institute (HI) Pump Application Guidelines Committee and is intended to capture the experience and collective knowledge of pump and pumping systems experts for reference by system designers, constructors, and end users.
-image: /images/logo-big.png
+image: https://www.pumps.org/wp-content/uploads/2021/10/CBS_Black_Border_Cover_92419.jpg
 url: https://www.pumps.org/product/commercial-building-services-guidelines-for-pump-selection-application-and-operation/
 price: 150.00
 hide_price: true

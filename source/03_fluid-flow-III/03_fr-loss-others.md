@@ -1,6 +1,6 @@
 -----
 title:  C) Losses With Other Fluids
-date: April 19th, 2024
+date: July 19th, 2024
 description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
 -----
 
@@ -19,10 +19,10 @@ No allowance has been made for abnormal conditions of interior surface or instal
 
 
 =^=
-title: Basic System Hydraulics - 1 Part Webinar
-description: It’s important to be able to visualize pump curves and system curves to understand their interaction. Learn the basics of system hydraulics in this 1-part webinar.
+title: NPSHA and Total Head Calculations – On-Demand Training 
+description: Learn methods to calculate pump Total Head, Bowl Assembly Head, and Net Positive Suction Head Available, including detailed calculation examples. 
 image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
-url: https://training.pumps.org/products/basic-system-hydraulics-pump-system-curves-energy-consumption-control-methods-1-part-on-demand-webinar
+url: https://training.pumps.org/products/net-positive-suction-head-npsha-total-head-calculations-on-demand-training
 price: 199.00
 hide_price: true
 =^=

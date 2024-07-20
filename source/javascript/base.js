@@ -10,13 +10,6 @@ $(window).on('pageshow',function() {
     $('#fullpage').show();
 });
 
-// $(window).on('pageshow',function() {
-//     $('#unit-menu').show();
-//     $('#mobile-menu').show();
-//     $('#fullpage-menu').show();
-//     $('#nav-accordion').show();
-// });
-
 MathJax.Hub.Queue(
     function () {
         var formulas = document.getElementsByClassName('formula');
@@ -39,7 +32,6 @@ function setup_menu() {
     //Update the menu to show the active topic and any uncollapsed parents
     //Get the active window
     //Save the active window
-    //What if search sets active window?
     if ($('.navbar-burger').is(':visible')) {
         return;
     }
@@ -109,14 +101,14 @@ function menu_click(event) {
     //event.stopPropagation();
     //event.stopImmediatePropagation();
     var target = $(this).attr('data-bs-target');
-    console.log('target:', target);
+    //console.log('target:', target);
     //target = target.replace("#", "");
     var is_expanded = ($(this).attr('aria-expanded') == "true")?true:false;
-    console.log('is-expanded:', is_expanded);
+    //console.log('is-expanded:', is_expanded);
     var show_stored = [];
     if (localStorage.nav_show) {
         show_stored = JSON.parse(localStorage.nav_show);
-        console.log('Current: '+show_stored);
+        //console.log('Current: '+show_stored);
     }
     var index = show_stored.indexOf(target);
     if (!is_expanded) {
@@ -132,7 +124,7 @@ function menu_click(event) {
         }
     }
     localStorage.setItem('nav_show', JSON.stringify(show_stored));
-    console.log('Now: '+show_stored);
+    //console.log('Now: '+show_stored);
 }
 
 function menu_topic_click(event) {
