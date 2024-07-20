@@ -562,9 +562,8 @@
                         <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
                         <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
                             <div>
-                                <span style="vertical-align: -webkit-baseline-middle;">Select: </span>
                                 <div class='select' style='width:100%'>
-                                    <select class="input" style="width:150px;" v-model='conversion_unit'>
+                                    <select class="input" style="width:150px;display:inline-flex;justify-content:flex-start;" v-model='conversion_unit'>
                                         <option :value='c' v-for='c in conversion_types' v-html='c'></option>
                                     </select>
                                 </div>
