@@ -13,6 +13,9 @@ $(window).on('pageshow',function() {
     setup_menu();
     $('#fullpage').show();
     check_each_dt();
+    //In case a search is requested, scroll to the first result
+    if ( $('.current_mark').length )
+        $('.current_mark').get(0).scrollIntoView({block: "center"});
 });
 
 $("[data-bs-toggle]").on('click',function(e){
