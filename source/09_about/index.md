@@ -1,3 +1,3 @@
 -----
-title: About the EDL
+title: About the HI DATA TOOL
 -----
