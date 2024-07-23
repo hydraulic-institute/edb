@@ -1041,7 +1041,7 @@ def html(graph, specials, ignores, production=False):
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
             url = dict()
-            url['loc'] = f"/{ section['slug'] }/{ topic['slug'] }"
+            url['loc'] = f"{ section['slug'] }/{ topic['slug'] }"
             url['lastmod'] = date.today()
             url['changefreq'] = 'monthly'
             url['priority'] = '0.8'

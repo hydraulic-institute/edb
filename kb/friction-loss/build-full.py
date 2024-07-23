@@ -122,12 +122,14 @@ for grp in groups:
             print ("writing Sub Division Data to "+filename) 
             df_copy = df_copy.fillna('')
             df_copy.to_csv(filename, header=False, index=False)
-
+            
+        # Add the standard to the column name
         if not isNan(out_data['STANDARD 1'][out_data.index[0]]) and len(out_data['STANDARD 1'][out_data.index[0]]):
             col_name = col_name + f" per {out_data['STANDARD 1'][out_data.index[0]].strip()}"
         else:
             col_name = col_name + standard
-            
+        out_data.drop(columns=['STANDARD 1'],axis='columns',inplace=True)
+           
         # Weed out any Wall Thickness that are not values
         if 'Wall Thickness, inches' in out_data.keys():
             out_data.drop(out_data[(out_data['Wall Thickness, inches'] == '--') | 
