@@ -44,7 +44,7 @@
         "category": "K",
         "label": "SSU (100 F)",
         "toPrime": "ssu100",
-        "cSt_cuttoff_max": 500,
+        "cSt_cuttoff_max_ignore": 500,
         "cSt_cuttoff_min": 1.81,
         "id": 8
     }

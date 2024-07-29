@@ -107,11 +107,22 @@ def definitions_table_data(table, path, filename, in_sections):
         index = {'sections': [], 'index_style': 'height:200px', 'style': use_style}
         orig_col_obj={'url': None, 'ref': None, 'type': None}
         csv_data = [[c.replace('\ufeff', '') for c in row] for row in csv_data]
-        for row in csv_data:
+        for idx, row in enumerate(csv_data):
             if len(row[0]):
                 section_idx=None
                 section = row[0].split(" (")[0]
+                print(section)
                 columns = [row[i] for i,x in enumerate(row) if i != 0]
+                image=''
+                image_size='100%'
+                for item in columns:
+                    if 'Image?' in item:
+                        parts = item.split('?')
+                        image = './images/'+ parts[1].replace(" ","")
+                        if len(parts) > 2:
+                            image_size=parts[2]
+                        columns.remove(item)
+                        break
                 comment_idx = len(columns)
                 for item in ['Comment','Search','']:
                     if item in columns:
@@ -135,7 +146,11 @@ def definitions_table_data(table, path, filename, in_sections):
                     if "Section" in col_data[0]:
                         section_idx = i 
                 headings = columns.copy()
-                page_sections.append({'section':section, 'headings':headings, 'rows':[]}) 
+                # Apply formatting to the previous section
+                if (len(page_sections)):
+                    if len(page_sections[-1]['rows']) < 8:
+                        page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
+                page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'style': '', 'rows':[]}) 
                 index['sections'].append(section)       
                 continue
             datarow=row[1:comment_idx+1]
@@ -180,11 +195,16 @@ def definitions_table_data(table, path, filename, in_sections):
                                 source_links[i]=(col_link_data[i]['url'].replace("{{SITE}}",link_str))
                         else:
                             # Replace all new lines with br
-                            datarow[i]=datarow[i].replace('\n','<br>')    
+                            datarow[i]=datarow[i].replace('\n','<br>')
                 row_columns = [DefinitionColumn(columns[i], datarow[i], source_links[i])
                            for i in range(num_columns)]
                 r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
                 page_sections[-1]['rows'].append(r)
+        # Apply formatting to the last section
+        if (len(page_sections)):
+            if len(page_sections[-1]['rows']) < 8:
+                page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
+        # Apply formatting to the index
         index['index_style']='height:'+str(len(index['sections'])*50)+'px'
         return index, page_sections
     
@@ -774,7 +794,9 @@ def write_content(graph, node, slug_override=None, path="."):
     # pprinter.pprint(related)
 
     # pprinter.pprint(node)
-    html = template.render(section="", topic=slug, node=node,
+    topic_section = related[0]['path'].split('\\')[-1].split('_')[-1]
+    print('Section: '+topic_section+' Topic: '+slug)
+    html = template.render(section=topic_section, topic=slug, node=node,
                            content=content, sections=sections,
                            related=related, options=options)
 
@@ -782,8 +804,8 @@ def write_content(graph, node, slug_override=None, path="."):
     html_minified = htmlmin.minify(
             html, remove_comments=True, remove_empty_space=True)
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
-        f.write(html_minified)
-        # f.write(html)
+        #f.write(html_minified)
+        f.write(html)
     return html_minified
 
 def make_root(graph):
@@ -1021,7 +1043,7 @@ def html(graph, specials, ignores, production=False):
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
             url = dict()
-            url['loc'] = f"/{ section['slug'] }/{ topic['slug'] }"
+            url['loc'] = f"{ section['slug'] }/{ topic['slug'] }"
             url['lastmod'] = date.today()
             url['changefreq'] = 'monthly'
             url['priority'] = '0.8'

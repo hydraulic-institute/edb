@@ -1,10 +1,10 @@
     
-   
+   //DEPRECATED - MOVED TO BASE.JS
     $(window).resize(function() {
         check_each_dt();
     });
 
-    $(document).ready(function() {
+    $(window).on('pageshow',function()  {
         check_each_dt();
     });
 

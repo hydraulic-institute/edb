@@ -1,15 +1,15 @@
 -----
 title: C) Ductile Iron Pipe
-date: April 19th, 2024
+date: July 19th, 2024
 description: Dimensions of iron pipes.
 hide_units: true
 -----
 
 =^=
-title: Pump Piping for Rotodynamic Pumps: 2-Part On-Demand Webinar Series
-description: Poor piping design may adversely affect the performance and reliability of a pumping system, and well-designed piping systems are typically more energy efficient than poorly designed systems. This course discusses the ANSI/HI 9.6.6 Pump Piping standard and provides specific instruction on new content in the standard. It also provides examples and case studies to demonstrate the application of the standard and the impact of the revisions.
-image: /images/logo-big.png
-url: https://www.pumps.org/product/ansi-hi-9-6-6-rotodynamic-pumps-for-pump-piping/
+title: Pump Piping – Practices to Improve Reliability and Operation – Recorded Webinar Series 
+description: Learn the requirements for pump piping design per the requirements in ANSI/HI 9.6.6.  Inlet and outlet piping requirements and case studies. Wet well connections, modeling, parallel pump piping, pump station retrofit piping and more. 
+image: /images/recordedwebinar.png
+url: https://training.pumps.org/products/pump-piping-for-rotodynamic-pumps-2-part-recorded-webinar-series 
 price: 99.00
 hide_price: true
 =^=

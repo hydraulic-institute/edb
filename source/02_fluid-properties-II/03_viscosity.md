@@ -1,6 +1,6 @@
 -----
 title: C) Viscosity
-date: April 19th, 2024
+date: July 19th, 2024
 description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
 -----
 
@@ -220,6 +220,14 @@ Viscosity conversion tables for use with the above described viscosimeters are i
 ![](./images/IIC-2.png#center "")
 <div class="figure-label">(Fig. 2.C.2)</div>
 
+=^=
+title: ANSI/HI 9.6.7 Rotodynamic Pumps Guideline for Effects of Liquid Viscosity on Performance
+description: Learn the calculation methods to adjust the tested flow, head, efficiency and power on water to the viscosity the pump will be handling. Additionally, learn how NPSHR will be affected and considerations for starting torque. 
+image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-scaled.jpg
+url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
+price: 700.00
+hide_price: true
+=^=
 
 ### Viscosity Conversion Tables
 
@@ -239,13 +247,8 @@ fixed-columns: 2
 data: visc-conv-2.csv
 fixed-columns: 2
 =|=
-<div class="table-label">Tbl. 2.C.2</div>
-
-
-=+=
-<span class= equation-label >(Eq. 2.C.4)</span>
-$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
-=+=
+<div class="table-label"><a id="tbl2c2">Tbl. 2.C.2</a></div>
+Note: These values of SSU are at 100 °F.
 
 When the Metric System terms centistokes and
 centipoise are used, the density is numerically
@@ -254,20 +257,27 @@ expression can be used which will be sufficiently
 accurate for most calculations:
 
 =+=
-<span class= equation-label >(Eq. 2.C.5)</span>
+<span class= equation-label >(Eq. 2.C.4)</span>
 $$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Specific\,Gravity} $$
 =+=
 
 When the English System units are used, the density
 must be used rather than the specific gravity.
 
+=+=
+<span class= equation-label >(Eq. 2.C.5)</span>
+$$ Kinematic\,Viscosity\,(in\,centistokes) = {{Absolute\,Viscosity\,(in\,centipoise)} \over Density\,(in\,g/cm^3)} $$
+=+=
+
 For values of 70 centistokes and above, use the
-following conversion:
+following conversion, otherwise use the table [Tbl 2.C.2](#tbl2c2):
 
 =+=
 <span class= equation-label >(Eq. 2.C.6)</span>
-$$ SSU = centistokes ·  4.635 $$
+$$ SSU = centistokes ·  4.632 $$
 =+=
+
+A programmable, smooth function is provided in <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.7" target="_blank">ANSI/HI 9.6.7</a> to convert centistokes to Seconds Saybolt Universal.
 
 Above the range of this table and within the range
 of the viscosimeter, multiply the particular value

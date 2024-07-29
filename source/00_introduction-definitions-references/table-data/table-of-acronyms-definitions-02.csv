@@ -8,8 +8,8 @@
 ,VFD,Variable frequency drive,,,
 ,VSD,Variable speed drive,,,
 Definitions,Term,Description,HI Source:: https://www.pumps.org/?s={{REF}},EDL Section,Comment
-,Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ",ANSI/HI 14.1-14.1,Solids and Slurries,
-,Affinity rules,Describe the relationship of the pump performance curve relative to pump rotational speed changes and limited changes in impeller diameter.,,Pump Curves,
+,Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ",ANSI/HI 14.1-14.2,Solids and Slurries,
+,Affinity rules,Describe the relationship of the pump performance curve relative to pump rotational speed changes and limited changes in impeller diameter.,ANSI/HI 14.3,Pump Curves,
 ,Allowable operating region (AOR),"A wider range of rates of flow, inclusive of the POR, over which the service life of a pump, although reduced, is within acceptable limits.",ANSI/HI 9.6.3,Pump Curves,
 ,Best efficiency point (BEP),The best efficiency point (BEP) is the rate of flow and head at which the pump efficiency is a maximum at rated rpm or at a given speed and impeller diameter.,ANSI/HI 14.1-14.2,Pump Curves,
 ,Cavitation,"Cavitation is the process of vapor cavity formation in a flowing liquid, in a region where the pressure falls below the liquid’s vapor pressure, followed by rapid collapse of cavities due to an increase in pressure downstream.",ANSI/HI 3.1-3.5,Pump Principles,

@@ -6,45 +6,65 @@
         "units": [
             {
                 "label": "m&sup2",
-                "factor": 1
+                "factor": 1,
+                "description": "square meter"
             },
             {
                 "label": "mm&sup2",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "square millimeter"
             },
             {
                 "label": "ft&sup2",
-                "factor": 10.7639104167097
+                "factor": 10.7639104167097,
+                "description": "square foot"
             },
             {
                 "label": "in&sup2",
-                "factor": 1550.00477401
+                "factor": 1550.00477401,
+                "description": "square inch"
             },
             {
                 "label": "cm&sup2",
-                "factor": 10000
+                "factor": 10000,
+                "description": "square centimeter"
             },
             {
                 "label": "mi&sup2",
-                "factor": 3.8610217499077216e-07
+                "factor": 3.8610217499077216e-07,
+                "description": "square mile"
             },
             {
                 "label": "mi&sup2 (survey foot)",
-                "factor": 3.861006842476326e-07
+                "factor": 3.861006842476326e-07,
+                "description": "square survey mile"
             },
             {
                 "label": "km&sup2",
-                "factor": 1e-06
+                "factor": 1e-06,
+                "description": "square kilometer"
             },
             {
                 "label": "yd&sup2",
-                "factor": 1.1959899890853953
+                "factor": 1.1959899890853953,
+                "description": "square yard"
             },
             {
                 "label": "Acre (survey foot)",
-                "factor": 0.00024710436922532533
+                "factor": 0.00024710436922532533,
+                "description": "acre"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m&sup2",
+            "factor": 1,
+            "description": "square meter"
+        },
+        "default_to": {
+            "label": "ft&sup2",
+            "factor": 10.7639104167097,
+            "description": "square foot"
+        }
     },
     {
         "measure": "Density",
@@ -53,41 +73,60 @@
         "units": [
             {
                 "label": "kg/dm&sup3",
-                "factor": 1
+                "factor": 1,
+                "description": "kilogram per cubic decimeter"
             },
             {
                 "label": "g/cm&sup3",
-                "factor": 1
+                "factor": 1,
+                "description": "gram per cubic centimeter"
             },
             {
                 "label": "kg/m&sup3",
-                "factor": 1000
+                "factor": 1000,
+                "description": "kilogram per cubic meter"
             },
             {
                 "label": "lbm/ft&sup3",
-                "factor": 62.427
+                "factor": 62.427,
+                "description": "pound mass per cubic foot"
             },
             {
                 "label": "lbm/gal (Imp)",
-                "factor": 10.02241925
+                "factor": 10.02241925,
+                "description": "pound mass per gallon (Imperial)"
             },
             {
                 "label": "lbm/in&sup3",
-                "factor": 0.03613
+                "factor": 0.03613,
+                "description": "pound mass per cubic inch"
             },
             {
                 "label": "lbm/gal (US)",
-                "factor": 8.345404376
+                "factor": 8.345404376,
+                "description": "pound mass per gallon (US)"
             },
             {
                 "label": "Specific Gravity 68&degF (20&degC)",
-                "factor": 1.00184339
+                "factor": 1.00184339,
+                "description": "specific gravity at 68&degF or 20&degC"
             },
             {
                 "label": "Specific Gravity 39.2&degF (4&degC)",
-                "factor": 1.0001605257643853
+                "factor": 1.0001605257643853,
+                "description": "specific gravity at 39.2&degF or 4&degC"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "g/cm&sup3",
+            "factor": 1,
+            "description": "gram per cubic centimeter"
+        },
+        "default_to": {
+            "label": "lbm/ft&sup3",
+            "factor": 62.427,
+            "description": "pound mass per cubic foot"
+        }
     },
     {
         "measure": "Flow, Volumetric",
@@ -96,113 +135,150 @@
         "units": [
             {
                 "label": "m&sup3/h",
-                "factor": 1
+                "factor": 1,
+                "description": "cubic meter per hour"
             },
             {
                 "label": "bpd (Petroleum)",
-                "factor": 150.95545367460167
+                "factor": 150.95545367460167,
+                "description": "barrel per day (Petroleum)"
             },
             {
                 "label": "bpd (US)",
-                "factor": 201.2739446544
+                "factor": 201.2739446544,
+                "description": "barrel per day (US)"
             },
             {
                 "label": "bpd (Imp.)",
-                "factor": 146.64616554
+                "factor": 146.64616554,
+                "description": "barrel per day (Imperial)"
             },
             {
                 "label": "bpm (US)",
-                "factor": 0.13977357295621382
+                "factor": 0.13977357295621382,
+                "description": "barrel per minute (Petroleum)"
             },
             {
                 "label": "bpm (Petroleum)",
-                "factor": 0.10483017637257817
+                "factor": 0.10483017637257817,
+                "description": "barrel per minute (US)"
             },
             {
                 "label": "bpm (Imp)",
-                "factor": 0.10183761516200857
+                "factor": 0.10183761516200857,
+                "description": "barrel per minute (Imperial)"
             },
             {
                 "label": "ft&sup3/min",
-                "factor": 0.588577754940963
+                "factor": 0.588577754940963,
+                "description": "cubic foot per minute"
             },
             {
                 "label": "ft&sup3/s",
-                "factor": 0.00980962924901604
+                "factor": 0.00980962924901604,
+                "description": "cubic foot per second"
             },
             {
                 "label": "gal/h (US)",
-                "factor": 264.17205841794777
+                "factor": 264.17205841794777,
+                "description": "gallon per hour (US)"
             },
             {
                 "label": "gal/day (US)",
-                "factor": 6340.129241241796
+                "factor": 6340.129241241796,
+                "description": "gallon per day (US)"
             },
             {
                 "label": "gal/min (Imp)",
-                "factor": 3.6661541456504376
+                "factor": 3.6661541456504376,
+                "description": "gallon per minute (Imperial)"
             },
             {
                 "label": "gal/min (US)",
-                "factor": 4.40286764029913
+                "factor": 4.40286764029913,
+                "description": "gallon per minute (US)"
             },
             {
                 "label": "L/min",
-                "factor": 16.666666666666668
+                "factor": 16.666666666666668,
+                "description": "liter per minute"
             },
             {
                 "label": "L/s",
-                "factor": 0.2777777777777778
+                "factor": 0.2777777777777778,
+                "description": "liter per second"
             },
             {
                 "label": "L/h",
-                "factor": 1000
+                "factor": 1000,
+                "description": "liter per hour"
             },
             {
                 "label": "L/day",
-                "factor": 24000
+                "factor": 24000,
+                "description": "liter per day"
             },
             {
                 "label": "mL/h",
-                "factor": 1000000000
+                "factor": 1000000000,
+                "description": "milliliter per hour"
             },
             {
                 "label": "cm&sup3/h",
-                "factor": 1000000000
+                "factor": 1000000000,
+                "description": "cubic centimeter per hour"
             },
             {
                 "label": "cc/h",
-                "factor": 1000000000
+                "factor": 1000000000,
+                "description": "cubic centimeter per hour"
             },
             {
                 "label": "mm&sup3/h",
-                "factor": 1000000000000
+                "factor": 1000000000000,
+                "description": "cubic millimeter per hour"
             },
             {
                 "label": "Million L/day",
-                "factor": 0.024
+                "factor": 0.024,
+                "description": "million liters per day"
             },
             {
                 "label": "m&sup3/day",
-                "factor": 24
+                "factor": 24,
+                "description": "cubic meter per day"
             },
             {
                 "label": "m&sup3/min",
-                "factor": 0.0166666667
+                "factor": 0.0166666667,
+                "description": "cubic meter per minute"
             },
             {
                 "label": "m&sup3/s",
-                "factor": 0.0002777778
+                "factor": 0.0002777778,
+                "description": "cubic meter per second"
             },
             {
                 "label": "Million gal/day (Imp)",
-                "factor": 0.0052792619593
+                "factor": 0.0052792619593,
+                "description": "million gallons per day (Imperial)"
             },
             {
                 "label": "Million gal/day (US)",
-                "factor": 0.0063401292299
+                "factor": 0.0063401292299,
+                "description": "million gallons per day (US)"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m&sup3/h",
+            "factor": 1,
+            "description": "cubic meter per hour"
+        },
+        "default_to": {
+            "label": "gal/min (US)",
+            "factor": 4.40286764029913,
+            "description": "gallon per minute (US)"
+        }
     },
     {
         "measure": "Force",
@@ -211,33 +287,50 @@
         "units": [
             {
                 "label": "kgf",
-                "factor": 1
+                "factor": 1,
+                "description": "kilogram-force"
             },
             {
                 "label": "N",
-                "factor": 9.80665
+                "factor": 9.80665,
+                "description": "newton"
             },
             {
                 "label": "lbf",
-                "factor": 2.2046224311646316
+                "factor": 2.2046224311646316,
+                "description": "pound-force"
             },
             {
                 "label": "Kip",
-                "factor": 0.0022046224311646316
+                "factor": 0.0022046224311646316,
+                "description": "kip"
             },
             {
                 "label": "Dyne",
-                "factor": 980664.9999999998
+                "factor": 980664.9999999998,
+                "description": "dyne"
             },
             {
                 "label": "Ton (metric)",
-                "factor": 0.001
+                "factor": 0.001,
+                "description": "metric ton"
             },
             {
                 "label": "Ton (lbf)",
-                "factor": 0.0011023113394870287
+                "factor": 0.0011023113394870287,
+                "description": "short ton"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "N",
+            "factor": 9.80665,
+            "description": "newton"
+        },
+        "default_to": {
+            "label": "lbf",
+            "factor": 2.2046224311646316,
+            "description": "pound-force"
+        }
     },
     {
         "measure": "Length",
@@ -246,57 +339,80 @@
         "units": [
             {
                 "label": "m",
-                "factor": 1
+                "factor": 1,
+                "description": "meter"
             },
             {
                 "label": "mm",
-                "factor": 1000
+                "factor": 1000,
+                "description": "millimeter"
             },
             {
                 "label": "ft",
-                "factor": 3.280839895
+                "factor": 3.280839895,
+                "description": "foot"
             },
             {
                 "label": "in",
-                "factor": 39.37007874
+                "factor": 39.37007874,
+                "description": "inch"
             },
             {
                 "label": "mi",
-                "factor": 0.000621371
+                "factor": 0.000621371,
+                "description": "mile"
             },
             {
                 "label": "yd",
-                "factor": 1.093613298
+                "factor": 1.093613298,
+                "description": "yard"
             },
             {
                 "label": "km",
-                "factor": 0.001
+                "factor": 0.001,
+                "description": "kilometer"
             },
             {
                 "label": "mil",
-                "factor": 39370.07874
+                "factor": 39370.07874,
+                "description": "thousandth of an inch"
             },
             {
                 "label": "microinch",
-                "factor": 39370078.74
+                "factor": 39370078.74,
+                "description": "microinch"
             },
             {
                 "label": "micron",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "micron"
             },
             {
                 "label": "&#181m",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "micrometer"
             },
             {
                 "label": "mi (US survey)",
-                "factor": 0.00062137
+                "factor": 0.00062137,
+                "description": "survey mile (US)"
             },
             {
                 "label": "ft (US survey)",
-                "factor": 3.280833437
+                "factor": 3.280833437,
+                "description": "survey foot (US)"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m",
+            "factor": 1,
+            "description": "meter"
+        },
+        "default_to": {
+            "label": "ft",
+            "factor": 3.280839895,
+            "description": "foot"
+        }
     },
     {
         "measure": "Power",
@@ -305,25 +421,40 @@
         "units": [
             {
                 "label": "kW",
-                "factor": 1
+                "factor": 1,
+                "description": "kilowatt"
             },
             {
                 "label": "hp (550 ft-lbf/s)",
-                "factor": 1.341022038490283
+                "factor": 1.341022038490283,
+                "description": "horsepower"
             },
             {
                 "label": "W",
-                "factor": 1000
+                "factor": 1000,
+                "description": "watt"
             },
             {
                 "label": "ft-lbf/min",
-                "factor": 44253.7207422057
+                "factor": 44253.7207422057,
+                "description": "foot-pound force per minute"
             },
             {
                 "label": "ft-lbf/s",
-                "factor": 737.5621211696556
+                "factor": 737.5621211696556,
+                "description": "foot-pound force per second"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "kW",
+            "factor": 1,
+            "description": "kilowatt"
+        },
+        "default_to": {
+            "label": "hp (550 ft-lbf/s)",
+            "factor": 1.341022038490283,
+            "description": "horsepower"
+        }
     },
     {
         "measure": "Pressure",
@@ -332,77 +463,105 @@
         "units": [
             {
                 "label": "atm",
-                "factor": 1
+                "factor": 1,
+                "description": "standard atmosphere"
             },
             {
                 "label": "bar",
-                "factor": 1.01325
+                "factor": 1.01325,
+                "description": "bar"
             },
             {
                 "label": "psi",
-                "factor": 14.6959
+                "factor": 14.6959,
+                "description": "pound per square inch"
             },
             {
                 "label": "ksi",
-                "factor": 0.0146959
+                "factor": 0.0146959,
+                "description": "kilopound per square inch"
             },
             {
                 "label": "Pa",
-                "factor": 101325
+                "factor": 101325,
+                "description": "pascal"
             },
             {
                 "label": "kPa",
-                "factor": 101.325
+                "factor": 101.325,
+                "description": "kilopascal"
             },
             {
                 "label": "MPa",
-                "factor": 0.101325
+                "factor": 0.101325,
+                "description": "megapascal"
             },
             {
                 "label": "ftH2O 39.2&degF (4&degC)",
-                "factor": 33.899524252420555
+                "factor": 33.899524252420555,
+                "description": "foot of water at 39.2\u00b0F or 4\u00b0C"
             },
             {
                 "label": "ftH2O 68&degF (20&degC)",
-                "factor": 33.959632854853496
+                "factor": 33.959632854853496,
+                "description": "foot of water at 68\u00b0F or 20\u00b0C"
             },
             {
                 "label": "mH2O 39.2&degF (4&degC)",
-                "factor": 10.332595330843233
+                "factor": 10.332595330843233,
+                "description": "meter of water at 39.2\u00b0F or 4\u00b0C"
             },
             {
                 "label": "mH2O 68&degF (20&degC)",
-                "factor": 10.350916468928165
+                "factor": 10.350916468928165,
+                "description": "meter of water at 68\u00b0F or 20\u00b0C"
             },
             {
                 "label": "inHg 32&degF (0&degC)",
-                "factor": 29.9213319237652
+                "factor": 29.9213319237652,
+                "description": "inch of mercury at 32\u00b0F or 0\u00b0C"
             },
             {
                 "label": "mmHg 32&degF (0&degC)",
-                "factor": 760.0018308636361
+                "factor": 760.0018308636361,
+                "description": "millimeter of mercury at 32\u00b0F or 0\u00b0C"
             },
             {
                 "label": "kg/cm&sup2",
-                "factor": 1.0332274527998857
+                "factor": 1.0332274527998857,
+                "description": "kilogram per square centimeter"
             },
             {
                 "label": "kg/m&sup2",
-                "factor": 10332.27452799886
+                "factor": 10332.27452799886,
+                "description": "kilogram per square meter"
             },
             {
                 "label": "kg/mm&sup2",
-                "factor": 0.010332274527998859
+                "factor": 0.010332274527998859,
+                "description": "kilogram per square millimeter"
             },
             {
                 "label": "kN/m&sup2",
-                "factor": 101.325
+                "factor": 101.325,
+                "description": "kilonewton per square meter"
             },
             {
                 "label": "N/m&sup2",
-                "factor": 101325
+                "factor": 101325,
+                "description": "newton per square meter"
             }
-        ]
+        ],
+        "default_to": {
+            "label": "psi",
+            "factor": 14.6959,
+            "description": "pound per square inch"
+        },
+        "default_from": {
+            "label": "kPa",
+            "factor": 101.325,
+            "description": "kilopascal"
+        }
     },
     {
         "measure": "Temperature",
@@ -411,21 +570,35 @@
         "units": [
             {
                 "label": "&degC",
-                "factor": "C"
+                "factor": "C",
+                "description": "degrees celsius"
             },
             {
                 "label": "&degF",
-                "factor": "F"
+                "factor": "F",
+                "description": "degrees fahrenheit"
             },
             {
                 "label": "&degK",
-                "factor": "K"
+                "factor": "K",
+                "description": "degrees kelvin"
             },
             {
                 "label": "&degR",
-                "factor": "R"
+                "factor": "R",
+                "description": "degrees rankine"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "&degC",
+            "factor": "C",
+            "description": "degrees celsius"
+        },
+        "default_to": {
+            "label": "&degF",
+            "factor": "F",
+            "description": "degrees fahrenheit"
+        }
     },
     {
         "measure": "Velocity",
@@ -434,41 +607,60 @@
         "units": [
             {
                 "label": "m/s",
-                "factor": 1
+                "factor": 1,
+                "description": "meter per second"
             },
             {
                 "label": "ft/s",
-                "factor": 3.28083989501312
+                "factor": 3.28083989501312,
+                "description": "foot per second"
             },
             {
                 "label": "ft/min",
-                "factor": 196.85039370078738
+                "factor": 196.85039370078738,
+                "description": "foot per minute"
             },
             {
                 "label": "m/min",
-                "factor": 59.9999880000024
+                "factor": 59.9999880000024,
+                "description": "meter per minute"
             },
             {
                 "label": "yd/min",
-                "factor": 65.6167979002625
+                "factor": 65.6167979002625,
+                "description": "yard per minute"
             },
             {
                 "label": "yd/s",
-                "factor": 1.09361329833771
+                "factor": 1.09361329833771,
+                "description": "yard per second"
             },
             {
                 "label": "in/s",
-                "factor": 39.37007874015748
+                "factor": 39.37007874015748,
+                "description": "inch per second"
             },
             {
                 "label": "mph",
-                "factor": 2.2369362920544025
+                "factor": 2.2369362920544025,
+                "description": "mile per hour"
             },
             {
                 "label": "km/h",
-                "factor": 3.599999712000023
+                "factor": 3.599999712000023,
+                "description": "kilometer per hour"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m/s",
+            "factor": 1,
+            "description": "meter per second"
+        },
+        "default_to": {
+            "label": "ft/s",
+            "factor": 3.28083989501312,
+            "description": "foot per second"
+        }
     },
     {
         "measure": "Volume",
@@ -477,76 +669,104 @@
         "units": [
             {
                 "label": "m&sup3",
-                "factor": 1
+                "factor": 1,
+                "description": "cubic meter"
             },
             {
                 "label": "Barrels (Imp.)",
-                "factor": 6.1102568975
+                "factor": 6.1102568975,
+                "description": "barrel (Imperial)"
             },
             {
                 "label": "Barrels (petroleum)",
-                "factor": 6.28981056977507
+                "factor": 6.28981056977507,
+                "description": "barrel (Petroleum)"
             },
             {
                 "label": "Barrels (US)",
-                "factor": 8.3864143606
+                "factor": 8.3864143606,
+                "description": "barrel (US)"
             },
             {
                 "label": "cc",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "cubic centimeter"
             },
             {
                 "label": "cm&sup3",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "cubic centimeter"
             },
             {
                 "label": "fl oz (Imp)",
-                "factor": 35195.079728
+                "factor": 35195.079728,
+                "description": "fluid ounce (Imperial)"
             },
             {
                 "label": "fl oz (US)",
-                "factor": 33814.0222016107
+                "factor": 33814.0222016107,
+                "description": "fluid ounce (US)"
             },
             {
                 "label": "ft&sup3",
-                "factor": 35.3146667214885
+                "factor": 35.3146667214885,
+                "description": "cubic foot"
             },
             {
                 "label": "gallon (Imp)",
-                "factor": 219.96924829908778
+                "factor": 219.96924829908778,
+                "description": "gallon (Imperial)"
             },
             {
                 "label": "gallon (US)",
-                "factor": 264.1720372841846
+                "factor": 264.1720372841846,
+                "description": "gallon (US)"
             },
             {
                 "label": "in&sup3",
-                "factor": 61023.8429532511
+                "factor": 61023.8429532511,
+                "description": "cubic inch"
             },
             {
                 "label": "Liter (L)",
-                "factor": 1000
+                "factor": 1000,
+                "description": "liter"
             },
             {
                 "label": "mi&sup3",
-                "factor": 2.39912748531614e-10
+                "factor": 2.39912748531614e-10,
+                "description": "cubic mile"
             },
             {
                 "label": "mL",
-                "factor": 1000000
+                "factor": 1000000,
+                "description": "milliliter"
             },
             {
                 "label": "mm&sup3",
-                "factor": 1000000000
+                "factor": 1000000000,
+                "description": "cubic millimeter"
             },
             {
                 "label": "quart (US)",
-                "factor": 1056.6882094
+                "factor": 1056.6882094,
+                "description": "quart (US)"
             },
             {
                 "label": "yd&sup3",
-                "factor": 1.307950547436162
+                "factor": 1.307950547436162,
+                "description": "cubic yard"
             }
-        ]
+        ],
+        "default_from": {
+            "label": "m&sup3",
+            "factor": 1,
+            "description": "cubic meter"
+        },
+        "default_to": {
+            "label": "ft&sup3",
+            "factor": 35.3146667214885,
+            "description": "cubic foot"
+        }
     }
 ]

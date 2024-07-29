@@ -1,13 +1,13 @@
 -----
 title: E) Additional Resources
-date:  April 19th, 2024
+date:  July 19th, 2024
 description: Frequently asked questions regarding pump and system curves; pump systems, and additional resources are included.
 hide_units: true
 -----
 
 ## Additional Resources
 
-A collection of external resources (mostly free) is provided that users of the Engineering Data Library can explore to learn more about the pump industry, pump and system fundamentals, and careers within the industry.
+A collection of external resources (mostly free) are provided for users of the HI DATA TOOL so they can learn more about the pump industry, pump and system fundamentals, and careers within the industry.
 
 ### Frequently Asked Questions
 
@@ -25,7 +25,11 @@ What do Pump Pros Know and why do they know it? This series of articles highligh
 
 ### Pump PROfiles 
 
-If you are entering the workforce, changing jobs, or are simply curious, Pump PROfiles is a series of articles where you can learn about the career in the pump and fluid handling industry, and the skills needed to be successful. There are great opportunities within the industry, so click <a href="https://www.pumps.org/pump-profiles/" target="_blank">here</a> to explore the profile of some of the positions.   
+If you are entering the workforce, changing jobs, or are simply curious, Pump PROfiles is a series of articles where you can learn about the career in the pump and fluid handling industry, and the skills needed to be successful. There are great opportunities within the industry. Click <a href="https://www.pumps.org/pump-profiles/" target="_blank">here</a> to explore the profile of some of the positions.   
+
+### Training
+
+Whether you need and introduction or are you ready to take the next step to learn the fundamentals, the Hydraulic Institute and Pump Systems Matter have training to support your development. Click <a href="https://training.pumps.org/" target="_blank">here</a> to visit the training  site to take advantage of the vast training opportunities from introductory to advanced levels.  
 
 ### Hydraulic Institute Blog & Pump System Matter (PSM) Newsletter
 
@@ -34,7 +38,3 @@ Stay up to speed on the pump and fluid handling industry with news covering tool
 ### Hydraulic Institute Case Studies
 
 Reference industry case studies. Click <a href=" https://www.pumps.org/category/blogs/case-studies/" target="_blank">here</a> to explore.
-
-### Training
-
-Whether you need and introduction or are you ready to take the next step to learn the fundamentals, the Hydraulic Institute and Pump Systems Matter have training to support your development. Click <a href="https://training.pumps.org/" target="_blank">here</a> to visit the training  site to take advantage of the vast training opportunities from introductory to advanced levels.  

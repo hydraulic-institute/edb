@@ -1,6 +1,6 @@
 -----
 title: C) Combined Pump & System Curves 
-date: April 19th, 2024
+date: July 19th, 2024
 description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
 hide_units: true
 -----
@@ -43,6 +43,15 @@ Note the static head at zero flow will still be the same. Using the revised pump
 
 ![](./images/iC-2-Pump-and-system-Curve-valve-closed.png#center "")
 <div class="figure-label">Fig. 1.C.2</div>
+
+=^=
+title: Variable Speed Pumping – On-Demand Training  
+description: Learn how variable speed operation changes the pump performance, the system operating point as it interacts with the system curve, and the effect on energy and life cycle cost.  
+image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+url: https://training.pumps.org/products/variable-speed-pumping-on-demand-training
+price: 119.00
+hide_price: true
+=^=
 
 ### Changes in Pump Speed
 
@@ -115,6 +124,15 @@ loss across the control valve, since the system flow rate has not changed.
 
 ![](./images/iC-6-Pump-and-system-Curves-variable-speed-valve-head-loss.png#center "")
 <div class="figure-label">Fig. 1.C.6</div>
+
+=^=
+title: Pump & System Fundamentals – On-Demand Curriculum   
+description: Learn the fundamentals of pumps and systems at your own pace with 12 hour long modules covering pump curves, system curves, power, efficiency, NPSHA, pump total head, POR, AOR, selection, motors, VFDs, seals, bearings, and couplings. 
+image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+url: https://training.pumps.org/products/pump-and-system-fundamentals-on-demand-training-curriculum-2
+price: 119.00
+hide_price: true
+=^=
 
 ### Educational Demonstration: Pump and System Curve with Control Valve
 Demo 1.C.2 shows qualitatively how various parameters affect the pump curve, system curve, control valve head and operating point. Slide the toggle to change the pump speed, control valve position and system parameters to see how the pump curve, system curve, control valve head and resulting operating point vary.

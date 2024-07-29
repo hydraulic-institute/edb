@@ -1,18 +1,24 @@
 -----
 title: A) Water
-date: April 19th, 2024
+date: July 19th, 2024
 description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
 -----
 
 ## Water Properties 
 
-**Specific gravity**, also referred to as **relative density**, is the ratio of the densities of one fluid at a known temperature and pressure to a reference fluid at a specific
-temperature and pressure. In most cases, the reference fluid is water at atmospheric pressure. The most common reference temperatures in the standards and literature are
-<units us = "39.2 °F" metric = "4 °C at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering
-and petroleum applications use 60 °F." metric = "4 °C at which water is the most dense, 15.56 °C, and 20 °C. Generally, scientific research and common fluids use 4 °C  while engineering
-and petroleum applications use 15.56 °C."/>
+**Specific gravity**, also referred to as **relative density**, is the ratio of the densities of one fluid at a known temperature and pressure to a reference fluid at a specific temperature and pressure. In most cases, the reference fluid is water at atmospheric pressure. The most common reference temperatures in the standards and literature are
+<units us = "39.2 °F at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering and petroleum applications use 60 °F." metric = "4 °C at which water is the most dense, 15.56 °C, and 20 °C. Generally, scientific research and common fluids use 4 °C  while engineering and petroleum applications use 15.56 °C."/>
 
-The values for specific gravity of water based on these common reference temperatures are listed in the table below. 
+The values for specific gravity of water based on these common reference temperatures are listed in the table below.
+
+=^=
+title: Pump and System Fundamentals Live Course
+description: Educate and train pump engineers, technical sales, pump system owners, designers, and operators on the fundamentals of pump and system design, including system hydraulics and calculations, pump and system curves, system components, factors affecting reliably and energy consumption, and control. 
+image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_6ce03fc70274b2d8f6015f6a52b4f7ae.png
+url: https://training.pumps.org/pump-and-system-fundamentals-course 
+price: 700.00
+hide_price: true
+=^=
 
 =|=
 title: Water Properties at Various Temperatures
@@ -66,14 +72,6 @@ series: 2
 series_title_index: 0
 =/=
 
-=^=
-title: Pump and System Fundamentals Live Course
-description: Educate and train pump engineers, technical sales, pump system owners, designers, and operators on the fundamentals of pump and system design, including system hydraulics and calculations, pump and system curves, system components, factors affecting reliably and energy consumption, and control. 
-image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_6ce03fc70274b2d8f6015f6a52b4f7ae.png
-url: https://training.pumps.org/pump-and-system-fundamentals-course 
-price: 700.00
-hide_price: true
-=^=
 
 ## Auxiliary Data
 

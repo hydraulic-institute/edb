@@ -105,7 +105,7 @@ $$ h_{f} = K·[{({D_2 \over D_1})^2 - 1 }]^2 · {v_2^2 \over 2·g}$$
 
 where:
 
-- h = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/> 
+- h<sub>f</sub> = Frictional resistance (head loss) in <units us = "feet of fluid" metric = "meters of fluid"/> 
 - v<sub>1</sub> = Average velocity in <units us = "feet/second" metric = "meters/second"></units> in the smaller (upstream) pipe 
 - A<sub>1</sub> = Internal cross-sectional area of the smaller pipe in <units us = "square feet" metric = "square meters"/>
 - D<sub>1</sub> = Internal diameter of the smaller pipe in <units us = "feet" metric = "meters"/>

@@ -1,6 +1,6 @@
 -----
 title: D) Pump Principles
-date: April 19th, 2024
+date: July 19th, 2024
 description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
 -----
 
@@ -71,7 +71,7 @@ particular applications, based on desired flow and head.
 ### Type Number
 **Type number** is a variation of impeller specific speed. Type number is a dimensionless quantity calculated at the point of best efficiency. 
 Note, that to obtain a dimensionless value, the specified units of measure for each variable below may be different than the units of measure assigned 
-to that variable in other parts of the Engineering Data Library.  Close attention to the units of measure for the variables in any calculation is advised.  
+to that variable in other parts of the HI DATA TOOL.  Close attention to the units of measure for the variables in all calculations are advised.  
 
 Type number is  defined by the following formula:
 

@@ -1,15 +1,15 @@
 -----
 title: B) Stainless Steel Pipe
-date: April 19th, 2024
+date: July 19th, 2024
 description: Dimensions of stainless steel pipes.
 hide_units: true
 -----
 
 =^=
-title: Rotodynamic Pumps for Vibration Measurement & Allowable Values – 1 Part Webinar
-description: Webinar viewers will gain in-depth insights into critical measurements made on non-rotating components of rotodynamic pumps, including maximum allowable vibration values and acceptance tests. If your customers use rotodynamic pumps in clear water, this webinar will be useful for factory (vibration) acceptance tests as well as field vibration testing.
-image: /images/pumpsystemsmatter.png
-url: https://training.pumps.org/products/vibration-acceptance-testing-for-rotodynamic-pumps-1-part-on-demand-webinar
+title:  Pump & System Fundamentals – On-Demand Curriculum 
+description: Learn the fundamentals of pumps and systems at your own pace with 12 hour long modules covering pump curves, system curves, power, efficiency, NPSHA, pump total head, POR, AOR, selection, motors, VFDs, seals, bearings, and couplings.  
+image: https://www.pumps.org/wp-content/uploads/2022/02/On-Demand-for-EDL-1-e1645114699527.png
+url: https://training.pumps.org/products/pump-and-system-fundamentals-on-demand-training-curriculum-2
 price: 59.00
 hide_price: true
 =^=

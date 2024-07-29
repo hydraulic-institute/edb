@@ -691,7 +691,7 @@
         },
         "selector": "Identification / Pipe Schedule / Wall Thickness"
     },
-    "Brass (red brass) pipe - seamless per ANSI H35.2-2017": {
+    "Brass (red brass) pipe - seamless per ASTM B43-20": {
         "nominal_sizes": {
             "0.125": [
                 {
@@ -977,7 +977,7 @@
         },
         "selector": "Wall Thickness / Pressure Class"
     },
-    "Copper capillary tube - hard drawn per ANSI H35.2-2017": {
+    "Copper capillary tube - hard drawn per ASTM B360-20": {
         "nominal_sizes": {
             "0.072": [
                 {
@@ -1180,7 +1180,7 @@
         },
         "selector": "Wall Thickness"
     },
-    "Copper pipe - seamless per ANSI H35.2-2017": {
+    "Copper pipe - seamless per ASTM B42-20": {
         "nominal_sizes": {
             "0.125": [
                 {
@@ -1466,7 +1466,7 @@
         },
         "selector": "Wall Thickness / Pressure Class"
     },
-    "Copper pipe - threadless - seamless - deoxidized for brazed joint assembly per ANSI H35.2-2017": {
+    "Copper pipe - threadless - seamless - deoxidized for brazed joint assembly per ASTM B302-2017": {
         "nominal_sizes": {
             "0.25": [
                 {
@@ -1624,7 +1624,7 @@
         },
         "selector": "Wall Thickness"
     },
-    "Copper water tube - seamless - plumbing and fluid conveyance tubing per ANSI H35.2-2017": {
+    "Copper water tube - seamless - plumbing and fluid conveyance tubing per ASTM B88-22": {
         "nominal_sizes": {
             "0.25": [
                 {
@@ -2036,7 +2036,7 @@
         },
         "selector": "Wall Thickness"
     },
-    "Copper-Nickel pipe and tube - seamless per ANSI H35.2-2017": {
+    "Copper-Nickel pipe and tube - seamless per ASTM B466-18": {
         "nominal_sizes": {
             "0.125": [
                 {
@@ -8518,7 +8518,7 @@
         },
         "selector": "Identification / Minimum Thickness / Pressure Class"
     },
-    "Plastic (COID) Pipe per ASTM D2241": {
+    "Plastic (COID) Pipe per AWWA C900": {
         "nominal_sizes": {
             "4.0": [
                 {
@@ -9318,7 +9318,7 @@
         },
         "selector": "Identification / Minimum Thickness / Pressure Class"
     },
-    "Plastic (Schedule) Pipe per ASTM D2241": {
+    "Plastic (Schedule) Pipe per ASTM D1785": {
         "nominal_sizes": {
             "0.5": [
                 {

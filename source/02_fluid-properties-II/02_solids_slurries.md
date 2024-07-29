@@ -13,13 +13,13 @@ mixture or slurry, S<sub>m</sub> is:
 
 =+=
 <span class= equation-label >(Eq. 2.B.1)</span>
-$$ S_{m} = {{S_{s} · S_{1}} \over {S_{s} + C_{w}·(S_{1} - S{s})}} $$
+$$ S_{m} = {{S_{s} · S_{l}} \over {S_{s} + C_{w}·(S_{l} - S{s})}} $$
 =+=
 
 Where:
 
 - S<sub>m</sub> = specific gravity of mixture or slurry
-- S<sub>1</sub> = specific gravity of liquid phase
+- S<sub>l</sub> = specific gravity of liquid phase
 - S<sub>s</sub> = specific gravity of solids phase
 - C<sub>w</sub> = concentration of solids by weight
 - C<sub>v</sub> = concentration of solids by volume

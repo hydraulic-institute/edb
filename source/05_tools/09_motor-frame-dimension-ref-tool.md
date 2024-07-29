@@ -1,9 +1,18 @@
 -----
 title: I) Motor Dimensions
-date: April 19th, 2024
+date: July 19th, 2024
 description: Frame Size Tool
 hide_units: true
 -----
+
+=^=
+title:  Live – Motor & VFD Principles Course 
+description: Learn the general function of motors and VFDs, application considerations, and factors to consider in their installation, operation and maintenance.        
+image: /images/pumpsystemsmatter.png
+url: https://training.pumps.org/motor-vfd-course
+price: 99.00
+hide_price: true
+=^=
 
 <h3>Motor Frame Size and Dimension Reference Tool</h3>
 

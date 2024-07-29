@@ -1,6 +1,6 @@
 -----
 title: D) Other Fluids
-date: April 19th, 2024
+date: July 19th, 2024
 description: Properties of other fluids.
 hide_units: true
 -----
@@ -9,7 +9,9 @@ hide_units: true
 
 ### Degrees A.P.I. vs. Specific Gravity for Oil          
 
-The relation of Degrees A.P.I. to Specific Gravity (sg) is expressed by the following formula:
+Degrees API is a scale used to measure the relative density of petroleum liquids and oil compared to water, as established by the American Petroleum Institute (API). The scale is calibrated in degrees API, with larger values coresponding to a lower specific gravity. Light crudes generally exceed 38 degrees API and heavy crudes are commonly labeled as all crudes with an API gravity of 22 degrees or below. Intermediate crudes fall in the range of 22 degrees to 38 degrees API gravity.
+
+The relation of Degrees A.P.I. to Specific Gravity (sg) is expressed by the following formula: 
 
 =+=
 <span class= equation-label >(Eq. 2.D.1)</span>
@@ -52,9 +54,9 @@ data: IIB1-2.csv
 <div class="table-label">Tbl. 2.D.2</div>
 
 =^=
-title: Rotodynamic Pumps - Guideline for Effects of Liquid Viscosity on Performance
-description: ANSI/HI 9.6.7-2015 outlines the method for predicting performance of rotodynamic pumps in Newtonian liquids of viscosity greater than water. The standard applies to single and multi-stage rotodynamic pumps having radial impellers n<sub>s</sub> = 60, (N<sub>s</sub> = 3000), handling liquids exhibiting Newtonian behavior, and a kinematic viscosity greater than 1 and less than 4000 centistokes.
-image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-600x776.jpg
+title: ANSI/HI 9.6.7 Rotodynamic Pumps Guideline for Effects of Liquid Viscosity on Performance 
+description: Learn the calculation methods to adjust the tested flow, head, efficiency and power on water to the viscosity the pump will be handling. Additionally, learn how NPSHR will be affected and considerations for starting torque. 
+image: https://www.pumps.org/wp-content/uploads/2021/11/FINAL-9.6.7-CoverFrontBlackBorder-3.22.21-scaled.jpg
 url: https://www.pumps.org/product/ansi-hi-9-6-7-2021-rotodynamic-pumps-guideline-for-effects-of-liquid-viscosity-on-performance/
 price: 130.00
 hide_price: true
@@ -122,22 +124,22 @@ meter determines the °Brix as a function of the specific gravity of the solutio
 -	The below graphs represent the exponentially decreasing nature.
 -	From the graph it can be seen that, viscosity is directly proportional to degrees of Brix value, and it is inversely proportional to the temperature.
 
-![](./images/Brix1.png#center "")
+![](./images/Brix2.png#center "")
 <div class="figure-label">(Fig. 2.D.2)</div>
 
-![](./images/Brix2.png#center "")
+![](./images/Brix3.png#center "")
 <div class="figure-label">(Fig. 2.D.3)</div>
 
-![](./images/Brix3.png#center "")
+![](./images/Brix4.png#center "")
 <div class="figure-label">(Fig. 2.D.4)</div>
 
-![](./images/Brix4.png#center "")
+![](./images/Brix5.png#center "")
 <div class="figure-label">(Fig. 2.D.5)</div>
 
-![](./images/Brix5.png#center "")
+![](./images/Brix6.png#center "")
 <div class="figure-label">(Fig. 2.D.6)</div>
 
-![](./images/Brix6.png#center "")
+![](./images/Brix7.png#center "")
 <div class="figure-label">(Fig. 2.D.7)</div>
 
 =^=
@@ -186,6 +188,6 @@ series_title_index: 0
 =/=
 
 ### References
-1. J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).
-2. [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C1333740&Type=SatP&Digits=5&THigh=59&TLow=26&TInc=1&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
-3. [Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).](https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7440597&Type=SatP&Digits=5&THigh=9.2&TLow=4&TInc=.2&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm)
+1. <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular440sup.pdf" target="_blank">J. F. Swindells, C. F. Snyder, R. C. Hardy, and P. E. Golden, Viscosities of Sucrose Solution at Various Temperatures National Bureau of Standards Circular 440, p. 3 (1958).</a>
+2. <a href="https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C1333740&Type=SatP&Digits=5&THigh=59&TLow=26&TInc=1&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm" target="_blank">Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).</a>
+3. <a href="https://webbook.nist.gov/cgi/fluid.cgi?Action=Load&ID=C7440597&Type=SatP&Digits=5&THigh=9.2&TLow=4&TInc=.2&RefState=DEF&TUnit=K&PUnit=MPa&DUnit=mol%2Fl&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm" target="_blank">Eric W. Lemmon, Mark O. McLinden and Daniel G. Friend, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved July 31, 2019).</a>

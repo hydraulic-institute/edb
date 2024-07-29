@@ -1,3 +1,3 @@
 -----
-title: Section V | Tools
+title: Tools
 -----

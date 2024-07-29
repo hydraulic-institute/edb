@@ -295,7 +295,9 @@ All pages can contain blocks for equations, which are entered in LaTeX and autom
 
 Mathematical formulas are not very well support by HTML - so we need  an alternative method of defining them such that they are rendered to the screen correctly.  We use [LaTex](https://www.latex-project.org/about/) to do this.
 
-LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well.
+LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well. 
+
+Equations are displayed in italics.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`.
 
 For example:
 ```
@@ -304,9 +306,21 @@ $$ \Delta h_f = { {fL \over D} * v^2  \over 2g}$$
 =+=
 ```
 
-The block will compile and be typset as the following:
+This block will compile and be typset as the following:
 
 <img src='./images/equation.png'/>
+
+Equations are displayed in italics when wrapped with `$$`.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`:
+
+```
+=+=
+$$ \mathrm{\Delta} \mathrm{h}_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{supply}) \over \rho ·g} $$
+=+=
+```
+
+This block will compile and be typset as the following:
+
+<img src='./images/equation2.png'/>
 
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
@@ -449,14 +463,18 @@ Like tables, Definition/Reference tables are supported via a *custom extenstion*
 
 ***Reference & Resource Tables***
 
-1. The first row must contain Section information as noted in the following bullets.  
+The first row must contain Section information as noted in the following bullets.  
    - There can be multiple Sections in a single CSV file. You can see this in any of the subsections under the Intro, Definitions, Resources & References Section on the website.
-2. *Column A* should contain a Section Title (*"Hydraulic Institute Reference Standards and Guidelines",  "Pump Types"*, etc) to separate the sections. The Section name will be displayed on the webpage. Please do not put any other information in *Column A* other than a section title.
-3. Continuing on the same row as the Section Title (*Column A*), *Column B* and on should contain that section's table headers.
-   - Any comments should come after the last column of actual data.  The heading for a comment column can be one of: *Comment, Search, or an empty string*.  The first column that matches any of these strings will be ignored and no more columns will be parsed for that section.
-4. Data should follow the Section/Header row and should be aligned underneath the appropriate header title.
-5. To automatically generate a consistent URL for a column, the header for that column should be followed by "::" and then the URL. Insert *"{{REF}}"* into the URL to designate where the column data should be inserted into the URL.  A link will automatically be generated using the data in the column.
-6. To generate a link to a Section in the EDL navigation sidebar, use the word *"Section"* in the column header title. This will tell the code to generate a link to the specific EDL page.  The data for that column should use the EDL navigation sidebar section name EXACTLY as it appears.  If it's not a unique section name (ex: General), then include the parent name followed by *:* and then the section name. A link will automatically be generated to the specific section.
+1. *Column A* should contain a Section Title (*"Hydraulic Institute Reference Standards and Guidelines",  "Pump Types"*, etc) to separate the sections. The Section name will be displayed on the webpage. Please do not put any other information in *Column A* other than a section title.
+2. Continuing on the same row as the Section Title (*Column A*), *Column B* and on should contain that section's table headers.
+3. Any column after *Column B* can contain an image identifier that will be displayed between the Section Header and the table. This column will otherwise be ignored.:
+   - Identify the image with: *"Image?filename.png"* 
+   - To limit the size of the file, *"Image?filename.png?75%"* (100% is default)
+   - The image should be saved to the source section `images` folder.  Ex:  `source/00_introduction-definitions-references/images/filename.png`
+4. Any comments should come after the last column of actual data.  The heading for a comment column can be one of: *Comment, Search, or an empty string*.  The first column that matches any of these strings will be ignored and no more columns will be parsed for that section.
+5. Data should follow the Section/Header row and should be aligned underneath the appropriate header title.
+6. To automatically generate a consistent URL for a column, the header for that column should be followed by "::" and then the URL. Insert *"{{REF}}"* into the URL to designate where the column data should be inserted into the URL.  A link will automatically be generated using the data in the column.
+7. To generate a link to a Section in the EDL navigation sidebar, use the word *"Section"* in the column header title. This will tell the code to generate a link to the specific EDL page.  The data for that column should use the EDL navigation sidebar section name EXACTLY as it appears.  If it's not a unique section name (ex: General), then include the parent name followed by *:* and then the section name. A link will automatically be generated to the specific section.
 
 ***Acronyms & Definitions Tables***
 
