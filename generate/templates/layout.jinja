@@ -711,7 +711,7 @@
                             </div>
                             <ul class='search-results' v-if='search_display'>
                                 <li class="menu-list" v-if='!search_results.length'>
-                                    <span class="menu-label">Nothing match was found</span>
+                                    <span class="menu-label">No matches found</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length'>
                                     <span class="menu-label">${search_results.length} topic matches</span>
@@ -719,22 +719,23 @@
                                 <li>
                                     
                                 </li>
-                                <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                                    <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
+                                <li class="menu-list" v-if='search_results.length' v-for='res in results_for_display'>
+                                    <a :href="res.path+'.html'" :class='{"is-active": res.slug == "{{node["slug"]}}"}'>
+                                        <span style='font-size:smaller'>${res.section}</span> <br/>${res.title}</a>
                                 </li>
                             </ul>
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
-                                {% for section in sections|sort(attribute='sort') %} 
+                                {% for s in sections|sort(attribute='sort') %} 
                                     <li>
-                                        <span class="menu-label">{{section['metadata']['title']}}</span>
+                                        <span class="menu-label">{{s['metadata']['title']}}</span>
                                         <ul>
-                                            {% for topic in section['children']|sort(attribute='sort') %}
-                                                {% if topic['metadata']['title']%}
+                                            {% for child in s['children']|sort(attribute='sort') %}
+                                                {% if child['metadata']['title']%}
                                                 <li class="menu-list">
-                                                {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                    <a class='is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                {% if node['path']== child['path'] and node['slug']== child['slug'] %}
+                                                    <a class='is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                 {% else %}
-                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    <a href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                 {% endif %}
                                                 </li>
                                                 {% endif %}
@@ -772,52 +773,65 @@
                     </div>
                     <ul class='search-results' v-if='search_display'>
                         <li class="menu-list" v-if='!search_results.length'>
-                            <span class="menu-label">Nothing match was found</span>
+                            <span class="menu-label">No matches found</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length'>
                             <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
-                        <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>
-                                <span style='font-size:smaller'>${topic.section}</span> <br/> ${topic.title}
+                        <li class="menu-list" v-if='search_results.length' v-for='res in results_for_display'>
+                            <a :href="res.path+'.html'" :class='{"is-active": res.slug == "{{node["slug"]}}"}'>
+                                <span style='font-size:smaller'>${res.section}</span> <br/> ${res.title}
                             </a>
                         </li>
                     </ul>
                     
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         <div id='nav-accordion' class='accordion nav-accordion '>
-                        {% for section in sections|sort(attribute='sort') %}
+                        {% for s in sections|sort(attribute='sort') %}
                             <div class="accordion-item nav-accordion-item mb-2">
-                                <h2 class="accordion-header" id="{{section['slug']}}-header">
-                                    <button id="{{section['slug']}}-button" class="accordion-button nav-accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
-                                        data-bs-target="#{{section['slug']}}" aria-expanded="false">
-                                        {{section['metadata']['title']}}
+                                <h2 class="accordion-header" id="{{s['slug']}}-header">
+                                    {% if section == s['slug'] %}
+                                        <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#{{s['slug']}}" aria-expanded="true">
+                                        {{s['metadata']['title']}}
                                     </button>
                                 </h2>
-                                <div id="{{section['slug']}}" class="accordion-collapse collapse" aria-labelledby="{{section['slug']}}-header">
+                                <div id="{{s['slug']}}" class="accordion-collapse" aria-labelledby="{{s['slug']}}-header">
+                                    {% else %}
+                                    <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#{{s['slug']}}" aria-expanded="false">
+                                        {{s['metadata']['title']}}
+                                    </button>
+                                </h2>
+                                <div id="{{s['slug']}}" class="accordion-collapse collapse" aria-labelledby="{{s['slug']}}-header">
+                                    {% endif %}
                                     <div class="accordion-body nav-accordion-body">
-                                        {% for topic in section['children']|sort(attribute='sort') %}
-                                            {% if topic['directory']%}
+                                        {% for child in s['children']|sort(attribute='sort') %}
+                                            {% if child['directory']%}
                                                 <li>
-                                                    <label style="padding-left:1em">{{topic['metadata']['title']}}</span>
+                                                    <label style="padding-left:1em">{{child['metadata']['title']}}</span>
                                                     <ul>
-                                                        {% for stopic in topic['children']|sort(attribute='sort') %}
+                                                        {% for stopic in child['children']|sort(attribute='sort') %}
                                                         <li style="padding-left:1em" class="menu-list">
-                                                            {% if topic['slug'] == 'home' %}
-                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% if child['slug'] == topic and s['slug'] == section %}
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% elif child['slug'] == 'home' %}
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
                                                             {% else %}
-                                                                <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
                                                             {% endif %}
                                                         </li>
                                                         {% endfor %}
                                                     </ul>
                                                 </li>
-                                            {% elif topic['metadata']['title']%}
+                                            {% elif child['metadata']['title']%}
                                                 <li class="menu-list">
-                                                    {% if topic['slug'] == 'home' %}
-                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic default_topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                    {% if child['slug'] == topic  and s['slug'] == section %}
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                    {% elif child['slug'] == 'home' %}
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                     {% else %}
-                                                        <a id='{{section['slug']}}_{{topic['slug']}}' class='menu-topic' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{topic['metadata']['title']}}</a>
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                     {% endif %}
                                                 </li>
                                             {% endif %}

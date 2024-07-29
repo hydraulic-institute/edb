@@ -13,6 +13,9 @@ $(window).on('pageshow',function() {
     setup_menu();
     $('#fullpage').show();
     check_each_dt();
+    //In case a search is requested, scroll to the first result
+    if ( $('.current_mark').length )
+        $('.current_mark').get(0).scrollIntoView({block: "center"});
 });
 
 $("[data-bs-toggle]").on('click',function(e){
@@ -39,8 +42,6 @@ function pathToId(path) {
 
 function setup_menu() {      
     //Update the menu to show the active topic and any uncollapsed parents
-    //Get the active window
-    //Save the active window
     if ($('.navbar-burger').is(':visible')) {
         return;
     }
@@ -82,58 +83,14 @@ function setup_menu() {
     $("#"+storage_active_topic['topic']).addClass("is-active");
 
     //Set the dropdowns
-    let expanded_sections = localStorage.nav_show;
-    $('.menu-section').unbind('click');
-    if (!expanded_sections) {
-        let active_section = "#"+storage_active_topic['topic'].split("_")[0];
-        localStorage.setItem("nav_show", JSON.stringify([active_section]));
-        $(active_section+"-button").click();
-    }
-    else{
-        expanded_sections = JSON.parse(expanded_sections);
-        for (let section of expanded_sections) {
-            $(section+"-button").click();
-        }
-    }
-    $('.menu-section').bind('click', menu_click);
+    let active_section = "#"+storage_active_topic['topic'].split("_")[0];
+    localStorage.setItem("nav_show",active_section);
+    $(active_section+"-button").click();
 }
 
 function add_listeners() {
-    const els = document.querySelectorAll('.menu-section');
-    els.forEach(el => el.addEventListener('click', menu_click));
     const els2 = document.querySelectorAll('.menu-topic');
     els2.forEach(el => el.addEventListener('click', menu_topic_click));
-}
-
-function menu_click(event) {
-    //Save open menu items to local storage
-    //event.stopPropagation();
-    //event.stopImmediatePropagation();
-    var target = $(this).attr('data-bs-target');
-    //console.log('target:', target);
-    //target = target.replace("#", "");
-    var is_expanded = ($(this).attr('aria-expanded') == "true")?true:false;
-    //console.log('is-expanded:', is_expanded);
-    var show_stored = [];
-    if (localStorage.nav_show) {
-        show_stored = JSON.parse(localStorage.nav_show);
-        //console.log('Current: '+show_stored);
-    }
-    var index = show_stored.indexOf(target);
-    if (!is_expanded) {
-        if (index > -1) {
-            show_stored.splice(index, 1);
-            console.log("collapse");
-        }
-    }
-    else {
-        if (index == -1) {
-            show_stored.push(target);
-            console.log("expand");
-        }
-    }
-    localStorage.setItem('nav_show', JSON.stringify(show_stored));
-    //console.log('Now: '+show_stored);
 }
 
 function menu_topic_click(event) {
@@ -153,25 +110,16 @@ function menu_topic_click(event) {
     if (!target) {
         target = pathToId(window.location.pathname);
         href = window.location.pathname;
-        let expanded_sections = localStorage.nav_show;
-        expanded_sections = JSON.parse(expanded_sections);
         //Expand the new section 
         let section = "#"+target.split("_")[0];
-        if (expanded_sections.indexOf(section) == -1) {
-            expanded_sections.push(section);
-            localStorage.setItem('nav_show', JSON.stringify(expanded_sections));
-        }
-        $('.menu-section').unbind('click');
-        for (let section of expanded_sections) {
-            $(section+"-button").click();
-        }
-        $('.menu-section').bind('click', menu_click);
+        localStorage.setItem('nav_show', section);
+        $(section+"-button").click();
     }
     $("#"+target).addClass("is-active");
     $("#"+target).addClass("active_topic");
     localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href}));
-}
 
+}
 
 function check_each_dt() {
     $('*[id*=dt-data]:visible').each(function() {
