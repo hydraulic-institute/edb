@@ -747,6 +747,23 @@ def make_source_specials(source, dest):
         if os.path.isdir(src):
             copytree(src, dst)
 
+def make_root_specials(source_dir, production):
+    root_specials_dir = os.path.join(BASE_DIR,"..","./"+source_dir)
+    subfolders = [ f.path for f in os.scandir(root_specials_dir) if f.is_dir() ]
+    for folder in subfolders: 
+        for special in os.listdir(folder):
+            if special == '.DS_Store':
+                continue
+            if (production and '-beta' in special) or (not production and '-beta' not in special):
+                continue
+            if not production:
+                special_out = special.replace('-beta', '')
+            else:
+                special_out = special
+            copyfile(os.path.join(folder, special),
+                    os.path.join(OUTPUT_DIR, special_out))
+            print (f"Copying {folder}/{special} to {OUTPUT_DIR}")
+    
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
     global options
@@ -999,7 +1016,7 @@ def pdf(graph):
         md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='./generate/static/edb.pdf')
 
 
-def html(graph, specials, ignores, production=False):
+def html(graph, specials, ignores, rootspecials, production=False):
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)
@@ -1010,6 +1027,7 @@ def html(graph, specials, ignores, production=False):
         options.minified = ".min"
     clean()
     make_specials(specials, ignores)
+    make_root_specials(rootspecials, production)
     os.makedirs(os.path.join(OUTPUT_DIR, "charts"))
 
     make_root(graph)
@@ -1049,7 +1067,7 @@ def html(graph, specials, ignores, production=False):
             url['priority'] = '0.8'
             sitemap.append(url)
 
-    base_url = 'https://edl.pumps.org'
+    base_url = 'https://datatool.pumps.org'
     xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     for s in sitemap:
         xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"

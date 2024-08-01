@@ -4,6 +4,7 @@ import os
 
 SPECIAL_DIRS = ['javascript', 'images','table-data']
 IGNORE_DIRS = ['table-data']
+ROOT_SPECIAL_DIRS = 'root_specials'
 
 
 def generate(production):
