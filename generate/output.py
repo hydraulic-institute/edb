@@ -1073,7 +1073,7 @@ def html(graph, specials, ignores, rootspecials, production=False):
         xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"
     xml += "</urlset>"
 
-    robots = 'Sitemap: https://edl.pumps.org/sitemap.xml '
+    robots = 'Sitemap: https://datatool.pumps.org/sitemap.xml '
 
     with io.open(os.path.join(OUTPUT_DIR, 'sitemap.xml'), 'w', encoding='utf8') as f:
         f.write(xml)
