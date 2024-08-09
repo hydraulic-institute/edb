@@ -527,7 +527,31 @@ def process_ad_blocks(markdown):
         markdown = before + \
             replace_ad_block(within) + after
         start = markdown.find(delim)
+ 
+    return markdown
 
+def replace_scrolling_logo_block(chart_text):
+    logos_dir = parse_dict(chart_text.strip().split("\n"))
+    all_logos = []
+    for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['logos'])):
+        all_logos.append(os.path.join('.',logos_dir['logos'],file))
+    template = env.get_template('scrollinglogos.jinja')
+    new_html = template.render(logos=all_logos)
+    return new_html
+
+
+def process_scrolling_logo_blocks(markdown):
+    delim = "=SL="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + \
+            replace_scrolling_logo_block(within) + after
+        start = markdown.find(delim)
+ 
     return markdown
 
 # Ads are not in PDF, so just snip them out.
@@ -795,6 +819,7 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_demonstrator_blocks(path, node['path'], content)
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
+    content = process_scrolling_logo_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 

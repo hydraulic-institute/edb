@@ -648,3 +648,54 @@ html.dark div.dtfc-top-blocker,html.dark div.dtfc-bottom-blocker {
     align-items: center;
     height: auto;
 }
+
+/* Scrolling Logos */
+
+@keyframes scrollText {
+    from {
+        transform: translateX(30%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+  }
+  .scroll {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 20px;
+    padding: 0;
+  }
+  
+  .scroll img {
+    height: 100px;
+    min-width: 400px;
+  }
+  
+  .m-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: scrollText 25s infinite linear;
+    margin: 0;
+    font-size: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    height: 100px;
+  }
+  
+  .scroll-span {
+    display: inline-block;
+      width: fit-content;
+    margin: 0 20px;
+    padding: 0;
+    color: white;
+  }
+
+  .scroll-container {
+    margin-top: 100px;
+  }
