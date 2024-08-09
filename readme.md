@@ -34,6 +34,8 @@ Once installed, you can open the `edb` directory.  **Important** - to develop co
 
 Visual Studio Code allows you to open a folder - `edb` - which is the most efficient way of working.  This will give you a side panel on the left side of the screen that you can use to navigate and open any file in the directory structure.  Under the `/source` directory, you should see folders like `01_system-curves` and a number of `.md` files - among other types.  As will be explained below, you will do all of your work by creating and editing `.md` text files and `.csv` data files (for tables and charts).
 
+<div style="page-break-after: always;"></div>
+
 ## Python Setup
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
 
@@ -41,7 +43,7 @@ Download and install Python version 3.7 or above [here](https://www.python.org/d
 
 During installation, make sure you add Python to your path, and check off the following options:
 
-<img src='python.png'/>
+<img src='./images/python.png'/>
 
 After you install Python, close the Command Prompt (if you already have it open) and re-launch it.  Navigate to into the `edb` directory using the `cd` command (`cd C:\projects\edb`).
 
@@ -50,22 +52,35 @@ Next, execute the following commands one by one. There are dependencies for the 
 *Note, depending on how Python was installed, particularly on Windows, you may need to type `python`, and not `python3` on the command line.  Same with `pip` / `pip3`.*
 
 ```
-pip3 install virtualenv
-python3 -m venv env
+#Install the Virtual Environment
+$> pip3 install virtualenv
+$> python3 -m venv env
 
-env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
-source env/Scripts/activate  <- # IF USING LINUX or MAC or BASH SHELL
+#Activate the Virtual Environment
+$> env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+$> source env/bin/activate  <- # IF USING LINUX or MAC or BASH SHELL
 
-pip3 install Jinja2   
-pip3 install lesscpy
-pip3 install Markdown
-pip3 install watchdog
-pip3 install htmlmin
-pip3 install awscli --upgrade 
-pip3 install s3-deploy-website --upgrade
-pip3 install pypandoc
-pip3 install selenium
+#Either install requirements.txt file:
+$> pip3 install -r requirements.txt
+
+#OR Install each library separately:
+$> pip3 install Jinja2   
+$> pip3 install lesscpy
+$> pip3 install Markdown
+$> pip3 install watchdog
+$> pip3 install htmlmin
+$> pip3 install pypandoc
+$> pip3 install selenium
+$> pip3 install six
+$> pip3 install pandas
 ```
+
+Select the Python Interpreter:
+- Press **Ctrl + Shift + P (or Cmd + Shift + P on macOS)** to open the Command Palette.
+- Type **Python select interpreter** and press Enter.
+- In the list of available interpreters, you should see the Python interpreter from your virtual environment. It will have the python virtual environment (env) that you created above in the path.
+- Select the desired Python interpreter from the list
+
 **Windows Note** When using Windows, some of these dependencies will require additional work to get to run.  As they install, you will likely see something along the lines of `The script markdown_py.exe is install in... ` and then a directory will be listed.  This directory must be added to the Windows PATH.
 
 To do this, issue the following command, where `C:\your\path\here` is the directory path indicated in the message that was printed.
@@ -86,7 +101,7 @@ This builds the EDB content and launches a web server locally on your machine.  
 
 You should see the web site:
 
-<img src='edb.png'/>
+<img src='./images/edb.png'/>
 
 # Creating Content
 All content is created in the `/source` directory.  The contents of the directory include a top level `index.md` which is the home page of the site, and directories which define the section structure of the EDB.  Each directory will contain additional `.md` files which become HTML pages, along with additional data like images and csv file to support the pages.  **Sub-directories in sections are not supported**.
@@ -232,8 +247,11 @@ There are situations where you will be placing quantity data within text itself,
 **Example**
 The Fluid Property section has an Auxiliary Data page, which displays Enthalpy reference state.  You can see this implemented using the `units` element, embedded right into the markdown text.
 
+If there is no text following the tag, you can end it with `/>`.  Otherwise, you need the ending `</units>` tag.
 ```
 H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."/>
+
+H = <units us = "19771.296093 Btu/lb-mole at 80.3 F and 0.15 psia" metric="2551.013479 kJ/kg at 26.9 C and 0.010 bar."></units> followed by more text.
 ```
 
 Note that no actual unit conversion are ever being done by the app - you are responsible for adding the text for both unit sets.
@@ -250,7 +268,22 @@ Here is some sample Markdown text with subscript:
 ```
 The US customary symbol N<sub>SS</sub> is sometimes used to designate suction specific speed.
 ```
+#### Special Characters
 
+The `special_characters_code.csv` file has (most) all of the unicode keys for special characters.
+
+To use the special characters in the unit-converter or other tables/areas
+		- For the plus/minus sign, you can use the key from the file (ex: `&#x00B1;` or decimal representation of `0x00B1` = 177 - `&#177;`) in your data table or markup code.
+		- Insert the string `&#x00B1;` in the place where you want the plus-minus sign to display
+
+Here is some sample Markdown text with subscript:
+```
+The following is a rho character: <span>&#x03A1;</span>
+```
+
+#### Helpful links:
+- https://www.freeformatter.com/html-entities.html
+- https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
 Note - any HTML element can be used within Markdown - if you are not familiar with HTML, you might want to read up on some of the elements.
 
 [https://www.w3schools.com/tags/](https://www.w3schools.com/tags/)
@@ -262,7 +295,9 @@ All pages can contain blocks for equations, which are entered in LaTeX and autom
 
 Mathematical formulas are not very well support by HTML - so we need  an alternative method of defining them such that they are rendered to the screen correctly.  We use [LaTex](https://www.latex-project.org/about/) to do this.
 
-LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well.
+LaTex formulas are supported via a *custom extension* to markdown syntax.  To include LaTex equations, the LaTex line must have a `=+=` on the line preceding and after it.  The actual LaTex text must have `$$` at the beginning and end of the line as well. 
+
+Equations are displayed in italics.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`.
 
 For example:
 ```
@@ -271,9 +306,21 @@ $$ \Delta h_f = { {fL \over D} * v^2  \over 2g}$$
 =+=
 ```
 
-The block will compile and be typset as the following:
+This block will compile and be typset as the following:
 
-<img src='docs/equation.png'/>
+<img src='./images/equation.png'/>
+
+Equations are displayed in italics when wrapped with `$$`.  To prevent a variable or constant from being italicized, use `\mathrm{<var>}`:
+
+```
+=+=
+$$ \mathrm{\Delta} \mathrm{h}_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{supply}) \over \rho ·g} $$
+=+=
+```
+
+This block will compile and be typset as the following:
+
+<img src='./images/equation2.png'/>
 
 #### About LaTeX 
 LaTeX is a typesetting language used in many scientific and engineering fields, primarily where technical and mathematical text appears in publication.  For the EDB, we are only using a very small subset of the language - the part that describes mathematical equations.
@@ -289,11 +336,11 @@ You may find the following links instructive - however remember that there is a 
 - [https://www.youtube.com/watch?v=DvDO1mea1w0](https://www.youtube.com/watch?v=DvDO1mea1w0)
 
 #### Numbered Equations
-Often within text content you will want to embed references to equations.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<span>` element with class `equation-label` in the first line within the equation block:
+Often within text content you will want to embed references to equations, figures, calculations, tables, demonstrators etc.  You may apply labels (i.e. Eq. 2.1) to equations by embedding using `<div>` element with class `figure-label`, `equation-label`, `calculation-label`, `demo-label` before, afer or in the first line within the block.  These classes are defined in ```style.less```:
 
 ```
+<div class='equation-label'>Eq. 1</div>
 =+= 
-<span class='equation-label'>Eq. 1</span>
 $$ \sqrt {x + 9} $$
 =+= 
 ```
@@ -301,9 +348,11 @@ $$ \sqrt {x + 9} $$
 ### Tables
 All pages can contain blocks for tabular data.  Tabular data is entered into the EDB by supplying CSV files, and referencing them within the page.  If the data table has US and Metric values, two CSV files can be specified, and the platform will select the correct one based on the chosen unit set of the user.
 
+**Updating the Piping Materials Data for the Friction Loss Calculator and Tables in Section IV** - Please refer to the `Process for Updated PIPE MATERIALS Data` below
+
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
-Instead, tables are supported via a *custom extenstion* to markdown sysntax. To include a table, you must define a `=|=` line, followed by 
+Instead, tables are supported via a *custom extenstion* to markdown syntax. To include a table, you must define a `=|=` line, followed by 
 meta data describing the table, and finally end the block with an other line containing only `=|=`.
 
 For example:
@@ -317,6 +366,34 @@ data-metric: datapoints_metric.csv
 
 The block above would create a table in the page titled "Data Points".  The `data-us` and `data-metric` lines in the meta data block point to a CSV file containing the data.  Alternatively, if the table does not need to support units, then you may specify a `data` value instead of the `us` and `metric` variants.
 
+**Options**
+- **hide_units: true** - 
+Including **hide_units** in the markdown will HIDE the units block on the horizontal nav bar otherwise, the Units block will be VISIBLE.
+- **scrolling: false** - 
+Setting to "false" will generate a static table vs. a scrolling table, otherwise tables WILL be scrolling.
+- **fixed-columns: columns** -
+Enter the number of columns on the left side of the table to fix.  
+- **special: style: value;** -
+Special allows you to set special styles for your table just as you would in html.  Use the same format:  
+Ex:  special: height:600px;width:100%;
+- **column_tags: tag** -
+This allows you to select specific columns you've "tagged" in a csv file to display in a data table.  See **Row Meta Data** below
+
+#### Using TAGS for tables
+
+1. Here is an example of using *tags* to select specific columns to display from a csv file.  This way, a csv file can be used for multiple tables as shown in section 04 - Piping Materials.
+
+	```
+	=|=
+	title: Threaded Steel Pipe Flanges per ASME B16.5 (Class 150, 300)
+	data-us: flange-16.5-150-300-us.csv
+	data-metric: flange-16.5-150-300-metric.csv
+	column_tags: Th
+	=|=
+	```
+	In this example, the columns that will be included will be the ones tagged with 'Th' on the *tags* row in the CSV files.
+	The CSV file(s) can be used for multiple flanges.
+  
 **Remember, CSV files are not Excel files - which end in a .xlsx extension**.  While it is convenient to edit CSV files in Excel, you must always remember to save as CSV (which have a .csv extension).  When opening a CSV in VSCode or whatever Markdown editor you are using, you will clearly see that CSV means "comman separated values".  CSV files are just straight text files, with rows on each line, columns separated by commas.
 
 The CSV files do contain additional meta data to provide the platform information about how to format the table (or chart, see below).  This metadata appears in the first row and first column.
@@ -324,48 +401,94 @@ The CSV files do contain additional meta data to provide the platform informatio
 **Always leave the first column of the first row empty.**
 
 #### Column Meta Data - First row
-The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following:
-- **text** - the column data will be formatted as standard text
-- **numeric** - the column data will be formatted as a number.  *Note, the application does not handle specifying decimal places - whatever is written in the CSV file is displayed to the user.*
+The first row contains meta data to describe the column data.  Each column, except the first column, should contain one of the following (these are strictly for formatting, not for processing.):
+- **text** - the column data will be formatted as standard text.  Left justified.
+- **numeric** - the column data will be formatted as a number (Right justified).  *Note, the application does not handle specifying decimal places - whatever is written in the CSV file is displayed to the user.*
 
 #### Row Meta Data - First column of every (other) row
 The first column of every row in the CSV file should always contain the following:
 
 - **heading** - The row contains headings.  Multiple heading rows are permitted, and will appear in the order they are specified.
+	- More than one row can contain the **heading** meta data.  The font size of the 2nd and following heading rows will be reduced by 1/4 to `.75rem`. 
+	- To have a header span multiple columns, just leave any number of following columns blank that you want the header to span.  This can be seen in Section 3 - Losses in Nozzles.
+		- One thing to note is to make sure the CSV file does NOT have extra empty columns at the end.
+- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in ever table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
 - **data** - The row is interpreted as standard data - not a heading.  
 
 #### Example
 Consider the following CSV file, created in Excel.
-![CSV](csv.png "CSV")
+![CSV](./images/csv.png "CSV")
 
 When properly saved, it would appear as a plain text file in a coding editor:
 
 ```
-,text,Number-0,Number-3,Number-0
-heading,Example,"Flow Rate
-gpm","Velocity
-ft/sec","Head Loss
-feet"
-data,ABC,0,0,265
-data,DEF,20,0.504,265
-data,GHI,40,1.008,266
-data,JKL,60,1.512,268
-data,MNO,80,2.016,270
-data,PQR,100,2.52,273
-data,STU,120,3.024,276
-data,VWX,140,3.528,280
-data,YZZ,160,4.032,285
-data,,180,4.536,290
-data,,200,5.04,296
-data,,220,5.545,303
-data,,240,6.049,310
-data,,260,6.553,317
-data,,280,7.057,326
-data,,300,7.561,335
+,text,numeric,numeric,numeric,numeric
+heading,TYPE,Flange Class,Min Thickness Flange (tf),Min Thickness Lap Joint (tf),Bore- Min Lapped (B2)
+tags,None,All,"Th, SO, SW, WN",La,La
+data,ASME 16.5,150,0.38,0.44,0.9
+data,ASME 16.5,150,0.44,0.5,1.11
+data,ASME 16.5,150,0.5,0.56,1.38
+data,ASME 16.5,150,0.56,0.62,1.72
+data,ASME 16.5,150,0.62,0.69,1.97
+data,ASME 16.5,150,0.69,0.75,2.46
+data,ASME 16.5,150,0.81,0.88,2.97
+data,ASME 16.5,150,0.88,0.94,3.6
+data,ASME 16.5,150,0.88,0.94,4.1
+data,ASME 16.5,150,0.88,0.94,4.6
+data,ASME 16.5,150,0.88,0.94,5.69
+data,ASME 16.5,150,0.94,1,6.75
+data,ASME 16.5,150,1.06,1.12,8.75
+data,ASME 16.5,150,1.12,1.19,10.92
+data,ASME 16.5,150,1.19,1.25,12.92
+data,ASME 16.5,150,1.31,1.38,14.18
+data,ASME 16.5,150,1.38,1.44,16.19
+data,ASME 16.5,150,1.5,1.56,18.2
+data,ASME 16.5,150,1.62,1.69,20.25
+data,ASME 16.5,150,1.75,1.81,22.25
+data,ASME 16.5,150,1.81,1.88,24.25
 ```
 Notice the leading comma - this is because the first column on the first row is blank.  In this case, the first row defines the first column as text data, and the other three as numeric data - which is displayed differently in the HTML.
 
 Each subsequent row is either a heading or data.
+  
+### Definitions and References Tables
+*(Section 00-Introduction, Definitions, References & Resources)*
+
+Like tables, Definition/Reference tables are supported via a *custom extenstion* to markdown syntax. To include a definiton table, you must define a `=defs=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=defs=`.
+
+***Definition and Reference Tables are generated automatically by following these instructions:***
+
+1.	All tables should be saved in CSV UTF-8 character set format.  It's easiest to use LibreOffice to open CSV files (this is a free download available at: https://www.libreoffice.org) and save them in the appropriate format. Especially if you use special characters (like Delta, rho, superscripting, etc).
+2. When opening a .CSV file, select the "Unicode - UTF-8" character set. 
+
+***Reference & Resource Tables***
+
+The first row must contain Section information as noted in the following bullets.  
+   - There can be multiple Sections in a single CSV file. You can see this in any of the subsections under the Intro, Definitions, Resources & References Section on the website.
+1. *Column A* should contain a Section Title (*"Hydraulic Institute Reference Standards and Guidelines",  "Pump Types"*, etc) to separate the sections. The Section name will be displayed on the webpage. Please do not put any other information in *Column A* other than a section title.
+2. Continuing on the same row as the Section Title (*Column A*), *Column B* and on should contain that section's table headers.
+3. Any column after *Column B* can contain an image identifier that will be displayed between the Section Header and the table. This column will otherwise be ignored.:
+   - Identify the image with: *"Image?filename.png"* 
+   - To limit the size of the file, *"Image?filename.png?75%"* (100% is default)
+   - The image should be saved to the source section `images` folder.  Ex:  `source/00_introduction-definitions-references/images/filename.png`
+4. Any comments should come after the last column of actual data.  The heading for a comment column can be one of: *Comment, Search, or an empty string*.  The first column that matches any of these strings will be ignored and no more columns will be parsed for that section.
+5. Data should follow the Section/Header row and should be aligned underneath the appropriate header title.
+6. To automatically generate a consistent URL for a column, the header for that column should be followed by "::" and then the URL. Insert *"{{REF}}"* into the URL to designate where the column data should be inserted into the URL.  A link will automatically be generated using the data in the column.
+7. To generate a link to a Section in the EDL navigation sidebar, use the word *"Section"* in the column header title. This will tell the code to generate a link to the specific EDL page.  The data for that column should use the EDL navigation sidebar section name EXACTLY as it appears.  If it's not a unique section name (ex: General), then include the parent name followed by *:* and then the section name. A link will automatically be generated to the specific section.
+
+***Acronyms & Definitions Tables***
+
+1. Acronyms and Definitions tables are unique in that page tags are generated for Acronyms and links are generated in the Definitions table that link back to the tags automatically. All notes above in the *"Resources & References Tables"* section apply to this section.
+2. ACRONYMS - *Column A* of the first row will be the section name as noted above. If the title of the section is *"Acronyms"*, the section will be parsed as Acronyms.
+   - *Column B* will be the first heading and should be *"Term"*.  The data under this heading should be an acronym.  The acronym will be linked to the Definition in the 2nd table (below).
+   - *Column C* should be *"Description"* and the data under this heading should spell out the Acronym in *Column B*	
+   - Any other columns after *Column C* should follow the guidelines in *"Resources & References Tables"*.
+3. DEFINITIONS - *Column A*, the section title, should be *"Definitions"*.
+   - *Column B* will be the first heading and should be *"Term"* (as above). The data should be terms you want to define. If an acronym from th Acronyms section applies to a Term, make sure to include the Acronym after the title in parenthesis.
+   - *Column C* should be *"Description"* as above and should describe the term.
+   - Links will be autogenerated from the Acronym table to the Definitions table.
+
+Refer to the ***Infroduction, Definitions, References & Resources** Section and the table_of_acronyms-definitions.csv file.
 
 ### Charts
 Charts - currently only simply line/curve charts - are supported using the same type of CSV files you create tables with.  In many cases, the same CSV file you build a table out of may also be used for curves - and can be referenced that way.
@@ -395,13 +518,18 @@ Images are supported naturally by Markdown.  Images can be placed in the same di
 For an image that is saved in the same directory as the text content you are developing, you can use the following syntax:
 
 ```
-![System Curve](./system-curves-001.png "System Curve")
+![System Curve](./images/system-curves-001.png "System Curve")
+```
+
+To center the image on the page, add the `#center` element to the image:
+```
+![System Curve](./images/system-curves-001.png#center "System Curve")
 ```
 
 By default, the image will appear on the output page at its native size.  It's recommended to use image editing software to change the dimensions of all images to the size that best suites the page you are writing.  If you need to specify alternative image dimensions however, you may use standard HTML rather than the Markdown syntax.  The following would force the image to be 50x200 pixels on the screen.
 
 ```
-<img src='system-curves-001.png' width='50' height='200'/>
+<img src='./images/system-curves-001.png' width='50' height='200'/>
 ```
 
 For images that are going to appear on many pages, in different sections, a good option is to store the image in the `/images` directory, rather than in a section directory (or multiple section directories).  You can place any image in the `/image` directory, and reference it from any page like this:
@@ -436,14 +564,90 @@ Hydraulic Institute offer seminars, courses, books, and resources that deliver a
 =^=
 title: Pump System Assessments - 2 Part Webinar
 description: Pump system assessments and pump system optimization present significant opportunities for operations and maintenance cost savings and for reducing energy consumption. In this course, the user will learn the tasks and knowledge required for pump system assessments, the different levels of assessments, and the steps required to implement a pump system assessment. Also covered are the elements and format of the pump system assessment report, including examples. The user is also presented with case studies and real-world examples of pump system assessments and examples of how to use analysis tools, such as hydraulic modeling, to assist with the assessment.
-image: https://estore.pumps.org/GetImage.ashx?&maintainAspectRatio=true&maxHeight=300&maxWidth=300&Path=%7e%2fAssets%2fProductImages%2fPSA-2Part-Dec-2016.png
-url: https://estore.pumps.org/Pump-System-Assessments-2-Part-Webinar-P2779.aspx
+image: /images/pumpsystemsmatter.png
+url: https://training.pumps.org/products/pump-systems-assessment-e-learning-course
 price: 99.99
+hide_price: true
 =^=
 ```
 
 ### Interactive Demonstrators
 Some pages within the EDB will be interactive applications - allowing users to get a better understanding of a particular topic.  These interactive application pages will be created by software developers using JavaScript.
+
+---
+
+## Process for Updated UNIT CONVERSION Data
+
+*Note: All python commands are run from the edb root directory*
+
+### Background
+1. Spreadsheets with Unit Conversion data are in `kb/unit-converter` folder.
+2. When any of these files change, the `generate/static/unit-conversions.json` file needs to be rebuilt.
+	- Run the build file in the `kb/unit-converter` folder
+		- `python kb/unit-converter/build.py`
+		- This will parse all of the `xlsx` files and build the `unit-conversions.json` file.  
+			- This file is used by the *Unit Conversion Tool*
+3. If any of the labels have changed in `kb/unit-converter/volume.xlsx`, you MUST modify `source/javascript/tank_calculators.js`
+	- The `tank-demo` vue component has a mapping dictionary, `conversion_mapper`.
+		- Update the value of the key/value pair to match the label from the `volume.xlsx` file.
+		- If any of the mapping is in error, you will see `<map-error>` in the conversion table on the tank calculator webpage.
+---
+
+## Process for Updated PIPE MATERIALS Data
+*"Section IV - Pipe Materials.xlsx"*
+
+*Note: All python commands are run from the edb root directory*
+
+### Prep the Data
+1. Download the new Pipe Materials spreadsheet to your Downloads folder.
+2. Rename the new file to *"Section IV - Pipe Materials.xlsx"*.
+3. Open the file and select all rows/columns and clear all highlighting.
+4. Save the *"Pipe Data"* tab from the spreadsheet as a separate CSV file (UTF-8 encoded) as: *"Section IV - Pipe-Tube Data.csv"*
+5. Replace the existing files in the `edb/kb/friction-loss` folder with these 2 files.
+6. Open the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file.
+	-  Add a new row under the header row (which is/should be at row 4)
+	-  On that new row, put the word *"include"* in every column that you want displayed on the tables in **Section IV** on the EDL website.
+    -  Make sure to always *"include"* the **Group Name, Sub-Division and Sub-Division Name**.
+
+### Build the tables and json file for the Friction Calculator
+1.  Run the friction-loss build file:
+	-  `python kb/friction-loss/build-full.py`
+	-  This will generate the data tables in `source/04_piping-materials-IV/table-data`
+		- The file names are auto-created based on the **Group Name** and then the **Sub-Division Name**:  <br/>
+        `<Group Name Initials>_<First 4 letters of each of the words in the Sub-Division Name followed by '-'>.csv`
+		- Ex:  **Group:** Steel Pipe <br/>
+			**Sub-Division Name:** Welded and Seamless Wrought Steel Pipe <br/>
+			Filename generated:  `sp_weld-and-seam-wrou-stee-pipe.csv` <br/>
+	-  These tables are referenced in the *.md files in `source/04_piping-materials-IV`
+    -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
+        - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
+
+### Note
+There is a special case for *Plastic Pipes* in the `build-full.py` file.  Instead of *Wall Thickness, inches* heading and selector, *Plastic Pipes* has *Minimum Thickness, inches* for the heading and selector.
+
+---
+
+## Process for Updated FLANGE Data 
+*"Section IV - Flange Data.xlsx"* 
+
+### Prep the Data	
+1. Download the new Flange Data spreadsheet to your Downloads folder.
+2. Rename the new file to *"Section IV - Flange Data.xlsx"*.
+3. Replace the existing file in the `source/04_piping-materials-IV/table-data` folder.
+4. For each tab in the spreadsheet:
+	-  There exists a CSV file for each tab in the spreadsheet in this same folder.
+	-  Copy JUST the data (US or Metric) and replace the data in the existing CSV file.
+	-  There is a row under the *header* row called *tags*.  This row is for tagging the columns you want to who on the table.
+		- If you leave a column blank or tag it 'All', it WILL be included.
+		- If you tag the column 'None', it will NOT be included
+		- For the files with multiple types of flanges, the appropriate *"Section IV - Flange Data.xlsx"* tab/sheet will have a row of *tags* that can be copy/pasted into the appropriate CSV file in the *tags* row.
+	-  Save the file.
+
+### Build the tables
+1.  The tables will automatically be built in the `output.py` file in the `table_data()` function when you build the system:
+	- `python serve.py`
+
+---
 
 ## Auto-Generated Content
 There are several features of the EDB web site that are created automatically.  These features will continue to be developed - however these enhancements will not require any content changes.
@@ -536,17 +740,28 @@ git push origin master
 
 Once that completes successfully, you can go back to working on other things.
 
-## Hosting
-The HI EDL is deployed **Netlify.com** and served to the public internet from there.
+# Hosting
+The HI DATATOOL is deployed to **Netlify.com** and served to the public from there.
 
-### Deploying to Beta & Production
+## Deploying to Beta & Production
 #### Beta Site
-We have a Beta account on **Netlify.com** - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+We have a Beta account on **Netlify.com** - [https://datatool-beta.pumps.org](https://datatool-beta.pumps.org) (also `edl-beta.netlify.app`)
 - Login with `higladetech@gmail.com`
 
 #### Production Site
-We have a Production account on **Netlify.com** [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+We have a Production account on **Netlify.com** [https://datatool.pumps.org](https://datatool.pumps.org) (also `edl-prod.netlify.app`)
 - Login with `erdb@gladetech.net`
+  
+#### Phase 2 Information
+The `pumps.org` subdomain was `edl.pumps.org`.  As of the Phase 2 release (7/2024), this has been changed to `datatool.pumps.org`.   Because of this change, all `edl.pumps.org` endpoints needed to be redirected to `datatool.pumps.org`.  
+
+Changes were made to the `pumps.org` domain on NetworkSolutions.  Both `edl.pumps.org` and `datatool.pumps.org` have DNS CNAME records pointing to `edl-prod.netlify.app` (see below).
+
+Changes were also made for the `beta` endpoint (`edl-beta.pumps.org` and `datatool-beta.pumps.org` point to `edl-beta.netlify.app`).
+
+In order to implement the redirect from `edl.pumps.org` do `datatool.pumps.org`, a file needed to be created for the **Netlify.com** app.  
+
+The `_redirect*` files exist in `edb/root_specials/netlify`. One for production and one for beta.  The build process will copy the appropriate `_redirect` file and deposit in the root directory of the `build` directory.
 
 Prepping for Deployment:
 - In your development environment, stash any local changes you have
@@ -567,16 +782,23 @@ $> python serve.py
 ```
 
 To Deploy:
+
+- Build the code for `Production` or `Beta`:
+
+  - `$> python beta.py`
+  - `$> python prod.py`
+  - The code to deploy to `Netlify.com` will be generated and deposited in the `edb/build` folder.
+  
 - Log onto `Netlify.com` with the appropriate Login and Password
 - Click on `Sites`
-- Click on `edl-beta`
-- Click on `Deploys`
-- Drag the `builds` folder that was just created in your development environment when you ran `$>python serve.py`
+- Select the appropriate site (beta or production)
+- Click on `Deploys` and scroll to the bottom 
+- Drag the `builds` folder that was just generated in your development environment
 onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
 - Follow any additional instructions.  Include a description if you are able.
 - Your website will be deployed!
 
-# PDF Generation
+# Website PDF Generation
 Relies on `pandoc`
 
 ```
@@ -603,11 +825,21 @@ Install texlive at:  https://tug.org/texlive/windows.html
 # Creating README PDF using the Markdown PDF Extension
 Install the `Markdown PDF` extension in Visual Studio Code
 
-<img src='MarkdownExt.png'/>
+<img src='./images/MarkdownExt.png'/><br><br>
 
-- Open the markdown file in Visual Studio Code
-- Press `F1` and type `export` and you should see `markdown...` options
+Open the markdown file in Visual Studio Code
 
-<img src='f1MarkdownOptions.png'>
+**Either:**
+- Click in the searchbar at the top of VSC and select
+`Show and Run Commands`<br><br>
+
+<img src='./images/f1MarkdownInfo.jpg'><br><br>
+**OR**
+- Press `F1`<br><br>
+
+**Finally:**
+- Type `export` and you should see `markdown...` options
+
+<img src='./images/f1MarkdownOptions.png'><br><br>
 
 - Select whatever option you want and it should download the converted file to the same directory as your markdown file

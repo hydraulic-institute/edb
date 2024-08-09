@@ -2,9 +2,9 @@ import shutil
 import os
 import lesscpy
 import markdown
-import glob
 import io
 import htmlmin
+import copy
 import csv
 import json
 import uuid
@@ -14,13 +14,11 @@ from selenium import webdriver
 from datetime import date
 
 from .common import parse_dict
-from six import StringIO
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from markdown.preprocessors import Preprocessor
-from markdown import Extension
 from shutil import copyfile
 from shutil import copytree
 from collections import namedtuple
+import pandas as pd
 
 global chart_count
 chart_count = 0
@@ -28,15 +26,25 @@ chart_count = 0
 global pprinter
 pprinter = pprint.PrettyPrinter(indent=2)
 
+global table_count
+table_count = 0
+
+global all_tables
+all_tables=[]
+
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
 STATICS_DIR = os.path.join(BASE_DIR, "./static")
 SOURCE_DIR = os.path.join(BASE_DIR, "..", "./source")
+TABLE_DATA_DIR = 'table-data'
+SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
-TableRow = namedtuple('TableRow', 'type data')
-TableColumn = namedtuple('TableColumn', 'type data')
+TableRow = namedtuple('TableRow', 'type data style')
+TableColumn = namedtuple('TableColumn', 'type data colspan style')
+DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
+DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
 Chart = namedtuple('Chart', 'units x series')
 env = Environment(
@@ -44,6 +52,8 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
+DefaultStyle=''
+DefaultColspan=1
 
 class RenderOptions:
     def __init__(self):
@@ -73,9 +83,8 @@ def replace_latex_block(latex):
     else:
         return "<p class='formula'>" + latex + "</p>"
 
-
-def table_data(units, table, path, filename):
-    file = os.path.join(SOURCE_DIR, path, filename)
+def definitions_table_data(table, path, filename, in_sections):    
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the table {table.title} refers to {file} which does not exist")
@@ -83,27 +92,239 @@ def table_data(units, table, path, filename):
 
     with open(file, newline='', encoding='utf-8') as csvfile:
         csv_data = csv.reader(csvfile)
-        first_row = next(csv_data)
-        columns = first_row[1:]
-        rows = []
+        page_sections = []
+        columns = []
         headings = []
-        for row in csv_data:
-            row_columns = [TableColumn(columns[i], d)
-                           for i, d in enumerate(row[1:])]
-            r = TableRow(row[0], row_columns)
-            if (r.type == 'heading'):
-                headings.append(r)
+        acronym = []
+        acronym_ids = []
+        row_columns = []
+        comment_idx=1
+        section_idx=-1
+        section=""
+        use_style=""
+        if "special" in table:
+            use_style = table['special']
+        index = {'sections': [], 'index_style': 'height:200px', 'style': use_style}
+        orig_col_obj={'url': None, 'ref': None, 'type': None}
+        csv_data = [[c.replace('\ufeff', '') for c in row] for row in csv_data]
+        for idx, row in enumerate(csv_data):
+            if len(row[0]):
+                section_idx=None
+                section = row[0].split(" (")[0]
+                print(section)
+                columns = [row[i] for i,x in enumerate(row) if i != 0]
+                image=''
+                image_size='100%'
+                for item in columns:
+                    if 'Image?' in item:
+                        parts = item.split('?')
+                        image = './images/'+ parts[1].replace(" ","")
+                        if len(parts) > 2:
+                            image_size=parts[2]
+                        columns.remove(item)
+                        break
+                comment_idx = len(columns)
+                for item in ['Comment','Search','']:
+                    if item in columns:
+                        comment_idx = columns.index(item)
+                        break
+                columns = columns[0:comment_idx]
+                #Are there any columns that involve links
+                col_link_data=[]
+                #Go through each column and create an array of urls based on column index
+                for i,x in enumerate(columns):
+                    col_obj=copy.deepcopy(orig_col_obj)
+                    col_data = columns[i].split("::")
+                    if "::" in x:
+                        col_obj['url']=col_data[1].strip()
+                        col_obj['type']=col_data[0].strip()
+                        col_link_data.append(col_obj)
+                        columns[i] = col_data[0]
+                    else:
+                        # Push empty data
+                        col_link_data.append(col_obj) 
+                    if "Section" in col_data[0]:
+                        section_idx = i 
+                headings = columns.copy()
+                # Apply formatting to the previous section
+                if (len(page_sections)):
+                    if len(page_sections[-1]['rows']) < 8:
+                        page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
+                page_sections.append({'section':section, 'image': image, 'image_size': image_size, 'headings':headings, 'style': '', 'rows':[]}) 
+                index['sections'].append(section)       
+                continue
+            datarow=row[1:comment_idx+1]
+            if section:
+                # Working in a section
+                row_id = "0"
+                section_link=""
+                source_link=""
+                num_columns=len(columns)
+                source_links=[]
+                source_links=['' for k in range(num_columns)]
+                row_columns=[DefinitionColumn(d, datarow[i], '')
+                              for i, d in enumerate(columns)]
+                # Acronym Link
+                if "acronym" in section.lower():
+                    acronym.append(datarow[1].lower())
+                    acronym_ids.append(datarow[0])
+                else:
+                    try:
+                        # Check for acronym link
+                        indexes = [i for i, x in enumerate(acronym) if ((x in datarow[0].lower()) or (acronym_ids[i] in datarow[0]))]
+                        row_id = acronym_ids[indexes[0]]
+                    except:
+                        row_id = "0"
+                    # If there is a Section Index, then create a link to the navigation section
+                    if section_idx and len(datarow[section_idx]):
+                        section_link = definition_create_section_link(in_sections, datarow[section_idx])
+
+                    # Go through each section_link_data array item, create a link if necessary
+                    for i in range(num_columns):
+                        if col_link_data[i]['url'] and len(datarow[columns.index(col_link_data[i]['type'])]):
+                            if 'REF' in col_link_data[i]['url']:
+                                # Create a link if there's data
+                                # https://www.pumps.org/what-we-do/standards/?pumps-search-product=ANSI%2FHI+14.1-14.2&hi-order=asc&hi-order-by=name 
+                                # Replace slashes with %2F, replace spaces with + and add &hi-order=asc&hi-order-by=name
+                                search_str='+'.join(datarow[columns.index(col_link_data[i]['type'])].split())
+                                search_str=search_str.replace('/','%2F')
+                                search_str+='&hi-order=asc&hi-order-by=name'
+                                source_links[i]=(col_link_data[i]['url'].replace("{{REF}}",search_str))
+                            elif 'SITE' in col_link_data[i]['url']:
+                                link_str=datarow[columns.index(col_link_data[i]['type'])]
+                                source_links[i]=(col_link_data[i]['url'].replace("{{SITE}}",link_str))
+                        else:
+                            # Replace all new lines with br
+                            datarow[i]=datarow[i].replace('\n','<br>')
+                row_columns = [DefinitionColumn(columns[i], datarow[i], source_links[i])
+                           for i in range(num_columns)]
+                r = DefinitionRow(section, row[0], row_columns, row_id, section_link, source_link)
+                page_sections[-1]['rows'].append(r)
+        # Apply formatting to the last section
+        if (len(page_sections)):
+            if len(page_sections[-1]['rows']) < 8:
+                page_sections[-1]['style'] = 'height:'+str(25+len(page_sections[-1]['rows'])*50)+'px'
+        # Apply formatting to the index
+        index['index_style']='height:'+str(len(index['sections'])*50)+'px'
+        return index, page_sections
+    
+def definition_create_section_link(sections, in_section):
+    # Search the sections for the path
+    if ":" in in_section:
+        section_slug = in_section.split(": ")[0]
+        child_slug = in_section.split(": ")[1]
+    else:
+        section_slug = None
+        child_slug = in_section
+    for obj in sections:
+        if section_slug:
+            if section_slug not in obj['metadata']['title']:
+                continue
+        for child in obj['children']:
+            if 'title' in child['metadata'] and child_slug in child['metadata']['title']:
+                section_link = f"/{obj['slug']}/{child['slug']}.html"
+                return section_link
+    return ""
+
+def getTypesArray(cols):
+    types = []
+    for i,d in enumerate(cols):
+        types.append(d.split('.')[0])
+    return types
+
+def table_data(units, table, path, filename):
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
+    if not os.path.isfile(file):
+        print(
+            f"Error - the table {table['title']} refers to {file} which does not exist")
+        return None
+    if "Nozzle" in filename:    
+        print('Processing table: '+filename)
+    csv_data = pd.read_csv(file, dtype='str')
+    col_types = list(csv_data.columns)
+    types = getTypesArray(col_types[1:])
+    columns = csv_data.columns
+    rows = []
+    headings = []
+    data=csv_data.copy(True)
+    data=data.fillna('')
+    tag_row = data[(data == 'tags').any(axis=1)]
+    if len(tag_row):
+        # all blank columns are included
+        show_column_tags = ['All']
+        show_column_tags += [] if 'column_tags' not in table else table['column_tags'].split(',')
+        show_columns = [0] #this is the info column
+        tags_list = list(tag_row.iloc[0])
+        col_index = 0
+        # Build the list of columns to keep based on tags.
+        for tag in tags_list:
+            if not len(tag) or (tag in show_column_tags):
+                show_columns+=[col_index]
+            col_index+=1
+        data =csv_data.iloc[:, show_columns].copy(True)
+        #Update column headings
+        col_types = list(data.columns)
+        # rename types
+        types = getTypesArray(col_types[1:])
+        data.drop(index=1,inplace=True)
+        columns = data.columns
+    for row in data.itertuples():
+        row_columns=[]
+        for i, d in enumerate(row[2:]):
+            if "heading" in row[1]:
+                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
             else:
-                rows.append(r)
-        return Table(units, columns, headings, rows)
+                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
+        r = TableRow(row[1], row_columns, DefaultStyle)
+        if (row[1] == 'heading'):
+            headings.append(r)
+        else:
+            rows.append(r)
+    # Determine multiple headings and spans
+    for hidx, header in enumerate(headings):
+        colcount=1
+        remove_col=[]
+        header_len = len(header[1])
+        for idx, col in enumerate(reversed(header[1])):
+            if not col.data.strip():
+                colcount+=1
+                remove_col.append(header_len-idx-1)
+            elif colcount > 1:
+                headings[hidx][1][header_len-idx-1]=headings[hidx][1][header_len-idx-1]._replace(colspan=colcount)
+                colcount=1
+        if hidx > 0:
+            # Reduce the font for the row
+            headings[hidx]=headings[hidx]._replace(style="font-size:.75rem;")
+         # Remove any columns 0- in succession
+        ignore_slice = 0
+        for idx, index in enumerate(sorted(remove_col)):
+            if idx == index:
+                ignore_slice += 1
+            else:
+                break
+        if ignore_slice:
+            remove_col = remove_col[:-ignore_slice]
+        # Remove the columns     
+        for index in sorted(remove_col, reverse=True):
+            del headings[hidx][1][index]
 
+    return Table(units, columns, headings, rows)
 
-def replace_table_block(dir, table_text):
+def replace_definitions_block(dir, definitions_text, sections):
+    table = parse_dict(definitions_text.strip().split("\n"))
+    template = env.get_template('definitions.jinja')
+    index, defs = definitions_table_data(table, dir, table['data'], sections)
+    def_html = template.render(meta=table, table=defs, units='us', index=index)
+    return def_html
+
+def replace_table_block(dir, table_text, table_count):
     table = parse_dict(table_text.strip().split("\n"))
 
     data_us = ""
     data_metric = ""
-
+    #All table are default scrolling
+    if 'scrolling' in table and table['scrolling'] == 'false':
+        table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']
@@ -112,9 +333,17 @@ def replace_table_block(dir, table_text):
         data_metric = table['data-metric']
     else:
         print(
-            f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
+            f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
-
+    
+    if 'fixed-columns' in table:
+        table['datatable']=True
+        table['dt_id']=table_count
+        table['dt_config']='fixedColumns:'+table['fixed-columns']+';'
+        table['scrolling']='not-scrolling'
+        
+    all_tables.append(data_us)
+ 
     template = env.get_template('table.jinja')
 
     us = table_data('us', table, dir, data_us)
@@ -122,6 +351,8 @@ def replace_table_block(dir, table_text):
 
     us_html = template.render(meta=table, table=us)
     metric_html = template.render(meta=table, table=metric)
+    if 'title' in table:
+        return '<h3>'+table['title']+'</h3>'+us_html+metric_html
     return us_html+metric_html
 
 
@@ -130,7 +361,7 @@ def replace_table_block_pdf(dir, table_text):
 
     data_us = ""
     data_metric = ""
-
+    table['scrolling']='not-scrolling'
     if 'data' in table:
         data_us = table['data']
         data_metric = table['data']
@@ -139,7 +370,7 @@ def replace_table_block_pdf(dir, table_text):
         data_metric = table['data-metric']
     else:
         print(
-            f"Error - the table {table.title} does not specify unit-agnostic source or us/metric sources.")
+            f"Error - the table {table['title']} does not specify unit-agnostic source or us/metric sources.")
         return ""
 
     template = env.get_template('table-pdf.jinja')
@@ -149,11 +380,13 @@ def replace_table_block_pdf(dir, table_text):
 
     us_html = template.render(meta=table, table=us)
     metric_html = template.render(meta=table, table=metric)
+    if 'title' in table:
+        return '<h3>'+table['title']+'</h3>'+us_html #+metric_html
     return us_html  # +metric_html
 
 
 def chart_data(units, chart, path, filename):
-    file = os.path.join(SOURCE_DIR, path, filename)
+    file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
     if not os.path.isfile(file):
         print(
             f"Error - the chart {chart.title} refers to {file} which does not exist")
@@ -164,10 +397,11 @@ def chart_data(units, chart, path, filename):
         columns = first_row[1:]
         rows = []
         headings = []
+        # print ('Processing chart: '+filename)
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d)
+            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle)
                            for i, d in enumerate(row[1:])]
-            r = TableRow(row[0], row_columns)
+            r = TableRow(row[0], row_columns, DefaultStyle)
             if (r.type == 'heading'):
                 headings.append(r)
             else:
@@ -202,6 +436,14 @@ def chart_data(units, chart, path, filename):
         chart_dict['series'] = [series._asdict() for series in chart.series]
         return chart_dict
 
+def replace_demonstrator_block(output_path, dir, markdownProps):
+    useMarkdown = markdownProps.strip().split("\n")
+    init = parse_dict(useMarkdown)
+    template = env.get_template('demo.jinja')
+    key = str(uuid.uuid4())
+    demoHtml = template.render(key=key, title=init["title"], kind=init["kind"], init=json.dumps(init))
+
+    return demoHtml
 
 def replace_chart_block(output_path, dir, chart_text):
     chart = parse_dict(chart_text.strip().split("\n"))
@@ -334,16 +576,32 @@ def process_latex_blocks_pdf(markdown):
     return markdown
 
 
+def process_definitions_block(dir, markdown, sections):
+    delim = "=defs="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+len(delim):end]
+        after = markdown[end+len(delim):]
+        markdown = before + \
+            replace_definitions_block(dir, within, sections) + after
+        start = markdown.find(delim)
+
+    return markdown
+
 def process_table_blocks(dir, markdown):
+    global table_count
     delim = "=|="
     start = markdown.find(delim)
     while (start >= 0):
+        table_count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
         after = markdown[end+3:]
         markdown = before + \
-            replace_table_block(dir, within) + after
+            replace_table_block(dir, within, table_count) + after
         start = markdown.find(delim)
 
     return markdown
@@ -351,8 +609,10 @@ def process_table_blocks(dir, markdown):
 
 def process_table_blocks_pdf(dir, markdown):
     delim = "=|="
+    count = 0
     start = markdown.find(delim)
     while (start >= 0):
+        count += 1
         end = markdown.find(delim, start+1)
         before = markdown[:start]
         within = markdown[start+3:end]
@@ -374,6 +634,19 @@ def process_chart_blocks(output_path, dir, markdown):
         after = markdown[end+3:]
         markdown = before + \
             replace_chart_block(output_path, dir, within) + after
+        start = markdown.find(delim)
+
+    return markdown
+
+def process_demonstrator_blocks(output_path, dir, markdown):
+    delim = "=d="
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+3:end]
+        after = markdown[end+3:]
+        markdown = before + replace_demonstrator_block(output_path, dir, within) + after
         start = markdown.find(delim)
 
     return markdown
@@ -456,19 +729,48 @@ def statics():
         f.write(css)
 
 
-def make_specials(specials):
+def make_specials(specials, ignores):
     for special in specials:
+        if special in ignores:
+            continue
         src = os.path.join(SOURCE_DIR, special)
         dst = os.path.join(OUTPUT_DIR, special)
         print(f'Copying {src} to {dst}.')
         copytree(src,
                  dst)
 
+def make_source_specials(source, dest):
+    for special in SOURCE_SPECIAL_DIRS:
+        src = os.path.join(source, special)
+        dst = os.path.join(dest, special)
+        print(f'Creating special subdir {src} to {dst}')
+        if os.path.isdir(src):
+            copytree(src, dst)
 
+def make_root_specials(source_dir, production):
+    root_specials_dir = os.path.join(BASE_DIR,"..","./"+source_dir)
+    subfolders = [ f.path for f in os.scandir(root_specials_dir) if f.is_dir() ]
+    for folder in subfolders: 
+        for special in os.listdir(folder):
+            if special == '.DS_Store':
+                continue
+            if (production and '-beta' in special) or (not production and '-beta' not in special):
+                continue
+            if not production:
+                special_out = special.replace('-beta', '')
+            else:
+                special_out = special
+            copyfile(os.path.join(folder, special),
+                    os.path.join(OUTPUT_DIR, special_out))
+            print (f"Copying {folder}/{special} to {OUTPUT_DIR}")
+    
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
     global options
     print(f'Processing {node["name"]} at path {path}')
+    
+    sections = [dir for dir in graph if dir['directory'] == True]
+
     if node['copy_only'] == True:
         out = os.path.join(OUTPUT_DIR, path, node['name'])
         src = os.path.join(node['path'], node['name'])
@@ -490,12 +792,13 @@ def write_content(graph, node, slug_override=None, path="."):
     # in the module perhaps...)
     content = process_table_blocks(node['path'], content)
     content = process_chart_blocks(path, node['path'], content)
+    content = process_demonstrator_blocks(path, node['path'], content)
+    content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 
     template = env.get_template('topic.jinja')
-    sections = [dir for dir in graph if dir['directory'] == True]
     related = [section['children'] for section in sections if section['path']
                == node['path'] and section['slug'] != node['slug']]
     # Related is a list of lists with the same section (it's always size 1)
@@ -508,28 +811,39 @@ def write_content(graph, node, slug_override=None, path="."):
     # pprinter.pprint(related)
 
     # pprinter.pprint(node)
-    html = template.render(section="", topic=slug, node=node,
+    topic_section = related[0]['path'].split('\\')[-1].split('_')[-1]
+    print('Section: '+topic_section+' Topic: '+slug)
+    html = template.render(section=topic_section, topic=slug, node=node,
                            content=content, sections=sections,
                            related=related, options=options)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
+    html_minified = htmlmin.minify(
+            html, remove_comments=True, remove_empty_space=True)
     with io.open(os.path.join(OUTPUT_DIR, path, slug+'.html'), 'w', encoding='utf8') as f:
-        f.write(htmlmin.minify(
-            html, remove_comments=True, remove_empty_space=True))
-        # f.write(html.encode('utf-8'))
-
+        #f.write(html_minified)
+        f.write(html)
+    return html_minified
 
 def make_root(graph):
     statics()
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
 
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-        print("Writing", node['name'], 'from ', node['path'])
-        write_content(graph, node, so)
+        print("Writing", content_node['name'], 'from ', content_node['path'])
+        write_content(graph, content_node, so)
 
 
 def make_section(graph, section, parent=None):
@@ -541,7 +855,10 @@ def make_section(graph, section, parent=None):
     directory = os.path.join(OUTPUT_DIR, slug)
     print("makedirs for " + directory)
     os.makedirs(directory)
+    make_source_specials(section['path'], directory)
     for topic in section['children']:
+        if topic['name'] == '.DS_Store':
+            continue
         if topic['directory']:
             print("Sub directories are currently unsupported.")
             make_section(graph, topic, section)
@@ -549,7 +866,10 @@ def make_section(graph, section, parent=None):
             print("Writing sub-contents",
                   topic['name'], "of", section['slug'])
 
-            write_content(graph, topic, None, directory)
+            html_content = write_content(graph, topic, None, directory)
+            if "=defs=" in topic['content']:
+                content_start = html_content.find("<div class=topic-content>")
+                topic['haystack_content'] = html_content[content_start:]
 
 
 def rewrite_image_urls(content, path="."):
@@ -655,13 +975,22 @@ def make_markdown_section(graph, section, md_file, parent=None):
 def pdf(graph):
     md_file = os.path.join(OUTPUT_DIR, 'edb.html')
 
-    nodes = [node for node in graph if node['directory'] == False]
+    nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
     front_matter = None
     for node in nodes:
         so = None
-        if node['slug'] == 'home':
+        content_node = node
+        # Create the index
+        if node['sort'] == '00':
+            for child in node['children']:
+                if child['slug'] == 'home':
+                    so = 'index'
+                    content_node = child
+                    break
+        elif node['slug'] == 'home':
             so = 'index'
-            front_matter = node
+        if so == 'index':
+            front_matter = content_node
             front_matter['metadata']['title'] = "HI Engineering Data Library"
             front_matter['children'] = []
 
@@ -687,7 +1016,7 @@ def pdf(graph):
         md_file, format='html+tex_math_dollars', to='pdf', extra_args=pdoc_args, outputfile='./generate/static/edb.pdf')
 
 
-def html(graph, specials, production=False):
+def html(graph, specials, ignores, rootspecials, production=False):
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)
@@ -697,7 +1026,8 @@ def html(graph, specials, production=False):
     if production:
         options.minified = ".min"
     clean()
-    make_specials(specials)
+    make_specials(specials, ignores)
+    make_root_specials(rootspecials, production)
     os.makedirs(os.path.join(OUTPUT_DIR, "charts"))
 
     make_root(graph)
@@ -718,32 +1048,45 @@ def html(graph, specials, production=False):
 
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
+            print("Processing topic", topic['name'], "of", section['slug'])
+            use_content = topic['haystack_content'] if 'haystack_content' in topic else topic['content']
             haystack.append(Topic(
-                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], topic['content'], section['metadata']['title']))
+                f"/{ section['slug'] }/{ topic['slug'] }", topic['slug'], topic['metadata']['title'], use_content, section['metadata']['title']))
 
     with open(os.path.join(OUTPUT_DIR, 'statics',  'haystack.json'), 'w') as outfile:
-        json.dump([t._asdict() for t in haystack], outfile)
+        output = json.dumps([t._asdict() for t in haystack], indent=4)
+        outfile.write(output)
 
     sitemap = list()
     for section in [dir for dir in graph if dir['directory'] == True]:
         for topic in [child for child in section['children'] if child['is_topic']]:
             url = dict()
-            url['loc'] = f"/{ section['slug'] }/{ topic['slug'] }"
+            url['loc'] = f"{ section['slug'] }/{ topic['slug'] }"
             url['lastmod'] = date.today()
             url['changefreq'] = 'monthly'
             url['priority'] = '0.8'
             sitemap.append(url)
 
-    base_url = 'https://edb.pumps.org'
+    base_url = 'https://datatool.pumps.org'
     xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     for s in sitemap:
         xml += f"<url><loc>{base_url}/{s['loc']}</loc><lastmod>{s['lastmod']}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>"
     xml += "</urlset>"
 
-    robots = 'Sitemap: https://edb.pumps.org/sitemap.xml '
+    robots = 'Sitemap: https://datatool.pumps.org/sitemap.xml '
 
     with io.open(os.path.join(OUTPUT_DIR, 'sitemap.xml'), 'w', encoding='utf8') as f:
         f.write(xml)
     with io.open(os.path.join(OUTPUT_DIR, 'robots.txt'), 'w', encoding='utf8') as f:
         f.write(robots)
         # f.write(html.encode('utf-8'))
+    table_str="\n".join(all_tables)
+    #print(f"TABLES: {table_str}")
+    
+    
+def read_html_content(file):
+    with io.open(file, 'r', encoding='utf8') as content_file:
+        data = content_file.readlines()
+        # Find the start of the content
+        index = [idx for idx, s in enumerate(data) if '<body ' in s][0]
+        return data[index]

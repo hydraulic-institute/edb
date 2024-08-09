@@ -1,32 +1,29 @@
- <div class='table-container'>
-    <table class="{{table.units}}-units data-table table is-striped is-narrow is-hoverable is-fullwidth" v-if="{{table.units}}_visible">
-        <caption>{{meta.title}}</caption>
-        <thead>
+<div>
+<div class='table-container {{table.units}}-units' v-if="{{table.units}}_visible">
+{% if meta.datatable %}
+<span id="dt-data-{{ meta.dt_id }}" data-config="{{ meta.dt_config }}" data-id="{{ meta.dt_id }}">
+{% endif %}
+ <div class='fixed-container {{meta.scrolling}}' style={{meta.special}}>
+    <table class="table is-bordered is-striped" width="100%" id="datatable-{{meta.dt_id}}">
+        <thead class="fixed-thead">
             {% for heading in table.headings %} 
-                <tr>
+                <tr style={{heading.style}}>
                     {%for header in heading.data %}
-                        <th class="{{header.type}}"> {{header.data}}</th>
+                        <th class=" fixed-header {{header.type}}" scope="col" colspan={{header.colspan}} style={{header.style}}> {{header.data}}</th>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </thead>
-        <tbody>
+        <tbody class="nowrap">
             {% for row in table.rows %} 
-                {% if loop.index % 15 == 0 and loop.length - loop.index > 7 %}
-                    {% for heading in table.headings %} 
-                        <tr>
-                            {%for header in heading.data %}
-                                <th class="small-heading {{header.type}}"> {{header.data}}</th>
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                {% endif %}
-                <tr>
+                <tr style={{row.style}}>
                     {%for column in row.data %}
-                        <td class="{{column.type}}"> {{column.data}}</td>
+                        <td class="{{column.type}}" colspan={{column.colspan}} style={{column.style}}> {{column.data}}</td>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+ </div>
+</div>
 </div>

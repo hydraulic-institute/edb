@@ -1,3 +1,3 @@
 -----
-title: Section I | Pump Fundamentals
+title: Pump Fundamentals
 -----

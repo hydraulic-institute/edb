@@ -1,3 +1,3 @@
 -----
-title: Section II | Fluid Properties
+title: Fluid Properties
 -----

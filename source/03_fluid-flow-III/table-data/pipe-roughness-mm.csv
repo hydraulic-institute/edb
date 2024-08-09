@@ -1,0 +1,17 @@
+,string,numeric
+heading,Material,"Roughness, ε (mm)"
+data,Commercial steel or wrought iron,0.0457
+data,"Drawn tubing - glass, brass, plastic",0.00152
+data,Galvanized iron,0.152
+data,Cast iron - uncoated,0.26
+data,Cast iron - asphalt dipped,0.122
+data,Concrete,0.305 - 3.05
+data,Riveted steel,0.914 - 9.14
+data,Wood stave,0.18 - 0.91
+data,Brass or copper (tubing),0.0015
+data,"Aluminum, Lead",0.0015
+data,Fiberglass,0.005
+data,Stainless steel,0.015
+data,"Rubber, smoothed",0.01
+data,Carbon steel (cement-lined),1.5
+data,Water mains with tuberculations,1.2

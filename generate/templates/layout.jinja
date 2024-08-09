@@ -3,19 +3,40 @@
 <head>
     {% block head %}
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/statics/style.css">
     <link rel=icon href=/images/favicon.ico>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" />
+    <!--link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/5.0.0/css/fixedColumns.dataTables.min.css" /-->
+    <link rel="stylesheet" type="text/css" href="/statics/style.css">
+
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.0/c3.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.min.js"></script>
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='/javascript/vue{{options.minified}}.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script-->
+
+
     <meta http-equiv=X-UA-Compatible content="IE=edge"/>
     <meta name=viewport content="width=device-width,initial-scale=1"/>
     <meta charset="UTF-8"/>
+
+    <!--Google search-->
+    <meta name="google-site-verification" content="rwXYWhW7OxIT6kYcoED1sPZ-8NpUKLFktRGGZWMU1Qc" />
+    <!--Google search-->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYDF9G5TWW"></script>
     <script>
@@ -28,71 +49,80 @@
     {% if node.metadata and node.metadata['description'] %}
         <meta name="Description" content="{{node.metadata['description']}}"/>
     {% endif %}
-    <title>HI EDL</title>
+    <title>HI DATATOOL</title>
     
     {% endblock %}
 </head>
 
 <script type="text/x-template" id="viscosity-converter-template">
     <div>
-    <form>
-        <div class='field'>
-            <label class='label'>
-                <span>Convert from</span>
-            </label>
-            <div class='columns'>
-                <div class='column'>
-                    <input class='input' v-model='from_value'/>
-                </div>
-                <div class='column'>
-                    <select  class="input" v-model='from_unit'>
-                        <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
-                    </select>
-                </div>
+        <div class="row">
+            <div class="col align-right">
+                <button type="button" class="button is-small is-link" style="float:right" @click='swap()'>Swap</button> 
             </div>
         </div>
-        <div class='field'>  
-            <label class='label'>
-                <span>To</span>
-            </label>
-            <div class='columns'>
-                <div class='column'>
-                    <select  class="input" v-model='to_unit'>
-                        <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
-                    </select>                   
-                </div>
-                <div class='column'    v-if='show_sg'>
-                    <div class="columns">
-                        <div class='column'>
-                            <label class='label'>
-                                <span>w/ SG</span>
-                            </label>
-                        </div>
-                        <div class='column'>
-                            <input class='input' v-model='sg'/>
+        <div class="row"> 
+        <form>
+            <div class='field'>
+                <span class='label'>
+                    <span>Convert from</span>
+                </span>
+                <div class='columns'>
+                    <div class='column'>
+                        <input class='input' v-model='from_value'/>
+                    </div>
+                    <div class='column'>
+                        <div class='select' style='width:100%'>
+                            <select  class="input" style="width:100% !important" v-model='from_unit'>
+                                <option :value='u' v-for='u in units.filter(function(u){return u.no_input != true;})' :key='u.id' v-html='u.label'></option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class='field'>  
+                <span class='label'>
+                    <span>To</span>
+                </span>
+                <div class='columns'>
+                    <div class='column'>
+                        <div class='select' style='width:100%'>
+                            <select  class="input" v-model='to_unit'>
+                                <option :value='u' v-for='u in units' :key='u.id' v-html='u.label'></option>
+                            </select>    
+                        </div>               
+                    </div>
+                    <div class='column'    v-if='show_sg'>
+                        <div class="columns">
+                            <div class='column'>
+                                <span class='label'>
+                                    <span>w/ SG</span>
+                                </span>
+                            </div>
+                            <div class='column'>
+                                <input class='input' v-model='sg'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field" v-if='to_unit'>
+                <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                    <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} <span v-html='from_unit.label' /></span>
+                    <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
+                    <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} <span v-html='to_unit.label' /></span>   
+                </div>
+                <p v-if='kinematic_warning' class='has-text-danger'><i>${kinematic_warning}</i></p>
+            </div>
+        </form>
         </div>
-        <div class="field" v-if='to_unit'>
-            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
-                <span class='has-text-warning' style='margin-right:0.1em;'>${from_value} ${from_unit.label}</span>
-                <span class='has-text-warning' style='margin-right:0.1em;' v-if='show_sg'>with ${sg} SG</span>
-                <span class='has-text-white-bis' style='margin-right:0.1em;'>is equal to ${to_value} ${to_unit.label}</span>
-                <p v-if='kinematic_warning' class='has-text-danger'>${kinematic_warning}</p>
+        <div v-if='steps.length'>
+            <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
+            <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
+            <div style='padding-top:1rem;' v-if='show_steps'>
+                <pre v-for="step in steps" v-html='step' />
             </div>
         </div>
-    </form>
-    <div v-if='steps.length'>
-        <button type='button' class="button is-small is-link is-light" v-if='show_steps' @click='show_steps=false'>Hide Steps</button>
-        <button type='button' class="button is-small is-link is-light" v-else @click='show_steps=true'>Show Steps</button>
-        <button type='button' class='button is-small' @click='swap()'>Swap from/to units</button>
-        <div style='padding-top:1rem;' v-if='show_steps'>
-            <pre v-for="step in steps">${step}</pre>
-        </div>
-    </div>
-    
     </div>
 </script>
 
@@ -105,7 +135,7 @@
                     <p class="panel-heading" style='margin-bottom:0px'>Measures </p>
                     <a :class='{isActive: u == unit}' v-for='u in units' class='panel-block' @click='unit = u'>
                         <span class='panel-icon'>
-                            <img :src='"/images/"+u.image'/>
+                            <img :src='"./images/"+u.image'/>
                         </span>
                         <span>${u.measure}</span>
                     </a>
@@ -120,40 +150,58 @@
                         
                         <div class='field'>
                         
-                           <label class='label'>
+                           <span class='label'>
                                 <span>From</span>
                                 
-                            </label>
+                            </span>
                             <div class='columns'>
                                 <div class='column'>
                                     <input class='input' v-model='from'/>
                                 </div>
                                 <div class='column'>
-                                    <select  class="input" v-model='unit_from'>
-                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
-                                    </select>
+                                    <div class='select' style='width:100%'>
+                                        <select class="input" v-model='unit_from'>
+                                            <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                       </div>
                     <div class='panel-block'>
                         <div class='field'>
-                            <label class='label'>
+                            <span class='label'>
                                 <span>To</span>
                                 
-                            </label>
+                            </span>
                             <div class='columns'>
                                 <div class='column'>
-                                    <input class='input' v-model='to' readonly disabled/>
+                                    <input class='input has-text-link' v-model='to' readonly disabled/>
                                 </div>
                                 <div class='column'>
-                                    <select  class="input" v-model='unit_to'>
-                                        <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
-                                    </select>
+                                    <div class='select' style='width:100%'>
+                                        <select  class="input" v-model='unit_to'>
+                                            <option :value='u' v-for='u in unit.units' v-html='u.label'></option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <nav class='panel'>
+                        <p class="panel-heading" style='margin-bottom:0px'>Abbreviation & Unit</p>
+                        <div class="panel-block"  style="height:300px; overflow:auto; display:block;">
+                            <table>
+                                <tbody>
+                                    <tr v-for='u in unit.units'>
+                                        <td v-html="u.label"></td>
+                                        <td v-html="u.description"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </nav>
                 </nav>
             </div>
         </div>
@@ -163,47 +211,52 @@
 <script type="text/x-template" id="friction-loss-calculator-template">
 	<form>
         <div class='field'>
-                    <label class='label'>Select Material</label>
-                    <select  class="input" v-model='material'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in materials'>${m}</option>
-                    </select>
-
+                    <span class='label'>Select Material</span>
+                    <div class='select' style='width:100%'>
+                        <select  class="input" v-model='material'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in materials'>${m}</option>
+                        </select>
+                    </div>
                 </div>
         <div class='columns'>
             <div class='column'>
                 
                 <div class='field' v-if='sizes && sizes.length'>
-                    <label class='label'>Select Nominal Size (in)</label>
-                    <select class='input'v-model='nominal_size'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in sizes'>${m}</option>
-                    </select>
+                    <span class='label'>Select Nominal Size (in)</span>
+                    <div class='select' style='width:100%'>
+                        <select class='input'v-model='nominal_size'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in sizes'>${m}</option>
+                        </select>
+                    </div>
                 </div>
                 <div class='field' v-if='selector'>
-                    <label class='label'>Select ${selector}</label>
-                    <select class='input' v-model='selection'>
-                        <option value=''></option>
-                        <option :value='m' v-for='m in selectors'>${m}</option>
-                    </select>
+                    <span class='label'>Select ${selector}</span>
+                    <div class='select' style='width:100%'>
+                        <select class='input' v-model='selection'>
+                            <option value=''></option>
+                            <option :value='m' v-for='m in selectors'>${m}</option>
+                        </select>
+                    </div>
                 </div>
                 <hr/>
                 <div v-if='specified'>
                     <div class='field'>
-                        <label class='label'>Nominal Outside Diameter (${units_length_short})</label>
+                        <span class='label'>Nominal Outside Diameter (${units_length_short})</span>
                         <span> ${value_length_short(outer_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Inside Diameter (${units_length_short})</label>
+                        <span class='label'>Inside Diameter (${units_length_short})</span>
                         <span> ${value_length_short(inner_diameter)}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Absolute roughness (epsilon)</label>
+                        <span class='label'>Absolute roughness (epsilon)</span>
                         <span> ${value_length_ft_mm(epsilon, 7)} ${units_length_ftmm}</span>
                     </div>
                     <div class='field'>
-                        <label class='label'>Relative roughness (epsilon/D)</label>
-                        <span> ${(epsilon/(inner_diameter/12)).toFixed(5)}</span>
+                        <span class='label'>Relative roughness (epsilon/D)</span>
+                        <span> ${(epsilon/(inner_diameter/12)).toFixed(7)}</span>
                     </div>
                 </div>
             </div>
@@ -211,40 +264,40 @@
             <div class='column'>
             <div v-if='entry'>
                 <div class='field'>
-                    <label class='label' >Flow Rate (${units_flowrate})</label>
+                    <span class='label' >Flow Rate (${units_flowrate})</span>
                     <input class='input' type='number' @keydown='no_negative' min="0" step='0.01' v-model='flow'/>
                 </div>
                 <div class='field'>
-                    <label class='label' >Pipe Length (${units_length_long})</label>
+                    <span class='label' >Pipe Length (${units_length_long})</span>
                     <input class='input' type='number' @keydown='no_negative' min="0" step='0.01' v-model='length'/>
                 </div>
                 <hr/>
                 <div class='field'>
-                    <label class='label' >Viscosity</label>
+                    <span class='label' >Viscosity</span>
                     <div class='control'>
                         
-                        <label class='radio'>
+                        <span class='radio'>
                             <input type='radio' name = 'viscosity_mode' @keydown='no_negative' min="0" value='kinematic' v-model='vka'/>
                             Kinematic
-                        </label>
-                        <label class='radio'>
+                        </span>
+                        <span class='radio'>
                             <input type='radio' name = 'viscosity_mode' value='absolute' v-model='vka'/>
                             Dynamic (absolute)
-                        </label>
+                        </span>
                     </div>
                 </div>
                 <div class='field'>
-                    <label class='label'>Kinematic Viscosity (cSt)</label>
+                    <span class='label'>Kinematic Viscosity (cSt)</span>
                     <input class='input' :disabled="vka == 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='input_kinematic_v'/>
                 </div>
                 
                 <div class='field'>
-                    <label class='label'>Dynamic (absolute) Viscosity (cP)</label>
+                    <span class='label'>Dynamic (absolute) Viscosity (cP)</span>
                     <input class='input' :disabled="vka != 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='input_dynamic_v'/>
                 </div>
                 
                 <div class='field'>
-                    <label class='label'>Specific Gravity</label>
+                    <span class='label'>Specific Gravity</span>
                     <input class='input' :disabled="vka != 'absolute'" type='number' @keydown='no_negative' min="0" step='0.01' v-model='sg'/>
                 </div>
            </div>
@@ -255,7 +308,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th style="text-align:center">Flowrate</th>
+                        <th style="text-align:center">Flow Rate</th>
                         <th style="text-align:center">Fluid Velocity</th>
                         <th style="text-align:center">Velocity Head</th>
                         <th style="text-align:center">Reynolds Number</th>
@@ -297,6 +350,257 @@
     </form>
 </script>
 
+<script type="text/x-template" id="mechanical-friction-loss-calculator-template">
+    <div>
+        <form>
+            <div class='columns'>
+                <div class='column'>
+                    <div class='columns'>
+                        <div class='column'>
+                            <div class='field'>
+                                <span class='label'>
+                                    <span>Shaft Diameter [D] (${shaft_min}-${shaft_max} ${units_measure_in_mm})</span>
+                                </span>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='shaft_diameter'/>
+                                    <span v-if='msg.shaft' style="color:red; font-size:smaller"><i>${msg.shaft}</i></span>
+                                    <span v-else>&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class='field'>
+                                <span class='label'>
+                                    <span>Speed (${rpm_min}-${rpm_max} RPM)</span>
+                                </span>
+                                <div>
+                                    <input class='input' type='number' @keydown='no_negative' v-model='rpm_value'/>
+                                    <span v-if='msg.rpm' style="color:red; font-size:smaller"><i>${msg.rpm}</i></span>
+                                    <span v-else>&nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='column'>
+                            <div class='field'>
+                                <span class='label' >Pump Setting Length [L] (${units_measure_ft_m})</span>
+                                <input class='input' type='number' @keydown='no_negative' min="0" step="5" v-model='length'/>
+                                <span>&nbsp;</span>
+                            </div>
+                            <div>
+                                <span class="label" for='bearing_toggle'>Enclosed shaft with flooded tube</span>
+                                <input type="checkbox" id='bearing_toggle' v-model='bearing_spacing_5'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='mt-2'>
+                    </div>
+                    <div class='mt-4'>
+                        <div class="field">
+                            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction_loss}): </span>
+                                <span v-bind:class = "mech_friction_loss?'has-text-white-bis':'has-text-danger'">${mech_friction_loss} ${units_friction_loss}</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class='column has-background-info has-text-weight-semibold' style='margin-bottom:1rem'>
+                                <span class='has-text-warning' style='margin-right:0.1em;'>Mechanical Friction Loss (${units_friction}): </span>
+                                <span v-bind:class = "mech_friction?'has-text-white-bis':'has-text-danger'">${mech_friction} ${units_friction}</span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>    
+                <div class='column' align='center'>
+                    <img alt='Hydraulic Institute' src="./images/mechanical-friction-loss-calculator-pump.jpg" style="max-height:100vh">     
+                </div>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/x-template" id="atmospheric-pressure-calculator-template">
+    <div class="wrap">
+        <div>
+            Instruction:  Enter an elevation above sea level to see the standard atmospheric pressure difference.<br>  
+            Elevation is limited to 36,000 feet or 10,900 meters.
+        </div>
+        <div class='container mt-5'>
+            <div class='field'>
+                <h5>Elevation above sea level (${units_measure_ft_m})</h5>
+                <div class="row">
+                    <div class="col-3">
+                        <input sytle="width:40%" class='input' type='number' min='0' @keydown='no_negative' v-model.number='elevation'>
+                    </div>
+                    <div class="col">
+                        <span v-if='err_msg' style="color:red; font-size:smaller"><i>${err_msg}</i></span>
+                        <span v-else>&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <table class="table is-narrow border border-secondary-subtle" :key="entry">
+                <thead class="fixed-thead">
+                    <th style="width:40%; ">Units</th>
+                    <th style="width:20%;">At Elevation</th>
+                    <th style="width:20%;">At Sea Level (std)</th>
+                    <th style="width:20%;">Delta</th>
+                </thead>
+                <tbody>
+                    <tr class="hi_no_input" v-for='d in calc_data'>
+                        <td><b>${d.desc}</b></td>
+                        <td>${d.val}</td>
+                        <td>${d.sea_level}</td>
+                        <td>${d.delta}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <b>*</b>Values do not include local variations due to weather, etc.<br><br>
+        For other pressures, convert <a href="/tools/unit-conversions.html">HERE</a>
+    </div>
+</script>
+
+<script type="text/x-template" id="tank-demo-template"> 
+    <div class="wrap" style="margin-left:1em">  
+        <div class="row mb-4">
+            <div class="columns">
+                <div class="col-8">
+                    <div class="row mt-2">
+                        <div class="col">
+                        <div class="row mt-2 mb-2">
+                            <div class="col-4">Tank Orientation</div>
+                            <div class="col-4">${tank_type}</div>
+                        </div>
+                        <div v-for='c in volume_strings'>
+                            <div v-if='c.type' class="row align-items-center">
+                                <div class="col-4">
+                                <b>${c.type}</b>
+                                </div>
+                                <div class="col-4">
+                                    <div class='select' style='width:100%'>
+                                        <select  class="input" style="min-width:120px;" v-model="$data[c.varname]">
+                                            <option :value='b' v-for='b in end_types'>${b}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4"><b>Length Units</b></div>
+                            <div class="col-4">
+                                <div class='select' style='width:100%'>
+                                    <select  class="input" style="min-width:120px;" v-model='length_unit'>
+                                        <option :value='l' v-for='l in length_types'>${l}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4">
+                                <b>Tank Diameter: [D]</b>  
+                            </div>
+                            <div class="col-4">
+                            <input class='input' style='min_width:120px'
+                            type='number' 
+                            @keydown='no_negative_no_comma'
+                            @keydown.enter='calculate_volumes' 
+                            v-model='d_diameter'/></div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row align-items-center" v-if='tank_key != "st"'>
+                            <div class="col-4"><b>Length of Cylinder: [A]</b></div>
+                            <div class="col-4">
+                            <input class='input' style='min_width:120px'
+                            type='number' 
+                            @keydown='no_negative_no_comma' 
+                            @keydown.enter='calculate_volumes'
+                            v-model='a_length'/>
+                            </div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-4" ><b>Fill depth from bottom: [H]</b></div>
+                            <div class="col-4">
+                            <input class='input' style='min_width:120px' 
+                            type='number' 
+                            @keydown='no_negative_no_comma' 
+                            @keydown.enter='calculate_volumes'
+                            v-model='h_filldepth'/>
+                            </div>
+                            <div class="col-2" style="text-align:left">
+                            ${length_unit}
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4"><i>Percent full</i></div>
+                            <div class="col-3">${percent_full}%</div>
+                            <div class="col-4"><span v-if='error.length' style="color:red"><i>&nbsp;&nbsp;${ error }</i></span></div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-4">Check Depth</div>
+                            <div class="col-3">
+                                <span v-if='check_depth != "OK"' style="color:red"><i>${check_depth}</i></span>
+                                <span v-else><i>${check_depth}</i></span>
+                            </div>
+                            <div class="col-4">
+                                <button type='button' class='button is-link is-light' @click='calculate_volumes()'>Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-4"><img :src='image_str' @error="image_str='./images/image_not_available.png'"/></div>
+        </div>
+        </div>
+        <div class="row mt-4">
+            <table class="table table-bordered is-narrow is-hoverable is-fullwidth" style="border-width:2px">
+                <thead>
+                    <tr class='fixed-thead'>
+                        <th scope="col" style="width: 30%; vertical-align:bottom;text-align:left;">Location</th>
+                        <th scope="col" style="width: 30%; vertical-align:bottom; text-align:right">Volume without Unit Conversions</th>
+                        <th scope="col" style="width: 30%; text-align:right">Volume with Unit Conversions
+                            <div>
+                                <div class='select' style='width:100%'>
+                                    <select class="input" style="width:150px;display:inline-flex;justify-content:flex-start;" v-model='conversion_unit'>
+                                        <option :value='c' v-for='c in conversion_types' v-html='c'></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class='hi_no_input' v-for='c in volume_strings'>
+                        <td  style="text-align: left">${c.desc}</td>
+                        <td style="text-align: right">
+                            ${c.value} ${length_unit}&sup3
+                        </td>
+                        <td colspan="2" style="text-align: right">
+                            ${c.converted_value} <span v-html='conversion_unit'></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4">
+            <b>Volume Equations</b>
+        </div>
+        <div v-for='(value, name) in volume_equations_data' v-if='name == tank_key'>
+            <div v-for='item in value'>
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <b>${item.type}</b>
+                    </div>
+                    <div class="col-3 mt-2"><img :src="'./images/'+item.image"/></div>
+                    <div class="col"><img :src="'./images/'+item.equation"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
 <body class="has-navbar-fixed-top">
 
     <div id='vue'>
@@ -305,18 +609,16 @@
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                         <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <img alt='Hydraulic Instituted' src="/images/logo.png" width="30">
-                        <h2> Engineering Data Library<span class="margin-left:2rem">
+                        <img alt='Hydraulic Institute Data Tool' src="/images/HI-Data-Tool-Logo-2-lines-Suffix-white-teal.png" style="height:50px;">
+                        <h2><span class="margin-left:2rem">
                             &#x25BC;
                         </span></h2>
-                        
-                        </button>
                         </button>
                     </div>
                     <div class="dropdown-menu is-dark" id="dropdown-menu4" role="menu">
                         <div class="dropdown-content">
                          <a href="http://pumps.org/" class="dropdown-item">Hydraulic Institute</a>
-                         <a href="/" class="dropdown-item">Engineering Data Library</a>
+                         <a href="/introduction-definitions-references/home.html" class="dropdown-item">Hydraulic Institute Data Tool</a>
                          <a href="http://pumps.org/Standards_and_Guidebooks.aspx" class="dropdown-item">Publications</a>
                          <a href="http://pumps.org/Training.aspx" class="dropdown-item">Training</a>
                          <a href="http://pumps.org/Certification.aspx" class="dropdown-item">Certification</a>
@@ -325,12 +627,7 @@
                         </div>
                     </div>
                 </div>
-                <!--
-                <a class="navbar-item" href="/">
-                    <img alt='Hydraulic Instituted' src="/images/logo.png" width="30">
-                    <h2> Engineering Data Library</h2>
-                </a>
-                -->
+                
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -342,20 +639,25 @@
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
                 
-                    <div class="dropdown is-hoverable">
+                    <div class="dropdown is-hoverable desktop_only">
                     <div class="dropdown-trigger">
-                        <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <h2> Tools<span class="margin-left:2rem">
+                        <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu5">
+                        <h2> Calculators<span class="margin-left:2rem">
                             &#x25BC;
                         </span></h2>
                         </button>
-                        </button>
                     </div>
-                    <div class="dropdown-menu is-dark" id="dropdown-menu4" role="menu">
-                        <div class="dropdown-content">
+                    <div class="dropdown-menu is-dark" id="dropdown-menu5" role="menu">
+                        <div class="dropdown-content" style="box-shadow:none;">
                          <a href="/tools/unit-conversions.html" class="dropdown-item">Unit Conversions</a>
-                         <a href="/tools/viscosity.html" class="dropdown-item">Kinematic and Dynamic Viscosity Conversion</a>
-                         <a href="/tools/frictional-losses.html" class="dropdown-item">Frictional Loss Calculator</a>
+                         <a href="/tools/viscosity.html" class="dropdown-item">Kinematic & Dynamic Viscosity Conversion</a>
+                         <a href="/tools/frictional-losses.html" class="dropdown-item">Pipe Friction Loss Calculator</a>
+                         <a href="/tools/mechanical-friction-loss.html" class="dropdown-item">Line Shaft Bearing Loss Calculator</a>
+                         <a href="/tools/horizontal-tank-vol-calc.html" class="dropdown-item">Horizontal Tank Volume Calculator</a>
+                         <a href="/tools/vertical-tank-vol-calc.html" class="dropdown-item">Vertical Tank Volume Calculator</a>
+                         <a href="/tools/spherical-tank-vol-calc.html" class="dropdown-item">Spherical Tank Volume Calculator</a>
+                         <a href="/tools/atmospheric-pressure-calc.html" class="dropdown-item">Atmospheric Pressure Calculator</a>
+                         <a href="/tools/motor-frame-dimension-ref-tool.html" class="dropdown-item">Motor Dimensions</a>
                         </div>
                     </div>
                 </div>
@@ -363,26 +665,33 @@
 
                 <div class="navbar-end">
                     <div class="columns">
-                        <!--
-                         <div class="navbar-item pad-horizontal">
-                          <div class='buttons'>
-                            <a class='button is-info' title='Download PDF' target='_blank' href='./statics/edb.pdf'>PDF</a>
-                          </div>
-                        </div>
-                        -->
-                        <div class="navbar-item pad-horizontal">
+                        <div id="unit-menu" class="navbar-item pad-horizontal" style="display:none;">
                             {% if not node or not node['metadata']['hide_units'] %} 
-                            <div id="units-toggle" class="buttons">
-                                <button v-if='unit_set=="us"' class='button is-warning is-outlined' title='Click to change to metric units' @click='to_metric'>US</button>
+                            <div id="units-toggle" class="btn-group btn-group-xs">
+                                <button type='button' class='btn btn-sm' v-bind:class="(unit_set=='us')?'btn-primary':'btn-dark'" title="Show all values in standard US units" @click='to_us'>US</button>
+                                <button type='button' class='btn btn-sm' v-bind:class="(unit_set=='metric')?'btn-primary':'btn-dark'" title="Show all values in standard metric units" @click='to_metric'>Metric</button>
+                            </div>
+                            <!--div id="units-toggle" class="d-flex my-switch" style="display:flex;align-items:center;" >
+                                <div class="form-text" style="color:white;font-weight:bold;">Units:&nbsp;</div>
+                                <button v-if='unit_set=="us"' class='button is-info' title='Click to change to metric units' @click='to_metric'>US</button>
                                 <button v-else class='button is-warning' @click='to_us' title='Click to change to U.S. customary units'>Metric</button>
-                            </div>                                
-                            {%endif%}
-                        </div>
-                        <div class="navbar-item pad-horizontal is-hidden-desktop">
+                            </div-->
+                            <!--div id="units-toggle" class="d-flex my-switch" style="display:flex;align-items:center;">
+                                <div class="form-text" id="us" v-if='unit_set=="us"' style='color:#ffdd57;font-weight:bold;'>US</div>
+                                <div class="form-text" id="us" v-else style='color:white;font-weight:normal;'>US</div>
+                                <div class="form-check form-switch form-switch-lg form-check-inline ">
+                                  <input id="unit-checkbox" role="switch" class="form-check-input form-check-inline" type="checkbox" v-model="isChecked" @change='handle_unit_toggle'>
+                                </div>
+                                <div class="form-text" id="metric" v-if='unit_set!="us"' style='color:#ffdd57;font-weight:bold;'>Metric</div>
+                                <div class="form-text" id="metric" v-else style='color:white;font-weight:normal;'>Metric</div>                                
+                            </div-->   
+                            {% endif %}                             
+                               
+                        <div id="mobile-menu" class="navbar-item pad-horizontal is-hidden-desktop">
                             <div class='sticky_search'>
                                 <div class='field has-addons'>
                                     <div class='control'>
-                                        <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                                        <input id="search" v-model='needle' class="input" type="text" placeholder="Search"/>
                                     </div>
                                     <div v-if='needle' class='control'>
                                         <a class='button is-info' @click='needle=""'> &times; </a>
@@ -390,7 +699,8 @@
                                 </div>
                             </div>
                         </div>
-                        <aside class='sidebar navbar-item column is-hidden-desktop'>
+                        <div class='sidebar navbar-item column is-hidden-desktop'>
+                        <aside>
                             <div v-if='marks && marks.length'>
                                 <p class="menu-label">${mark_index+1} of ${marks.length} matches in current topic</p>
                                 <div class='buttons'>
@@ -401,7 +711,7 @@
                             </div>
                             <ul class='search-results' v-if='search_display'>
                                 <li class="menu-list" v-if='!search_results.length'>
-                                    <span class="menu-label">Nothing match was found</span>
+                                    <span class="menu-label">No matches found</span>
                                 </li>
                                 <li class="menu-list" v-if='search_results.length'>
                                     <span class="menu-label">${search_results.length} topic matches</span>
@@ -409,20 +719,24 @@
                                 <li>
                                     
                                 </li>
-                                <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                                    <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>${topic.title}</a>
+                                <li class="menu-list" v-if='search_results.length' v-for='res in results_for_display'>
+                                    <a :href="res.path+'.html'" :class='{"is-active": res.slug == "{{node["slug"]}}"}'>
+                                        <span style='font-size:smaller'>${res.section}</span> <br/>${res.title}</a>
                                 </li>
                             </ul>
-                            
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
-                                {% for section in sections|sort(attribute='sort') %} 
+                                {% for s in sections|sort(attribute='sort') %} 
                                     <li>
-                                        <label class="menu-label">{{section['metadata']['title']}}</label>
+                                        <span class="menu-label">{{s['metadata']['title']}}</span>
                                         <ul>
-                                            {% for topic in section['children']|sort(attribute='sort') %}
-                                                {% if topic['metadata']['title']%}
+                                            {% for child in s['children']|sort(attribute='sort') %}
+                                                {% if child['metadata']['title']%}
                                                 <li class="menu-list">
-                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
+                                                {% if node['path']== child['path'] and node['slug']== child['slug'] %}
+                                                    <a class='is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                {% else %}
+                                                    <a href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                {% endif %}
                                                 </li>
                                                 {% endif %}
                                             {% endfor %}
@@ -431,19 +745,21 @@
                                 {% endfor %}
                             </ul>
                         </aside>
+                    </div>
                 </div>
             </div>
         </nav>
-        <div class="page columns is-fullheight">
+        <div id="fullpage" class="page columns is-fullheight" style="display:none;">
+          <div id="desktop-menu">
            <div id='sidebar' class="sidebar column is-narrow is-hidden-touch">
                 <aside id="navigation" class="menu">
                     <div class='sticky_search'>
-                        <div class='field has-addons'>
+                        <div class='field has-addons mt-3'>
                             <div class='control'>
-                                <input v-model='needle' class="input" type="text" placeholder="Search"/>
+                                <input id="nav-search" v-model='needle' class="input" type="text" placeholder="Search"/>
                             </div>
                             <div v-if='needle' class='control'>
-                                <a class='button is-info' @click='needle=""'> &times; </a>
+                                <a class='button is-info menu-topic' @click='needle=""'> &times; </a>
                             </div>
                         </div>
                     </div>
@@ -457,74 +773,87 @@
                     </div>
                     <ul class='search-results' v-if='search_display'>
                         <li class="menu-list" v-if='!search_results.length'>
-                            <span class="menu-label">Nothing match was found</span>
+                            <span class="menu-label">No matches found</span>
                         </li>
                         <li class="menu-list" v-if='search_results.length'>
                             <span class="menu-label">${search_results.length} topic matches</span>
                         </li>
-                        <li class="menu-list" v-if='search_results.length' v-for='topic in results_for_display'>
-                            <a :href="topic.path+'.html'" :class='{"is-active": topic.slug == "{{node["slug"]}}"}'>
-                                <span style='font-size:smaller'>${topic.section}</span> <br/> ${topic.title}
+                        <li class="menu-list" v-if='search_results.length' v-for='res in results_for_display'>
+                            <a :href="res.path+'.html'" :class='{"is-active": res.slug == "{{node["slug"]}}"}'>
+                                <span style='font-size:smaller'>${res.section}</span> <br/> ${res.title}
                             </a>
                         </li>
                     </ul>
                     
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
-                        {% for section in sections|sort(attribute='sort') %} 
-                            <li>
-                                <label class="menu-label">{{section['metadata']['title']}}</label>
-                                <ul>
-                                    {% for topic in section['children']|sort(attribute='sort') %}
-                                        {% if topic['directory']%}
-                                            <li class="menu-list">
-                                                <label style="padding-left:1em" class="menu-label">{{topic['metadata']['title']}}</label>
-                                                <ul>
-                                                    {% for stopic in topic['children']|sort(attribute='sort') %}
-                                                    <li style="padding-left:1em" class="menu-list">
-                                                        {% if node['path']== stopic['path'] and node['slug']== stopic['slug'] %}
-                                                            <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
-                                                        {% else %}
-                                                            <a href="/{{ section['slug'] }}/{{ topic['slug'] }}/{{ stopic['slug'] }}.html">{{stopic['metadata']['title']}}</a>
-                                                        {% endif %}
-                                                    </li>
-                                                     {% endfor %}
-                                                </ul>
-                                            </li>
-                                        {% elif topic['metadata']['title']%}
-                                            <li class="menu-list">
-                                                {% if node['path']== topic['path'] and node['slug']== topic['slug'] %}
-                                                    <a class='active_topic is-active' href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
-                                                {% else %}
-                                                    <a href="/{{ section['slug'] }}/{{ topic['slug'] }}.html">{{topic['metadata']['title']}}</a>
-                                                {% endif %}
-                                            </li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
+                        <div id='nav-accordion' class='accordion nav-accordion '>
+                        {% for s in sections|sort(attribute='sort') %}
+                            <div class="accordion-item nav-accordion-item mb-2">
+                                <h2 class="accordion-header" id="{{s['slug']}}-header">
+                                    {% if section == s['slug'] %}
+                                        <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#{{s['slug']}}" aria-expanded="true">
+                                        {{s['metadata']['title']}}
+                                    </button>
+                                </h2>
+                                <div id="{{s['slug']}}" class="accordion-collapse" aria-labelledby="{{s['slug']}}-header">
+                                    {% else %}
+                                    <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#{{s['slug']}}" aria-expanded="false">
+                                        {{s['metadata']['title']}}
+                                    </button>
+                                </h2>
+                                <div id="{{s['slug']}}" class="accordion-collapse collapse" aria-labelledby="{{s['slug']}}-header">
+                                    {% endif %}
+                                    <div class="accordion-body nav-accordion-body">
+                                        {% for child in s['children']|sort(attribute='sort') %}
+                                            {% if child['directory']%}
+                                                <li>
+                                                    <label style="padding-left:1em">{{child['metadata']['title']}}</span>
+                                                    <ul>
+                                                        {% for stopic in child['children']|sort(attribute='sort') %}
+                                                        <li style="padding-left:1em" class="menu-list">
+                                                            {% if child['slug'] == topic and s['slug'] == section %}
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% elif child['slug'] == 'home' %}
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% else %}
+                                                                <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor:default;text-decoration:none;">{{stopic['metadata']['title']}}</a>
+                                                            {% endif %}
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% elif child['metadata']['title']%}
+                                                <li class="menu-list">
+                                                    {% if child['slug'] == topic  and s['slug'] == section %}
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                    {% elif child['slug'] == 'home' %}
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                    {% else %}
+                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
                         {% endfor %}
+                        </div>
                     </ul>
                 </aside>
             </div>
-            
-            <div id="content" class="column content">
-               
-                {% block content %}{% endblock %}
-            </div>
+          </div>
+          <div id="content" class="column content">
+            {% block content %}{% endblock %}
+          </div>
         </div>
     </div>
+    <script src='/javascript/tank_calculators.js'></script>
+    <script src='/javascript/calculators.js'></script>
+    <script src='/javascript/demonstrators.js'></script>
     <script src='/javascript/edb.js'></script>
-    <script>
-        MathJax.Hub.Queue(
-            function () {
-                var formulas = document.getElementsByClassName('formula');
-                for (var i = 0; i < formulas.length; ++i) {
-                    var item = formulas[i];  
-                    item.style.visibility = 'visible';
-                }
-            }
-        );
-    </script>
-
-</body>
+    <script type="application/javascript" src='/javascript/base.js'></script>
+    </body>
 </html>

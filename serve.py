@@ -61,7 +61,7 @@ def launch_web_server():
 
 if __name__ == "__main__":
     # Do an initial build right away.
-    build.generate(False)
+    build.generate(True)
 
     # Setup an HTTP server so user can see the EDB live in a browser
     # this is done in a separate thread
