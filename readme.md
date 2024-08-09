@@ -57,8 +57,10 @@ $> pip3 install virtualenv
 $> python3 -m venv env
 
 #Activate the Virtual Environment
-$> env\Scripts\activate.bat <- # IF USING WINDOWS CMD or POWERSHELL
+$> .\env\Scripts\activate <- # IF USING WINDOWS CMD or POWERSHELL
 $> source env/bin/activate  <- # IF USING LINUX or MAC or BASH SHELL
+
+#Open an new terminal window to confirm your virtual environment is active.  If you are using VSCode, a window may pop up and ask if you want to activate the virtual environment for your workspace.  Click on "Yes"
 
 #Either install requirements.txt file:
 $> pip3 install -r requirements.txt
