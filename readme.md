@@ -745,12 +745,23 @@ The HI EDL is deployed **Netlify.com** and served to the public internet from th
 
 ### Deploying to Beta & Production
 #### Beta Site
-We have a Beta account on **Netlify.com** - [https://edl-beta.netlify.app](https://edl-beta.netlify.app)
+We have a Beta account on **Netlify.com** - [https://datatool-beta.pumps.org](https://datatool-beta.pumps.org) (also `edl-beta.netlify.app`)
 - Login with `higladetech@gmail.com`
 
 #### Production Site
-We have a Production account on **Netlify.com** [https://edl-prod.netlify.app](https://edl-prod.netlify.app)
+We have a Production account on **Netlify.com** [https://datatool.pumps.org](https://datatool.pumps.org) (also `edl-prod.netlify.app`)
 - Login with `erdb@gladetech.net`
+  
+#### Phase 2 Information
+The `pumps.org` subdomain is `edl.pumps.org`.  As of the Phase 2 release (7/2024), this has been changed to `datatool.pumps.org`.   Because of this change, all `edl.pumps.org` endpoints needed to be redirected to `datatool.pumps.org`.  
+
+Changes were made to the `pumps.org` domain on NetworkSolutions.  Both `edl.pumps.org` and `datatool.pumps.org` have DNS CNAME records pointing to `edl-prod.netlify.app` (see below).
+
+Changes were also made for the `beta` endpoint (`edl-beta.pumps.org` and `datatool-beta.pumps.org` point to `edl-beta.netlify.app`).
+
+In order to implement the redirect from `edl.pumps.org` do `datatool.pumps.org`, a file needed to be created for the **Netlify.com** app.  
+
+The redirect files exist in `edb/root_specials/netlify`. One for production and one for beta.  The build process will copy the `_redirect` file and deposit in the root directory of the `build` directory.
 
 Prepping for Deployment:
 - In your development environment, stash any local changes you have
@@ -771,11 +782,18 @@ $> python serve.py
 ```
 
 To Deploy:
+
+- Build the code for `Production` or `Beta`:
+
+  - `$> python beta.py`
+  - `$> python prod.py`
+  - The code to deploy to `Netlify.com` will be generated and deposited in the `edb/build` folder.
+  
 - Log onto `Netlify.com` with the appropriate Login and Password
 - Click on `Sites`
-- Click on `edl-beta`
-- Click on `Deploys`
-- Drag the `builds` folder that was just created in your development environment when you ran `$>python serve.py`
+- Select the appropriate site (beta or production)
+- Click on `Deploys` and scroll to the bottom 
+- Drag the `builds` folder that was just generated in your development environment
 onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
 - Follow any additional instructions.  Include a description if you are able.
 - Your website will be deployed!
