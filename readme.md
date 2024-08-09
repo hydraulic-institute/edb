@@ -740,10 +740,10 @@ git push origin master
 
 Once that completes successfully, you can go back to working on other things.
 
-## Hosting
-The HI EDL is deployed **Netlify.com** and served to the public internet from there.
+# Hosting
+The HI DATATOOL is deployed to **Netlify.com** and served to the public from there.
 
-### Deploying to Beta & Production
+## Deploying to Beta & Production
 #### Beta Site
 We have a Beta account on **Netlify.com** - [https://datatool-beta.pumps.org](https://datatool-beta.pumps.org) (also `edl-beta.netlify.app`)
 - Login with `higladetech@gmail.com`
@@ -753,7 +753,7 @@ We have a Production account on **Netlify.com** [https://datatool.pumps.org](htt
 - Login with `erdb@gladetech.net`
   
 #### Phase 2 Information
-The `pumps.org` subdomain is `edl.pumps.org`.  As of the Phase 2 release (7/2024), this has been changed to `datatool.pumps.org`.   Because of this change, all `edl.pumps.org` endpoints needed to be redirected to `datatool.pumps.org`.  
+The `pumps.org` subdomain was `edl.pumps.org`.  As of the Phase 2 release (7/2024), this has been changed to `datatool.pumps.org`.   Because of this change, all `edl.pumps.org` endpoints needed to be redirected to `datatool.pumps.org`.  
 
 Changes were made to the `pumps.org` domain on NetworkSolutions.  Both `edl.pumps.org` and `datatool.pumps.org` have DNS CNAME records pointing to `edl-prod.netlify.app` (see below).
 
@@ -761,7 +761,7 @@ Changes were also made for the `beta` endpoint (`edl-beta.pumps.org` and `datato
 
 In order to implement the redirect from `edl.pumps.org` do `datatool.pumps.org`, a file needed to be created for the **Netlify.com** app.  
 
-The redirect files exist in `edb/root_specials/netlify`. One for production and one for beta.  The build process will copy the `_redirect` file and deposit in the root directory of the `build` directory.
+The `_redirect*` files exist in `edb/root_specials/netlify`. One for production and one for beta.  The build process will copy the appropriate `_redirect` file and deposit in the root directory of the `build` directory.
 
 Prepping for Deployment:
 - In your development environment, stash any local changes you have
@@ -798,7 +798,7 @@ onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
 - Follow any additional instructions.  Include a description if you are able.
 - Your website will be deployed!
 
-# PDF Generation
+# Website PDF Generation
 Relies on `pandoc`
 
 ```
