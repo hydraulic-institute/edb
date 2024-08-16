@@ -533,21 +533,22 @@ def process_ad_blocks(markdown):
 def replace_scrolling_logo_block(chart_text):
     logos_dir = parse_dict(chart_text.strip().split("\n"))
     all_logos = []
-    for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['logos'])):
-        all_logos.append(os.path.join('.',logos_dir['logos'],file))
+    for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['folder'])):
+        all_logos.append(os.path.join('.',logos_dir['folder'],file))
     template = env.get_template('scrollinglogos.jinja')
     new_html = template.render(logos=all_logos)
     return new_html
 
 
 def process_scrolling_logo_blocks(markdown):
-    delim = "=SL="
+    delim = "=scrolling-logos="
+    delim_len = len(delim)
     start = markdown.find(delim)
     while (start >= 0):
         end = markdown.find(delim, start+1)
         before = markdown[:start]
-        within = markdown[start+3:end]
-        after = markdown[end+3:]
+        within = markdown[start+delim_len:end]
+        after = markdown[end+delim_len:]
         markdown = before + \
             replace_scrolling_logo_block(within) + after
         start = markdown.find(delim)

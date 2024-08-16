@@ -43,6 +43,6 @@ Drive all pump system stakeholders toward a sustainable future by:
 
 - Advocating for the industry
 
-=SL=
-logos: logos
-=SL=
+=scrolling-logos=
+folder: logos
+=scrolling-logos=
