@@ -534,7 +534,7 @@ def replace_scrolling_logo_block(chart_text):
     logos_dir = parse_dict(chart_text.strip().split("\n"))
     all_logos = []
     for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['folder'])):
-        all_logos.append(os.path.join('.',logos_dir['folder'],file))
+        all_logos.append(os.path.join('/',logos_dir['folder'],file))
     template = env.get_template('scrollinglogos.jinja')
     new_html = template.render(logos=all_logos)
     return new_html
