@@ -28,6 +28,10 @@ The Data Tool incorporates both *U.S.* and *Metric* units. To toggle between uni
 
 <units us = "This page is currently set to U.S. customary units." metric = "This page is currently set to Metric units."/>
 
+=scrolling-logos=
+folder: logos
+=scrolling-logos=
+
 # About the Hydraulic Institute
 The **Hydraulic Institute (HI)** is a non-profit organization dedicated to advancing the pump industry. The Institute offers a wide variety of programs and services, each tailored to support the needs of the industry including pump and system standards, certification, training, workforce development, and advocacy.   
 
@@ -42,7 +46,3 @@ Drive all pump system stakeholders toward a sustainable future by:
 - Educating the global marketplace
 
 - Advocating for the industry
-
-=scrolling-logos=
-folder: logos
-=scrolling-logos=

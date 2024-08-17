@@ -453,6 +453,14 @@ Notice the leading comma - this is because the first column on the first row is 
 
 Each subsequent row is either a heading or data.
   
+### Scrolling Logos
+Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, add the following markdown to a file (the `folder` meta data tells in what folder the logos are stored.  The folder location must be a subfolder of the `source` folder (ex: `source/logos`)):
+```
+=scrolling-logos=
+folder: logos  
+=scrolling-logos=
+```
+
 ### Definitions and References Tables
 *(Section 00-Introduction, Definitions, References & Resources)*
 

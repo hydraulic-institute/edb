@@ -1,11 +1,7 @@
-<div class="topic-content">
-<div class="logo-footer">
-  <div class="logos">
-    <div class="logos-slide">
+
+  <div class="logos-wrapper">
+    {% set logos_len = logos|length %}
     {% for logo in logos %}
-    <img class="logo-img" src="{{ logo }}"/>
+      <div class="item" style="left: max(calc(200px * {{logos_len}}), 100%); animation-delay: calc(30s / {{logos_len}} * ({{ logos_len }} - {{loop.index}}) * -1);"><img src="{{logo}}"/></div>
     {% endfor %}
-  </div>
-  </div>
-</div>
 </div>
