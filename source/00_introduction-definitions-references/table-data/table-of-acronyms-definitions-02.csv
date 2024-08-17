@@ -7,7 +7,7 @@
 ,POR,Preferred operating region,,,
 ,VFD,Variable frequency drive,,,
 ,VSD,Variable speed drive,,,
-Definitions,Term,Description,HI Source:: https://www.pumps.org/?s={{REF}},EDL Section,Comment
+Definitions,Term,Description,HI Source:: https://www.pumps.org/?s={{REF}},Section,Comment
 ,Abrasive wear (or abrasion),"Wear due to hard particles or hard, small surface protrusions forced against and moving along a material surface. Wear occurring by the mechanical action of suspended abrasives or by abrasives that crystallize on the atmospheric side of the seal. ",ANSI/HI 14.1-14.2,Solids and Slurries,
 ,Affinity rules,Describe the relationship of the pump performance curve relative to pump rotational speed changes and limited changes in impeller diameter.,ANSI/HI 14.3,Pump Curves,
 ,Allowable operating region (AOR),"A wider range of rates of flow, inclusive of the POR, over which the service life of a pump, although reduced, is within acceptable limits.",ANSI/HI 9.6.3,Pump Curves,
