@@ -535,8 +535,23 @@ def replace_scrolling_logo_block(chart_text):
     all_logos = []
     for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['folder'])):
         all_logos.append(os.path.join('/',logos_dir['folder'],file))
+    if 'title' not in logos_dir:
+        logos_dir['title'] = ''
+    if 'font_style' not in logos_dir:
+        logos_dir['font_style'] = ''
+    else:
+        logo_styles = logos_dir['font_style'].split(',')
+        logos_dir['font_style'] = ''
+        for style in logo_styles:
+            style = "".join(style.split())
+            if style == 'bold':
+                logos_dir['font_style'] += 'font-weight:bold;'
+            elif style == 'italic':
+                logos_dir['font_style'] += 'font-style:italic;'
+            else:
+                logos_dir['font_style'] += style+';'
     template = env.get_template('scrollinglogos.jinja')
-    new_html = template.render(logos=all_logos)
+    new_html = template.render(logos=all_logos, title=logos_dir['title'],font_style=logos_dir['font_style'],align=logos_dir['align']) 
     return new_html
 
 

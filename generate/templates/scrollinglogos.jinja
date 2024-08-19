@@ -1,7 +1,10 @@
 
-  <div class="logos-wrapper">
-    {% set logos_len = logos|length %}
-    {% for logo in logos %}
-      <div class="item" style="left: max(calc(200px * {{logos_len}}), 100%); animation-delay: calc(30s / {{logos_len}} * ({{ logos_len }} - {{loop.index}}) * -1);"><img src="{{logo}}"/></div>
-    {% endfor %}
+<p><span style="display:block;padding-top:1em;text-align:{{align}};{{font_style}}">{{ title }}</span></p>
+<div class="logos-wrapper">
+  {% set logos_len = logos|length %}
+  {% for logo in logos %}
+    <div class="logo-item" style="left: max(calc(200px * {{logos_len}}), 100%); animation-delay: calc(30s / {{logos_len}} * ({{ logos_len }} - {{loop.index}}) * -1);">
+      <img src="{{logo}}"/>
+    </div>
+  {% endfor %}
 </div>

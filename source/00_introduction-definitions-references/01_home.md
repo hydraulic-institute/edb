@@ -30,6 +30,9 @@ The Data Tool incorporates both *U.S.* and *Metric* units. To toggle between uni
 
 =scrolling-logos=
 folder: logos
+title: Data Tool Site Supports:
+font_style: bold, italic
+align: center
 =scrolling-logos=
 
 # About the Hydraulic Institute
