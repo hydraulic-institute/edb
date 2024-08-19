@@ -454,7 +454,17 @@ Notice the leading comma - this is because the first column on the first row is 
 Each subsequent row is either a heading or data.
   
 ### Scrolling Logos
-Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, logos should be 200px wide and 100px tall.  All images should be png or jpeg.  A subfolder under the `source` folder should be created for the logos (ex:  `source/logos`).  Deposit the images in this folder.  Then, add the following markdown to a file:
+Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, a subfolder under the `source` folder should be created for the logos (ex:  `source/logos`). Once generated, images should be stored in this folder.
+
+#### Suggested Image Requirements
+- PNG (or JPEG) with white background.
+- Width:  200px
+- Height:  100px
+- Horizontal resolution:  96 dpi (min) 150dpi (max)
+- Vertical resolution: same as above
+- Bit depth:  24 (min) 32 (max)
+
+#### Scrolling Images Markdown
 ```
 =scrolling-logos=
 folder: logos
