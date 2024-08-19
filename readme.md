@@ -454,12 +454,20 @@ Notice the leading comma - this is because the first column on the first row is 
 Each subsequent row is either a heading or data.
   
 ### Scrolling Logos
-Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, add the following markdown to a file (the `folder` meta data tells in what folder the logos are stored.  The folder location must be a subfolder of the `source` folder (ex: `source/logos`)):
+Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, logos should be 200px wide and 100px tall.  All images should be png or jpeg.  A subfolder under the `source` folder should be created for the logos (ex:  `source/logos`).  Deposit the images in this folder.  Then, add the following markdown to a file:
 ```
 =scrolling-logos=
-folder: logos  
+folder: logos
+title: Data Tool Site Supports:
+font_style: bold; italic
+align: center
 =scrolling-logos=
 ```
+- `folder` - This notes the subfolder in the `source` folder where the logos are located. 
+- `title` - This is any text desired above the scrolling images.
+- `font_style` - `bold` and `italic` are available.  If you would like a separate font style, use the standard css styling:
+  - ex:  `font_style:  font-size: smaller;`
+- `align` - This notes the horizontal alignment of the title (`center`, `left`, `right`)
 
 ### Definitions and References Tables
 *(Section 00-Introduction, Definitions, References & Resources)*

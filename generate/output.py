@@ -540,7 +540,7 @@ def replace_scrolling_logo_block(chart_text):
     if 'font_style' not in logos_dir:
         logos_dir['font_style'] = ''
     else:
-        logo_styles = logos_dir['font_style'].split(',')
+        logo_styles = logos_dir['font_style'].split(';')
         logos_dir['font_style'] = ''
         for style in logo_styles:
             style = "".join(style.split())
