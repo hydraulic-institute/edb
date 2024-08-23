@@ -527,7 +527,47 @@ def process_ad_blocks(markdown):
         markdown = before + \
             replace_ad_block(within) + after
         start = markdown.find(delim)
+ 
+    return markdown
 
+def replace_scrolling_logo_block(chart_text):
+    logos_dir = parse_dict(chart_text.strip().split("\n"))
+    all_logos = []
+    for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['folder'])):
+        all_logos.append(os.path.join('/',logos_dir['folder'],file))
+    if 'title' not in logos_dir:
+        logos_dir['title'] = ''
+    if 'font_style' not in logos_dir:
+        logos_dir['font_style'] = ''
+    else:
+        logo_styles = logos_dir['font_style'].split(';')
+        logos_dir['font_style'] = ''
+        for style in logo_styles:
+            style = "".join(style.split())
+            if style == 'bold':
+                logos_dir['font_style'] += 'font-weight:bold;'
+            elif style == 'italic':
+                logos_dir['font_style'] += 'font-style:italic;'
+            else:
+                logos_dir['font_style'] += style+';'
+    template = env.get_template('scrollinglogos.jinja')
+    new_html = template.render(logos=all_logos, title=logos_dir['title'],font_style=logos_dir['font_style'],align=logos_dir['align']) 
+    return new_html
+
+
+def process_scrolling_logo_blocks(markdown):
+    delim = "=scrolling-logos="
+    delim_len = len(delim)
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+delim_len:end]
+        after = markdown[end+delim_len:]
+        markdown = before + \
+            replace_scrolling_logo_block(within) + after
+        start = markdown.find(delim)
+ 
     return markdown
 
 # Ads are not in PDF, so just snip them out.
@@ -795,6 +835,7 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_demonstrator_blocks(path, node['path'], content)
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
+    content = process_scrolling_logo_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 

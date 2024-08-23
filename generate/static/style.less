@@ -648,3 +648,46 @@ html.dark div.dtfc-top-blocker,html.dark div.dtfc-bottom-blocker {
     align-items: center;
     height: auto;
 }
+
+/* Scrolling Logos */
+
+@keyframes scrollLeft {
+    to {
+      left: -200px;
+    }
+  } 
+  @-webkit-keyframes scrollLeft {
+    to {
+      left: -200px;
+    }
+  } 
+  .logo-item {
+    width: 200px;
+    height: 100px;
+    border-radius: 6px;
+    position: absolute;
+    left: 100%;
+    -webkit-animation-name: scrollLeft;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+    
+  .logo-item img {
+    width: 200px;
+    height:100px;
+    object-fit: contain;
+  }
+
+  .logos-wrapper {
+    width: 100%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+  }
