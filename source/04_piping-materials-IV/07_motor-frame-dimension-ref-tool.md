@@ -1,5 +1,5 @@
 -----
-title: I) Motor Dimensions
+title: G) Motor Dimensions
 date: July 19th, 2024
 description: Frame Size Tool
 hide_units: true

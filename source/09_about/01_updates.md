@@ -25,7 +25,7 @@ hide_units: true
 - *Section II* - minor formatting updates. 
 - *Section III* - rearranged content in subsections A and B in addition to editorial updates. 
 - *Section IV* - added subsections A – G covering pipe, flange and NEMA motor dimensions.
-- *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, added PVC pipe to the friction loss calculator, and added subsections D – I covering line shaft bearing losses, tank volume calculators and elevation effect on atmospheric pressure.
+- *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, added PVC pipe to the friction loss calculator, and added subsections D – H covering line shaft bearing losses, tank volume calculators and elevation effect on atmospheric pressure.
 
 #### 2021 - Phase 1 release branded as the HI Engineering Data Library
 
