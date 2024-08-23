@@ -20,12 +20,12 @@ hide_units: true
 
 #### 2024 - Phase 2 release branded as the HI DATA TOOL
 
--  Added preface section covering definitions, pump types, references, and resources. 
-- *Section I* - added educational demonstrators, updated equation formatting, updated most figures, and added a section on submergence. 
-- *Section II* - minor formatting updates. 
-- *Section III* - rearranged content in subsections A and B in addition to editorial updates. 
-- *Section IV* - added subsections A – G covering pipe, flange and NEMA motor dimensions.
-- *Section V* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, added PVC pipe to the friction loss calculator, and added subsections D – H covering line shaft bearing losses, tank volume calculators and elevation effect on atmospheric pressure.
+- Restructured the navigation menu - added preface section covering definitions, pump types, references, and resources. Renamed section headings and reorganized sub-sections. 
+- *Pump Fundamentals* - added educational demonstrators, updated equation formatting, updated most figures, and added a section on submergence. 
+- *Fluid Properties* - minor formatting updates. 
+- *Fluid Flow* - rearranged content in subsections A and B in addition to editorial updates. 
+- *Pipe, Flange & Motor Dimensions* - added subsections A – G covering pipe, flange and NEMA motor dimensions.
+- *Calculators* - additional unit conversions, updated epsilon values for nonferrous materials in friction loss calculator, added PVC pipe to the friction loss calculator, and added subsections D – H covering line shaft bearing losses, tank volume calculators and elevation effect on atmospheric pressure.
 
 #### 2021 - Phase 1 release branded as the HI Engineering Data Library
 
