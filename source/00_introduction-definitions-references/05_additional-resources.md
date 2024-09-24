@@ -1,4 +1,5 @@
 -----
+tabtitle: HI DT More Resources
 title: E) Additional Resources
 date:  July 19th, 2024
 description: Frequently asked questions regarding pump and system curves; pump systems, and additional resources are included.

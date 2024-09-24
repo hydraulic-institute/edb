@@ -1032,7 +1032,7 @@ def pdf(graph):
             so = 'index'
         if so == 'index':
             front_matter = content_node
-            front_matter['metadata']['title'] = "HI Engineering Data Library"
+            front_matter['metadata']['title'] = "HI DATATOOL"
             front_matter['children'] = []
 
     with io.open(md_file, 'w', encoding='utf8') as f:
