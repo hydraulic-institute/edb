@@ -6,9 +6,9 @@ hide_units: true
 -----
 <section class="home-background">
     <div class="row">
-    <div class="col-8" style="align-content:center;padding:5%"><img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/><br>
+    <div class="col-7" style="align-content:center;padding-left:3%"><img width='100%' alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/><br>
      <span style="color:white;font-size:2vmin;white-space:nowrap;"><i>Knowledge, References and Calculators for Pump Systems</i></span></div>
-    <div class="col" style="text-align:right;align-content:center;padding:unset;"><img style="padding-right:10px" alt='Hydraulic Institute DATA TOOL' src='/images/datatool-cover-1920w-250.png'/></div> 
+    <div class="col" style="text-align:right;align-content:center;padding:unset;"><img style="padding-right:10px" alt='Hydraulic Institute DATA TOOL' src='/images/datatool-cover-new-1920.png'/></div> 
     </div>
 </section>
 
