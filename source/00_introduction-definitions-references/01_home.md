@@ -1,17 +1,17 @@
 -----
+tabtitle: HI DT Welcome
 title: A) Welcome & Introduction
 description: The Hydraulic Institute (HI) is the global authority on pumps and pumping systems. HI is an association of  pump manufacturers and suppliers. The work of HI provides value-added resource to member companies, engineering consulting firms, and pump users worldwide.
 date: July 19th, 2024
 -----
-<!-- Display on tablet and up> -->
-<section class="is-hidden-mobile home-background">
-    <img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/>
-    <p style="color: white;font-size: x-large;"><i>Knowledge, References and Calculators for Pump Systems</i></p>
-</section>
-<!-- Display on mobile only -->
-<section class='is-hidden-tablet home-background' >
-    <img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/>
-    <p style="color: white;font-size: large;"><i>Knowledge, References and Calculators for Pump Systems</i></p>
+<section class="home-background">
+    <div class="row">
+    <div class="col-8"><img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/></div>
+    <div class="col-4 d-none d-xl-block" style="text-align:right"><img alt='Hydraulic Institute DATA TOOL' src='/images/HI-overlay.jpg'/></div> 
+    </div>
+    <div class="row">
+    <div class="col-8" style="color: white;font-size: 2vmin;"><i>Knowledge, References and Calculators for Pump Systems</i></div>
+    </div>
 </section>
 
 #
