@@ -1,7 +1,8 @@
 -----
 title: D) Pump Principles
+tabtitle: Pump Principles - Centrifugal Mixed and Axial flow | HI Data Tool 
 date: July 19th, 2024
-description: Overview of specific speed, suction specific speed, other pump principles like NPSH.
+description: Learn centrifugal pump operating principles including specific speed, suction specific speed, attainable efficiency, impeller types, and NPSHR and cavitation.
 -----
 
 ## Pump Principles

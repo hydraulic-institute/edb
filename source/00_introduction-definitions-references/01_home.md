@@ -1,7 +1,7 @@
 -----
-tabtitle: HI DT Welcome
+tabtitle: About the HI Data Tool
 title: A) Welcome & Introduction
-description: The Hydraulic Institute (HI) is the global authority on pumps and pumping systems. HI is an association of  pump manufacturers and suppliers. The work of HI provides value-added resource to member companies, engineering consulting firms, and pump users worldwide.
+description: The HI Data Tool is a must have resource for anyone working with pumps or pump systems. US customary and Metric Units. Support pump system calculations.
 date: July 19th, 2024
 -----
 <section class="home-background">

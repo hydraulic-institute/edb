@@ -1,7 +1,8 @@
 -----
 title: C) Viscosity
+tabtitle: Fluid Viscosity for Pump Systems | HI Data Tool 
 date: July 19th, 2024
-description: Overview of viscosity, and how it relates to shear force and velocity. Covers dynamic viscosity and kinematic viscosity.
+description: Learn definitions for liquid viscosity including dynamic (absolute) and kinematic viscosity. Explore units like centipoise, centistokes, SSU, and blending.
 -----
 
 ## Viscosity

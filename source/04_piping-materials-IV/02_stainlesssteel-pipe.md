@@ -1,7 +1,8 @@
 -----
 title: B) Stainless Steel Pipe
+tabtitle: Stainless Steel Pipe Dimensions | HI Data Tool 
 date: July 19th, 2024
-description: Dimensions of stainless steel pipes.
+description: ASME B36.19 Stainless Steel Pipe dimensions and roughness which is for standard welded and seamless stainless steel pipe.
 hide_units: true
 -----
 

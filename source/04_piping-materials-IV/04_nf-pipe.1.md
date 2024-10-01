@@ -1,6 +1,8 @@
 -----
 title: D) Non-Ferrous Pipe and Tube
+tabtitle: Non-ferrous Pipe and Tube Dimensions | HI Data Tool 
 date: July 19th, 2024
+description: Standard dimensions and roughness for Aluminum pipe, Brass Pipe, Copper Tube and Copper Pipe per ANSI H35.2 and ASTM B34, B360, B42, B302, B88 and B466.
 hide_units: true
 -----
 

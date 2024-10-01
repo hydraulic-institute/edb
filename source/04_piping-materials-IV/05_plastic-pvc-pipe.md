@@ -1,6 +1,8 @@
 -----
 title: E) Plastic PVC Pipe
+tabtitle: Plastic PVC Pipe Dimensions | HI Data Tool 
 date: July 19th, 2024
+description: Standard dimensions and rougness for Plastic Irrigation per ASTM D2241 and D1785 and AWWA C900. PIP, IPS, CIOD, Schedule Pipe.
 hide_units: true
 -----
 

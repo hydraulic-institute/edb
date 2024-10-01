@@ -1,7 +1,8 @@
 -----
 title: F) Flange Dimensions
+tabtitle: Flange Dimensions | HI Data Tool 
 date: July 19th, 2024
-description: Dimensions of flanges.
+description: Standard flange dimensions, drawings and bolt length per AWWA C207, ASME B16.1, ASME B16.5, and ASME B16.47.
 hide_units: true
 -----
 

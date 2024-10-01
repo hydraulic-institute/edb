@@ -1,8 +1,8 @@
 -----
-tabtitle: HI DT Acronyms & Defs
+tabtitle: Pump and Pump System Definitions | HI Data Tool 
 title: B) Acronyms & Definitions
 date: April 19th, 2024
-description: Table of Definitions 
+description: Definitions and acronyms for common pump industry terms are provided along with their reference.
 hide_units: true
 -----
 

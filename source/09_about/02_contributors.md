@@ -1,7 +1,8 @@
 -----
 title: Members and Contributors
+tabtitle: Committee Members | HI Data Tool
 date:  July 19th, 2024
-description: Meet the EDL Committee
+description: Subject experts support the development of the HI Data Tool.
 hide_units: true
 -----
 <section class="home-background">

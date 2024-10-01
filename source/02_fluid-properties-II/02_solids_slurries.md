@@ -1,7 +1,8 @@
 -----
 title: B) Solids and Slurries
+tabtitle: Slurry Properties for Pump Systems | HI Data Tool 
 date: April 19th, 2024
-description: Properties of solid mixtures and slurries. Determining specific gravity of mixture or slurry.
+description: Explains the calculation of specific gravity of slurry mixutures and consideratiosn for slurry pumping and abrasive wear.
 -----
 
 ## Solids and Slurries 

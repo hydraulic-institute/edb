@@ -1,7 +1,8 @@
 -----
 title: C) Combined Pump & System Curves 
+tabtitle: Pump System Operating Point | HI Data Tool 
 date: July 19th, 2024
-description: Pump and system curve interactions. Tutorial, demonstration, and worked examples.
+description: Determine the pump system operating point and the effect of parallel and series pumping, variable speed pumping, and piping and control valve changes.
 hide_units: true
 -----
 

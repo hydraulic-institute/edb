@@ -1,7 +1,8 @@
 -----
 title: D) Other Fluids
+tabtitle: Fluid Properties for Pump Systems | HI Data Tool 
 date: July 19th, 2024
-description: Properties of other fluids.
+description: Learn properties or oil and API gravity as well as properties for Sucrose solutions, hydrogen and helium. Units of Baume and Brix are explained.
 hide_units: true
 -----
 

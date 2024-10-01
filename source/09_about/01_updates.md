@@ -1,7 +1,8 @@
 -----
 title: Releases
+tabtitle: HI Data Tool Release Updates
 date:  July 19th, 2024
-description: Updates to EDL
+description: Updates are periodically made to the HI Data Tool, which supports pump system engineers.
 hide_units: true
 -----
 <section class="home-background">

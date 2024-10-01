@@ -1,7 +1,8 @@
 -----
 title: A) Steel Pipe
+tabtitle: Steel Pipe Dimensions | HI Data Tool 
 date: July 19th, 2024
-description: Dimensions of wrought steel pipes.
+description: ASME B36.10 Steel Pipe dimensions and roughness which is for standard welded and seamless wrought steel pipe.
 hide_units: true
 -----
 =^=

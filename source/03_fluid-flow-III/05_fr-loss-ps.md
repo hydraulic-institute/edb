@@ -1,7 +1,8 @@
 -----
 title:  E) Losses With Paper Stock
+tabtitle: Paper Stock and Pulp | HI Data Tool 
 date: June 28th, 2019
-description: Frictional losses of paper stock, pulp suspensions. Different consistencies.
+description: Paper stock and pulp head loss in pipes. Procedures to estimate friction head loss based on the material and pulp type.
 -----
 
 ## Losses With Paper Stock

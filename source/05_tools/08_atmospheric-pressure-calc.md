@@ -1,7 +1,8 @@
 -----
 title: H) Atmospheric Pressure Calculator
+tabtitle: Elevation effect on Atmospheric Pressure | HI Data Tool Calculator
 date: July 19th, 2024
-description: Demo Atmospheric Pressure
+description: This calculator finds the standard atmospheric pressure for a given elevation above sea level. Useful for NPSHA calculations.
 -----
 
 ## Calculator: Effect of Elevation on Atmospheric Pressure

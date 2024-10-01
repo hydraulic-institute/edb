@@ -1,7 +1,8 @@
 -----
 title: C) Ductile Iron Pipe
+tabtitle: Iron Pipe Dimensions | HI Data Tool 
 date: July 19th, 2024
-description: Dimensions of iron pipes.
+description: AWWA C151/A21.51 Iron Pipe dimensions and roughness which is for standard ductile iron pipe.
 hide_units: true
 -----
 

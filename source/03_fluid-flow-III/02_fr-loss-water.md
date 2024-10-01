@@ -1,7 +1,8 @@
 -----
 title:  B) Losses in Valves, Fittings, and Bends
+tabtitle: Pipe Fitting Frictional Losses | HI Data Tool 
 date: April 19th, 2024
-description: Frictional loss information for water. Resistance coefficients for valves, Fittings, sudden increases, sudden contractions, and bends.
+description: Loss coefficients for pipe fittings and valves and how to calculate frictional head loss through fittings and valves.
 -----
 
 ## Frictional Losses in Valves, Fittings, and Bends (Minor Losses)

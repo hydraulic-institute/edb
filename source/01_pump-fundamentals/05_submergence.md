@@ -1,7 +1,8 @@
 -----
 title: E) Submergence
+tabtitle: Submergence in Pump Systems | HI Data Tool 
 date: July 19th, 2024
-description: 
+description: Learn about the minimum submergence required for reliable pump operation with considerations from ANSI/HI 9.6.6 Pump Piping and ANSI/HI 9.8 Intake Design.
 hide_units: true
 -----
 

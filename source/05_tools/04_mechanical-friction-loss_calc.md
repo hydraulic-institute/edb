@@ -1,7 +1,8 @@
 -----
 title: D) Line Shaft Bearing Loss Calculator
+tabtitle: Mechanical Line Shaft Bearing Loss Claculator | HI Data Tool Calcullator 
 date: July 19th, 2024
-description: Mechanical Friction loss calculator.
+description: Calculator to determine the mechanical friction loss in vertical pump line shaft bearings. Aligns AWWA E103 and HI Engineering Data Book.
 -----
 
 =^=
