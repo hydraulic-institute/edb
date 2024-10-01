@@ -1,6 +1,6 @@
 -----
 title: B) Pump Curves
-tabtitle: Pump Curves| Head, Power, Efficiency, NPSHR vs flow | HI Data Tool 
+tabtitle: Pump Curves | Head, Power, Efficiency, NPSHR vs flow | HI Data Tool 
 date: July 19th, 2024
 description: Demonstrates how pump curves are drawn showing TDH, pump head, power, efficiency, and NPSHR versus flow rate.
 -----
