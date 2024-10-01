@@ -2,7 +2,7 @@
 tabtitle: Pump Types | HI Data Tool 
 title: C) Pump Types
 date: April 19th, 2024
-description: Hydraulic Institute standard pump type nomenclature is provided 
+description: Hydraulic Institute standard pump type nomenclature is provided. 
 hide_units: true
 -----
 
