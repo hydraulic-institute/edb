@@ -1,7 +1,8 @@
 -----
 title:  A) Pipe Frictional Losses
+tabtitle: Pipe Frictional Losses | HI Data Tool 
 date: July 19th, 2024
-description: General overview of fluid flow. Pipe roughness, friction factors, Reynolds number, resistance, head loss in piping systems.
+description: Calculate pipe friction loss using the Colebrook equation, which uses the Darcy Weisbach friction factor, relative roughness, reynolds number and moody diagram.
 -----
 
 ## Fluid Flow – Pipe Frictional Losses 
@@ -26,7 +27,7 @@ where:
 - g = Acceleration due to gravity <units us = "in feet/second/second. Hereafter, the value 32.2 ft/s^2^ for sea level and 45 degrees latitude will be used." metric = "in meters/second/second. Hereafter, the value 9.81 m/s^2^ for sea level and 45 degrees latitude will be used."/>
 - *f* = Friction factor
 
-The Colebrook Equation (Eq. 3.A.2) offers a reliable means for computing the **Darcy-Weisbach friction factor friction factor (*f*)** to be used in Equation 3.A.1.
+The Colebrook Equation (Eq. 3.A.2) offers a reliable means for computing the **Darcy-Weisbach friction factor (*f*)** to be used in Equation 3.A.1.
 
 =+=
 <span class= equation-label >(Eq. 3.A.2)</span>

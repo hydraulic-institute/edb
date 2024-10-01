@@ -1,7 +1,8 @@
 -----
 title: C) Pipe Friction Loss Calculator
+tabtitle: Frictional Head Loss Calculator for Pipe and Tube |  HI Data Tool Calculator
 date: July 19th, 2024
-description: Frictional loss calculator for piping constructed of various materials.
+description: Calculator to determine the frictional head loss in pipes based on standard dimensions and roughness using the Colebrook equation.
 -----
 ## Calculator: Frictional Losses in Pipes
 Instructions: To use this calculator, select the material and complete the subsequent drop down menus.  Further instructions and details are found below the Calculator.

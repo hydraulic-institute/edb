@@ -1,6 +1,8 @@
 -----
 title: A) Unit Conversions
+tabtitle: Unit Conversions | HI Data Tool 
 date: July 19th, 2024
+description: Unit conversions for area, density, flow rate, force, length, power, pressure, temperature, velocity, and volume.
 hide_units: true
 -----
 

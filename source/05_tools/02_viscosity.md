@@ -1,6 +1,8 @@
 -----
 title: B) Kinematic & Dynamic Viscosity Conversion
+tabtitle: Viscosity Conversions Dynamic & Kinematic | HI Data Tool  
 date: July 19th, 2024
+description: Convert between viscosity units. This converter enables Dynamic Viscosity and Kinematic Viscosity conversions.
 hide_units: true
 -----
 

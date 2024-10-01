@@ -1,17 +1,17 @@
 -----
+tabtitle: About the HI Data Tool
 title: A) Welcome & Introduction
-description: The Hydraulic Institute (HI) is the global authority on pumps and pumping systems. HI is an association of  pump manufacturers and suppliers. The work of HI provides value-added resource to member companies, engineering consulting firms, and pump users worldwide.
+description: The HI Data Tool is a must have resource for anyone working with pumps or pump systems. US customary and Metric Units. Support pump system calculations.
 date: July 19th, 2024
 -----
-<!-- Display on tablet and up> -->
-<section class="is-hidden-mobile home-background">
-    <img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/>
-    <p style="color: white;font-size: x-large;"><i>Knowledge, References and Calculators for Pump Systems</i></p>
-</section>
-<!-- Display on mobile only -->
-<section class='is-hidden-tablet home-background' >
-    <img alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/>
-    <p style="color: white;font-size: large;"><i>Knowledge, References and Calculators for Pump Systems</i></p>
+<section class="home-background">
+    <div class="row">
+    <div class="col-8 col-xxl-6" style="align-content:center;padding: 3% 3% 3% 5%"><img width='100%' alt='Hydraulic Institute DATA TOOL' src='/images/HI-Data-Tool-Logo-1-line-white.png'/><br>
+     <span class="is-hidden-touch" style="display:flex;color:white;font-size:1.5vw;white-space:nowrap;"><i>Knowledge, References and Calculators for Pump Systems</i></span>
+     <span class="is-hidden-desktop" style="display:flex;color:white;font-size:2.5vw;white-space:nowrap;"><i>Knowledge, References and Calculators for Pump Systems</i></span>
+     </div>
+    <div class="col is-hidden-touch" style="text-align:right;align-content:center;padding:unset;"><img style="padding-right:10px" alt='Hydraulic Institute DATA TOOL' src='/images/datatool-cover-new-1920-250.png'/></div> 
+    </div>
 </section>
 
 #

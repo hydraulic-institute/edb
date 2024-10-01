@@ -1,7 +1,8 @@
 -----
 title: F) Vertical Tank Volume Calculator
+tabtitle: Volume Calculator and Equations Vertical Tanks | HI Data Tool Calculator
 date: July 19th, 2024
-description: Demo Vertical Tank
+description: This calculates the volume of vertical tanks with flat, hemispheric and elliptical heads, provides equations and converts between typical volume units.
 hide_units: true
 -----
 =^=

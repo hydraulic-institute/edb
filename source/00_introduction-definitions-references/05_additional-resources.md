@@ -1,7 +1,8 @@
 -----
+tabtitle: Resources for Pumps and Pump systems | HI Data Tool 
 title: E) Additional Resources
 date:  July 19th, 2024
-description: Frequently asked questions regarding pump and system curves; pump systems, and additional resources are included.
+description: Additional pump system resources are provided by the Hydraulic Institute, many of them Free. Improve your pump system knowledge.
 hide_units: true
 -----
 

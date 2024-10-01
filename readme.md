@@ -624,7 +624,9 @@ Some pages within the EDB will be interactive applications - allowing users to g
 ## Process for Updated PIPE MATERIALS Data
 *"Section IV - Pipe Materials.xlsx"*
 
-*Note: All python commands are run from the edb root directory*
+*Notes:*
+- *All python commands are run from the edb root directory*
+- *This process generates the tables for the `Pipe, Flange & Motor Dimensions` section (aka Section 4).  It also generates the json data for the `Pipe Friction Loss Calculator` in the `Calculators` section.*
 
 ### Prep the Data
 1. Download the new Pipe Materials spreadsheet to your Downloads folder.
@@ -639,19 +641,23 @@ Some pages within the EDB will be interactive applications - allowing users to g
 
 ### Build the tables and json file for the Friction Calculator
 1.  Run the friction-loss build file:
-	-  `python kb/friction-loss/build-full.py`
-	-  This will generate the data tables in `source/04_piping-materials-IV/table-data`
+	-  `$> python kb/friction-loss/build-full.py`
+	-  This will parse the `edb/kb/friction-loss/Section IV - Pipe-Tube Data.csv` file (filename is hard coded in the script `edb/kb/friction-loss/build-full.py`), generate .csv files for each Group Name-Sub-Division Name grouped by Sub-Division.  It will dump these files in the `edb/kb/friction-loss/piping-losses` folder. (see the file naming convention below)
+	-  A single file `processed.csv` will be generated in that same folder at the same time.  It will contain all of the data from the individual .csv files.
+	-  Finally, the individual .csv files of the same material type wil be combined into a single .csv file and will be deposited in the `edb/source/04_piping-materials-IV/table-data` folder.
+	-  This will generate the data tables in `edb/source/04_piping-materials-IV/table-data`.
+	-  These tables are referenced in the *.md files in `edb/source/04_piping-materials-IV`
+    -  This build will also generate the `friction-loss-materials-full.json` file in the `edb/generate/static` folder.
+        - This file is used by the friction calculator implemented in the `edb/source/javascript/calculators.js` file.<br/>
+	-  File Naming Convention:
 		- The file names are auto-created based on the **Group Name** and then the **Sub-Division Name**:  <br/>
         `<Group Name Initials>_<First 4 letters of each of the words in the Sub-Division Name followed by '-'>.csv`
 		- Ex:  **Group:** Steel Pipe <br/>
 			**Sub-Division Name:** Welded and Seamless Wrought Steel Pipe <br/>
 			Filename generated:  `sp_weld-and-seam-wrou-stee-pipe.csv` <br/>
-	-  These tables are referenced in the *.md files in `source/04_piping-materials-IV`
-    -  This build will also generate the `friction-loss-materials-full.json` file in the `generate/static` folder.
-        - This file is used by the friction calculator implemented in the `source/javascript/calculators.js` file.
 
 ### Note
-There is a special case for *Plastic Pipes* in the `build-full.py` file.  Instead of *Wall Thickness, inches* heading and selector, *Plastic Pipes* has *Minimum Thickness, inches* for the heading and selector.
+- There is a special case for *Plastic Pipes* in the `build-full.py` file.  Instead of *Wall Thickness, inches* heading and selector, *Plastic Pipes* has *Minimum Thickness, inches* for the heading and selector.
 
 ---
 

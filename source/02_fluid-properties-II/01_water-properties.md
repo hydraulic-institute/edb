@@ -1,7 +1,8 @@
 -----
 title: A) Water
+tabtitle: Water Properties for Pump Systems | HI Data Tool 
 date: July 19th, 2024
-description: Properties of water (liquid and vapor); saturation properties, density, specific gravity, specific volume, enthalpy, entropy, and viscosity.
+description: Provides water property and water sturtation tables, including vapor pressure, density, specific volume and heat, enthalpy and visocisty vs  temperature.
 -----
 
 ## Water Properties 

@@ -1,7 +1,8 @@
 -----
 title:  D) Losses in Nozzles
+tabtitle: Frictional Losses in Nozzles | HI Data Tool 
 date: July 19th, 2024
-description: Calculation of frictional losses of nozzles. 
+description: Discharge flow from nozzles based on pressure and head. Fluid nozzle velocity, head and flow rate.
 hide_units: true
 -----
 

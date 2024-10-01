@@ -1,7 +1,8 @@
 -----
 title:  C) Losses With Other Fluids
+tabtitle: Frictional Loss Calculator | HI Data Tool 
 date: July 19th, 2024
-description: Frictional loss calculations for other fluids. Includes frictional loss modulus.
+description: Use the pipe frictional head loss calculator to determine the head loss for all liquids types and viscosity.
 -----
 
 ## Losses With Other Fluids

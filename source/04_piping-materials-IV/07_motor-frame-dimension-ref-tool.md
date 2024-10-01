@@ -1,7 +1,8 @@
 -----
 title: G) Motor Dimensions
+tabtitle: NEMA Motor Frame Size Dimensions | HI Data Tool 
 date: July 19th, 2024
-description: Frame Size Tool
+description: Standard frame sizes, drawnings and dimensions for Horizontal, Vertical and Close-coupled pump motors per NEMA MG1.
 hide_units: true
 -----
 

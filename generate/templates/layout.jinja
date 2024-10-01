@@ -47,9 +47,9 @@
     gtag('config', 'G-BYDF9G5TWW');
     </script>
     {% if node.metadata and node.metadata['description'] %}
-        <meta name="Description" content="{{node.metadata['description']}}"/>
+        <meta name="description" content="{{node.metadata['description']}}"/>
     {% endif %}
-    <title>HI DATATOOL</title>
+    <title>{% if node.metadata['tabtitle'] %}{{node.metadata['tabtitle']}}{% else %}HI DATATOOL{% endif %}</title>
     
     {% endblock %}
 </head>

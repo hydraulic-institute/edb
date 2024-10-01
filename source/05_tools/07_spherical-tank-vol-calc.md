@@ -1,7 +1,8 @@
 -----
 title: G) Spherical Tank Volume Calculator
+tabtitle: Volume Calculator and Equations Spherical Tanks | HI Data Tool Calculator
 date: July 19th, 2024
-description: Demo Spherical Tank
+description: This calculates the volume of spherical tanks, provides equations and converts between typical volume units.
 hide_units: true
 -----
 =^=

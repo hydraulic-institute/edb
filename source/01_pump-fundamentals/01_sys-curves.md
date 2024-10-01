@@ -1,7 +1,8 @@
 -----
 title: A) System Curves
+tabtitle: Pump System Curves | HI Data Tool 
 date: July 19th, 2024
-description: Contains a system curves tutorial, demonstration, and worked examples.
+description: Demonstrates how to calculate the pump system curve, which includes friction head, static head, pressure head, pipe losses, and control losses.
 -----
 # System Curves 
 
