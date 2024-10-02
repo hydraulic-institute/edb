@@ -126,8 +126,10 @@ a sequence of 5 dashes `-----`, and closed with the same 5 dashes.
 The following metadata attributes are supported:
 
 - **title** - title of the page to appear in the table of contents
+- **tabtitle** - title of the page to appear on the browser tab.
 - **author** - optional text to indicate who wrote the page.  Will be injected at the end of the page.
 - **date** - optional date of last update.
+- **description** - meta description used in search engine results.  (`<meta name='description' content='{description}'>`)
 
 ## Directory (Section Headings)
 Each directory **must include a `index.md` file**.  This file must include a meta data entry, but no additional content.  The meta data should at least include the title.
