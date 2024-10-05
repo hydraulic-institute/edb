@@ -7,6 +7,8 @@ description: Learn centrifugal pump operating principles including specific spee
 
 ## Pump Principles
 
+The pump principles section focuses on rotodynamic pumps of centrifugal, mixed and axial flow types. Related to these categories of rotodynamic pumps, typical performance curve characteristics are discussed along with attainable pump efficiency, specific speed and the associated impeller profiles, net positive suction head (NPSH) and suction specific speed.
+ 
 ### Specific Speed 
 
 **Specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 

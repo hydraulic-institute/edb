@@ -7,6 +7,8 @@ description: Provides water property and water sturtation tables, including vapo
 
 ## Water Properties 
 
+When pumping water, it is important to understand properties such as the water density or specific gravity and vapor pressure. This section provides tables and graphs of water saturation properties as a function of temperature.
+
 **Specific gravity**, also referred to as **relative density**, is the ratio of the densities of one fluid at a known temperature and pressure to a reference fluid at a specific temperature and pressure. In most cases, the reference fluid is water at atmospheric pressure. The most common reference temperatures in the standards and literature are
 <units us = "39.2 °F at which water is the most dense, 60 °F, and 68 °F. Generally, scientific research and common fluids use 39.2 °F while engineering and petroleum applications use 60 °F." metric = "4 °C at which water is the most dense, 15.56 °C, and 20 °C. Generally, scientific research and common fluids use 4 °C  while engineering and petroleum applications use 15.56 °C."/>
 

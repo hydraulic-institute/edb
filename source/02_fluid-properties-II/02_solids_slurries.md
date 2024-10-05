@@ -7,6 +7,8 @@ description: Explains the calculation of specific gravity of slurry mixutures an
 
 ## Solids and Slurries 
 
+When liquids contain solids and slurries the specific gravity of the mixture needs to be considered. The size and type of slurry will affect the abrasiveness and the type of slurry pump that is suitable. This section details methods to calculate specific gravity by concentration of solids, provides hardness values of common solids, and presents the class of pump appropriate for slurry types.
+
 ### Useful Formulas
 
 **a)** The formula for specific gravity of a solids-liquids
