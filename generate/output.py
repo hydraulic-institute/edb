@@ -531,27 +531,21 @@ def process_ad_blocks(markdown):
     return markdown
 
 def replace_scrolling_logo_block(chart_text):
-    logos_dir = parse_dict(chart_text.strip().split("\n"))
+    logos_style = parse_dict(chart_text.strip().split("\n"))
     all_logos = []
-    for file in os.listdir(os.path.join(SOURCE_DIR, logos_dir['folder'])):
-        all_logos.append(os.path.join('/',logos_dir['folder'],file))
-    if 'title' not in logos_dir:
-        logos_dir['title'] = ''
-    if 'font_style' not in logos_dir:
-        logos_dir['font_style'] = ''
-    else:
-        logo_styles = logos_dir['font_style'].split(';')
-        logos_dir['font_style'] = ''
-        for style in logo_styles:
-            style = "".join(style.split())
-            if style == 'bold':
-                logos_dir['font_style'] += 'font-weight:bold;'
-            elif style == 'italic':
-                logos_dir['font_style'] += 'font-style:italic;'
-            else:
-                logos_dir['font_style'] += style+';'
+    logos_format = {'title': '', 'footer': '', 'title_style': '', 'footer_style': ''}
+    for file in os.listdir(os.path.join(SOURCE_DIR, logos_style['folder'])):
+        all_logos.append(os.path.join('/',logos_style['folder'],file))
+    if 'title_text' in logos_style:
+        logos_format['title'] = logos_style['title_text']
+    if 'footer_text' in logos_style:
+        logos_format['footer'] = logos_style['footer_text']
+    if 'title_style' in logos_style:
+        logos_format['title_style'] = 'display:block;'+logos_style['title_style']
+    if 'footer_style' in logos_style:
+        logos_format['footer_style'] = 'display:block;'+logos_style['footer_style']
     template = env.get_template('scrollinglogos.jinja')
-    new_html = template.render(logos=all_logos, title=logos_dir['title'],font_style=logos_dir['font_style'],align=logos_dir['align']) 
+    new_html = template.render(logos=all_logos, data=logos_format) 
     return new_html
 
 

@@ -456,7 +456,12 @@ Notice the leading comma - this is because the first column on the first row is 
 Each subsequent row is either a heading or data.
   
 ### Scrolling Logos
-Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax. To include Scrolling Logos on a page, a subfolder under the `source` folder should be created for the logos (ex:  `source/logos`). Once generated, images should be stored in this folder.
+Scrolling Logos can be placed in any page by using  *custom extension* markdown syntax.  Here is an example of the existing scrolling logos on the Home page.
+Notice the section will be wrapped with horizontal rulers.  
+
+<img src='./images/scrollinglogos.png'><br><br>
+
+To include Scrolling Logos on a page, a subfolder under the `source` folder should be created for the logos (ex:  `source/logos`). Once generated, images should be stored in this folder.
 
 #### Suggested Image Requirements
 - PNG (or JPEG) with white background.
@@ -470,16 +475,17 @@ Scrolling Logos can be placed in any page by using  *custom extension* markdown 
 ```
 =scrolling-logos=
 folder: logos
-title: Data Tool Site Supports:
-font_style: bold; italic
-align: center
+title_text: Data Tool Site Supports:
+title_style: text-align:left;font-weight:bold; font-style:italic;
+footer_text: We are thankful for our supporters!
+footer_style: text-align:left;font-size:smaller;
 =scrolling-logos=
 ```
 - `folder` - This notes the subfolder in the `source` folder where the logos are located. 
-- `title` - This is any text desired above the scrolling images.
-- `font_style` - `bold` and `italic` are available.  If you would like a separate font style, use the standard css styling:
-  - ex:  `font_style:  font-size: smaller;`
-- `align` - This notes the horizontal alignment of the title (`center`, `left`, `right`)
+- `title_text` - This is any text desired above the scrolling images.
+- `title_style` - Use standard css styling.  See the example above. 
+- `footer_text` - This is any text desired below the scrolling images.
+- `footer_style` - Use standard css styling.  See the example above.
 
 ### Definitions and References Tables
 *(Section 00-Introduction, Definitions, References & Resources)*

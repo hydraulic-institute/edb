@@ -28,6 +28,14 @@ The Data Tool incorporates both *U.S.* and *Metric* units. To toggle between uni
 
 <units us = "This page is currently set to U.S. customary units." metric = "This page is currently set to Metric units."/>
 
+=scrolling-logos=
+folder: logos
+title_text: Thank you to our Data Tool Site Supporters:
+title_style: text-align:left;font-weight:bold;font-style:italic;
+footer_text: Site Supporters include HI member and partner organizations that have either volunteered their time and knowledge or contributed resources for the site’s development and continued improvement. The Hydraulic Institute thanks them as the site would not be possible without their efforts. If your organization is interested in supporting the continuous improvement and development of these tools please contact, membership@pumps.org for more information.
+footer_style: text-align:left;font-size:smaller;
+=scrolling-logos=
+
 # About the Hydraulic Institute
 The **Hydraulic Institute (HI)** is a non-profit organization dedicated to advancing the pump industry. The Institute offers a wide variety of programs and services, each tailored to support the needs of the industry including pump and system standards, certification, training, workforce development, and advocacy.   
 
