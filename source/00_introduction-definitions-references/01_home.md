@@ -30,9 +30,10 @@ The Data Tool incorporates both *U.S.* and *Metric* units. To toggle between uni
 
 =scrolling-logos=
 folder: logos
-title: Thank you to our sponsors:
-font_style: bold; italic
-align: center
+title_text: Thank you to our Data Tool Site Supporters:
+title_style: text-align:left;font-weight:bold;font-style:italic;
+footer_text: Site Supporters include HI member and partner organizations that have either volunteered their time and knowledge or contributed resources for the site’s development and continued improvement. The Hydraulic Institute thanks them as the site would not be possible without their efforts. If your organization is interested in supporting the continuous improvement and development of these tools please contact, membership@pumps.org for more information.
+footer_style: text-align:left;font-size:smaller;
 =scrolling-logos=
 
 # About the Hydraulic Institute
