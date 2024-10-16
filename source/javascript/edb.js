@@ -81,8 +81,10 @@ Vue.component('chart', {
                 }
             }
         }
-        c3.generate(config);
-    },
+        let chart = c3.generate(config);
+        // Resize the chart after a second to ensure it's rendered properly.
+        setTimeout(function () { chart.resize(); }, 1000);
+    }
 });
 
 
