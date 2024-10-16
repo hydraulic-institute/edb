@@ -828,15 +828,15 @@ To Deploy:
 - Build the code for `Production` or `Beta`:
 
   - `$> python beta.py`
+    - The code to deploy to `Netlify.com` will be generated and deposited in the `edb/build` folder.
   - `$> python prod.py`
-  - The code to deploy to `Netlify.com` will be generated and deposited in the `edb/build` folder.
+    - The code to deploy to `Netlify.com` will be generated and deposited in the `edb/build_prod` folder.
   
 - Log onto `Netlify.com` with the appropriate Login and Password
 - Click on `Sites`
 - Select the appropriate site (beta or production)
-- Click on `Deploys` and scroll to the bottom 
-- Drag the `builds` folder that was just generated in your development environment
-onto the `Drag and Drop` section of the webpage (under the `Deploys` section )
+- Click on `Deploys` and scroll to the bottom
+- Click on `Browse to Upload` and select the appropriate `builds` folder that was generated above to upload to `Netlify`
 - Follow any additional instructions.  Include a description if you are able.
 - Your website will be deployed!
 

@@ -1052,14 +1052,16 @@ def pdf(graph):
 
 
 def html(graph, specials, ignores, rootspecials, production=False):
+    if production:
+        global OUTPUT_DIR
+        options.minified = ".min"
+        OUTPUT_DIR += '_prod'
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)
     print('Statics directory:   ', STATICS_DIR)
     print('Source directory:    ', SOURCE_DIR)
 
-    if production:
-        options.minified = ".min"
     clean()
     make_specials(specials, ignores)
     make_root_specials(rootspecials, production)
