@@ -48,11 +48,11 @@ consistencies (C<sub>2</sub> > C<sub>1</sub>).
 
 The frictional loss curve for chemical pulp can be conveniently divided into three regions, as illustrated by the shaded areas of Figures 3.E.3 and 3.E.4.
 
-**Friction loss curve for chemical pump, shaded to show individual regions**
+**Friction loss curve for chemical pulp, shaded to show individual regions**
 ![](./images/fig3_E_3.png#center "")
 <div class="figure-label">(Fig. 3.E.3)</div>
-**Friction loss curve for mechanical pump, shaded to show individual regions**
-![](./images/fig3_E_3.png#center "")
+**Friction loss curve for mechanical pulp, shaded to show individual regions**
+![](./images/fig3_E_4.png#center "")
 <div class="figure-label">(Fig. 3.E.4)</div>
 
 Regions shown in Fig. 3.E.3 may be described as follows:
