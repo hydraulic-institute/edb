@@ -14,7 +14,7 @@ Each of these is described in further detail below. A **system curve** shows the
 ### Pressure and Head Relationship
 Head is the expression of the energy content of a liquid in reference to any arbitrary datum. It is expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"></units> of liquid.
 
-Pressure and head have a liquid have a physical relationship as outlined in equation 1.A.1. These equations utilize a conversion constant and specific gravity (s), which is defined in equation 1.A.2. It is common to use head because the performance of the pump can be shown independent of the specific gravity or density of the fluid pumped.
+Pressure and head of a liquid have a physical relationship as outlined in equation 1.A.1. These equations utilize a conversion constant and specific gravity (s), which is defined in equation 1.A.2. It is common to use head because the performance of the pump can be shown independent of the specific gravity or density of the fluid pumped.
 
 <div class="equation-label">Eq. 1.A.1</div>
 =+=
@@ -32,7 +32,7 @@ where:
 - p = pressure in <units us = "pounds per square inch (psi)" metric = "kilopascals (kPa)"/>
 - s = specific gravity (unitless), see equation 1.A.2
 
-Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in section II.
+Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in the fluid properties section.
 
 <div class="equation-label">Eq. 1.A.2</div>
 =+=
@@ -46,49 +46,75 @@ where:
 ### Static Head
 **Static head** consists of both the elevation and pressure difference between the supply and destination of the system. This typically does not depend on velocity and is therefore constant for the system curve. This can be calculated using equation 1.A.3.
 
-<div  class="equation-label"><a id="eq1a3"></a>Eq. 1.A.3</div >
+<div class="equation-label"><a id="eq1a3"></a>Eq. 1.A.3</div >
 =+=
-$$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{supply}) \over \rho ·g} $$
+[units us]
+$$ \Delta h_{stat} = (z_{destination} - z_{supply}) + 144 · {(p_{destination} - p_{supply}) \over \rho} $$
+=+=
+=+=
+[units metric]
+$$ \Delta h_{stat} = (z_{destination} - z_{supply}) + {(p_{destination} - p_{supply}) \over \rho·g} $$
 =+=
 
 where:
 <!-- Delta special character is &#x0394; -->
 - &#x0394;h<sub>stat</sub> is differential static head, <units us = "feet" metric = "meters"/>
 - z is elevation, in <units us = "feet (ft)" metric = "meters"/>
-- p is pressure, in <units us = "psi" metric = "kPa"/>
+- p is pressure, in <units us = "psi" metric = "Pa"/>
 - ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
-- g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
+- <units us = "144 is to convert between square inches (in^2^) and square feet (ft^2^)" metric = "g is acceleration due to gravity, 9.81 m/s^2"/>
+
+<units us = "Note:  Acceleration due to gravity is omitted in Eq. 1.A.3 due to units; therefore, it is only valid for standard earth acceleration due to gravity."/>
 
 This equation is based on the supply and destination being tanks or where the velocity of the fluid can be considered zero. If the pressure measurements are taken with a gage where the velocity is not negligible then the velocity pressure (or dynamic pressure) must be added to the pressure gage reading as indicated in equation 1.A.4.
 
 <div  class="equation-label">Eq. 1.A.4</div >
 =+=
+[units us]
+$$ p = p_{gauge} + {1 \over 144} · {1 \over 32.2} · 0.5 · \rho · v^2 = p_{gauge} + {1 \over 144} · {1 \over 32.2} · {\rho · Q^2 \over 2 · A^2} $$
+=+=
+=+=
+[units metric]
 $$ p = p_{gauge} + 0.5 · \rho · v^2 = p_{gauge} + {\rho · Q^2 \over 2 · A^2} $$
 =+=
 
 where:
+<!-- Had to do it this way because we had 2 us-only bullets -->
+<ul>
+<li>p<sub>gauge</sub> is pressure measurement at the gage, in <units us = "psi" metric = "Pa"/></li>
+<li>ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/></li>
+<li>v is fluid velocity, in <units us = "ft/s" metric = "m/s"/></li>
+<li>Q is volumetric flow rate, in <units us = "ft^3^/s" metric = "m^3^/s"/></li>
+<li>A is pipe cross sectional area, in <units us = "ft^2" metric = "m^2"/></li>
+<li v-if='unit_set=="us"'>144 is to convert between square inches(in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
+<li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
+</ul>
 
-- p<sub>gauge</sub> is pressure measurement at the gage, in <units us = "psi" metric = "kPa"/>
-- ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
-- v is fluid velocity, in <units us = "ft/s" metric = "m/s"/>
-- Q is volumetric flow rate, in <units us = "ft^3^/s" metric = "m^3^/s"/>
-- A is pipe cross sectional area, in <units us = "ft^2" metric = "m^2"/>
-
-Since the velocity can be different between the two gage measurements, each of the pressures should be converted separately based on the conditions at the gage before using them in equation 1.A.3. Therefore, the pressure at the supply and destination can be defined as detailed in equations 1.A.5 and 1.A.6.
+Since the velocity will be different for two gage measurements in different pipe diameters, each of the pressures should be converted separately based on the conditions at the gage before using them in equation 1.A.3. Therefore, the pressure at the supply and destination can be defined as detailed in equations 1.A.5 and 1.A.6.
 
 <div  class="equation-label">Eq. 1.A.5</div >
 =+=
+[units us]
+$$ p_{supply} = p_{supply,gauge} + {1 \over 144} · {1 \over 32.2} · {\rho · Q_{supply}^2\over 2 · A_{supply}^2} $$
+=+=
+=+=
+[units metric]
 $$ p_{supply} = p_{supply,gauge} + {\rho · Q_{supply}^2\over 2 · A_{supply}^2} $$
 =+=
 
 <div  class="equation-label">Eq. 1.A.6</div >
 =+=
+[units us]
+$$ p_{destination} = p_{destination,gauge} + {1 \over 144} · {1 \over 32.2} · {\rho · Q_{destination}^2 \over 2 · A_{destination}^2} $$
+=+=
+=+=
+[units metric]
 $$ p_{destination} = p_{destination,gauge} + {\rho · Q_{destination}^2 \over 2 · A_{destination}^2} $$
 =+=
 
-Note that if the supply and destination are at the same pressure, as is the case when they are open tanks, then the static head is simply the difference in the liquid elevation.
+Note that if the supply and destination boundaries are at the same pressure, as is the case with open tanks, then the static head is simply the difference in the liquid elevation.
 
-For the following discussion in this section, it is assumed that the supply and destination are tanks which have negligible velocity.
+For the following discussion, it is assumed that the supply and destination tanks have negligible velocity (tank levels are constant or change very slowly).
 
 ### Frictional Head
 
@@ -100,18 +126,18 @@ Frictional head losses in pipes can be calculated using the Darcy-Weisbach equat
 (defined in <a href="/fluid-flow-III/general.html" target="_blank">Fluid Flow – General</a>).
 
 These equations will approximate the Moody diagram. The friction factor is based on the Reynolds Number (Re), the 
-pipe diameter (D), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe being used. Other aspects,
+pipe diameter (D), and the pipe roughness (ε). The pipe roughness is dependent on the type of pipe. Other aspects,
 such as age, fouling, and coatings will also affect the pipe roughness. An example table of typical values 
-for steel pipe materials an be found <a href="/piping-materials-IV/steel-pipe.html" target="_blank">here</a>. For other pipe materials, see section IV.
+for steel pipe materials can be found <a href="/piping-materials-IV/steel-pipe.html" target="_blank">here</a>. For other pipe materials, see section IV.
 
 The Hazen-Williams equation is another method to 
-determine pipe losses. These values are only valid for water and do not account for temperature or viscosity. 
-These values are a function of pipe material only and are not dependent on Reynolds Number.
+determine pipe losses. These values are only valid for water at standard temperature. 
+The Hazen-Williams C-Factor is a function of pipe material only and is not dependent on Reynolds Number.
 
 ### Minor Losses
 
 Minor losses in a piping system occur when fluid passes through a fitting, valve, area change, or enters or exits a tank, etc. Any system component that obstructs or changes the 
-direction or pressure of the flow can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss). These minor losses can be the
+direction or pressure of the flow can be considered a minor loss. These are categorized differently than the pipe frictional loss (or major loss). In some systems, these minor losses can be the
 dominant system loss. 
 
 The loss created by the component is often characterized by a constant, K, and tabulated for several types of components. Head loss is determined by the
@@ -133,19 +159,27 @@ Based on these concepts, the total system head at any given flow rate is the sum
 
 <div  class="equation-label"><a id="eq1a7"></a>Eq. 1.A.7</div >
 =+=
-$$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(p_{destination}-p_{supply}) \over \rho ·g} + {({fL \over D} + ΣK) · {v^2 \over 2·g}} $$
+[units us]
+$$ \Delta h_{system} = (z_{destination}-z_{supply}) + 144 · {(p_{destination}-p_{supply}) \over \rho} + {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
+=+=
+=+=
+[units metric]
+$$ \Delta h_{system} = (z_{destination}-z_{supply}) + {(p_{destination}-p_{supply}) \over \rho ·g} + {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
 =+=
 where:
 <!-- Delta special character is &#x0394; -->
 - &#x0394;h<sub>system</sub> is system head, <units us = "feet" metric = "meters"/>
 - z is elevation, in <units us = "feet" metric = "meters"/>
-- p is pressure, in <units us = "psi" metric = "kPa"/>
+- p is pressure, in <units us = "psi" metric = "Pa"/>
 - ρ is fluid density, in <units us = "lbm/ft^3" metric = "kg/m^3"/>
-- g is gravitational acceleration, <units us = "32.2 ft/s^2" metric = "9.81 m/s^2"/>
+- <units us = "144 is to convert between square inches (in^2^) and square feet (ft^2^)" metric = "g is acceleration due to gravity, 9.81 m/s^2"/>
 - f is friction factor
 - L is pipe length, in <units us = "feet" metric = "meters"/>
 - D is pipe inside diameter, in <units us = "feet" metric = "meters"/>
 - v is average velocity in pipe, in <units us = "ft/s" metric = "m/s"/>
+
+<units us = "Note:  Acceleration due to gravity is omitted in the pressure head portion of Eq. 1.A.7 due to units; therefore, it is only valid for standard earth acceleration due to gravity."/> 
+
 A system curve is a graphical representation of the relationship between flow rate and the associated static and frictional head losses. It is generated by calculating the static head and the frictional head losses at various flow rates and plotting them on a common set of axes.
 
 ### Shape of the System Curve
