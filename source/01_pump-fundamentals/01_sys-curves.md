@@ -32,7 +32,7 @@ where:
 - p = pressure in <units us = "pounds per square inch (psi)" metric = "kilopascals (kPa)"/>
 - s = specific gravity (unitless), see equation 1.A.2
 
-Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in the fluid properties section.
+Specific gravity (s) is calculated by equation 1.A.2 and values of specific gravity for water and other liquids can be found in the <a href="/fluid-properties-II/water-properties.html" target="_blank">fluid properties section</a>.
 
 <div class="equation-label">Eq. 1.A.2</div>
 =+=
@@ -86,7 +86,7 @@ where:
 <li>v is fluid velocity, in <units us = "ft/s" metric = "m/s"/></li>
 <li>Q is volumetric flow rate, in <units us = "ft^3^/s" metric = "m^3^/s"/></li>
 <li>A is pipe cross sectional area, in <units us = "ft^2" metric = "m^2"/></li>
-<li v-if='unit_set=="us"'>144 is to convert between square inches(in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
+<li v-if='unit_set=="us"'>144 is to convert between square inches (in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
 <li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
 </ul>
 
