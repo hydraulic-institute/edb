@@ -26,7 +26,7 @@ Where:
 title: Live - Pump System Optimization & Assessment Course
 description: Building on Fundamental knowledge this course examines the economics of pumping systems, and methods to assess and optimize pumping systems.  
 image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_ed93f963a3d079aaabc5737d1bda7511.png
-url: https://training.pumps.org/pump-system-optimization-and-assessment-course
+url: https://training.pumps.org/live-courses
 price: 99.00
 hide_price: true
 =^=

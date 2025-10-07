@@ -18,7 +18,7 @@ The values for specific gravity of water based on these common reference tempera
 title: Pump and System Fundamentals Live Course
 description: Educate and train pump engineers, technical sales, pump system owners, designers, and operators on the fundamentals of pump and system design, including system hydraulics and calculations, pump and system curves, system components, factors affecting reliably and energy consumption, and control. 
 image: https://a200661cdda2de08c184-8a545ee6d682984872a72f5ce2cc68be.ssl.cf2.rackcdn.com/hi_6ce03fc70274b2d8f6015f6a52b4f7ae.png
-url: https://training.pumps.org/pump-and-system-fundamentals-course 
+url: https://training.pumps.org/live-courses
 price: 700.00
 hide_price: true
 =^=
