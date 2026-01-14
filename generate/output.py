@@ -33,7 +33,7 @@ global all_tables
 all_tables=[]
 
 global version
-version = {'type': '', 'build': date.today().strftime('%m.%d.%Y')}
+version = {'type': '', 'build': date.today().strftime('%m.%d.%Y'), 'git_branch': ''}
 
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
@@ -1062,7 +1062,10 @@ def html(graph, specials, ignores, rootspecials, production=False):
         options.minified = ".min"
         OUTPUT_DIR += '_prod'
     else:
+        from .common import get_current_git_branch
         version['type']='Beta'
+        version['git_branch'] = get_current_git_branch()
+        
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)

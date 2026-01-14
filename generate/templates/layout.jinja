@@ -667,7 +667,7 @@
                         {% if version and version['type']|length > 0 %}
                         <div id="build" class="navbar-item pad-horizontal is-hidden-mobile text-white bg-danger">
                             <div>
-                                {{ version['type'] }}&nbsp; | &nbsp;{{ version['build'] }}
+                                {{ version['type'] }}&nbsp; | &nbsp;{{ version['build'] }} | &nbsp;{{ version['git_branch'] }}
                             </div>
                         </div>
                         {% endif %}
