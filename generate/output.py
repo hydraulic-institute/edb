@@ -1062,9 +1062,12 @@ def html(graph, specials, ignores, rootspecials, production=False):
         options.minified = ".min"
         OUTPUT_DIR += '_prod'
     else:
-        from .common import get_current_git_branch
+        from .common import get_current_git_branch_and_hash
         version['type']='Beta'
-        version['git_branch'] = get_current_git_branch()
+        git_info = get_current_git_branch_and_hash()
+        version['git_branch'] = git_info['branch']
+        version['git_hash'] = git_info['hash']
+        version['git_hash_link'] = git_info['hash_link']
         
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)

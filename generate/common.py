@@ -1,6 +1,6 @@
 import subprocess
 
-def get_current_git_branch():
+def get_current_git_branch_and_hash():
     """
     Retrieves the name of the current Git branch using subprocess.
     """
@@ -10,14 +10,22 @@ def get_current_git_branch():
             stderr=subprocess.STDOUT,
             text=True
         ).strip()
-        return branch_name
+        commit_hash = subprocess.check_output(
+            ['git', 'rev-parse', 'HEAD'],
+            stderr=subprocess.STDOUT,
+            text=True
+        ).strip()
+        commit_hash_link = "https://github.com/hydraulic-institute/edb/commit/"+commit_hash
+        if commit_hash:
+            commit_hash = commit_hash[:7]
+        return {'branch': branch_name, 'hash': commit_hash, 'hash_link': commit_hash_link}
     except subprocess.CalledProcessError as e:
         print(f"Error: Command failed with return code {e.returncode}")
         print(f"Output: {e.output}")
-        return None
+        return {}
     except FileNotFoundError:
         print("Error: 'git' executable not found. Ensure Git is installed and in your PATH.")
-        return None
+        return {}
 
 def parse_dict(lines):
     metadata = dict()
