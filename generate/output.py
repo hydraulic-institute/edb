@@ -32,6 +32,9 @@ table_count = 0
 global all_tables
 all_tables=[]
 
+global version
+version = {'type': '', 'build': date.today().strftime('%m.%d.%Y'), 'git_branch': ''}
+
 BASE_DIR = os.path.split(os.path.realpath(__file__))[0]
 OUTPUT_DIR = os.path.join(BASE_DIR, "..", "./build")
 TEMPLATE_DIR = os.path.join(BASE_DIR, "./templates/")
@@ -801,6 +804,7 @@ def make_root_specials(source_dir, production):
 def write_content(graph, node, slug_override=None, path="."):
     # REFACTOR THIS INTO A RENDERING CLASS INSTANCE TO AVOID GLOBALS
     global options
+    global version
     print(f'Processing {node["name"]} at path {path}')
     
     sections = [dir for dir in graph if dir['directory'] == True]
@@ -850,7 +854,7 @@ def write_content(graph, node, slug_override=None, path="."):
     print('Section: '+topic_section+' Topic: '+slug)
     html = template.render(section=topic_section, topic=slug, node=node,
                            content=content, sections=sections,
-                           related=related, options=options)
+                           related=related, options=options, version=version)
 
     # Refactor - use minification only if not in "debug" mode... makes dev more difficult.
     html_minified = htmlmin.minify(
@@ -1052,10 +1056,16 @@ def pdf(graph):
 
 
 def html(graph, specials, ignores, rootspecials, production=False):
+    global version
     if production:
         global OUTPUT_DIR
         options.minified = ".min"
         OUTPUT_DIR += '_prod'
+    else:
+        from .common import get_current_git_branch
+        version['type']='Beta'
+        version['git_branch'] = get_current_git_branch()
+        
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
     print('Template directory:  ', TEMPLATE_DIR)

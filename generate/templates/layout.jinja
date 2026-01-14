@@ -664,6 +664,13 @@
 
                 <div class="navbar-end">
                     <div class="columns">
+                        {% if version and version['type']|length > 0 %}
+                        <div id="build" class="navbar-item pad-horizontal is-hidden-mobile text-white bg-danger">
+                            <div>
+                                {{ version['type'] }}&nbsp; | &nbsp;{{ version['build'] }} | &nbsp;{{ version['git_branch'] }}
+                            </div>
+                        </div>
+                        {% endif %}
                         <div id="unit-menu" class="navbar-item pad-horizontal" style="display:none;">
                             {% if not node or not node['metadata']['hide_units'] %} 
                             <div id="units-toggle" class="btn-group btn-group-xs">
