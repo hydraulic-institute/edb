@@ -346,25 +346,25 @@
                         <td style="text-align:center"><unit-value :value="value_length_long(sample.velocity * sample.velocity / (2 * 32.17))"/></td>
                         <td style="text-align:center">${sample.reynolds}</td>
                         <td style="text-align:center">
-                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="Transition Flow" data-bs-toggle="tooltip">Transition*</span>
+                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="see note below" data-bs-toggle="tooltip">Transition*</span>
                             <span v-else-if='sample.laminar'>Laminar</span>
                             <span v-else>Turbulent</span>
                         </td>
                         <td style="text-align:center">
-                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="Transition Flow" data-bs-toggle="tooltip">Transition*</span>
+                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="see note below" data-bs-toggle="tooltip">Transition*</span>
                             <span v-else><unit-value :value="sample.friction_loss"/></span>
                         </td>
                         <td style="text-align:center">
-                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="Transition Flow" data-bs-toggle="tooltip">Transition*</span>
+                            <span v-if='sample.transition' :class="{ transition_sample: sample.transition }" title="see note below" data-bs-toggle="tooltip">Transition*</span>
                             <span v-else><unit-value :value="value_length_long(sample.head_loss)"/></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <div v-if="results_has_transition" class="alert alert-warning d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
                 <div>
-                    <b>*Transition</b> - is within the laminar-turbulent transition region (2000 < Re < 4000).
+                    <b>*Transition</b> - Application is within the laminar-turbulent transition region (2000 < Re < 4000).
                     Design in this region is not recommended.
                     Flow my fluctuate between laminar and turbulent regimes, resulting in unstable operation.
                 </div>

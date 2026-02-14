@@ -331,6 +331,9 @@ Vue.component("friction-loss-calculator", {
       this.save_inputs();
       return results;
     },
+    results_has_transition: function () {
+      return this.results_revision.some((sample) => sample.transition);
+    },
   },
   watch: {
     input_dynamic_v: function () {
