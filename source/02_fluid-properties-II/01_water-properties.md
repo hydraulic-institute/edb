@@ -42,8 +42,53 @@ series: 6
 series_title_index: 0
 =/=
 
+### Equations for the properties of pure water
 
+<units us = "For convenience in developing computer programs or spreadsheets, equations
+are available which give close approximations for various water properties. The
+following equations give the density, dynamic viscosity and vapor pressure of pure
+water in the indicated metric units as a function of temperature in degrees
+Centigrade. They are accurate to within +/- 1% from 0 to 100⁰C." metric = "For convenience in developing computer programs or spreadsheets, equations
+are available which give close approximations for various water properties. The
+following equations give the density, dynamic viscosity and vapor pressure of pure
+water in the indicated US customary units as a function of temperature in degrees
+Fahrenheit. They are accurate to within +/- 1% from 32 to 212⁰C." />
 
+<units us = "For the density of water at atmospheric pressure in [kg/m^3^]:" metric = "For the density of water at atmospheric pressure in [lbm/ft^3^]:" />
+
+=+=
+[units = us]
+$$ {\large \rho_{w} = 1000} \Biggl({1 - {(T-3.9863)^2(T+288.9414) \over 508929.2(T+68.12963)}}\Biggr) $$
+=+=
+
+=+=
+[units = metric]
+$$ {\large \rho_{w} = 62.428} \Biggl({1 - {(T-39.17534)^2(T+488.0945) \over 1648928(T+90.6333)}}\Biggr) $$
+=+=
+
+<units us = "For the dynamic viscosity of water in [mPa·s] or [cP]:" metric = "For the dynamic viscosity of water in [lbm/ft·s]:" />
+
+=+=
+[units = us]
+$$ {\large \mu_{w} = 1.002 \cdot 10}^{\Biggl({\LARGE {1.709(20-T)-0.001827(T-20)^2 \over {T+89.93}} }\Biggr)}  $$
+=+=
+
+=+=
+[units = metric]
+$$ {\large \mu_{w} = 0.000673296 \cdot 10}^{\Biggl({\LARGE {1.709(68-T)-0.001015(T-68)^2 \over {T+129.928}} }\Biggr)}  $$
+=+=
+
+<units us = "For the vapor pressure of water in [Pa]:" metric = "For the vapor pressure of water in [psia]:" />
+
+=+=
+[units = us]
+$$ {\large p_{v,w} = 0.0193363 \cdot 10}^{\Biggl({\large 8.07131-{\Large {3115.13 \over 388167+T}}} \Biggr)} $$
+=+=
+
+=+=
+[units = metric]
+$$ {\large p_{v,w} = 133.32 \cdot 10}^{\Biggl({\large 8.07131-{\Large {1730.63 \over 233.426+T}}} \Biggr)} $$
+=+=
 
 ## Water Saturation Properties 
 
