@@ -318,6 +318,14 @@
          <hr/>
         </div>
          <div v-if='entry && results_revision.length'>
+            <div v-if="results_has_transition" class="alert alert-warning d-flex align-items-center" role="alert">
+                <svg class="bi align-self-start flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div>
+                    <b>Transition*</b> - Application is within the laminar-turbulent transition region (2000 < Re < 4000).
+                    Design in this region is not recommended.
+                    Flow my fluctuate between laminar and turbulent regimes, resulting in unstable operation.
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -361,14 +369,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div v-if="results_has_transition" class="alert alert-warning d-flex align-items-center" role="alert">
-                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                <div>
-                    <b>*Transition</b> - Application is within the laminar-turbulent transition region (2000 < Re < 4000).
-                    Design in this region is not recommended.
-                    Flow my fluctuate between laminar and turbulent regimes, resulting in unstable operation.
-                </div>
-                </div>
          </div>
     </form>
 </script>
