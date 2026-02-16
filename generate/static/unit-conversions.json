@@ -10,11 +10,6 @@
         "description": "square meter"
       },
       {
-        "label": "cm&sup2",
-        "factor": 10000,
-        "description": "square centimeter"
-      },
-      {
         "label": "mm&sup2",
         "factor": 1000000,
         "description": "square millimeter"
