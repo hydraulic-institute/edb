@@ -10,15 +10,19 @@ def get_current_git_branch_and_hash():
             stderr=subprocess.STDOUT,
             text=True
         ).strip()
+        repo_home = subprocess.check_output(
+            ['git', 'config', '--get', 'remote.origin.url'],
+            stderr=subprocess.STDOUT,
+            text=True
+        ).strip().rsplit('.', 1)[0]
         commit_hash = subprocess.check_output(
             ['git', 'rev-parse', 'HEAD'],
             stderr=subprocess.STDOUT,
             text=True
         ).strip()
-        commit_hash_link = "https://github.com/hydraulic-institute/edb/commit/"+commit_hash
         if commit_hash:
             commit_hash = commit_hash[:7]
-        return {'branch': branch_name, 'hash': commit_hash, 'hash_link': commit_hash_link}
+        return {'branch': branch_name, 'repo': repo_home, 'hash':commit_hash}
     except subprocess.CalledProcessError as e:
         print(f"Error: Command failed with return code {e.returncode}")
         print(f"Output: {e.output}")

@@ -605,7 +605,7 @@
 
     <div id='vue'>
         <nav id='main-nav' class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
+            <div class="navbar-brand" style="padding-top:unset; padding-bottom:unset;">
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                         <button class="button is-dark" style='margin-top:0.25rem; background-color:transparent' aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -624,10 +624,17 @@
                          <a href="http://pumps.org/Certification.aspx" class="dropdown-item">Certification</a>
                          <a href="http://pumps.org/Contact_Us.aspx" class="dropdown-item">Contact Us</a>
                          <a href="/about/contributors.html" class="dropdown-item">About Us</a>
+                         {% if version and version['html']|length > 0 %}
+                            <span class="dropdown-item" style="display:inline;font-size:.7rem;font-style:italic">{{ version['html'] }}</span>
+                         {% endif %}
                         </div>
                     </div>
                 </div>
-                
+                {% if version and version['type'] == 'BETA' %}
+                <div id="build" class="beta-header">
+                    {{version['type']}}
+                </div>
+                {% endif %}
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -664,13 +671,6 @@
 
                 <div class="navbar-end">
                     <div class="columns">
-                        {% if version and version['type']|length > 0 %}
-                        <div id="build" class="navbar-item pad-horizontal is-hidden-mobile text-white bg-danger">
-                            <div style="font-size:smaller;">
-                                {{ version['type'] }}&nbsp; | &nbsp;{{ version['build'] }} | &nbsp;{{ version['git_branch'] }}:<i><a href="{{ version['git_hash_link'] }}" target="_blank" style="color:yellow">{{ version['git_hash'] }}</i></a>
-                            </div>
-                        </div>
-                        {% endif %}
                         <div id="unit-menu" class="navbar-item pad-horizontal" style="display:none;">
                             {% if not node or not node['metadata']['hide_units'] %} 
                             <div id="units-toggle" class="btn-group btn-group-xs">

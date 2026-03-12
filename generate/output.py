@@ -1057,17 +1057,25 @@ def pdf(graph):
 
 def html(graph, specials, ignores, rootspecials, production=False):
     global version
+    from .common import get_current_git_branch_and_hash
+    version['type']=''
+    git_info = get_current_git_branch_and_hash()
+    version['git_branch'] = git_info['branch']
+    version['git_repo'] = git_info['repo']
+    version['git_hash'] = git_info['hash']
+    version['html']= f"v.{version['build']}"
     if production:
         global OUTPUT_DIR
         options.minified = ".min"
         OUTPUT_DIR += '_prod'
+        version['html'] += f":{version['git_hash']}"
     else:
-        from .common import get_current_git_branch_and_hash
-        version['type']='Beta'
-        git_info = get_current_git_branch_and_hash()
-        version['git_branch'] = git_info['branch']
-        version['git_hash'] = git_info['hash']
-        version['git_hash_link'] = git_info['hash_link']
+        version['type'] = 'BETA'
+        if len(version['git_branch']):
+            version['html'] += f":{version['git_branch']}:{version['git_hash']}"
+        version['html'] += f":<a href='{ version['git_repo'] }/commits/{version['git_branch']}' target='_blank' style='color:blue'>git</a>"
+        version['html'] = f"BETA:{version['html']}"
+    print('Version: ', json.dumps(version, indent=4))
         
     print('Base directory:      ', BASE_DIR)
     print('Output directory:    ', OUTPUT_DIR)
