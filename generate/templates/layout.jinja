@@ -854,6 +854,8 @@
                                                     </ul>
                                                 </li>
                                             {% elif child['metadata']['title']%}
+                                            <!--KK This is where we would take each li item and make it another dropdown with the anchor tags 
+                                            Clicking one of these will bring up the page and open an accordion with the anchor tags into the page.-->
                                                 <li class="menu-list">
                                                     {% if child['slug'] == topic  and s['slug'] == section %}
                                                         <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
