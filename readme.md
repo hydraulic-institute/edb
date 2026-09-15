@@ -41,6 +41,9 @@ To build EDB content, you will need Python installed, and you will need to insta
 
 Download and install Python version 3.7 or above [here](https://www.python.org/downloads/release/python-373/)
 
+### Do not go beyond version 3.11
+This is because some of the libraries are not available beyond 3.11
+
 During installation, make sure you add Python to your path, and check off the following options:
 
 <img src='./images/python.png'/>
