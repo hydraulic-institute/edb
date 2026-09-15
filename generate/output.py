@@ -10,6 +10,7 @@ import json
 import uuid
 import pprint
 import pypandoc
+import re
 from selenium import webdriver
 from datetime import date
 
@@ -555,12 +556,39 @@ def replace_scrolling_logo_block(chart_text):
     new_html = template.render(logos=all_logos, data=logos_format) 
     return new_html
 
-def replace_atag_block(atag_text):
-    ### Add an atag to the section
-    ### TODO
-    return
+def split_html_and_text(html_string):
+    # This regex captures anything inside < and >
+    pattern = r'(<[^>]+>)'
+    
+    # re.split keeps the delimiters if they are enclosed in capturing parentheses ()
+    result = re.split(pattern, html_string)
+    
+    # Filter out any empty strings caused by adjacent tags or tags at the boundaries
+    return [item for item in result if item]
 
-def pocess_anchor_tag_blocks(markdown):
+def replace_atag_block(atag_text):
+    tag_lines = atag_text.strip().split("\n")
+    tag = []
+    retval = True
+    if len(tag_lines) < 2:
+        # This is for a hidden tag
+        id_tag = tag_lines[0].lower().replace(" ", "-")
+        template = f"<div id=\"{id_tag}\"></div>"
+    else:    
+        tag = split_html_and_text(tag_lines[1])
+        # Check that the first tag is a header, div or paragraph tag
+        if tag[0][1][0] not in ['h','d','p']:
+            print ("Error - the anchor tag is not a header, div or paragraph tag")
+            # remove the "=atag=" from the atag_text
+            atag_text = atag_text.replace("=atag=", "")
+            return atag_text
+        #lowercase tag[1] and remove the spaces
+        id_tag = tag[1].lower().replace(" ", "-")
+        template = f"{tag[0][:-1]} id=\"{id_tag}\">{tag[1]}{tag[2]}"
+    return template
+
+def process_anchor_tag_blocks(markdown):
+    #HERE Process all anchor tag blocks in the content.
     delim = "=atag="
     delim_len = len(delim)
     start = markdown.find(delim)
@@ -856,6 +884,7 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     content = process_scrolling_logo_blocks(content)
+    content = process_anchor_tag_blocks(content)
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
 
@@ -904,6 +933,7 @@ def make_root(graph):
         elif node['slug'] == 'home':
             so = 'index'
         print("Writing", content_node['name'], 'from ', content_node['path'])
+        # HERE Process one item at a time and process tags for that piece of content.
         write_content(graph, content_node, so)
 
 
