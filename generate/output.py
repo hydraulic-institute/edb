@@ -514,6 +514,10 @@ def replace_chart_block_pdf(output_path, dir, chart_text):
 
 def replace_ad_block(chart_text):
     ad = parse_dict(chart_text.strip().split("\n"))
+    # print(ad['image'])
+    # If there is a Need Image, etc, update the image
+    if 'image' in ad and ad['image'] in ['Need Image','Needs Image','need image','needs image']:
+        ad['image'] = "/images/image_not_available.png"
     template = env.get_template('ad.jinja')
     ad_html = template.render(ad=ad)
     return ad_html

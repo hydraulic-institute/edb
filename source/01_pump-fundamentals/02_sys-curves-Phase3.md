@@ -54,7 +54,7 @@ Applying the Bernoulli equation to an example system in Figure 1.B.2, it illustr
 <div class="figure-label">Fig. 1.B.2 Bernoulli illustration of static pressure difference at points 1 and 2 based on elevation head and velocity head difference (See calculations 1.B.1a and 1.B.1b for equivalent total head)</div>
 
 
-<div class="calculation-label"><a id="calc1b1a"></a>Calc. 1.B.1a Total head h<sub>1</sub> with respect to datum per Figure 1.B.2
+<div class="calculation-label"><a id="calc1b1a"></a>Calc. 1.B.1a Total head h<sub>1</sub> with respect to datum per Figure 1.B.2</div>
 
 =+=
 
@@ -71,7 +71,7 @@ $$ h_{1} = ({p_{1} \over {ρ·g}}) + ({v_{1}^2 \over {2·g}}) + ({Z_1}) = (3.5 m
 
 =+=
 
-<div class="calculation-label"><a id="calc1b1b"></a>Calc. 1.B.1b Total head h<sub>2</sub> with respect to datum per Figure 1.B.2
+<div class="calculation-label"><a id="calc1b1b"></a>Calc. 1.B.1b Total head h<sub>2</sub> with respect to datum per Figure 1.B.2</div>
 
 =+=
 
@@ -309,35 +309,29 @@ $$ \Delta h_{system} = 80.77\,{m} + {({4.59e^{-03})}·{Q^2}} $$
 [Calc. 1.B.4c](#calc1b4c) gives the system curve data for velocity in Figure 1.B.6 and system head in Figure 1.B.7 as a function of flow rate with the data table following. This is a system that is dominated by the static head. There is a static head <units us = "265 ft" metric = "80.77 m"/> compared to only <units us = "70 ft" metric = "21.33 m"> at the maximum flow rate.
 
 =/=
-
 title: Velocity 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
 series: 2
 series_title_index: 0
-
 =/=
 
 <div class="figure-label">Fig. 1.B.6 Velocity as a Function of Flow Rate for System Curve Example</div>
 
 =/=
-
 title: System Curve 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
 series: 3
 series_title_index: 0
-
 =/=
 
 <div class="figure-label">Fig. 1.B.7 System Head as a Function of Flowate for System Curve Example</div>
 
 =|=
-
 title: System Curve Data 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
-
 =|=

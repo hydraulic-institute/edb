@@ -59,7 +59,7 @@ Fig. 1.D.1 illustrates the approximate shape of performance curves based on the 
 =^=
 title: Rotodynamic Pump Efficiency Prediction
 description: ANSI/HI 20.3 presents a simplified method to predict normally attainable efficiency levels at the best efficiency point for selected types of rotodynamic pumps when the rate of flow, total head per stage, net positive suction head available (NPSHA), and the service conditions are known.
-image: /images/HI-20.3-efficiency.png
+image: ./images/HI-20.3-efficiency.png
 url: https://www.pumps.org/?s=HI+20.3-Rotodynamic+Pump+Efficiency+Prediction
 price: 50.00
 hide_price: true
@@ -173,7 +173,7 @@ setting axial distance doesn’t need to be as precise for this same reason.
 =^=
 title: Rotodynamic Pumps for Design and Application
 description: The purpose of this standard is to provide guidance and recommendations for the general application and design of rotodynamic pumps. This standard provides accepted methods for the evaluation of the hydraulic performance and design of all related and supporting equipment. It does not include detailed hydraulic design methods. This standard recognizes and identifies application requirements, principal features, performance considerations, and the necessary precautions for proper use of rotodynamic pumps.
-image: /images/ANSI-14.3-design.png
+image: ./images/ANSI-14.3-design.png
 url: https://www.pumps.org/?s=ANSI%2FHI+14.3-2019+Rotodynamic+Pumps+for+Design+and+Application
 price: 240.00
 hide_price: true

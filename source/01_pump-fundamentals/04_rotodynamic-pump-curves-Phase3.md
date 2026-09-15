@@ -191,7 +191,7 @@ which is the reduction of the impeller diameter.
 =^=
 title: Application Guideline for Variable Speed Pumping
 description: This guideline has been created to provide pump industry professionals and the end user operators of pumps with the knowledge required to apply variable speed pumping so that it will result in improved energy efficiency and increased reliability. This intension of this guidebook is to educate the pumping industry and to ensure the safe, reliable, and efficient operation of the pumping equipment we all depend on every day.
-image: /images/variable-speed-pumping.jpg
+image: ./images/variable-speed-pumping.jpg
 url: https://www.pumps.org/?s=Application+Guideline+for+Variable+Speed+Pumping
 price: 166.00
 hide_price: true
