@@ -13,7 +13,7 @@ Git needs to be installed on your machine.  You can download it [here](https://g
 
 We will not be using many features of `git`, and since the number of people editing the EDB content will somewhat limited, it will be rare for you to need any advanced knowledge of how git works.
 
-The initial step is to create a Github account - this website is the central repository for the EDB, and it is a private repository - you will need to be granted access before moving forward.  Create your account [here](https://github.com/join?source=header-home), and contact me (sfrees@intelliquip.com) for access.
+The initial step is to create a Github account - this website is the central repository for the EDB, and it is a private repository - you will need to be granted access before moving forward.  Create your account [here](https://github.com/join?source=header-home), and contact Pete Gaydon - pgaydon@pumps.org for access.
 
 Once you have access, open the Command Prompt and use the `cd` command to navigate to the directory you want to put the EDB application in. For example, create a directory called `C:\projects\`, and navigate the command prompt there by entering `cd C:\projects` at the command prompt.
 
@@ -40,6 +40,9 @@ Visual Studio Code allows you to open a folder - `edb` - which is the most effic
 To build EDB content, you will need Python installed, and you will need to install a series of dependencies.
 
 Download and install Python version 3.7 or above [here](https://www.python.org/downloads/release/python-373/)
+
+### Do not go beyond version 3.11
+This is because some of the libraries are not available beyond 3.11
 
 During installation, make sure you add Python to your path, and check off the following options:
 
@@ -196,6 +199,28 @@ The following **are not valid names**, and will result in build failure
 
 ## Section / Topic Nesting
 The EDB is meant to be easily navigated.  Sections (directories) may have files (topics) in them - but no sub-directories.  Thus, the EDB consists of sections, which have several topics.  Each topic page can contain headings and sub headings - but there is no ability to create nested sections/pages.
+
+### Nested Sections
+Nested sections in a topic can be defined by applying an Anchor Tag custom extension to the markdown in the topic markdown. The anchor tag will refer to a specific section on the page. Anchor tags will also automatically generate a 3rd level to the menu structure with the title defined in the tag. The custom extension `=atag=` should be used immediately before the section it applies to. It should wrap the title to be shown in the nested section in the menu structure and when clicked on, will take the user to the section following the `atag` on the webpage.
+Wrap the `=atag=` around a Heading `#`.  Do not repeat the Heading. 
+
+Ex:
+```
+=atag=
+### System Curve Application
+=atag=
+The System Curve .....
+```
+
+If you do NOT want to use a Heading, then just put an `=atag=` around unique text that will be used as the identifier for the tag.
+
+Ex:
+```
+=atag=
+newsection
+=atag=
+- Special paragraph
+```
 
 This choice was made to ease navigation, and also to ensure each topic page can have adequeate detail.  It is critical for SEO to ensure the EDB has long content - not a series of very short pages.
 
@@ -415,7 +440,7 @@ The first column of every row in the CSV file should always contain the followin
 	- More than one row can contain the **heading** meta data.  The font size of the 2nd and following heading rows will be reduced by 1/4 to `.75rem`. 
 	- To have a header span multiple columns, just leave any number of following columns blank that you want the header to span.  This can be seen in Section 3 - Losses in Nozzles.
 		- One thing to note is to make sure the CSV file does NOT have extra empty columns at the end.
-- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in ever table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
+- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in every table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
 - **data** - The row is interpreted as standard data - not a heading.  
 
 #### Example
@@ -504,6 +529,7 @@ The first row must contain Section information as noted in the following bullets
 2. Continuing on the same row as the Section Title (*Column A*), *Column B* and on should contain that section's table headers.
 3. Any column after *Column B* can contain an image identifier that will be displayed between the Section Header and the table. This column will otherwise be ignored.:
    - Identify the image with: *"Image?filename.png"* 
+   - If there is no image available, until you have one, please use: *"Image?image_not_available.png"*
    - To limit the size of the file, *"Image?filename.png?75%"* (100% is default)
    - The image should be saved to the source section `images` folder.  Ex:  `source/00_introduction-definitions-references/images/filename.png`
 4. Any comments should come after the last column of actual data.  The heading for a comment column can be one of: *Comment, Search, or an empty string*.  The first column that matches any of these strings will be ignored and no more columns will be parsed for that section.
@@ -594,12 +620,13 @@ External links follow standard Markdown link syntax.  Often, links to external s
 ```
 ### Sales Links
 Hydraulic Institute offer seminars, courses, books, and resources that deliver added value to readers of the EDB.  
+- Put the image in the `./images` folder.  Make sure to reference the `./images` folder in the markdown
 
 ```
 =^=
 title: Pump System Assessments - 2 Part Webinar
 description: Pump system assessments and pump system optimization present significant opportunities for operations and maintenance cost savings and for reducing energy consumption. In this course, the user will learn the tasks and knowledge required for pump system assessments, the different levels of assessments, and the steps required to implement a pump system assessment. Also covered are the elements and format of the pump system assessment report, including examples. The user is also presented with case studies and real-world examples of pump system assessments and examples of how to use analysis tools, such as hydraulic modeling, to assist with the assessment.
-image: /images/pumpsystemsmatter.png
+image: ./images/pumpsystemsmatter.png
 url: https://training.pumps.org/products/pump-systems-assessment-e-learning-course
 price: 99.99
 hide_price: true

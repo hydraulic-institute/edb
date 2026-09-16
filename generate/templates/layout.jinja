@@ -658,11 +658,13 @@
                     {{version['type']}}
                 </div>
                 {% endif %}
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+                <div style="position: absolute; right: 0;">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
                 
             </div>
 
@@ -813,7 +815,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+                    <!--HERE-->
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         <div id='nav-accordion' class='accordion nav-accordion '>
                         {% for s in sections|sort(attribute='sort') %}
@@ -854,6 +856,8 @@
                                                     </ul>
                                                 </li>
                                             {% elif child['metadata']['title']%}
+                                            <!--KK This is where we would take each li item and make it another dropdown with the anchor tags 
+                                            Clicking one of these will bring up the page and open an accordion with the anchor tags into the page.-->
                                                 <li class="menu-list">
                                                     {% if child['slug'] == topic  and s['slug'] == section %}
                                                         <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
