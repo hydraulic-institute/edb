@@ -924,7 +924,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # pprinter.pprint(related)
 
     # pprinter.pprint(node)
-    topic_section = related[0]['path'].split('\\')[-1].split('_')[-1]
+    topic_section = node['path'].split('\\')[-1].split('_')[-1]
     print('Section: '+topic_section+' Topic: '+slug)
     html = template.render(section=topic_section, topic=slug, node=node,
                            content=content, sections=sections,
