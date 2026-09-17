@@ -109,7 +109,7 @@ You should see the web site:
 <img src='./images/edb.png'/>
 
 # Creating Content
-All content is created in the `/source` directory.  The contents of the directory include a top level `index.md` which is the home page of the site, and directories which define the section structure of the EDB.  Each directory will contain additional `.md` files which become HTML pages, along with additional data like images and csv file to support the pages.  **Sub-directories in sections are not supported**.
+All content is created in the `/source` directory.  The contents of each of the directories (Topics) includes a top level `index.md` which contains the menu title for the topic. Each topic will contain additional `.md` files which become HTML pages, along with additional data like images and csv file to support the pages.  **Sub-directories in topics are not supported**.
 
 ## Metadata
 Each content page, along with index.md files in each directory, contain meta data sections that define basic properties of the page/section to be created.  At the very least, each `.md` file will have a title - which will be what is used to identify the content on the HTML page.
@@ -203,22 +203,12 @@ The EDB is meant to be easily navigated.  Sections (directories) may have files 
 ### Nested Sections
 Nested sections in a topic can be defined by applying an Anchor Tag custom extension to the markdown in the topic markdown. The anchor tag will refer to a specific section on the page. Anchor tags will also automatically generate a 3rd level to the menu structure with the title defined in the tag. The custom extension `=atag=` should be used immediately before the text it applies to. 
 
-You can apply an anchor tag to a Heading (`#`) by putting the `=atag=` tags around the heading. When clicked on, the user will be taken to the text following the `=atag=` on the webpage.  The heading WILL be on the webpage as expected.
+To apply an anchor tag, put `=atag=` tags around text that you want to be displayed in the menu structure within a Sub-topic.  This position on the page is where the user will be taken when clicking on the menu item.
 
 Ex:
 ```
 =atag=
-### System Curve Application
-=atag=
-The System Curve .....
-```
-
-To apply an anchor tag anywhere else on the page, put `=atag=` tags around unique text that will be used as the identifier for the tag. This text will NOT be displayed on the webpage.
-
-Ex:
-```
-=atag=
-newsection
+Special Section
 =atag=
 - Special paragraph
 ```

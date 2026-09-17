@@ -571,28 +571,22 @@ def replace_atag_block(atag_text):
     tag = []
     tag_string = ''
     retval = True
-    if len(tag_lines) < 2:
-        # This is for a hidden tag
-        tag_string = tag_lines[0]
-        id_tag = tag_lines[0].lower().replace(" ", "-")
+    tag_object = {'id': '', 'text': ''}
+    if len(tag_lines) == 1:
+        tag_string = " ".join(tag_lines[0].split())
+        cleaned_tag_string = re.sub(r'[^a-zA-Z\s]', '', tag_lines[0])
+        cleaned_tag_string = " ".join(cleaned_tag_string.split())
+        # Only keep letters and spaces
+        # replace multiple spaces with a single space
+        id_tag = cleaned_tag_string.lower().replace(" ", "-")
         template = f"<div id=\"{id_tag}\"></div>"
-    else:    
-        tag = split_html_and_text(tag_lines[1])
-        # Check that the first tag is a header, div or paragraph tag
-        if tag[0][1][0] not in ['h','d','p']:
-            print ("Error - the anchor tag is not a header, div or paragraph tag")
-            # remove the "=atag=" from the atag_text
-            atag_text = atag_text.replace("=atag=", "")
-            return atag_text
-        #lowercase tag[1] and remove the spaces
-        tag_string = tag[1]
-        id_tag = tag[1].lower().replace(" ", "-")
-        template = f"{tag[0][:-1]} id=\"{id_tag}\">{tag[1]}{tag[2]}"
-    return tag_string,template
+        tag_object['id'] = id_tag
+        tag_object['text'] = tag_string
+    return tag_object,template
 
 def process_anchor_tag_blocks(markdown):
     #HERE Process all anchor tag blocks in the content.
-    atag_list = []
+    atag_obj_list = []
     delim = "=atag="
     delim_len = len(delim)
     start = markdown.find(delim)
@@ -601,12 +595,12 @@ def process_anchor_tag_blocks(markdown):
         before = markdown[:start]
         within = markdown[start+delim_len:end]
         after = markdown[end+delim_len:]
-        atag, atag_template = replace_atag_block(within)
-        atag_list.append(atag)
+        atag_obj, atag_template = replace_atag_block(within)
+        atag_obj_list.append(atag_obj)
         markdown = before + \
             atag_template + after
         start = markdown.find(delim)
-    return atag_list, markdown
+    return atag_obj_list, markdown
    
 def process_scrolling_logo_blocks(markdown):
     delim = "=scrolling-logos="
@@ -890,9 +884,14 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     content = process_scrolling_logo_blocks(content)
-    atag_list, content = process_anchor_tag_blocks(content)
-    node['atag_list'] = atag_list
-    # add the atag list to the node in the section
+    atag_obj_list, content = process_anchor_tag_blocks(content)
+    node['atag_obj_list'] = atag_obj_list   
+    if len(atag_obj_list) > 0:
+        for atag_obj in atag_obj_list:
+            print(f"Atag ID: {atag_obj['id']}, Text: {atag_obj['text']}")
+    else:
+        print("No atag objects found")
+    # add the atag obj list to the node in the section
     # find the node in the sections and then the child node with the same slug
     found = False
     for index in range(len(sections)):
@@ -900,7 +899,7 @@ def write_content(graph, node, slug_override=None, path="."):
         if sections[index]['path'] == node['path']: 
             for index2 in range(len(sections[index]['children'])):
                 if sections[index]['children'][index2]['slug'] == node['slug']:
-                    sections[index]['children'][index2]['atag_list'] = atag_list
+                    sections[index]['children'][index2]['atag_obj_list'] = atag_obj_list
                     found = True
                     break
             if found:
@@ -942,7 +941,7 @@ def make_root(graph):
     statics()
 
     nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
-
+    # HERE
     for node in nodes:
         so = None
         content_node = node
@@ -952,6 +951,7 @@ def make_root(graph):
                 if child['slug'] == 'home':
                     so = 'index'
                     content_node = child
+                    print("Home/INDEX node: ", content_node['name'], content_node['path'])
                     break
         elif node['slug'] == 'home':
             so = 'index'
