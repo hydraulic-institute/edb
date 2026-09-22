@@ -14,8 +14,10 @@ The affinity rules indicate how the pump curve changes as a function of rotation
 Understanding the pump curve and how it changes with respect to speed, impeller trimming, and parallel and series operation is essential for proper pump selection. The flow rate, pump total head, pump input power and specific gravity of the liquid can be used to calculate pump efficiency. Liquid viscosity will affect the pump total head, flow, efficiency, NPSHR and power, which is not discussed here. Refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.7&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 9.6.7</a> for effects of liquid viscosity on rotodynamic pump performance.
 
 =atag=
-### Pump Total Head Curve
+Pump Total Head Curve
 =atag=
+
+### Pump Total Head Curve
 
 The **head versus flow curve** is the most commonly used curve to describe pump performance. Pump total head (H) is plotted on the y-axis in <units us = "feet (ft)" metric = "meters (m)"></units>. This is the measure of energy increase per unit weight of the liquid, imparted to the liquid by the pump, and is the difference between the total discharge head and the total suction head. On the x-axis is the flow rate, typically in <units us = "gallons per minute (GPM)" metric = "cubic meters per hour (m^3^/h)"/>.
 
@@ -32,8 +34,10 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b1"></a>Fig. 1.B.1 Head versus flow rate curve</div>
 
 =atag=
-### Pump Efficiency Curve
+Pump Efficiency Curve
 =atag=
+
+### Pump Efficiency Curve
 
 The **Pump efficiency versus flow curve** is shown as a percentage on most pump curves. It shows pump efficiency at various flow rates and the flow rate where efficiency is at a maximum is called the pump’s **best efficiency point (BEP)**. BEP is an important operating point that is further described later in this section. Pump efficiency is defined by [Eq. 1.B.3](#eq1b3) as the ratio of pump output power and pump input power.
 
@@ -59,8 +63,10 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b2"></a>Fig. 1.B.2 Pump efficiency curve</div>
 
 =atag=
-### Pump Input Power Curve
+Pump Input Power Curve
 =atag=
+
+### Pump Input Power Curve
 
 The **pump input power curve** shows the amount of input power required for different flow rates. This is the power used to select the driver and can be determined by [Eq. 1.B.4](#eq1b4).
 
@@ -105,8 +111,10 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b3"></a>Fig. 1.B.3 Pump input power curve</div>
 
 =atag=
-### Net Positive Suction Head Required (NPSHR) Curve
+Net Positive Suction Head Required (NPSHR) Curve
 =atag=
+
+### Net Positive Suction Head Required (NPSHR) Curve
 
 The **NPSHR curve** plots NPSHR for different flow rates. NPSHR is the minimum NPSH needed to achieve the specified performance 
 at the specified flow rate, speed, and pumped liquid. NPSHR in combination with the system's available NPSH is an important considerations in pump selection. NPSHR is further defined in <a href="/pump-fundamentals/pump-principles.html" target="self">Rotodynamic Pump Principles</a>. 
@@ -122,8 +130,10 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b4"></a>Fig. 1.B.4 Net positive suction head required curve</div>
 
 =atag=
-### Operating Regions and Points
+Operating Regions and Points
 =atag=
+
+### Operating Regions and Points
 
 ![](./images/iB-5-Relative-Life-expectancy-Operating-Region-and-points.png#center "")
 <div class="figure-label"><a id="fig1b5"></a>Fig. 1.B.5 Relative life expectancy, operating regions, and operating points</div>
@@ -153,8 +163,10 @@ hide_price: true
 =^=
 
 =atag=
-### Parallel and Series Pump Implications
+Parallel and Series Pump Implications
 =atag=
+
+### Parallel and Series Pump Implications
 
 Two or more pumps in a system can be placed either in parallel or in series. In **parallel**, a system consists of two or more pumps that are configured such that each draws from the same suction reservoir, wet well, or header, and each discharges to the same discharge reservoir or header. In **series**, a system consists of two or more pumps that are configured such that the discharge of one pump feeds the suction of a subsequent pump.
 
@@ -197,8 +209,10 @@ hide_price: true
 =^=
 
 =atag=
-### Affinity Rules
+Affinity Rules
 =atag=
+
+### Affinity Rules
 
 Rotodynamic pump performance can be altered to meet a design point by adjusting the pump speed as described by the affinity rules. Pump affinity rules are fundamental principles, based on kinematic, dynamic, and geometric similarity, that govern the relationships of pump scaling and modeling. Application of the affinity rules to pump speed changes are described below, and you can refer to [ANSI/HI 14.6](http://www.pumps.org/standards) for more information on pump modeling and to [ANSI/HI 14.3](https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name) regarding limitations in using the affinity rules.
 
@@ -248,7 +262,6 @@ data: total-head-feet.csv
 <div class="table-label"><a id="tbl1b1"></a>Tbl. 1.B.1 Data for normal operating conditions</div>
 
 =/=
-
 title: Normal Operating Conditions
 data: total-head-feet.csv
 x: 1
@@ -340,8 +353,10 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b12"></a>Fig. 1.B.12 Pump curves comparing base-speed and reduced-speed conditions</div>
 
 =atag=
-### Changes in Impeller Diameter
+Changes in Impeller Diameter
 =atag=
+
+### Changes in Impeller Diameter
 
 Rotodynamic pump performance can be altered by changing the impeller diameter, and many centrifugal pumps have their performance represented as a function of impeller diameter to support the selection of the appropriate curve for a pump application to fit the desired system conditions. [Fig. 1.B.13](#fig1b13) illustrates the trimming of a radial flow impeller where it is cut straight across, and [Fig. 1.B.14](#fig1b14) is a representation of rotodynamic pump performance for a range of impeller diameters.
 
@@ -364,8 +379,10 @@ Trimming the impeller down in diameter will move the pump curve down. The same c
 The impeller geometry changes with the pump specific speed, which may impact impeller trimming. Impeller trimming is typically applied to radial and mixed flow impellers, and the trimming methods may vary. Refer to [ANSI/HI 14.3](https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name) for additional information and the impeller trimming section below.
 
 =atag=
-### Impeller Trimming and the Effect on Performance
+Impeller Trimming and the Effect on Performance
 =atag=
+
+### Impeller Trimming and the Effect on Performance
 
 As noted in the preceding section, changing the impeller diameter will change pump performance. It is common to trim an impeller to meet a rated condition that is below the pump curve. Because changes in impeller diameter do not maintain similarity, the affinity rules are not intended to be applied for changes in impeller diameter. The information presented in [Fig. 1.B.14](#fig1b14) is representative of tested performance, and it can be noted that the efficiency does not remain constant as diameter changes and the relationship between head and flow with diameter change does not exactly match the affinity rules. However, affinity rules can be used for minor impeller diameter changes within 5% with acceptable accuracy. [Eq. 1.B.6a](#eq1b6a) through [Eq. 1.B.6c](#eq1b6c) can be modified for impeller diameter change by substituting impeller diameter (D) for rotational speed (n), as shown in the worked example below. If the diameter reduction exceeds 5% from the original, correction coefficients should be used for the diameter calculated using affinity rules, such as described in *Centrifugal and Axial Flow Pumps* by A.J. Stepanoff.
 
@@ -422,8 +439,10 @@ $$ H_2 = 89 · ({10.12 \over 10.625})^2 = 81\,ft $$
 With the impeller trimmed down to 10.12 in, the pump parameters, flow rate and head, now satisfy the process requirements. Also, as the trim comprises less than a 5% reduction of the original diameter, no further correction to the calculated diameter is necessary.
 
 =atag=
-### Alternate Impeller Trimming Methods
+Alternate Impeller Trimming Methods
 =atag=
+
+### Alternate Impeller Trimming Methods
 
 It is common to trim a radial or mixed flow impeller to meet performance requirements. The information provided in the preceding *Changes in Impeller Diameter* section [Fig. 1.B.13](#fig1b13), provides details on expected performance changes as impeller diameter is changed. However, it should be noted that this is representative of a traditional trim where a radial flow impeller is cut consistently across the vanes and shrouds, as shown in [Fig. 1.B.13](#fig1b13), or for mixed flow impellers based on mean diameter change while maintaining the original angle.
 
@@ -465,8 +484,10 @@ The following is not a complete list, but it discusses some alternate impeller t
 <div class="figure-label"><a id="fig1b22"></a>Fig. 1.B.22 Qualitative effect of increasing angle (&theta;) when trimming impeller.</div>
 
 =atag=
-### Vane Trailing Edge Profiling
+Vane Trailing Edge Profiling
 =atag=
+
+### Vane Trailing Edge Profiling
 
 **Underfiling** is a procedure performed on the impeller vane trailing edge where material is removed from the underside of the vane outlet, as illustrated in [Fig. 1.B.23](#fig1b23). A manufacturer may employ underfiling as a standard methodology to achieve consistent vane profiles or to achieve a desired performance or operational requirement. The effects of underfiling are presented qualitatively and should only be performed by the pump manufacturer. If underfiling is done to meet a specification, it is important to precisely document the modification for future replacements.
 
@@ -487,8 +508,10 @@ Underfiling helps to achieve uniform vane tip thickness and consistent vane-to-v
 Overfiling does not increase the distance between vanes or exit area; therefore, it has minimal impact on hydraulic performance. The effect of overfiling thins a blunt trailing edge, which may limit the impeller vane pass pulsation and related vibration.
 
 =atag=
-### Summary of Impeller Trimming Vane Profile Modifications
+Summary of Impeller Trimming Vane Profile Modifications
 =atag=
+
+### Summary of Impeller Trimming Vane Profile Modifications
 
 This summary table is presented qualitatively and the modifications within are recommended to be applied only by the manufacturer with specific knowledge of how each modification will affect pump performance.
 

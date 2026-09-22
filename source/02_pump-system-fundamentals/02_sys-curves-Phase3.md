@@ -7,7 +7,9 @@ description: Demonstrates how to calculate the pump system curve, which includes
 # System Curves 
 Pump system head requirements change with flow rate. This relationship is shown graphically by the system curve, which represents the total head required by a piping system at different flow rates. The total head can be split into static head (elevation or lift-dependent) and dynamic head (velocity or friction-dependent). A system curve will show how sensitive the operating point (the intersection of the system curve and pump curve) is to flow. If the system curve is wrong, the pump will likely be mis-sized — it will run at a flow and head that wasn’t the design point.
 
-=atag=System curve=atag=
+=atag=
+System curve
+=atag=
 ### What is a system curve?
 A system curve shows the total differential system head (Δh<sub>system</sub>) or head required to be developed by the pump, referred to as pump total head (H). The system head varies as a function of flow rate as illustrated in [Fig. 1.B.1](#fig1b1). It is important to accurately characterize the system curve in order to select the correct pump for various operating conditions because the operating point of the system will be dependent on the intersection of the system curve and the pump curve as defined in [Eq. 1.B.2](#eq1b2) and discussed further in the [Operating Point](/pump-system-fundamentals/operating-point.html) section.
 
@@ -22,7 +24,9 @@ A system curve shows the total differential system head (Δh<sub>system</sub>) o
 ### What is head and why is it used?
 Head is the expression of the energy content of a liquid in reference to any arbitrary datum expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"/> of liquid. Pressure and head of a liquid in a piping system have a physical relationship as described in the following subsection on the Bernoulli equation [Eq. 1.B.1](#eq1b1) and is also explained in the [Pump System Foundational Concepts](/pump-system-fundamentals/foundational-concepts.html) section with [Eq. 1.A.1a](#eq1a1a) and [Eq. 1.A.1b](#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems independent of the fluid density. Refer to this section for additional information on pump total head, pressure and why head is commonly used for system curves.
 
-=atag=Bernoulli equation=atag=
+=atag=
+Bernoulli equation
+=atag=
 ### Bernoulli Equation Expressed in Terms of Head
 Based on the conservation of energy, the Bernoulli equation describes the relationship between three energy terms for a fluid that is both incompressible and has no frictional loss and no added energy, such as from heat transfer, chemical reactions or a pump. Defined in [Eq. 1.B.1](#eq1b1), the head in Bernoulli systems always remains constant (assuming no energy is added or removed at the boundaries), which is a simplification that is addressed in following sections. The components of the energy expressed in the Bernoulli equation are pressure head, velocity head, and elevation head.
 
@@ -92,7 +96,9 @@ $$ h_{2} = ({32.2 \over {1}} · {144 \over 1} · {p_{2} \over {ρ·g}}) + ({v_{2
 $$ h_{2} = ({p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2}) = (2.43 m) + (0.81 m) + (0.61 m) = 3.8 m $$
 =+=
 
-=atag= System curve calculation =atag=
+=atag=
+System curve calculation
+=atag=
 ### How is the system curve calculated?
 The preceding discussion on the Bernoulli equation provides a foundation for determining the system’s total head as a function of velocity or flow rate ([Fig. 1.B.1](#fig1b1)); however, it needs to be expanded because friction losses due to fluid viscosity will exist and pumps will add energy to the system. [Fig. 1.B.3](#fig1b3) illustrates the pump total head (H) and the frictional head loss in the pump suction piping (h<sub>fs</sub>) and the pump discharge piping (h<sub>fd</sub>). The frictional head losses are the result of pipe friction and flow through tank entrances and exits, pipes, fittings, valves, and other end-use equipment in the system as discussed in the [Pipe Frictional Losses](/fluid-flow/pipe-frictional-losses.html) and [Losses in Valves, Fittings and Bends](/fluid-flow/losses-in-valves-fittings-and-bends.html) sections.
 
@@ -169,7 +175,9 @@ price: 700
 hide_price: true
 =^=
 
-=atag= System curve shape =atag=
+=atag=
+System curve shape
+=atag=
 ### What is the effect of the system curve shape?
 
 In some systems frictional losses will be the majority of overall head loss. These systems will have a steeper system curve because the frictional head loss is generally proportional to velocity squared.
@@ -203,7 +211,9 @@ price: 159.99
 hide_price: true
 =^=
 
-=atag= System curve demonstrator =atag=
+=atag=
+System curve demonstrator
+=atag=
 ### Educational Demonstration System Curve
 This demonstrator shows qualitatively how various parameters affect the system curve. You can slide the toggle to change system parameters for tank levels, frictional losses, and tank pressure to see how the system curve varies.
 
@@ -219,7 +229,9 @@ totalResistance: 5
 =d=
 <div class="demo-label">Demo. 1.B.1 System curve</div>
 
-=atag= Calculation example =tag=
+=atag=
+Calculation example
+=atag=
 ### System Curve Calculation Worked Example (U.S. & Metric Units)
 
 Consider the system in [Fig. 1.B.6](#fig1b6) and develop a system curve for the flows <units us = "from 0 to 300 GPM." metric = "from 0 to 68.14 m^3/h. **Note** metric values in the worked example are converted from US units in Fig. 1.B.6."/>
@@ -321,36 +333,30 @@ $$ \Delta h_{system} = 80.77\,{m} + 4.59e^{-3}·Q^2 $$
 [Calc. 1.B.4c](#calc1b4c) is used to generate the velocity data in [Fig. 1.B.7](#fig1b7) and the system head data in [Fig. 1.B.8](#fig1b8), each as a function of flow rate with the data table following. This system is dominated by the static head. The static head is <units us = "265 ft" metric = "80.77 m"/> compared with approximately <units us = "70 ft" metric = "21.33 m"/> at the maximum flow rate.
 
 =/=
-
 title: Velocity 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
 series: 2
 series_title_index: 0
-
 =/=
 
 <div class="figure-label"><a id="fig1b7"></a>Fig. 1.B.7 Velocity as a function of flow rate for system curve example</div>
 
 =/=
-
 title: System Curve 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 x: 1
 series: 3
 series_title_index: 0
-
 =/=
 
 <div class="figure-label"><a id="fig1b8"></a>Fig. 1.B.8 System head as a function of flow rate for system curve example</div>
 
 =|=
-
 title: System Curve Data 
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
-
 =|=
 

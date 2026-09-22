@@ -205,6 +205,8 @@ Nested sections in a topic can be defined by applying an Anchor Tag custom exten
 
 To apply an anchor tag, put `=atag=` tags around text that you want to be displayed in the menu structure within a Sub-topic.  This position on the page is where the user will be taken when clicking on the menu item.
 
+Do **NOT** put blank lines after the initial tag and before the ending tag.
+
 Ex:
 ```
 =atag=
@@ -369,8 +371,9 @@ All pages can contain blocks for tabular data.  Tabular data is entered into the
 
 **Important** - while HTML supports tables, using them directly will be extremely error-prone, and you will not be able to take advantage of the unit conversions and formatting that the EDB will give you.
 
-Instead, tables are supported via a *custom extenstion* to markdown syntax. To include a table, you must define a `=|=` line, followed by 
-meta data describing the table, and finally end the block with an other line containing only `=|=`.
+Instead, tables are supported via a *custom extenstion* to markdown syntax. To include a table, you must define a `=|=` line, followed by meta data describing the table, and finally end the block with an other line containing only `=|=`. 
+
+Do **NOT** put blank lines after the initial tag and before the ending tag.
 
 For example:
 ```
@@ -550,6 +553,8 @@ The X axis of the chart is defined by specifying the *column* within the CSV tha
 A chart can contain any number of series - specified by a list of columns.  In this case, we are creating a series for Velocity and Head Loss - based on the previous example.
 
 Finally, the series title index is the row number where the labels for each series should be derived.  Note that this is a 0-based index scheme - and does not include the first row in the CSV file which was used to define data types.  
+
+Do **NOT** put blank lines after the initial tag and before the ending tag.
 
 ```
 =/=
