@@ -641,6 +641,7 @@
                     <div class="dropdown-menu is-dark" id="dropdown-menu4" role="menu">
                         <div class="dropdown-content">
                          <a href="http://pumps.org/" class="dropdown-item">Hydraulic Institute</a>
+                         <!--HERE Fix this link when home is updated-->
                          <a href="/introduction-definitions-references/home.html" class="dropdown-item">Hydraulic Institute Data Tool</a>
                          <a href="http://pumps.org/Standards_and_Guidebooks.aspx" class="dropdown-item">Publications</a>
                          <a href="http://pumps.org/Training.aspx" class="dropdown-item">Training</a>
@@ -658,11 +659,13 @@
                     {{version['type']}}
                 </div>
                 {% endif %}
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+                <div style="position: absolute; right: 0;">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
                 
             </div>
 
@@ -813,31 +816,37 @@
                             </a>
                         </li>
                     </ul>
-                    
+
+                    <!--HERE-->
                     <ul class='topic-list' v-else data-section="{{section}}" data-topic="{{topic}}">
                         <div id='nav-accordion' class='accordion nav-accordion '>
                         {% for s in sections|sort(attribute='sort') %}
+                        <!--1-->
                             <div class="accordion-item nav-accordion-item mb-2">
                                 <h2 class="accordion-header" id="{{s['slug']}}-header">
+                                    <!-- Expanded by default if it is considered a section-->
                                     {% if section == s['slug'] %}
-                                        <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                        <button data-level="section" id="{{s['slug']}}-button" class="accordion-button nav-accordion-button menu-label menu-section" type="button" data-bs-toggle="collapse" 
                                         data-bs-target="#{{s['slug']}}" aria-expanded="true">
                                         {{s['metadata']['title']}}
                                     </button>
                                 </h2>
+                                <!--2-->
                                 <div id="{{s['slug']}}" class="accordion-collapse" aria-labelledby="{{s['slug']}}-header">
                                     {% else %}
-                                    <button id="{{s['slug']}}-button" class="accordion-button nav-accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
+                                    <!-- Collapsed by default if it is not considered a section-->
+                                    <button data-level="notsection" id="{{s['slug']}}-button" class="accordion-button nav-accordion-button collapsed menu-label menu-section" type="button" data-bs-toggle="collapse" 
                                         data-bs-target="#{{s['slug']}}" aria-expanded="false">
                                         {{s['metadata']['title']}}
                                     </button>
                                 </h2>
                                 <div id="{{s['slug']}}" class="accordion-collapse collapse" aria-labelledby="{{s['slug']}}-header">
                                     {% endif %}
+                                    <!--3-->
                                     <div class="accordion-body nav-accordion-body">
                                         {% for child in s['children']|sort(attribute='sort') %}
                                             {% if child['directory']%}
-                                                <li>
+                                                <li data-level="directory">
                                                     <label style="padding-left:1em">{{child['metadata']['title']}}</span>
                                                     <ul>
                                                         {% for stopic in child['children']|sort(attribute='sort') %}
@@ -854,13 +863,15 @@
                                                     </ul>
                                                 </li>
                                             {% elif child['metadata']['title']%}
-                                                <li class="menu-list">
+                                            <!--KK This is where we would take each li item and make it another dropdown with the anchor tags 
+                                            Clicking one of these will bring up the page and open an accordion with the anchor tags into the page.-->
+                                                <li class="menu-list" data-level="child">
                                                     {% if child['slug'] == topic  and s['slug'] == section %}
-                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                        <a data-level="1" id='{{s['slug']}}_{{child['slug']}}' class='menu-topic active_topic is-active' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                     {% elif child['slug'] == 'home' %}
-                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                        <a data-level="2" id='{{s['slug']}}_{{child['slug']}}' class='menu-topic default_topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                     {% else %}
-                                                        <a id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
+                                                        <a data-level="3" id='{{s['slug']}}_{{child['slug']}}' class='menu-topic' href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor:default;text-decoration:none;">{{child['metadata']['title']}}</a>
                                                     {% endif %}
                                                 </li>
                                             {% endif %}
