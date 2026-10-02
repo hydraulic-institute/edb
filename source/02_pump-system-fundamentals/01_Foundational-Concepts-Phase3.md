@@ -20,9 +20,9 @@ Pressure and Head
 =atag=
 ### What are Pressure and Head?
 
-Head (h) expresses the energy per unit weight relative to a reference condition and is expressed in <units us = "feet (ft)" metric = "meters (m)"/> of the liquid being pumped relative to a defined datum elevation.
+Head (h) expresses the energy per unit weight relative to a reference condition and is expressed in <units us = "feet (ft)" metric = "meters (m)"></units> of the liquid being pumped relative to a defined datum elevation.
 
-Pressure (p) is the force acting on a given area typically expressed in <units us = "pounds per square inch (psi)" metric = "pascals (Pa)"/>. It is energy density or energy per unit volume in the liquid.
+Pressure (p) is the force acting on a given area typically expressed in <units us = "pounds per square inch (psi)" metric = "pascals (Pa)"></units>. It is energy density or energy per unit volume in the liquid.
 
 ### Why is Head used in Pump Systems?
 Positive displacement pumps commonly use pressure to describe their performance. However, for rotodynamic pumps, developed head and piping-system frictional head losses are independent of liquid density making head the more convenient basis for pump-system calculations. If pressure were to be used, the representative performance would vary with liquid density per [Eq. 1.A.1a](#eq1a1a) and [Eq. 1.A.1b](#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems, which enables the performance of the pump and the energy requirements of the system to be expressed independently of liquid density for incompressible flow. 
@@ -80,8 +80,8 @@ Where:
 <li>Z is elevation head (height of the liquid column) <units us = "(ft)" metric = "(m)"/></li>
 <li>p<sub>g</sub> is static pressure gauge reading <units us="(psi)" metric="(Pa)"/></li>
 <li>h is pressure head <units us="(ft)" metric="(m)"/></li>
-<li>ρ is density of the liquid <units us="(lbm/ft^3)" metric="(kg/m^3)"/></li>
-<li>g is acceleration due to gravity <units us="(ft/s^2)" metric="(m/s^2)"/></li>
+<li>ρ is density of the liquid <units us="(lbm/ft^3^)" metric="(kg/m^3^)"/></li>
+<li>g is acceleration due to gravity <units us="(ft/s^2^)" metric="(m/s^2^)"/></li>
 <li v-if='unit_set=="us"'>144 is to convert between square inches (in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
 <li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
 </ul>
@@ -180,8 +180,8 @@ Where:
 <li>p<sub>g</sub> is static pressure <units us = "(psi)" metric = "(Pa)"/></li>
 <li>p<sub>v</sub> is velocity pressure <units us = "(psi)" metric = "(Pa)"/></li>
 <li>v is velocity <units us = "(ft/s)" metric = "(m/s)"/></li>
-<li>g is acceleration due to gravity <units us = "(ft/s^2)" metric = "(m/s^2)"/></li>
-<li>ρ is density <units us = "(lbm/ft^3)" metric = "(kg/m^3)"/></li>
+<li>g is acceleration due to gravity <units us = "(ft/s^2^)" metric = "(m/s^2^"/></li>
+<li>ρ is density <units us = "(lbm/ft^3^)" metric = "(kg/m^3^)"/></li>
 <li v-if='unit_set=="us"'>144 is to convert between square inches (in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
 <li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
 </ul>

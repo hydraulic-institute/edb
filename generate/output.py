@@ -909,6 +909,8 @@ def write_content(graph, node, slug_override=None, path="."):
     #is the node a directory?
     if node['directory']:
         print("Directory: ", node['slug'])
+    # Last step injects the Vue markup necessary for some components - such as <units> elements.
+    content = process_vue_components(content)
     template = env.get_template('topic.jinja')
     related = [section['children'] for section in sections if section['path']
                == node['path'] and section['slug'] != node['slug']]
