@@ -834,12 +834,32 @@
                         {% for s in sections|sort(attribute='sort') %}
                             {% if s['slug'] == 'home' %}
                             <div class="mb-2">
-                                <h2 class="accordion-header" id="{{ s['slug'] }}-header">
-                                    <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}_{{ s['slug'] }}" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link">
-                                        <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
-                                        {{ s['metadata']['title'] }}
-                                    </a>
-                                </h2>
+                                {% if s['atag_obj_list']|length == 0 %}
+                                    <h2 class="accordion-header" id="{{ s['slug'] }}-header">
+                                        <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link">
+                                            <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
+                                            {{ s['metadata']['title'] }}
+                                        </a>
+                                    </h2>
+                                {% else %}
+                                    <div class="accordion accordion-item nav-accordion-item mb-2">
+                                        <h2 class="accordion-header" id="{{ s['slug'] }}-header">
+                                            <button data-level="section" id="{{ s['slug'] }}-button" class="accordion-button nav-accordion-button menu-label home-nav-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ s['slug'] }}-accordion" aria-expanded="false">
+                                                <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
+                                                {{ s['metadata']['title'] }}
+                                            </button>
+                                        </h2>
+                                        <div id="{{ s['slug'] }}-accordion" class="accordion-collapse collapse" aria-labelledby="{{ s['slug'] }}-header">
+                                            <ul class="nav-accordion-body">
+                                                {% for atag in s['atag_obj_list'] %}
+                                                    <li class="menu-list">
+                                                        <a id="{{ atag['id'] }}-menu-item" href="/home/home.html#{{ atag['id'] }}">{{ atag['text'] }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             </div>
                             {% endif %}
                         {% endfor %}

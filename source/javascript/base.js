@@ -14,8 +14,23 @@ $(window).on('pageshow',function() {
     $('#fullpage').show();
     check_each_dt();
     //In case a search is requested, scroll to the first result
-    if ( $('.current_mark').length )
+    let current_hash = "";
+    let storage_active_topic = localStorage.getItem("active_topic");
+    if (storage_active_topic) {
+        storage_active_topic = JSON.parse(storage_active_topic);
+        current_hash = storage_active_topic['hash'];
+    }
+    if ( $('.current_mark').length ) {
         $('.current_mark').get(0).scrollIntoView({block: "center"});
+    }
+    else {
+        if (current_hash.length > 0) {
+            let active_section = "#"+storage_active_topic['topic'].split("_")[0];
+            $(active_section+"-button").click();
+            $(current_hash+"-menu-item").addClass("is-active");
+            $(current_hash).get(0).scrollIntoView({behavior: "smooth", block: "center"});
+        }
+    }
 });
 
 $("[data-bs-toggle]").on('click',function(e){
@@ -41,7 +56,7 @@ function pathToId(path) {
 }
 
 function canonicalPath(path) {
-    if (!path || path === "/" || path === "/index.html" || path === "/home/home.html") {
+    if (!path || path === "/" || path === "/index.html") {
         return "/home/home.html";
     }
     return path;
@@ -52,7 +67,8 @@ function setup_menu() {
     if ($('.navbar-burger').is(':visible')) {
         return;
     }
-    let current_location = canonicalPath(window.location.pathname);
+    let current_location = window.location.pathname;
+    let current_hash = window.location.hash;
     let active_topic = $(".active_topic");
     let default_topic = $(".default_topic");
     let current_topic = active_topic;
@@ -63,28 +79,41 @@ function setup_menu() {
     let current_topic_href = current_topic.attr('href'); 
     let current_path = canonicalPath(window.location.pathname);
     //If the current path is not the same as the current topic, update the current topic
-    if ((current_path != current_topic_href) && (current_path != canonicalPath("/"))) {
+    if (current_path != current_topic_href) {
         current_topic_id = pathToId(current_path);
         current_topic_href = current_path;
     }
     let storage_active_topic = localStorage.getItem("active_topic");
     if (!storage_active_topic) {
-        storage_active_topic = {"topic":current_topic_id, "href":current_topic_href};
+        storage_active_topic = {"topic":current_topic_id, "href":current_topic_href, "hash":current_hash};
         localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
     }
     else {
         storage_active_topic = JSON.parse(storage_active_topic);
+        if (!('hash' in storage_active_topic)) {
+            storage_active_topic['hash'] = ""; //If the hash is empty, set it to an empty string
+        }
     }
     if (canonicalPath(storage_active_topic['href']) != canonicalPath(current_topic_href)) {
-        if (current_location == canonicalPath("/")) {
-            window.location.href = storage_active_topic['href'];
+        if (current_location == "/") {
+            if (storage_active_topic['hash'].length > 0) {
+                window.location.href = canonicalPath(storage_active_topic['href']) + storage_active_topic['hash'];
+            }
+            else {
+                window.location.href = canonicalPath(storage_active_topic['href']);
+            }
             return;
         }
         else {
             storage_active_topic['href'] = current_topic_href;
             storage_active_topic['topic'] = current_topic_id;
+            storage_active_topic['hash'] = current_hash;
             localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
         }
+    }
+    else {
+        storage_active_topic['hash'] = current_hash;
+        localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
     }
     //Set the active topic
     $("#"+storage_active_topic['topic']).addClass("active_topic");
@@ -94,7 +123,7 @@ function setup_menu() {
     let active_section = "#"+storage_active_topic['topic'].split("_")[0];
     localStorage.setItem("nav_show",active_section);
     let sectionButton = $(active_section+"-button");
-    if (sectionButton.is("button")) {
+    if (sectionButton.is("button") && storage_active_topic['hash'].length == 0 && current_location != "/") {
         sectionButton.click();
     }
 }
@@ -102,6 +131,19 @@ function setup_menu() {
 function add_listeners() {
     const els2 = document.querySelectorAll('.menu-topic');
     els2.forEach(el => el.addEventListener('click', menu_topic_click));
+    //const els3 = document.querySelectorAll('.home-nav-button');
+    //els3.forEach(el => el.addEventListener('click', home_nav_button_click));
+}
+
+function xhome_nav_button_click(event) {
+    //If the button is not collapsed, just collapse it
+    let myID = $(this).attr('id').split('-')[0];
+    if (!$(myID+"-accordion").hasClass('collapsed')) {
+        $(myID+"-accordion").collapse('hide');
+    }
+    else {
+        $(myID+"-accordion").collapse('show');
+    }
 }
 
 function menu_topic_click(event) {

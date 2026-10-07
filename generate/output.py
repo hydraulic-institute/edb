@@ -900,6 +900,8 @@ def write_content(graph, node, slug_override=None, path="."):
             for index2 in range(len(sections[index]['children'])):
                 if sections[index]['children'][index2]['slug'] == node['slug']:
                     sections[index]['children'][index2]['atag_obj_list'] = atag_obj_list
+                    if node['slug'] == 'home':
+                        sections[index]['atag_obj_list'] = atag_obj_list
                     found = True
                     break
             if found:
