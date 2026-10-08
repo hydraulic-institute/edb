@@ -14,8 +14,28 @@ $(window).on('pageshow',function() {
     $('#fullpage').show();
     check_each_dt();
     //In case a search is requested, scroll to the first result
-    if ( $('.current_mark').length )
+    let current_hash = "";
+    let current_hash_class = "";
+    let storage_active_topic = localStorage.getItem("active_topic");
+    if (storage_active_topic) {
+        storage_active_topic = JSON.parse(storage_active_topic);
+        current_hash = storage_active_topic['hash'];
+        if (current_hash.length > 0) {
+            current_hash_class = "."+current_hash.split("#")[1]+'-tag';
+        }
+    }
+    if ( $('.current_mark').length ) {
         $('.current_mark').get(0).scrollIntoView({block: "center"});
+    }
+    else {
+        if (current_hash.length > 0) {
+            //???
+            let active_section = "#"+storage_active_topic['topic'].split("_")[0];
+            $(active_section+"-button").click();
+            $(current_hash_class).addClass("is-active-tag");
+            $(current_hash).get(0).scrollIntoView({behavior: "smooth", block: "center"});
+        }
+    }
 });
 
 $("[data-bs-toggle]").on('click',function(e){
@@ -40,11 +60,17 @@ function pathToId(path) {
     return id;
 }
 
+function canonicalPath(path) {
+    if (!path || path === "/" || path === "/index.html") {
+        return "/home/home.html";
+    }
+    return path;
+}
+
 function setup_menu() {      
     //Update the menu to show the active topic and any uncollapsed parents
-    if ($('.navbar-burger').is(':visible')) {
-        return;
-    }
+    let current_location = window.location.pathname;
+    let current_hash = window.location.hash;
     let active_topic = $(".active_topic");
     let default_topic = $(".default_topic");
     let current_topic = active_topic;
@@ -53,44 +79,82 @@ function setup_menu() {
     }  
     let current_topic_id = current_topic.attr('id');
     let current_topic_href = current_topic.attr('href'); 
-    let current_path = window.location.pathname;
+    let current_path = canonicalPath(window.location.pathname);
     //If the current path is not the same as the current topic, update the current topic
-    if ((current_path != current_topic_href) && (current_path != "/")) {
+    if (current_path != current_topic_href) {
         current_topic_id = pathToId(current_path);
         current_topic_href = current_path;
     }
     let storage_active_topic = localStorage.getItem("active_topic");
     if (!storage_active_topic) {
-        storage_active_topic = {"topic":current_topic_id, "href":current_topic_href};
+        storage_active_topic = {"topic":current_topic_id, "href":current_topic_href, "hash":current_hash};
         localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
     }
     else {
         storage_active_topic = JSON.parse(storage_active_topic);
+        if (!('hash' in storage_active_topic)) {
+            storage_active_topic['hash'] = ""; //If the hash is empty, set it to an empty string
+        }
     }
-    if (storage_active_topic['href'] != current_topic_href) {
-        if (window.location.pathname == "/") {
-            window.location.href = storage_active_topic['href'];
+    if (canonicalPath(storage_active_topic['href']) != canonicalPath(current_topic_href)) {
+        if (current_location == "/") {
+            if (storage_active_topic['hash'].length > 0) {
+                window.location.href = canonicalPath(storage_active_topic['href']) + storage_active_topic['hash'];
+            }
+            else {
+                window.location.href = canonicalPath(storage_active_topic['href']);
+            }
             return;
         }
         else {
             storage_active_topic['href'] = current_topic_href;
             storage_active_topic['topic'] = current_topic_id;
+            storage_active_topic['hash'] = current_hash;
             localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
         }
     }
-    //Set the active topic
-    $("#"+storage_active_topic['topic']).addClass("active_topic");
-    $("#"+storage_active_topic['topic']).addClass("is-active");
+    else {
+        storage_active_topic['hash'] = current_hash;
+        localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
+    }
 
-    //Set the dropdowns
+    let target_id = storage_active_topic['topic'];
+    //document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("active_topic"));
+    $("."+target_id).addClass("active_topic");
+    if (storage_active_topic['hash'].length > 0) {
+        let hash_class = '.'+storage_active_topic['hash'].split("#")[1]+'-tag';
+        $(hash_class).addClass("is-active-tag");
+    }
+    else {
+        $("."+target_id).addClass("is-active");
+       // document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("is-active"));
+    }
+
+    //Set the dropdowns. HOME is a link, so only click accordion buttons.
     let active_section = "#"+storage_active_topic['topic'].split("_")[0];
     localStorage.setItem("nav_show",active_section);
-    $(active_section+"-button").click();
+    let sectionButton = $(active_section+"-button");
+    if (sectionButton.is("button") && storage_active_topic['hash'].length == 0 && current_location != "/") {
+        sectionButton.click();
+    }
 }
 
 function add_listeners() {
     const els2 = document.querySelectorAll('.menu-topic');
     els2.forEach(el => el.addEventListener('click', menu_topic_click));
+    //const els3 = document.querySelectorAll('.home-nav-button');
+    //els3.forEach(el => el.addEventListener('click', home_nav_button_click));
+}
+
+function xhome_nav_button_click(event) {
+    //If the button is not collapsed, just collapse it
+    let myID = $(this).attr('id').split('-')[0];
+    if (!$(myID+"-accordion").hasClass('collapsed')) {
+        $(myID+"-accordion").collapse('hide');
+    }
+    else {
+        $(myID+"-accordion").collapse('show');
+    }
 }
 
 function menu_topic_click(event) {
@@ -99,26 +163,68 @@ function menu_topic_click(event) {
     //event.stopImmediatePropagation();
     let target = $(this).attr('id');
     let href = $(this).attr('href');
-    let current_topic = JSON.parse(localStorage.active_topic)['topic'];
-    if (target == current_topic) {
-        event.stopPropagation();
-        event.preventDefault();
-        return;
+    let hash = "";
+    if (href.includes("#")) {
+        hash = "#"+href.split("#")[1];
+        href = href.split("#")[0];
+        //Update the target to the active topic
+        target = $('.active_topic').attr('id');
     }
-    $('.menu-topic').removeClass("active_topic");
-    $('.menu-topic').removeClass("is-active");
-    if (!target) {
-        target = pathToId(window.location.pathname);
-        href = window.location.pathname;
-        //Expand the new section 
-        let section = "#"+target.split("_")[0];
-        localStorage.setItem('nav_show', section);
-        $(section+"-button").click();
+    let storage_active_topic = localStorage.getItem("active_topic");
+    if (!storage_active_topic) {
+        storage_active_topic = {"topic":target, "href":href, "hash":hash};
+        localStorage.setItem("active_topic", JSON.stringify(storage_active));
     }
-    $("#"+target).addClass("is-active");
-    $("#"+target).addClass("active_topic");
-    localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href}));
+    else {
+        storage_active_topic = JSON.parse(storage_active_topic);
+    }
+    if (href.length == 0) {
+        href = storage_active_topic['href'];
+    }
+    let current_topic = storage_active_topic['topic'];
+     if (target == current_topic) {
+        // If it's the same topic, update the hash
+        $('.taglist-topic').removeClass("is-active-tag");
+        storage_active_topic['hash'] = hash;
+        localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
+        if (hash.length > 0) {
+            let hash_class = '.'+hash.split("#")[1]+'-tag';
+            $(hash_class).addClass("is-active-tag");
+        }
+        else {
+            event.stopPropagation();
+            event.preventDefault();
+            //scroll to the top of the page
+            window.scrollTo(0, 0);
+        }
+    }
+    else {
+        $('.menu-topic').removeClass("active_topic");
+        $('.menu-topic').removeClass("is-active");
+        $('.menu-topic').removeClass("is-active-tag");
+        if (!target) {
+            target = pathToId(window.location.pathname);
+            href = window.location.pathname;
+            hash = window.location.hash;
+            //Expand the new section 
+            let section = "#"+target.split("_")[0];
+            localStorage.setItem('nav_show', section);
+            $(section+"-button").click();
+        }
 
+        $("."+current_topic).addClass("active_topic");
+        $("."+current_topic).addClass("is-active");
+        if (hash.length > 0) {
+            let hash_class = '.'+hash.split("#")[1]+'-tag';
+            $(hash_class).addClass("is-active-tag");
+        }
+        localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href, "hash":hash}));
+    }
+    // Close the mobile menu if it's visible
+    if ($('.navbar-burger').is(':visible')) {
+         $('.navbar-burger').removeClass('is-active');
+         $('.navbar-menu').removeClass('is-active');
+    }
 }
 
 function check_each_dt() {
