@@ -178,32 +178,49 @@ function menu_topic_click(event) {
     else {
         storage_active_topic = JSON.parse(storage_active_topic);
     }
+    if (href.length == 0) {
+        href = storage_active_topic['href'];
+    }
     let current_topic = storage_active_topic['topic'];
-    if ((target == current_topic) && (hash == storage_active_topic['hash'])) {
-        event.stopPropagation();
-        event.preventDefault();
-        return;
+     if (target == current_topic) {
+        // If it's the same topic, update the hash
+        $('.taglist-topic').removeClass("is-active-tag");
+        storage_active_topic['hash'] = hash;
+        localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
+        if (hash.length > 0) {
+            let hash_class = '.'+hash.split("#")[1]+'-tag';
+            $(hash_class).addClass("is-active-tag");
+        }
+        else {
+            event.stopPropagation();
+            event.preventDefault();
+            //scroll to the top of the page
+            window.scrollTo(0, 0);
+        }
     }
-    $('.menu-topic').removeClass("active_topic");
-    $('.menu-topic').removeClass("is-active");
-    $('.menu-topic').removeClass("is-active-tag");
-    if (!target) {
-        target = pathToId(window.location.pathname);
-        href = window.location.pathname;
-        hash = window.location.hash;
-        //Expand the new section 
-        let section = "#"+target.split("_")[0];
-        localStorage.setItem('nav_show', section);
-        $(section+"-button").click();
-    }
+    else {
+        $('.menu-topic').removeClass("active_topic");
+        $('.menu-topic').removeClass("is-active");
+        $('.menu-topic').removeClass("is-active-tag");
+        if (!target) {
+            target = pathToId(window.location.pathname);
+            href = window.location.pathname;
+            hash = window.location.hash;
+            //Expand the new section 
+            let section = "#"+target.split("_")[0];
+            localStorage.setItem('nav_show', section);
+            $(section+"-button").click();
+        }
 
-    $("."+current_topic).addClass("active_topic");
-    $("."+current_topic).addClass("is-active");
-    if (hash.length > 0) {
-        let hash_class = '.'+hash.split("#")[1]+'-tag';
-        $(hash_class).addClass("is-active-tag");
+        $("."+current_topic).addClass("active_topic");
+        $("."+current_topic).addClass("is-active");
+        if (hash.length > 0) {
+            let hash_class = '.'+hash.split("#")[1]+'-tag';
+            $(hash_class).addClass("is-active-tag");
+        }
+        localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href, "hash":hash}));
     }
-    localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href, "hash":hash}));
+    // Close the mobile menu if it's visible
     if ($('.navbar-burger').is(':visible')) {
          $('.navbar-burger').removeClass('is-active');
          $('.navbar-menu').removeClass('is-active');
