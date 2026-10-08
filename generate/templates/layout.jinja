@@ -762,7 +762,7 @@
                                         {% if s['slug'] == 'home' %}    
                                             <div class="mb-2">
                                                 <h2 class="accordion-header" id="{{ s['slug'] }}-header">
-                                                    <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link
+                                                    <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link {{s['slug']}}-button
                                                     {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
                                                         <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
                                                         {{ s['metadata']['title'] }}
@@ -848,7 +848,7 @@
                             {% if s['slug'] == 'home' %}
                                 <div class="mb-2">
                                     <h2 class="accordion-header" id="{{ s['slug'] }}-header">
-                                        <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link
+                                        <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link {{s['slug']}}-button
                                         {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
                                             <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
                                             {{ s['metadata']['title'] }}
