@@ -759,14 +759,27 @@
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
                                 {% for s in sections|sort(attribute='sort') %} 
                                     <li>
-                                        {% if s['slug'] == 'home' %}
+                                        {% if s['slug'] == 'home' %}    
                                             <div class="mb-2">
-                                                <a href="/home/home.html" style="cursor:default;" class="home-nav-link menu-label
-                                                {% if node['path']== s['path'] and node['slug']== s['slug'] %} is-active{% endif %}">
-                                                    <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
-                                                    {{ s['metadata']['title'] }}
-                                                </a>
+                                                <h2 class="accordion-header" id="{{ s['slug'] }}-header">
+                                                    <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link
+                                                    {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
+                                                        <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
+                                                        {{ s['metadata']['title'] }}
+                                                    </a>
+                                                </h2>
                                             </div>
+                                            {% if node['path']== s['path'] and node['slug']== s['slug'] %}
+                                                <div id="{{ s['slug'] }}-dropdown" class="accordion-collapse dropdown-tag-menu" aria-labelledby="{{ s['slug'] }}-header">
+                                                    <ul class="nav-accordion-body">
+                                                        {% for atag in s['atag_obj_list'] %}
+                                                            <li class="menu-list">
+                                                                <a id="{{ atag['id'] }}-tag" style="cursor:default;text-decoration:none;" class="menu-topic {{atag['id']}}-tag" href="/home/home.html#{{ atag['id'] }}">{{ atag['text'] }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
                                         {% else %}
                                             <span class="menu-label">{{s['metadata']['title']}}</span>
                                             <ul>
@@ -833,34 +846,27 @@
                     <ul class="topic-list" v-else data-section="{{ section }}" data-topic="{{ topic }}">
                         {% for s in sections|sort(attribute='sort') %}
                             {% if s['slug'] == 'home' %}
-                            <div class="mb-2">
-                                {% if s['atag_obj_list']|length == 0 %}
+                                <div class="mb-2">
                                     <h2 class="accordion-header" id="{{ s['slug'] }}-header">
-                                        <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link">
+                                        <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link
+                                        {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
                                             <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
                                             {{ s['metadata']['title'] }}
                                         </a>
                                     </h2>
-                                {% else %}
-                                    <div class="accordion accordion-item nav-accordion-item mb-2">
-                                        <h2 class="accordion-header" id="{{ s['slug'] }}-header">
-                                            <button data-level="section" id="{{ s['slug'] }}-button" class="accordion-button nav-accordion-button menu-label home-nav-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ s['slug'] }}-accordion" aria-expanded="false">
-                                                <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
-                                                {{ s['metadata']['title'] }}
-                                            </button>
-                                        </h2>
-                                        <div id="{{ s['slug'] }}-accordion" class="accordion-collapse collapse" aria-labelledby="{{ s['slug'] }}-header">
-                                            <ul class="nav-accordion-body">
-                                                {% for atag in s['atag_obj_list'] %}
-                                                    <li class="menu-list">
-                                                        <a id="{{ atag['id'] }}-menu-item" href="/home/home.html#{{ atag['id'] }}">{{ atag['text'] }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
+                                    {% if node['path']== s['path'] and node['slug']== s['slug'] %}
+                                    <div id="{{ s['slug'] }}-dropdown" class="accordion-collapse dropdown-tag-menu" aria-labelledby="{{ s['slug'] }}-header">
+                                        <ul class="nav-accordion-body">
+                                            <!-- FULL MENU -->
+                                            {% for atag in s['atag_obj_list'] %}
+                                                <li class="menu-list">
+                                                    <a id="{{ atag['id'] }}-tag-full" style="cursor:default;text-decoration:none;" class="menu-topic {{atag['id']}}-tag" href="/home/home.html#{{ atag['id'] }}">{{ atag['text'] }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
                                     </div>
-                                {% endif %}
-                            </div>
+                                    {% endif %}
+                                </div>
                             {% endif %}
                         {% endfor %}
                         <div id="nav-accordion" class="accordion nav-accordion">
