@@ -118,6 +118,7 @@ Where:
 
 ### Pump Total Head - Static Head, Dynamic Head, Frictional Head Losses
 As illustrated in [Eq. 1.B.2](#eq1b2), the total head (H) is dependent on the differential pressure head (item 1), velocity head (item 2), elevation head (item 3), and summation of frictional head losses (item 4) as summarized below.
+
 - Item 1 - Differential pressure head 
 $$ Δh_g=({{p_{2}-p_{1}} \over {ρ·g}}) $$
 - Item 2 - Differential velocity head
@@ -172,7 +173,7 @@ In some systems frictional losses will be the majority of overall head loss. The
 ![](./images/elev-changes.png "")
 
 </center>
-<div class="figure-label"><a id="fig1b4"></a>Fig. 1.B.4 Friction-dominated system curve</div>
+<div class="figure-label"><a id="fig1b4"></a>Fig. 1.B.4 Friction dominated system curve</div>
 
 In other systems the elevation change, or static head, will be the majority of the overall head loss. The system curve in this case will start at a higher value at zero flow and will tend to be flatter because the static head is not directly affected by velocity.
 
@@ -182,7 +183,7 @@ In other systems the elevation change, or static head, will be the majority of t
 ![](./images/large-elev.png "")
 
 </center>
-<div class="figure-label"><a id="fig1b5"></a>Fig. 1.B.5 Static-head-dominated system curve</div>
+<div class="figure-label"><a id="fig1b5"></a>Fig. 1.B.5 Static head dominated system curve</div>
 
 Real-world applications tend to consider a range or family of system curves. This brackets the range of liquid levels, operating pressures, valve arrangements, and potential for the pipes fouling over time. The implications of selecting pumps based on a varying system curve are further discussed in the [Operating Point](/pump-system-fundamentals/operating-point-Phase3.html) section and the educational demonstrator below can be used to get an idea of how changing system parameters will affect the system curve.
 
@@ -338,4 +339,3 @@ title: System Curve Data
 data-us: datapoints_us.csv
 data-metric: datapoints_metric.csv
 =|=
-
