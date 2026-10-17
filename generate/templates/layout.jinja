@@ -763,7 +763,7 @@
                                             <div class="mb-2">
                                                 <h2 class="accordion-header" id="{{ s['slug'] }}-header">
                                                     <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link {{s['slug']}}-button
-                                                    {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
+                                                    {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:pointer;text-decoration:none;">
                                                         <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
                                                         {{ s['metadata']['title'] }}
                                                     </a>
@@ -861,7 +861,7 @@
                                 <div class="mb-2">
                                     <h2 class="accordion-header" id="{{ s['slug'] }}-header">
                                         <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="menu-topic default_topic accordion-button nav-accordion-button menu-label menu-section home-nav-link {{s['slug']}}-button
-                                        {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:default;text-decoration:none;">
+                                        {% if node['path']== s['path'] and node['slug']== s['slug'] %} active_topic is-active{% endif %}" style="cursor:pointer;text-decoration:none;">
                                             <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
                                             {{ s['metadata']['title'] }}
                                         </a>
@@ -914,7 +914,7 @@
                                                                 {% if child['slug'] == topic and s['slug'] == section %}
                                                                     <a id="{{ s['slug'] }}_{{ child['slug'] }}" class="menu-topic active_topic is-active" href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ stopic['metadata']['title'] }}</a>
                                                                 {% elif child['slug'] == 'home' %}
-                                                                    <a id="{{ s['slug'] }}_{{ child['slug'] }}" class="menu-topic default_topic" href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ stopic['metadata']['title'] }}</a>
+                                                                    <a id="{{ s['slug'] }}_{{ child['slug'] }}" class="menu-topic default_topic" href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor: pointer; text-decoration: none;">{{ stopic['metadata']['title'] }}</a>
                                                                 {% else %}
                                                                     <a id="{{ s['slug'] }}_{{ child['slug'] }}" class="menu-topic" href="/{{ s['slug'] }}/{{ child['slug'] }}/{{ stopic['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ stopic['metadata']['title'] }}</a>
                                                                 {% endif %}
@@ -929,7 +929,7 @@
                                                     {% if child['slug'] == topic and s['slug'] == section %}
                                                         <a data-level="1" id="{{ s['slug'] }}_{{ child['slug'] }}" class="{{s['slug']}}_{{child['slug']}} menu-topic active_topic is-active" href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ child['metadata']['title'] }}</a>
                                                     {% elif child['slug'] == 'home' %}
-                                                        <a data-level="2" id="{{ s['slug'] }}_{{ child['slug'] }}" class="{{s['slug']}}_{{child['slug']}} menu-topic default_topic" href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ child['metadata']['title'] }}</a>
+                                                        <a data-level="2" id="{{ s['slug'] }}_{{ child['slug'] }}" class="{{s['slug']}}_{{child['slug']}} menu-topic default_topic" href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor: pointer; text-decoration: none;">{{ child['metadata']['title'] }}</a>
                                                     {% else %}
                                                         <a data-level="3" id="{{ s['slug'] }}_{{ child['slug'] }}" class="{{s['slug']}}_{{child['slug']}} menu-topic" href="/{{ s['slug'] }}/{{ child['slug'] }}.html" style="cursor: default; text-decoration: none;">{{ child['metadata']['title'] }}</a>
                                                     {% endif %}
