@@ -28,7 +28,7 @@ Values of (K) for valves, fittings and bends may be referenced in Figures. 3.B.1
 Component (minor) losses can be summed together with the pipe losses to determine an overall frictional loss for the system, producing the equation
 
 =+=
-<span class= equation-label >(Eq. 3.A.6)</span>
+<span class= equation-label ><a id="eq3b2"></a>(Eq. 3.B.2)</span>
 $$ h_f = {({f·L \over D} + ΣK) · {v^2 \over 2·g}} $$
 =+=
 

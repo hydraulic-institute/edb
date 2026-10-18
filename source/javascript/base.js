@@ -24,18 +24,20 @@ $(window).on('pageshow',function() {
             current_hash_class = "."+current_hash.split("#")[1]+'-tag';
         }
     }
+    let active_section = "#"+storage_active_topic['topic'].split("_")[0];
     if ( $('.current_mark').length ) {
         $('.current_mark').get(0).scrollIntoView({block: "center"});
     }
     else {
         if (current_hash.length > 0) {
             //???
-            let active_section = "#"+storage_active_topic['topic'].split("_")[0];
             $(active_section+"-button").click();
             $(current_hash_class).addClass("is-active-tag");
             $(current_hash).get(0).scrollIntoView({behavior: "smooth", block: "center"});
         }
     }
+    //Make sure the active section is visible
+    $(active_section).collapse('show');
 });
 
 $("[data-bs-toggle]").on('click',function(e){
