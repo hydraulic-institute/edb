@@ -255,7 +255,7 @@ For component losses, refer to the  <a href="/fluid-flow-iii/fr-loss-water.html"
 
 This gives a total resistance coefficient (ΣK) equal to 3.79
 
-Using the dynamic head equation [Eq. 1.B.4](#eq1b4), [Calc. 1.B.3](#calc1b3) combines the major and minor losses in the first term (see the <a href="/fluid-flow-iii/fr-loss-water.html#eq3b2" target="_blank">Losses in Valves, Fittings and Bends</a> section Eq. 3.B.2) and results in the dynamic head as a function of velocity.
+Using the dynamic head equation [Eq. 1.B.4](#eq1b4), [Calc. 1.B.3](#calc1b3) combines the major and minor losses in the first term (see the <a href="/fluid-flow-iii/fr-loss-water.html#eq3b2" target="_blank">Losses in Valves, Fittings and Bends - Eq. 3.B.2</a>) and results in the dynamic head as a function of velocity.
 
 <div class="calculation-label"><a id="calc1b3"></a>Calc. 1.B.3 Dynamic head for system curve example</div>
 =+=
