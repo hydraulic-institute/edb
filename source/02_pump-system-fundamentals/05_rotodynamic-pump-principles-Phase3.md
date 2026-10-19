@@ -213,7 +213,7 @@ Submergence
 
 ### Submergence
 
-Submergence (S) is defined as the vertical distance from the free surface of the liquid pumped to the cdatum for the particular intake type as defined in <a href="https://www.pumps.org/?s=9.8+Rotodynamic+Pumps+for+Pump+Intake+&post_type=#page-title" target="_blank">ANSI/HI 9.8 Rotodynamic Pumps for Pump Intake Design</a>. The following is an excerpt regarding submergence and the reader is encouraged to refer to ANSI/HI 9.8 for full details on pump intake design. 
+Submergence (S) is defined as the vertical distance from the free surface of the liquid pumped to the datum for the particular intake type as defined in <a href="https://www.pumps.org/?s=9.8+Rotodynamic+Pumps+for+Pump+Intake+&post_type=#page-title" target="_blank">ANSI/HI 9.8 Rotodynamic Pumps for Pump Intake Design</a>. The following is an excerpt regarding submergence and the reader is encouraged to refer to ANSI/HI 9.8 for full details on pump intake design. 
 
 =^=
 title: ANSI/HI 9.8 Rotodynamic Pumps for Pump Intake Design   
