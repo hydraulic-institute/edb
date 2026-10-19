@@ -46,7 +46,7 @@ SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data style')
-TableColumn = namedtuple('TableColumn', 'type data colspan style')
+TableColumn = namedtuple('TableColumn', 'type data colspan style width height')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
 DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
@@ -276,9 +276,21 @@ def table_data(units, table, path, filename):
         row_columns=[]
         for i, d in enumerate(row[2:]):
             if "heading" in row[1]:
-                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
+                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle, '', ''))
+            elif "image" in types[i]:
+                # Get the max width and height from the type
+                sizes = types[i].split('::')
+                if len(sizes) > 1:
+                    # sizes is a string like "100wx100h"  
+                    # get the width and height from that string
+                    width = re.search(r"(\d+)w", sizes[1]).group(1)
+                    height = re.search(r"(\d+)h", sizes[1]).group(1)
+                else:
+                    width = '100'
+                    height = '100'
+                row_columns.append(TableColumn('image', d, DefaultColspan, DefaultStyle, width, height))
             else:
-                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
+                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle, '', ''))               
         r = TableRow(row[1], row_columns, DefaultStyle)
         if (row[1] == 'heading'):
             headings.append(r)
@@ -346,6 +358,17 @@ def replace_table_block(dir, table_text, table_count):
         table['dt_config']='fixedColumns:'+table['fixed-columns']+';'
         table['scrolling']='not-scrolling'
         
+    if not 'wrap_cols' in table or table['wrap_cols'] == '':
+        table['wrap_cols'] = []
+    else:
+        # remove all whitespace from the wrap_cols string
+        wrap_cols = re.sub(r'\s+', '', table['wrap_cols'])
+        if wrap_cols:
+            wrap_cols = wrap_cols.split(',')
+            table['wrap_cols'] = [int(col) for col in wrap_cols]    
+        else:
+            table['wrap_cols'] = []
+        
     all_tables.append(data_us)
  
     template = env.get_template('table.jinja')
@@ -403,7 +426,7 @@ def chart_data(units, chart, path, filename):
         headings = []
         # print ('Processing chart: '+filename)
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle)
+            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle, '', '')
                            for i, d in enumerate(row[1:])]
             r = TableRow(row[0], row_columns, DefaultStyle)
             if (r.type == 'heading'):

@@ -219,7 +219,7 @@ maxVelocities: 30
 
 Previously we developed a system curve for the system shown below for flows from 0 to 300 gpm. Using 4-inch pipe, the function in terms of gpm is the following.
 
-[Calc. 1.A.3(c)](./sys-curves.html#calc1a3c)
+[Calc. 1.A.3(c)](./sys-curves-phase3#calc1a3c)
 =+=
 $$\Delta h_{system} = 265{feet} + ({7.75e^{-4}}·Q^2) $$
 =+=
