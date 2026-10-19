@@ -219,7 +219,7 @@ Calculation example
 =atag=
 ### System Curve Calculation Worked Example (U.S. & Metric Units)
 
-Consider the system in [Fig. 1.B.6](#fig1b6) and develop a system curve for the flows <units us = "from 0 to 300 GPM." metric = "from 0 to 68.14 m^3^/h.  Note: Metric values in the worked example are converted from US units in Fig. 1.B.6."/>
+Consider the system in [Fig. 1.B.6](#fig1b6) and develop a system curve for the flows <units us = "from 0 to 300 GPM." metric = "from 0 to 68.14 m^3^/h.  &lt;b&gt;Note:&lt;/b&gt; Metric values in the worked example are converted from US units in Fig. 1.B.6."/>
 
 ![](./images/we-system.png#center "")
 <div class="figure-label"><a id="fig1b6"></a>Fig. 1.B.6 Pump system for system curve calculation worked example</div>
