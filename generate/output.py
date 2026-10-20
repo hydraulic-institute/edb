@@ -83,9 +83,9 @@ def replace_latex_block(latex):
         latex = latex.replace(unit_specifier, "")
 
     if unit:
-        return f'<p class="formula" v-show="{unit}_visible">{latex}</p>'
+        return f'<div class="formula" v-show="{unit}_visible">{latex}</div>'
     else:
-        return "<p class='formula'>" + latex + "</p>"
+        return "<div class='formula'>" + latex + "</div>"
 
 def definitions_table_data(table, path, filename, in_sections):    
     file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
