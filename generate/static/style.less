@@ -11,6 +11,8 @@
 @er_super_light: #eceef1;
 @std_pad: 1rem;
 @lg_pad: 3rem;
+@label_color: #058194;
+@secondary_label_color: #72053f;
 
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -306,12 +308,20 @@ caption {
 
 .equation-label,
 .calculation-label {
-  //float: left;
-  font-size: smaller;
+  font-size: 0.95em;
   font-weight: bolder;
   padding-left: 1rem;
   padding-right: 1rem;
   font-style: italic;
+  font-family: monospace;
+}
+
+.equation-label {
+  color: @label_color;
+}
+
+.calculation-label {
+  color: @label_color;
 }
 
 .table-label,
@@ -320,10 +330,20 @@ caption {
   text-align: center;
   max-width: 80%;
   margin: 0px auto 10px;
-  font-size: smaller;
+  font-size: .95em;
   font-weight: bolder;
   font-style: italic;
   padding-bottom: 30px;
+  font-family: monospace;
+}
+.table-label {
+  color: @label_color;
+}
+.demo-label {
+  color: @label_color;
+}
+.figure-label {
+  color: @label_color;
 }
 
 img[src*="#center"] {
