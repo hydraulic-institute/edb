@@ -10,6 +10,7 @@ import json
 import uuid
 import pprint
 import pypandoc
+import re
 from selenium import webdriver
 from datetime import date
 
@@ -45,7 +46,7 @@ SOURCE_SPECIAL_DIRS = ['images']
 
 Table = namedtuple('Table', 'units columns headings rows')
 TableRow = namedtuple('TableRow', 'type data style')
-TableColumn = namedtuple('TableColumn', 'type data colspan style')
+TableColumn = namedtuple('TableColumn', 'type data colspan style width height')
 DefinitionRow = namedtuple('DefinitionRow', 'section type data id ref_link source_link')
 DefinitionColumn = namedtuple('DefinitionColumn','type data links')
 ChartSeries = namedtuple('ChartSeries', 'title data')
@@ -82,9 +83,9 @@ def replace_latex_block(latex):
         latex = latex.replace(unit_specifier, "")
 
     if unit:
-        return f'<p class="formula" v-show="{unit}_visible">{latex}</p>'
+        return f'<div class="formula" v-show="{unit}_visible">{latex}</div>'
     else:
-        return "<p class='formula'>" + latex + "</p>"
+        return "<div class='formula'>" + latex + "</div>"
 
 def definitions_table_data(table, path, filename, in_sections):    
     file = os.path.join(SOURCE_DIR, path, TABLE_DATA_DIR, filename)
@@ -275,9 +276,21 @@ def table_data(units, table, path, filename):
         row_columns=[]
         for i, d in enumerate(row[2:]):
             if "heading" in row[1]:
-                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle))
+                row_columns.append(TableColumn('center', d, DefaultColspan, DefaultStyle, '', ''))
+            elif "image" in types[i]:
+                # Get the max width and height from the type
+                sizes = types[i].split('::')
+                if len(sizes) > 1:
+                    # sizes is a string like "100wx100h"  
+                    # get the width and height from that string
+                    width = re.search(r"(\d+)w", sizes[1]).group(1)
+                    height = re.search(r"(\d+)h", sizes[1]).group(1)
+                else:
+                    width = '100'
+                    height = '100'
+                row_columns.append(TableColumn('image', d, DefaultColspan, DefaultStyle, width, height))
             else:
-                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle))
+                row_columns.append(TableColumn(types[i], d, DefaultColspan, DefaultStyle, '', ''))               
         r = TableRow(row[1], row_columns, DefaultStyle)
         if (row[1] == 'heading'):
             headings.append(r)
@@ -345,6 +358,17 @@ def replace_table_block(dir, table_text, table_count):
         table['dt_config']='fixedColumns:'+table['fixed-columns']+';'
         table['scrolling']='not-scrolling'
         
+    if not 'wrap_cols' in table or table['wrap_cols'] == '':
+        table['wrap_cols'] = []
+    else:
+        # remove all whitespace from the wrap_cols string
+        wrap_cols = re.sub(r'\s+', '', table['wrap_cols'])
+        if wrap_cols:
+            wrap_cols = wrap_cols.split(',')
+            table['wrap_cols'] = [int(col) for col in wrap_cols]    
+        else:
+            table['wrap_cols'] = []
+        
     all_tables.append(data_us)
  
     template = env.get_template('table.jinja')
@@ -402,7 +426,7 @@ def chart_data(units, chart, path, filename):
         headings = []
         # print ('Processing chart: '+filename)
         for row in csv_data:
-            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle)
+            row_columns = [TableColumn(columns[i], d, DefaultColspan, DefaultStyle, '', '')
                            for i, d in enumerate(row[1:])]
             r = TableRow(row[0], row_columns, DefaultStyle)
             if (r.type == 'heading'):
@@ -514,6 +538,10 @@ def replace_chart_block_pdf(output_path, dir, chart_text):
 
 def replace_ad_block(chart_text):
     ad = parse_dict(chart_text.strip().split("\n"))
+    # print(ad['image'])
+    # If there is a Need Image, etc, update the image
+    if 'image' in ad and ad['image'] in ['Need Image','Needs Image','need image','needs image']:
+        ad['image'] = "/images/image_not_available.png"
     template = env.get_template('ad.jinja')
     ad_html = template.render(ad=ad)
     return ad_html
@@ -551,7 +579,56 @@ def replace_scrolling_logo_block(chart_text):
     new_html = template.render(logos=all_logos, data=logos_format) 
     return new_html
 
+def split_html_and_text(html_string):
+    # This regex captures anything inside < and >
+    pattern = r'(<[^>]+>)'
+    
+    # re.split keeps the delimiters if they are enclosed in capturing parentheses ()
+    result = re.split(pattern, html_string)
+    
+    # Filter out any empty strings caused by adjacent tags or tags at the boundaries
+    return [item for item in result if item]
 
+def replace_atag_block(atag_text):
+    tag_lines = atag_text.strip().split("\n")
+    tag = []
+    tag_string = ''
+    retval = True
+    tag_object = {'id': '', 'text': ''}
+    if len(tag_lines) == 1:
+        tag_string = " ".join(tag_lines[0].split())
+        cleaned_tag_string = re.sub(r'[^a-zA-Z\s]', '', tag_lines[0])
+        cleaned_tag_string = " ".join(cleaned_tag_string.split())
+        # Only keep letters and spaces
+        # replace multiple spaces with a single space
+        id_tag = cleaned_tag_string.lower().replace(" ", "-")
+        template = f"<div id=\"{id_tag}\"></div>"
+        tag_object['id'] = id_tag
+        tag_object['text'] = tag_string
+    return tag_object,template
+
+def process_anchor_tag_blocks(markdown):
+    #HERE Process all anchor tag blocks in the content.
+    atag_obj_list = []
+    delim = "=atag="
+    delim_len = len(delim)
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        if end == -1:
+            raise Exception(f"** Error - an anchor tag block is not valid. No closing delimiter found.")
+        before = markdown[:start]
+        within = markdown[start+delim_len:end]
+        if within == "":
+            raise Exception(f"** Error - an anchor tag block is not valid. No tag name found.")
+        after = markdown[end+delim_len:]
+        atag_obj, atag_template = replace_atag_block(within)
+        atag_obj_list.append(atag_obj)
+        markdown = before + \
+            atag_template + after
+        start = markdown.find(delim)
+    return atag_obj_list, markdown
+   
 def process_scrolling_logo_blocks(markdown):
     delim = "=scrolling-logos="
     delim_len = len(delim)
@@ -834,15 +911,42 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     content = process_scrolling_logo_blocks(content)
+    atag_obj_list, content = process_anchor_tag_blocks(content)
+    node['atag_obj_list'] = atag_obj_list   
+    if len(atag_obj_list) > 0:
+        for atag_obj in atag_obj_list:
+            print(f"Atag ID: {atag_obj['id']}, Text: {atag_obj['text']}")
+    else:
+        print("No atag objects found")
+    # add the atag obj list to the node in the section
+    # find the node in the sections and then the child node with the same slug
+    found = False
+    for index in range(len(sections)):
+        asection = sections[index]
+        if sections[index]['path'] == node['path']: 
+            for index2 in range(len(sections[index]['children'])):
+                if sections[index]['children'][index2]['slug'] == node['slug']:
+                    sections[index]['children'][index2]['atag_obj_list'] = atag_obj_list
+                    if node['slug'] == 'home':
+                        sections[index]['atag_obj_list'] = atag_obj_list
+                    found = True
+                    break
+            if found:
+                break
+    if not found:
+        print(f"Could not find node {node['slug']} in section {node['path']}")
+    #is the node a directory?
+    if node['directory']:
+        print("Directory: ", node['slug'])
     # Last step injects the Vue markup necessary for some components - such as <units> elements.
     content = process_vue_components(content)
-
     template = env.get_template('topic.jinja')
     related = [section['children'] for section in sections if section['path']
                == node['path'] and section['slug'] != node['slug']]
     # Related is a list of lists with the same section (it's always size 1)
     related = [item for sublist in related for item in sublist]
     # Related is not all topics under the same section, we need to filter out this node
+    # This gets rid of any directories
     related = [topic for topic in related if topic['directory']
                != True and topic['name'] != node['name']]
 
@@ -850,7 +954,7 @@ def write_content(graph, node, slug_override=None, path="."):
     # pprinter.pprint(related)
 
     # pprinter.pprint(node)
-    topic_section = related[0]['path'].split('\\')[-1].split('_')[-1]
+    topic_section = node['path'].split('\\')[-1].split('_')[-1]
     print('Section: '+topic_section+' Topic: '+slug)
     html = template.render(section=topic_section, topic=slug, node=node,
                            content=content, sections=sections,
@@ -868,7 +972,7 @@ def make_root(graph):
     statics()
 
     nodes = [node for node in graph if node['directory'] == False or node['sort'] == '00']
-
+    # HERE
     for node in nodes:
         so = None
         content_node = node
@@ -878,10 +982,12 @@ def make_root(graph):
                 if child['slug'] == 'home':
                     so = 'index'
                     content_node = child
+                    print("Home/INDEX node: ", content_node['name'], content_node['path'])
                     break
         elif node['slug'] == 'home':
             so = 'index'
         print("Writing", content_node['name'], 'from ', content_node['path'])
+        # HERE Process one item at a time and process tags for that piece of content.
         write_content(graph, content_node, so)
 
 

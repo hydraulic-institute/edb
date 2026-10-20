@@ -1,0 +1,10 @@
+﻿,image::100wx100h,text
+heading,Representative image,Reciprocating PD Pump Type overview
+data,./images/1F-AirOperated.png,"<b>Air Operated</b><br>
+Air-operated pumps, commonly referred to as AODD pumps, are reciprocating PD pumps driven by compressed gas, usually air, supplied from an outside source. Depending on the design, the pumping member may be a diaphragm, bellows, piston, or plunger. Alternating motion draws liquid into the pumping chamber and discharges it through inlet and outlet valves. "
+data,./images/1F-Steam.png,"<b>Steam</b><br>
+Direct-acting steam PD pumps use steam applied to a power piston to produce the reciprocating motion that drives a liquid piston or plunger. These pumps may be arranged horizontally or vertically and are commonly identified by their piston or plunger construction and the number of pumping elements."
+data,./images/1F-Power.png,"<b>Power</b><br>
+Reciprocating power PD pumps use an external driver and a mechanical power end to convert rotary motion into the linear motion of one or more pistons or plungers. The pumping elements alternately draw liquid into and discharge liquid from the pumping chambers through inlet and outlet valves."
+data,./images/1F-ControlledVolume.png,"<b>Controlled Volume</b><br>
+Controlled-volume metering pumps (CVMP) are PD reciprocating pumps used for accurate liquid dispensing or dosing. They may use plunger, piston, or diaphragm liquid ends, with flow adjusted by changing stroke length, stroking speed, or both. "
