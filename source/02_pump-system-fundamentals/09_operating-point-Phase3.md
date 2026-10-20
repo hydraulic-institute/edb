@@ -55,7 +55,7 @@ Varying Speed
 =atag=
 
 ### Changes in Pump Speed
-Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see [Pump Curves](./rotodynamic-pump-curves-phase3)). As the pump is slowed, the pump curve shifts down and to the left, getting closer to the plot origin.
+Changing the pump speed will change the pump curve. This can be represented using the affinity or similarity rule (see [Pump Curves](./rotodynamic-pump-curves-phase3.html)). As the pump is slowed, the pump curve shifts down and to the left, getting closer to the plot origin.
 
 With a system that has a manual throttling valve, changing the pump speed will change two things as shown in the pump system plot – the system flow and the pump head generated. Slowing the pump down, as depicted in [Figure 1.I.3](#fig1i3), will reduce pump head and reduce the system flow. Note the static head at zero flow will still be the same.
 
@@ -143,7 +143,7 @@ Pump Sizing
 It is important to note that as the flow increases, the developed pump head decreases and the system head losses increase. Oversized or undersized pumps will have curves that do not intersect at the rated flow and head. For rotodynamic pumps, throttling a discharge valve is sometimes used to increase the head and lower the flow rate, or the operating point may be able to be adjusted by installing a different impeller. For rotodynamic and positive displacement pumps, varying the speed or selecting a different pump are options to adjust the operating point.
 
 ### Changes in Impeller Size
-Within limits, the operating point can be changed by replacing the impeller with a larger or smaller impeller. Changing impeller diameter is a step change in either direction and does not provide continuously variable operation like varying the pump speed can. See <a href="/pump-fundamentals/rotodynamic-pump-curves.html" target="_blank">rotodynamic pump curves</a> for additional information on the effect of changing the impeller diameter. 
+Within limits, the operating point can be changed by replacing the impeller with a larger or smaller impeller. Changing impeller diameter is a step change in either direction and does not provide continuously variable operation like varying the pump speed can. See <a href="./rotodynamic-pump-curves-phase3.html" target="_blank">rotodynamic pump curves</a> for additional information on the effect of changing the impeller diameter. 
 
 ### Pump Sizing in the Real World
 Many real-world applications are designed for system curves that are provided as an envelope. This is due to varying head conditions, such as caused by anticipated stormwater conditions, varying reservoir levels, changing piping conditions over time, or tanks with varying pressures. [Figure 1.I.7](#fig1i7) is an example of a system curve envelope that dictates all the conditions seen. It is up to the system designer to specify the important points the selected pumps need to hit.
@@ -156,7 +156,7 @@ Parallel Pumping
 =atag=
 
 ### Parallel and Series Pumping
-Operating pumps in parallel or series changes the representative performance curve for each additional pump operated (see [Pump Curves](./rotodynamic-pump-curves-phase3)). The use of pumps in parallel or series can be used to vary operating points. 
+Operating pumps in parallel or series changes the representative performance curve for each additional pump operated (see [Pump Curves](./rotodynamic-pump-curves-phase3.html)). The use of pumps in parallel or series can be used to vary operating points. 
 
 [Figure 1.I.8](#fig1i8) is an example of 3 identical pumps in parallel being sized to cover a system curve with varying head conditions. When selecting the appropriate pumps in a situation like this, the use of variable speed control allows coverage of operating points below the pump curves, making it possible to reach duty conditions that exist within the curve envelope. It is important to remember that at any given time, the only point to dictate pump performance is where the present system curve will intersect the pump curve.
 
@@ -204,9 +204,9 @@ Determining Operating Point
 =atag=
 
 ### Worked Example (U.S. Customary Units Only)
-Figure 1.B.6 is reproduced here from the [system curve](./sys-curves.html) section, where it was used to develop a system curve. The equation that described the system curve is Calc. 1.B.4(c) which is also reproduced here. 
+Figure 1.B.6 is reproduced here from the [system curve](./sys-curves-phase3.html) section, where it was used to develop a system curve. The equation that described the system curve is Calc. 1.B.4(c) which is also reproduced here. 
 
-[Calc. 1.B.4(c)](./sys-curves.html#calc1b4c) previously derived and repeated here
+[Calc. 1.B.4(c)](./sys-curves-phase3.html#calc1b4c) previously derived and repeated here
 
 =+=
 $$\Delta h_{system} = 265{ft} + ({7.75e^{-4}}·Q^2) $$
@@ -217,7 +217,7 @@ $$\Delta h_{system} = 265{ft} + ({7.75e^{-4}}·Q^2) $$
 
 **Verifying the Pump Curve with the System**
 
-If we need this system to operate at 200 gpm, based on the system curve described by [Calc. 1.B.4(c)](./sys-curves.html#calc1b4c), this would require 296 feet of head. Finding the perfect pump from a vendor, we select some data points from the pump curve which are shown in [Table 1.I.1](#tbl1i1).
+If we need this system to operate at 200 gpm, based on the system curve described by [Calc. 1.B.4(c)](./sys-curves-phase3.html#calc1b4c), this would require 296 feet of head. Finding the perfect pump from a vendor, we select some data points from the pump curve which are shown in [Table 1.I.1](#tbl1i1).
 
 =|=
 title: Pump Curve Data

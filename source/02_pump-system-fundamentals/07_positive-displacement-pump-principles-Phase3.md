@@ -21,18 +21,18 @@ Reciprocating pumps
 ### Reciprocating Pumps
 **Reciprocating pumps** use linear motion of pistons, plungers, diaphragms, or bellows to draw liquid into and discharge liquid from one or more pumping chambers. Inlet and discharge valves control the direction of flow as chamber volume increases and decreases to limit back flow. The resulting flow is inherently cyclic, so pulsation, acceleration pressure, inlet piping, valve behavior, and pressure protection are important application considerations.
 
-The reciprocating categories introduced in the [PD Pump Types](./positive-displacement-pump-types-phase3) section are air-operated, direct acting (steam), power, and controlled-volume metering pumps. Although their drives and pumping elements differ, each relies on repeated filling and emptying of a defined pumping chamber volume. Displacement is normally expressed per stroke or per complete pumping cycle.
+The reciprocating categories introduced in the [PD Pump Types](./positive-displacement-pump-types-phase3.html) section are air-operated, direct acting (steam), power, and controlled-volume metering pumps. Although their drives and pumping elements differ, each relies on repeated filling and emptying of a defined pumping chamber volume. Displacement is normally expressed per stroke or per complete pumping cycle.
 
 =atag=
 Rotary Pumps
 =atag=
 ### Rotary Pumps
-**Rotary pumps** introduced in the [PD Pump Types](./positive-displacement-pump-types-phase3) section use rotating elements such as gears, screws, vanes, pistons, flexible member, or lobes within a pumping chamber. These elements form moving cavities or sealed volumes that carry liquid from inlet to outlet. Rotary pumps generally use close running clearances and do not use separate inlet and outlet valves as part of the basic pumping principle.
+**Rotary pumps** introduced in the [PD Pump Types](./positive-displacement-pump-types-phase3.html) section use rotating elements such as gears, screws, vanes, pistons, flexible member, or lobes within a pumping chamber. These elements form moving cavities or sealed volumes that carry liquid from inlet to outlet. Rotary pumps generally use close running clearances and do not use separate inlet and outlet valves as part of the basic pumping principle.
 
 The continuous rotation of the pumping elements usually produces a steadier flow than a reciprocating mechanism, but the flow is still created by successive displacement events and may contain pulsation. Rotor geometry, clearances, timing, number of pumping elements, speed, viscosity, and differential pressure all influence delivered flow and operating behavior.
 
 ### Rotor Types
-In rotary pumps, the rotor or rotating assembly establishes the moving boundaries that form and transport pumping chambers. Rotor types vary and the form determines how the chamber opens to the inlet, becomes isolated, travels through the pump, and opens to the discharge. The detailed rotor arrangements used by sliding-vane, axial-piston, flexible-member, lobe, gear, circumferential-piston, and screw pumps are described in the [PD Pump Types](./positive-displacement-pump-types-phase3) section.
+In rotary pumps, the rotor or rotating assembly establishes the moving boundaries that form and transport pumping chambers. Rotor types vary and the form determines how the chamber opens to the inlet, becomes isolated, travels through the pump, and opens to the discharge. The detailed rotor arrangements used by sliding-vane, axial-piston, flexible-member, lobe, gear, circumferential-piston, and screw pumps are described in the [PD Pump Types](./positive-displacement-pump-types-phase3.html) section.
 
 Some pumps use a single rotor working against the casing or another stationary member. Others use two or more rotors that may mesh, run at close clearance, or be synchronized by external timing gears. Flexible members may deform to create changing chamber volume, while rigid rotors depend on their shape and close running clearances.
 
@@ -181,6 +181,6 @@ Because torque remains approximately constant at a fixed differential pressure, 
 
 The driver should be sized for the highest torque and power that can occur within the permitted operating range, including startup and relief-valve operation where applicable. Driver selection should account for maximum displacement, maximum operating speed, maximum allowable differential pressure, liquid viscosity and temperature, mechanical efficiency, service factor, and transient conditions. The complete drive train should be evaluated so that no component becomes the unintended means of overpressure protection.
 
-Pump curves and performance data should be used to confirm the manufacturer's torque and power requirements at the intended duty point. The relationship among displacement, speed, differential pressure, torque, and power is developed further in [PD Pump Curves](./positive-displacement-pump-curves-phase3) section.
+Pump curves and performance data should be used to confirm the manufacturer's torque and power requirements at the intended duty point. The relationship among displacement, speed, differential pressure, torque, and power is developed further in [PD Pump Curves](./positive-displacement-pump-curves-phase3.html) section.
 
 

@@ -11,7 +11,7 @@ Pump system head requirements change with flow rate. This relationship is shown 
 System curve
 =atag=
 ### What is a system curve?
-A system curve shows the total differential system head (Δh<sub>system</sub>) or head required to be developed by the pump, referred to as pump total head (H). The system head varies as a function of flow rate as illustrated in [Fig. 1.B.1](#fig1b1). It is important to accurately characterize the system curve in order to select the correct pump for various operating conditions because the operating point of the system will be dependent on the intersection of the system curve and the pump curve as defined in [Eq. 1.B.2](#eq1b2) and discussed further in the [Operating Point](./operating-point-phase3) section.
+A system curve shows the total differential system head (Δh<sub>system</sub>) or head required to be developed by the pump, referred to as pump total head (H). The system head varies as a function of flow rate as illustrated in [Fig. 1.B.1](#fig1b1). It is important to accurately characterize the system curve in order to select the correct pump for various operating conditions because the operating point of the system will be dependent on the intersection of the system curve and the pump curve as defined in [Eq. 1.B.2](#eq1b2) and discussed further in the [Operating Point](./operating-point-phase3.html) section.
 
 <center>
 
@@ -22,7 +22,7 @@ A system curve shows the total differential system head (Δh<sub>system</sub>) o
 <div class="figure-label"><a id="fig1b1"></a>Fig. 1.B.1 System curve illustrating system head as a function of flow rate</div>
 
 ### What is head and why is it used?
-Head is the expression of the energy content of a liquid in reference to any arbitrary datum expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"></units> of liquid. Pressure and head of a liquid in a piping system have a physical relationship as described in the following subsection on the Bernoulli equation [Eq. 1.B.1](#eq1b1) and is also explained in the [Pump System Foundational Concepts](./foundational-concepts-phase3) section with [Eq. 1.A.1a](./foundational-concepts-phase3#eq1a1a) and [Eq. 1.A.1b](./foundational-concepts-phase3#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems independent of the fluid density. Refer to this section for additional information on pump total head, pressure and why head is commonly used for system curves.
+Head is the expression of the energy content of a liquid in reference to any arbitrary datum expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"></units> of liquid. Pressure and head of a liquid in a piping system have a physical relationship as described in the following subsection on the Bernoulli equation [Eq. 1.B.1](#eq1b1) and is also explained in the [Pump System Foundational Concepts](./foundational-concepts-phase3.html) section with [Eq. 1.A.1a](./foundational-concepts-phase3.html#eq1a1a) and [Eq. 1.A.1b](./foundational-concepts-phase3.html#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems independent of the fluid density. Refer to this section for additional information on pump total head, pressure and why head is commonly used for system curves.
 
 =atag=
 Bernoulli equation
@@ -89,14 +89,14 @@ $$ h_{2} = ({p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2}) = (2.43 
 System curve calculation
 =atag=
 ### How is the system curve calculated?
-The preceding discussion on the Bernoulli equation provides a foundation for determining the system’s total head as a function of velocity or flow rate ([Fig. 1.B.1](#fig1b1)); however, it needs to be expanded because friction losses due to fluid viscosity will exist and pumps will add energy to the system. [Fig. 1.B.3](#fig1b3) illustrates the pump total head (H) and the frictional head loss in the pump suction piping (h<sub>fs</sub>) and the pump discharge piping (h<sub>fd</sub>). The frictional head losses are the result of pipe friction and flow through tank entrances and exits, pipes, fittings, valves, and other end-use equipment in the system as discussed in the [Pipe Frictional Losses](/fluid-flow-iii/general) and [Losses in Valves, Fittings and Bends](/fluid-flow-iii/fr-loss-water) sections.
+The preceding discussion on the Bernoulli equation provides a foundation for determining the system’s total head as a function of velocity or flow rate ([Fig. 1.B.1](#fig1b1)); however, it needs to be expanded because friction losses due to fluid viscosity will exist and pumps will add energy to the system. [Fig. 1.B.3](#fig1b3) illustrates the pump total head (H) and the frictional head loss in the pump suction piping (h<sub>fs</sub>) and the pump discharge piping (h<sub>fd</sub>). The frictional head losses are the result of pipe friction and flow through tank entrances and exits, pipes, fittings, valves, and other end-use equipment in the system as discussed in the [Pipe Frictional Losses](/fluid-flow-iii/general.html) and [Losses in Valves, Fittings and Bends](/fluid-flow-iii/fr-loss-water.html) sections.
 
 To determine the pump total head (H) or total differential system head (Δh<sub>system</sub>) we can consider the change in the Bernoulli head from point 1 to point 2 as defined in [Eq. 1.B.1](#eq1b1) and add the frictional head losses from point 1 to the pump suction flange and from the pump discharge flange to point 2.
 
 ![](./images/PF-02-SC-BernoulliSystem-03.png "")
 <div class="figure-label"><a id="fig1b3"></a>Fig. 1.B.3 Pump system illustrating friction head losses and pump total head</div>
 
-Considering the addition of frictional head losses, we get [Eq. 1.B.2](#eq1b2) describing the pump total head (H), followed by substituting terms and rearranging the grouping of terms. This illustrates that the system head plotted on the system curve and the pump total head (H) will be identical during operation due to energy conservation and therefore, the system operating point will be the flow and head defined by the intersection of the pump and system curve. Refer to [Operating Point](./operating-point-phase3) section for additional details.
+Considering the addition of frictional head losses, we get [Eq. 1.B.2](#eq1b2) describing the pump total head (H), followed by substituting terms and rearranging the grouping of terms. This illustrates that the system head plotted on the system curve and the pump total head (H) will be identical during operation due to energy conservation and therefore, the system operating point will be the flow and head defined by the intersection of the pump and system curve. Refer to [Operating Point](./operating-point-phase3.html) section for additional details.
 
 <div class="equation-label"><a id="eq1b2"></a>Eq. 1.B.2 </div>
 =+=
@@ -112,7 +112,7 @@ Where:
 - H is pump total head
 - Δh_Bernoulli is the change in head as described by [Eq. 1.B.1](#eq1b1)
 - Σh_f are frictional head losses between point 1 and the pump suction flange (h<sub>fs</sub>) and between the pump discharge flange and point 2 (h<sub>fd</sub>) respectively.
-- See [Pipe Frictional Losses](/fluid-flow-iii/general) and [Losses in Valves, Fittings and Bends](/fluid-flow-iii/fr-loss-water) sections for details on frictional head loss calculations.
+- See [Pipe Frictional Losses](/fluid-flow-iii/general.html) and [Losses in Valves, Fittings and Bends](/fluid-flow-iii/fr-loss-water.html) sections for details on frictional head loss calculations.
 - Refer to [Eq. 1.B.1](#eq1b1) for definition of all variables and unit considerations.
 
 
@@ -147,7 +147,7 @@ $$ Δh_{system}=H = Δh_{stat}+ Δh_{dyn} $$
 
 The dynamic head varies with flow rate and is grouped separately because it depends on velocity. The frictional head loss portion of the dynamic head can be calculated for the system components, such as piping, valves, elbows and bends, and end-use equipment. These losses typically vary proportional to the square of the velocity.
 
-**Major losses** due to friction in pipes for incompressible Newtonian fluids can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation or using the <a href="/tools/frictional-losses.html" target="_blank">Pipe Frictional Loss Calculator</a>. The Hazen-Williams equation is another method used to determine pipe losses; however, are typically only valid for water at standard temperature. The Hazen-Williams C-factor is a function of pipe material only and is not dependent on Reynolds number. See the [Pipe Frictional Loss](/fluid-flow-iii/general) section for additional details. 
+**Major losses** due to friction in pipes for incompressible Newtonian fluids can be calculated using the Darcy-Weisbach equation. The Darcy-Weisbach friction factor, *f*, can be determined using the Colebrook-White equation or using the <a href="/tools/frictional-losses.html" target="_blank">Pipe Frictional Loss Calculator</a>. The Hazen-Williams equation is another method used to determine pipe losses; however, are typically only valid for water at standard temperature. The Hazen-Williams C-factor is a function of pipe material only and is not dependent on Reynolds number. See the [Pipe Frictional Loss](/fluid-flow-iii/general.html) section for additional details. 
 
 **Minor losses** due to head losses in fittings, valves, area changes, tank entrances and exits, and end-use equipment are typically calculated based on a resistance coefficient and the velocity head as defined in the <a href="/fluid-flow-iii/fr-loss-water.html" target="_blank">Losses in Valves, Fittings and Bends</a> section.
 
@@ -185,7 +185,7 @@ In other systems the elevation change, or static head, will be the majority of t
 </center>
 <div class="figure-label"><a id="fig1b5"></a>Fig. 1.B.5 Static head dominated system curve</div>
 
-Real-world applications tend to consider a range or family of system curves. This brackets the range of liquid levels, operating pressures, valve arrangements, and potential for the pipes fouling over time. The implications of selecting pumps based on a varying system curve are further discussed in the [Operating Point](./operating-point-phase3) section and the educational demonstrator below can be used to get an idea of how changing system parameters will affect the system curve.
+Real-world applications tend to consider a range or family of system curves. This brackets the range of liquid levels, operating pressures, valve arrangements, and potential for the pipes fouling over time. The implications of selecting pumps based on a varying system curve are further discussed in the [Operating Point](./operating-point-phase3.html) section and the educational demonstrator below can be used to get an idea of how changing system parameters will affect the system curve.
 
 =^=
 title: Vibration in Rotodynamic Pumps – Recorded Webinar  
