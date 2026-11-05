@@ -1,0 +1,10 @@
+,numeric,numeric,numeric,numeric,numeric,numeric
+heading,Flow (m3/h),Head (m),Efficiency (%),Pp (kW),NPSHr (m),System
+data,113.6,1.8
+data,136.3,2.1
+data,159.0,2.4
+data,181.7,2.9
+data,204.4,3.4
+data,227.1,4.0
+data,249.8,4.6
+data,272.5,5.5

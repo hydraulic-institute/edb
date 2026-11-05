@@ -8,9 +8,14 @@ ROOT_SPECIAL_DIRS = 'root_specials'
 
 
 def generate(production):
-    content_graph = graph.build_content_graph(SPECIAL_DIRS)
-    output.html(content_graph, SPECIAL_DIRS, IGNORE_DIRS, ROOT_SPECIAL_DIRS, production)
-    print("EDB generated successfully.")
+    try:
+        content_graph = graph.build_content_graph(SPECIAL_DIRS)
+        output.html(content_graph, SPECIAL_DIRS, IGNORE_DIRS, ROOT_SPECIAL_DIRS, production)
+        print("EDB generated successfully.")
+    except Exception as e:
+        print(f"** BUILDERROR - {e}")
+        return False
+    return True
 
 
 if __name__ == "__main__":

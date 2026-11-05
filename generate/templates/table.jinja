@@ -14,11 +14,21 @@
                 </tr>
             {% endfor %}
         </thead>
-        <tbody class="nowrap">
+        <tbody>
             {% for row in table.rows %} 
                 <tr style={{row.style}}>
                     {%for column in row.data %}
-                        <td class="{{column.type}}" colspan={{column.colspan}} style={{column.style}}> {{column.data}}</td>
+                        {% if column.type == 'image'%}
+                            <td class="{{column.type}}" colspan={{column.colspan}} style={{column.style}}> <img src="{{column.data}}" alt="image data" max-width="{{column.width}}px" max-height="{{column.height}}px" height="auto" width="auto"></td>
+                        {% else %}
+                            {% if loop.index in meta.wrap_cols %}
+                                <td class="{{column.type}} align-middle" colspan={{column.colspan}} style={{column.style}}> 
+                                    <div style="white-space: normal; overflow-wrap: break-word;">{{column.data}}</div>
+                                </td>
+                            {% else %}
+                                <td class="{{column.type}}" colspan={{column.colspan}} style={{column.style}}> {{column.data}}</td>
+                            {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </tr>
             {% endfor %}

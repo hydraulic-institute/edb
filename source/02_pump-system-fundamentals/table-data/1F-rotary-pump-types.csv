@@ -1,0 +1,16 @@
+﻿,image::100wx100h,text
+heading,Representative image,Rotary  PD Pump Type overview
+data,./images/1F-SlidingVane.png,"<b>Sliding Vane</b><br>
+In a sliding vane pump, vanes move in and out of slots in a rotor to form pumping chambers with the casing. As the rotor turns, chamber volume increases at the inlet to draw in liquid and decreases at the outlet to discharge it, producing nearly constant flow with relatively low pulsation."
+data,./images/1F-AxialPiston.png,"<b>Axial Piston</b><br>
+Axial piston rotary pumps use multiple pistons arranged parallel to the axis of a rotating cylinder block. Two designs are common. In a swash plate pump, the block rotates on the drive shaft axis and the pistons bear against an angled stationary plate. In a bent-axis pump, the cylinder block itself is inclined to the drive shaft. In both, the tilt angle sets the displacement, and both are built in fixed- and variable-displacement versions."
+data,./images/1F-FlexibleMember.png,"<b>Flexible Member</b><br>
+Flexible member rotary pumps use a deforming flexible member to trap, transport, and discharge liquid. The category includes peristaltic pumps, which progressively compress and release a flexible hose or tube, and flexible-vane pumps, which use a rotating elastomeric member to form pumping chambers within the casing."
+data,./images/1F-Lobe.png,"<b>Lobe</b><br>
+Lobe pumps carry liquid in chambers formed between the rotor lobe surfaces and the pumping chamber wall. Both rotors are driven and synchronized by external timing gears, so the lobes do not contact one another while the rotor surfaces provide continuous sealing at close running clearances which lowers slip. Common rotor forms include bi-wing, tri-lobe, and multi-lobe designs."
+,./images/1F-Gear.png,"<b>Gear</b><br>
+Gear pumps transfer liquid in chambers formed between intermeshing gear teeth and the pump body. Common designs include external gear pumps, with two meshing external gears, and internal gear pumps, which use an inner and outer gear arrangement. "
+,./images/1F-CircumferentialPiston.png,"<b>Circumferential Piston</b><br>
+Circumferential piston pumps are a distinct rotary positive displacement pump type. Circumferential piston pumps use two arc-shaped rotor ‘pistons’ that rotate withing the pump casing. The rotors are driven by external timing gears and do not contact each other. The long sealing path between the rotor pistons and the casing walls allows it to operate with thin liquids and at higher pressures."
+,./images/1F-Screw.png,"<b>Screw</b><br>
+Screw pumps use one or more helical rotors to form and move pumping chambers axially from inlet to outlet. Designs include single-screw pumps, including progressing-cavity pumps, and multiple-screw pumps, which may be timed or untimed. "
