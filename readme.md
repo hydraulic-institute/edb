@@ -289,8 +289,7 @@ The following is a rho character: <span>&#x03A1;</span>
 - https://www.freeformatter.com/html-entities.html
 - https://www.mastertemplate.co.uk/jsonescapedcharacterentities.php
 Note - any HTML element can be used within Markdown - if you are not familiar with HTML, you might want to read up on some of the elements.
-
-[https://www.w3schools.com/tags/](https://www.w3schools.com/tags/)
+- https://www.overleaf.com/learn/latex/Brackets_and_Parentheses 
 
 It is best to use as few of these as possible however - you should only use HTML elements when there is no equivelant Markdown support.  **Do not use HTML to support alternative page layouts and styling** - this may cause conflicts with the way the rest of the site is auto-generated.
 
