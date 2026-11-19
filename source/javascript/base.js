@@ -15,10 +15,14 @@ $(window).on('pageshow',function() {
     check_each_dt();
     //In case a search is requested, scroll to the first result
     let current_hash = "";
+    let current_hash_class = "";
     let storage_active_topic = localStorage.getItem("active_topic");
     if (storage_active_topic) {
         storage_active_topic = JSON.parse(storage_active_topic);
         current_hash = storage_active_topic['hash'];
+        if (current_hash.length > 0) {
+            current_hash_class = "."+current_hash.split("#")[1]+'-tag';
+        }
     }
     if ( $('.current_mark').length ) {
         $('.current_mark').get(0).scrollIntoView({block: "center"});
@@ -27,7 +31,7 @@ $(window).on('pageshow',function() {
         if (current_hash.length > 0) {
             let active_section = "#"+storage_active_topic['topic'].split("_")[0];
             $(active_section+"-button").click();
-            $(current_hash+"-menu-item").addClass("is-active");
+            $(current_hash_class).addClass("is-active");
             $(current_hash).get(0).scrollIntoView({behavior: "smooth", block: "center"});
         }
     }
@@ -64,9 +68,6 @@ function canonicalPath(path) {
 
 function setup_menu() {      
     //Update the menu to show the active topic and any uncollapsed parents
-    if ($('.navbar-burger').is(':visible')) {
-        return;
-    }
     let current_location = window.location.pathname;
     let current_hash = window.location.hash;
     let active_topic = $(".active_topic");
@@ -115,9 +116,16 @@ function setup_menu() {
         storage_active_topic['hash'] = current_hash;
         localStorage.setItem("active_topic", JSON.stringify(storage_active_topic));
     }
-    //Set the active topic
-    $("#"+storage_active_topic['topic']).addClass("active_topic");
-    $("#"+storage_active_topic['topic']).addClass("is-active");
+
+    let target_id = storage_active_topic['topic'];
+    document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("active_topic"));
+    if (storage_active_topic['hash'].length > 0) {
+        let hash_class = '.'+storage_active_topic['hash'].split("#")[1]+'-tag';
+        $(hash_class).addClass("is-active");
+    }
+    else {
+        document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("is-active"));
+    }
 
     //Set the dropdowns. HOME is a link, so only click accordion buttons.
     let active_section = "#"+storage_active_topic['topic'].split("_")[0];
@@ -152,8 +160,23 @@ function menu_topic_click(event) {
     //event.stopImmediatePropagation();
     let target = $(this).attr('id');
     let href = $(this).attr('href');
-    let current_topic = JSON.parse(localStorage.active_topic)['topic'];
-    if (target == current_topic) {
+    let hash = "";
+    if (href.includes("#")) {
+        hash = "#"+href.split("#")[1];
+        href = href.split("#")[0];
+        //Update the target to the active topic
+        target = $('.active_topic').attr('id');
+    }
+    let storage_active_topic = localStorage.getItem("active_topic");
+    if (!storage_active_topic) {
+        storage_active_topic = {"topic":target, "href":href, "hash":hash};
+        localStorage.setItem("active_topic", JSON.stringify(storage_active));
+    }
+    else {
+        storage_active_topic = JSON.parse(storage_active_topic);
+    }
+    let current_topic = storage_active_topic['topic'];
+    if ((target == current_topic) && (hash == storage_active_topic['hash'])) {
         event.stopPropagation();
         event.preventDefault();
         return;
@@ -163,15 +186,26 @@ function menu_topic_click(event) {
     if (!target) {
         target = pathToId(window.location.pathname);
         href = window.location.pathname;
+        hash = window.location.hash;
         //Expand the new section 
         let section = "#"+target.split("_")[0];
         localStorage.setItem('nav_show', section);
         $(section+"-button").click();
     }
-    $("#"+target).addClass("is-active");
-    $("#"+target).addClass("active_topic");
-    localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href}));
 
+    $(this).addClass("active_topic");
+    if (hash.length > 0) {
+        let hash_class = '.'+hash.split("#")[1]+'-tag';
+        $(hash_class).addClass("is-active");
+    }
+    else {
+        $(this).addClass("is-active");
+    }
+    localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href, "hash":hash}));
+    if ($('.navbar-burger').is(':visible')) {
+         $('.navbar-burger').removeClass('is-active');
+         $('.navbar-menu').removeClass('is-active');
+    }
 }
 
 function check_each_dt() {

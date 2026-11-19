@@ -1,11 +1,11 @@
 -----
-title: E) Pump Principles
-tabtitle: Pump Principles - Centrifugal Mixed and Axial flow | HI Data Tool 
+title: E) Rotodynamic Pump Principles
+tabtitle: Rotodynamic Pump Principles - Centrifugal Mixed and Axial flow | HI Data Tool 
 date: September 21, 2026
 description: Learn centrifugal pump operating principles including specific speed, suction specific speed, attainable efficiency, impeller types, and NPSHR and cavitation.
 -----
 
-# Pump Principles
+# Rotodynamic Pump Principles
 
 The pump principles section focuses on rotodynamic pumps of centrifugal, mixed and axial flow types. Related to these categories of rotodynamic pumps, typical performance curve characteristics are discussed along with attainable pump efficiency, specific speed and the associated impeller profiles, net positive suction head (NPSH) and suction specific speed.
  
