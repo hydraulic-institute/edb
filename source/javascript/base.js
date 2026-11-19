@@ -52,6 +52,7 @@ function setup_menu() {
     if ($('.navbar-burger').is(':visible')) {
         return;
     }
+    let current_location = canonicalPath(window.location.pathname);
     let active_topic = $(".active_topic");
     let default_topic = $(".default_topic");
     let current_topic = active_topic;
@@ -75,7 +76,7 @@ function setup_menu() {
         storage_active_topic = JSON.parse(storage_active_topic);
     }
     if (canonicalPath(storage_active_topic['href']) != canonicalPath(current_topic_href)) {
-        if (window.location.pathname == canonicalPath("/")) {
+        if (current_location == canonicalPath("/")) {
             window.location.href = storage_active_topic['href'];
             return;
         }
