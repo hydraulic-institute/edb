@@ -202,13 +202,24 @@ The EDB is meant to be easily navigated.  Sections (directories) may have files 
 
 ### Nested Sections
 Nested sections in a topic can be defined by applying an Anchor Tag custom extension to the markdown in the topic markdown. The anchor tag will refer to a specific section on the page. Anchor tags will also automatically generate a 3rd level to the menu structure with the title defined in the tag. The custom extension `=atag=` should be used immediately before the section it applies to. It should wrap the title to be shown in the nested section in the menu structure and when clicked on, will take the user to the section following the `atag` on the webpage.
+Wrap the `=atag=` around a Heading `#`.  Do not repeat the Heading. 
 
 Ex:
 ```
 =atag=
-System Curve Application
-=atag=
 ### System Curve Application
+=atag=
+The System Curve .....
+```
+
+If you do NOT want to use a Heading, then just put an `=atag=` around unique text that will be used as the identifier for the tag.
+
+Ex:
+```
+=atag=
+newsection
+=atag=
+- Special paragraph
 ```
 
 This choice was made to ease navigation, and also to ensure each topic page can have adequeate detail.  It is critical for SEO to ensure the EDB has long content - not a series of very short pages.
