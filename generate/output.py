@@ -592,8 +592,12 @@ def process_anchor_tag_blocks(markdown):
     start = markdown.find(delim)
     while (start >= 0):
         end = markdown.find(delim, start+1)
+        if end == -1:
+            raise Exception(f"** Error - an anchor tag block is not valid. No closing delimiter found.")
         before = markdown[:start]
         within = markdown[start+delim_len:end]
+        if within == "":
+            raise Exception(f"** Error - an anchor tag block is not valid. No tag name found.")
         after = markdown[end+delim_len:]
         atag_obj, atag_template = replace_atag_block(within)
         atag_obj_list.append(atag_obj)
