@@ -10,8 +10,10 @@ description: Learn centrifugal pump operating principles including specific spee
 The pump principles section focuses on rotodynamic pumps of centrifugal, mixed and axial flow types. Related to these categories of rotodynamic pumps, typical performance curve characteristics are discussed along with attainable pump efficiency, specific speed and the associated impeller profiles, net positive suction head (NPSH) and suction specific speed.
  
 =atag=
-### Specific Speed 
+Specific Speed 
 =atag=
+
+### Specific Speed 
 
 **Specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
 
@@ -97,8 +99,10 @@ where in Metric Units:
 - g = gravitational acceleration in meters per second squared
 
 =atag=
-### Suction Specific Speed
+Suction Specific Speed
 =atag=
+
+### Suction Specific Speed
 
 **Suction Specific Speed** is an index of pump suction operating characteristics determined at the BEP flow rate with the maximum diameter impeller. It is an indicator of the NPSHR for a 3% drop in head (NPSH3) at a given rate of flow and rotational speed. [Eq. 1.D.4](#eq1d4) defines suction specific speed for U.S. customary units, while [Eq. 1.D.5](#eq1d5) defines suction specific speed for metric units.
 
@@ -144,8 +148,10 @@ For more information on the suction specific speed definition refer to <a href="
 
 
 =atag=
-### Impeller Types
+Impeller Types
 =atag=
+
+### Impeller Types
 
 [Fig. 1.D.3](#fig1d3) defines common impeller types used in centrifugal, mixed flow, and axial flow pumps. The figure shows how impeller geometry changes as flow increases relative to developed head. As the flow increases with respect to the developed head, the larger the waterways become and the smaller the diameter becomes.
 
@@ -174,8 +180,10 @@ hide_price: true
 =^=
 
 =atag=
-### Net Positive Suction Head (NPSH)
+Net Positive Suction Head (NPSH)
 =atag=
+
+### Net Positive Suction Head (NPSH)
 
 **NPSH** is the net positive suction head in <units us = "feet" metric = "meters"></units>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage to other parts of the pump, such as seals and bearings. [Fig. 1.D.5](#fig1d5) defines the pressure profile through a pump and illustrates how cavitation can occur when local pressure falls below the liquid vapor pressure resulting in cavitation.
 
@@ -208,15 +216,17 @@ recommended NPSHA above the published NPSHR that will lead to acceptable pump pe
 <div class="figure-label"><a id="fig1d6"></a>Fig. 1.D.6 NPSHR Breakdown Curve</div>
 
 =atag=
-### Submergence
+Submergence
 =atag=
+
+### Submergence
 
 Submergence (S) is defined as the vertical distance from the free surface of the liquid pumped to the cdatum for the particular intake type as defined in <a href="https://www.pumps.org/?s=9.8+Rotodynamic+Pumps+for+Pump+Intake+&post_type=#page-title" target="_blank">ANSI/HI 9.8 Rotodynamic Pumps for Pump Intake Design</a>. The following is an excerpt regarding submergence and the reader is encouraged to refer to ANSI/HI 9.8 for full details on pump intake design. 
 
 =^=
 title: ANSI/HI 9.8 Rotodynamic Pumps for Pump Intake Design   
 description: Learn standard intake designs for rotodynamic pumps handling clear and solids laden fluids, the criteria beyond which an intake must be validated by physical model, and techniques to improve problem intakes.  
-image: /images/ANSI-9.8-intake.png
+image: ./images/ANSI-9.8-intake.png
 url:  https://www.pumps.org/?s=9.8+Rotodynamic+Pumps+for+Pump+Intake+&post_type=#page-title
 price: 
 hide_price: true
