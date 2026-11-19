@@ -515,15 +515,10 @@ Summary of Impeller Trimming Vane Profile Modifications
 
 This summary table is presented qualitatively and the modifications within are recommended to be applied only by the manufacturer with specific knowledge of how each modification will affect pump performance.
 
-| Modification | Typical purpose | General performance effect | 
-|---|---|---|
-|Vane and shroud trimming | Typical method for radial-flow enclosed and semi-open impellers | Done to reduce head and flow to meet rated point; limit to 5% when applying affinity rules |
-| Vane trimming while leaving one or both shrouds larger | Maintain radial gap, support thrust-balance geometry, or alter curve slope | May reduce efficiency slightly because of increased disk friction | 
-| Shroud trimming while leaving vanes larger | Address drooping pump curve near shutoff | Can increase shutoff head; may reduce efficiency | 
-| V-cutting vanes | Adjust higher-flow performance while preserving shutoff head or vane overlap | Reduces flow and head more aggressively at higher flow | 
-| Angle trimming | Trim to mean diameter for mixed flow or Francis-vane type geometry | Angle change may adjust curve slope; decreased angle tends to flatten curve; increased angle tends to steepen curve | 
-| Underfiling | Increase vane passage area by removing material on underside of vane trailing edge | Shifts BEP toward higher flow and can increase head/flow to meet a rating | 
-| Overfiling | Thins blunt trailing edge by removing material on the top side of vane trailing edge | Minimal hydraulic performance change; may reduce vane-pass pulsation and related vibration | 
+=|=
+data: rototable.csv
+scrolling: false
+=|=
 
 ### References
 

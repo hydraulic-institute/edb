@@ -22,7 +22,7 @@ A system curve shows the total differential system head (Δh<sub>system</sub>) o
 <div class="figure-label"><a id="fig1b1"></a>Fig. 1.B.1 System curve illustrating system head as a function of flow rate</div>
 
 ### What is head and why is it used?
-Head is the expression of the energy content of a liquid in reference to any arbitrary datum expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"/> of liquid. Pressure and head of a liquid in a piping system have a physical relationship as described in the following subsection on the Bernoulli equation [Eq. 1.B.1](#eq1b1) and is also explained in the [Pump System Foundational Concepts](/pump-system-fundamentals/foundational-concepts.html) section with [Eq. 1.A.1a](#eq1a1a) and [Eq. 1.A.1b](#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems independent of the fluid density. Refer to this section for additional information on pump total head, pressure and why head is commonly used for system curves.
+Head is the expression of the energy content of a liquid in reference to any arbitrary datum expressed in units of energy per unit weight of liquid. The measuring unit for head is <units us = "feet" metric = "meters"></units> of liquid. Pressure and head of a liquid in a piping system have a physical relationship as described in the following subsection on the Bernoulli equation [Eq. 1.B.1](#eq1b1) and is also explained in the [Pump System Foundational Concepts](/pump-system-fundamentals/foundational-concepts.html) section with [Eq. 1.A.1a](#eq1a1a) and [Eq. 1.A.1b](#eq1a1b). Head may not be intuitive at first, but it is the most useful way of calculating and expressing the energy contained in pump piping systems independent of the fluid density. Refer to this section for additional information on pump total head, pressure and why head is commonly used for system curves.
 
 =atag=
 Bernoulli equation
@@ -32,19 +32,15 @@ Based on the conservation of energy, the Bernoulli equation describes the relati
 
 <div class="equation-label"><a id="eq1b1"></a>Eq. 1.B.1 </div>
 =+=
-
 [units us]
 
 $$ h_{1} = h_{2} = ({32.2 \over {1}} · {144 \over 1} · {p_{1} \over {ρ·g}}) + ({v_{1}^2 \over {2·g}}) + ({Z_1}) = ({32.2 \over {1}} · {144 \over 1} · {p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2})$$
-
 =+=
 
 =+=
-
 [units metric]
 
 $$ h_{1} = h_{2} = ({p_{1} \over {ρ·g}}) + ({v_{1}^2 \over {2·g}}) + ({Z_1}) = ({p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2})$$
-
 =+=
 
 Where:
@@ -52,14 +48,14 @@ Where:
 <ul>
 <li>p is static pressure <units us = "(psi)" metric = "(Pa)"/></li>
 <li>h is head <units us = "(ft)" metric = "(m)"/></li>
-<li>ρ is density of the liquid <units us = "(lbm/ft^3)" metric = "(kg/m^3)"/></li>
-<li>g is acceleration due to gravity <units us = "(ft/s^2)" metric = "(m/s^2)"/></li>
+<li>ρ is density of the liquid <units us = "(lbm/ft^3^)" metric = "(kg/m^3^)"/></li>
+<li>g is acceleration due to gravity <units us = "(ft/s^2^)" metric = "(m/s^2^)"/></li>
 <li>Z is elevation head <units us = "(ft)" metric = "(m)"/></li>
 <li v-if='unit_set=="us"'>144 is to convert between square inches (in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li> 
 <li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
 </ul>
 
-Applying the Bernoulli equation to an example system in [Fig. 1.B.2](#fig1b2), it illustrates that when evaluating the energy at two points in a piping system when frictional losses are ignored, the energy components are simply exchanged (i.e., pressure for potential, potential for velocity, velocity for pressure, etc.) with the total energy or head remaining constant. [Calc. 1.B.1a](#calc1b1a) and [Calc. 1.B.1b](#calc1b1b) show the total head relative to the datum is equivalent for points 1 and 2 <units us = "(12.6 ft)" metric = "(3.8 m)"/> even though the static pressures, elevation heads, and velocities are different. These calculations illustrate the Bernoulli energy transfer with point 2 having lower pressure head, greater elevation head, and greater velocity head than point 1, but having the same total head.
+Applying the Bernoulli equation to an example system in [Fig. 1.B.2](#fig1b2), it illustrates that when evaluating the energy at two points in a piping system when frictional losses are ignored, the energy components are simply exchanged (i.e., pressure for potential, potential for velocity, velocity for pressure, etc.) with the total energy or head remaining constant. [Calc. 1.B.1a](#calc1b1a) and [Calc. 1.B.1b](#calc1b1b) show the total head relative to the datum is equivalent for points 1 and 2 <units us = "(12.6 ft)" metric = "(3.8 m)"></units> even though the static pressures, elevation heads, and velocities are different. These calculations illustrate the Bernoulli energy transfer with point 2 having lower pressure head, greater elevation head, and greater velocity head than point 1, but having the same total head.
 
 ![](./images/PF-02-SC-Bernoulli-02.png "")
 <div class="figure-label"><a id="fig1b2"></a>Fig. 1.B.2 Bernoulli illustration of static pressure difference at points 1 and 2 based on elevation head and velocity head difference (see Calcs. 1.B.1a and 1.B.1b for equivalent total head)</div>
@@ -67,31 +63,24 @@ Applying the Bernoulli equation to an example system in [Fig. 1.B.2](#fig1b2), i
 <div class="calculation-label"><a id="calc1b1a"></a>Calc. 1.B.1a Total head h<sub>1</sub> with respect to datum per Fig. 1.B.2</div>
 
 =+=
-
 [units us]
 
 $$ h_{1} = ({32.2 \over {1}} · {144 \over 1} · {p_{1} \over {ρ·g}}) + ({v_{1}^2 \over {2·g}}) + ({Z_1}) = (11.5 ft) + (0.08 ft) + (1 ft)=12.6 ft $$
-
 =+=
 
 =+=
-
 [units metric]
 $$ h_{1} = ({p_{1} \over {ρ·g}}) + ({v_{1}^2 \over {2·g}}) + ({Z_1}) = (3.5 m) + (0.025 m) + (0.305 m) = 3.8 m $$
-
 =+=
 
 <div class="calculation-label"><a id="calc1b1b"></a>Calc. 1.B.1b Total head h<sub>2</sub> with respect to datum per Fig. 1.B.2</div>
 
 =+=
-
 [units us]
 $$ h_{2} = ({32.2 \over {1}} · {144 \over 1} · {p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2}) = (7.95 ft) + (2.66 ft) + (2 ft)=12.6 ft $$
-
 =+=
 
 =+=
-
 [units metric]
 $$ h_{2} = ({p_{2} \over {ρ·g}}) + ({v_{2}^2 \over {2·g}}) + ({Z_2}) = (2.43 m) + (0.81 m) + (0.61 m) = 3.8 m $$
 =+=
@@ -111,13 +100,11 @@ Considering the addition of frictional head losses, we get [Eq. 1.B.2](#eq1b2) d
 
 <div class="equation-label"><a id="eq1b2"></a>Eq. 1.B.2 </div>
 =+=
-
 $$ H = [Δh_Bernoulli]+[Σh_f] $$
 
 $$ H = [({p_{2} \over {ρ·g}}+{v_{2}^2 \over {2·g}}+{Z_2})-({p_{1} \over {ρ·g}}+{v_{1}^2 \over {2·g}}+{Z_1})]+[h_fs+h_fd]$$
 
 $$ H = [({{p_{2}-p_{1}} \over {ρ·g}})+({{v_{2}^2}-{v_{1}^2} \over {2·g}})+(Z_2-Z_1)]+[h_fs+h_fd]$$
-
 =+=
 
 Where:
@@ -144,19 +131,16 @@ It is common to group items 1–4 based on being dependent or independent of vel
 
 <div class="equation-label"><a id="eq1b3"></a>Eq. 1.B.3 </div>
 =+=
-
 $$ Δh_{stat} = ({{p_{2}-p_{1}} \over {ρ·g}})+(Z_2-Z_1) $$
 =+=
 
 <div class="equation-label"><a id="eq1b4"></a>Eq. 1.B.4 </div>
 =+=
-
 $$ Δh_{dyn} = ({{v_{2}^{2}-v_{1}^{2}} \over {2·g}})+(h_{fd}+h_{fs}) $$
 =+=
 
 <div class="equation-label"><a id="eq1b5"></a>Eq. 1.B.5 </div>
 =+=
-
 $$ Δh_{system}=H = Δh_{stat}+ Δh_{dyn} $$
 =+=
 
@@ -234,7 +218,7 @@ Calculation example
 =atag=
 ### System Curve Calculation Worked Example (U.S. & Metric Units)
 
-Consider the system in [Fig. 1.B.6](#fig1b6) and develop a system curve for the flows <units us = "from 0 to 300 GPM." metric = "from 0 to 68.14 m^3/h. **Note** metric values in the worked example are converted from US units in Fig. 1.B.6."/>
+Consider the system in [Fig. 1.B.6](#fig1b6) and develop a system curve for the flows <units us = "from 0 to 300 GPM." metric = "from 0 to 68.14 m^3^/h. **Note** metric values in the worked example are converted from US units in Fig. 1.B.6."/>
 
 ![](./images/we-system.png#center "")
 <div class="figure-label"><a id="fig1b6"></a>Fig. 1.B.6 Pump system for system curve calculation worked example</div>
@@ -245,17 +229,14 @@ Using the static head calculation in [Eq. 1.B.3](#eq1b3), and since both tanks h
 
 <div class="calculation-label"><a id="calc1b2"></a>Calc. 1.B.2 Static head for system curve example</div>
 =+=
-
 [units = us]
 $$ Δh_{stat} = ({{p_{2}-p_{1}} \over {ρ·g}})+(Z_2-Z_1)=(0-0)+(289 \,ft - 24 \,ft)=265\, ft $$
-
 =+=
 
 =+=
 [units = metric]
 
 $$ Δh_{stat} = ({{p_{2}-p_{1}} \over {ρ·g}})+(Z_2-Z_1)=(0-0)+(88.09 \,m -7.315\,m)= 80.77\,{m} $$
-
 =+=
 
 **Determine the Dynamic Head Including Frictional Losses**
@@ -280,13 +261,11 @@ Using the dynamic head equation [Eq. 1.B.4](#eq1b4), [Calc. 1.B.3](#calc1b3) com
 [units = us]
 
 $$ \Delta h_{dyn} = {({fL \over D} + ΣK) · ({v^2 \over 2·g})} +({v_{2}^2-v_{1}^2 \over 2·g})= {({0.02 × 1255\,ft \over 0.3355\,ft} + 3.79)· ({v^2 \over 2 × 32.2 \,{ft/s^2}})} + (0)  = 1.22·v^2$$
-
 =+=
 
 =+=
 [units = metric]
 $$ \Delta h_{dyn} = {({fL \over D} + ΣK) · ({v^2 \over 2·g})} +({v_{2}^2-v_{1}^2 \over 2·g})= {({0.02 × 382.5\,m \over 0.10226\,m} + 3.79)· ({v^2 \over 2 × 9.81 \,{m/s^2}})} + (0)  = 4.01·v^2$$
-
 =+=
 
 **Determine the System Curve**
@@ -299,12 +278,13 @@ Per [Eq. 1.B.5](#eq1b5), [Calc. 1.B.4](#calc1b4a) illustrates the system curve c
 
 $$ Δh_{system}=H = Δh_{stat}+ Δh_{dyn} = 265\,{ft} + 1.22·v^2$$
 =+=
+
 =+=
 [units = metric]
 $$Δh_{system}=H = Δh_{stat}+ Δh_{dyn} = 80.77\,{m} + 4.01·v^2$$
 =+=
 
-[Calc. 1.B.4b](#calc1b4b) can be used to convert a flow rate (Q) in <units us = "gpm to a velocity in ft/s with the pipe diameter D in inches" metric = "m^3/h to a velocity in m/s with the pipe diameter (D) in meters."/>
+[Calc. 1.B.4b](#calc1b4b) can be used to convert a flow rate (Q) in <units us = "gpm to a velocity in ft/s with the pipe diameter D in inches" metric = "m^3^/h to a velocity in m/s with the pipe diameter (D) in meters."/>
 
 <div class="calculation-label"><a id="calc1b4b"></a>Calc. 1.B.4b Flow-rate-to-velocity conversion</div>
 =+=
@@ -317,11 +297,10 @@ $$ v = 0.320833·Q·({4 \over \pi ·D^2}) $$
 $$ v = 0.000278·Q·({4 \over \pi ·D^2}) $$
 =+=
 
-Substituting [Calc. 1.B.4b](#calc1b4b) in for velocity in [Calc. 1.B.4a](#calc1b4a) using the 4-inch pipe <units us = "(ID = 4.026 inches)" metric = "(ID = 0.10226 m)"/> we get [Calc. 1.B.4c](#calc1b4c) as the system curve equation as a function of flow rate in <units us = "gpm" metric = "m^3/h"/>.
+Substituting [Calc. 1.B.4b](#calc1b4b) in for velocity in [Calc. 1.B.4a](#calc1b4a) using the 4-inch pipe <units us = "(ID = 4.026 inches)" metric = "(ID = 0.10226 m)"></units> we get [Calc. 1.B.4c](#calc1b4c) as the system curve equation as a function of flow rate in <units us = "gpm" metric = "m^3^/h"/>.
 
 <div class="calculation-label"><a id="calc1b4c"></a>Calc. 1.B.4c System curve as a function of flow rate</div>
 =+=
-
 [units us]
 $$ \Delta h_{system} = 265\,{ft} + {{{7.75e^{-4}}}·{Q^2}} $$
 =+=
@@ -330,7 +309,7 @@ $$ \Delta h_{system} = 265\,{ft} + {{{7.75e^{-4}}}·{Q^2}} $$
 $$ \Delta h_{system} = 80.77\,{m} + 4.59e^{-3}·Q^2 $$
 =+=
 
-[Calc. 1.B.4c](#calc1b4c) is used to generate the velocity data in [Fig. 1.B.7](#fig1b7) and the system head data in [Fig. 1.B.8](#fig1b8), each as a function of flow rate with the data table following. This system is dominated by the static head. The static head is <units us = "265 ft" metric = "80.77 m"/> compared with approximately <units us = "70 ft" metric = "21.33 m"/> at the maximum flow rate.
+[Calc. 1.B.4c](#calc1b4c) is used to generate the velocity data in [Fig. 1.B.7](#fig1b7) and the system head data in [Fig. 1.B.8](#fig1b8), each as a function of flow rate with the data table following. This system is dominated by the static head. The static head is <units us = "265 ft" metric = "80.77 m"/> compared with approximately <units us = "70 ft" metric = "21.33 m"></units> at the maximum flow rate.
 
 =/=
 title: Velocity 
