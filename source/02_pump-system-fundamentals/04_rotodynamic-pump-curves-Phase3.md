@@ -516,9 +516,10 @@ Summary of Impeller Trimming Vane Profile Modifications
 This summary table is presented qualitatively and the modifications within are recommended to be applied only by the manufacturer with specific knowledge of how each modification will affect pump performance.
 
 =|=
-data: rototable.csv
+data: summary-table-impeller-trimming.csv
 scrolling: false
 =|=
+<div class="table-label"><a id="tbl1b3"></a>Tbl. 1.B.3 Summary of impeller trimming and modifications</div>
 
 ### References
 
