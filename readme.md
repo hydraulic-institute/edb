@@ -157,7 +157,7 @@ Note that each directory is prefixed with a number (i.e. 03_specific_speed).  Th
 
 The EDB is arranged in a heiarchy of topics.  Folder structure under the `/source` directory is used to arrange the heiarchy, however the order of pages within the same directory is determined by alphabetical order.
 
-**Note** - this is why the actual page title is always included in the metadata section discussed above.  **The recommended way to create individual pages is to prefix their filenames with a number** - ensuring the order of the pages is always clear.
+**Note:** This is why the actual page title is always included in the metadata section discussed above.  **The recommended way to create individual pages is to prefix their filenames with a number** - ensuring the order of the pages is always clear.
 
 For example, the main topic "System Curves" has three pages within it - "Tutorial", "Demonstrator", and "Worked Example".  To ensure that the pages appear in the given order, you would arrange the folder structure as follows:
 
@@ -904,7 +904,7 @@ Here are some helpful links on using git from the command line, and dealing with
 - [https://git-scm.com/docs/git-merge](https://git-scm.com/docs/git-merge)
 - [https://code.visualstudio.com/Docs/editor/versioncontrol](https://code.visualstudio.com/Docs/editor/versioncontrol)
 
-**Note** we will not use branches - we will do all work in `master`.  You can safely disregard branch discussions in these resources - these are features of `git` used in more complex situations.
+**Note:** We will not use branches - we will do all work in `master`.  You can safely disregard branch discussions in these resources - these are features of `git` used in more complex situations.
 
 ### Adding your changes
 

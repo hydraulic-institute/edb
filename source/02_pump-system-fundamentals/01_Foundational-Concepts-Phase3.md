@@ -14,7 +14,7 @@ There are several foundational concepts that one needs to understand when workin
 - What causes head or pressure losses in a pump system.
 
 
-**Note**: All concepts and equations on this page apply to incompressible fluid flow.
+**Note:** All concepts and equations on this page apply to incompressible fluid flow.
 =atag=
 Pressure and Head
 =atag=
