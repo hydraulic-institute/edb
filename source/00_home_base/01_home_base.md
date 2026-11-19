@@ -1,6 +1,6 @@
 -----
 tabtitle: About the HI Data Tool
-title: A) Welcome & Introduction
+title: Home
 description: The HI Data Tool is a must have resource for anyone working with pumps or pump systems. US customary and Metric Units. Support pump system calculations.
 date: July 19th, 2024
 -----
