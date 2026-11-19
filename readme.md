@@ -197,6 +197,17 @@ The following **are not valid names**, and will result in build failure
 ## Section / Topic Nesting
 The EDB is meant to be easily navigated.  Sections (directories) may have files (topics) in them - but no sub-directories.  Thus, the EDB consists of sections, which have several topics.  Each topic page can contain headings and sub headings - but there is no ability to create nested sections/pages.
 
+### Nested Sections
+Nested sections in a topic can be defined by applying an Anchor Tag custom extension to the markdown in the topic markdown. The anchor tag will refer to a specific section on the page. Anchor tags will also automatically generate a 3rd level to the menu structure with the title defined in the tag. The custom extension `=atag=` should be used immediately before the section it applies to. It should wrap the title to be shown in the nested section in the menu structure and when clicked on, will take the user to the section following the `atag` on the webpage.
+
+Ex:
+```
+=atag=
+System Curve Application
+=atag=
+### System Curve Application
+```
+
 This choice was made to ease navigation, and also to ensure each topic page can have adequeate detail.  It is critical for SEO to ensure the EDB has long content - not a series of very short pages.
 
 ## Page Content
@@ -415,7 +426,7 @@ The first column of every row in the CSV file should always contain the followin
 	- More than one row can contain the **heading** meta data.  The font size of the 2nd and following heading rows will be reduced by 1/4 to `.75rem`. 
 	- To have a header span multiple columns, just leave any number of following columns blank that you want the header to span.  This can be seen in Section 3 - Losses in Nozzles.
 		- One thing to note is to make sure the CSV file does NOT have extra empty columns at the end.
-- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in ever table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
+- **tags** - *(OPTIONAL)* The row contains tags (see above).  Columns with no tag or "All" will be included in every table generated.  Columns with "None" will not be included at all.  Otherwise, the tag will be searched in the `tag` row.
 - **data** - The row is interpreted as standard data - not a heading.  
 
 #### Example

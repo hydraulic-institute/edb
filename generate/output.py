@@ -551,7 +551,25 @@ def replace_scrolling_logo_block(chart_text):
     new_html = template.render(logos=all_logos, data=logos_format) 
     return new_html
 
+def replace_atag_block(atag_text):
+    ### Add an atag to the section
+    ### TODO
+    return
 
+def pocess_anchor_tag_blocks(markdown):
+    delim = "=atag="
+    delim_len = len(delim)
+    start = markdown.find(delim)
+    while (start >= 0):
+        end = markdown.find(delim, start+1)
+        before = markdown[:start]
+        within = markdown[start+delim_len:end]
+        after = markdown[end+delim_len:]
+        markdown = before + \
+            replace_atag_block(within) + after
+        start = markdown.find(delim)
+ 
+    return markdown    
 def process_scrolling_logo_blocks(markdown):
     delim = "=scrolling-logos="
     delim_len = len(delim)
