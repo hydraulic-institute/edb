@@ -12,7 +12,7 @@ The Hydraulic Institute standardizes rotodynamic pump types, definitions and nom
 
 Rotodynamic pumps impart energy to the pumped fluid by means of a rotating impeller, propeller or rotor and include centrifugal (radial flow), and mixed flow and axial flow pumps. The description for each rotodynamic pump type, and the related industry standard are summarized on this page. 
 
-For descriptions on positive displacement pumps refer to the [Positive displacement types](./positive-displacement-pump-types-phase3) section.
+For descriptions on positive displacement pumps refer to the [Positive displacement types](./positive-displacement-pump-types-phase3.html) section.
 
 =defs=
 title: Pump Types

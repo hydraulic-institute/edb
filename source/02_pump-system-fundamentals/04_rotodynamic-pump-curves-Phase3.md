@@ -117,7 +117,7 @@ Net Positive Suction Head Required
 ### Net Positive Suction Head Required (NPSHR) Curve
 
 The **NPSHR curve** plots NPSHR for different flow rates. NPSHR is the minimum NPSH needed to achieve the specified performance 
-at the specified flow rate, speed, and pumped liquid. NPSHR in combination with the system's available NPSH is an important considerations in pump selection. NPSHR is further defined in [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3). 
+at the specified flow rate, speed, and pumped liquid. NPSHR in combination with the system's available NPSH is an important considerations in pump selection. NPSHR is further defined in [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3.html). 
 
 =/=
 title: NPSHR Curve
@@ -142,7 +142,7 @@ Allowable Operating Region
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
 is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle of the impeller vanes at entry.
 
-**Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. Depending on the specific speed of the pump, which is further defined in the  [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3) section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
+**Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. Depending on the specific speed of the pump, which is further defined in the  [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3.html) section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
 **Allowable Operating Region (AOR):** The AOR is the flow range at the rated speed with the impeller supplied in which the pump may be allowed to operate, as limited by cavitation, heating, vibration, noise, shaft deflection, fatigue, and other similar criteria. It is the flow range at which the pump can be run with acceptable service life. The pump manufacturer should be consulted to define this region. Typically, operating intermittently within this region does not cause issues over the life of the pump. The graph above shows the various operating regions and the types of 
 issues that can occur when operating outside of the POR and AOR.

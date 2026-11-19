@@ -18,7 +18,7 @@ price: 99.00
 hide_price: true
 =^=
 
-Frictional Resistance for incompressible viscous liquids, including water, in a pipe is computed as a loss in head.  The method outlined in [Pipe Frictional Losses](/fluid-flow-iii/general) describes the fundamental formulas and methodology for calculating pipe friction.
+Frictional Resistance for incompressible viscous liquids, including water, in a pipe is computed as a loss in head.  The method outlined in [Pipe Frictional Losses](/fluid-flow-iii/general.html) describes the fundamental formulas and methodology for calculating pipe friction.
 
 This Frictional Loss Calculator utilizes this methodology by generating a table with the following parameters:
 
@@ -31,9 +31,9 @@ This Frictional Loss Calculator utilizes this methodology by generating a table 
 -	Head loss
 
 The calculator is suitable for for any fluid in a circular pipe of the same diameter as specified. Many materials and sizes are available for both piping and tubing selections with nominal internal diameters.  Friction loss (h<sub>f</sub>) is calculated based on pipes having a specific ε (absolute roughness) based on their material and manufacturing method in conjunction with the specified length of pipe. 
-Additionally, ε/D (relative roughness) is also provided where (ε) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Other fluid details such as the dynamic viscosity (cP) with the corresponding fluid specific gravity or the kinematic viscosity (cSt) alone are required to complete calculations (See the [Pipe Frictional Losses](/fluid-flow-iii/general) section) 
+Additionally, ε/D (relative roughness) is also provided where (ε) is a linear measure of the absolute roughness of the pipe walls and (D) is the internal diameter of the pipe. Other fluid details such as the dynamic viscosity (cP) with the corresponding fluid specific gravity or the kinematic viscosity (cSt) alone are required to complete calculations (See the [Pipe Frictional Losses](/fluid-flow-iii/general.html) section) 
 
-Further information on viscosity and commonly accepted viscosity values for liquids can be found in the [Viscosity](/fluid-properties-ii/viscosity) section. No Allowance has been made for abnormal conditions of interior surface due to manufacturing or installation defects, nor for deterioration or fouling.
+Further information on viscosity and commonly accepted viscosity values for liquids can be found in the [Viscosity](/fluid-properties-ii/viscosity.html) section. No Allowance has been made for abnormal conditions of interior surface due to manufacturing or installation defects, nor for deterioration or fouling.
 
 Typical US or Metric units are both supported by choosing the user preference in banner on the upper right end of the webpage.
 

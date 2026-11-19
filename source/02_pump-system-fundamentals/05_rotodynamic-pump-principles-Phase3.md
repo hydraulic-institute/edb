@@ -253,4 +253,4 @@ $$ S = D · (1 + 2.3·F_{D}) $$
 ![](./images/submergence_combined.png#center "")
 <div class="figure-label"><a id="fig1e8"></a>Fig. 1.E.8 Illustration of submergence</div> 
 
-Note that the minimum submergence may need to be increased to satisfy the pump NPSHR. Refer to sections [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3) and [Rotodynamic Pump Curves](./rotodynamic-pump-curves-phase3).
+Note that the minimum submergence may need to be increased to satisfy the pump NPSHR. Refer to sections [Rotodynamic Pump Principles](./rotodynamic-pump-principles-phase3.html) and [Rotodynamic Pump Curves](./rotodynamic-pump-curves-phase3.html).
