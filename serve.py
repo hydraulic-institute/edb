@@ -50,18 +50,19 @@ def launch_web_server():
     server = StoppableHTTPServer(("127.0.0.1", PORT),
                                  http.server.SimpleHTTPRequestHandler)
 
-    thread = threading.Thread(None, server.run)
-    thread.start()
+    # thread = threading.Thread(None, server.run)
+    # thread.start()
     print("Server running at", PORT)
 
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S')
-
+    
+    server.run()
 
 if __name__ == "__main__":
     # Do an initial build right away.
-    build.generate(True)
+    build.generate(False)
 
     # Setup an HTTP server so user can see the EDB live in a browser
     # this is done in a separate thread
