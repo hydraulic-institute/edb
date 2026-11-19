@@ -200,7 +200,7 @@ The following **are not valid names**, and will result in build failure
 ## Section / Topic Nesting
 The EDB is meant to be easily navigated.  Sections (directories) may have files (topics) in them - but no sub-directories.  Thus, the EDB consists of sections, which have several topics.  Each topic page can contain headings and sub headings - but there is no ability to create nested sections/pages.
 
-### Nested Sections
+### Nested Sections and Anchor Tags
 Nested sections in a topic can be defined by applying an Anchor Tag custom extension to the markdown in the topic markdown. The anchor tag will refer to a specific section on the page. Anchor tags will also automatically generate a 3rd level to the menu structure with the title defined in the tag. The custom extension `=atag=` should be used immediately before the text it applies to. 
 
 To apply an anchor tag, put `=atag=` tags around text that you want to be displayed in the menu structure within a Sub-topic.  This position on the page is where the user will be taken when clicking on the menu item.
