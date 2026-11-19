@@ -543,13 +543,19 @@ Friction Loss styles
   transition: all 0.5s;
 }
 
+.home-nav-button {
+  background-color: @hi_blue !important;
+  margin-top: 0 !important;
+}
+
 .home-nav-link {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
-  font-size: 1rem !important;
+  font-size: 1rem !important; 
+  background-color: @hi_blue !important;
 }
 
 .home-nav-link img {
@@ -561,7 +567,32 @@ Friction Loss styles
   display: none;
 }
 
-.home-nav-link.is-active {
+.nav-split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-split-toggle.accordion-button {
+  width: auto;
+  flex: 0 0 auto;
+  margin-left: 0.35rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.nav-split-toggle.accordion-button::after {
+  margin-left: 0;
+}
+
+.nav-split-toggle.accordion-button:focus {
+  box-shadow: none;
+}
+
+.home-nav-button.is-active, .home-nav-link.is-active {
   font-weight: bold;
   font-size: 1.5rem !important;
 }
