@@ -137,7 +137,7 @@ where:
 - Q' = best efficiency point flow rate per impeller eye in cubic meters per second 
     - =total flow rate for single suction impellers
     - =one half total flow rate for double suction impellers, 
-- NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
+- NPSH3 = Net positive suctions head required in meters that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
 When converting suction specific speed values between the US and metric convention, 51.6 is the conversion factor ( 51.6 x S  = Nss )
 
