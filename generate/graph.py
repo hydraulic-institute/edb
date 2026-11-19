@@ -115,7 +115,7 @@ def make_directory_node(dirName, parentDir=None, parentNode=None):
         "path": path,
         "metadata": read_metadata(path+"/index.md"),
         "directory": True,
-        "atag_list": [],
+        "atag_obj_list": [],
         "children": [],
         "copy_only": False,
         "is_topic": False,
@@ -140,7 +140,7 @@ def make_resource_node(dirName, fname):
         "name": fname,
         "metadata": dict(),
         "directory": False,
-        "atag_list": [],
+        "atag_obj_list": [],
         "copy_only": True,
         "is_topic": False
     }
@@ -164,7 +164,7 @@ def make_page_node(dirName, fname):
         "name": fname,
         "metadata": metadata,
         "directory": False,
-        "atag_list": [],
+        "atag_obj_list": [],
         "content": read_page_content(metadata, filename),
         "copy_only": False,
         "is_topic": True
