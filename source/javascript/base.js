@@ -29,9 +29,10 @@ $(window).on('pageshow',function() {
     }
     else {
         if (current_hash.length > 0) {
+            //???
             let active_section = "#"+storage_active_topic['topic'].split("_")[0];
             $(active_section+"-button").click();
-            $(current_hash_class).addClass("is-active");
+            $(current_hash_class).addClass("is-active-tag");
             $(current_hash).get(0).scrollIntoView({behavior: "smooth", block: "center"});
         }
     }
@@ -118,13 +119,15 @@ function setup_menu() {
     }
 
     let target_id = storage_active_topic['topic'];
-    document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("active_topic"));
+    //document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("active_topic"));
+    $("."+target_id).addClass("active_topic");
     if (storage_active_topic['hash'].length > 0) {
         let hash_class = '.'+storage_active_topic['hash'].split("#")[1]+'-tag';
-        $(hash_class).addClass("is-active");
+        $(hash_class).addClass("is-active-tag");
     }
     else {
-        document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("is-active"));
+        $("."+target_id).addClass("is-active");
+       // document.querySelectorAll("#"+target_id).forEach(el => el.classList.add("is-active"));
     }
 
     //Set the dropdowns. HOME is a link, so only click accordion buttons.
@@ -183,6 +186,7 @@ function menu_topic_click(event) {
     }
     $('.menu-topic').removeClass("active_topic");
     $('.menu-topic').removeClass("is-active");
+    $('.menu-topic').removeClass("is-active-tag");
     if (!target) {
         target = pathToId(window.location.pathname);
         href = window.location.pathname;
@@ -193,13 +197,11 @@ function menu_topic_click(event) {
         $(section+"-button").click();
     }
 
-    $(this).addClass("active_topic");
+    $("."+current_topic).addClass("active_topic");
+    $("."+current_topic).addClass("is-active");
     if (hash.length > 0) {
         let hash_class = '.'+hash.split("#")[1]+'-tag';
-        $(hash_class).addClass("is-active");
-    }
-    else {
-        $(this).addClass("is-active");
+        $(hash_class).addClass("is-active-tag");
     }
     localStorage.setItem("active_topic", JSON.stringify({"topic":target, "href":href, "hash":hash}));
     if ($('.navbar-burger').is(':visible')) {
