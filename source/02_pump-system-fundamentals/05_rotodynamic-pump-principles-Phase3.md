@@ -40,7 +40,7 @@ where:
 - n<sub>s</sub> = Specific Speed (Metric)  
 - n = Rotational speed (rpm) 
 - Q = Total pump flow rate at best efficiency point (m<sup>3</sup>/s)
-- H = Head per stage in meters
+- H = Head per stage (m)
 
 When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (51.6 · n<sub>s</sub> = Ns)
 
@@ -179,7 +179,7 @@ Net Positive Suction Head (NPSH)
 
 **NPSH** is the net positive suction head in <units us = "feet" metric = "meters"></units>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage to other parts of the pump, such as seals and bearings. [Fig. 1.E.5](#fig1e5) defines the pressure profile through a pump and illustrates how cavitation can occur when local pressure falls below the liquid vapor pressure resulting in cavitation.
 
-![](./images/pp-fig-1e5.png#center "")
+![](./images/pp-fig-1E5.png#center "")
 <div class="figure-label"><a id="fig1e5"></a>Fig. 1.E.5 Illustration of pressure reduction below the liquids vapor pressure causing cavitation</div>
 
 The **net positive suction head available (NPSHA)**, which is the NPSH available at the pump site, is defined in [Eq. 1.E.6](#eq1e6) as the absolute suction head above the liquid vapor pressure head.
