@@ -569,9 +569,11 @@ def split_html_and_text(html_string):
 def replace_atag_block(atag_text):
     tag_lines = atag_text.strip().split("\n")
     tag = []
+    tag_string = ''
     retval = True
     if len(tag_lines) < 2:
         # This is for a hidden tag
+        tag_string = tag_lines[0]
         id_tag = tag_lines[0].lower().replace(" ", "-")
         template = f"<div id=\"{id_tag}\"></div>"
     else:    
@@ -583,12 +585,14 @@ def replace_atag_block(atag_text):
             atag_text = atag_text.replace("=atag=", "")
             return atag_text
         #lowercase tag[1] and remove the spaces
+        tag_string = tag[1]
         id_tag = tag[1].lower().replace(" ", "-")
         template = f"{tag[0][:-1]} id=\"{id_tag}\">{tag[1]}{tag[2]}"
-    return template
+    return tag_string,template
 
 def process_anchor_tag_blocks(markdown):
     #HERE Process all anchor tag blocks in the content.
+    atag_list = []
     delim = "=atag="
     delim_len = len(delim)
     start = markdown.find(delim)
@@ -597,11 +601,13 @@ def process_anchor_tag_blocks(markdown):
         before = markdown[:start]
         within = markdown[start+delim_len:end]
         after = markdown[end+delim_len:]
+        atag, atag_template = replace_atag_block(within)
+        atag_list.append(atag)
         markdown = before + \
-            replace_atag_block(within) + after
+            atag_template + after
         start = markdown.find(delim)
- 
-    return markdown    
+    return atag_list, markdown
+   
 def process_scrolling_logo_blocks(markdown):
     delim = "=scrolling-logos="
     delim_len = len(delim)
@@ -884,16 +890,33 @@ def write_content(graph, node, slug_override=None, path="."):
     content = process_definitions_block(node['path'], content, sections)
     content = process_ad_blocks(content)
     content = process_scrolling_logo_blocks(content)
-    content = process_anchor_tag_blocks(content)
-    # Last step injects the Vue markup necessary for some components - such as <units> elements.
-    content = process_vue_components(content)
-
+    atag_list, content = process_anchor_tag_blocks(content)
+    node['atag_list'] = atag_list
+    # add the atag list to the node in the section
+    # find the node in the sections and then the child node with the same slug
+    found = False
+    for index in range(len(sections)):
+        asection = sections[index]
+        if sections[index]['path'] == node['path']: 
+            for index2 in range(len(sections[index]['children'])):
+                if sections[index]['children'][index2]['slug'] == node['slug']:
+                    sections[index]['children'][index2]['atag_list'] = atag_list
+                    found = True
+                    break
+            if found:
+                break
+    if not found:
+        print(f"Could not find node {node['slug']} in section {node['path']}")
+    #is the node a directory?
+    if node['directory']:
+        print("Directory: ", node['slug'])
     template = env.get_template('topic.jinja')
     related = [section['children'] for section in sections if section['path']
                == node['path'] and section['slug'] != node['slug']]
     # Related is a list of lists with the same section (it's always size 1)
     related = [item for sublist in related for item in sublist]
     # Related is not all topics under the same section, we need to filter out this node
+    # This gets rid of any directories
     related = [topic for topic in related if topic['directory']
                != True and topic['name'] != node['name']]
 

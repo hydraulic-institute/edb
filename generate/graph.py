@@ -108,12 +108,14 @@ def make_directory_node(dirName, parentDir=None, parentNode=None):
         print("ERROR:  The directory", dirName, "has an invalid name")
         return None
 
+    print("make_directory_node", path+"/index.md")
     return {
         "sort": sort,
         "slug": slug,
         "path": path,
         "metadata": read_metadata(path+"/index.md"),
         "directory": True,
+        "atag_list": [],
         "children": [],
         "copy_only": False,
         "is_topic": False,
@@ -130,6 +132,7 @@ def make_resource_node(dirName, fname):
         slug = fname.split(".")[0]
 
     filename = dirName+"/"+fname
+    print("make_resource_node", filename)
     return {
         "sort": sort,
         "slug": slug,
@@ -137,6 +140,7 @@ def make_resource_node(dirName, fname):
         "name": fname,
         "metadata": dict(),
         "directory": False,
+        "atag_list": [],
         "copy_only": True,
         "is_topic": False
     }
@@ -151,6 +155,7 @@ def make_page_node(dirName, fname):
         slug = fname.split(".")[0]
 
     filename = dirName+"/"+fname
+    print("make_page_node", filename)
     metadata = read_metadata(filename)
     return {
         "sort": sort,
@@ -159,6 +164,7 @@ def make_page_node(dirName, fname):
         "name": fname,
         "metadata": metadata,
         "directory": False,
+        "atag_list": [],
         "content": read_page_content(metadata, filename),
         "copy_only": False,
         "is_topic": True
