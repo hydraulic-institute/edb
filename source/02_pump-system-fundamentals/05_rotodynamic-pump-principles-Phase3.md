@@ -17,48 +17,43 @@ Specific Speed
 
 **Specific speed** is an index of pump performance at the pump’s best efficiency point (BEP) rate of flow, with the maximum diameter impeller, and at a given rotational speed. 
 
-Specific speed, Ns, is used with US customary units and defined in [Eq. 1.D.1](#eq1d1) as an index relating pump rotational speed, best efficiency point flow rate, and head per stage. 
+Specific speed (Ns) is used with US customary units and defined in [Eq. 1.D.1](#eq1d1) as an index relating pump rotational speed, best efficiency point flow rate, and head per stage. 
 
 
-<div class="equation-label"><a id="eq1d1"></a>Eq. 1.D.1</div>
+<div class="equation-label"><a id="eq1d1"></a>Eq. 1.D.1 Specific speed U.S. Units</div>
 $$ Ns = { {n·Q^{0.5} } \over {H^{0.75} } } $$ 
 
 where:
 
 - Ns = Specific Speed (U.S. Customary Units) 
-- n = Rotational speed, in revolutions per minute 
-- Q = Total Pump flow rate at best efficiency point (BEP) in gallons per minute
-- H = Head per stage, in feet
+- n = Rotational speed (rpm)
+- Q = Total pump flow rate at best efficiency point (gpm)
+- H = Head per stage (ft)
 
-Specific speed, n<sub>s</sub>, is used with metric units and is defined in [Eq. 1.D.2](#eq1d2) using the same relationship as [Eq. 1.D.1](#eq1d1), with flow rate expressed in cubic meters per second and head expressed in meters.
+Specific speed (n<sub>s</sub>) is used with metric units and is defined in [Eq. 1.D.2](#eq1d2) using the same relationship as [Eq. 1.D.1](#eq1d1), with flow rate expressed in cubic meters per second and head expressed in meters.
 
-<div class="equation-label"><a id="eq1d2"></a>Eq. 1.D.2</div>
+<div class="equation-label"><a id="eq1d2"></a>Eq. 1.D.2 Specific speed metric units</div>
 $$ n_s = { {n·Q^{0.5} } \over {H^{0.75} } } $$
-
 
 where:
 
 - n<sub>s</sub> = Specific Speed (Metric)  
-- n = Rotational speed, in revolutions per minute 
-- Q = Total Pump flow rate at best efficiency point (BEP) in cubic meters per second 
+- n = Rotational speed (rpm) 
+- Q = Total pump flow rate at best efficiency point (m<sup>3</sup>/s)
 - H = Head per stage in meters
 
+When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (51.6 · n<sub>s</sub> = Ns)
 
-
-When converting specific speed values between the US and metric convention, 51.6 is the conversion factor (51.6 · n<sub>s</sub>  = Ns)
-
-An alternate definition for specific speed is also used based on flow rate per impeller eye (Q’) rather than total flow rate.  When applying this alternative method to the 
+An alternate definition for specific speed is also used based on flow rate per impeller eye (Q') rather than total flow rate.  When applying this alternative method to the 
 double suction impeller pump, the resultant value of specific speed is less by a factor of 0.707 times less.
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making comparisons because there are subtle but significant 
 differences in methods used throughout industry and in related textbooks and literature.  For more information on the specific speed definition refer to 
 <a href="https://www.pumps.org/?s=ANSI%2FHI+14.1-14.2-2019+Rotodynamic+Pumps+for+Nomenclature+and+Definitions" target="_blank">ANSI/HI 14.1-14.2</a>.
 
-
-
 [Fig. 1.D.1](#fig1d1) defines the relationship between specific speed and the approximate shape of rotodynamic pump performance curves. The figure compares metric and US customary specific speed ranges to typical centrifugal, mixed flow, and axial flow curve shapes.
 
 ![](./images/iD-1-Curve-Shape-Based-on-Specific-Speed.png#center "")
-<div class="figure-label"><a id="fig1d1"></a>Fig. 1.D.1</div>
+<div class="figure-label"><a id="fig1d1"></a>Fig. 1.D.1 Performance curve shape with respect to specific speed</div>
 
 =^=
 title: Rotodynamic Pump Efficiency Prediction
@@ -72,7 +67,7 @@ hide_price: true
 [Fig. 1.D.2](#fig1d2) defines the maximum practically attainable pump efficiency as a function of flow rate for selected rotodynamic pump types. This figure is useful when selecting hydraulics for an application based on the desired flow and head.
 
 ![](./images/specific-speed-eff.png#center "")
-<div class="figure-label"><a id="fig1d2"></a>Fig. 1.D.2</div>
+<div class="figure-label"><a id="fig1d2"></a>Fig. 1.D.2 Maximum attainable efficiency with respect to specific speed and BEP flow rate</div>
 
 ### Type Number
  **Type number**, K, is defined in [Eq. 1.D.3](#eq1d3) as a dimensionless form of specific speed calculated at the pump best efficiency point. Note, that to obtain a dimensionless value, the specified units of measure for each variable defined in [Eq. 1.D.3](#eq1d3) may be different than the units of measure assigned to that variable in other parts of the HI Data Tool.  Close attention to the units of measure for the variables in all calculations are advised.
@@ -85,18 +80,18 @@ $$ K = {{2·π·n·Q'^{0.5}} \over {(g·H')^{0.75}}} $$
 where in U.S. Customary Units:
 
 - K = type number
-- Q’ = best efficiency point flow rate per impeller eye in cubic feet per second
-- H’ = best efficiency point head of first stage in feet
-- n = rotational speed, in revolutions per second
-- g = gravitational acceleration in feet per second squared
+- Q' = best efficiency point flow rate per impeller eye (ft<sup>3</sup>/s)
+- H' = best efficiency point head of first stage (ft)
+- n = rotational speed (rpm)
+- g = gravitational acceleration (ft/s<sup>2</sup>)
 
 where in Metric Units:
 
 - K = type number
-- Q’ = best efficiency point flow rate per impeller eye in cubic meters per second
-- H’ = best efficiency point head of first stage in meters
-- n = rotational speed, in revolutions per second
-- g = gravitational acceleration in meters per second squared
+- Q' = best efficiency point flow rate per impeller eye (m<sup>3</sup>/s)
+- H' = best efficiency point head of first stage (m)
+- n = rotational speed (rpm)
+- g = gravitational acceleration (m/s<sup>2</sup>)
 
 =atag=
 Suction Specific Speed
@@ -108,44 +103,41 @@ Suction Specific Speed
 
 As outlined in [Eq. 1.D.4](#eq1d4) for U.S. customary units and [Eq. 1.D.5](#eq1d5) for metric units, suction specific speed is a benchmark index that communicates the relative NPSH3 performance for the design flow rate (BEP) and rotational speed, which is useful to broadly classify the suction performance of pumps. There may be design tradeoffs for the higher suction specific speed such as NPSHR increasing at lower flow rates and earlier onset of suction recirculation. Suction recirculation occurs when flow in the inlet area of an impeller separates from the vanes and forms recirculating eddies, which can result in undesirable forces, noise, vibration, and cavitation. Both increasing NPSHR at lower flow rates and suction recirculation may limit the AOR of the pump. For additional information refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.1&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 9.6.1</a> and <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.3&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 9.6.3</a>. 
 
-Suction specific speed, Nss, is used with U.S. customary units, as shown in [Eq. 1.D.4](#eq1d4).
+Suction specific speed (Nss) is used with U.S. customary units, as shown in [Eq. 1.D.4](#eq1d4).
 
-<div class="equation-label"><a id="eq1d4"></a>">Eq. 1.D.4</div>
+<div class="equation-label"><a id="eq1d4"></a>Eq. 1.D.4 Suction specific speed US units</div>
 
 $$ Nss = { {n·Q'^{0.5} } \over {NPSH3^{0.75} } } $$
 
 where:
 
-- Nss = Suction Specific Speed
-- n = Rotational speed, in revolutions per minute
-- Q' = best efficiency point flow rate per impeller eye in US gallons per minute 
+- Nss = Suction Specific Speed (US Units)
+- n = Rotational speed (rpm)
+- Q' = best efficiency point flow rate per impeller eye in (gpm) 
     - =total flow rate for single suction impellers
-    - =one half total flow rate for double suction impellers, 
-- NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
+    - =one half total flow rate for double suction impellers 
+- NPSH3 = Net positive suctions head required (ft) that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
-Suction Specific speed, S, is used with metric units, aas shown in [Eq. 1.D.5](#eq1d5)
+Suction Specific speed, (S) is used with metric units, aas shown in [Eq. 1.D.5](#eq1d5)
 
-<div class="equation-label"><a id="eq1d5"></a>">Eq. 1.D.5</div>
+<div class="equation-label"><a id="eq1d5"></a>Eq. 1.D.5 Suction specific speed netric units</div>
 
 $$ S = { {n·Q'^{0.5} } \over {NPSH3^{0.75} } } $$
 
 where:
 
-- S = Suction Specific Speed
-- n = Rotational speed, in revolutions per minute
-- Q' = best efficiency point flow rate per impeller eye in cubic meters per second 
+- S = Suction Specific Speed (metric)
+- n = rotational speed (rpm)
+- Q' = best efficiency point flow rate per impeller eye (m<sup>3</sup>/s)
     - =total flow rate for single suction impellers
-    - =one half total flow rate for double suction impellers, 
-- NPSH3 = Net positive suctions head required in feet that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
+    - =one half total flow rate for double suction impellers 
+- NPSH3 = Net positive suctions head required (m) that will cause the total head (or first stage head of multistage pumps) to be reduced by 3%
 
 When converting suction specific speed values between the US and metric convention, 51.6 is the conversion factor ( 51.6 x S  = Nss )
 
 The user is cautioned to check carefully the basis of calculation of specific speed and suction specific speed before making any 
 comparisons because there are subtle but significant differences in methods used throughout industry and in related textbooks and literature. 
 For more information on the suction specific speed definition refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.1-14.2" target="_blank">ANSI/HI 14.1-14.2</a>.
-
-
-
 
 =atag=
 Impeller Types
@@ -156,12 +148,12 @@ Impeller Types
 [Fig. 1.D.3](#fig1d3) defines common impeller types used in centrifugal, mixed flow, and axial flow pumps. The figure shows how impeller geometry changes as flow increases relative to developed head. As the flow increases with respect to the developed head, the larger the waterways become and the smaller the diameter becomes.
 
 ![](./images/impeller-types.png#center "")
-<div class="figure-label"><a id="fig1d3"></a>Fig. 1.D.3</div>
+<div class="figure-label"><a id="fig1d3"></a>Fig. 1.D.3 Impeller profile with respect to specific speed</div>
 
 [Fig. 1.D.4](#fig1d4) defines the three common impeller configurations: open, semi-open, and enclosed. Open impellers do not have a front or rear shroud; semi-open impellers have only one shroud; and enclosed impellers have both front and rear shrouds.
 
 ![](./images/impeller-configs.png#center "")
-<div class="figure-label"><a id="fig1d4"></a>Fig. 1.D.4</div>
+<div class="figure-label"><a id="fig1d4"></a>Fig. 1.D.4 Open, semi-open and enclosed impellers</div>
 
 **Open impellers** are typically used on smaller pumps, axial flow pumps, and for specialty applications such as solids handling pumps. They are typically less expensive to 
 manufacture and easier to clean but become inefficient as the pump wears. **Enclosed impellers** are more expensive to manufacture, more difficult to clean, and cannot pump
@@ -187,22 +179,22 @@ Net Positive Suction Head (NPSH)
 
 **NPSH** is the net positive suction head in <units us = "feet" metric = "meters"></units>. Impellers require a certain amount of head at suction beyond the vapor pressure of the pumped fluid in order to operate properly. This is due to the fact that there is a drop in pressure as the flow enters the eye of the impeller. If the flow’s pressure drops below the vapor pressure of the fluid being pumped, bubbles can form – a phenomenon called cavitation. These bubbles collapse with high energy and can cause damage to the surrounding parts of the pump through cavitation erosion. In addition to direct damage to the waterways, cavitation can cause higher vibration leading to damage to other parts of the pump, such as seals and bearings. [Fig. 1.D.5](#fig1d5) defines the pressure profile through a pump and illustrates how cavitation can occur when local pressure falls below the liquid vapor pressure resulting in cavitation.
 
-![](./images/npsh-pic.png#center "")
-<div class="figure-label"><a id="fig1d5"></a>Fig. 1.D.5</div>
+![](./images/pp-fig-1D5.png#center "")
+<div class="figure-label"><a id="fig1d5"></a>Fig. 1.D.5 Illustration of pressure reduction below the liquids vapor pressure causing cavitation</div>
 
 The **net positive suction head available (NPSHA)**, which is the NPSH available at the pump site, is defined in [Eq. 1.D.6](#eq1d6) as the absolute suction head above the liquid vapor pressure head.
 
 =+=
-<div class="equation-label"><a id="eq1d6"></a>Eq. 1.D.6</div>
+<div class="equation-label"><a id="eq1d6"></a>Eq. 1.D.6 Net Positive Suction Head Available</div>
 $$ NPSHA = {h_{sa}} - {h_{vp}}={h_{atm}+h_{s}-h_{vp}} $$
 =+=
 
 where:
 
-- h<sub>sa</sub> = Total suction head absolute in <units us = "feet" metric = "meters"/>
-- h<sub>atm</sub> = Atmospheric pressure in head in <units us = "feet" metric = "meters"/>
-- h<sub>s</sub> = Total suction head in <units us = "feet" metric = "meters"/>
-- h<sub>vp</sub> = Absolute vapor pressure of fluid in head in <units us = "feet" metric = "meters"/>
+- h<sub>sa</sub> = Total suction head absolute <units us = "(ft)" metric = "(m)"/>
+- h<sub>atm</sub> = Atmospheric pressure in head  <units us = "(ft)" metric = "(m)"/>
+- h<sub>s</sub> = Total suction head <units us = "(ft)" metric = "(m)"/>
+- h<sub>vp</sub> = Absolute vapor pressure of fluid in head <units us = "(ft)" metric = "(m)"/>
 
 A pump’s **net positive suction head required (NPSHR)** is important, as it allows a pump user to determine the amount of NPSHA needed at their pump site to ensure pump
 performance is met. The occurrence of visible cavitation, increase of noise and vibration due to cavitation, beginning of head or efficiency drop, and cavitation 
@@ -259,6 +251,6 @@ $$ S = D · (1 + 2.3·F_{D}) $$
 =+=
 
 ![](./images/submergence_combined.png#center "")
-<div class="figure-label"><a id="fig1d8"></a>Fig. 1.D.8 Type 5 and 6 Air Core Vorticies per ANSI/HI 9.8</div> 
+<div class="figure-label"><a id="fig1d8"></a>Fig. 1.D.8 Illustration of submergence</div> 
 
 Note that the minimum submergence may need to be increased to satisfy the pump NPSHR. Refer to sections <a href="/pump-fundamentals/pump-principles.html" target="_self">Rotodynamic Pump Principles</a>, and <a href="/pump-fundamentals/pump-curves.html" target="_self">Rotodynamic Pump Curves</a>.

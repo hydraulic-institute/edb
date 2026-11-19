@@ -14,7 +14,7 @@ The affinity rules indicate how the pump curve changes as a function of rotation
 Understanding the pump curve and how it changes with respect to speed, impeller trimming, and parallel and series operation is essential for proper pump selection. The flow rate, pump total head, pump input power and specific gravity of the liquid can be used to calculate pump efficiency. Liquid viscosity will affect the pump total head, flow, efficiency, NPSHR and power, which is not discussed here. Refer to <a href="https://www.pumps.org/what-we-do/standards/?pumps-search-product=9.6.7&hi-order=asc&hi-order-by=name" target="_blank">ANSI/HI 9.6.7</a> for effects of liquid viscosity on rotodynamic pump performance.
 
 =atag=
-Pump Total Head Curve
+Total Head
 =atag=
 
 ### Pump Total Head Curve
@@ -34,7 +34,7 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b1"></a>Fig. 1.B.1 Head versus flow rate curve</div>
 
 =atag=
-Pump Efficiency Curve
+Efficiency
 =atag=
 
 ### Pump Efficiency Curve
@@ -63,7 +63,7 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b2"></a>Fig. 1.B.2 Pump efficiency curve</div>
 
 =atag=
-Pump Input Power Curve
+Input Power
 =atag=
 
 ### Pump Input Power Curve
@@ -111,7 +111,7 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b3"></a>Fig. 1.B.3 Pump input power curve</div>
 
 =atag=
-Net Positive Suction Head Required (NPSHR) Curve
+Net Positive Suction Head Required
 =atag=
 
 ### Net Positive Suction Head Required (NPSHR) Curve
@@ -130,7 +130,7 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b4"></a>Fig. 1.B.4 Net positive suction head required curve</div>
 
 =atag=
-Operating Regions and Points
+Allowable Operating Region
 =atag=
 
 ### Operating Regions and Points
@@ -140,8 +140,7 @@ Operating Regions and Points
 
 **Best Efficiency Point (BEP):** A pump’s best efficiency point is defined as the flow rate and head at which the pump efficiency is the maximum at a given speed and impeller diameter. Typically, a pump is specified to have
 its duty point, or designed operating point, at BEP. At BEP, a pump will have low vibration and noise when compared to other operating points. Also, there
-is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle 
-of the impeller vanes at entry.
+is minimum recirculation within the impeller and shockless entry into the impeller. Shockless entry is when the flow entering the impeller matches the angle of the impeller vanes at entry.
 
 **Preferred Operating Region (POR):** The preferred operating region (POR) is a range of rates of flow to either side of the BEP within which the hydraulic efficiency and the operational reliability of the pump are not substantially degraded. Flow induced vibrations and internal hydraulic loading is low in this region. Depending on the specific speed of the pump, which is further defined in the <a href="/pump-fundamentals/pump-principles.html" target="self">Rotodynamic Pump Principles</a> section, the POR can be anywhere from 90-110% of BEP flow to 70-120% of BEP flow.
 
@@ -163,7 +162,7 @@ hide_price: true
 =^=
 
 =atag=
-Parallel and Series Pump Implications
+Parallel and Series Curves
 =atag=
 
 ### Parallel and Series Pump Implications
@@ -353,7 +352,7 @@ series_title_index: 0
 <div class="figure-label"><a id="fig1b12"></a>Fig. 1.B.12 Pump curves comparing base-speed and reduced-speed conditions</div>
 
 =atag=
-Changes in Impeller Diameter
+Impeller Trimming
 =atag=
 
 ### Changes in Impeller Diameter
@@ -378,10 +377,6 @@ Trimming the impeller down in diameter will move the pump curve down. The same c
 
 The impeller geometry changes with the pump specific speed, which may impact impeller trimming. Impeller trimming is typically applied to radial and mixed flow impellers, and the trimming methods may vary. Refer to [ANSI/HI 14.3](https://www.pumps.org/what-we-do/standards/?pumps-search-product=14.3&hi-order=asc&hi-order-by=name) for additional information and the impeller trimming section below.
 
-=atag=
-Impeller Trimming and the Effect on Performance
-=atag=
-
 ### Impeller Trimming and the Effect on Performance
 
 As noted in the preceding section, changing the impeller diameter will change pump performance. It is common to trim an impeller to meet a rated condition that is below the pump curve. Because changes in impeller diameter do not maintain similarity, the affinity rules are not intended to be applied for changes in impeller diameter. The information presented in [Fig. 1.B.14](#fig1b14) is representative of tested performance, and it can be noted that the efficiency does not remain constant as diameter changes and the relationship between head and flow with diameter change does not exactly match the affinity rules. However, affinity rules can be used for minor impeller diameter changes within 5% with acceptable accuracy. [Eq. 1.B.6a](#eq1b6a) through [Eq. 1.B.6c](#eq1b6c) can be modified for impeller diameter change by substituting impeller diameter (D) for rotational speed (n), as shown in the worked example below. If the diameter reduction exceeds 5% from the original, correction coefficients should be used for the diameter calculated using affinity rules, such as described in *Centrifugal and Axial Flow Pumps* by A.J. Stepanoff.
@@ -398,7 +393,7 @@ A pump designed with a 10-5/8 in diameter impeller will be operating in a chemic
 
 Substituting impeller diameter (D) for rotational speed (n) into the affinity rule equation for flow rate ([Eq. 1.B.6a](#eq1b6a)), we get [Eq. 1.B.7a](#eq1b7a) and the new impeller diameter can be calculated as shown in [Calc.1.B.7a](#calc1b7a). 
 
-<div class="equation-label"><a id="eq1b7a"></a>Eq. 1.B.7a Affinity rule for flow rate as a function of impeller diameter</div>
+<div class="equation-label"><a id="eq1b7a"></a>Eq. 1.B.7a Affinity rule for flow and impeller diameter</div>
 
 =+=
 $$ {Q_2 \over Q_1} = {D_2 \over D_1} $$
@@ -420,7 +415,7 @@ $$ D_2 = {2000 \over 2100} · 10.625 = 10.12\,in $$
 
 Substituting impeller diameter (D) for rotational speed (n) into the affinity rule equation for head ([Eq. 1.B.6b](#eq1b6b)), we get [Eq. 1.B.7b](#eq1b7b) and the new head can be calculated as shown in [Calc.1.B.7b](#calc1b7b). 
 
-<div class="equation-label"><a id="eq1b7b"></a>Eq. 1.B.7b Affinity rule for head as a function of impeller diameter</div>
+<div class="equation-label"><a id="eq1b7b"></a>Eq. 1.B.7b Affinity rule for head and impeller diameter</div>
 
 =+=
 $$ {H_2 \over H_1} = ({D_2 \over D_1})^2 $$
@@ -439,7 +434,7 @@ $$ H_2 = 89 · ({10.12 \over 10.625})^2 = 81\,ft $$
 With the impeller trimmed down to 10.12 in, the pump parameters, flow rate and head, now satisfy the process requirements. Also, as the trim comprises less than a 5% reduction of the original diameter, no further correction to the calculated diameter is necessary.
 
 =atag=
-Alternate Impeller Trimming Methods
+Alternate Trimming Methods
 =atag=
 
 ### Alternate Impeller Trimming Methods
@@ -506,10 +501,6 @@ Underfiling helps to achieve uniform vane tip thickness and consistent vane-to-v
 <div class="figure-label"><a id="fig1b25"></a>Fig. 1.B.25 Impeller overfiling</div>
 
 Overfiling does not increase the distance between vanes or exit area; therefore, it has minimal impact on hydraulic performance. The effect of overfiling thins a blunt trailing edge, which may limit the impeller vane pass pulsation and related vibration.
-
-=atag=
-Summary of Impeller Trimming Vane Profile Modifications
-=atag=
 
 ### Summary of Impeller Trimming Vane Profile Modifications
 

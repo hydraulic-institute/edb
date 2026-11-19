@@ -109,8 +109,8 @@ $$ h = {{C_{units}·p} \over s} $$
 
 Where:
 
-- h<sub>g</sub> is pressure head <units us = "ft" metric = "m"/>
-- p<sub>g</sub> is static pressure gauge reading <units us = "psi" metric = "Pa"/>
+- h<sub>g</sub> is pressure head <units us = "(ft)" metric = "(m)"/>
+- p<sub>g</sub> is static pressure gauge reading <units us = "(psi)" metric = "(Pa)"/>
 - s is specific gravity (dimensionless)
 - C<sub>units</sub> is the unit-conversion factor to achieve head units <units us = "2.31" metric = "1.02×10^-4"/>
 
@@ -180,7 +180,7 @@ Where:
 <li>p<sub>g</sub> is static pressure <units us = "(psi)" metric = "(Pa)"/></li>
 <li>p<sub>v</sub> is velocity pressure <units us = "(psi)" metric = "(Pa)"/></li>
 <li>v is velocity <units us = "(ft/s)" metric = "(m/s)"/></li>
-<li>g is acceleration due to gravity <units us = "(ft/s^2^)" metric = "(m/s^2^"/></li>
+<li>g is acceleration due to gravity <units us = "(ft/s^2^)" metric = "(m/s^2^)"/></li>
 <li>ρ is density <units us = "(lbm/ft^3^)" metric = "(kg/m^3^)"/></li>
 <li v-if='unit_set=="us"'>144 is to convert between square inches (in<sup>2</sup>) and square feet (ft<sup>2</sup>)</li>
 <li v-if='unit_set=="us"'>32.2 is to convert mass to force</li>
@@ -199,9 +199,4 @@ Head losses
 =atag=
 
 ### What are Major and Minor Losses in Pipe Systems?
-Viscous head losses are the losses in energy, expressed as head, caused by fluid friction as liquid flows through a piping system. These losses are split into major losses and minor losses. Major losses represent pipe friction, and minor losses represent losses in fittings, such as elbows, tees, reducers, expansions, valves, entrances and exits. These are referred to as head losses or frictional head losses (h<sub>f</sub>) and are described in detail in the fluid flow section [Link] and the system curve section.
-
-
-
-
-
+Viscous head losses are the losses in energy, expressed as head, caused by fluid friction as liquid flows through a piping system. These losses are split into major losses and minor losses. Major losses represent pipe friction, and minor losses represent losses in fittings, such as elbows, tees, reducers, expansions, valves, entrances and exits. These are referred to as head losses or frictional head losses (h<sub>f</sub>) and are described in detail in the [Fluid Flow](/fluid-flow-iii/general.html) and the [System Curve](/pump-system-fundamentals/sys-curves-phase3.html) sections.
