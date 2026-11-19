@@ -40,6 +40,13 @@ function pathToId(path) {
     return id;
 }
 
+function canonicalPath(path) {
+    if (!path || path === "/" || path === "/index.html" || path === "/home/home.html") {
+        return "/home/home.html";
+    }
+    return path;
+}
+
 function setup_menu() {      
     //Update the menu to show the active topic and any uncollapsed parents
     if ($('.navbar-burger').is(':visible')) {
@@ -53,9 +60,9 @@ function setup_menu() {
     }  
     let current_topic_id = current_topic.attr('id');
     let current_topic_href = current_topic.attr('href'); 
-    let current_path = window.location.pathname;
+    let current_path = canonicalPath(window.location.pathname);
     //If the current path is not the same as the current topic, update the current topic
-    if ((current_path != current_topic_href) && (current_path != "/")) {
+    if ((current_path != current_topic_href) && (current_path != canonicalPath("/"))) {
         current_topic_id = pathToId(current_path);
         current_topic_href = current_path;
     }
@@ -67,8 +74,8 @@ function setup_menu() {
     else {
         storage_active_topic = JSON.parse(storage_active_topic);
     }
-    if (storage_active_topic['href'] != current_topic_href) {
-        if (window.location.pathname == "/") {
+    if (canonicalPath(storage_active_topic['href']) != canonicalPath(current_topic_href)) {
+        if (window.location.pathname == canonicalPath("/")) {
             window.location.href = storage_active_topic['href'];
             return;
         }
@@ -82,10 +89,13 @@ function setup_menu() {
     $("#"+storage_active_topic['topic']).addClass("active_topic");
     $("#"+storage_active_topic['topic']).addClass("is-active");
 
-    //Set the dropdowns
+    //Set the dropdowns. HOME is a link, so only click accordion buttons.
     let active_section = "#"+storage_active_topic['topic'].split("_")[0];
     localStorage.setItem("nav_show",active_section);
-    $(active_section+"-button").click();
+    let sectionButton = $(active_section+"-button");
+    if (sectionButton.is("button")) {
+        sectionButton.click();
+    }
 }
 
 function add_listeners() {
