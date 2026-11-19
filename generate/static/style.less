@@ -12,7 +12,7 @@
 @std_pad: 1rem;
 @lg_pad: 3rem;
 @label_color: #058194;
-@secondary_label_color: #72053f;
+@secondary_label_color: #78068c;
 
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -307,43 +307,31 @@ caption {
 }
 
 .equation-label,
-.calculation-label {
-  font-size: 0.95em;
+.calculation-label,
+.table-label,
+.demo-label,
+.figure-label {
   font-weight: bolder;
-  padding-left: 1rem;
-  padding-right: 1rem;
   font-style: italic;
   font-family: monospace;
+  font-size: clamp(0.75em, 2.5vw, .9em);
 }
 
-.equation-label {
-  color: @label_color;
-}
-
+.equation-label,
 .calculation-label {
-  color: @label_color;
+  color: @secondary_label_color;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .table-label,
 .demo-label,
 .figure-label {
+  color: @label_color;
   text-align: center;
-  max-width: 80%;
   margin: 0px auto 10px;
-  font-size: .95em;
-  font-weight: bolder;
-  font-style: italic;
   padding-bottom: 30px;
-  font-family: monospace;
-}
-.table-label {
-  color: @label_color;
-}
-.demo-label {
-  color: @label_color;
-}
-.figure-label {
-  color: @label_color;
 }
 
 img[src*="#center"] {
