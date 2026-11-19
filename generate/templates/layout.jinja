@@ -757,7 +757,19 @@
                                 </li>
                             </ul>
                             <ul v-else data-section="{{section}}" data-topic="{{topic}}">
-                                {% for s in sections|sort(attribute='sort') %} 
+                                {% for s in sections|sort(attribute='sort') %}
+                                    {% if s['slug'] == 'home' %}
+                                    <div class="mb-2">
+                                        <li class="accordion-header" id="{{ s['slug'] }}-header">
+                                            <a href="/home/home.html" data-level="section" id="{{ s['slug'] }}-button" class="accordion-button nav-accordion-button menu-label menu-section home-nav-link">
+                                                <img src="/images/home-icon.png" alt="" style="height: 15px; width: auto; margin-right: 10px;">
+                                                {{ s['metadata']['title'] }}
+                                            </a>
+                                        </li>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% for s in sections|sort(attribute='sort') if s['slug'] != 'home' %} 
                                     <li>
                                         <span class="menu-label">{{s['metadata']['title']}}</span>
                                         <ul>
