@@ -15,9 +15,6 @@ date: July 19th, 2024
 </section>
 
 #
-=atag=
-Home Head
-=atag=
 The Hydraulic Institute Data Tool is a comprehensive technical resource for pump systems. It provides definitions, resources, references, pump and system fundamental knowledge, interactive pump system demonstrators, fluid property data, fluid flow equations, and easy to use pump system calculators. Covering topics like net positive suction head (NPSH), pump and system curves, frictional losses in piping systems, and much more, it is a vital tool for everyone that works in the pump and system industry.  
 
 Consistent with all publications of the Institute, the Data Tool is developed by a committee of subject matter experts, and is peer reviewed and updated periodically. All external information, calculators and tools provided utilize standards developed by the Hydraulic Institute and other reputable sources.  
@@ -41,9 +38,6 @@ footer_style: text-align:left;font-size:smaller;
 # About the Hydraulic Institute
 The **Hydraulic Institute (HI)** is a non-profit organization dedicated to advancing the pump industry. The Institute offers a wide variety of programs and services, each tailored to support the needs of the industry including pump and system standards, certification, training, workforce development, and advocacy.   
 
-=atag=
-Mission
-=atag=
 # Mission
 Drive all pump system stakeholders toward a sustainable future by:
 
